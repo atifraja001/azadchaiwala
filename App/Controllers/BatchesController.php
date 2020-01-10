@@ -110,6 +110,20 @@ class BatchesController
             ':enroll_id' => $request['eid'],
             ':status' => $request['sid']
         ];
+        if($data[':status'] == 1){
+            $enroll = new \App\Models\Enrollments();
+            $std = $enroll->getStudentByEnrollId($data[':enroll_id']);
+            $batch = new \App\Models\Batches();
+            $batch = $batch->getBatchByEnrollId($data[':enroll_id']);
+            $course = new \App\Models\Courses();
+            $course = $course->getCourseByBatchId($batch['id']);
+            $email = new \App\Controllers\EmailController();
+            $email->sendEmail('registration_verify', [
+                'email_to' => $std['email'],
+                'course' => $course['course_name'],
+                'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+            ]);
+        }
         $status = new \App\Models\Enrollments();
         $status = $status->change_status($data);
         if($status){

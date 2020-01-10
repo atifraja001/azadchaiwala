@@ -50,6 +50,18 @@ class EnrollmentsController
     public function changeStatusPaid($request){
     	$student = new \App\Models\Enrollments();
         $std = $student->ChangeEnrollmentStatusPaid($request['id']);
+        $enroll = new \App\Models\Enrollments();
+        $std = $enroll->getStudentByEnrollId($request['id']);
+        $batch = new \App\Models\Batches();
+        $batch = $batch->getBatchByEnrollId($request['id']);
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseByBatchId($batch['id']);
+        $email = new \App\Controllers\EmailController();
+        $email->sendEmail('registration_verify', [
+            'email_to' => $std['email'],
+            'course' => $course['course_name'],
+            'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+        ]);
         if($std){
             redirectWithMessage(app_url('admin').'/enrollments/pending_manage', 'Enrollments Status Changed to Paid', 'pendingstatus');
         }else{
@@ -71,10 +83,8 @@ class EnrollmentsController
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html');
         View::render('backend/academics/enrollments/add_new_enrollments.html' , [
-            'std' => $std
-        ,
-            'courses' => $course
-        ,
+            'std' => $std,
+            'courses' => $course,
         	'batches'=> $batches
         ]);
         View::render('backend/layouts/script.html');
@@ -94,13 +104,21 @@ class EnrollmentsController
             // preparing data
             $data = [
                 ':batch_id' => clean_post('selectbatchesid'),
-                ':course_id' => clean_post('selectcoursesid'),
                 ':student_id' => clean_post('selectstudentsid'),
                 ':fee_receipt' => $response
             ];
 
             $enrollments = new \App\Models\Enrollments();
             $enrollments->InsertEnrollments($data);
+            $course = new \App\Models\Courses();
+            $course = $course->getCourseByBatchId($data[':batch_id']);
+            $email = new \App\Controllers\EmailController();
+            $std = new \App\Models\Students();
+            $std = $std->getStudentsById($data[':student_id']);
+            $email->sendEmail('registration', [
+                'email_to' => $std['email'],
+                'course' => $course['course_name']
+            ]);
             redirectWithMessage(
                 app_url('admin').'/enrollments/add_new_enrollments',
                 'Student Profile Created Successfully',

@@ -17,7 +17,7 @@ class Notifications extends \Core\Model
     public function delete_notification($id){
         $db = static::getDB();
         $stmt = $db->prepare("UPDATE notification SET
-                message=' ' Where id=:id");
+                message='' Where id=:id");
         if($stmt->execute([':id' => $id])){
             return true;
         }else{
@@ -30,11 +30,12 @@ class Notifications extends \Core\Model
         $db = static::getDB();
         $stmt = $db->prepare("UPDATE notification SET
                 message=:message Where id=1");
-        if($stmt->execute($data)){
+        if ($stmt->execute($data)) {
             return true;
-        }else{
+        } else {
             return false;
         }
+
     }
 
 }

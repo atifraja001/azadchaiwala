@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="" />
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="Email Code added tot the">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/enrollment_images/157865904617583145955e186ce6014ef.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/enrollment_images/157865914218345246435e186d464cfd3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/enrollment_images/157865930714477844485e186dead7957.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/enrollment_images/157865935011744520205e186e15c4e82.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/student_images/15786590306407078085e186cd65c6c9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/BatchesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/BatchesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/EmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/EmailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/EnrollmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/EnrollmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Batches.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Batches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Enrollments.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Enrollments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Notifications.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Notifications.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/management/notification/manage_notification.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/management/notification/manage_notification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +38,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -29,14 +50,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1VglLDPHxEEt79zWXx6X0252q11" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -79,12 +105,26 @@
       <workItem from="1578459636199" duration="23842000" />
       <workItem from="1578545431506" duration="16515000" />
       <workItem from="1578632109042" duration="661000" />
-      <workItem from="1578639960008" duration="2500000" />
+      <workItem from="1578639960008" duration="8244000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -107,6 +147,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1578659502956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659502956" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

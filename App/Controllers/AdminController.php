@@ -37,7 +37,7 @@ class AdminController
 
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['dashboard'=>'active']);
-        return View::render('backend/dashboard.html', [
+        View::render('backend/dashboard.html', [
             'std'=>$std, 'teach'=>$teach, 'course'=>$course, 'approved'=>$approved, 'pending'=>$pending,
             'usr'=>$usr, 'faqs'=>$faqs, 'all'=>$all
             ]

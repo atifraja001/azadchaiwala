@@ -87,4 +87,10 @@ class Batches extends \Core\Model
         $stmt->execute([':course_id' => $course_id]);
         return $stmt->fetchAll();
     }
+    public function getBatchByEnrollId($enroll_id){
+        $db = static::getDB();
+        $stmt= $db->prepare("SELECT * FROM batches WHERE id IN (SELECT batch_id FROM enrollments WHERE id = :id)");
+        $stmt->execute([':id' => $enroll_id]);
+        return $stmt->fetch();
+    }
 }

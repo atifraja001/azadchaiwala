@@ -59,11 +59,11 @@ class EmailController
             $content = $this->feedback($data['name'], $data['email'], $data['course'], $data['message']);
         }else if($type == 'registration_verify'){
             /*
-             * Required {start_date, course}
+             * Required {email_to, start_date, course}
              */
             $to = $data['email_to']; // send to user
             $subject = 'Your Registration Verified - AzadChaiwala.pk';
-            $content = $this->RegistrationVerified($data['name'], $data['email'], $data['course'], $data['message']);
+            $content = $this->RegistrationVerified($data['start_date'], $data['course']);
         }else if($type == "batch"){
             /*
              * Required {message}
@@ -88,7 +88,6 @@ class EmailController
             $to = \App\Config::EMAIL; // send to admin
             $subject = 'Backup Update from AzadChaiwala.pk';
         }
-        echo $content; die;
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";

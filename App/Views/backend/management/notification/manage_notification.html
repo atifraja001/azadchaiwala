@@ -13,11 +13,11 @@
                 </div>
                 <div class="card-body">
                     <?=showMsg('notification');?>
-                    <?php foreach($notification as $n){ ?>
-                    <?=html_entity_decode($n['message'])?>
+                    <?php $noti_id = 0; foreach($notification as $n){ $noti_id = $n['id']; ?>
+                        <?=html_entity_decode($n['message'])?>
                     <?php } ?>
                     <b class="ml-5 text-left">
-                        <a href="<?=app_url('admin')?>/notification/delete-notification/<?=$n['id']?>"
+                        <a href="<?=app_url('admin')?>/notification/delete-notification/<?=$noti_id?>"
                            class="badge badge-danger"
                            onclick="return confirm('Are you Sure to Delete the Notification')">
                             <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>

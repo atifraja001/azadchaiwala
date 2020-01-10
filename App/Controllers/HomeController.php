@@ -137,6 +137,13 @@ class HomeController extends \Core\Controller
             ];
             $enrollments = new \App\Models\Enrollments();
             $enrollments->InsertEnrollmentsByStudent($enroll_data);
+            $course = new \App\Models\Courses();
+            $course = $course->getCourseByBatchId($enroll_data[':batch_id']);
+            $email = new \App\Controllers\EmailController();
+            $email->sendEmail('registration', [
+                'email_to' => $student_data[':email'],
+                'course' => $course['course_name']
+            ]);
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Thank you joining AzadChaiwala Institute. You will get email for further Information', 'course_registration');
         } else {
             $checkenroll = new \App\Models\Enrollments();
@@ -151,12 +158,12 @@ class HomeController extends \Core\Controller
                 ];
                 $enrollments = new \App\Models\Enrollments();
                 $enrollments->InsertEnrollmentsByStudent($enroll_data);
+                $course = new \App\Models\Courses();
+                $course = $course->getCourseByBatchId($enroll_data[':batch_id']);
                 $email = new \App\Controllers\EmailController();
-                $email = $email->sendEmail('registration', [
-                    'name' => $data[':name'],
-                    'email' => $data[':email'],
-                    'course' => $course['course_name'],
-                    'message' => $data[':message']
+                $email->sendEmail('registration', [
+                    'email_to' => $std['email'],
+                    'course' => $course['course_name']
                 ]);
                 redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Thank you joining AzadChaiwala Institute. You will get email for further Information', 'course_registration');
             } else {
@@ -264,7 +271,7 @@ class HomeController extends \Core\Controller
                     'name' => $data[':name'],
                     'email' => $data[':email'],
                     'subject' => $data[':subject'],
-                    'message' => $data[':message']
+                    'message' => $data[':message_text']
                 ]);
                 $data['msg']="Thank you for your message. We will shortly contact you";
                 $data['response']='success';
