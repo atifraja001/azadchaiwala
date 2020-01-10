@@ -147,14 +147,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1578659502956">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1578659551208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659502956" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659551208" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1920.1040@0.0.1920.1040" timestamp="1577882094131" />
+    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1578659598295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578659598295" />
     <state x="704" y="335" key="NewPhpClassDialog" timestamp="1578553912671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -167,6 +171,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578380017985" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1578659556995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659556995" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578379740279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
