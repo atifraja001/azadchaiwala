@@ -1,0 +1,43 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage <b>Notification</b></h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary rounded-0">
+                <div class="card-header bg-danger text-light rounded-0 font-weight-bold">
+                    This is shown right now in message
+                </div>
+                <div class="card-body">
+                    <?=showMsg('notification');?>
+                    <?php foreach($notification as $n){ ?>
+                    <?=html_entity_decode($n['message'])?>
+                    <?php } ?>
+                    <b class="ml-5 text-left">
+                        <a href="<?=app_url('admin')?>/notification/delete-notification/<?=$n['id']?>"
+                           class="badge badge-danger"
+                           onclick="return confirm('Are you Sure to Delete the Notification')">
+                            <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                        </a>
+                    </b>
+                </div>
+            </div>
+            <form method="post" action="<?=app_url('admin')?>/notification/edit-new-notification-post" class="needs-validation mt-5" novalidate>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Write Notification </label>
+                            <textarea class="form-control " name="message" value="" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Chnage Notification</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

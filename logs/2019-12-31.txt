@@ -1,0 +1,60 @@
+[31-Dec-2019 12:49:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:31 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:53 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:53 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:49:54 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:00 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:00 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:00 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[31-Dec-2019 12:50:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(52): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129

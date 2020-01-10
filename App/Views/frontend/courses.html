@@ -1,0 +1,27 @@
+<!-- course section -->
+	<section >
+		<div class="courses">
+			<div class="container courh">
+				<h2>COURSES</h2>
+				<div class="divider"></div>
+				<div class="row">
+					<?php foreach($courses as $c){ ?>
+					<div class="col-lg-4 col-md-4">
+						<div class="courinner">
+							<div class="courseimage">
+								<a href="<?=app_url()?>/course/<?=$c['slug'];?>"><img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" class="img-fluid"></a>
+							</div>
+							<div class="cour-text">
+								<h3><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
+
+								<p><?=add3Dots($c['course_description'], 130)?></p>
+								<a href="<?=app_url()?>/course/<?=$c['slug'];?>">Explore More</a>
+							</div>
+						</div>
+					</div>
+					<?php } ?> 
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- course section end -->

@@ -1,0 +1,58 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Feedbacks</h1>
+
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('feedback');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>feedback</th>
+                                <th>Created at</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                                $sn = 1;
+                                foreach($feedbacks as $f){
+                                ?>
+                            <tr>
+                                <?php
+                                    $course = new \App\Models\Courses();
+                                    $course = $course->getCourseById($f['course_id']);
+                                ?>
+                                <td><?=$sn?></td>
+                                <td><a href="<?=app_url('admin');?>/courses/view-course/<?=$f['course_id']?>"><small><?=$course['course_name']?></small></a></td>
+                                <td><?=$f['name']?></td>
+                                <td><?=$f['email']?></td>
+                                <td><?=html_entity_decode($f['feedback_text'])?></td>
+                                <td><?=$f['created_at']?></td>
+                                <td>
+                                    <a href="<?=app_url('admin')?>/feedback/delete-feedback/<?=$f['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Feedback')">
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add New Student</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <form method="post" enctype="multipart/form-data" action="<?=app_url('admin')?>/students/add_new_student_post" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Name</label>
+                                            <input type="text" autofocus class="form-control" pattern="[a-zA-Z_ ]+" placeholder="Enter Student Name" required name="student_name">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid student name</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Father Name</label>
+                                            <input type="text" class="form-control" pattern="[a-zA-Z_ ]+" placeholder="Enter Student's Father Name" required name="father_name">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid father name</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <select class="form-control" name="gender" required>
+                                                <option hidden value="">Select Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please select a gender</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Date of Birth</label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" name="day" required>
+                                                <option hidden value="">Day</option>
+                                                <?php for($i = 1; $i<=31; $i++){ ?>
+                                                    <option><?=$i?></option>
+                                                <?php } ?>
+                                            </select>
+                                            <select class="form-control" name="month" required>
+                                                <option hidden value="">Month</option>
+                                                <?php for($i = 1; $i<=12; $i++){ ?>
+                                                    <option><?=$i?></option>
+                                                <?php } ?>
+                                            </select>
+                                            <select class="form-control" name="year" required>
+                                                <option hidden value="">Year</option>
+                                                <?php for($i = date('Y')-50; $i <= date('Y'); $i++){ ?>
+                                                    <option><?=$i?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student CNIC</label>
+                                            <input type="text" class="form-control" name="cnic" pattern=".{15,15}" placeholder="Enter Student CNIC" required id="cnic">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid CNIC</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Email</label>
+                                            <input type="text" class="form-control" name="email" placeholder="Enter Student Email" required id="email" data-inputmask="'alias': 'email'" >
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid email Address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Mobile Number</label>
+                                            <input type="text" class="form-control" pattern=".{12,12}" placeholder="Enter Student Contact Number" required id="phone" name="mobile_number">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid Mobile Number</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Profile Picture</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="profile_picture" id="profile_picture" required accept="image/x-png,image/jpeg" >
+                                                <label class="custom-file-label" for="profile_picture">Choose file</label>
+                                                <div class="valid-feedback">Looks Good.</div>
+                                                <div class="invalid-feedback">Please enter a valid file format</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Student Address</label>
+                                            <input type="text" class="form-control" placeholder="Enter Student Address" required name="address">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid Address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <label>Profile Image Preview</label><br>
+                            <img id="view_image" for="profile_picture" src="<?=app_url()?>/assets/img/azad_avatar.png" alt="your image" class="img-fluid img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

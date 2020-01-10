@@ -1,0 +1,71 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex  align-items-center justify-content-between  mb-4">
+        <h1 class="h3 mb-0 text-gray-800">View Student - <?=$std['name'];?></h1>
+        <a href="<?=app_url('admin')?>/students/edit-student/<?=$std['id']?>" class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+              <i class="fas fa-user-edit fa-sm text-white-50"></i>
+            </span>
+            <span class="text">Edit Student</span>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                <tr>
+                                    <td width="20%" class="bg-primary text-white">Student Name</td>
+                                    <td width="30%"><b><?=ucfirst($std['name']);?></b></td>
+                                    <td width="20%" class="bg-primary text-white">Father Name</td>
+                                    <td width="30%"><b><?=ucfirst($std['fname']);?></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="bg-primary text-white">Gender</td>
+                                    <td width="30%"><b><?=ucfirst($std['gender']);?></b></td>
+                                    <td width="20%" class="bg-primary text-white">Date of Birth</td>
+                                    <td width="30%"><b><?=$std['date_of_birth'];?></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="bg-primary text-white">CNIC</td>
+                                    <td width="30%"><b><?=$std['cnic'];?></b></td>
+                                    <td width="20%" class="bg-primary text-white">Email</td>
+                                    <td width="30%"><b><?=$std['email'];?></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" class="bg-primary text-white">Contact</td>
+                                    <td width="30%"><b><?=$std['mobile_number'];?></b></td>
+                                    <td width="20%" class="bg-primary text-white">Address</td>
+                                    <td width="30%"><b><?=$std['address'];?></b></td>
+                                </tr>
+                            </table>
+                            </div>
+                        </div>
+                        <div class="col-13 col-lg-4 col-md-6">
+                            <img class="img-thumbnail img-fluid" src="<?=app_url()?>/assets/student_images/<?=$std['picture'];?>" style="height: 200px !important;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="card-title">Student Enrollement</h4>
+                            // table will appear here for the enrollment
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

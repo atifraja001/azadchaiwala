@@ -1,0 +1,155 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Edit Student - <a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"><?=$std['name']?></a></h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <?=showMsg('student');?>
+                            <form method="post" enctype="multipart/form-data" action="<?=app_url('admin')?>/students/edit_student_post" class="needs-validation" novalidate>
+                                <input type="hidden" value="<?=$std['id'];?>" name="id">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Name</label>
+                                            <input type="text" autofocus value="<?=$std['name'];?>" class="form-control" pattern="[a-zA-Z_ ]+" placeholder="Enter Student Name" required name="student_name">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid student name</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Father Name</label>
+                                            <input type="text" class="form-control" value="<?=$std['fname'];?>" pattern="[a-zA-Z_ ]+" placeholder="Enter Student's Father Name" required name="father_name">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid father name</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <select class="form-control" name="gender" required>
+                                                <option value="male" <?=($std['gender'] == 'male') ? "selected":""?>>Male</option>
+                                                <option value="female" <?=($std['gender'] == 'female') ? "selected":""?>>Female</option>
+                                                <option value="other" <?=($std['gender'] == 'other') ? "selected":""?>>Other</option>
+                                            </select>
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please select a gender</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Date of Birth</label>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control" name="day" required>
+                                                <option hidden value="">Day</option>
+                                                <?php
+                                                   $dob = explode("-", $std['date_of_birth']);
+                                                for($i = 1; $i<=31; $i++){
+                                                if($i == $dob[2]){
+                                                ?>
+                                                    <option selected><?=$i?></option>
+                                                <?php }else{ ?>
+                                                    <option><?=$i?></option>
+                                                <?php } } ?>
+                                            </select>
+                                            <select class="form-control" name="month" required>
+                                                <option hidden value="">Month</option>
+                                                <?php for($i = 1; $i<=12; $i++){
+                                                if($i == $dob[1]){
+                                                ?>
+                                                <option selected><?=$i?></option>
+                                                <?php }else{ ?>
+                                                <option><?=$i?></option>
+                                                <?php } } ?>
+                                            </select>
+                                            <select class="form-control" name="year" required>
+                                                <option hidden value="">Year</option>
+                                                <?php for($i = date('Y')-50; $i <= date('Y'); $i++){
+                                                if($i == $dob[0]){
+                                                ?>
+                                                <option selected><?=$i?></option>
+                                                <?php }else{ ?>
+                                                <option><?=$i?></option>
+                                                <?php } } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student CNIC</label>
+                                            <input type="text" class="form-control" value="<?=$std['cnic'];?>" name="cnic" pattern=".{15,15}" placeholder="Enter Student CNIC" required id="cnic">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid CNIC</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Email</label>
+                                            <input type="text" class="form-control" value="<?=$std['email'];?>" name="email" placeholder="Enter Student Email" required id="email" data-inputmask="'alias': 'email'" >
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid email Address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Student Mobile Number</label>
+                                            <input type="text" class="form-control" value="<?=$std['mobile_number'];?>" pattern=".{12,12}" placeholder="Enter Student Contact Number" required id="phone" name="mobile_number">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid Mobile Number</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Profile Picture</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="profile_picture" id="profile_picture" accept="image/x-png,image/jpeg" >
+                                                <label class="custom-file-label" for="profile_picture">Choose file</label>
+                                                <div class="valid-feedback">Looks Good.</div>
+                                                <div class="invalid-feedback">Please enter a valid file format</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Student Address</label>
+                                            <input type="text" class="form-control" value="<?=$std['address'];?>" placeholder="Enter Student Address" required name="address">
+                                            <div class="valid-feedback">Looks Good.</div>
+                                            <div class="invalid-feedback">Please enter a valid Address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <label>Profile Image Preview</label><br>
+                            <img id="view_image" for="profile_picture" src="<?=app_url()?>/assets/student_images/<?=$std['picture'];?>" alt="your image" class="img-fluid img-thumbnail">
+                            <br><br><b>Instruction:</b>
+                            <li>Do not select profile picture if you not want to update</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

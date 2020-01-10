@@ -1,0 +1,145 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">View Batch - <?=$batch['name'];?> (<?=$course['course_name'];?>)</h1>
+        <a href="<?=app_url('admin')?>/batches/manage">
+            <button class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                  <i class="fas fa-backspace fa-sm text-white-50"></i>
+                </span>
+                <span class="text">Batch to Manage Batches</span>
+            </button>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('batches');?>
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-md-6">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td width="20%" class="bg-primary text-white">Batch Name</td>
+                                        <td width="30%"><b><?=$batch['name']?></b></td>
+                                        <td width="20%" class="bg-primary text-white">Course Name</td>
+                                        <td width="30%"><b><?=$course['course_name'];?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="20%" class="bg-primary text-white">Days Duration</td>
+                                        <td width="30%"><b><?=$batch['start_date'];?> - <?=$batch['end_date'];?></b></td>
+                                        <td width="20%" class="bg-primary text-white">Total Days</td>
+                                        <td width="30%"><b><?=daysdiff($batch['start_date'], $batch['end_date']); ?></b> Days</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="20%" class="bg-primary text-white">Hours Duration</td>
+                                        <td width="30%"><b><?=date('h:i A', strtotime($batch['start_time']));?> - <?=date('h:i A', strtotime($batch['end_time']));?></b></td>
+                                        <td width="20%" class="bg-primary text-white">Total Hours</td>
+                                        <td width="30%"><b><?=hoursdiff($batch['start_time'], $batch['end_time']); ?></b> hours</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-13 col-lg-4 col-md-6">
+                            <label>Enrolled / Total Students</label> <br>
+                            <span style="font-size: 92px"><?=$total_enrolled?></span><span style="font-size: 26px;">/<?=$batch['total_students']?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-6">
+            <div class="card border-left-info">
+                <div class="card-body">
+                    <h4>Pending Enrollments</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Fee Receipt</th>
+                                    <th>Status</th>
+                                    <th>Enrolled At</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($pending_enrollments as $pe){ ?>
+                                <tr>
+                                    <td><?=$pe['name'];?></td>
+                                    <td><?=$pe['fee_receipt'];?></td>
+                                    <td>
+                                        <label class="badge badge-danger">Pending</label>
+                                     </td>
+                                    <td><?=date("d-m-Y", strtotime($pe['created_at']));?></td>
+                                    <td>
+                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$batch['id'];?>/<?=$pe['id']?>/1">
+                                            <button type="button" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-check"></i> Approve
+                                            </button>
+                                        </a>
+                                        <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$batch['id'];?>/<?=$pe['id']?>" onclick="return confirm('Do you want to delete?')">
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                    <h4>Approved Enrollments</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Fee Receipt</th>
+                                <th>Status</th>
+                                <th>Enrolled At</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($approved_enrollments as $ae){ ?>
+                            <tr>
+                                <td><?=$ae['name'];?></td>
+                                <td><?=$ae['fee_receipt'];?></td>
+                                <td>
+                                    <label class="badge badge-primary">Approved</label>
+                                </td>
+                                <td><?=date("d-m-Y", strtotime($ae['created_at']));?></td>
+                                <td>
+                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$batch['id'];?>/<?=$ae['id']?>/0">
+                                        <button type="button" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-times"></i> Reject
+                                        </button>
+                                    </a>
+                                    <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$batch['id'];?>/<?=$ae['id']?>" onclick="return confirm('Do you want to delete?')">
+                                        <button type="button" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

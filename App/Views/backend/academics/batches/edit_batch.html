@@ -1,0 +1,91 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Edit Batch - <?=$batch['name'];?></h1>
+        <a href="<?=app_url('admin')?>/batches/manage">
+            <button class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                  <i class="fas fa-backspace fa-sm text-white-50"></i>
+                </span>
+                <span class="text">Batch to Manage Batches</span>
+            </button>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('batches');?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Attention:</strong> Changing these information effect the overall functionally of this batch. some are listed below</strong>
+                        <li>Make Sure No Student is Enrolled before editing this information</li>
+                        <li>Changing Batch Course will shift all student to new selected course.</li>
+                        <li>Do not lower the Batch limit if students are already enrolled</li>
+                        <li>Starting date must be greater then today date (Limit is activated)</li>
+                    </div>
+                    <form method="post" action="<?=app_url('admin')?>/batches/edit-batch-post" class="needs-validation" novalidate>
+                        <input type="hidden" name="batch_id" value="<?=$batch['id'];?>">
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Courses</label>
+                                <div class="input-group mb-3">
+                                    <select class="form-control select2" name="course_id" placeholder="Select Course" required>
+                                        <option></option>
+                                        <?php foreach($courses as $course){ ?>
+                                        <?php if($batch['course_id'] == $course['id']){ ?>
+                                            <option value="<?=$course['id'];?>" selected><?=$course['course_name'];?></option>
+                                        <?php }else{ ?>
+                                        <option value="<?=$course['id'];?>"><?=$course['course_name'];?></option>
+                                        <?php } ?>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>Batch Limit <small>Student Enorllement <b>may</b> get affected by lowering this number</small></label>
+                                    <input type="number" class="form-control" value="<?=$batch['total_students']?>" placeholder="Number of Students" required name="total_students">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>Batch Name</label>
+                                    <input type="text" name="batch_name" value="<?=$batch['name']?>" class="form-control" placeholder="Enter Content Title"  required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Select Start and End Date</label>
+                                    <div class="input-daterange input-group">
+                                        <input type="text" class="form-control" value="<?=date('d-m-Y', strtotime($batch['start_date']));?>" name="start_date" required placeholder="Start Date">
+                                        <input type="text" class="form-control" value="<?=date('d-m-Y', strtotime($batch['end_date']));?>" name="end_date" required placeholder="End Date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Start Time <small>24h</small></label>
+                                    <input type="text" name="start_time" value="<?=date('H:i', strtotime($batch['start_time']));?>" class="form-control clockpicker" placeholder="Enter Start Time"  required>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>End Time <small>24h</small></label>
+                                    <input type="text" name="end_time" value="<?=date('H:i', strtotime($batch['end_time']));?>" class="form-control clockpicker" placeholder="Enter End Time"  required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

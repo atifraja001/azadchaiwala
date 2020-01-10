@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1VglLDPHxEEt79zWXx6X0252q11" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="" />
+      <created>1577682561446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577682561446</updated>
+      <workItem from="1577682565133" duration="23848000" />
+      <workItem from="1577713704611" duration="64000" />
+      <workItem from="1577717771820" duration="920000" />
+      <workItem from="1577767539616" duration="27492000" />
+      <workItem from="1577857687098" duration="20719000" />
+      <workItem from="1577885706600" duration="23000" />
+      <workItem from="1577942091855" duration="19597000" />
+      <workItem from="1577971834550" duration="25000" />
+      <workItem from="1578027631241" duration="20431000" />
+      <workItem from="1578285748164" duration="26692000" />
+      <workItem from="1578375195763" duration="3658000" />
+      <workItem from="1578379734797" duration="15766000" />
+      <workItem from="1578458876210" duration="815000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#Composer" timestamp="1577696579920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#Composer/0.0.1920.1040@0.0.1920.1040" timestamp="1577696579920" />
+    <state x="716" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577783921236">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="716" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577783921236" />
+    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577858130729">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577858130729" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577958356489">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577958356489" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577870787742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1920.1040@0.0.1920.1040" timestamp="1577882094131" />
+    <state x="704" y="335" key="NewPhpClassDialog" timestamp="1578394863092">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578394863092" />
+    <state x="795" y="444" key="NewPhpFileDialog" timestamp="1578382569686">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="795" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578382569686" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1578380017985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578380017985" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578379740279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578379740279" />
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1578031930139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1578031930139" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1578307573584">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578307573584" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578304909382">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578304909382" />
+  </component>
+</project>

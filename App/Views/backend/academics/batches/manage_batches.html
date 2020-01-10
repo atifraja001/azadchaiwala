@@ -1,0 +1,148 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Batches</h1>
+        <button class="d-none d-sm-inline-block btn btn-primary btn-icon-split" data-toggle="modal" data-target="#add_batch_content">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus-circle fa-sm text-white-50"></i>
+                    </span>
+            <span class="text">Add New Batch</span>
+        </button>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('batches');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Batch Name</th>
+                                <th>Course Name</th>
+                                <th>No. of Students</th>
+                                <th>Start Date / End Date</th>
+                                <th>Start Time / End Time</th>
+                                <th>Created At</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                $sn = 1;
+                                $enrolled = new \App\Models\Batches();
+                                foreach($batches as $b){ ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td class="text-center">
+                                    <p class="text-center"><?=$b['name'];?></p>
+                                    <a href="<?=app_url('admin');?>/batches/view-batches/<?=$b['id'];?>">View Details</a>
+                                    / <a href="<?=app_url('admin');?>/batches/edit-batch/<?=$b['id'];?>">Edit</a>
+                                    / <a href="<?=app_url('admin');?>/batches/delete-batch/<?=$b['id'];?>" onclick="return confirm('Are you Sure? all Enrollments will also get deleted')">Delete</a>
+                                </td>
+                                <td><a href="<?=app_url('admin');?>/courses/view-course/<?=$b['course_id']?>"><?=$b['course_name'];?></a></td>
+                                <td><?=$enrolled->countEnrolledStudents($b['id']);?> / <?=$b['total_students'];?></td>
+                                <td><?=date('d-m-Y', strtotime($b['start_date']));?>
+                                    / <?=date('d-m-Y', strtotime($b['end_date']));?>
+                                <br>
+                                    <b><?=daysdiff($b['start_date'], $b['end_date']); ?></b> <small>Days in total</small>
+                                </td>
+                                <td><?=date('h:i A', strtotime($b['start_time']));?>
+                                    / <?=date('h:i A', strtotime($b['end_time']));?> <br>
+                                    <b><?=hoursdiff($b['start_time'], $b['end_time']); ?></b> <small>Hours in total</small>
+                                </td>
+                                <td><?=date('d-m-Y', strtotime($b['created_at']));?></td>
+                                <td>
+                                    <?php if(strtotime($b['start_date']) < time()){ ?>
+                                        <label class="badge badge-success">In Progress</label>
+                                    <?php }else if(strtotime($b['end_date']) < time()){ ?>
+                                    <label class="badge badge-danger">Ended</label>
+                                    <?php }else if(strtotime($b['start_date']) > time()){ ?>
+                                        <label class="badge badge-primary" style="font-size: 16px">Starts in <?=daysdiff(date('Y-m-d'), $b['start_date'])?> Days</label>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Content Modal -->
+<div class="modal fade" id="add_batch_content">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Batch Content</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/batches/add-new-batch-post" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Courses</label>
+                            <div class="input-group mb-3">
+                                <select class="form-control select2" name="course_id" placeholder="Select Course" required>
+                                    <option></option>
+                                    <?php foreach($courses as $course){ ?>
+                                        <option value="<?=$course['id'];?>"><?=$course['course_name'];?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Batch Limit</label>
+                                <input type="number" class="form-control" placeholder="Number of Students" required name="total_students">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Batch Name</label>
+                                <input type="text" name="batch_name" class="form-control" placeholder="Enter Content Title"  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Select Start and End Date</label>
+                                <div class="input-daterange input-group">
+                                    <input type="text" class="form-control" name="start_date" required placeholder="Start Date">
+                                    <input type="text" class="form-control" name="end_date" required placeholder="End Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>Start Time <small>24h</small></label>
+                                <input type="text" name="start_time" class="form-control clockpicker" placeholder="Enter Start Time"  required>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>End Time <small>24h</small></label>
+                                <input type="text" name="end_time" class="form-control clockpicker" placeholder="Enter End Time"  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

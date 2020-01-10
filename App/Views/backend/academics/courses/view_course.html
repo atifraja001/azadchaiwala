@@ -1,0 +1,314 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex  align-items-center justify-content-between  mb-4">
+        <h1 class="h3 mb-0 text-gray-800">View Course - <?=$c['course_name'];?></h1>
+        <a href="<?=app_url('admin')?>/courses/edit-course/<?=$c['id']?>" class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+              <i class="fas fa-user-edit fa-sm text-white-50"></i>
+            </span>
+            <span class="text">Edit Course</span>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <?=showMsg('course');?>
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td width="20%" class="bg-primary text-white">Course Name</td>
+                                        <td width="30%"><b><?=ucfirst($c['course_name']);?></b></td>
+                                        <td width="20%" class="bg-primary text-white">Order Number</td>
+                                        <td width="30%"><b><?=$c['order_number'];?></b></td>
+                                    </tr>
+                                <tr>
+                                    <td width="10%" class="bg-primary text-white">Teacher Name</td>
+                                    <td width="15%"><b><a href="#" class="teacher-tooltip hover-link" data-id="<?=$c['teacher_id']?>"><?=$c['name'];?></a></b></td>
+                                    <td width="10%" class="bg-primary text-white">Daily Hours</td>
+                                    <td width="15%"><b><?=$c['lecture_hours_per_day'];?> <small>Hours</small></b></td>
+
+                                </tr>
+                                <tr>
+                                    <td width="10%" class="bg-primary text-white">Duration</td>
+                                    <td width="15%"><b><?=$c['duration'];?></b></td>
+                                    <td width="10%" class="bg-primary text-white">Semester</td>
+                                    <td width="15%"><b><?=$c['semester'];?></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="10%" class="bg-primary text-white">Fee</td>
+                                    <td width="15%"><b><?=number_format($c['fee']);?> <small>pkr</small></b></td>
+                                    <td width="10%" class="bg-primary text-white">Created</td>
+                                    <td width="15%"><b><?=date('d-m-Y', strtotime($c['created_at']));?></b></td>
+                                </tr>
+                                <tr>
+                                    <td width="10%" class="bg-primary text-white">Fee in Words</td>
+                                    <td colspan="3"><b><?=getPakCurrency($c['fee']);?></b></td>
+                                </tr>
+                            </table>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-3">
+                            <label>Course Picture Preview</label><br>
+                            <img class="img-thumbnail img-fluid" src="<?=app_url()?>/assets/course_images/<?=$c['course_picture'];?>" style="height: 200px !important;">
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-3">
+                            <label>Video Preview</label><br>
+                            <iframe width="100%" height="200px" id="youtube_link" src="https://www.youtube.com/embed/<?=$c['youtube_embed'];?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-7">
+            <div class="card border-left-danger mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Course Outline
+                        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#add_course_content">
+                            <i class="fas fa-plus"></i> Add Course Content
+                        </button>
+                    </h4>
+                    <div class="table-responsive">
+                        <?php $sn=1; foreach($course_content as $cc){ ?>
+                        <div class="card mt-4 border-left-primary border-bottom-primary">
+                            <div class="card-body">
+                                <h4><?=$sn++?>.
+                                    <?=$cc['content_title'];?>
+                                    <span class="float-right" style="font-size: 18px">( <?=$cc['duration'];?> )</span>
+                                </h4>
+                                <div class="">
+                                    <?=html_entity_decode ($cc['content_description']);?>
+                                </div>
+                                <div class="float-right">
+                                    <?php $ex = explode(" ", $cc['duration']);
+                                          $number = $ex[0];
+                                          $option = str_replace("s", "", $ex[1]);
+                                    ?>
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm"
+                                            data-toggle="modal"
+                                            data-target="#edit_course_content"
+                                            data-position="<?=$cc['position'];?>"
+                                            data-content_title="<?=$cc['content_title'];?>"
+                                            data-number="<?=$number?>"
+                                            data-option="<?=$option?>"
+                                            data-content_id="<?=$cc['id'];?>"
+                                            data-content_description="<?=$cc['content_description'];?>">
+                                        <i class="fas fa-pen"></i>
+                                        Edit
+                                    </button>
+                                    <a href="<?=app_url('admin')?>/courses/view-course/delete-content/<?=$cc['id'];?>" onclick="return confirm('Are you sure you want to delete?')">
+                                        <button type="button" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i> Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card border-left-info">
+                <div class="card-body">
+                    <h4 class="card-title">Terms and Conditions
+                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#add_tc">
+                            <i class="fas fa-plus"></i> Add T&C
+                        </button>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Detail</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php $sn = 1; foreach($course_tc as $tc){ ?>
+                            <tr>
+                                <td><?=$sn++;?></td>
+                                <td>
+                                    <?=$tc['detail'];?>
+                                    <br>
+                                    <a href="<?=app_url('admin')?>/courses/view-course/delete-tac/<?=$tc['id'];?>" onclick="return confirm('Are you sure?');">Delete</a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Add Content Modal -->
+<div class="modal fade" id="add_course_content">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Course Content</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/courses/view-course/post-content" class="needs-validation" novalidate>
+                    <input type="hidden" value="<?=$c['id'];?>" name="course_id">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="number" name="position" class="form-control" placeholder="Position"  required>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <label>Select Duration</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="duration_number" placeholder="Ex. 1.5" required pattern="[0-9-.]+">
+                                <select class="form-control" name="duration_option" required>
+                                    <option value="" hidden>Select Option</option>
+                                    <option>Minute</option>
+                                    <option>Hour</option>
+                                    <option>Day</option>
+                                    <option>Week</option>
+                                    <option>Month</option>
+                                    <option>Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" name="content_title" class="form-control" placeholder="Enter Content Title"  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Content Details <small class="text-danger">Required</small></label>
+                                <textarea rows="7" class="form-control tinymce" name="content_description" required></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal fade" id="add_tc">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Terms and Conditions</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/courses/view-course/post-tac" class="need-validation" novalidate>
+                    <input type="hidden" value="<?=$c['id'];?>" name="course_id">
+                    <div class="form-group">
+                        <label>Enter Detail</label>
+                        <input type="text" placeholder="Enter Term and Condition Detail" class="form-control" name="detail" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Edit Course Content -->
+<!-- Add Content Modal -->
+<div class="modal fade" id="edit_course_content">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Course Content</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/courses/view-course/edit-content" class="needs-validation" novalidate>
+                    <input type="hidden" value="" name="content_id" id="content_id">
+                    <input type="hidden" value="<?=$c['id'];?>" name="course_id">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="number" name="position" class="form-control" id="position" placeholder="Position" required>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <label>Select Duration</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="duration_number" name="duration_number" placeholder="Ex. 1.5" required pattern="[0-9-.]+">
+                                <select class="form-control" id="duration_option" name="duration_option" required>
+                                    <option value="" hidden>Select Option</option>
+                                    <option>Minute</option>
+                                    <option>Hour</option>
+                                    <option>Day</option>
+                                    <option>Week</option>
+                                    <option>Month</option>
+                                    <option>Year</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" name="content_title" id="content_title" class="form-control" placeholder="Enter Content Title"  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Content Details <small class="text-danger">Required</small></label>
+                                <textarea rows="7" class="form-control tinymce" name="content_description" required  id="content_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<section class="contactpagetopsection">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.923279834509!2d73.77634541495858!3d33.13738007283096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391febbb74ae0061%3A0x56f1acb29bf7f3cb!2sAzad+Kashmir+Radio!5e0!3m2!1sen!2s!4v1559978325959!5m2!1sen!2s"
+            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+
+<section class="contactundersection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="assets/img/contact/contactus.svg" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <div class="contactundertext">
+                    <h3>Gernel information</h3>
+                    <div class="dividercontact"></div>
+                    <div class="genralinfodown">
+                        <div class="d-flex ginfodownunder">
+                            <i class="fa fa-map-marker"></i>
+                            <p>Sector F/3 Near Radio 101 Mirpur A.K</p>
+                        </div>
+                        <div class="d-flex ginfodownunder">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:+923448884899"><p>03448884899</p></a>
+                        </div>
+                        <div class="d-flex ginfodownunder">
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:info@azadchaiwala.com"><p>admin@azadchaiwala.pk</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section of contact us form -->
+<section class="contactform">
+    <div class="container text-center" id="contactformus">
+        <h1>Contact Us</h1>
+        <div class="row">
+
+            <div class="col-lg-6 offset-lg-3">
+
+                <div class="contact_from">
+                    <?=showMsg('contact');?>
+                    <div style="max-width : 100%; min-height: auto; display: none;" id="success">
+                        <div class="alert alert-light" role="alert">
+                            <div class="text-center" style="padding-bottom: 20px;">
+                                <i class="fas fa-check-circle fa-3x text-success" aria-hidden="true"></i>
+                            </div>
+                            <div class="alert-message text-center text-success">
+                                <span id="success_msg" class="text-success" style="font-size: 24px"></span>
+                            </div>
+                        </div>
+                    </div>
+					<div class="alert alert-danger alert-dismissible" role="alert" style="display: none;" id="error">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+                        <span id="error_msg"></span>
+					</div>
+
+                    <form action="" method="post" id="contact">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-6">
+                                <label for="validationTooltip01"></label>
+                                <input type="text" class="form-control cformfileds" name="name" id="validationTooltip01"
+                                       placeholder="Enter Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-12">
+                                <label for="validationTooltipUsername"></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text spanat"
+                                              id="validationTooltipUsernamePrepend"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control cformfileds" name="email"
+                                           id="validationTooltipUsername" placeholder="Enter Your Email Address"
+                                           aria-describedby="validationTooltipUsernamePrepend" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-12">
+                                <label for="validationTooltip03"></label>
+                                <input type="text" class="form-control cformfileds" name="subject"
+                                       id="validationTooltip03" placeholder="Enter Subject" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationTooltip04"></label>
+                                <textarea class="form-control cformfileds" rows="8" name="message_text"
+                                          id="validationTooltip04" placeholder="Enter Your Message" value="Mark"
+                                          required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <div class="g-recaptcha" data-sitekey="6LcFDsoUAAAAABS5LsQuamDsl66AXUXhy5D_GVoE"></div>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <button class="btn btn-primary buttonofcontact"  >Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end section of contat us form -->

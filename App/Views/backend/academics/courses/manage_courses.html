@@ -1,0 +1,49 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Courses</h1>
+        <a href="<?=app_url('admin')?>/courses/add-new-course" class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus-circle fa-sm text-white-50"></i>
+                    </span>
+            <span class="text">Add New Course</span>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('course');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course Name</th>
+                                <th>Teacher</th>
+                                <th>Duration</th>
+                                <th>Course Fee</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                $sn = 1;
+                                foreach($courses as $c){ ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td><a href="<?=app_url('admin');?>/courses/view-course/<?=$c['id'];?>"><?=$c['course_name'];?></a></td>
+                                <td><a href="#" class="teacher-tooltip hover-link" data-id="<?=$c['teacher_id']?>"><?=$c['name'];?></a></td>
+                                <td><?=$c['duration'];?></td>
+                                <td><?=number_format($c['fee'], 0);?> <small>pkr</small></td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

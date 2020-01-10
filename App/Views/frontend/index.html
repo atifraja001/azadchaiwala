@@ -1,0 +1,97 @@
+	<section class="topsec">
+		<div class="topsecd" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="topbanner" >
+							<h1>SKILL IS THE <span>NEW DEGREE</span></h1>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Don't waste your time and your parents hard earned money on useless, outdated, theory based degrees. We provide practical Classroom Based Training of IT Skills in as little as 2 weeks to a few months. Skills that are in huge demand within and outside of Pakistan. Enabling you to start earning only in a short period.</p>
+					</div>
+					<div class="col-lg-6" >
+						<div>
+							<p  class="urdu" style="line-height: initial;">
+							اپنا قیمتی وقت اور ماں باپ کی حلال کی کمائی فضول، پرانی اور صرف تھیوری پر مشتمل ڈگری پر ضائع نہ کریں۔ ہم آپ کو کلاس رومز میں بیٹھا کر دو ہفتے سے چند مہینوں میں وہ آئی ٹی سکلز سیکھاتے ہیں جو پاکستان اور بیرون ملک ڈیمانڈ میں بھی ہیں اور جن کی وجہ سے آپ کچھ ہی عرصہ میں کمانا شروع کر سکتے ہیں۔
+ 
+						</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- course section -->
+	<section >
+		<div class="courses">
+			<div class="container courh">
+				<h2>COURSES</h2>
+				<div class="divider"></div>
+				<div class="row">
+					<?php foreach($courses as $c){ ?>
+					<div class="col-lg-4 col-md-4">
+						<div class="courinner">
+							<div class="courseimage">
+								<a href="<?=app_url()?>/course/<?=$c['slug'];?>"><img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" class="img-fluid"></a>
+							</div>
+							<div class="cour-text">
+								<h3><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
+
+								<p><?=add3Dots($c['course_description'], 130)?></p>
+								<a href="<?=app_url()?>/course/<?=$c['slug'];?>">Explore More</a>
+							</div>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- course section end -->
+
+	<!-- review section end -->
+	<section id="testim" class="testim">
+		<div class="testim-cover">
+			<h2 style="color: white; text-align: center; padding-top: 50px;">WHAT <span style="color: var(--main-color); font-size: 2rem;">PEOPLE</span> SAY ABOUT AZAD CHAIWALA</h2>
+			<div class="divider"></div>
+			<div class="wrap">
+
+				<span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+				<span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+				<ul id="testim-dots" class="dots">
+
+					<?php $sn = 0; foreach($review as $r){ $sn++; if($sn == 1){
+	?>
+					<li class="dot active"></li>
+					<?php }else{ ?>
+					<li class="dot"></li>
+					<?php } } ?>
+
+				</ul>
+				<div id="testim-content" class="cont">
+					<?php $sn = 0; foreach($review as $r){ $sn++;
+					if($sn == 1){
+	?>
+					<div class="active">
+						<div class="img"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+						<h2><?=$r['person_name'];?></h2>
+						<p><?=$r['description'];?></p>
+					</div>
+					<?php }else{ ?>
+					<div>
+						<div class="img"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+						<h2><?=$r['person_name'];?></h2>
+						<p><?=$r['description'];?></p>
+					</div>
+					<?php } } ?>
+				</div>
+
+			</div>
+			-        </div>
+	</section>

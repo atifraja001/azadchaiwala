@@ -1,0 +1,112 @@
+[02-Jan-2020 10:37:48 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('admin/courses/v...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:38:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:39:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:39:46 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:41:07 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:41:17 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:41:47 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:19 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:22 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:54 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:55 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:55 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:42:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('404')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:43:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('assets/css/boot...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:43:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('assets/js/poppe...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:43:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('assets/js/boots...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:43:20 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('636')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:45:09 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('636')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:45:11 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('636')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:45:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('636')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129
+[02-Jan-2020 10:45:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Dropbox\azadchaiwala_new\public\index.php(73): Core\Router->dispatch('636')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Dropbox\azadchaiwala_new\Core\Router.php' on line 129

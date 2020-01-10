@@ -1,0 +1,126 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add New Course</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                   <div class="row">
+                       <div class="col-12 col-md-12 col-lg-6">
+                           <form method="post" action="<?=app_url('admin')?>/courses/add-new-course-post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Order Number</label>
+                                            <input type="number" min="0" class="form-control" required autofocus name="order_number" placeholder="Course Display order number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Course Name</label>
+                                            <input type="text" class="form-control" required name="course_name" placeholder="Enter Course Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Course Slug <small class="text-secondary">(Auto Generated)</small></label>
+                                            <input type="text" class="form-control" required name="course_slug" placeholder="Enter Course Slug">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Course Teacher
+                                                <small class="text-danger teacher_link" style="display: none">
+                                                    <a href="#" class="teacher-tooltip hover-link tooltipstered" data-id>View Teacher</a>
+                                                </small>
+                                            </label>
+                                            <select placeholder="Select Teacher" class="form-control select2" required name="course_teacher">
+                                                <option></option>
+                                                <?php foreach($teachers as $t){ ?>
+                                                    <option value="<?=$t['id'];?>"><?=$t['name'];?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Daily Lecture Hours</label>
+                                            <input type="number" min="0" class="form-control" placeholder="Daily Lecture Hours" name="daily_hours">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Duration</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" name="duration_number" placeholder="Ex. 2" required pattern="[0-9-.]+">
+                                                <select class="form-control" name="duration_option" required>
+                                                    <option value="" hidden>Select Option</option>
+                                                    <option>Minute</option>
+                                                    <option>Hour</option>
+                                                    <option>Day</option>
+                                                    <option>Week</option>
+                                                    <option>Month</option>
+                                                    <option>Year</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Course Picture</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="course_picture" id="course_picture" required accept="image/x-png,image/jpeg" >
+                                                <label class="custom-file-label" for="course_picture">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>VideoID:<small>yt.com/watch?v=<b>FXlyIeKR4qw</b> => <b>FXlyIeKR4qw</b></small></label>
+                                            <input type="text" class="form-control" required name="video_id" placeholder="Example: FXlyIeKR4qw">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Course Fee <small class="text-secondary">in PKR</small></label>
+                                            <input type="text" class="form-control" required name="course_fee" pattern="[0-9]+" placeholder="Enter Fee in Pakistani Rupees">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Semester</label>
+                                            <input type="text" class="form-control" name="semester" required placeholder="Example: 2 (One Month Each)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Course Description</label>
+                                            <textarea class="form-control" rows="5" placeholder="Enter Course Description" name="course_description" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                           </form>
+                       </div>
+                       <div class="col-12 col-md-12 col-lg-3">
+                           <label>Course Picture Preview</label><br>
+                           <img class="img-thumbnail img-fluid" src="" id="view_image" style="height: 200px !important; display: none">
+                       </div>
+                       <div class="col-12 col-md-12 col-lg-3">
+                           <label>Course Video Preview</label><br>
+                           <iframe width="100%" height="200px" src="https://www.youtube.com/embed/" frameborder="0" style="display: none" id="youtube_link" allow="accelerometer; autoplay=true; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

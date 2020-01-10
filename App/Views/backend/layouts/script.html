@@ -1,0 +1,308 @@
+<!-- Footer -->
+<footer class="bg-white fixed-bottom">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; AzadChaiwala <?=date('Y');?></span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="<?=app_url('admin');?>/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?=app_url()?>/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="<?=app_url()?>/assets/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="<?=app_url()?>/assets/vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?=app_url()?>/assets/vendor/datatables/jquery.dataTables.js"></script>
+<script src="<?=app_url()?>/assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+<script src="<?=app_url()?>/assets/vendor/tooltipster/js/tooltipster.bundle.js" type="text/javascript"></script>
+<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<script src="<?=app_url()?>/assets/vendor/select2/select2.min.js"></script>
+<script>
+    var themepath = "<?=app_url()?>/assets/vendor/tinymce/";
+</script>
+<script src="<?=app_url()?>/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="<?=app_url()?>/assets/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="<?=app_url()?>/assets/vendor/clockpicker/jquery-clockpicker.min.js"></script>
+<script>
+    var defaultToolbar = "styleselect | bold italic underline strikethrough "
+        + "| bullist numlist | alignleft aligncenter alignright alignjustify"
+        + "| outdent indent  undo redo";
+    tinymce.init({
+        selector: 'textarea.tinymce',
+        plugins: "lists",
+        toolbar: defaultToolbar
+    });
+    $(document).on('focusin', function(e) {
+        if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+            e.stopImmediatePropagation();
+        }
+    });
+    // Data Tables
+    $(document).ready(function() {
+        $('.datatable').DataTable();
+    } );
+    // Student Profile Viewer
+    $(function() {
+        let content;
+        $('.student-tooltip').tooltipster({
+            interactive: true,
+            content: 'Loading...',
+            contentCloning: false,
+            contentAsHTML: true,
+            animation: 'grow',
+            functionBefore: function(instance, helper) {
+                let $origin = $(helper.origin);
+                let id = $origin.attr('data-id');
+                if ($origin.data('loaded') !== true) {
+                    $.post("<?=app_url('admin')?>/students/fetch__image", {id:id}, function(data) {
+                        let content = '<div class="hovercard white">\n' +
+                            '                <img src="<?=app_url()?>/assets/student_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
+                            '            </div>';
+                        instance.content(content);
+                        $origin.data('loaded', true);
+                    });
+                }
+            }
+        });
+    });
+    // Teacher Profile Viewer
+    $(function() {
+        let content;
+        $('.teacher-tooltip').tooltipster({
+            interactive: true,
+            content: 'Loading...',
+            contentCloning: false,
+            contentAsHTML: true,
+            animation: 'grow',
+            functionBefore: function(instance, helper) {
+                let $origin = $(helper.origin);
+                let id = $origin.attr('data-id');
+                if ($origin.data('loaded') !== true) {
+                    $.post("<?=app_url('admin')?>/teachers/fetch__image", {id:id}, function(data) {
+                        let content = '<div class="hovercard white">\n' +
+                            '                <img src="<?=app_url()?>/assets/teacher_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
+                            '            </div>';
+                        instance.content(content);
+                        $origin.data('loaded', true);
+                    });
+                }
+            }
+        });
+    });
+    // Form Validator
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            let forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            let validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+    // Input Masker
+    $(document).ready(function(){
+        $("#cnic").inputmask({"placeholder": "", 'mask':"99999-9999999-9"});
+        $("#phone").inputmask({"placeholder": "", 'mask':"0399-9999999"});
+        $("input").inputmask({"placeholder": ""});
+    });
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#view_image').show();
+                $('#view_image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("input[type=file]").change(function(){
+        readURL(this);
+    });
+    // address and About
+    (function($) {
+        'use strict';
+        $('#about_address').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var about = button.data('about');
+            var address = button.data('address');
+            var modal = $(this);
+            modal.find('#about').html(about);
+            modal.find('#address').html(address);
+        });
+    })(jQuery);
+    // edit content
+    (function($) {
+        'use strict';
+        $('#edit_course_content').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var content_title = button.data('content_title');
+            var content_id = button.data('content_id');
+            var content_description = button.data('content_description');
+            var position = button.data('position');
+            var duration_number = button.data('number');
+            var duration_option = button.data('option');
+            var modal = $(this);
+            modal.find('#content_title').val(content_title);
+            modal.find('#position').val(position);
+            modal.find('#duration_number').val(duration_number);
+            modal.find('#duration_option').val(duration_option);
+            modal.find('#content_id').val(content_id);
+            tinymce.activeEditor.setContent(content_description);
+        });
+    })(jQuery);
+    function convertToSlug(Text) {
+        return Text
+            .toLowerCase()
+            .replace(/[^\w ]+/g,'')
+            .replace(/ +/g,'-')
+            ;
+    }
+    $(document).on("keyup", "input[name=course_name]", function(){
+        $("input[name=course_slug]").val(convertToSlug($(this).val()));
+    });
+    $(function () {
+        $('.select2').each(function () {
+            $(this).select2({
+                theme: 'bootstrap4',
+                width: 'style',
+                placeholder: $(this).attr('placeholder')
+            });
+        });
+    });
+    $(document).on("change", "select[name=course_teacher]", function () {
+        $(".teacher-tooltip").attr('data-id', $(this).val());
+        $(".teacher_link").show();
+    });
+    $(document).on("focusout", "input[name=video_id]", function () {
+        if($(this).val() != "") {
+            var youtube_link = "https://youtube.com/embed/" + $(this).val();
+            $("#youtube_link").attr('src', youtube_link);
+            $("#youtube_link").show();
+        }
+    });
+    $(".datepicker").datepicker({
+        format: "dd-mm-yyyy",
+        todayHighlight: true,
+        autoclose: true,
+    });
+    $('.input-daterange').datepicker({
+        format: "dd-mm-yyyy",
+        todayHighlight: true,
+        startDate: '-0d',
+    });
+
+    // clock picker
+    var input = $('.clockpicker');
+    input.clockpicker({
+        autoclose: true
+    });
+    $(document).on("change", "#course_select", function () {
+        let course_id = $(this).val();
+        $.ajax({
+            url: "<?=app_url('admin')?>/batches/getBatches",
+            method: "POST",
+            data:{course_id:course_id},
+            success:function(response){
+                $("#batches").html(response);
+            }
+        });
+    });
+
+    // edit content
+    (function($) {
+        'use strict';
+        $('#edit_review_modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var person_name = button.data('person_name');
+            var description = button.data('description');
+            var id = button.data('id');
+            var modal = $(this);
+            modal.find('#person_name').val(person_name);
+            modal.find('#description').val(description);
+            modal.find('#id').val(id);
+        });
+    })(jQuery);
+
+    (function($) {
+        'use strict';
+        $('#edit_faqs_content').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var title = button.data('title');
+            var description = button.data('description');
+            var id = button.data('id');
+            var modal = $(this);
+            modal.find('#title').val(title);
+            modal.find('#id').val(id);
+            tinymce.activeEditor.setContent(description);
+        });
+    })(jQuery);
+    let text = [
+        'Father Name',
+        'CNIC',
+        'Phone',
+        'Email'
+    ];
+    let counter = 0;
+    let time = setInterval(function() {
+        if(counter == 4){ counter = 0; }
+        let newText = text[counter];
+        $('#search_student,#search_student_mobile').attr('placeholder', 'Search Student by '+newText);
+        counter++;
+    }, 1000);
+</script>
+</body>
+</html>

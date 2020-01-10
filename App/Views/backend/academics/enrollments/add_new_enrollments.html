@@ -1,0 +1,84 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add New Enrollments</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-danger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <form method="post" enctype="multipart/form-data" action="<?=app_url('admin')?>/enrollments/add-new-enrollment-post" class="needs-validation" novalidate>
+                                <?=showMsg('enrollment');?>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>All Students</label>
+                                            <select placeholder="Select Students" class="form-control select2"  name="selectstudentsid" required>
+                                                <option></option>
+                                                <?php foreach($std as $s){ ?>
+                                                    <option value="<?=$s['id'];?>"><?=$s['name'];?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Courses <small>Only that batches are available</small></label>
+                                            <select placeholder="Select Courses" id="course_select" class="form-control select2" name="selectcoursesid" required>
+                                                <option></option>
+                                                <?php foreach($courses as $c){ ?>
+                                                    <option value="<?=$c['id'];?>"><?=$c['course_name'];?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Batches <small>Select Course First</small></label>
+                                            <select placeholder="Select Batches" id="batches" class="form-control select2" name="selectbatchesid" required>
+                                                <option></option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Attach Receipt</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="fee_receipt" id="profile_picture" required accept="image/x-png,image/jpeg" >
+                                                <label class="custom-file-label" for="profile_picture">Choose file</label>
+                                                <div class="valid-feedback">Looks Good.</div>
+                                                <div class="invalid-feedback">Please enter a valid file format</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-large">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <label>Attach Receipt Preview</label><br>
+                            <img id="view_image" for="profile_picture" src="<?=app_url()?>/assets/img/azad_avatar.png" alt="your image" class="img-fluid img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

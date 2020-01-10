@@ -1,0 +1,62 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Students</h1>
+        <a href="<?=app_url('admin')?>/students/add-new-student" class="d-none d-sm-inline-block btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-user-graduate fa-sm text-white-50"></i>
+                    </span>
+            <span class="text">Add New Student</span>
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('student');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Father Name</th>
+                                <th>DOB</th>
+                                <th>Gender</th>
+                                <th>CNIC</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                $sn = 1;
+                foreach($std as $s){ ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td>
+                                    <a href="<?=app_url('admin')?>/students/view-profile/<?=$s['id']?>" class="student-tooltip hover-link" data-id="<?=$s['id']?>"><?=$s['name'];?></a>
+                                    <br>
+                                    <a href="<?=app_url('admin')?>/students/edit-student/<?=$s['id']?>">Edit</a> | <a href="<?=app_url('admin')?>/students/delete-student/<?=$s['id']?>" onclick="return confirm('Are you sure?');">Delete</a>
+                                </td>
+                                <td><?=$s['fname'];?></td>
+                                <td><?=$s['date_of_birth'];?></td>
+                                <td><?=ucfirst($s['gender']);?></td>
+                                <td><?=$s['cnic'];?></td>
+                                <td><?=$s['address'];?></td>
+                                <td><?=$s['email'];?></td>
+                                <td><?=$s['mobile_number'];?></td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

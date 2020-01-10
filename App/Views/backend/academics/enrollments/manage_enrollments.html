@@ -1,0 +1,72 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Paid Enrollments</h1>
+        <a class="btn btn-danger float-right rounded-0" href="<?=app_url('admin')?>/enrollments/pending_manage">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus-circle fa-sm text-white-50 rounded-0"></i>
+            </span> 
+           View Pending Enrollments
+        </a>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('pendingstatus');?>
+                    <?=showMsg('addedenrollment');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Batch Name</th>
+                                <th>Course Name</th>
+                                <th>Student Name</th>
+                                <th>Student CNIC</th>
+                                <th>Fee Receipt</th>
+                                <th>Status</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                $sn = 1;
+                                $student = new \App\Models\Students();
+                                $course = new \App\Models\Courses();
+                                foreach($enrollments as $e){ ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td class="">
+                                    <a href="<?=app_url('admin')?>/batches/view-batches/<?=$e['batch_id']?>"><?=$e['batch_name'];?></a>
+                                </td>
+                                <td>
+                                    <?php $c = $course->getCourseByBatchId($e['batch_id']); ?>
+                                    <a href="<?=app_url('admin')?>/courses/view-course/<?=$c['id']?>"><?=$c['course_name'];?></a>
+                                </td>
+                                <?php
+                                    $std = $student->getStudentsById($e['student_id']);
+
+                                ?>
+                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"><?=$std['name'];?></a></td>
+                                <td><?=$std['cnic'];?></td>
+                                <td>
+                                    <a href="<?=app_url()?>/assets/enrollment_images/<?=$e['fee_receipt']?>" target="_blank">View</a>
+                                </td>
+                                <td><label class="badge badge-primary">Approved</label><br>
+                                    <a href="<?=app_url('admin')?>/enrollments/change_status/<?=$e['id']?>">
+                                        Change Status to Pending
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

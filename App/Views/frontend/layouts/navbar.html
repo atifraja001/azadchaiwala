@@ -1,0 +1,70 @@
+<body>
+<!-- announcement -->
+<?php
+$noti = new \App\Models\Notifications();
+$notis = $noti->getNotification();
+?>
+<?php foreach($notis as $noti){?>
+<?php if(empty($noti)){ }else{?>
+<div class="alert alert-warning alert-dismissible fade show" id="dis"role="alert">
+    <div class="container text-center">
+        <?= html_entity_decode($noti['message']);?>
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<?php }}?>
+<!-- announcement -->
+<!--Header Start-->
+<header id="header" class="header header-fixed">
+    <div class="container">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="row d-flex" >
+                
+                    <div class="col-lg-6 col-sm-6" id="">
+                        <a class="navbar-brand" href="<?=app_url()?>">
+                            <img src="<?=app_url()?>/assets/img/institute-logo-black.jpg" alt="logo of azadchaiwala"  style="width: 100%;height: 80px;">
+                            <!-- <img src="assets/img/logo-mini.jpg" alt="logo of azadchaiwala" id="formobilelogo" style="width: 100px;height: 80px;"> -->
+                        </a>
+                    </div>
+                
+                
+                    <div  class="col-lg-6 col-sm-6" >
+                        <div class="tog-center" >
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                <span class="textmenu">MENU</span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item <?=(isset($home)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>">HOME <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item <?=(isset($faq)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>/faqs">FAQ'S</a>
+                                </li>
+                                <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>/courses">COURSES</a>
+                                </li>
+                                <li class="nav-item <?=(isset($payments)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>/payments">PAYMENTS</a>
+                                </li>
+                                <li class="nav-item <?=(isset($about)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>/about">ABOUT</a>
+                                </li>
+                                <li class="nav-item <?=(isset($contact)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?= app_url()?>/contact">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </nav>
+        <!-- navbar end -->
+    </div>
+</header>
+<!--Header End-->

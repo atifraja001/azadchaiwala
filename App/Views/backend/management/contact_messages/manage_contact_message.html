@@ -1,0 +1,54 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Contact Messages</h1>
+
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('contact');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Created at</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                                $sn = 1;
+                                foreach($contacts as $c){
+                                ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td><?=$c['name']?></td>
+                                <td><?=$c['email']?></td>
+                                <td><?=$c['subject']?></td>
+                                <td><?=html_entity_decode($c['message_text'])?></td>
+                                <td><?=$c['created_at']?></td>
+                                <td>
+                                    <a href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Contact Message')">
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

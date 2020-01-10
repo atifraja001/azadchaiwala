@@ -1,0 +1,179 @@
+<section class="cregister">
+    <div class="container text-capitalize text-center">
+        <div class="row">
+            <div class="col-lg-12 regirsterh">
+                <h1>Register <?= $course['course_name'];?> (<?= $course['duration'];?>) COURSE</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <!-- second main register row -->
+        <div class="row">
+            <div class="col-lg-8 offset-2">
+                <div class="registerform">
+                    <?=showMsg('course_registration');?>
+                    <?php if(empty(showMsg('course_registration'))){ ?>
+                    <form action="<?=app_url()?>/registration-student" method="post" class="needs-validation"
+                          enctype="multipart/form-data" novalidate>
+                        <input type="hidden" value="<?=$course['slug']?>" name="slug">
+                        <?php if(count($batch)>0){ ?>
+                        <h4>Select Batch</h4>
+                        <?php }else{ ?>
+                        <h4>Seats for Current Batch Are Full. Please Wait for Next Batch to Open.</h4>
+                        <?php	} ?>
+                        <div class="form-row">
+                            <?php foreach($batch as $b){?>
+                            <div class="col-md-6 mb-3 fof">
+                                <label class="clsoverlay" id="all">
+                                    <input type="radio" name="batch_id" value="<?=$b['id']?>" class="custom-radio"
+                                           required>
+                                    <div class="card card-statistics p_method" id="rformh">
+                                        <div class="card-body p-4">
+                                            <div><h4><?= $b['name'];?></h4></div>
+                                            <?php
+													$seats = new \App\Models\Batches();
+													$seats = $seats->countEnrolledStudents($b['id']);
+                                            ?>
+                                            <div><b>Seats Left</b> : <?=$b['total_students']-$seats?></div>
+                                            <div><b>From</b> : <?=date("l, F d, Y", strtotime($b['start_date']));?>
+                                            </div>
+                                            <div><b>To</b>: <?=date("l, F d, Y", strtotime($b['end_date']));?></div>
+                                            <div><b>Timings</b> : <?=date("h:i a", strtotime($b['start_time']));?>
+                                                - <?=date("h:i a", strtotime($b['end_time']));?></div>
+                                        </div>
+                                    </div>
+                                    <div class="invalid-tooltip">Select Batch</div>
+                                </label>
+                            </div>
+                            <?php } ?>
+                        </div>
+                        <?php if(count($batch)>0){ ?>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Enter your name</label>
+                                    <input type="text" name="name" class="form-control cformfileds"
+                                           placeholder="Enter your full name" pattern="[a-zA-Z_ ]+" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Enter your Father name</label>
+                                    <input type="text" name="fname" class="form-control cformfileds"
+                                           placeholder="Enter your Father name" pattern="[a-zA-Z_ ]+" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <div class="input-group mb-3">
+                                        <select class="form-control cformfileds" name="day" required>
+                                            <option hidden value="">Day</option>
+                                            <?php for($i = 1; $i<=31; $i++){ ?>
+                                            <option><?=$i?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <select class="form-control cformfileds" name="month" required>
+                                            <option hidden value="">Month</option>
+                                            <?php for($i = 1; $i<=12; $i++){ ?>
+                                            <option><?=$i?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <select class="form-control cformfileds" name="year" required>
+                                            <option hidden value="">Year</option>
+                                            <?php for($i = date('Y')-7; $i >= date('Y')-57; $i--){ ?>
+                                            <option><?=$i?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select class="form-control cformfileds" required name="gender">
+                                        <option hidden value="">Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>CNIC</label>
+                                    <input type="text" name="cnic" class="form-control cformfileds" pattern=".{15,15}"
+                                           placeholder="Enter your CNIC" required id="validationTooltip05">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile Number</label>
+                                    <input type="text" name="mobile_number" class="form-control cformfileds"
+                                           placeholder="Enter Your Mobile Number" pattern=".{12,12}" required id="validationTooltip06">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" name="email" class="form-control cformfileds"
+                                           placeholder="Enter Your Email Address" required id="email"
+                                           data-inputmask="'alias': 'email'">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Attached Picture</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="picture"
+                                               id="picture" required="" accept="image/x-png,image/jpeg">
+                                        <label class="custom-file-label cformfileds" for="picture">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Attach Payment Receipt</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="fee_receipt"
+                                               id="validatedCustomFilePayment" required=""
+                                               accept="image/x-png,image/jpeg">
+                                        <label class="custom-file-label cformfileds" for="validatedCustomFilePayment">Choose
+                                            file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Enter Your Address</label>
+                                    <textarea class="form-control cformfileds" name="address" style="resize: none"
+                                              rows="4" placeholder="Enter Your Address" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary buttonofregister" type="submit">Submit</button>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </form>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
