@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,7 @@
       <workItem from="1578997628602" duration="5338000" />
       <workItem from="1579071748663" duration="6848000" />
       <workItem from="1579096493597" duration="2454000" />
-      <workItem from="1579099340798" duration="975000" />
+      <workItem from="1579099340798" duration="3177000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579099750952</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="minor update">
+      <created>1579100345294</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579100345294</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,10 +160,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1579099750294">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1579100344744">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579099750294" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579100344744" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
