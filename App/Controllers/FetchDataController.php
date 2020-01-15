@@ -25,13 +25,13 @@ namespace App\Controllers;
  * or the request is invalid
  */
 
-class FetchImageController
+class FetchDataController
 {
     public function __construct()
     {
 
     }
-    public function index(){
+    public function FetchImage(){
         $image_id = clean_get('i');
         $image_type = clean_get('t');
         $filename = "assets/img/no_image.png"; // default filename
@@ -66,6 +66,12 @@ class FetchImageController
                 if($teacher_image) {
                     $filename = "assets/teacher_images/".$teacher_image['picture'];
                 }
+            }else if($image_type == "gallery"){
+                $gallery_image = new \App\Models\Gallery();
+                $gallery_image = $gallery_image->GetGalleryImageById($image_id);
+                if($gallery_image) {
+                    $filename = "assets/gallery_images/".$gallery_image['image'];
+                }
             }
         }
         if(!file_exists($filename)){
@@ -76,5 +82,35 @@ class FetchImageController
         fclose($handle);
         header("content-type: image/jpeg");
         echo $contents;
+    }
+
+    public function FetchBackup(){
+        Auth('admin');
+        $db_id = clean_get('i');
+        $dir = '../db_backups/';
+        $counter = 1;
+        if (is_dir($dir)) {
+            $files = scandir($dir);
+            rsort($files);
+            foreach ($files as $file){
+                if ($file == '.' or $file == '..') continue;
+                if($counter == 11) break;
+                    if(filemtime($dir.$file) == $db_id){
+                        $filename = $dir.$file;
+                        $file = date("d_m_Y_h_i_s_a", filemtime($dir.$file)).".sql";
+                        $handle = fopen($filename, "rb");
+                        if(filesize($filename) > 0) {
+                            $contents = fread($handle, filesize($filename));
+                            fclose($handle);
+                            header("Content-disposition: attachment; filename=\"" . basename($file) . "\"");
+                            header("content-type: application/sql");
+                            echo $contents;
+                        }
+                        break;
+                    }
+                    $counter++;
+            }
+        }
+
     }
 }

@@ -1,0 +1,106 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Manage Gallery</h1>
+        <button class="d-none d-sm-inline-block btn btn-primary btn-icon-split" data-toggle="modal" data-target="#add_faqs_content">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus-circle fa-sm text-white-50"></i>
+                    </span>
+            <span class="text">Add New Gallery</span>
+        </button>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-left-primary">
+                <div class="card-body">
+                    <?=showMsg('gallery');?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover datatable">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Class of Image</th>
+                                <th>Created_At</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                $sn = 1;
+                                foreach($gals as $g){
+                                ?>
+                            <tr>
+                                <td><?=$sn?></td>
+                                <td><img src="<?=app_url()?>/assets/gallery_images/<?=$g['image'];?>" alt="gallery images" width="100px"></td>
+                                <td><?=$g['class']?></td>
+                                <td><?=$g['created_at']?></td>
+                                <td>
+                                    <a href="<?=app_url('admin')?>/gallery/delete/<?=$g['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Gallery Image')">
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php $sn++; } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Content Modal -->
+<div class="modal fade" id="add_faqs_content">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Image to Gallery</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/gallery/add-new-gallery" enctype="multipart/form-data" class="needs-validation" novalidate>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Courses</label>
+                            <div class="input-group mb-3">
+                                <select class="form-control select2-tags" name="class" placeholder="Select Tag Or Add New Tag" required>
+                                    <option></option>
+                                    <?php foreach($classes as $course){ ?>
+                                    <option value="<?=$course['class'];?>"><?=$course['class'];?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Add Image</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="gallery_picture" id="gallery_picture" required accept="image/x-png,image/jpeg" >
+                                        <label class="custom-file-label" for="gallery_picture">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

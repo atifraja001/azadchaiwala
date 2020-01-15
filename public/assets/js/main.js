@@ -1,3 +1,38 @@
+//Gallery Lightbox
+$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
+
+//gallery
+$(document).ready(function(){
+
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+
+        if(value == "all")
+        {
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+
+        }
+    });
+
+    if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+
+});
+//Gallery End
+
 
 	// owl carousel
     $('.owl-carousel').owlCarousel({
@@ -142,7 +177,7 @@ $(document).ready(function(){
 // Reviews
     // vars
     'use strict'
-    var	testim = document.getElementById("testim"),
+    var	testim = document.getElementsByClassName("testim"),
         testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
         testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
         testimLeftArrow = document.getElementById("left-arrow"),
@@ -225,29 +260,7 @@ $(document).ready(function(){
             }
         })
 
-        testim.addEventListener("touchstart", function(e) {
-            touchStartPos = e.changedTouches[0].clientX;
-        })
-
-        testim.addEventListener("touchend", function(e) {
-            touchEndPos = e.changedTouches[0].clientX;
-
-            touchPosDiff = touchStartPos - touchEndPos;
-
-            console.log(touchPosDiff);
-            console.log(touchStartPos);
-            console.log(touchEndPos);
-
-
-            if (touchPosDiff > 0 + ignoreTouch) {
-                testimLeftArrow.click();
-            } else if (touchPosDiff < 0 - ignoreTouch) {
-                testimRightArrow.click();
-            } else {
-                return;
-            }
-
-        })
+        
     }
 
 

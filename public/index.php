@@ -31,6 +31,7 @@ $router->add('courses', ['controller' => 'HomeController', 'action' => 'courses'
 $router->add('payments', ['controller' => 'HomeController', 'action' => 'payments']);
 $router->add('about', ['controller' => 'HomeController', 'action' => 'about']);
 $router->add('contact', ['controller' => 'HomeController', 'action' => 'contact']);
+$router->add('gallery', ['controller' => 'HomeController', 'action' => 'gallery']);
 $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'action' => 'course-registration']);
 $router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
@@ -84,6 +85,9 @@ $router->add($admin_dir.'/courses/view-course/delete-content/{id:\d+}', ['contro
 // Courses TAC routes
 $router->add($admin_dir.'/courses/view-course/post-tac', ['controller' => 'CoursesController', 'action' => 'post_tac']);
 $router->add($admin_dir.'/courses/view-course/delete-tac/{id:\d+}', ['controller' => 'CoursesController', 'action' => 'delete_tac']);
+
+$router->add($admin_dir.'/courses/view-course/post-learn', ['controller' => 'CoursesController', 'action' => 'post_learn']);
+$router->add($admin_dir.'/courses/view-course/delete-learn/{id:\d+}', ['controller' => 'CoursesController', 'action' => 'delete_learn']);
 
 
 // Batches Routes
@@ -146,9 +150,18 @@ $router->add($admin_dir.'/user-management', ['controller' => 'AdminController', 
 $router->add($admin_dir.'/user-management-post', ['controller' => 'AdminController', 'action'=>'manage_user_post']);
 $router->add($admin_dir.'/delete-user/{id:\d+}', ['controller' => 'AdminController', 'action'=>'delete_user']);
 
+// backup db route
+$router->add($admin_dir.'/backup-db', ['controller' => 'BackupController', 'action' => 'index']);
+$router->add($admin_dir.'/create-backup', ['controller' => 'BackupController', 'action' => 'create_backup']);
 
-// secure image fetching route
-$router->add('getImage', ['controller'=>'FetchImageController', 'action'=>'index']);
+// secure fetching route
+$router->add('getImage', ['controller'=>'FetchDataController', 'action'=>'FetchImage']);
+$router->add($admin_dir.'/download-backup', ['controller' => 'FetchDataController', 'action' => 'FetchBackup']);
 
+
+//gallery
+$router->add($admin_dir.'/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
+$router->add($admin_dir.'/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
+$router->add($admin_dir.'/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
 
 $router->dispatch($_SERVER['QUERY_STRING']);

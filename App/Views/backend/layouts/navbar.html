@@ -60,6 +60,11 @@
         <div class="sidebar-heading">
             Management
         </div>
+        <li class="nav-item <?=(isset($gallery)) ? 'active': '';?>">
+            <a class="nav-link" href="<?=app_url('admin')?>/gallery/manage">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Gallery</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="">
                 <i class="fas fa-fw fa-chart-area"></i>
@@ -101,7 +106,7 @@
         </div>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="<?=app_url('admin')?>/backup-db">
                 <i class="fas fa-fw fa-hdd"></i>
                 <span>Backups</span></a>
         </li>

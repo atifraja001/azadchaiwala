@@ -5,8 +5,10 @@ $noti = new \App\Models\Notifications();
 $notis = $noti->getNotification();
 ?>
 <?php foreach($notis as $noti){?>
-<?php if(empty($noti)){ }else{?>
-<div class="alert alert-warning alert-dismissible fade show" id="dis"role="alert">
+<?php if(empty($noti['message'])){ ?>
+
+<?php }else{?>
+    <div class="alert alert-warning alert-dismissible fade show" id="dis"role="alert">
     <div class="container text-center">
         <?= html_entity_decode($noti['message']);?>
     </div>
@@ -14,7 +16,8 @@ $notis = $noti->getNotification();
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<?php }}?>
+<?php }
+}?>
 <!-- announcement -->
 <!--Header Start-->
 <header id="header" class="header header-fixed">
@@ -41,14 +44,14 @@ $notis = $noti->getNotification();
 
                         <div class="collapse navbar-collapse" id="navbarText">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item <?=(isset($home)) ? "active": ""?>">
-                                    <a class="nav-link" href="<?=app_url()?>">HOME <span class="sr-only">(current)</span></a>
-                                </li>
                                 <li class="nav-item <?=(isset($faq)) ? "active": ""?>">
                                     <a class="nav-link" href="<?=app_url()?>/faqs">FAQ'S</a>
                                 </li>
                                 <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
                                     <a class="nav-link" href="<?=app_url()?>/courses">COURSES</a>
+                                </li>
+                                <li class="nav-item <?=(isset($gallery)) ? "active": ""?>">
+                                    <a class="nav-link" href="<?=app_url()?>/gallery">GALLERY</a>
                                 </li>
                                 <li class="nav-item <?=(isset($payments)) ? "active": ""?>">
                                     <a class="nav-link" href="<?=app_url()?>/payments">PAYMENTS</a>

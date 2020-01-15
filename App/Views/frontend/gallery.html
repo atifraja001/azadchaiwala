@@ -1,0 +1,21 @@
+
+<section class="gallery">
+
+    <div class="container">
+        <div align="center">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <?php foreach($classes as $c){?>
+            <button class="btn btn-default filter-button" data-filter="<?=$c['class'];?>"><?=Ucfirst($c['class']);?></button>
+            <?php } ?>
+        </div>
+        <div class="row">
+            <?php foreach($gals as $g){?>
+            <a href="<?=app_url()?>/assets/gallery_images/<?=$g['image'];?>" data-toggle="lightbox" data-gallery="gallery"  class="col-md-4 mt-3 filter <?=$g['class'];?>">
+                <img src="<?=app_url()?>/getImage?i=<?=$g['id']?>&t=gallery" class="img-fluid galleryimage img-thumbnail">
+            </a>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+

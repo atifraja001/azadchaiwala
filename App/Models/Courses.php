@@ -168,4 +168,35 @@ class Courses extends \Core\Model
         $stmt = $db->query("SELECT * FROM courses WHERE id IN (SELECT course_id FROM batches WHERE start_date > '$today')");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+    public function getCourseLearn($course_id){
+        $db = static::getDB();
+        $today = date('Y-m-d');
+        $stmt = $db->prepare("SELECT * FROM course_learn WHERE course_id = :course_id");
+        $stmt->execute([':course_id' => $course_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function InsertCourseLearn($data){
+        $db = static::getDB();
+        $stmt = $db->prepare("INSERT INTO course_learn
+                                (course_id, detail)
+                                VALUES
+                                (:course_id, :detail)");
+        if($stmt->execute($data)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function DeleteCourseLearn($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT course_id FROM course_learn WHERE id = :id");
+        $stmt->execute([":id"=>$id]);
+        $course = $stmt->fetch();
+        $course_id = $course['course_id'];
+        $stmt = $db->prepare("DELETE FROM course_learn WHERE id = :id");
+        $stmt->execute([":id"=>$id]);
+        return $course_id;
+    }
 }

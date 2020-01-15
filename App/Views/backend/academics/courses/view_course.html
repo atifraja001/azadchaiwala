@@ -148,6 +148,37 @@
                     </div>
                 </div>
             </div>
+            <div class="card border-left-warning mt-4">
+                <div class="card-body">
+                    <h4 class="card-title">What will you learn?
+                        <button class="btn btn-info float-right" data-toggle="modal" data-target="#add_learn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Detail</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php $sn = 1; foreach($course_learn as $learn){ ?>
+                            <tr>
+                                <td><?=$sn++;?></td>
+                                <td>
+                                    <?=$learn['detail'];?>
+                                    <br>
+                                    <a href="<?=app_url('admin')?>/courses/view-course/delete-learn/<?=$learn['id'];?>" onclick="return confirm('Are you sure?');">Delete</a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -249,6 +280,39 @@
     </div>
 </div>
 <!-- Edit Course Content -->
+<div class="modal fade" id="add_learn">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add New What will you learn</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="<?=app_url('admin')?>/courses/view-course/post-learn" class="need-validation" novalidate>
+                    <input type="hidden" value="<?=$c['id'];?>" name="course_id">
+                    <div class="form-group">
+                        <label>Enter Detail</label>
+                        <input type="text" placeholder="Enter What will you learn Detail" class="form-control" name="detail" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <!-- Add Content Modal -->
 <div class="modal fade" id="edit_course_content">
     <div class="modal-dialog  modal-lg">

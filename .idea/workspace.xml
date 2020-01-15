@@ -2,9 +2,82 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Controllers/BackupController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Controllers/GalleryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/Gallery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Views/backend/backup_db.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Views/backend/management/gallery/manage_gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Views/frontend/gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_backups/1578908438_azadchaiwala_5e1c3b167131b.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_backups/azadchaiwala_new_db_backup_(10-39-48_13-01-2020).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/course_images/15789802837103749365e1d53bab5a6e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/course_images/15789804672929037285e1d54730e255.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/course_images/157898080549222945e1d55c527047.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891028716010681685e1c424eb211f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891044012870033465e1c42e879512.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891046519144043625e1c4300f23e0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891052918108867995e1c43408decf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/15789173954709078385e1c5e12b1c83.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/azad_avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/dubai-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/p-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/paypal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/simple-backup.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/_docs/store_export.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/demo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Exceptions/NoTablesFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Configurator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Mysqldump.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Provider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/SimpleBackup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/azadchaiwala_new.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/azadchaiwala_new.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/CoursesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/FetchImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/FetchDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Courses.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Courses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/add_new_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/add_new_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/script.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/payments.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/payments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azadchaiwala_new.sql" beforeDir="false" afterPath="$PROJECT_DIR$/azadchaiwala_new.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/globals/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/globals/functions.php" afterDir="false" />
     </list>
-    <list id="995517c2-8436-4f84-9609-cf0ce497fe8a" name="Revert &quot;README.md edited online with Bitbucket&quot;" comment="Revert &quot;README.md edited online with Bitbucket&quot;&#10;&#10;This reverts commit 0f50ddf8" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +105,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/coderatio/simple-backup" />
     </include_path>
   </component>
   <component name="ProjectId" id="1VglLDPHxEEt79zWXx6X0252q11" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -47,8 +121,6 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -91,43 +163,20 @@
       <workItem from="1578459636199" duration="23842000" />
       <workItem from="1578545431506" duration="16515000" />
       <workItem from="1578632109042" duration="661000" />
-      <workItem from="1578639960008" duration="8564000" />
+      <workItem from="1578635351978" duration="3111000" />
+      <workItem from="1578916987640" duration="2270000" />
+      <workItem from="1578978564778" duration="7299000" />
+      <workItem from="1578997628602" duration="5338000" />
+      <workItem from="1579071748663" duration="6848000" />
+      <workItem from="1579096493597" duration="1401000" />
     </task>
-    <task id="LOCAL-00001" summary="Email code added">
-      <created>1578659552618</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1578659552618</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Email code added">
-      <created>1578659686453</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1578659686453</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Email code added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Email code added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -138,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577783921236" />
-    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577858130729">
+    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578900287660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577858130729" />
+    <state x="279" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578900287660" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577958356489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -150,22 +199,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1578659800462">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659800462" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1920.1040@0.0.1920.1040" timestamp="1577882094131" />
-    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1578659598295">
+    <state x="704" y="335" key="NewPhpClassDialog" timestamp="1578901304146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578659598295" />
-    <state x="704" y="335" key="NewPhpClassDialog" timestamp="1578553912671">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="704" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578553912671" />
+    <state x="704" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578901304146" />
     <state x="795" y="444" key="NewPhpFileDialog" timestamp="1578382569686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -174,10 +215,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578380017985" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1578659556995">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578659556995" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578379740279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,9 +227,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578480624716" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578648743496">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578551245929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578648743496" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578551245929" />
   </component>
 </project>

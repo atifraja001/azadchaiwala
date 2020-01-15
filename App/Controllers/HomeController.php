@@ -69,6 +69,19 @@ class HomeController extends \Core\Controller
         View::render('frontend/contact.html');
         View::render('frontend/layouts/script.html');
     }
+    public function gallery()
+    {
+        $gallery = new \App\Models\Gallery();
+        $gallerys = $gallery->getGallery();
+        $classes = $gallery->getClass();
+        View::render('frontend/layouts/head.html', ['title' => 'Gallery']);
+        View::render('frontend/layouts/navbar.html', ['gallery' => 'active']);
+        View::render('frontend/gallery.html', [
+            'gals' => $gallerys,
+            'classes' => $classes
+        ]);
+        View::render('frontend/layouts/script.html');
+    }
 
     public function course($request)
     {
@@ -80,7 +93,7 @@ class HomeController extends \Core\Controller
         // get course tc
         $getcoursetc = new \App\Models\Courses();
         $getcoursetc = $getcoursetc->getCourseContent($course['id']);
-
+        $course_learn = $courses->getCourseLearn($course['id']);
         $batch = new \App\Models\Batches();
         $batches = $batch->GetBatchByCourseId($course['id']);
 
@@ -88,6 +101,7 @@ class HomeController extends \Core\Controller
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/course.html', [
             'course' => $course, 'teacher' => $teacher, 'course_contect' => $getcoursetc, 'batches' => $batches
+            ,'learn' => $course_learn
         ]);
         View::render('frontend/layouts/script.html');
     }

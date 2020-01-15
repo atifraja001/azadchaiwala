@@ -134,13 +134,15 @@ class CoursesController
         $course_data = $course->getCourseById($request['id']);
         $course_content = $course->getCourseContent($request['id']);
         $course_tc = $course->getCourseTC($request['id']);
+        $course_learn = $course->getCourseLearn($request['id']);
         //var_dump($course_content); die;
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['course'=>'active']);
         View::render('backend/academics/courses/view_course.html', [
             'c' => $course_data,
             'course_content' => $course_content,
-            'course_tc' => $course_tc
+            'course_tc' => $course_tc,
+            'course_learn' => $course_learn
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -205,6 +207,29 @@ class CoursesController
     public function delete_tac($request){
         $course = new \App\Models\Courses();
         $course_id = $course->DeleteCourseTC($request['id']); // return course id
+        if($course_id){
+            redirectWithMessage(app_url('admin').'/courses/view-course/'.$course_id, 'Term and Condition Deleted!', 'course');
+        }else{
+            redirectWithMessage(app_url('admin').'/courses/view-course/'.$course_id, 'Something wents Wrong!', 'course', 'error');
+        }
+    }
+    public function post_learn(){
+        // preparing data
+        $data = [
+            ':course_id' => clean_post('course_id'),
+            ':detail' => clean_post('detail')
+        ];
+        $course = new \App\Models\Courses();
+        $course_tc = $course->InsertCourseLearn($data);
+        if($course_tc){
+            redirectWithMessage(app_url('admin').'/courses/view-course/'.$data[':course_id'], 'What will you learn added', 'course');
+        }else{
+            redirectWithMessage(app_url('admin').'/courses/view-course/'.$data[':course_id'], 'Something wents Wrong!', 'course', 'error');
+        }
+    }
+    public function delete_learn($request){
+        $course = new \App\Models\Courses();
+        $course_id = $course->DeleteCourseLearn($request['id']); // return course id
         if($course_id){
             redirectWithMessage(app_url('admin').'/courses/view-course/'.$course_id, 'Term and Condition Deleted!', 'course');
         }else{
