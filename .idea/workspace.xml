@@ -2,81 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Controllers/BackupController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Controllers/GalleryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Models/Gallery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Views/backend/backup_db.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Views/backend/management/gallery/manage_gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Views/frontend/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_backups/1578908438_azadchaiwala_5e1c3b167131b.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_backups/azadchaiwala_new_db_backup_(10-39-48_13-01-2020).sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/course_images/15789802837103749365e1d53bab5a6e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/course_images/15789804672929037285e1d54730e255.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/course_images/157898080549222945e1d55c527047.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891028716010681685e1c424eb211f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891044012870033465e1c42e879512.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891046519144043625e1c4300f23e0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/157891052918108867995e1c43408decf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/15789173954709078385e1c5e12b1c83.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/404.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/gallery_images/azad_avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/dubai-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/p-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/simple-backup.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/_docs/store_export.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/demo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Exceptions/NoTablesFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Configurator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Mysqldump.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/Foundation/Provider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/coderatio/simple-backup/src/SimpleBackup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/azadchaiwala_new.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/azadchaiwala_new.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/FetchImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/FetchDataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Courses.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Courses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/add_new_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/add_new_course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/backend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/layouts/script.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/payments.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/payments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azadchaiwala_new.sql" beforeDir="false" afterPath="$PROJECT_DIR$/azadchaiwala_new.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/globals/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/globals/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +94,7 @@
       <workItem from="1578978564778" duration="7299000" />
       <workItem from="1578997628602" duration="5338000" />
       <workItem from="1579071748663" duration="6848000" />
-      <workItem from="1579096493597" duration="1401000" />
+      <workItem from="1579096493597" duration="2454000" />
     </task>
     <servers />
   </component>
@@ -199,6 +125,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1579099410806">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579099410806" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

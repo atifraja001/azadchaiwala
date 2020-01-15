@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 12:41 PM
+-- Generation Time: Jan 15, 2020 at 03:42 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -62,16 +62,6 @@ CREATE TABLE `contact_messages` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `contact_messages`
---
-
-INSERT INTO `contact_messages` (`id`, `name`, `email`, `subject`, `message_text`, `created_at`) VALUES
-(3, 'bilawal gul ', 'bilawalawan747@gmail.com', 'this is text email', 'we send you test email.', '2020-01-08 06:57:32'),
-(5, 'Bilawal Gul', 'bilawalawan747@gmail.com', 'asdfasdfasdf', 'asdfasdfasdf', '2020-01-08 07:49:59'),
-(10, 'Bilawal Gul', 'bilawalawan747@gmail.com', 'My two Gigs are in pending Why?asd fasdf', 'asd fasdf asdf asdf', '2020-01-08 12:21:46'),
-(12, 'Bilawal Gul', 'bilawalawan747@gmail.com', 'asd fasdfdf as as', 'df asdf asdf asdf asdf asdf asdf as', '2020-01-09 05:02:12');
-
 -- --------------------------------------------------------
 
 --
@@ -99,12 +89,12 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `order_number`, `teacher_id`, `course_name`, `slug`, `course_picture`, `youtube_embed`, `lecture_hours_per_day`, `duration`, `semester`, `fee`, `course_description`, `created_at`) VALUES
-(1, 1, 1, 'PHP Programming', 'php-programming', '123123123123.jpg', 'FXlyIeKR4qw', 4, '2 Months', '2 (One Month Each)', 200000, 'We all use websites and majority of these websites are built in PHP. Thus making PHP the Internets most favorite programming language. This course is for those wanting to start at a beginner level and work their way up to a mid level programmer. A junior PHP developer can easily get a job for 30,000 Rupees per month and a medium level developer in excess of 45,000 rupees per month.\r\n\r\nAny senior web developer will tell you that you can learn programming in 40 one hour lessons, but we are offering you over 175 hours of mentor-ship and hands on training.', '2020-01-01 10:10:32'),
-(2, 2, 1, 'VIDEO EDITING, VIDEOGRAPHY &amp; FREELANCING', 'video-editing-videography-freelancing', '157803630016669984705e0eec4b7dbc1.jpg', 'FXlyIeKR4qw', 4, '2 Weeks', '2 (One Week Each)', 40000, 'We all use websites and majority of these websites are built in PHP. Thus making PHP the Internets most favorite programming language. This course is for those wanting to start at a beginner level and work their way up to a mid level programmer. A junior PHP developer can easily get a job for 30,000 Rupees per month and a medium level developer in excess of 45,000 rupees per month.\r\n\r\nAny senior web developer will tell you that you can learn programming in 40 one hour lessons, but we are offering you over 175 hours of mentor-ship and hands on training.', '2020-01-03 07:24:59'),
-(3, 3, 1, 'GRAPHIC DESIGNING', 'graphic-designing', '15780437553472835675e0f096ad458c.jpg', 'FXlyIeKR4qw', 4, '5 Weeks', '5 (One Week Each)', 40000, 'We all use websites and majority of these websites are built in PHP. Thus making PHP the Internets most favorite programming language. This course is for those wanting to start at a beginner level and work their way up to a mid level programmer. A junior PHP developer can easily get a job for 30,000 Rupees per month and a medium level developer in excess of 45,000 rupees per month.\r\n\r\nAny senior web developer will tell you that you can learn programming in 40 one hour lessons, but we are offering you over 175 hours of mentor-ship and hands on training.', '2020-01-03 09:29:14'),
-(4, 4, 1, 'REACT NATIVE APP DEVELOPMENT', 'react-native-app-development', '15789802837103749365e1d53bab5a6e.jpg', 'FXlyIeKR4qw', 4, '2 Months', '2(One month each)', 200000, 'We all use apps and now you can learn how to develop apps of your own, we will teach you to React Native so you can make apps for both Android &amp; iOS. Mid-level skillset App developers can easily expect a starting salary of 40,000 Rupees per month.', '2020-01-14 05:38:02'),
-(5, 5, 1, 'SEARCH ENGINE OPTIMIZATION (SEO) COURSE', 'search-engine-optimization-seo-course-', '15789804672929037285e1d54730e255.jpg', 'FXlyIeKR4qw', 4, '3 Weeks', '3 (one week each)', 40000, 'Learn both free and paid online digital marketing &amp; social media marketing. A medium level digital marketing expert can easily get a job for minimum 25,000 Rupees per month. Expert digital marketers can sell their skills online for a lot higher.', '2020-01-14 05:41:07'),
-(6, 6, 1, 'GAME DEVELOPMENT', 'game-development', '157898080549222945e1d55c527047.jpg', 'FXlyIeKR4qw', 4, '4 Months', '4 (one each month)', 400000, 'We will teach you how to develop games in UNITY 3D. Almost 50% of all games on the Android and Apple App stores are made with Unity. A mid level game developer can easily get a salary of 50,000 Rupees per month in Pakistan.', '2020-01-14 05:46:45');
+(1, 1, 4, 'PHP Programming', 'php-programming', '123123123123.jpg', '', 4, '2 Months', '2 (One Month Each)', 200000, 'We all use websites and majority of these websites are built in PHP. Thus making PHP the Internets most favorite programming language. This course is for those wanting to start at a beginner level and work their way up to a mid level programmer. A junior PHP developer can easily get a job for 30,000 Rupees per month and a medium level developer in excess of 45,000 rupees per month.\r\n\r\nAny senior web developer will tell you that you can learn programming in 40 one hour lessons, but we are offering you over 175 hours of mentor-ship and hands on training.', '2020-01-01 10:10:32'),
+(2, 2, 2, 'VIDEO EDITING, VIDEOGRAPHY &amp; FREELANCING', 'video-editing-videography-freelancing', '157803630016669984705e0eec4b7dbc1.jpg', '', 4, '2 Weeks', '2 (One Week Each)', 40000, 'We take you from a beginner to medium level video editor and by becoming a Video Editor/Videographer, within 14 days you will be ready to run your own social media video production business, be it making videos for clients or running your own YouTube Channel. A Video Editor with Medium to advance level skills can easily get a job for 25,000-40,000 Rupees per month in Pakistan or earn in excess of 45,000 per month as a half decent freelancer.', '2020-01-03 07:24:59'),
+(3, 3, 3, 'GRAPHIC DESIGNING', 'graphic-designing', '15780437553472835675e0f096ad458c.jpg', '', 4, '5 Weeks', '5 (One Week Each)', 40000, 'We all use websites and majority of these websites are built in PHP. Thus making PHP the Internets most favorite programming language. This course is for those wanting to start at a beginner level and work their way up to a mid level programmer. A junior PHP developer can easily get a job for 30,000 Rupees per month and a medium level developer in excess of 45,000 rupees per month.\r\n\r\nAny senior web developer will tell you that you can learn programming in 40 one hour lessons, but we are offering you over 175 hours of mentor-ship and hands on training.', '2020-01-03 09:29:14'),
+(4, 4, 5, 'REACT NATIVE APP DEVELOPMENT', 'react-native-app-development', '15789802837103749365e1d53bab5a6e.jpg', '', 4, '2 Months', '2(One month each)', 200000, 'We all use apps and now you can learn how to develop apps of your own, we will teach you to React Native so you can make apps for both Android &amp; iOS. Mid-level skillset App developers can easily expect a starting salary of 40,000 Rupees per month.', '2020-01-14 05:38:02'),
+(5, 5, 6, 'SEARCH ENGINE OPTIMIZATION (SEO) COURSE', 'search-engine-optimization-seo-course-', '15789804672929037285e1d54730e255.jpg', '', 4, '3 Weeks', '3 (one week each)', 40000, 'Learn both free and paid online digital marketing &amp; social media marketing. A medium level digital marketing expert can easily get a job for minimum 25,000 Rupees per month. Expert digital marketers can sell their skills online for a lot higher.', '2020-01-14 05:41:07'),
+(6, 6, 7, 'GAME DEVELOPMENT', 'game-development', '157898080549222945e1d55c527047.jpg', '', 4, '4 Months', '4 (one each month)', 400000, 'We will teach you how to develop games in UNITY 3D. Almost 50% of all games on the Android and Apple App stores are made with Unity. A mid level game developer can easily get a salary of 50,000 Rupees per month in Pakistan.', '2020-01-14 05:46:45');
 
 -- --------------------------------------------------------
 
@@ -190,6 +180,26 @@ INSERT INTO `course_content` (`id`, `course_id`, `content_title`, `duration`, `c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `course_learn`
+--
+
+CREATE TABLE `course_learn` (
+  `id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `detail` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `course_learn`
+--
+
+INSERT INTO `course_learn` (`id`, `course_id`, `detail`) VALUES
+(2, 1, 'hello world'),
+(3, 1, 'welcome to php');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `course_tc`
 --
 
@@ -250,13 +260,6 @@ CREATE TABLE `expense` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `expense`
---
-
-INSERT INTO `expense` (`id`, `expense_title`, `amount`, `date`, `expense_note`, `created_at`) VALUES
-(5, 'brand new expense', 78954, '2020-01-17', 'this is the brand new expense', '2020-01-07 07:25:42');
-
 -- --------------------------------------------------------
 
 --
@@ -295,15 +298,6 @@ CREATE TABLE `feedback_messages` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `feedback_messages`
---
-
-INSERT INTO `feedback_messages` (`id`, `course_id`, `name`, `email`, `feedback_text`, `created_at`) VALUES
-(2, 1, 'bilawal gul', 'bilawalawan747@gmail.com', 'this is the feedback messages', '2020-01-08 05:38:30'),
-(4, 2, 'Bilawal Gul', 'bilawalawan747@gmail.com', 'adsfasdfasdf asdf asdf', '2020-01-08 06:16:52'),
-(16, 2, 'fasdfa sdf', 'bilawalawan747@gmail.com', 'asdfa sdfasd fa sdf', '2020-01-08 10:05:53');
-
 -- --------------------------------------------------------
 
 --
@@ -316,15 +310,6 @@ CREATE TABLE `gallery` (
   `class` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gallery`
---
-
-INSERT INTO `gallery` (`id`, `image`, `class`, `created_at`) VALUES
-(7, '157891046519144043625e1c4300f23e0.jpg', 'svg', '2020-01-13 15:14:24'),
-(8, '157891052918108867995e1c43408decf.jpg', 'react', '2020-01-13 15:15:28'),
-(9, '15789173954709078385e1c5e12b1c83.jpg', 'SEO', '2020-01-13 17:09:54');
 
 -- --------------------------------------------------------
 
@@ -358,14 +343,6 @@ CREATE TABLE `reviews` (
   `description` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `reviews`
---
-
-INSERT INTO `reviews` (`id`, `person_name`, `person_image`, `description`, `created_at`) VALUES
-(1, 'Hamza Ali', '15785460282062289945e16b36c34e20.jpg', 'simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2020-01-09 05:00:28'),
-(2, 'No Name', '15785460483082951855e16b37fb4c84.jpg', 'simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2020-01-09 05:00:47');
 
 -- --------------------------------------------------------
 
@@ -421,7 +398,13 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `name`, `fname`, `date_of_birth`, `gender`, `cnic`, `picture`, `address`, `email`, `mobile_number`, `about`, `created_at`) VALUES
-(1, 'Test Teacher', 'Test Father', '1973-03-03', 'male', '32132-1321321-3', '157787307313318697665e0c6eb1534a8.png', 'test', 'testemail@gmail.com', '0332-1321321', 'etstset', '2020-01-01 10:04:33');
+(1, 'Test Teacher', 'Test Father', '1973-03-03', 'male', '32132-1321321-3', '157787307313318697665e0c6eb1534a8.png', 'test', 'testemail@gmail.com', '0332-1321321', 'etstset', '2020-01-01 10:04:33'),
+(2, 'Khizzar Ali', '', '1972-04-02', 'male', '32132-1321321-3', '157909819620377545615e1f2053e69dd.jpg', '', 'test@gmail.com', '0332-1321321', 'Khizzar is 24 years old, He started freelancing in 2016. He began working on UpWork first and the moved onto Fiverr. He has completed over 900 paid projects on Fiverr and over 100 projects on UpWork. He is proficient in Photoshop &amp; Video Editing. Overall he has 5 years experience in video editing and 2 year experience in photo editing.\r\n\r\nYou will find very few people in Pakistan that will be qualified enough to teach you Video Editing this well. Inshallah you will be in good hands and have a teacher for life to always answer industry specific questions whenever you need to. Good luck to you all.', '2020-01-15 14:23:15'),
+(3, 'Ali Mir', '', '1974-04-03', 'male', '43213-2132132-1', '157909826915772941055e1f209ceb2fe.jpg', 'v', 'test@gmail.com', '0332-1321321', 'Ali Mir started his career back in 2012. He has a very wide skill base &amp; experience. He can teach almost every major Graphic Design Software. Hundreds of Students across the whole of Pakistan are today appointed in workplaces and freelancing, thanks to his training.', '2020-01-15 14:24:28'),
+(4, 'Farooq Akram', '', '1972-03-03', 'male', '31321-3213232-1', '15790983242236523275e1f20d414107.jpg', '', 'tes12321t@gmail.com', '0321-3322313', 'Farooq Akram is a 34 years old programmer with over 14+ years of practical experience. Having worked on many projects, from simple CRUD application to IOT based web apps. Farooq has also worked with GIZ (The Technical Education Authority of Germany) to write course manuals for institutes. He has developed this course with the aim to put together something that works for everyone regardless of their age and level of education, this course will build you up from the basics all the way up to a respectable mid level coder. In Farooq\'s own words &quot;My full effort will go into equipping my students with skills that will give them a genuine feeling of achievement, open a multitude of in demand career paths for them, in the shortest time possible in the Computer Science &amp; Programming industry&quot;.', '2020-01-15 14:25:24'),
+(5, 'Usama Liaqat', '', '1972-04-02', 'male', '35135-1321321-3', '157909839315696449035e1f2118d2fbb.jpg', '', 'aknelajn@gmamc.cimn', '0332-1321321', '', '2020-01-15 14:26:32'),
+(6, 'Mudassir Iqbal', '', '1972-03-02', 'male', '35132-1321321-3', '157909850314902487145e1f21868bf47.jpg', '', 'awkejna.jkh.@j.k..cccccc', '0332-1321321', 'I am Mudassir Marketingwala, 27 years old. I am Google Certified Digital Marketer with over five years of experience. I\'ve helped more than 50 Businesses to grow with my skills. Skills like Online Marketing, Content Strategy, Social Media Marketing, and Lead Generation Services. Most of the clients are from overseas from Australia, Canada, United Kingdom, and Dubai. Businesses include e-Commerce, Apps Marketing/ASO, Softwares, and many more.\r\n\r\nI\'ll teach you one of the best courses available in Pakistan with my expertise. Inshallah, I\'ll always answer industry-specific questions whenever you need to. Good luck to you all.', '2020-01-15 14:28:22'),
+(7, 'Abdul Qadir', '', '1973-03-03', 'male', '32132-1321321-3', '157909872620337255985e1f2265ab456.jpg', '', 'awe.ae.kawjl@k.ccc', '0322-3213213', 'Abdul Qadir (qualified as a computer systems engineer, though this has no positive or negative impact on his career path as an amazing game developer). He has been developing games at AceViral for over 4 years. 50+ of his games have accumulated more than 100m Game Plays on popular app stores like Google Play Store &amp; Apple App Store. His aim in teaching this course would be to set you on the right path to assimilate his achievements and then exceed it in a shorter period than it took himself. He will take on beginners and help them reach an intermediate level by the end of his course.', '2020-01-15 14:32:05');
 
 -- --------------------------------------------------------
 
@@ -471,6 +454,12 @@ ALTER TABLE `courses`
 -- Indexes for table `course_content`
 --
 ALTER TABLE `course_content`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `course_learn`
+--
+ALTER TABLE `course_learn`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -568,6 +557,12 @@ ALTER TABLE `course_content`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
+-- AUTO_INCREMENT for table `course_learn`
+--
+ALTER TABLE `course_learn`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `course_tc`
 --
 ALTER TABLE `course_tc`
@@ -625,7 +620,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
