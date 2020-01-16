@@ -39,7 +39,8 @@ $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'S
 $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Insert_Contact']);
 
 // admin routes
-$admin_dir = "azad-admin";
+$admin_dir = \App\Config::ADMIN_PATH;
+
 $router->add($admin_dir, ['controller' => 'AdminController', 'action' => 'index']);
 $router->add($admin_dir.'/', ['controller' => 'AdminController', 'action' => 'index']);
 $router->add($admin_dir.'/dashboard', ['controller' => 'AdminController', 'action' => 'index']);

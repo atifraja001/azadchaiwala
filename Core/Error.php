@@ -50,15 +50,16 @@ class Error
             echo "<p>Stack trace:<pre>" . $exception->getTraceAsString() . "</pre></p>";
             echo "<p>Thrown in '" . $exception->getFile() . "' on line " . $exception->getLine() . "</p>";
         } else {
-            $log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
-            ini_set('error_log', $log);
-
-            $message = "Uncaught exception: '" . get_class($exception) . "'";
-            $message .= " with message '" . $exception->getMessage() . "'";
-            $message .= "\nStack trace: " . $exception->getTraceAsString();
-            $message .= "\nThrown in '" . $exception->getFile() . "' on line " . $exception->getLine();
-
-            error_log($message);
+            // Remove these comment if you want to log error if SHOW_ERRROS Set to false for showing custom design page.
+//            $log = dirname(__DIR__) . '/logs/' . date('Y-m-d') . '.txt';
+//            ini_set('error_log', $log);
+//
+//            $message = "Uncaught exception: '" . get_class($exception) . "'";
+//            $message .= " with message '" . $exception->getMessage() . "'";
+//            $message .= "\nStack trace: " . $exception->getTraceAsString();
+//            $message .= "\nThrown in '" . $exception->getFile() . "' on line " . $exception->getLine();
+//
+//            error_log($message);
 
             View::render("$code.html");
         }

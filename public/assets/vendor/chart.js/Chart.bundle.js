@@ -2030,7 +2030,7 @@ helpers.getValueOrDefault = helpers.valueOrDefault;
 helpers.getValueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
 
 /**
- * Easing globals adapted from Robert Penner's easing equations.
+ * Easing helpers adapted from Robert Penner's easing equations.
  * @namespace Chart.helpers.easingEffects
  * @see http://www.robertpenner.com/easing/
  */
@@ -5967,7 +5967,7 @@ function indexMode(chart, e, options) {
  */
 
 /**
- * Contains interaction related globals
+ * Contains interaction related helpers
  * @namespace Chart.Interaction
  */
 var core_interaction = {
@@ -7640,8 +7640,8 @@ function determineAlignment(tooltip, size) {
 		yAlign = 'bottom';
 	}
 
-	var lf, rf; // globals to determine left, right alignment
-	var olf, orf; // globals to determine if left/right alignment causes tooltip to go outside chart
+	var lf, rf; // helpers to determine left, right alignment
+	var olf, orf; // helpers to determine if left/right alignment causes tooltip to go outside chart
 	var yf; // function to get the y alignment if the tooltip goes outside of the left or right edges
 	var midX = (chartArea.left + chartArea.right) / 2;
 	var midY = (chartArea.top + chartArea.bottom) / 2;
@@ -10065,7 +10065,7 @@ var core_adapters = {
 };
 
 /**
- * Namespace to hold static tick generation globals
+ * Namespace to hold static tick generation helpers
  * @namespace Chart.Ticks
  */
 var core_ticks = {

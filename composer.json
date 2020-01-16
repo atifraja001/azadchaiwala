@@ -1,9 +1,10 @@
 {
     "require": {
-        "twig/twig": "~2.0",
-        "coderatio/simple-backup": "^1.0"
     },
     "autoload": {
+        "files": [
+          "vendor\/helpers\/init.php"
+        ],
         "psr-4": {
              "Core\\": "Core/",
              "App\\": "App/"

@@ -60,21 +60,33 @@
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
-                <?php }else{ ?>
-                <h2 class="mt-4">Description</h2>
-                <div class="dividercourse"></div>
-            <?php }?>
-                <article class="main-text mt-4">
-                    <p><?=$course['course_description'];?></p>
-                </article>
-                <div class="d-flex justify-content-between mt-5 mb-4">
-                    <div class="text-dark">
-                        <b>Fee: </b><span
-                            style="color: var(--main-color);font-size: 26px;"><?=number_format($course['fee']);?></span>
-                        <small>Pakistani Rupees</small>
-                        <br>
-                        <small>In Word: <b></b></small><?=getPakCurrency($course['fee'])?>
+                <?php } ?>
+                <div class="course_content mt-4">
+                    <div class="what-you-will">
+                        <h2 class="mt-2 learn-head">What will you learn?</h2>
+                        <div class="row">
+                            <?php foreach($learn as $l){?>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="innerget">
+                                    <i class="fas fa-check check-icon-size"></i>
+                                    <p><?=$l['detail'];?></p>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4 mb-4">
+                    <table class="table custom-table" style="width: 70% !important;">
+                        <tr>
+                            <td width="20%"><b>Fee:</b></td>
+                            <td style="color: var(--main-color)"><?=number_format($course['fee']);?> <small>pkr</small></td>
+                        </tr>
+                        <tr>
+                            <td><b>In words:</b></td>
+                            <td><?=getPakCurrency($course['fee'])?></td>
+                        </tr>
+                    </table>
                     <div>
                         <?php if(count($batches) > 0){ ?>
                         <a href="<?=app_url()?>/course-registration/<?=$course['slug'];?>"
@@ -84,42 +96,16 @@
                         <?php } ?>
                     </div>
                 </div>
+                <article class="main-text">
+                    <h2 class="mt-2 learn-head">Description</h2>
+                    <p><?=$course['course_description'];?></p>
+                </article>
                 <style>
                     .courseinnerdown>ul>li{
                         list-style: disc !important;
                         margin-left: 40px;
                     }
                 </style>
-                <div class="course_content">
-                    <h2 class="mt-4">What will you learn?</h2>
-                    <div class="dividercourse"></div>
-                    <div class="what-you-will">
-                        <div class="row">
-                            <?php foreach($learn as $l){?>
-                            <div class="col-lg-6">
-                                <div class="innerget">
-                                    <i class="fas fa-check"></i>
-                                    <p><?=$l['detail'];?></p>
-                                </div>
-                            </div>
-                            <?php } ?>
-                            
-                        </div>
-                    </div>
-<!--                    <h2>Course Outline</h2>-->
-<!--                    <div class="dividercourse"></div>-->
-<!--                    <div class="coursec_inner">-->
-<!--                        <?php $sn = 1; foreach($course_contect as $cc){ ?>-->
-<!--                        <div class="courseinnerdown">-->
-<!--                            <div class="courseinnerhead">-->
-<!--                                <h5><?=$sn?>. <?= $cc['content_title'];?></h5>-->
-<!--                                <h5>(<?= $cc['duration'];?>)</h5>-->
-<!--                            </div>-->
-<!--                            <p class="has-li"><?=html_entity_decode($cc['content_description']);?></p>-->
-<!--                        </div>-->
-<!--                        <?php $sn++; } ?>-->
-<!--                    </div>-->
-                </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="imagesanddetailsc" id="mycoursesidebar">
@@ -145,15 +131,15 @@
                             <h4 style=" color: white; padding: 15px">Course Features</h4>
                             <!-- features list -->
                             <div class="featureslists">
-                                <p><i class="far fa-clock"></i> Duration</p>
+                                <p><i class="far fa-clock"></i> <b class="text-white">Duration</b></p>
                                 <p><?=$course['duration'];?></p>
                             </div>
                             <div class="featureslists">
-                                <p><i class="fa fa-language"></i> Semesters</p>
+                                <p><i class="fa fa-language"></i> <b class="text-white">Semesters</b></p>
                                 <p><?=$course['semester'];?></p>
                             </div>
                             <div class="featureslists lastfe">
-                                <p><i class="fas fa-money-bill-wave"></i> Fee</p>
+                                <p><i class="fas fa-money-bill-wave"></i> <b class="text-white">Fee</b></p>
                                 <p>Rs. <?=number_format($course['fee']);?></p>
                             </div>
                             <!-- features list end -->

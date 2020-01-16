@@ -1,4 +1,4 @@
-
+<!-- code for what people say about azadchaiwala and success stories -->
 	<section class="ccback">
 		<div class="container-fluid">
 			<div class="row">
@@ -86,3 +86,23 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- END code for what people say about azadchaiwala and success stories END -->
+
+
+<!-- Course Content Code -->
+<h2>Course Outline</h2>
+<div class="dividercourse"></div>
+<div class="coursec_inner">
+    <?php $sn = 1; foreach($course_contect as $cc){ ?>
+    <div class="courseinnerdown">
+        <div class="courseinnerhead">
+            <h5><?=$sn?>. <?= $cc['content_title'];?></h5>
+            <h5>(<?= $cc['duration'];?>)</h5>
+        </div>
+        <p class="has-li"><?=html_entity_decode($cc['content_description']);?></p>
+    </div>
+    <?php $sn++; } ?>
+</div>
+
+<!-- END Course Content Code END -->

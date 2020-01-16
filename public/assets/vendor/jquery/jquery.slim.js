@@ -2584,7 +2584,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				}
 			}
 
-			// Override manipulation of globals by nested matchers
+			// Override manipulation of helpers by nested matchers
 			if ( outermost ) {
 				dirruns = dirrunsUnique;
 				outermostContext = contextBackup;
@@ -2605,7 +2605,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 		cached = compilerCache[ selector + " " ];
 
 	if ( !cached ) {
-		// Generate a function of recursive globals that can be used to check each element
+		// Generate a function of recursive helpers that can be used to check each element
 		if ( !match ) {
 			match = tokenize( selector );
 		}
@@ -2630,7 +2630,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 
 /**
  * A low-level selection function that works with Sizzle's compiled
- *  selector globals
+ *  selector helpers
  * @param {String|Function} selector A selector or a pre-compiled
  *  selector function built with Sizzle.compile
  * @param {Element} context
@@ -3475,7 +3475,7 @@ function adoptValue( value, resolve, reject, noValue ) {
 	} catch ( value ) {
 
 		// Support: Android 4.0 only
-		// Strict mode globals invoked without .call/.apply get global-object context
+		// Strict mode helpers invoked without .call/.apply get global-object context
 		reject.apply( undefined, [ value ] );
 	}
 }
@@ -3570,7 +3570,7 @@ jQuery.extend( {
 
 										// Support: Promises/A+ section 2.3.4
 										// https://promisesaplus.com/#point-64
-										// Only check objects and globals for thenability
+										// Only check objects and helpers for thenability
 										( typeof returned === "object" ||
 											typeof returned === "function" ) &&
 										returned.then;
@@ -3897,7 +3897,7 @@ jQuery.extend( {
 			return;
 		}
 
-		// If there are globals bound, to execute
+		// If there are helpers bound, to execute
 		readyList.resolveWith( document, [ jQuery ] );
 	}
 } );
@@ -4994,7 +4994,7 @@ function on( elem, types, selector, data, fn, one ) {
 }
 
 /*
- * Helper globals for managing events -- not part of the public interface.
+ * Helper helpers for managing events -- not part of the public interface.
  * Props to Dean Edwards' addEvent library for many of the ideas.
  */
 jQuery.event = {
