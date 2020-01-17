@@ -51,9 +51,9 @@ class AdminController
         View::render('backend/layouts/script.html');
     }
     public function change_password_post(){
-        $old_password = clean_post('old_password');
-        $new_password = clean_post('new_password');
-        $confirm_password = clean_post('c_new_password');
+        $old_password = $_POST['old_password'];
+        $new_password = $_POST['new_password'];
+        $confirm_password = $_POST['c_new_password'];
         if($new_password == $confirm_password){
             if(strlen($new_password) >= 8) {
                 $user = new \App\Models\User();
@@ -91,10 +91,10 @@ class AdminController
         View::render('backend/layouts/script.html');
     }
     public function manage_user_post(){
-        if(strlen(clean_post('password')) >= 8) {
+        if(strlen($_POST['password']) >= 8) {
             $data = [
                 ':username' => clean_post('username'),
-                ':password' => password_hash(clean_post('password'), PASSWORD_DEFAULT),
+                ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 ':role' => 'user'
             ];
             $user = new \App\Models\User();

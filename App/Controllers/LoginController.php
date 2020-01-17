@@ -14,7 +14,7 @@ class LoginController
     public function post(){
         // accept parameters and do login
         $username = clean_post('username');
-        $password = clean_post('password');
+        $password = $_POST['password'];
         $user = new User();
         $result = $user->doLogin($username, $password);
         if($result){

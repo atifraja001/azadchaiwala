@@ -117,10 +117,6 @@ function clean_post($var){
     }else{
         $var = "";
     }
-    $var = trim($var);
-    $var = strval($var);
-    $var = str_replace("<script>","<error>", $var);
-    $var = str_replace("</script>","</error>", $var);
     return $var;
 
 }
@@ -130,10 +126,6 @@ function clean_get($var){
     }else{
         $var = "";
     }
-    $var = trim($var);
-    $var = strval($var);
-    $var = str_replace("<script>","<error>", $var);
-    $var = str_replace("</script>","</error>", $var);
     return $var;
 
 }
@@ -185,6 +177,7 @@ function redirectWithMessage($url, $message, $where, $type = "msg"){
     }
 }
 function showMsg($where){
+    // only works with bootstrap 3 and bootstrap 4
     if(isset($_SESSION['msg']) && isset($_SESSION['type']) && isset($_SESSION['where'])){
         if($_SESSION['where'] == $where){
             $type = $_SESSION['type'];
