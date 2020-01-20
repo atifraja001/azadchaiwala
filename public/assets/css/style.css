@@ -864,13 +864,15 @@ Contact us Page end
 single course section
 ------*/
 .singlecoursesection{
-  padding:2em 0em;
-  background:var(--background-color);
+  padding:1.2em 0em;
+  background:var(--main-color);
 }
 .signlecoursetext>h1{
   font-weight: bold;
-  color:black;
-  font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+  color:white;
+  font-size: 36px;
+  text-transform: uppercase;
+font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
 }
 .signlecoursetext>p{
 
@@ -1144,12 +1146,14 @@ single course section
 
 /*courses register page*/
 .cregister{
-  background:var(--background-color);
-  padding: 2em 0em;
+  background:var(--main-color);
+  padding: 1.2em 0em;
 }
-.regirsterh>h1{
+.regirsterh>h1 {
   font-weight: bold;
-  color:black;
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
 }
 .buttonofregister{
   padding: 15px;

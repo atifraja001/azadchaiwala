@@ -101,7 +101,7 @@ class HomeController extends \Core\Controller
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/course.html', [
             'course' => $course, 'teacher' => $teacher, 'course_contect' => $getcoursetc, 'batches' => $batches
-            ,'learn' => $course_learn
+            , 'learn' => $course_learn
         ]);
         View::render('frontend/layouts/script.html');
     }
