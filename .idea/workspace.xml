@@ -96,7 +96,7 @@
       <workItem from="1579150750559" duration="14485000" />
       <workItem from="1579178185622" duration="1019000" />
       <workItem from="1579235162065" duration="2796000" />
-      <workItem from="1579524595413" duration="356000" />
+      <workItem from="1579524595413" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -161,7 +161,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579179069896</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1579525020198</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579525020198</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <created>1579525041238</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579525041238</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +199,8 @@
     <MESSAGE value="sql update" />
     <MESSAGE value="minor update" />
     <MESSAGE value="issue updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="issue updated" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -208,10 +223,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1579179069389">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1579525047877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579179069389" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579525047877" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
