@@ -1,0 +1,108 @@
+<!-- code for what people say about azadchaiwala and success stories -->
+	<section class="ccback">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-5 col-center m-auto oned">
+					<h2 >WHAT PEOPLE SAY ABOUT AZAD CHAIWALA</h2>
+					<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+						<!-- Carousel indicators -->
+						<ol class="carousel-indicators">
+							<?php $sn = 0; foreach($review as $r){ $sn++; if($sn == 1){ ?>
+							<li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+							<?php }else{ ?>
+							<li data-target="#myCarousel1" data-slide-to="1"></li>
+							<?php } } ?>
+						</ol>
+						<!-- Wrapper for carousel items -->
+						<div class="carousel-inner">
+							<?php $sn = 0; foreach($review as $r){ $sn++;
+								if($sn == 1){
+							?>
+							<div class="item carousel-item active">
+								<div class="img-box"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+								<p class="overview"><b><?=$r['person_name'];?></b></p>
+								<p class="testimonial"><?=$r['description'];?></p>
+
+							</div>
+							<?php }else{ ?>
+							<div class="item carousel-item">
+								<div class="img-box"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+								<p class="overview"><b><?=$r['person_name'];?></b></p>
+								<p class="testimonial"><?=$r['description'];?></p>
+
+							</div>
+							<?php } } ?>
+						</div>
+						<!-- Carousel controls -->
+						<a class="carousel-control left carousel-control-prev" href="#myCarousel1" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a class="carousel-control right carousel-control-next" href="#myCarousel1" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-5 col-center m-auto">
+					<h2>SUCCESS STORY</h2>
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Carousel indicators -->
+						<ol class="carousel-indicators">
+							<?php $sn = 0; foreach($review as $r){ $sn++; if($sn == 1){ ?>
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<?php }else{ ?>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<?php } } ?>
+						</ol>
+						<!-- Wrapper for carousel items -->
+						<div class="carousel-inner">
+							<?php $sn = 0; foreach($review as $r){ $sn++;
+								if($sn == 1){
+							?>
+							<div class="item carousel-item active">
+								<div class="img-box"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+								<p class="overview"><b><?=$r['person_name'];?></b></p>
+								<p class="testimonial"><?=$r['description'];?></p>
+
+							</div>
+							<?php }else{ ?>
+							<div class="item carousel-item">
+								<div class="img-box"><img src="<?=app_url()?>/getImage?i=<?=$r['id']?>&t=review" alt=""></div>
+								<p class="overview"><b><?=$r['person_name'];?></b></p>
+								<p class="testimonial"><?=$r['description'];?></p>
+
+							</div>
+							<?php } } ?>
+						</div>
+						<!-- Carousel controls -->
+						<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- END code for what people say about azadchaiwala and success stories END -->
+
+
+<!-- Course Content Code -->
+<h2>Course Outline</h2>
+<div class="dividercourse"></div>
+<div class="coursec_inner">
+    <?php $sn = 1; foreach($course_contect as $cc){ ?>
+    <div class="courseinnerdown">
+        <div class="courseinnerhead">
+            <h5><?=$sn?>. <?= $cc['content_title'];?></h5>
+            <h5>(<?= $cc['duration'];?>)</h5>
+        </div>
+        <p class="has-li"><?=html_entity_decode($cc['content_description']);?></p>
+    </div>
+    <?php $sn++; } ?>
+</div>
+
+<!-- END Course Content Code END -->
