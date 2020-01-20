@@ -64,7 +64,6 @@
          * false will display 404 page and logs errors in logs folder(optional)
          * @var boolean
          */
-        // some testing antohjer progkiao terst asd asd
         const SHOW_ERRORS = true;
 
     }
