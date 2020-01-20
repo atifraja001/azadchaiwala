@@ -1,0 +1,13 @@
+{
+    "require": {
+    },
+    "autoload": {
+        "files": [
+          "vendor\/helpers\/init.php"
+        ],
+        "psr-4": {
+             "Core\\": "Core/",
+             "App\\": "App/"
+        }
+    }
+}
