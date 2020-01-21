@@ -26,7 +26,7 @@
          * if project public folder is available in public_html comment first line and uncomment second.
          * @var string
          */
-        const APP_URL = "http://localhost/dropbox/azadchaiwala_git/azadchaiwala.pk/publi"; // if public is files in sub folder. set this.
+        const APP_URL = "http://localhost/dropbox/azadchaiwala.pk/public"; // if public is files in sub folder. set this.
         //const APP_URL = ""; // if public files are in public_html
 
         /**

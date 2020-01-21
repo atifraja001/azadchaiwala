@@ -5,6 +5,7 @@ ob_start();
  * invalid_image  - if file type is invalid
  * invalid_size   - if file size exceed the limit
  * not_uploaded   - if file not upload
+ * invalid_path   - if path not exists
  * [filename]     - if their is no error
  * DEFAULTS:
  * max upload size = 2MB
@@ -55,15 +56,19 @@ function uploadfile($file, $path,
         }
     }
 }
+/*
+ * return
+ * number of days between two date
+ *
+ * required parameters
+ * start date (string date) example: 21-01-2020 or 2020/01/21
+ * end date (string date) example: 21-01-2020 or 2020/01/21
+ */
 function daysdiff($start_date, $end_date){
     $timeleft = strtotime($end_date)-strtotime($start_date);
     return round((($timeleft/24)/60)/60);
 }
-function hoursdiff($start_time, $end_time){
-    $time1 = strtotime($start_time);
-    $time2 = strtotime($end_time);
-    return round(abs($time2 - $time1) / 3600,2);
-}
+
 function getPakCurrency($number)
 {
     $number = floatval($number);
@@ -118,7 +123,6 @@ function clean_post($var){
         $var = "";
     }
     return $var;
-
 }
 function clean_get($var){
     if(isset($_GET[$var])){
@@ -127,47 +131,36 @@ function clean_get($var){
         $var = "";
     }
     return $var;
-
 }
+
 function redirect($url){
-    if (!headers_sent())
-    {
-        header('Location: '.$url);
-        exit;
-    }
-    else
-    {
+    if (!headers_sent()) {
+        exit(header('Location: '.$url));
+    }else {
         echo '<script type="text/javascript">';
         echo 'window.location.href="'.$url.'";';
         echo '</script>';
         echo '<noscript>';
         echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit ;
+        echo '</noscript>'; exit;
     }
 }
-function add3Dots($string, $limit)
-{
-    $dots = "...";
-    if(strlen($string) > $limit)
-    {
-        // you can also use substr instead of substring
-        $string = substr($string, 0, $limit) . $dots;
+function add3Dots($string, $limit){
+    if(strlen($string) > $limit) {
+        $string = substr($string, 0, $limit) . "...";
     }
     return $string;
 }
 function redirectWithMessage($url, $message, $where, $type = "msg"){
-    if (!headers_sent())
-    {
+    if (!headers_sent()) {
         $_SESSION['msg'] = $message;
         $_SESSION['type'] = $type;
         $_SESSION['where'] = $where;
-        header('Location: '.$url);
-        exit;
-    }
-    else
-    {
+        exit(header('Location: '.$url));
+    }else {
         $_SESSION['msg'] = $message;
         $_SESSION['type'] = $type;
+        $_SESSION['where'] = $where;
         echo '<script type="text/javascript">';
         echo 'window.location.href="'.$url.'";';
         echo '</script>';
