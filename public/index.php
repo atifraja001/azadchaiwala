@@ -38,6 +38,7 @@ $router->add('registration-student', ['controller' => 'HomeController', 'action'
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);
 $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Insert_Contact']);
 
+
 // admin routes
 $admin_dir = \App\Config::ADMIN_PATH;
 
