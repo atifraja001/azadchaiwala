@@ -40,8 +40,8 @@ require "../App/";
                     }catch(PDOException $e){
                         showError($e->getMessage());
                     }
-                    try{
-                        $db->beginTransaction();
+                    //try{
+                        //$db->beginTransaction();
                         showSuccess('Transaction Started');
                         // for table badges or batches
                         $db->exec('RENAME TABLE badges TO batches;');
@@ -203,11 +203,11 @@ require "../App/";
                         showSuccess('Users Table Updated Successfully');
 
                         $db->commit();
-                    }catch(Exception $e){
+                    //}catch(Exception $e){
                         //showError("Rolling Back!");
-                        $db->rollBack();
-                        showError($e->getMessage());
-                    }
+                        //$db->rollBack();
+                        //showError($e->getMessage());
+                    //}
                     ?>
                     <tr>
                         <td colspan="2" class="text-center">
