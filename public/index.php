@@ -10,7 +10,6 @@
  * Composer
  */
 require '../vendor/autoload.php';
-echo '../vendor/autoload.php';
 
 /**
  * Error and Exception handling
