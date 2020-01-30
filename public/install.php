@@ -25,7 +25,7 @@ require "../App/";
                 <table class="table table-bordered">
                     <tr>
                         <td colspan="2" class="text-center">
-                            <label class="alert alert-danger text-center mt-3" style="width: 100%;"><strong>DO NOT CLOSE THIS PAGE</strong></label>
+                            <label class="alert alert-danger text-center mt-3" style="width: 100%;"><strong>DO NOT CLOSE THIS PAGE tt</strong></label>
                         </td>
                     </tr>
                     <?php
@@ -234,7 +234,6 @@ function showError($msg){
     echo '<label class="alert alert-danger text-center mt-3" style="width: 100%;"><strong>Error: </strong>'.$msg.'</label>';
     echo '<a href="install.php"><button class="btn btn-warning">GO BACK</button></a>';
     echo "</td></tr>";
-    die;
 }
 function showSuccess($msg){
     echo "<tr><td>";
