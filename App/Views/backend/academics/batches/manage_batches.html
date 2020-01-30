@@ -56,10 +56,10 @@
                                 </td>
                                 <td><?=date('d-m-Y', strtotime($b['created_at']));?></td>
                                 <td>
-                                    <?php if(strtotime($b['start_date']) < time()){ ?>
-                                        <label class="badge badge-success">In Progress</label>
-                                    <?php }else if(strtotime($b['end_date']) < time()){ ?>
-                                    <label class="badge badge-danger">Ended</label>
+                                    <?php if(strtotime($b['end_date']) < time()){ ?>
+                                        <label class="badge badge-danger" style="font-size: 16px">Ended</label>
+                                    <?php }else if(strtotime($b['start_date']) < time()){ ?>
+                                        <label class="badge badge-success" style="font-size: 16px">In Progress</label>
                                     <?php }else if(strtotime($b['start_date']) > time()){ ?>
                                         <label class="badge badge-primary" style="font-size: 16px">Starts in <?=daysdiff(date('Y-m-d'), $b['start_date'])?> Days</label>
                                     <?php } ?>

@@ -9,8 +9,8 @@
 /**
  * Composer
  */
-require dirname(__DIR__) . '/vendor/autoload.php';
-
+require '../vendor/autoload.php';
+echo '../vendor/autoload.php';
 
 /**
  * Error and Exception handling
@@ -165,5 +165,6 @@ $router->add($admin_dir.'/download-backup', ['controller' => 'FetchDataControlle
 $router->add($admin_dir.'/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
 $router->add($admin_dir.'/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
 $router->add($admin_dir.'/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);

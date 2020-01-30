@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__) . '/vendor/autoload.php';
+require "../App/";
 ?>
 
 <!DOCTYPE html>
@@ -67,9 +67,19 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         $db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
                         $db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
                         $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
                         $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
                         $db->exec('ALTER TABLE `courses` CHANGE `semester` `semester` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+
+                        $q = $db->query("SELECT * FROM courses");
+                        $rows = $q->fetchAll();
+                        foreach ($rows as $r){
+                            $id = $r['id'];
+                            $fee = str_replace(',', '', trim($r['fee']));
+                            $q1 = $db->prepare('UPDATE courses SET fee = :fee WHERE id = :id');
+                            $q1->execute([':fee'=>$fee, ':id' => $id]);
+                        }
                         $db->exec('ALTER TABLE `courses` CHANGE `fee` `fee` INT(11) NOT NULL;');
                         $db->exec('ALTER TABLE `courses` CHANGE `course_description` `course_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('ALTER TABLE `courses` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `course_description`;');
@@ -81,8 +91,9 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
                         $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `total_time` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `description` `position` TINYINT(2) NOT NULL;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('UPDATE course_content SET total_time = 0');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `total_time` `position` TINYINT(2) NOT NULL;');
                         showSuccess('Course Content Table Updated Successfully');
 
                         // creating new course learn table
@@ -107,6 +118,18 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         $db->exec('ALTER TABLE `enrollments` DROP `course_fee`;');
                         $db->exec('ALTER TABLE `enrollments` DROP `start_date`;');
                         $db->exec('ALTER TABLE `enrollments` DROP `end_date`;');
+                        $q = $db->query("SELECT * FROM enrollments");
+                        $rows = $q->fetchAll();
+                        foreach ($rows as $r){
+                            $id = $r['id'];
+                            if(strtolower($r['fee_status']) == "paid"){
+                                $q1 = $db->prepare("UPDATE enrollments SET fee_status = 1 WHERE id = :id");
+                                $q1->execute([':id' => $id]);
+                            }else{
+                                $q1 = $db->prepare("UPDATE enrollments SET fee_status = 0 WHERE id = :id");
+                                $q1->execute([':id' => $id]);
+                            }
+                        }
                         $db->exec('ALTER TABLE `enrollments` CHANGE `fee_status` `status` TINYINT(4) NOT NULL;');
                         $db->exec('ALTER TABLE `enrollments` CHANGE `student_id` `student_id` INT(11) NOT NULL;');
                         showSuccess('Enrollments table Updated Successfully');

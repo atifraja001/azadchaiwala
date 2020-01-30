@@ -3,7 +3,6 @@
 
 namespace App\Controllers;
 use Core\View;
-
 /*
  * Date: 09-01-2020
  * EmailController - Custom Controller to send email using default php mail function. No smtp setting required
@@ -103,13 +102,17 @@ class EmailController
 
 
     protected function NewRegistration($course){
-        $content = file_get_contents("../App/Views/email_templates/new_registration.html");
+        $content = file_get_contents(dirname(__DIR__)."/Views/email_templates/new_registration.html");
+        $url = $this->getBaseUrl();
+        $content = str_replace(":url", $url, $content);
         $content = str_replace(":course", $course, $content);
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
     protected function ContactUs($name, $email, $subject, $message){
-        $content = file_get_contents("../App/Views/email_templates/contact_us.html");
+        $content = file_get_contents(dirname(__DIR__)."/Views/email_templates/contact_us.html");
+        $url = $this->getBaseUrl();
+        $content = str_replace(":url", $url, $content);
         $content = str_replace(":name", $name, $content);
         $content = str_replace(":email", $email, $content);
         $content = str_replace(":subject", $subject, $content);
@@ -119,7 +122,9 @@ class EmailController
     }
 
     protected function feedback($name, $email, $course, $message){
-        $content = file_get_contents("../App/Views/email_templates/course_feedback.html");
+        $content = file_get_contents(dirname(__DIR__)."/Views/email_templates/course_feedback.html");
+        $url = $this->getBaseUrl();
+        $content = str_replace(":url", $url, $content);
         $content = str_replace(":name", $name, $content);
         $content = str_replace(":email", $email, $content);
         $content = str_replace(":course", $course, $content);
@@ -128,16 +133,23 @@ class EmailController
         return $content;
     }
     protected function RegistrationVerified($start_date, $course){
-        $content = file_get_contents("../App/Views/email_templates/registration_verified.html");
+        $content = file_get_contents(dirname(__DIR__)."/Views/email_templates/registration_verified.html");
+        $url = $this->getBaseUrl();
+        $content = str_replace(":url", $url, $content);
         $content = str_replace(":course", $course, $content);
         $content = str_replace(":start_date", $start_date, $content);
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
     protected function BatchMail($message){
-        $content = file_get_contents("../App/Views/email_templates/batch_mail.html");
+        $content = file_get_contents(dirname(__DIR__)."/Views/email_templates/batch_mail.html");
+        $url = $this->getBaseUrl();
+        $content = str_replace(":url", $url, $content);
         $content = str_replace(":message", $message, $content);
         $content = str_replace(":year", date('Y'), $content);
         return $content;
+    }
+    protected function getBaseUrl(){
+        return (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'];
     }
 }

@@ -1,17 +1,33 @@
 <?php
+/*
+ * Author: Awais Liaqat (awaisliaqat5@gmail.com)
+ * created: 03-2018 (mm-yyyy)
+ * updated: 29-01-2020 (dd-mm-yyyy)
+ * Description:
+ *      these functions are helper functions that can be used in entire project. (views, controllers)
+ */
 ob_start();
 /*
- * return
- * invalid_image  - if file type is invalid
- * invalid_size   - if file size exceed the limit
- * not_uploaded   - if file not upload
- * invalid_path   - if path not exists
- * [filename]     - if their is no error
- * DEFAULTS:
- * max upload size = 2MB
- * create new path if not exists = false
- * mime_type = image (gif, png, jpg)
- * generate new name = true
+ *
+ * uploadfile (PHP 5, 7)
+ *
+ * uploadfile(string $file, string $path [, int $file_size, array $mime_type, bool $create_path, bool $generate_name)
+ *
+ * parameters:
+ * file
+ *      name of the file (not $_FILES['profile_picture']) use 'profile_picture'
+ * path
+ *      path to store images (path/to)
+ *      example: assets/folder_name (not /assets/folder_name/)
+ * mime_type
+ *      restrict file types to upload
+ *      default: array of image types (jpeg, gif, png)
+ * create_path
+ *      create path if not exists
+ *      default: false
+ * generate_name
+ *      to generate new name for image. true is recommended
+ *      default: true
  */
 function uploadfile($file, $path,
                     $file_size = 2,
@@ -19,9 +35,10 @@ function uploadfile($file, $path,
                     $create_path = false,
                     $generate_name = true){
     $file_size = $file_size*1000000; // default is 2 MB
-    if (!file_exists($path)) {
+    $path = $_SERVER['DOCUMENT_ROOT']."/".$path;
+    if (file_exists($path)) {
         if($create_path) {
-            mkdir($path, 0777, true);
+            mkdir($path, 0750, true);
         }
     }else{
         return "invalid_path";
@@ -63,14 +80,36 @@ function uploadfile($file, $path,
  * required parameters
  * start date (string date) example: 21-01-2020 or 2020/01/21
  * end date (string date) example: 21-01-2020 or 2020/01/21
+ *
  */
 function daysdiff($start_date, $end_date){
     $timeleft = strtotime($end_date)-strtotime($start_date);
     return round((($timeleft/24)/60)/60);
 }
+/*
+ * return
+ * number of Hours between two times
+ *
+ * required parameters
+ * start date (string date) example: 23:59:59
+ * end date (string date) example: 23:59:59
+ *
+ */
+function hoursdiff($start_time, $end_time){
+    $timeleft = strtotime($end_time)-strtotime($start_time);
+    return round(($timeleft/3600));
+}
 
-function getPakCurrency($number)
-{
+/*
+ * return
+ * amount in words (Pakistani Format)
+ *
+ * required parameters
+ * int or float
+ *
+ */
+
+function getPakCurrency($number){
     $number = floatval($number);
     $decimal = round($number - ($no = floor($number)), 2) * 100;
     $hundred = null;
@@ -102,6 +141,14 @@ function getPakCurrency($number)
     $paise = ($decimal) ? "." . ($words[$decimal / 10] . " " . $words[$decimal % 10]) . ' Paise' : '';
     return ($Rupees ? $Rupees . 'Rupees ' : '') . $paise . '';
 }
+
+/*
+ * checks users type. if user is not logged
+ * redirects to login page
+ * required parameters
+ * int or float
+ */
+
 function Auth($user){
     if(strtolower($user) == "admin"){
         if(!isset($_SESSION['admin_login'])){
@@ -109,10 +156,20 @@ function Auth($user){
         }
     }
 }
+
+/*
+ * return
+ * PATH (SET IN App/Config.php)
+ *
+ * required parameters
+ * base: for public directory (default)
+ * admin: for admin directory
+ */
+
 function app_url($type = 'base'){
-    if (strtolower($type) == "admin"){
+    if(strtolower($type) == "admin"){
         return \App\Config::ADMIN_URL;
-    }else {
+    }else{
         return \App\Config::APP_URL;
     }
 }
@@ -132,11 +189,19 @@ function clean_get($var){
     }
     return $var;
 }
-
+/*
+ * use to redirect with header or
+ * if headers already sent! it redirects
+ * with javascript or noscript (meta)
+ *
+ * required parameters
+ * url: to redirect
+ *
+ */
 function redirect($url){
-    if (!headers_sent()) {
+    if (!headers_sent()){
         exit(header('Location: '.$url));
-    }else {
+    }else{
         echo '<script type="text/javascript">';
         echo 'window.location.href="'.$url.'";';
         echo '</script>';
@@ -145,19 +210,42 @@ function redirect($url){
         echo '</noscript>'; exit;
     }
 }
+/*
+ * @returns
+ * string with 3 dots if string is greater then the limit.
+ *
+ * required parameters
+ * string (string)
+ * limit (int)
+ *
+ */
 function add3Dots($string, $limit){
     if(strlen($string) > $limit) {
         $string = substr($string, 0, $limit) . "...";
     }
     return $string;
 }
+/*
+ * use to redirect with header or
+ * if headers already sent! it redirects
+ * with javascript or noscript (meta)
+ *
+ * required parameters
+ * url: to redirect
+ * message: to show message (string)
+ * where: is used to show message location
+ * (if you have multiple positions of showing message)
+ * type (accepts two options)
+ * msg: to show success message
+ * error: to show danger message
+ */
 function redirectWithMessage($url, $message, $where, $type = "msg"){
-    if (!headers_sent()) {
+    if (!headers_sent()){
         $_SESSION['msg'] = $message;
         $_SESSION['type'] = $type;
         $_SESSION['where'] = $where;
         exit(header('Location: '.$url));
-    }else {
+    }else{
         $_SESSION['msg'] = $message;
         $_SESSION['type'] = $type;
         $_SESSION['where'] = $where;
@@ -169,6 +257,16 @@ function redirectWithMessage($url, $message, $where, $type = "msg"){
         echo '</noscript>'; exit;
     }
 }
+/*
+ * showMsg is compatible with redirectWithMessage
+ * it shows one time message
+ * @return
+ * Bootstrap Alert Message
+ *
+ * @required parameters
+ * where: (must be matched with redirectWithMessage where parameter
+ *
+ */
 function showMsg($where){
     // only works with bootstrap 3 and bootstrap 4
     if(isset($_SESSION['msg']) && isset($_SESSION['type']) && isset($_SESSION['where'])){
@@ -194,32 +292,29 @@ function showMsg($where){
     }
     return "";
 }
-function formatSizeUnit($bytes)
-{
-    if ($bytes >= 1073741824)
-    {
+
+/*
+ * @returns
+ * filesize in user friendly format
+ *
+ * @required parameters
+ * filesize in bytes
+ */
+function formatSizeUnit($bytes){
+    if($bytes >= 1073741824){
         $bytes = number_format($bytes / 1073741824) . ' GB';
-    }
-    elseif ($bytes >= 1048576)
-    {
+    }else if ($bytes >= 1048576){
         $bytes = number_format($bytes / 1048576) . ' MB';
-    }
-    elseif ($bytes >= 1024)
-    {
+    }else if($bytes >= 1024){
         $bytes = number_format($bytes / 1024) . ' kB';
     }
-    elseif ($bytes > 1)
-    {
+    else if($bytes > 1){
         $bytes = $bytes . ' bytes';
     }
-    elseif ($bytes == 1)
-    {
+    else if($bytes == 1){
         $bytes = $bytes . ' byte';
-    }
-    else
-    {
+    }else{
         $bytes = '0 bytes';
     }
-
     return $bytes;
 }
