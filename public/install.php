@@ -44,54 +44,54 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         //$db->beginTransaction();
                         showSuccess('Transaction Started');
                         // for table badges or batches
-//                        $db->exec('RENAME TABLE badges TO batches;');
-//                        $db->exec('ALTER TABLE `batches` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-//                        $db->exec('ALTER TABLE `batches` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
-//                        $db->exec('ALTER TABLE `batches` CHANGE `start_time` `start_time` TIME NOT NULL;');
-//                        $db->exec('ALTER TABLE `batches` CHANGE `end_time` `end_time` TIME NOT NULL;');
-//                        $db->exec('ALTER TABLE `batches` CHANGE `total_students` `total_students` TINYINT(4) NOT NULL;');
-//                        showSuccess('Batches Table Updated Successfully');
-//
-//                        // for table contact mails
-//                        $db->exec('RENAME TABLE contact_mails TO contact_messages;');
-//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `message` `message_text` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-//                        $db->exec('ALTER TABLE `contact_messages` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `message_text`;');
-//                        showSuccess('Contact Mails Table Updated Successfully');
+                        $db->exec('RENAME TABLE badges TO batches;');
+                        $db->exec('ALTER TABLE `batches` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+                        $db->exec('ALTER TABLE `batches` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
+                        $db->exec('ALTER TABLE `batches` CHANGE `start_time` `start_time` TIME NOT NULL;');
+                        $db->exec('ALTER TABLE `batches` CHANGE `end_time` `end_time` TIME NOT NULL;');
+                        $db->exec('ALTER TABLE `batches` CHANGE `total_students` `total_students` TINYINT(4) NOT NULL;');
+                        showSuccess('Batches Table Updated Successfully');
+
+                        // for table contact mails
+                        $db->exec('RENAME TABLE contact_mails TO contact_messages;');
+                        $db->exec('ALTER TABLE `contact_messages` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+                        $db->exec('ALTER TABLE `contact_messages` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `contact_messages` CHANGE `message` `message_text` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `contact_messages` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `message_text`;');
+                        showSuccess('Contact Mails Table Updated Successfully');
 
                         // for table Courses
-                        //$db->exec('ALTER TABLE `courses` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-                        //$db->exec('ALTER TABLE `courses` CHANGE `order_number` `order_number` SMALLINT(6) NOT NULL;');
-                        //$db->exec('ALTER TABLE `courses` CHANGE `teacher_id` `teacher_id` INT(11) NOT NULL;');
-                        //$db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
-                        //$db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        //$db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-//                        $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
-//                        $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
-//                        $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
-//                        $db->exec('ALTER TABLE `courses` CHANGE `semester` `semester` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-//
-//                        $q = $db->query("SELECT * FROM courses");
-//                        $rows = $q->fetchAll();
-//                        foreach ($rows as $r){
-//                            $id = $r['id'];
-//                            $fee = str_replace(',', '', trim($r['fee']));
-//                            $q1 = $db->prepare('UPDATE courses SET fee = :fee WHERE id = :id');
-//                            $q1->execute([':fee'=>$fee, ':id' => $id]);
-//                        }
-//                        $db->exec('ALTER TABLE `courses` CHANGE `fee` `fee` INT(11) NOT NULL;');
-//                        $db->exec('ALTER TABLE `courses` CHANGE `course_description` `course_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-//                        $db->exec('ALTER TABLE `courses` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `course_description`;');
-//                        showSuccess('Courses Table Updated Successfully');
-//
-//                        // for course sections
-//                        $db->exec('RENAME TABLE course_sections TO course_content;');
-//                        $db->exec('ALTER TABLE `course_content` CHANGE `csid` `id` BIGINT(20) NOT NULL AUTO_INCREMENT;');
-//                        $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
-//                        $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        //$db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        //$db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `order_number` `order_number` SMALLINT(6) NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `teacher_id` `teacher_id` INT(11) NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
+                        $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `semester` `semester` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+
+                        $q = $db->query("SELECT * FROM courses");
+                        $rows = $q->fetchAll();
+                        foreach ($rows as $r){
+                            $id = $r['id'];
+                            $fee = str_replace(',', '', trim($r['fee']));
+                            $q1 = $db->prepare('UPDATE courses SET fee = :fee WHERE id = :id');
+                            $q1->execute([':fee'=>$fee, ':id' => $id]);
+                        }
+                        $db->exec('ALTER TABLE `courses` CHANGE `fee` `fee` INT(11) NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` CHANGE `course_description` `course_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `courses` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `course_description`;');
+                        showSuccess('Courses Table Updated Successfully');
+
+                        // for course sections
+                        $db->exec('RENAME TABLE course_sections TO course_content;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `csid` `id` BIGINT(20) NOT NULL AUTO_INCREMENT;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        $db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('UPDATE course_content SET total_time = 0');
                         $db->exec('ALTER TABLE `course_content` CHANGE `total_time` `position` TINYINT(2) NOT NULL;');
                         showSuccess('Course Content Table Updated Successfully');
@@ -202,7 +202,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
                         showSuccess('Users Table Updated Successfully');
 
-                        $db->commit();
+                        //$db->commit();
                     //}catch(Exception $e){
                         //showError("Rolling Back!");
                         //$db->rollBack();
