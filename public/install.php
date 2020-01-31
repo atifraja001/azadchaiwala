@@ -35,13 +35,13 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                     $db_name = \App\Config::DB_NAME;
                     try {
                         $db = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                         showSuccess("Database Connected!");
                     }catch(PDOException $e){
                         showError($e->getMessage());
                     }
-                    try{
-                        $db->beginTransaction();
+                    //try{
+                        //$db->beginTransaction();
                         showSuccess('Transaction Started');
                         // for table badges or batches
 //                        $db->exec('RENAME TABLE badges TO batches;');
@@ -203,11 +203,11 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         showSuccess('Users Table Updated Successfully');
 
                         $db->commit();
-                    }catch(Exception $e){
+                    //}catch(Exception $e){
                         //showError("Rolling Back!");
-                        $db->rollBack();
-                        showError($e->getMessage());
-                    }
+                        //$db->rollBack();
+                        //showError($e->getMessage());
+                    //}
                     ?>
                     <tr>
                         <td colspan="2" class="text-center">
