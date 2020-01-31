@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/install.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/batches/manage_batches.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/batches/manage_batches.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
       <workItem from="1579583876626" duration="1047000" />
       <workItem from="1579604508499" duration="2460000" />
       <workItem from="1579847591180" duration="4194000" />
-      <workItem from="1580446520742" duration="2266000" />
+      <workItem from="1580446520742" duration="2694000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -272,7 +271,28 @@
       <option name="project" value="LOCAL" />
       <updated>1580448915078</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="upgrade">
+      <created>1580449360884</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1580449360884</updated>
+    </task>
+    <task id="LOCAL-00025" summary="logo link">
+      <created>1580449388397</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1580449388397</updated>
+    </task>
+    <task id="LOCAL-00026" summary="hourdiff() added">
+      <created>1580449598505</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1580449598505</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +319,9 @@
     <MESSAGE value="update" />
     <MESSAGE value="Database upgrade" />
     <MESSAGE value="upgrade" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade" />
+    <MESSAGE value="logo link" />
+    <MESSAGE value="hourdiff() added" />
+    <option name="LAST_COMMIT_MESSAGE" value="hourdiff() added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -322,10 +344,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580449387716">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580449597949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580449387716" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580449597949" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
