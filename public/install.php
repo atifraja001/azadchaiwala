@@ -91,7 +91,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 //                        $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
 //                        $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         //$db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        //$db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('UPDATE course_content SET total_time = 0');
                         $db->exec('ALTER TABLE `course_content` CHANGE `total_time` `position` TINYINT(2) NOT NULL;');
                         showSuccess('Course Content Table Updated Successfully');
