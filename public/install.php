@@ -67,30 +67,30 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                         //$db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
                         //$db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         //$db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
-                        $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `semester` `semester` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-
-                        $q = $db->query("SELECT * FROM courses");
-                        $rows = $q->fetchAll();
-                        foreach ($rows as $r){
-                            $id = $r['id'];
-                            $fee = str_replace(',', '', trim($r['fee']));
-                            $q1 = $db->prepare('UPDATE courses SET fee = :fee WHERE id = :id');
-                            $q1->execute([':fee'=>$fee, ':id' => $id]);
-                        }
-                        $db->exec('ALTER TABLE `courses` CHANGE `fee` `fee` INT(11) NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `course_description` `course_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `course_description`;');
-                        showSuccess('Courses Table Updated Successfully');
-
-                        // for course sections
-                        $db->exec('RENAME TABLE course_sections TO course_content;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `csid` `id` BIGINT(20) NOT NULL AUTO_INCREMENT;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+//                        $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
+//                        $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
+//                        $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
+//                        $db->exec('ALTER TABLE `courses` CHANGE `semester` `semester` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+//
+//                        $q = $db->query("SELECT * FROM courses");
+//                        $rows = $q->fetchAll();
+//                        foreach ($rows as $r){
+//                            $id = $r['id'];
+//                            $fee = str_replace(',', '', trim($r['fee']));
+//                            $q1 = $db->prepare('UPDATE courses SET fee = :fee WHERE id = :id');
+//                            $q1->execute([':fee'=>$fee, ':id' => $id]);
+//                        }
+//                        $db->exec('ALTER TABLE `courses` CHANGE `fee` `fee` INT(11) NOT NULL;');
+//                        $db->exec('ALTER TABLE `courses` CHANGE `course_description` `course_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+//                        $db->exec('ALTER TABLE `courses` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `course_description`;');
+//                        showSuccess('Courses Table Updated Successfully');
+//
+//                        // for course sections
+//                        $db->exec('RENAME TABLE course_sections TO course_content;');
+//                        $db->exec('ALTER TABLE `course_content` CHANGE `csid` `id` BIGINT(20) NOT NULL AUTO_INCREMENT;');
+//                        $db->exec('ALTER TABLE `course_content` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
+//                        $db->exec('ALTER TABLE `course_content` CHANGE `section_name` `content_title` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        //$db->exec('ALTER TABLE `course_content` CHANGE `lectures` `duration` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('ALTER TABLE `course_content` CHANGE `description` `content_description` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('UPDATE course_content SET total_time = 0');
                         $db->exec('ALTER TABLE `course_content` CHANGE `total_time` `position` TINYINT(2) NOT NULL;');
