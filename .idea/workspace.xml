@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Courses.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Courses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/view_course.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,8 @@
       <workItem from="1579583876626" duration="1047000" />
       <workItem from="1579604508499" duration="2460000" />
       <workItem from="1579847591180" duration="4194000" />
-      <workItem from="1580446520742" duration="5335000" />
+      <workItem from="1580446520742" duration="5987000" />
+      <workItem from="1580476746365" duration="136000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -313,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580453432785</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="order by">
+      <created>1580453890819</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1580453890819</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +352,8 @@
     <MESSAGE value="hourdiff() added" />
     <MESSAGE value="completed status for batches" />
     <MESSAGE value="file and email dir fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="file and email dir fix" />
+    <MESSAGE value="order by" />
+    <option name="LAST_COMMIT_MESSAGE" value="order by" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -367,10 +376,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580453431886">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580453890194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580453431886" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580453890194" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

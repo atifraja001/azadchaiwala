@@ -87,8 +87,8 @@
                                 </div>
                                 <div class="float-right">
                                     <?php $ex = explode(" ", $cc['duration']);
-                                          $number = $ex[0];
-                                          $option = str_replace("s", "", $ex[1]);
+                                          $number = (isset($ex[0]) ? $ex[0]: "";
+                                          $option = str_replace("s", "", (isset($ex[1]) ? $ex[1]: "");
                                     ?>
                                     <button
                                             type="button"
