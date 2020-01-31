@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/EnrollmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/EnrollmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/GalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/StudentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/StudentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/TeachersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/TeachersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/academics/courses/edit_course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/email_templates/batch_mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/email_templates/batch_mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/email_templates/contact_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/email_templates/contact_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/email_templates/course_feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/email_templates/course_feedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/email_templates/new_registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/email_templates/new_registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/email_templates/registration_verified.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/email_templates/registration_verified.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +108,7 @@
       <workItem from="1579583876626" duration="1047000" />
       <workItem from="1579604508499" duration="2460000" />
       <workItem from="1579847591180" duration="4194000" />
-      <workItem from="1580446520742" duration="3800000" />
+      <workItem from="1580446520742" duration="4895000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -311,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580449791266</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="file and email dir fix">
+      <created>1580453356017</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1580453356017</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +336,8 @@
     <MESSAGE value="logo link" />
     <MESSAGE value="hourdiff() added" />
     <MESSAGE value="completed status for batches" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed status for batches" />
+    <MESSAGE value="file and email dir fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="file and email dir fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -364,10 +360,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580449790510">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580453354713">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580449790510" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580453354713" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
