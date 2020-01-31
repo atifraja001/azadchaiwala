@@ -39,7 +39,7 @@ class GalleryController
     // add new enrollment post
     public function add_new_gallery_post(){
         // preparing file to upload
-        $response = uploadfile('gallery_picture', '../public/assets/gallery_images');
+        $response = uploadfile('gallery_picture', 'assets/gallery_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/gallery/manage', 'Invalid Image File', 'gallery', 'error');
         }else if($response == "invalid_size"){

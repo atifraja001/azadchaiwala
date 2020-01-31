@@ -35,7 +35,7 @@ class TeachersController
     }
     public function add_new_teacher_post(){
         // preparing file to upload
-        $response = uploadfile('profile_picture', '../public/assets/teacher_images');
+        $response = uploadfile('profile_picture', 'assets/teacher_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/teachers/add-new-teacher', 'Invalid Image File', 'teacher', 'error');
         }else if($response == "invalid_size"){
@@ -76,7 +76,7 @@ class TeachersController
     public function edit_teacher_post(){
         // preparing file to upload
         if(!empty($_FILES['profile_picture']['name'])){
-            $response = uploadfile('profile_picture', '../public/assets/teacher_images');
+            $response = uploadfile('profile_picture', 'assets/teacher_images');
             if($response == "invalid_image"){
                 redirectWithMessage(app_url('admin').'/teachers/edit-teacher/'.clean_post('id'), 'Invalid Image File', 'student', 'error');
             }else if($response == "invalid_size"){

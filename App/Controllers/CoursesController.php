@@ -33,7 +33,7 @@ class CoursesController
         View::render('backend/layouts/script.html');
     }
     public function add_new_course_post(){
-        $response = uploadfile('course_picture', '../public/assets/course_images');
+        $response = uploadfile('course_picture', 'assets/course_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/students/add-new-course', 'Invalid Image File', 'course', 'error');
         }else if($response == "invalid_size"){
@@ -79,7 +79,7 @@ class CoursesController
     }
     public function edit_course_post(){
         if(!empty($_FILES['course_picture']['name'])) {
-            $response = uploadfile('course_picture', '../public/assets/course_images');
+            $response = uploadfile('course_picture', 'assets/course_images');
             if ($response == "invalid_image") {
                 redirectWithMessage(app_url('admin') . '/students/add-new-course', 'Invalid Image File', 'course', 'error');
             } else if ($response == "invalid_size") {

@@ -133,7 +133,7 @@ class HomeController extends \Core\Controller
             $student_data = [
                 ':name' => clean_post('name'),
                 ':fname' => clean_post('fname'),
-                ':date_of_birth' => clean_post('date_of_birth'),
+                ':date_of_birth' => clean_post('year')."-".clean_post('month')."-".clean_post('day'),
                 ':gender' => clean_post('gender'),
                 ':cnic' => clean_post('cnic'),
                 ':mobile_number' => clean_post('mobile_number'),
@@ -188,7 +188,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadStudentImage()
     {
-        $response = uploadfile('picture', '../public/assets/student_images');
+        $response = uploadfile('picture', 'assets/student_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Student Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
@@ -201,7 +201,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadFeeReceipt()
     {
-        $response = uploadfile('fee_receipt', '../public/assets/course_images');
+        $response = uploadfile('fee_receipt', 'assets/course_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Fee Receipt Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
