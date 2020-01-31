@@ -25,7 +25,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                 <table class="table table-bordered">
                     <tr>
                         <td colspan="2" class="text-center">
-                            <label class="alert alert-danger text-center mt-3" style="width: 100%;"><strong>DO NOT CLOSE THIS PAGE V1.1</strong></label>
+                            <label class="alert alert-danger text-center mt-3" style="width: 100%;"><strong>DO NOT CLOSE THIS PAGE V1.2</strong></label>
                         </td>
                     </tr>
                     <?php
