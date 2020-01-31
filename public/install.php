@@ -61,12 +61,12 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 //                        showSuccess('Contact Mails Table Updated Successfully');
 
                         // for table Courses
-                        $db->exec('ALTER TABLE `courses` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `order_number` `order_number` SMALLINT(6) NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `teacher_id` `teacher_id` INT(11) NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `order_number` `order_number` SMALLINT(6) NOT NULL;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `teacher_id` `teacher_id` INT(11) NOT NULL;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `slug` `slug` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `course_picture` `course_picture` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                        //$db->exec('ALTER TABLE `courses` CHANGE `course_video` `youtube_embed` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
                         $db->exec('UPDATE courses SET lecture_hours_per_day = 0');
                         $db->exec('ALTER TABLE `courses` CHANGE `lecture_hours_per_day` `lecture_hours_per_day` INT(11) NOT NULL;');
                         $db->exec('ALTER TABLE `courses` ADD `duration` VARCHAR(50) NOT NULL AFTER `lecture_hours_per_day`;');
