@@ -204,7 +204,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
                         $db->commit();
                     }catch(Exception $e){
-                        showError("Rolling Back!");
+                        //showError("Rolling Back!");
                         $db->rollBack();
                         showError($e->getMessage());
                     }
