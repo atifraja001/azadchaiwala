@@ -8,7 +8,7 @@ class Courses extends \Core\Model
 {
     public function getCourses(){
         $db = static::getDB();
-        $stmt = $db->query("SELECT courses.*, teachers.name FROM courses JOIN teachers ON teachers.id =  courses.teacher_id");
+        $stmt = $db->query("SELECT courses.*, teachers.name FROM courses JOIN teachers ON teachers.id =  courses.teacher_id ORDER BY courses.order_number ASC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getCourseImageById($course_id){
