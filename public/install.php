@@ -40,25 +40,25 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                     }catch(PDOException $e){
                         showError($e->getMessage());
                     }
-                    //try{
-                        //$db->beginTransaction();
-                        //showSuccess('Transaction Started');
+                    try{
+                        $db->beginTransaction();
+                        showSuccess('Transaction Started');
                         // for table badges or batches
-                        $db->exec('RENAME TABLE badges TO batches;');
-                        $db->exec('ALTER TABLE `batches` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-                        $db->exec('ALTER TABLE `batches` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
-                        $db->exec('ALTER TABLE `batches` CHANGE `start_time` `start_time` TIME NOT NULL;');
-                        $db->exec('ALTER TABLE `batches` CHANGE `end_time` `end_time` TIME NOT NULL;');
-                        $db->exec('ALTER TABLE `batches` CHANGE `total_students` `total_students` TINYINT(4) NOT NULL;');
-                        showSuccess('Batches Table Updated Successfully');
-
-                        // for table contact mails
-                        $db->exec('RENAME TABLE contact_mails TO contact_messages;');
-                        $db->exec('ALTER TABLE `contact_messages` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
-                        $db->exec('ALTER TABLE `contact_messages` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `contact_messages` CHANGE `message` `message_text` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-                        $db->exec('ALTER TABLE `contact_messages` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `message_text`;');
-                        showSuccess('Contact Mails Table Updated Successfully');
+//                        $db->exec('RENAME TABLE badges TO batches;');
+//                        $db->exec('ALTER TABLE `batches` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+//                        $db->exec('ALTER TABLE `batches` CHANGE `course_id` `course_id` INT(11) NOT NULL;');
+//                        $db->exec('ALTER TABLE `batches` CHANGE `start_time` `start_time` TIME NOT NULL;');
+//                        $db->exec('ALTER TABLE `batches` CHANGE `end_time` `end_time` TIME NOT NULL;');
+//                        $db->exec('ALTER TABLE `batches` CHANGE `total_students` `total_students` TINYINT(4) NOT NULL;');
+//                        showSuccess('Batches Table Updated Successfully');
+//
+//                        // for table contact mails
+//                        $db->exec('RENAME TABLE contact_mails TO contact_messages;');
+//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
+//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+//                        $db->exec('ALTER TABLE `contact_messages` CHANGE `message` `message_text` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+//                        $db->exec('ALTER TABLE `contact_messages` ADD `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `message_text`;');
+//                        showSuccess('Contact Mails Table Updated Successfully');
 
                         // for table Courses
                         $db->exec('ALTER TABLE `courses` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;');
@@ -202,12 +202,12 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
                         showSuccess('Users Table Updated Successfully');
 
-                    //    $db->commit();
-                    //}catch(Exception $e){
-                        //showError("Rolling Back!");
-                    //    $db->rollBack();
-                    //    showError($e->getMessage());
-                    //}
+                        $db->commit();
+                    }catch(Exception $e){
+                        showError("Rolling Back!");
+                        $db->rollBack();
+                        showError($e->getMessage());
+                    }
                     ?>
                     <tr>
                         <td colspan="2" class="text-center">
