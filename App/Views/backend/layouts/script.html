@@ -137,7 +137,7 @@
                 if ($origin.data('loaded') !== true) {
                     $.post("<?=app_url('admin')?>/students/fetch__image", {id:id}, function(data) {
                         let content = '<div class="hovercard white">\n' +
-                            '                <img src="<?=app_url()?>/assets/student_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
+                            '                <img src="<?=app_url()?>/content/student_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
                             '            </div>';
                         instance.content(content);
                         $origin.data('loaded', true);
@@ -161,7 +161,7 @@
                 if ($origin.data('loaded') !== true) {
                     $.post("<?=app_url('admin')?>/teachers/fetch__image", {id:id}, function(data) {
                         let content = '<div class="hovercard white">\n' +
-                            '                <img src="<?=app_url()?>/assets/teacher_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
+                            '                <img src="<?=app_url()?>/content/teacher_images/'+ data +'" class="img-thumbnail img-fluid">\n' +
                             '            </div>';
                         instance.content(content);
                         $origin.data('loaded', true);
