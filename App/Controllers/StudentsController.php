@@ -52,7 +52,7 @@ class StudentsController
     }
     public function add_new_student_post(){
         // preparing file to upload
-        $response = uploadfile('profile_picture', 'assets/student_images');
+        $response = uploadfile('profile_picture', 'content/student_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/students/add-new-student', 'Invalid Image File', 'student', 'error');
         }else if($response == "invalid_size"){
@@ -96,7 +96,7 @@ class StudentsController
     public function edit_student_post(){
         // preparing file to upload
         if(!empty($_FILES['profile_picture']['name'])){
-            $response = uploadfile('profile_picture', 'assets/student_images');
+            $response = uploadfile('profile_picture', 'content/student_images');
             if($response == "invalid_image"){
                 redirectWithMessage(app_url('admin').'/students/edit-student/'.clean_post('id'), 'Invalid Image File', 'student', 'error');
             }else if($response == "invalid_size"){

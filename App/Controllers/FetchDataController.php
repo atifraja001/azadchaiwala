@@ -40,37 +40,37 @@ class FetchDataController
                 $course_image = new \App\Models\Courses();
                 $course_image = $course_image->getCourseImageById($image_id);
                 if($course_image) {
-                    $filename = "assets/course_images/".$course_image['course_picture'];
+                    $filename = "content/course_images/".$course_image['course_picture'];
                 }
             }else if($image_type == "enroll"){
                 $enroll_image = new \App\Models\Enrollments();
                 $enroll_image = $enroll_image->getEnrollImageById($image_id);
                 if($enroll_image) {
-                    $filename = "assets/enrollment_images/" . $enroll_image['fee_receipt'];
+                    $filename = "content/receipt_images/" . $enroll_image['fee_receipt'];
                 }
             }else if($image_type == "review"){
                 $review_image = new \App\Models\Reviews();
                 $review_image = $review_image->GetReviewImageById($image_id);
                 if($review_image) {
-                    $filename = "assets/review_images/" . $review_image['person_image'];
+                    $filename = "content/review_images/" . $review_image['person_image'];
                 }
             }else if($image_type == "student"){
                 $student_image = new \App\Models\Students();
                 $student_image = $student_image->GetStudentImageById($image_id);
                 if($student_image) {
-                    $filename = "assets/student_images/".$student_image['picture'];
+                    $filename = "content/student_images/".$student_image['picture'];
                 }
             }else if($image_type == "teacher"){
                 $teacher_image = new \App\Models\Teachers();
                 $teacher_image = $teacher_image->GetTeacherImageById($image_id);
                 if($teacher_image) {
-                    $filename = "assets/teacher_images/".$teacher_image['picture'];
+                    $filename = "content/teacher_images/".$teacher_image['picture'];
                 }
             }else if($image_type == "gallery"){
                 $gallery_image = new \App\Models\Gallery();
                 $gallery_image = $gallery_image->GetGalleryImageById($image_id);
                 if($gallery_image) {
-                    $filename = "assets/gallery_images/".$gallery_image['image'];
+                    $filename = "content/gallery_images/".$gallery_image['image'];
                 }
             }
         }
@@ -82,35 +82,5 @@ class FetchDataController
         fclose($handle);
         header("content-type: image/jpeg");
         echo $contents;
-    }
-
-    public function FetchBackup(){
-        Auth('admin');
-        $db_id = clean_get('i');
-        $dir = '../db_backups/';
-        $counter = 1;
-        if (is_dir($dir)) {
-            $files = scandir($dir);
-            rsort($files);
-            foreach ($files as $file){
-                if ($file == '.' or $file == '..') continue;
-                if($counter == 11) break;
-                    if(filemtime($dir.$file) == $db_id){
-                        $filename = $dir.$file;
-                        $file = date("d_m_Y_h_i_s_a", filemtime($dir.$file)).".sql";
-                        $handle = fopen($filename, "rb");
-                        if(filesize($filename) > 0) {
-                            $contents = fread($handle, filesize($filename));
-                            fclose($handle);
-                            header("Content-disposition: attachment; filename=\"" . basename($file) . "\"");
-                            header("content-type: application/sql");
-                            echo $contents;
-                        }
-                        break;
-                    }
-                    $counter++;
-            }
-        }
-
     }
 }
