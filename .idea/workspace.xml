@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/FetchDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/FetchDataController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controllers/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/GalleryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ReviewController.php" afterDir="false" />
     </list>
@@ -113,7 +112,7 @@
       <workItem from="1580446520742" duration="5987000" />
       <workItem from="1580476746365" duration="950000" />
       <workItem from="1580722362215" duration="2642000" />
-      <workItem from="1580791632661" duration="1974000" />
+      <workItem from="1580791632661" duration="2852000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -360,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580794123626</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="content path update">
+      <created>1580794678041</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1580794678041</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,10 +423,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580794122957">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580794677400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580794122957" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580794677400" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
