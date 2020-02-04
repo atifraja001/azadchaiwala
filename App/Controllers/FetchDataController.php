@@ -42,7 +42,7 @@ class FetchDataController
                 $course_image = new \App\Models\Courses();
                 $course_image = $course_image->getCourseImageById($image_id);
                 if ($course_image) {
-                    $filename = $_SERVER['DOCUMENT_ROOT']."../content/course_images/" . $course_image['course_picture'];
+                    $filename = "../content/course_images/" . $course_image['course_picture'];
                 }
             } else if ($image_type == "enroll") {
                 $enroll_image = new \App\Models\Enrollments();
@@ -54,13 +54,13 @@ class FetchDataController
                 $review_image = new \App\Models\Reviews();
                 $review_image = $review_image->GetReviewImageById($image_id);
                 if ($review_image) {
-                    $filename = "content/review_images/" . $review_image['person_image'];
+                    $filename = "../content/review_images/" . $review_image['person_image'];
                 }
             } else if ($image_type == "student") {
                 $student_image = new \App\Models\Students();
                 $student_image = $student_image->GetStudentImageById($image_id);
                 if ($student_image) {
-                    $filename = "content/student_images/" . $student_image['picture'];
+                    $filename = "../content/student_images/" . $student_image['picture'];
                 }
             } else if ($image_type == "teacher") {
                 $teacher_image = new \App\Models\Teachers();
@@ -72,7 +72,7 @@ class FetchDataController
                 $gallery_image = new \App\Models\Gallery();
                 $gallery_image = $gallery_image->GetGalleryImageById($image_id);
                 if ($gallery_image) {
-                    $filename = "content/gallery_images/" . $gallery_image['image'];
+                    $filename = "../content/gallery_images/" . $gallery_image['image'];
                 }
             }
         }
