@@ -41,7 +41,11 @@ function uploadfile($file, $path,
             mkdir($path, 0750, true);
         }
     }else{
-        return "invalid_path";
+        if($create_path) {
+            mkdir($path, 0750, true);
+        }else{
+            return "invalid_path";
+        }
     }
     if($generate_name){
         $uploadedName = $_FILES[$file]['name'];
