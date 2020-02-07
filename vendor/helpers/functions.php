@@ -6,7 +6,7 @@
  * Description:
  *      these functions are helper functions that can be used in entire project. (views, controllers)
  */
-ob_start();
+
 /*
  *
  * uploadfile (PHP 5, 7)
@@ -33,29 +33,30 @@ function uploadfile($file, $path,
                     $file_size = 2,
                     $mime_type = array('image/jpeg', 'image/gif', 'image/png'),
                     $create_path = false,
-                    $generate_name = true){
-    $file_size = $file_size*1000000; // default is 2 MB
-    $path = $_SERVER['DOCUMENT_ROOT']."/".$path;
+                    $generate_name = true)
+{
+    $file_size = $file_size * 1000000; // default is 2 MB
+    $path = $_SERVER['DOCUMENT_ROOT'] . "/" . $path;
     if (file_exists($path)) {
-        if($create_path) {
+        if ($create_path) {
             mkdir($path, 0750, true);
         }
-    }else{
-        if($create_path) {
+    } else {
+        if ($create_path) {
             mkdir($path, 0750, true);
-        }else{
+        } else {
             return "invalid_path";
         }
     }
-    if($generate_name){
+    if ($generate_name) {
         $uploadedName = $_FILES[$file]['name'];
-        $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.')+1));
-        $filename = round(microtime(true)).mt_rand().uniqid().'.'.$ext;
-    }else{
+        $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
+        $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
+    } else {
         $filename = $_FILES[$file]['name'];
     }
     $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
-    if(!in_array($mimetype, $mime_type)) {
+    if (!in_array($mimetype, $mime_type)) {
         return "invalid_image";
     }
     $size = @getimagesize($_FILES[$file]['tmp_name']);
@@ -65,18 +66,19 @@ function uploadfile($file, $path,
     if ($_FILES[$file]['size'] > $file_size) {
         return "invalid_size";
     }
-    if(!empty($file)){
+    if (!empty($file)) {
         $file = $_FILES[$file];
-        $path = $path."/";
+        $path = $path . "/";
         $path = $path . $filename;
         $pe = move_uploaded_file($file['tmp_name'], $path);
-        if($pe) {
+        if ($pe) {
             return $filename;
-        } else{
+        } else {
             return "not_uploaded";
         }
     }
 }
+
 /*
  * return
  * number of days between two date
@@ -86,10 +88,12 @@ function uploadfile($file, $path,
  * end date (string date) example: 21-01-2020 or 2020/01/21
  *
  */
-function daysdiff($start_date, $end_date){
-    $timeleft = strtotime($end_date)-strtotime($start_date);
-    return round((($timeleft/24)/60)/60);
+function daysdiff($start_date, $end_date)
+{
+    $timeleft = strtotime($end_date) - strtotime($start_date);
+    return round((($timeleft / 24) / 60) / 60);
 }
+
 /*
  * return
  * number of Hours between two times
@@ -99,9 +103,10 @@ function daysdiff($start_date, $end_date){
  * end date (string date) example: 23:59:59
  *
  */
-function hoursdiff($start_time, $end_time){
-    $timeleft = strtotime($end_time)-strtotime($start_time);
-    return round(($timeleft/3600));
+function hoursdiff($start_time, $end_time)
+{
+    $timeleft = strtotime($end_time) - strtotime($start_time);
+    return round(($timeleft / 3600));
 }
 
 /*
@@ -113,7 +118,8 @@ function hoursdiff($start_time, $end_time){
  *
  */
 
-function getPakCurrency($number){
+function getPakCurrency($number)
+{
     $number = floatval($number);
     $decimal = round($number - ($no = floor($number)), 2) * 100;
     $hundred = null;
@@ -129,8 +135,8 @@ function getPakCurrency($number){
         19 => 'Nineteen', 20 => 'Twenty', 30 => 'Thirty',
         40 => 'Forty', 50 => 'Fifty', 60 => 'Sixty',
         70 => 'Seventy', 80 => 'Eighty', 90 => 'Ninety');
-    $digits = array('', 'Hundred','Thousand','Lakh', 'Crore');
-    while( $i < $digits_length ) {
+    $digits = array('', 'Hundred', 'Thousand', 'Lakh', 'Crore');
+    while ($i < $digits_length) {
         $divider = ($i == 2) ? 10 : 100;
         $number = floor($no % $divider);
         $no = floor($no / $divider);
@@ -138,7 +144,7 @@ function getPakCurrency($number){
         if ($number) {
             $plural = (($counter = count($str)) && $number > 9) ? 's' : null;
             $hundred = ($counter == 1 && $str[0]) ? ' and ' : null;
-            $str [] = ($number < 21) ? $words[$number].' '. $digits[$counter]. $plural.' '.$hundred:$words[floor($number / 10) * 10].' '.$words[$number % 10]. ' '.$digits[$counter].$plural.' '.$hundred;
+            $str [] = ($number < 21) ? $words[$number] . ' ' . $digits[$counter] . $plural . ' ' . $hundred : $words[floor($number / 10) * 10] . ' ' . $words[$number % 10] . ' ' . $digits[$counter] . $plural . ' ' . $hundred;
         } else $str[] = null;
     }
     $Rupees = implode('', array_reverse($str));
@@ -153,10 +159,11 @@ function getPakCurrency($number){
  * int or float
  */
 
-function Auth($user){
-    if(strtolower($user) == "admin"){
-        if(!isset($_SESSION['admin_login'])){
-            redirectWithMessage(app_url('admin').'/login', 'login required to access this page', 'login', 'error');
+function Auth($user)
+{
+    if (strtolower($user) == "admin") {
+        if (!isset($_SESSION['admin_login'])) {
+            redirectWithMessage(app_url('admin') . '/login', 'login required to access this page', 'login', 'error');
         }
     }
 }
@@ -170,29 +177,35 @@ function Auth($user){
  * admin: for admin directory
  */
 
-function app_url($type = 'base'){
-    if(strtolower($type) == "admin"){
+function app_url($type = 'base')
+{
+    if (strtolower($type) == "admin") {
         return \App\Config::ADMIN_URL;
-    }else{
+    } else {
         return \App\Config::APP_URL;
     }
 }
-function clean_post($var){
-    if(isset($_POST[$var])){
+
+function clean_post($var)
+{
+    if (isset($_POST[$var])) {
         $var = $_POST[$var];
-    }else{
+    } else {
         $var = "";
     }
     return $var;
 }
-function clean_get($var){
-    if(isset($_GET[$var])){
+
+function clean_get($var)
+{
+    if (isset($_GET[$var])) {
         $var = $_GET[$var];
-    }else{
+    } else {
         $var = "";
     }
     return $var;
 }
+
 /*
  * use to redirect with header or
  * if headers already sent! it redirects
@@ -202,18 +215,21 @@ function clean_get($var){
  * url: to redirect
  *
  */
-function redirect($url){
-    if (!headers_sent()){
-        exit(header('Location: '.$url));
-    }else{
+function redirect($url)
+{
+    if (!headers_sent()) {
+        header('Location: ' . $url);
+    } else {
         echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$url.'";';
+        echo 'window.location.href="' . $url . '";';
         echo '</script>';
         echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit;
+        echo '<meta http-equiv="refresh" content="0;url=' . $url . '" />';
+        echo '</noscript>';
     }
+    exit;
 }
+
 /*
  * @returns
  * string with 3 dots if string is greater then the limit.
@@ -223,12 +239,14 @@ function redirect($url){
  * limit (int)
  *
  */
-function add3Dots($string, $limit){
-    if(strlen($string) > $limit) {
+function add3Dots($string, $limit)
+{
+    if (strlen($string) > $limit) {
         $string = substr($string, 0, $limit) . "...";
     }
     return $string;
 }
+
 /*
  * use to redirect with header or
  * if headers already sent! it redirects
@@ -243,24 +261,24 @@ function add3Dots($string, $limit){
  * msg: to show success message
  * error: to show danger message
  */
-function redirectWithMessage($url, $message, $where, $type = "msg"){
-    if (!headers_sent()){
-        $_SESSION['msg'] = $message;
-        $_SESSION['type'] = $type;
-        $_SESSION['where'] = $where;
-        exit(header('Location: '.$url));
-    }else{
-        $_SESSION['msg'] = $message;
-        $_SESSION['type'] = $type;
-        $_SESSION['where'] = $where;
+function redirectWithMessage($url, $message, $where, $type = "msg")
+{
+    $_SESSION['msg'] = $message;
+    $_SESSION['type'] = $type;
+    $_SESSION['where'] = $where;
+    if (!headers_sent()) {
+        header('Location: ' . $url);
+    } else {
         echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$url.'";';
+        echo 'window.location.href="' . $url . '";';
         echo '</script>';
         echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit;
+        echo '<meta http-equiv="refresh" content="0;url=' . $url . '" />';
+        echo '</noscript>';
     }
+    exit;
 }
+
 /*
  * showMsg is compatible with redirectWithMessage
  * it shows one time message
@@ -271,21 +289,22 @@ function redirectWithMessage($url, $message, $where, $type = "msg"){
  * where: (must be matched with redirectWithMessage where parameter
  *
  */
-function showMsg($where){
+function showMsg($where)
+{
     // only works with bootstrap 3 and bootstrap 4
-    if(isset($_SESSION['msg']) && isset($_SESSION['type']) && isset($_SESSION['where'])){
-        if($_SESSION['where'] == $where){
+    if (isset($_SESSION['msg']) && isset($_SESSION['type']) && isset($_SESSION['where'])) {
+        if ($_SESSION['where'] == $where) {
             $type = $_SESSION['type'];
             $msg = "";
-            if($type == "msg"){
+            if ($type == "msg") {
                 $msg = '<div class="alert alert-primary alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      '.$_SESSION['msg'].'
+                      ' . $_SESSION['msg'] . '
                     </div>';
-            }else if($type == "error"){
+            } else if ($type == "error") {
                 $msg = '<div class="alert alert-danger alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      '.$_SESSION['msg'].'
+                      ' . $_SESSION['msg'] . '
                     </div>';
             }
             unset($_SESSION['msg']);
@@ -304,20 +323,19 @@ function showMsg($where){
  * @required parameters
  * filesize in bytes
  */
-function formatSizeUnit($bytes){
-    if($bytes >= 1073741824){
+function formatSizeUnit($bytes)
+{
+    if ($bytes >= 1073741824) {
         $bytes = number_format($bytes / 1073741824) . ' GB';
-    }else if ($bytes >= 1048576){
+    } else if ($bytes >= 1048576) {
         $bytes = number_format($bytes / 1048576) . ' MB';
-    }else if($bytes >= 1024){
+    } else if ($bytes >= 1024) {
         $bytes = number_format($bytes / 1024) . ' kB';
-    }
-    else if($bytes > 1){
+    } else if ($bytes > 1) {
         $bytes = $bytes . ' bytes';
-    }
-    else if($bytes == 1){
+    } else if ($bytes == 1) {
         $bytes = $bytes . ' byte';
-    }else{
+    } else {
         $bytes = '0 bytes';
     }
     return $bytes;

@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Batches.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Batches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/backend/management/faqs/manage_faqs.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/backend/management/faqs/manage_faqs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/helpers/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/helpers/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/helpers/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/helpers/init.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +117,9 @@
       <workItem from="1580446520742" duration="5987000" />
       <workItem from="1580476746365" duration="950000" />
       <workItem from="1580722362215" duration="2642000" />
-      <workItem from="1580791632661" duration="3098000" />
+      <workItem from="1580791632661" duration="6680000" />
+      <workItem from="1580878243903" duration="4419000" />
+      <workItem from="1581049647891" duration="3212000" />
     </task>
     <task id="LOCAL-00001" summary="sql update">
       <created>1579099433093</created>
@@ -379,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580795649983</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="content path update">
+      <created>1580795837988</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1580795837988</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,10 +451,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580795649296">
+    <state x="585" y="111" key="CommitChangelistDialog2" timestamp="1580795837404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580795649296" />
+    <state x="585" y="111" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580795837404" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

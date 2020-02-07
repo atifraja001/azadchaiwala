@@ -217,8 +217,7 @@ class HomeController extends \Core\Controller
     {
         $course = new \App\Models\Courses();
         $course = $course->getCourseById(clean_post('course_id'));
-
-        $secretKey = '6LcFDsoUAAAAALdhoyzoVwWMdeIw2qAn2cOOWuGp';
+        $secretKey = \App\Config::CAPTCHA_KEY;
         $captcha = $_POST['g-recaptcha-response'];
         $ip = $_SERVER['REMOTE_ADDR'];
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha . "&remoteip=" . $ip);
@@ -261,7 +260,8 @@ class HomeController extends \Core\Controller
     public function Insert_Contact($request)
     {
         $data=array();
-        $secretKey = '6LcFDsoUAAAAALdhoyzoVwWMdeIw2qAn2cOOWuGp';
+
+        $secretKey = \App\Config::CAPTCHA_KEY;
         $captcha = $_POST['g-recaptcha-response'];
         $ip = $_SERVER['REMOTE_ADDR'];
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $captcha . "&remoteip=" . $ip);
