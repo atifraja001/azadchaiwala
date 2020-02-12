@@ -1789,3 +1789,8 @@ section .section-title {
     font-weight: 600;
     color: #29303b !important;
 }
+.btn-countdown{
+    background:green;
+    border-radius: 0px;
+    border:green;
+}
