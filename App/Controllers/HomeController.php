@@ -13,11 +13,15 @@ class HomeController extends \Core\Controller
         $courses = $courses->getCourses();
         $review = new \App\Models\Reviews();
         $review = $review->getReviews();
-        View::render('frontend/layouts/head.html', ['title' => 'HOME']);
+         //get courses with batches
+        $courses_b = new \App\Models\Courses();
+        $courses_b = $courses_b->getCoursesByBatch(); 
+        View::render('frontend/layouts/head.html', ['title' => 'Mirpur AzadKashmir']);
         View::render('frontend/layouts/navbar.html', ['home' => 'active']);
         View::render('frontend/index.html', [
             'courses' => $courses,
-            'review' => $review
+            'review' => $review,
+            'courses_b' => $courses_b
         ]);
         View::render('frontend/layouts/script.html');
     }
@@ -38,10 +42,13 @@ class HomeController extends \Core\Controller
     {
         $courses = new \App\Models\Courses();
         $courses = $courses->getCourses();
+        $courses_b = new \App\Models\Courses();
+        $courses_b = $courses_b->getCoursesByBatch();
         View::render('frontend/layouts/head.html', ['title' => 'COURSES']);
         View::render('frontend/layouts/navbar.html', ['courses' => 'active']);
         View::render('frontend/courses.html', [
-            'courses' => $courses
+            'courses' => $courses,
+            'courses_b' => $courses_b
         ]);
         View::render('frontend/layouts/script.html');
     }

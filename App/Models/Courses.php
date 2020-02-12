@@ -11,6 +11,11 @@ class Courses extends \Core\Model
         $stmt = $db->query("SELECT courses.*, teachers.name FROM courses JOIN teachers ON teachers.id =  courses.teacher_id ORDER BY courses.order_number ASC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getCoursesByBatch(){
+        $db = static::getDB();
+        $stmt = $db->query("SELECT courses.*, batches.start_date FROM courses JOIN batches ON courses.id =  batches.course_id ORDER BY courses.order_number ASC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function getCourseImageById($course_id){
         $db = static::getDB();
         $stmt = $db->prepare("SELECT course_picture FROM courses WHERE id = :id");

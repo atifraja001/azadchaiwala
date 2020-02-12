@@ -9,7 +9,7 @@ class Batches extends \Core\Model
 {
     public function getBatches()
     {
-        $db = static::getDB();
+        $db = static::getDB(); 
         $stmt = $db->query("SELECT batches.*, courses.course_name FROM batches JOIN courses ON courses.id= batches.course_id");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

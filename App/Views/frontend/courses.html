@@ -19,6 +19,14 @@
 									<div class="category"><?=number_format($c['fee']);?> <small class="text-white">pkr</small></div>
 									<h3 class="title"><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
 									<p class="description"><?=add3Dots($c['course_description'], 130)?></p>
+									<?php foreach($courses_b as $cb){ ?>
+							        <?php if($c['id'] == $cb['id'] && strtotime($cb['start_date']) > time()){  ?>
+							        <div>
+							        	<button type="button" class="btn btn-info">
+										 <span class="badge badge-light"><?=daysdiff(date('Y-m-d'), $cb['start_date'])?></span> Days <span class="font-weight-bold">Left</span> Book Your Seat
+										</button>
+							        </div>
+							        <?php } } ?>
 								</div>
 							</div>
 						</a>

@@ -1,3 +1,46 @@
+	
+
+<!-- course section -->
+	<section >
+		<div class="courses">
+			<div class="container courh">
+				<h2>OUR COURSES - Skills We teach</h2>
+				<div class="divider"></div>
+				<div class="row">
+					<?php foreach($courses as $c){ ?>
+					<div class="col-lg-4 col-md-4">
+						<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+						    <!-- Post-->
+						    <div class="post-module hover">
+						      <!-- Thumbnail-->
+						      <div class="thumbnail">
+						        <img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course"/>
+						      </div>
+						      <!-- Post Content-->
+						      <div class="post-content">
+						        <div class="category"><?=number_format($c['fee']);?> <small class="text-white">pkr</small></div>
+						        	
+						        <h3 class="title"><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
+						        <p class="description ellipsis"><?=add3Dots($c['course_description'], 130)?></p>
+						        <?php foreach($courses_b as $cb){ ?>
+						        <?php if($c['id'] == $cb['id'] && strtotime($cb['start_date']) > time()){  ?>
+						        <div>
+						        	<button type="button" class="btn btn-info">
+									 <span class="badge badge-light"><?=daysdiff(date('Y-m-d'), $cb['start_date'])?></span> Days <span class="font-weight-bold">Left</span> Book Your Seat
+									</button>
+						        </div>
+						        <?php } } ?>
+						      </div>
+						    </div>
+						  </a>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- course section end -->
+
 	<section class="topsec">
 		<div class="topsecd" >
 			<div class="container">
@@ -26,35 +69,3 @@
 			</div>
 		</div>
 	</section>
-
-<!-- course section -->
-	<section >
-		<div class="courses">
-			<div class="container courh">
-				<h2>COURSES</h2>
-				<div class="divider"></div>
-				<div class="row">
-					<?php foreach($courses as $c){ ?>
-					<div class="col-lg-4 col-md-4">
-						<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
-						    <!-- Post-->
-						    <div class="post-module hover">
-						      <!-- Thumbnail-->
-						      <div class="thumbnail">
-						        <img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course"/>
-						      </div>
-						      <!-- Post Content-->
-						      <div class="post-content">
-						        <div class="category"><?=number_format($c['fee']);?> <small class="text-white">pkr</small></div>
-						        <h3 class="title"><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
-						        <p class="description ellipsis"><?=add3Dots($c['course_description'], 130)?></p>
-						      </div>
-						    </div>
-						  </a>
-					</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- course section end -->
