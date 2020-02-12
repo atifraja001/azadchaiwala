@@ -1794,3 +1794,6 @@ section .section-title {
     border-radius: 0px;
     border:green;
 }
+.btn-countdown:hover{
+    background:#005000;
+}
