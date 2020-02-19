@@ -51,10 +51,10 @@ Header css start here
 }
 .navbar-brand{
   padding:0px;
-}
+} 
 .navbar-brand>img{
   width: 100%;
-  height: 80px;
+  height:53px;
 }
 @media(max-width:779px){
   .navbar-brand{
@@ -1789,3 +1789,4 @@ section .section-title {
   font-weight: 600;
   color: #29303b !important;
 }
+

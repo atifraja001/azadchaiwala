@@ -16,7 +16,7 @@
     --background-color: lightblue;
     --main-color:#2C83EB;
 
-}
+} 
 
 #dis{
     margin-bottom: 0px;
@@ -54,7 +54,7 @@ Header css start here
 }
 .navbar-brand>img{
     width: 100%;
-    height: 80px;
+    height:60px;
 }
 @media(max-width:779px){
     .navbar-brand{
@@ -72,24 +72,30 @@ Header css start here
         height: 50px !important;
     }
 }
-@media(min-width: 800px){
+@media(min-width: 990px){
     .navbar-collapse>ul{
         display: none;
     }
 }
 .number{
-    position:absolute;right:10px;color:white;font-size: 30px;font-weight: bold;
+    position:absolute;
+    right:10px;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
 }
 .number>small{
     color:#c5c0c0;
     font-size: 17px;
+    display: block;
+    text-align: right;
 }
 .header__under-header{
     display: flex;
 
 }
 
-@media(max-width: 768px){
+@media(max-width: 990px){
     .header__uder-header{
         display: none;
     }
@@ -98,6 +104,9 @@ Header css start here
     }
     .nav-link{
         margin-top: 10px;
+    }
+    .number{
+    display: none;
     }
 }
 .header__under-item{
@@ -794,7 +803,7 @@ Contact us page
 .ginfodownunder>i{
     font-size: 40px;
     color:var(--main-color);
-    padding:10px;:
+    padding:10px;
 }
 .ginfodownunder>a>p{
     margin-top:10px;
@@ -901,7 +910,7 @@ single course section
     transition: 0.3s;
 }
 .enrollbutton:hover{
-    background:#a11212;
+    background:rgb(236, 28, 73);
 }
 .enrollbutton>a{
     display: block;
@@ -1797,3 +1806,624 @@ section .section-title {
 .btn-countdown:hover{
     background:#005000;
 }
+
+/*courses page design*/
+
+/*
+@@@@
+@@ video graphy course page design
+@@@*/
+*{
+--course-bold-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+--course-family:sf pro text,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+}
+.video__course-title{
+    margin-top: 10px;
+    background:url('../img/videography/videographyimage2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.video__course-title>h1{
+    padding:20px 10px 0px 10px;
+    font-weight: bold;
+    font-size: 35px;
+    color:#fff;
+    margin-bottom: 0px;
+    font-family: var(--course-bold-family);
+}
+.video__course-title>p{
+    color:#fff;
+    padding:0px 10px 20px 10px;
+    font-family: var(--course-family);
+    margin-block-end: 10px;
+}
+/* video section */
+.video-section{
+    background:#1A1A1A;
+    padding:15px 15px;
+}
+.video-course>.container>.row>.col-lg-12{
+    padding-left: 0px;
+    padding-right:0px;
+}
+.video__section-info{
+    padding-left:20%;
+}
+.video__section-info>h3{
+    color:#fff;
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+
+}
+.video-course-freature-list>li{
+    background:none;
+    border:1px solid rgba(0,0,0, 0.99);
+    border-radius: 0px;
+}
+.video-course-freature-list>li:first-child{
+    border-radius: 0px;
+}
+.video-course-freature-list>li:last-child{
+    border-radius: 0px;
+}
+.video-course-freature-list>li>span:first-child{
+    /* font-family:var(--course-bold-family); */
+    font-size: 15px;
+    font-weight: bold;
+    color:#fff;
+}
+.video-course-freature-list>li>span:last-child{
+    font-family: var(--course-family);
+    font-size: 15px;
+    color:#fff;
+}
+
+.video-enroll-button{
+    margin-top:10px;
+} 
+.video-enroll-button>a{
+    background:#EE4367;
+    border:0px;
+    border-radius: 0px;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+}
+.video-enroll-button>a:hover{
+    background:rgb(236, 28, 73);
+    color:white;
+}
+
+.video-learn-section{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.video-learn{
+padding:10px;
+}
+.video-learn>ul>li{
+    color:white;
+}
+.video-learn>ul>li>b{
+    color:white;
+    font-weight: bold;
+}
+.video-course-for{
+    background:#EE4367;
+}
+.video-course-for>h4{
+    font-family: var(--course-bold-family);
+    color:rgb(255, 255, 255);
+    font-weight: 900;
+
+}
+.video-course-for>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.video-course-for>ul>li>i{
+    font-size: 15px;
+    
+}
+
+.video-course-benefit{
+    background:#1A1A1A;
+}
+.video-course-benefit>h4{
+    font-family: var(--course-bold-family);
+    color:#EE4367;
+    font-weight: 900;
+}
+.video-course-benefit>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.video-course-benefit>ul>li>i{
+    font-size: 15px;   
+}
+
+.video-course-return{
+    background:#1A1A1A;
+}
+.video-course-return>h4{
+    font-family: var(--course-bold-family);
+    color:#EE4367;
+    font-weight: 900;
+}
+.video-course-return>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.video-course-return>ul>li>i{
+    font-size: 15px;   
+}
+
+.video-course-notdo{
+    background:#EE4367;
+}
+.video-course-notdo>h4{
+    font-family: var(--course-bold-family);
+    color:rgb(255, 255, 255);
+    font-weight: 900;
+}
+.video-course-notdo>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.video-course-notdo>ul>li>i{
+    font-size: 15px;   
+}
+.video-you-learn-right{
+    padding:10px;   
+}
+.video-you-learn-right>h3{
+    font-weight: 900;
+    color:black;
+    font-family: var(--course-bold-family);
+}
+.video-you-learn-right>ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.video-you-learn-right>ul>li{
+    font-size: 15px;
+    color:black;
+    font-family: var(--course-family);
+}
+.video-you-learn-right>ul>li>i{
+    font-size: 14px;
+color:black;
+}
+/* @@@
+    Our Instructor Area
+   @@@
+*/
+.video-our-insturcture{
+    padding:15px;
+    background:#1A1A1A;
+}
+.video-our-insturcture>h2{
+    color:white;
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+    padding-bottom: 15px;
+    text-transform: uppercase;
+
+}
+.video-our__instructure-main{
+    border:1px solid rgba(0,0,0,0.99);
+    padding:5px;
+}
+.video-our__instructure-main>div>div>h3{
+    font-weight: 900;
+    font-family: var(--course-bold-family);
+    color:#fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+.video-our__instructure-main>div>div>p{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:rgb(189, 186, 186);
+    margin-bottom: 0px;
+}
+/* @@@
+    Success story
+   @@@
+*/
+.video-success-course{
+    margin-top:10px;
+    margin-bottom: 10px;
+    padding:15px;
+}
+.video-success-course>h2{
+    color:#000;
+    font-weight: 700;
+    margin-top:5px;
+    margin-bottom: 20px;
+    font-family: var(--course-bold-family);
+    text-transform: uppercase;
+}
+.video-success-course-detail{
+    padding:5px;
+}
+.video-success-course-detail>img{
+    width:130px;
+    height: 120px;
+    border-radius: 50%;
+}
+.video-success-course-detail>h3{
+    color:black;
+    font-family: var(--course-bold-family);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+.video-success-course-detail>p{
+    color:black;
+    font-family: var(--course-family);
+    font-weight: 400;
+    font-size: 15px;
+}
+/* @@@
+    features section
+   @@@
+*/
+.video-features-course{
+    background:#1A1A1A;
+    padding:15px;
+    margin-bottom: 10px;
+}
+.video-features__course-details>span{
+    color:#EE4367;
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.video-features__course-details>h3{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:#fff;
+}
+.video-features__course-details>p{
+    font-weight: 500;
+    font-family: var(--course-family);
+    color:rgb(189, 186, 186);
+}
+
+.video-enrol-button>.btn{
+    border:0px;
+    border-radius: 0px;
+    background:#EE4367;
+    color:white;
+    padding:10px 50px;
+
+}
+.video-enrol-button>.btn:hover{
+    background:rgb(236, 28, 73);
+    color:white;
+}
+
+/* faqs of the course page */
+.video-faqs-course{
+    margin-bottom: 10px;
+    padding:15px;
+}
+.video-faqs-course>h2{
+    color:#000;
+    font-family: var(--course-bold-family);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.video-faqs-course-inner{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.video-faqs-course-inner>h4{
+    color:#000;
+    font-family: var(--course-bold-family);
+    font-weight: 700;
+    padding:5px;
+    border:1px solid gray;
+}
+.video-faqs-course-inner>p{
+    color:#000;
+    font-size: 15px;
+    margin:10px 0px;
+    font-weight: 500;
+}
+/* end faqs of the course page */
+
+/* 
+@@@
+why use section
+@@@ 
+*/
+.video-why-us{
+    background:#1A1A1A;
+    padding:15px;
+    margin-bottom: 10px;
+}
+.video-why__us-text{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.video-why__us-text>h3{
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    color:#fff;
+} 
+.video-why__us-text>p{
+    font-weight: 400;
+    font-family: var(--course-family);
+    color:rgb(189, 186, 186);
+}
+.video-why__us-results{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.video-why__us-results>i{
+    color:white;
+    transform: scale(0.5);
+    background:#EE4367;
+    padding:25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.video-why__us-results>.fa-youtube:hover{
+    background:#bb0000;
+}
+.video-why__us-results>.fa-facebook:hover{
+    background:#3b5998;
+}
+.video-why__us-results>.fa-instagram:hover{
+    background:#517fa4;
+}
+.video-why__us-results>svg:hover{
+    background:#69C9D0;
+}
+.video-why__us-results>svg{
+    color:white;
+    transform: scale(0.9);
+    background:#EE4367;
+    margin: 25px;
+    padding:9px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.video-why__us-results>h4{
+    font-weight: 700;
+    color:#fff;
+    font-family: var(--course-bold-family);
+    
+}
+.video-why__us-results>p{
+    font-weight: 700;
+    color:#fff;
+    font-family: var(--course-bold-family);
+    color:rgb(189, 186, 186);
+}
+/* testimonial */
+.video-testimonials-course{
+    padding:15px;
+}
+.video-testimonials-course>h2{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color:#000;
+    font-family: var(--course-bold-family);
+    text-transform: uppercase;
+}
+.video-testimonials__course-inner>img{
+    width:130px;
+    height:120px;
+    border-radius: 50%;
+}
+.video-inner-details-testimonials{
+    padding:5px;
+}
+.video-inner-details-testimonials>h3{
+    color:black;
+    font-family: var(--course-bold-family);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+.video-inner-details-testimonials>p{
+    color:black;
+    font-family: var(--course-family);
+    font-weight: 400;
+    font-size: 15px;
+}
+/* 
+@@@@
+Equpmients
+@@@@ 
+*/
+.video-equipments-course{
+    padding:15px;
+    background:#1A1A1A;
+}
+.video-equipments-course>h2{
+    color:#fff;
+    font-weight: 700;
+    margin-top:5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.video-equipments-images{
+    border:1px solid #EE4367;
+    padding:2px;
+    margin-bottom: 10px;
+}
+/* testimonial end */
+/*
+@@@
+end video graphy course 
+page desgin
+@@*/
+
+
+/* --------------
+@@@@@@@@@@@@
+@@@@@@@@
+@@@@ Graphic Page design
+@@@@@@@
+@@@@@@@@@@@
+---------------- */
+.graphic__course-title{
+    margin-top: 10px;
+    background:url('../img/graphics/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.graphic__course-title>h1{
+    padding:20px 10px 0px 10px;
+    font-weight: bold;
+    font-size: 35px;
+    color:#fff;
+    margin-bottom: 0px;
+    font-family: var(--course-bold-family);
+}
+.graphic__course-title>p{
+    color:#fff;
+    padding:0px 10px 20px 10px;
+    font-family: var(--course-family);
+    margin-block-end: 10px;
+}
+.grahpic-enroll-button{
+    margin-top: 10px;
+}
+.grahpic-enroll-button>a{
+    background:#00C9FF;
+    border:0px;
+    border-radius: 0px;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+}
+.graphic-section{
+    background:#030c0f;
+    padding:15px 15px;
+}
+.graphic-course>.container>.row>.col-lg-12{
+    padding-left: 0px;
+    padding-right:0px;
+}
+.graphic__section-info{
+    padding-left:20%;
+}
+.graphic__section-info>h3{
+    color:#fff;
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+
+}
+.graphic-course-freature-list>li{
+    background:none;
+    border:1px solid rgba(0,201,255, 0.29);
+    border-radius: 0px;
+}
+.graphic-course-freature-list>li:first-child{
+    border-radius: 0px;
+}
+.graphic-course-freature-list>li:last-child{
+    border-radius: 0px;
+}
+.graphic-course-freature-list>li>span:first-child{
+    /* font-family:var(--course-bold-family); */
+    font-size: 15px;
+    font-weight: bold;
+    color:#fff;
+}
+.graphic-course-freature-list>li>span:last-child{
+    font-family: var(--course-family);
+    font-size: 15px;
+    color:#fff;
+}
+
+
+.grahpic-enroll-button>a:hover{
+    background:#00C9FF;
+    color:white;
+}
+.graphic-course-for{
+    background:#00C9FF;
+}
+.graphic-course-for>h4{
+    font-family: var(--course-bold-family);
+    color:#030c0f;
+    font-weight: 900;
+
+}
+.graphic-course-for>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.graphic-course-for>ul>li>i{
+    font-size: 15px;   
+}
+
+.graphic-course-notdo{
+    background:#00C9FF;
+}
+.graphic-course-notdo>h4{
+    font-family: var(--course-bold-family);
+    color:#030c0f;
+    font-weight: 900;
+}
+.graphic-course-notdo>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.graphic-course-notdo>ul>li>i{
+    font-size: 15px;   
+}
+
+.graphic-course-return{
+    background:#030c0f;
+}
+.graphic-course-return>h4{
+    font-family: var(--course-bold-family);
+    color:#00C9FF;
+    font-weight: 900;
+}
+.graphic-course-return>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.graphic-course-return>ul>li>i{
+    font-size: 15px;   
+}
+.graphic-course-benefit{
+    background:#030c0f;
+}
+.graphic-course-benefit>h4{
+    font-family: var(--course-bold-family);
+    color:#00C9FF;
+    font-weight: 900;
+}
+.graphic-course-benefit>ul>li{
+    font-size: 15px;
+    font-family: var(--course-family);
+}
+.graphic-course-benefit>ul>li>i{
+    font-size: 15px;   
+}
+/* --------------
+@@@@@@@@@@@@
+@@@@@@@@
+@@@@ Graphic Page design
+@@@@@@@
+@@@@@@@@@@@
+---------------- */
