@@ -1816,15 +1816,22 @@ section .section-title {
 *{
 --course-bold-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 --course-family:sf pro text,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+/* @@@@ over all main css */
+--margin-top-overall:10px;
+--padding-overall:15px;
+}
+.video-course>.container:not(:first-child){
+
+    margin-top: var(--margin-top-overall);
 }
 .video__course-title{
-    margin-top: 10px;
+    
     background:url('../img/videography/videographyimage2.jpg');
     background-size: cover;
     background-position: center;
+    padding:var(--padding-overall);
 }
 .video__course-title>h1{
-    padding:20px 10px 0px 10px;
     font-weight: bold;
     font-size: 35px;
     color:#fff;
@@ -1833,14 +1840,13 @@ section .section-title {
 }
 .video__course-title>p{
     color:#fff;
-    padding:0px 10px 20px 10px;
     font-family: var(--course-family);
-    margin-block-end: 10px;
+    margin-block-end: 0px;
 }
 /* video section */
 .video-section{
     background:#1A1A1A;
-    padding:15px 15px;
+    padding:var(--padding-overall);
 }
 .video-course>.container>.row>.col-lg-12{
     padding-left: 0px;
@@ -1894,11 +1900,6 @@ section .section-title {
 .video-enroll-button>a:hover{
     background:rgb(236, 28, 73);
     color:white;
-}
-
-.video-learn-section{
-    margin-top:10px;
-    margin-bottom:10px;
 }
 .video-learn{
 padding:10px;
@@ -2035,8 +2036,6 @@ color:black;
    @@@
 */
 .video-success-course{
-    margin-top:10px;
-    margin-bottom: 10px;
     padding:15px;
 }
 .video-success-course>h2{
@@ -2075,7 +2074,6 @@ color:black;
 .video-features-course{
     background:#1A1A1A;
     padding:15px;
-    margin-bottom: 10px;
 }
 .video-features__course-details>span{
     color:#EE4367;
@@ -2108,9 +2106,10 @@ color:black;
     color:white;
 }
 
-/* faqs of the course page */
+/* @@@
+ faqs of the course page 
+ */
 .video-faqs-course{
-    margin-bottom: 10px;
     padding:15px;
 }
 .video-faqs-course>h2{
@@ -2148,7 +2147,7 @@ why use section
 .video-why-us{
     background:#1A1A1A;
     padding:15px;
-    margin-bottom: 10px;
+    
 }
 .video-why__us-text{
     margin-top:5px;
@@ -2264,7 +2263,7 @@ Equpmients
     padding:2px;
     margin-bottom: 10px;
 }
-/* testimonial end */
+/* equpminets */
 /*
 @@@
 end video graphy course 
@@ -2285,6 +2284,8 @@ page desgin
     --graphic-white-color:#fff;
     --graphic-border-color:rgba(0,201,255, 0.29);
     --graphic-black-color:#000;
+    --graphic-button-hover-color:rgb(37, 165, 200);
+    --graphic-text-gray-color:rgb(189, 186, 186);
 }
 
 .graphic__course-title{
@@ -2305,7 +2306,7 @@ page desgin
     color:var(--graphic-white-color);
     padding:0px 10px 20px 10px;
     font-family: var(--course-family);
-    margin-block-end: 10px;
+    margin-block-end: 0px;
 }
 .grahpic-enroll-button{
     margin-top: 10px;
@@ -2314,11 +2315,17 @@ page desgin
     background:var(--graphic-front-color);
     border:0px;
     border-radius: 0px;
-    color:var(--graphic-white-color);
+    color:var(--graphic-background-color);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-family: var(--course-bold-family);
+}
+.grahpic-enroll-button>a:hover{
+    background:var(--graphic-button-hover-color) !important;
+    color:var(--graphic-background-color) !important;
+    text-transform: uppercase;
+
 }
 .graphic-section{
     background:var(--graphic-background-color);
@@ -2332,7 +2339,7 @@ page desgin
     padding-left:20%;
 }
 .graphic__section-info>h3{
-    color:var(--graphic-white-color);
+    color:var(--graphic-front-color);
     font-weight: bold;
     font-family: var(--course-bold-family);
 
@@ -2349,21 +2356,18 @@ page desgin
     border-radius: 0px;
 }
 .graphic-course-freature-list>li>span:first-child{
-    /* font-family:var(--course-bold-family); */
     font-size: 15px;
     font-weight: bold;
-    color:var(--graphic-white-color);
+    color:var(--graphic-text-gray-color);
+}
+.graphic-course-freature-list>li>span>*{
+     font-family:var(--course-bold-family);
+     color:var(--graphic-text-gray-color);
 }
 .graphic-course-freature-list>li>span:last-child{
     font-family: var(--course-family);
     font-size: 15px;
-    color:var(--graphic-white-color);
-}
-
-
-.grahpic-enroll-button>a:hover{
-    background:var(--graphic-front-color);
-    color:var(--graphic-white-color);
+    color:var(--graphic-text-gray-color);
 }
 .graphic-course-for{
     background:var(--graphic-front-color);
@@ -2406,7 +2410,7 @@ page desgin
 padding:10px;
 }
 .graphic-learn>ul>li{
-    color:var(--graphic-white-color);
+    color:var(--graphic-text-gray-color);
 }
 .graphic-learn>ul>li>b{
     color:var(--graphic-white-color);
@@ -2455,6 +2459,127 @@ padding:10px;
 .graphic-course-benefit>ul>li>i{
     font-size: 15px;   
 }
+
+
+/* instructor part */
+.graphic-our-insturcture{
+    padding:15px;
+    background:var(--graphic-background-color);
+}
+.graphic-our-insturcture>h2{
+    color:var(--graphic-front-color);
+    font-weight: bold;
+    font-family: var(--course-bold-family);
+    padding-bottom: 15px;
+    text-transform: uppercase;
+
+}
+.graphic-our__instructure-main{
+    border:1px solid var(--graphic-border-color);
+    padding:5px;
+}
+.graphic-our__instructure-main>div>div>h3{
+    font-weight: 900;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-front-color);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+.graphic-our__instructure-main>div>div>p{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
+}
+/* instructor part end */
+
+/* @@@@
+feature graphic section */
+.graphic-features-course{
+    background:var(--graphic-background-color);
+    padding:15px;
+    margin-bottom: 10px;
+}
+.graphic-features__course-details>span{
+    color:var(--graphic-front-color);
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.graphic-features__course-details>h3{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.graphic-features__course-details>p{
+    font-weight: 500;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+
+.graphic-enrol-button>.btn{
+    border:0px;
+    border-radius: 0px;
+    background:var(--graphic-front-color);
+    color:var(--graphic-background-color);
+    font-weight: bold;
+    padding:10px 50px;
+
+}
+.graphic-enrol-button>.btn:hover{
+    background:var(--graphic-button-hover-color);
+    color:var(--graphic-background-color);
+}
+/* @@@ feature graphic sention end 
+*/
+
+
+/* @@@@@
+Graphic Art Work */
+.graphic-artwork{
+    background-color: var(--graphic-background-color);
+    padding:15px;
+}
+.graphic-artwork-heading>h2{
+    color:var(--graphic-front-color);
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 15px;
+}
+.graphic-artwork-images>img{
+    transform: scale(0.99);
+    border:1px solid var(--graphic-border-color);
+    padding:4px;
+}
+/* @@@@
+Graphic Art work end */
+
+/* 
+@@@@
+Equpmients
+@@@@ 
+*/
+.graphic-equipments-course{
+    padding:15px;
+    background:var(--graphic-background-color);
+}
+.graphic-equipments-course>h2{
+    color:var(--graphic-front-color);
+    font-weight: 700;
+    margin-top:5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.graphic-equipments-images{
+    border:1px solid var(--graphic-border-color);
+    padding:2px;
+    margin-bottom: 10px;
+}
+
 /* --------------
 @@@@@@@@@@@@
 @@@@@@@@

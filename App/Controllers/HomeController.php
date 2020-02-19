@@ -93,9 +93,15 @@ class HomeController extends \Core\Controller
     // static courses page
     // @
     public function graphiccourse(){
-        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course AzadChaiwala']);
+        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course Azad Chaiwala Institute']);
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/graphic.html');
+        View::render('frontend/layouts/script.html');
+    }
+    public function videoCourse(){
+        View::render('frontend/layouts/head.html', ['title' => 'VIDEO EDITING, VIDEOGRAPHY Course Azad Chaiwala Institute']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/video.html');
         View::render('frontend/layouts/script.html');
     }
     // @

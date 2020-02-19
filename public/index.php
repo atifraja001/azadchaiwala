@@ -33,15 +33,15 @@ $router->add('about', ['controller' => 'HomeController', 'action' => 'about']);
 $router->add('contact', ['controller' => 'HomeController', 'action' => 'contact']);
 $router->add('gallery', ['controller' => 'HomeController', 'action' => 'gallery']);
 $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'action' => 'course-registration']);
-$router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
+
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);
 $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Insert_Contact']);
 
 // courses static pages
-$router->add('graphic-design-course', ['controller'=>'HomeController', 'action'=>'graphiccourse']);
-
- 
+$router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller'=>'HomeController', 'action'=>'graphiccourse']);
+$router->add('course/video-editing-social-media-star-14-days', ['controller'=>'HomeController', 'action'=>'videoCourse']);
+$router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 // admin routes
 $admin_dir = \App\Config::ADMIN_PATH;
 
