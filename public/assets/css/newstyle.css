@@ -1819,7 +1819,7 @@ section .section-title {
 }
 .video__course-title{
     margin-top: 10px;
-    background:url('../img/videography/videographyimage2.jpg');
+    background:url('/assets/img/videography/videographyimage2.jpg');
     background-size: cover;
     background-position: center;
 }
