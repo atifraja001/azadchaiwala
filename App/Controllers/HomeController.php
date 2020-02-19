@@ -90,6 +90,17 @@ class HomeController extends \Core\Controller
         View::render('frontend/layouts/script.html');
     }
 
+    // static courses page
+    // @
+    public function graphiccourse(){
+        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course AzadChaiwala']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/graphic.html');
+        View::render('frontend/layouts/script.html');
+    }
+    // @
+    // static courses page end
+
     public function course($request)
     {
         $courses = new \App\Models\Courses();
@@ -195,7 +206,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadStudentImage()
     {
-        $response = uploadfile('picture', 'assets/student_images');
+        $response = uploadfile('picture', 'content/student_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Student Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
@@ -208,7 +219,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadFeeReceipt()
     {
-        $response = uploadfile('fee_receipt', 'assets/course_images');
+        $response = uploadfile('fee_receipt', 'content/course_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Fee Receipt Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
