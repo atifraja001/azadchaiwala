@@ -2279,6 +2279,14 @@ page desgin
 @@@@@@@
 @@@@@@@@@@@
 ---------------- */
+*{
+    --graphic-background-color:#001721;
+    --graphic-front-color:#00C9FF;
+    --graphic-white-color:#fff;
+    --graphic-border-color:rgba(0,201,255, 0.29);
+    --graphic-black-color:#000;
+}
+
 .graphic__course-title{
     margin-top: 10px;
     background:url('../img/graphics/background.jpg');
@@ -2289,12 +2297,12 @@ page desgin
     padding:20px 10px 0px 10px;
     font-weight: bold;
     font-size: 35px;
-    color:#fff;
+    color:var(--graphic-white-color);
     margin-bottom: 0px;
     font-family: var(--course-bold-family);
 }
 .graphic__course-title>p{
-    color:#fff;
+    color:var(--graphic-white-color);
     padding:0px 10px 20px 10px;
     font-family: var(--course-family);
     margin-block-end: 10px;
@@ -2303,17 +2311,17 @@ page desgin
     margin-top: 10px;
 }
 .grahpic-enroll-button>a{
-    background:#00C9FF;
+    background:var(--graphic-front-color);
     border:0px;
     border-radius: 0px;
-    color:white;
+    color:var(--graphic-white-color);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-family: var(--course-bold-family);
 }
 .graphic-section{
-    background:#030c0f;
+    background:var(--graphic-background-color);
     padding:15px 15px;
 }
 .graphic-course>.container>.row>.col-lg-12{
@@ -2324,14 +2332,14 @@ page desgin
     padding-left:20%;
 }
 .graphic__section-info>h3{
-    color:#fff;
+    color:var(--graphic-white-color);
     font-weight: bold;
     font-family: var(--course-bold-family);
 
 }
 .graphic-course-freature-list>li{
     background:none;
-    border:1px solid rgba(0,201,255, 0.29);
+    border:1px solid var(--graphic-border-color);
     border-radius: 0px;
 }
 .graphic-course-freature-list>li:first-child{
@@ -2344,25 +2352,25 @@ page desgin
     /* font-family:var(--course-bold-family); */
     font-size: 15px;
     font-weight: bold;
-    color:#fff;
+    color:var(--graphic-white-color);
 }
 .graphic-course-freature-list>li>span:last-child{
     font-family: var(--course-family);
     font-size: 15px;
-    color:#fff;
+    color:var(--graphic-white-color);
 }
 
 
 .grahpic-enroll-button>a:hover{
-    background:#00C9FF;
-    color:white;
+    background:var(--graphic-front-color);
+    color:var(--graphic-white-color);
 }
 .graphic-course-for{
-    background:#00C9FF;
+    background:var(--graphic-front-color);
 }
 .graphic-course-for>h4{
     font-family: var(--course-bold-family);
-    color:#030c0f;
+    color:var(--graphic-background-color);
     font-weight: 900;
 
 }
@@ -2375,11 +2383,11 @@ page desgin
 }
 
 .graphic-course-notdo{
-    background:#00C9FF;
+    background:var(--graphic-front-color);
 }
 .graphic-course-notdo>h4{
     font-family: var(--course-bold-family);
-    color:#030c0f;
+    color:var(--graphic-background-color);
     font-weight: 900;
 }
 .graphic-course-notdo>ul>li{
@@ -2390,12 +2398,39 @@ page desgin
     font-size: 15px;   
 }
 
+.graphic-learn-section{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.graphic-learn{
+padding:10px;
+}
+.graphic-learn>ul>li{
+    color:var(--graphic-white-color);
+}
+.graphic-learn>ul>li>b{
+    color:var(--graphic-white-color);
+    font-weight: bold;
+}
+.graphic-course-for>ul>li{
+    color:var(--graphic-background-color);
+}
+.graphic-course-for>ul>li>i{
+    color:var(--graphic-background-color) !important;
+}
+.graphic-course-notdo>ul>li{
+    color:var(--graphic-background-color);
+}
+.graphic-course-notdo>ul>li>i{
+    color:var(--graphic-background-color) !important;
+}
+
 .graphic-course-return{
-    background:#030c0f;
+    background:var(--graphic-background-color);
 }
 .graphic-course-return>h4{
     font-family: var(--course-bold-family);
-    color:#00C9FF;
+    color:var(--graphic-front-color);
     font-weight: 900;
 }
 .graphic-course-return>ul>li{
@@ -2406,11 +2441,11 @@ page desgin
     font-size: 15px;   
 }
 .graphic-course-benefit{
-    background:#030c0f;
+    background:var(--graphic-background-color);
 }
 .graphic-course-benefit>h4{
     font-family: var(--course-bold-family);
-    color:#00C9FF;
+    color:var(--graphic-front-color);
     font-weight: 900;
 }
 .graphic-course-benefit>ul>li{
