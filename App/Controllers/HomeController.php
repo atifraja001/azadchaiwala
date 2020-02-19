@@ -206,7 +206,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadStudentImage()
     {
-        $response = uploadfile('picture', 'content/student_images');
+        $response = uploadfile('picture', '../content/student_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Student Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
@@ -219,7 +219,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadFeeReceipt()
     {
-        $response = uploadfile('fee_receipt', 'content/course_images');
+        $response = uploadfile('fee_receipt', '../content/course_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Fee Receipt Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
