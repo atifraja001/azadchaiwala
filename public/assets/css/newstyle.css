@@ -1920,12 +1920,14 @@ padding:10px;
     font-weight: 900;
 
 }
-.video-course-for>ul>li{
+.video-course-for>ul>li>span{
     font-size: 15px;
     font-family: var(--course-family);
+    color:white;
 }
 .video-course-for>ul>li>i{
-    font-size: 15px;
+    font-size: 13px;
+    margin-top:8px;
     
 }
 
@@ -1937,12 +1939,14 @@ padding:10px;
     color:#EE4367;
     font-weight: 900;
 }
-.video-course-benefit>ul>li{
+.video-course-benefit>ul>li>span{
     font-size: 15px;
     font-family: var(--course-family);
+    color:white;
 }
 .video-course-benefit>ul>li>i{
-    font-size: 15px;   
+    font-size: 13px;  
+    margin-top:8px; 
 }
 
 .video-course-return{
@@ -1953,12 +1957,14 @@ padding:10px;
     color:#EE4367;
     font-weight: 900;
 }
-.video-course-return>ul>li{
+.video-course-return>ul>li>span{
     font-size: 15px;
     font-family: var(--course-family);
+    color:white;
 }
 .video-course-return>ul>li>i{
-    font-size: 15px;   
+    font-size: 13px;  
+    margin-top:8px; 
 }
 
 .video-course-notdo{
@@ -1969,12 +1975,14 @@ padding:10px;
     color:rgb(255, 255, 255);
     font-weight: 900;
 }
-.video-course-notdo>ul>li{
+.video-course-notdo>ul>li>span{
     font-size: 15px;
     font-family: var(--course-family);
+    color:white;
 }
 .video-course-notdo>ul>li>i{
-    font-size: 15px;   
+    font-size: 13px;
+    margin-top:8px;   
 }
 .video-you-learn-right{
     padding:10px;   
@@ -1988,14 +1996,15 @@ padding:10px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.video-you-learn-right>ul>li{
-    font-size: 15px;
+.video-you-learn-right>ul>li>span{
+    font-size: 17px;
     color:black;
     font-family: var(--course-family);
 }
 .video-you-learn-right>ul>li>i{
-    font-size: 14px;
-color:black;
+    font-size: 16px;
+    color:black;
+    margin-top:8px;
 }
 /* @@@
     Our Instructor Area
