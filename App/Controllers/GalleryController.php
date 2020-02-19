@@ -39,7 +39,7 @@ class GalleryController
     // add new enrollment post
     public function add_new_gallery_post(){
         // preparing file to upload
-        $response = uploadfile('gallery_picture', 'content/gallery_images',
+        $response = uploadfile('gallery_picture', '../content/gallery_images',
             5
         );
         if($response == "invalid_image"){
