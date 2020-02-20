@@ -1819,6 +1819,8 @@ section .section-title {
 /* @@@@ over all main css */
 --margin-top-overall:10px;
 --padding-overall:15px;
+--enroll-button-color:yellow;
+--enroll-button-hover-color:#bdbd1d;
 }
 .video-course>.container:not(:first-child){
 
@@ -1826,7 +1828,7 @@ section .section-title {
 }
 .video__course-title{
     
-    background:url('../img/videography/videographyimage2.jpg');
+    background: linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)),url('../img/videography/videographyimage2.jpg');
     background-size: cover;
     background-position: center;
     padding:var(--padding-overall);
@@ -1842,6 +1844,33 @@ section .section-title {
     color:#fff;
     font-family: var(--course-family);
     margin-block-end: 0px;
+    font-size: 17px;
+}
+.ekko-lightbox-nav-overlay a:first-child span {
+    padding: 0 30px;
+    background: white;
+    width: 20px;
+    height: 40px;
+    color: black;
+    font-size: 34px;
+    border-radius: 516px;
+    position: absolute;
+    left: 0px;
+    padding: 29px;
+    padding-top: 7px !important;
+}
+.ekko-lightbox-nav-overlay a:last-child span {
+    padding: 0 30px;
+    background: white;
+    width: 20px;
+    height: 40px;
+    color: black;
+    font-size: 34px;
+    border-radius: 516px;
+    position: absolute;
+    right: 0px;
+    padding: 29px;
+    padding-top: 7px !important;
 }
 /* video section */
 .video-section{
@@ -1855,9 +1884,14 @@ section .section-title {
 .video__section-info{
     padding-left:20%;
 }
+@media screen and (max-width:900px){
+    .video__section-info{
+        padding-left:0%;
+    }
+}
 .video__section-info>h3{
     color:#fff;
-    font-weight: bold;
+    font-weight: 900;
     font-family: var(--course-bold-family);
 
 }
@@ -1888,21 +1922,21 @@ section .section-title {
     margin-top:10px;
 } 
 .video-enroll-button>a{
-    background:#EE4367;
+    background:var(--enroll-button-color);
     border:0px;
     border-radius: 0px;
-    color:white;
+    color:#000;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
     font-family: var(--course-bold-family);
 }
 .video-enroll-button>a:hover{
-    background:rgb(236, 28, 73);
-    color:white;
+    background:var(--enroll-button-hover-color);
+    color:rgb(0, 0, 0);
 }
 .video-learn{
-padding:10px;
+padding:15px;
 }
 .video-learn>ul>li{
     color:white;
@@ -1914,19 +1948,21 @@ padding:10px;
 .video-course-for{
     background:#EE4367;
 }
-.video-course-for>h4{
+.video-course-for>h3{
     font-family: var(--course-bold-family);
     color:rgb(255, 255, 255);
     font-weight: 900;
+    text-transform: capitalize;
 
 }
 .video-course-for>ul>li>span{
-    font-size: 15px;
+    font-size: 17px;
     font-family: var(--course-family);
     color:white;
+    
 }
 .video-course-for>ul>li>i{
-    font-size: 13px;
+    font-size: 15px;
     margin-top:8px;
     
 }
@@ -1934,63 +1970,67 @@ padding:10px;
 .video-course-benefit{
     background:#1A1A1A;
 }
-.video-course-benefit>h4{
+.video-course-benefit>h3{
     font-family: var(--course-bold-family);
     color:#EE4367;
     font-weight: 900;
+    text-transform: capitalize;
 }
 .video-course-benefit>ul>li>span{
-    font-size: 15px;
+    font-size: 17px;
     font-family: var(--course-family);
     color:white;
 }
 .video-course-benefit>ul>li>i{
-    font-size: 13px;  
+    font-size: 15px;  
     margin-top:8px; 
 }
 
 .video-course-return{
     background:#1A1A1A;
 }
-.video-course-return>h4{
+.video-course-return>h3{
     font-family: var(--course-bold-family);
     color:#EE4367;
     font-weight: 900;
+    text-transform: capitalize;
 }
 .video-course-return>ul>li>span{
-    font-size: 15px;
+    font-size: 17px;
     font-family: var(--course-family);
     color:white;
 }
 .video-course-return>ul>li>i{
-    font-size: 13px;  
+    font-size: 15px;  
     margin-top:8px; 
 }
 
 .video-course-notdo{
     background:#EE4367;
 }
-.video-course-notdo>h4{
+.video-course-notdo>h3{
     font-family: var(--course-bold-family);
     color:rgb(255, 255, 255);
     font-weight: 900;
+    text-transform: capitalize;
 }
 .video-course-notdo>ul>li>span{
-    font-size: 15px;
+    font-size: 17px;
     font-family: var(--course-family);
     color:white;
 }
 .video-course-notdo>ul>li>i{
-    font-size: 13px;
+    font-size: 15px;
     margin-top:8px;   
 }
 .video-you-learn-right{
     padding:10px;   
 }
 .video-you-learn-right>h3{
-    font-weight: 900;
     color:black;
     font-family: var(--course-bold-family);
+    text-transform: capitalize;
+    font-weight: 900;
 }
 .video-you-learn-right>ul{
     margin-top: 20px;
@@ -2016,7 +2056,7 @@ padding:10px;
 }
 .video-our-insturcture>h2{
     color:white;
-    font-weight: bold;
+    font-weight: 700;
     font-family: var(--course-bold-family);
     padding-bottom: 15px;
     text-transform: uppercase;
@@ -2103,16 +2143,18 @@ padding:10px;
 }
 
 .video-enrol-button>.btn{
+    width: 300px;
     border:0px;
     border-radius: 0px;
-    background:#EE4367;
-    color:white;
+    background:var(--enroll-button-color);
+    color:#000;
     padding:10px 50px;
+    font-weight: 900;
 
 }
 .video-enrol-button>.btn:hover{
-    background:rgb(236, 28, 73);
-    color:white;
+    background:var(--enroll-button-hover-color);
+    color:#000;
 }
 
 /* @@@
@@ -2162,7 +2204,7 @@ why use section
     margin-top:5px;
     margin-bottom: 5px;
 }
-.video-why__us-text>h3{
+.video-why__us-text>h2{
     font-weight: 700;
     font-family: var(--course-bold-family);
     color:#fff;
@@ -2265,6 +2307,7 @@ Equpmients
     font-weight: 700;
     margin-top:5px;
     margin-bottom: 15px;
+    padding-bottom: 8px;
     text-transform: uppercase;
 }
 .video-equipments-images{
@@ -2288,10 +2331,13 @@ page desgin
 @@@@@@@@@@@
 ---------------- */
 *{
-    --graphic-background-color:#001721;
-    --graphic-front-color:#00C9FF;
+    /* --graphic-background-color:#001721; */
+    --graphic-background-color:#210B00;
+    --graphic-front-color:#FF7D01;
+    /* --graphic-front-color:#00C9FF; */
     --graphic-white-color:#fff;
-    --graphic-border-color:rgba(0,201,255, 0.29);
+    /* --graphic-border-color:rgba(0,201,255, 0.29); */
+    --graphic-border-color:rgba(255, 125, 1, 0.29);
     --graphic-black-color:#000;
     --graphic-button-hover-color:rgb(37, 165, 200);
     --graphic-text-gray-color:rgb(189, 186, 186);
@@ -2302,9 +2348,10 @@ page desgin
     background:url('../img/graphics/background.jpg');
     background-size: cover;
     background-position: center;
+    padding:var(--padding-overall);
 }
 .graphic__course-title>h1{
-    padding:20px 10px 0px 10px;
+    
     font-weight: bold;
     font-size: 35px;
     color:var(--graphic-white-color);
@@ -2313,7 +2360,6 @@ page desgin
 }
 .graphic__course-title>p{
     color:var(--graphic-white-color);
-    padding:0px 10px 20px 10px;
     font-family: var(--course-family);
     margin-block-end: 0px;
 }
@@ -2321,18 +2367,18 @@ page desgin
     margin-top: 10px;
 }
 .grahpic-enroll-button>a{
-    background:var(--graphic-front-color);
+    background:var(--enroll-button-color);
     border:0px;
     border-radius: 0px;
-    color:var(--graphic-background-color);
+    color:var(--graphic-black-color);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-family: var(--course-bold-family);
 }
 .grahpic-enroll-button>a:hover{
-    background:var(--graphic-button-hover-color) !important;
-    color:var(--graphic-background-color) !important;
+    background:var(--enroll-button-hover-color) !important;
+    color:var(--graphic-black-color) !important;
     text-transform: uppercase;
 
 }
@@ -2381,34 +2427,42 @@ page desgin
 .graphic-course-for{
     background:var(--graphic-front-color);
 }
-.graphic-course-for>h4{
+.graphic-course-for>h3{
     font-family: var(--course-bold-family);
     color:var(--graphic-background-color);
     font-weight: 900;
+    text-transform: capitalize;
 
 }
-.graphic-course-for>ul>li{
-    font-size: 15px;
+.graphic-course-for>ul>li>span{
+    font-size: 17px;
     font-family: var(--course-family);
+    color:var(--graphic-black-color);
 }
 .graphic-course-for>ul>li>i{
-    font-size: 15px;   
+    font-size: 15px;
+    color:var(--graphic-white-color);
+    margin-top:8px;   
 }
 
 .graphic-course-notdo{
     background:var(--graphic-front-color);
 }
-.graphic-course-notdo>h4{
+.graphic-course-notdo>h3{
     font-family: var(--course-bold-family);
     color:var(--graphic-background-color);
     font-weight: 900;
+    text-transform: capitalize;
 }
-.graphic-course-notdo>ul>li{
-    font-size: 15px;
+.graphic-course-notdo>ul>li>span{
+    font-size: 17px;
     font-family: var(--course-family);
+    color:var(--graphic-black-color);
 }
 .graphic-course-notdo>ul>li>i{
-    font-size: 15px;   
+    font-size: 15px;
+    margin-top: 8px;
+    color:var(--graphic-white-color)!important;  
 }
 
 .graphic-learn-section{
@@ -2416,7 +2470,7 @@ page desgin
     margin-bottom:10px;
 }
 .graphic-learn{
-padding:10px;
+padding:15px;
 }
 .graphic-learn>ul>li{
     color:var(--graphic-text-gray-color);
@@ -2425,48 +2479,47 @@ padding:10px;
     color:var(--graphic-white-color);
     font-weight: bold;
 }
-.graphic-course-for>ul>li{
-    color:var(--graphic-background-color);
-}
-.graphic-course-for>ul>li>i{
-    color:var(--graphic-background-color) !important;
-}
-.graphic-course-notdo>ul>li{
-    color:var(--graphic-background-color);
-}
-.graphic-course-notdo>ul>li>i{
-    color:var(--graphic-background-color) !important;
-}
+
+
 
 .graphic-course-return{
     background:var(--graphic-background-color);
 }
-.graphic-course-return>h4{
+.graphic-course-return>h3{
     font-family: var(--course-bold-family);
     color:var(--graphic-front-color);
     font-weight: 900;
+    text-transform: capitalize;
 }
-.graphic-course-return>ul>li{
-    font-size: 15px;
+.graphic-course-return>ul>li>span{
+    font-size: 17px;
     font-family: var(--course-family);
+    color:var(--graphic-white-color);
 }
 .graphic-course-return>ul>li>i{
-    font-size: 15px;   
+    font-size: 15px;
+    color:var(--graphic-front-color);
+    margin-top:8px;   
 }
 .graphic-course-benefit{
     background:var(--graphic-background-color);
 }
-.graphic-course-benefit>h4{
+.graphic-course-benefit>h3{
     font-family: var(--course-bold-family);
     color:var(--graphic-front-color);
     font-weight: 900;
+    text-transform: capitalize;
 }
-.graphic-course-benefit>ul>li{
-    font-size: 15px;
+.graphic-course-benefit>ul>li>span{
+    font-size: 17px;
     font-family: var(--course-family);
+    color:var(--graphic-white-color);
+    
 }
 .graphic-course-benefit>ul>li>i{
-    font-size: 15px;   
+    font-size: 15px;
+    color:var(--graphic-front-color);
+    margin-top:8px;   
 }
 
 
@@ -2531,15 +2584,16 @@ feature graphic section */
 .graphic-enrol-button>.btn{
     border:0px;
     border-radius: 0px;
-    background:var(--graphic-front-color);
-    color:var(--graphic-background-color);
+    background:var(--enroll-button-color);
+    color:var(--graphic-black-color);
     font-weight: bold;
     padding:10px 50px;
+    width: 300px;
 
 }
 .graphic-enrol-button>.btn:hover{
-    background:var(--graphic-button-hover-color);
-    color:var(--graphic-background-color);
+    background:var(--enroll-button-hover-color);
+    color:var(--graphic-black-color);
 }
 /* @@@ feature graphic sention end 
 */
@@ -2588,6 +2642,29 @@ Equpmients
     padding:2px;
     margin-bottom: 10px;
 }
+/* 
+@@@@
+Equpmients
+@@@@ 
+*/
+.graphic-equipments-course{
+    padding:15px;
+    background:#1A1A1A;
+}
+.graphic-equipments-course>h2{
+    color:var(--graphic-front-color);
+    font-weight: 700;
+    margin-top:5px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+.graphic-equipments-images{
+    border:1px solid var(--graphic-border-color);
+    padding:2px;
+    margin-bottom: 10px;
+}
+/* equpminets */
 
 /* --------------
 @@@@@@@@@@@@
