@@ -6,12 +6,43 @@
 			<div class="container courh">
 				<h2>OUR COURSES - Skills We teach</h2>
 				<div class="divider"></div>
+
+
+
+
+
+
 				<div class="row">
 					<?php foreach($courses as $c){ ?>
 					<div class="col-lg-4 col-md-6">
 						<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
 						    <!-- Post-->
+							<?php
+								$heading = array(
+									"Only 2 seats left",
+									"Starting on 25-02-2020",
+									"Starting in 2 days",
+									"Limited Seats",
+									"Only 1 seat left"
+								);
+							?>
 						    <div class="post-module hover">
+								<style>
+									.post-header{
+										position: absolute;
+										width: 100%;
+										z-index: 9;
+										color: white;
+										padding: 5px;
+										font-size: 20px;
+										color: white;
+										background-color: rgba(43, 127, 227, 0.74);
+									}
+								</style>
+								<!-- Card Top Heading -->
+								<div class="post-header text-center">
+									<?=$heading[rand(0,4)]?>
+								</div>
 						      <!-- Thumbnail-->
 						      <div class="thumbnail">
 						        <img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course"/>
@@ -40,6 +71,41 @@
 		</div>
 	</section>
 	<!-- course section end -->
+
+	<div class="container">
+		<div class="row">
+			<?php foreach($courses as $c){ ?>
+				<?php
+					$heading = array(
+						"Only 2 seats left",
+						"Starting on 25-02-2020",
+						"Starting in 2 days",
+						"Limited Seats",
+						"Only 1 seat left"
+					);
+				?>
+			<div class="col-lg-4 ">
+				<div class="course-card">
+					<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+					<div class="course__card-image">
+						<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
+					</div>
+					<div class="course__card-content">
+						<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
+						<p><?=add3Dots($c['course_description'], 130)?></p>
+					</div>
+					<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+					<div class="course_card-start">
+						<p><?=$heading[rand(0,4)]?></p>
+					</div>
+				</a>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+		
+		
+	</div>
 
 	<section class="topsec">
 		<div class="topsecd" >
