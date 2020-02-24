@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="minor changes">
-      <change afterPath="$PROJECT_DIR$/App/Views/frontend/video.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/design work/videographyimage.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/design work/videographyimage.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/graphic.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/graphic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/newstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/newstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,91 +121,11 @@
       <workItem from="1581069662533" duration="610000" />
       <workItem from="1581498353083" duration="2263000" />
       <workItem from="1581918742831" duration="2814000" />
-      <workItem from="1582088655510" duration="6152000" />
-    </task>
-    <task id="LOCAL-00001" summary="sql update">
-      <created>1579099433093</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1579099433093</updated>
-    </task>
-    <task id="LOCAL-00002" summary="minor update">
-      <created>1579099654295</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1579099654295</updated>
-    </task>
-    <task id="LOCAL-00003" summary="minor update">
-      <created>1579099750952</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1579099750952</updated>
-    </task>
-    <task id="LOCAL-00004" summary="minor update">
-      <created>1579100345294</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1579100345294</updated>
-    </task>
-    <task id="LOCAL-00005" summary="minor update">
-      <created>1579103147830</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1579103147830</updated>
-    </task>
-    <task id="LOCAL-00006" summary="issue updated">
-      <created>1579178695874</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1579178695874</updated>
-    </task>
-    <task id="LOCAL-00007" summary="issue updated">
-      <created>1579178722330</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1579178722330</updated>
-    </task>
-    <task id="LOCAL-00008" summary="issue updated">
-      <created>1579179018227</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1579179018227</updated>
-    </task>
-    <task id="LOCAL-00009" summary="issue updated">
-      <created>1579179069896</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1579179069896</updated>
-    </task>
-    <task id="LOCAL-00010" summary="update">
-      <created>1579525020198</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1579525020198</updated>
-    </task>
-    <task id="LOCAL-00011" summary="update">
-      <created>1579525041238</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1579525041238</updated>
-    </task>
-    <task id="LOCAL-00012" summary="update">
-      <created>1579525330920</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1579525330920</updated>
+      <workItem from="1582088655510" duration="13917000" />
+      <workItem from="1582260690827" duration="3488000" />
+      <workItem from="1582266404228" duration="2605000" />
+      <workItem from="1582288807121" duration="712000" />
+      <workItem from="1582521417889" duration="11988000" />
     </task>
     <task id="LOCAL-00013" summary="update">
       <created>1579525846245</created>
@@ -472,7 +386,91 @@
       <option name="project" value="LOCAL" />
       <updated>1582092704054</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="minor changes">
+      <created>1582109591875</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1582109591876</updated>
+    </task>
+    <task id="LOCAL-00051" summary="minor changes">
+      <created>1582110621915</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1582110621915</updated>
+    </task>
+    <task id="LOCAL-00052" summary="minor changes">
+      <created>1582112451121</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1582112451121</updated>
+    </task>
+    <task id="LOCAL-00053" summary="minor changes">
+      <created>1582112503300</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1582112503300</updated>
+    </task>
+    <task id="LOCAL-00054" summary="minor changes">
+      <created>1582115150094</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1582115150095</updated>
+    </task>
+    <task id="LOCAL-00055" summary="minor changes">
+      <created>1582115464832</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1582115464832</updated>
+    </task>
+    <task id="LOCAL-00056" summary="minor changes">
+      <created>1582115760436</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1582115760437</updated>
+    </task>
+    <task id="LOCAL-00057" summary="minor changes">
+      <created>1582115785664</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1582115785664</updated>
+    </task>
+    <task id="LOCAL-00058" summary="minor changes">
+      <created>1582116025597</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1582116025597</updated>
+    </task>
+    <task id="LOCAL-00059" summary="minor changes">
+      <created>1582201519218</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1582201519219</updated>
+    </task>
+    <task id="LOCAL-00060" summary="minor changes">
+      <created>1582288892106</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1582288892106</updated>
+    </task>
+    <task id="LOCAL-00061" summary="minor changes">
+      <created>1582534974340</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1582534974340</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,10 +529,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="941" y="67" key="CommitChangelistDialog2" timestamp="1582092702959">
+    <state x="941" y="67" key="CommitChangelistDialog2" timestamp="1582545991556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="941" y="67" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582092702959" />
+    <state x="941" y="67" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582545991556" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1316,6 +1316,7 @@ single course section
 
 .site-footer
 {
+    border-top: 0px !important;
     background-color:#262626;
     padding:45px 0 20px;
     font-size:15px;
@@ -2074,6 +2075,7 @@ New Video Learn section end */
 */
 .video-success-course{
     padding:15px;
+    margin-top: 2px !important;
 }
 .video-success-course>h2{
     color:#000;
@@ -2151,6 +2153,7 @@ New Video Learn section end */
  */
 .video-faqs-course{
     padding:15px;
+    margin-top:2px !important;
 }
 .video-faqs-course>h2{
     color:#000;
@@ -2165,7 +2168,8 @@ New Video Learn section end */
     margin-bottom: 10px;
 }
 .video-faqs-course-inner>h4{
-    color:#000;
+    background:var(--graphic-background-color);
+    color:#fff;
     font-family: var(--course-bold-family);
     font-weight: 500;
     padding:5px;
@@ -2251,7 +2255,9 @@ why use section
 /* testimonial */
 .video-testimonials-course{
     padding:15px;
+    margin-top:2px !important;
 }
+
 .video-testimonials-course>h2{
     margin-top: 5px;
     margin-bottom: 20px;
@@ -2342,6 +2348,7 @@ page desgin
 .graphic-section{
     background:linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/graphics/topbackground.jpg');
     padding:15px 15px;
+    margin-bottom: 2px;
 }
 .graphic-section>div>div:first-child{
     padding-right:5px;
@@ -2357,17 +2364,21 @@ page desgin
     color:#fff;
     font-weight: 700;
     font-family: var(--course-bold-family);
+    margin-top:-15px;
 }
 .graphic__section-info>p{
     color:#fff;
     font-family: var(--course-family);
-    margin-bottom: 0px;
+
     font-size: 17px;
+    display: inline;
 }
 .graphic__section-info>h3{
     color:#fff;
     font-weight: 500;
+    font-size: 22px;
     font-family: var(--course-bold-family);
+    display: inline;
 
 }
 .grahpic-enroll-button{
@@ -2381,7 +2392,7 @@ page desgin
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 32px;
     font-family: var(--course-bold-family);
 }
 .grahpic-enroll-button>a>span{
@@ -2400,21 +2411,23 @@ page desgin
 /* top banner end */
 
 /* will learn section of the graphic page */
-.will-learn{
+.graphic-will-learn{
     margin-top: 0px !important;
     padding:15px;
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,.5)) , url('../img/graphics/willYouLearn.jpg');
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,.6)) , url('../img/graphics/iconsbackground.png');
+    margin-bottom: 2px;
 }
-.will-learn>h3{
+.graphic-will-learn>h3{
     font-weight: 700;
     font-family: var(--course-bold-family);
     color:#000;
 }
-.will__learn-text>ul>li>i{
+.graphic-will__learn-text>ul>li>i{
     font-size: 15px;
     margin-top: 5px;
+    color:white;
 }
-.will__learn-text>ul>li>span{
+.graphic-will__learn-text>ul>li>span{
     font-size: 17px;
     color: #fff;
 }
@@ -2440,11 +2453,9 @@ page desgin
     background:#7e4ead;
 }
 .graphic-learn>h3{
+    font-weight: 500;
     font-family: var(--course-bold-family);
     color:#fff;
-    font-weight: 900;
-    text-transform: capitalize;
-
 }
 .graphic-learn>ul>li>span{
     font-size: 17px;
@@ -2460,23 +2471,24 @@ page desgin
 .graphic-learn-section>div>div{
     padding-right: 0px;
     padding-left: 0px;
+    margin-top:0px !important;
 }
-
-
-
-
-
-
-
-
 /* instructor part */
 .graphic-our-insturcture{
     padding:15px;
     background:var(--graphic-background-color);
+    margin-top: 2px !important;
 }
+.graphic-our-insturcture>div>div:first-child{
+    padding-right:7.5px !important;
+}
+.graphic-our-insturcture>div>div:last-child{
+    padding-left:7.5px !important;
+}
+
 .graphic-our-insturcture>h2{
     color:var(--graphic-front-color);
-    font-weight: bold;
+    font-weight: 500;
     font-family: var(--course-bold-family);
     padding-bottom: 15px;
     text-transform: uppercase;
@@ -2507,7 +2519,8 @@ feature graphic section */
 .graphic-features-course{
     background:var(--graphic-background-color);
     padding:15px;
-    margin-bottom: 10px;
+    margin-bottom: 2px !important;
+    margin-top:2px !important;
 }
 .graphic-features__course-details>span{
     color:var(--graphic-front-color);
@@ -2534,7 +2547,7 @@ feature graphic section */
     color:var(--graphic-black-color);
     font-weight: bold;
     padding:10px 50px;
-    width: 300px;
+    width: 240px;
 
 }
 .graphic-enrol-button>.btn:hover{
@@ -2550,6 +2563,7 @@ Graphic Art Work */
 .graphic-artwork{
     background-color: var(--graphic-background-color);
     padding:15px;
+    margin-top: 2px !important;
 }
 .graphic-artwork-heading>h2{
     color:var(--graphic-front-color);
@@ -2559,8 +2573,8 @@ Graphic Art Work */
     margin-bottom: 8px;
     padding-bottom: 15px;
 }
-.graphic-artwork-images>img{
-    transform: scale(0.99);
+.graphic-artwork-images>a>img{
+    width:89px !important;
     padding-bottom:8px;
 }
 /* @@@@
@@ -2573,19 +2587,31 @@ Equpmients
 */
 .graphic-equipments-course{
     padding:15px;
-    background:var(--graphic-background-color);
+    background:var(--graphic-background-color) !important;
+    margin-top:2px !important;
+}
+.graphic-equipments-course>div>div{
+    padding:0px 5px 0px 5px;
 }
 .graphic-equipments-course>h2{
     color:var(--graphic-front-color);
     font-weight: 700;
     margin-top:5px;
-    margin-bottom: 15px;
+    margin-bottom:15px;
     text-transform: uppercase;
 }
 .graphic-equipments-images{
     border:1px solid var(--graphic-border-color);
     padding:2px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+.graphic_lastenroll-now>p{
+    color:#fff;
+    font-family: var(--course-family);
+    font-size: 20px;
+}
+.graphic_lastenroll-now>a{
+    background:yellow;
 }
 /* 
 @@@@
@@ -2611,6 +2637,28 @@ Equpmients
 }
 /* equpminets */
 
+/* last enroll button of graphic */
+.graphic_lastenroll-now{
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(33, 11, 0,0.7), rgba(33, 11, 0,0.7)) , url('../img/graphics/iconsbackground.png');
+    margin-top: 2px !important;
+}
+.graphic_lastenroll-now>a{
+    background:var(--enroll-button-color);
+    border:0px;
+    border-radius: 0px;
+    color:var(--graphic-black-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 26px;
+    font-family: var(--course-bold-family);
+}
+.graphic_lastenroll-now>a>i{
+    padding-left:15px;
+    font-weight: 700;
+    font-size: 26px;
+}
 /* --------------
 @@@@@@@@@@@@
 @@@@@@@@
