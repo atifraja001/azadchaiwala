@@ -288,9 +288,7 @@ courses Area
 .course-card>a{
     text-decoration: none;
 }
-.course__card-image{
-    border-bottom: 4px solid rgb(0, 140, 255);
-}
+
 .course__card-content{
     padding:10px;
 }
@@ -306,17 +304,17 @@ courses Area
     font-family: var(--course-family);
     padding:6px 30px;
     background:#E74C3C;
-    top: 165px;
+    top: 200px;
     color:white;
 }
 .course_card-start{
-    position: absolute;
+
     text-align: center;
     margin: 0 auto;
     background:#2C83EB;
     width: 100%;
     color:white;
-    bottom: 0px;
+
 }
 .course_card-start>p{
     color:white;
@@ -328,18 +326,14 @@ courses Area
 }
 /* new course card area end */
 .courh{
-    margin-top: 20px;
     text-align: center;
-    font-weight: bold;
-    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
-
+    margin-top: 5px;
 }
 .courh>h2{
     font-weight: bold;
     color:black;
     text-transform: uppercase;
     font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
-
 }
 .divider{
     background: var(--main-color);
@@ -1866,7 +1860,7 @@ section .section-title {
 @@ video graphy course page design
 @@@*/
 *{
---course-bold-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+--course-bold-family:'Segoe UI','Segoe UI Emoji','Segoe UI Symbol';
 --course-family:sf pro text,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
 /* @@@@ over all main css */
 --margin-top-overall:10px;
@@ -2338,25 +2332,43 @@ page desgin
     --graphic-text-gray-color:rgb(189, 186, 186);
 }
 
-.graphic__course-title{
-    margin-top: 10px;
-    background:url('../img/graphics/background.jpg');
-    background-size: cover;
-    background-position: center;
-    padding:var(--padding-overall);
+/* top banner start */
+.graphic__section-video{
+    height: 300px !important;
+    display:flex;
+    align-self: start;
+    align-items: center;
 }
-.graphic__course-title>h1{
-    
-    font-weight: bold;
-    font-size: 35px;
-    color:var(--graphic-white-color);
-    margin-bottom: 0px;
+.graphic-section{
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/graphics/topbackground.jpg');
+    padding:15px 15px;
+}
+.graphic-section>div>div:first-child{
+    padding-right:5px;
+}
+.graphic-section>div>div:last-child{
+    padding-left:5px;
+}
+.graphic-course>.container>.row>.col-lg-12{
+    padding-left: 0px;
+    padding-right:0px;
+}
+.graphic__section-info>h1{
+    color:#fff;
+    font-weight: 700;
     font-family: var(--course-bold-family);
 }
-.graphic__course-title>p{
-    color:var(--graphic-white-color);
+.graphic__section-info>p{
+    color:#fff;
     font-family: var(--course-family);
-    margin-block-end: 0px;
+    margin-bottom: 0px;
+    font-size: 17px;
+}
+.graphic__section-info>h3{
+    color:#fff;
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+
 }
 .grahpic-enroll-button{
     margin-top: 10px;
@@ -2368,8 +2380,15 @@ page desgin
     color:var(--graphic-black-color);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 26px;
     font-family: var(--course-bold-family);
+}
+.grahpic-enroll-button>a>span{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    padding-right: 5px;
 }
 .grahpic-enroll-button>a:hover{
     background:var(--enroll-button-hover-color) !important;
@@ -2377,145 +2396,77 @@ page desgin
     text-transform: uppercase;
 
 }
-.graphic-section{
-    background:var(--graphic-background-color);
-    padding:15px 15px;
-}
-.graphic-course>.container>.row>.col-lg-12{
-    padding-left: 0px;
-    padding-right:0px;
-}
-.graphic__section-info{
-    padding-left:20%;
-}
-.graphic__section-info>h3{
-    color:var(--graphic-front-color);
-    font-weight: bold;
-    font-family: var(--course-bold-family);
 
-}
-.graphic-course-freature-list>li{
-    background:none;
-    border:1px solid var(--graphic-border-color);
-    border-radius: 0px;
-}
-.graphic-course-freature-list>li:first-child{
-    border-radius: 0px;
-}
-.graphic-course-freature-list>li:last-child{
-    border-radius: 0px;
-}
-.graphic-course-freature-list>li>span:first-child{
-    font-size: 15px;
-    font-weight: bold;
-    color:var(--graphic-text-gray-color);
-}
-.graphic-course-freature-list>li>span>*{
-     font-family:var(--course-bold-family);
-     color:var(--graphic-text-gray-color);
-}
-.graphic-course-freature-list>li>span:last-child{
-    font-family: var(--course-family);
-    font-size: 15px;
-    color:var(--graphic-text-gray-color);
-}
-.graphic-course-for{
-    background:var(--graphic-front-color);
-}
-.graphic-course-for>h3{
-    font-family: var(--course-bold-family);
-    color:var(--graphic-background-color);
-    font-weight: 900;
-    text-transform: capitalize;
+/* top banner end */
 
+/* will learn section of the graphic page */
+.will-learn{
+    margin-top: 0px !important;
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,.5)) , url('../img/graphics/willYouLearn.jpg');
 }
-.graphic-course-for>ul>li>span{
+.will-learn>h3{
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
+.will__learn-text>ul>li>i{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.will__learn-text>ul>li>span{
     font-size: 17px;
-    font-family: var(--course-family);
-    color:var(--graphic-black-color);
+    color: #fff;
 }
-.graphic-course-for>ul>li>i{
-    font-size: 15px;
-    color:var(--graphic-white-color);
-    margin-top:8px;   
-}
-
-.graphic-course-notdo{
-    background:var(--graphic-front-color);
-}
-.graphic-course-notdo>h3{
-    font-family: var(--course-bold-family);
-    color:var(--graphic-background-color);
-    font-weight: 900;
-    text-transform: capitalize;
-}
-.graphic-course-notdo>ul>li>span{
-    font-size: 17px;
-    font-family: var(--course-family);
-    color:var(--graphic-black-color);
-}
-.graphic-course-notdo>ul>li>i{
-    font-size: 15px;
-    margin-top: 8px;
-    color:var(--graphic-white-color)!important;  
-}
-
-.graphic-learn-section{
-    margin-top:10px;
-    margin-bottom:10px;
-}
+/* end the will learn section of the graphic page */
 .graphic-learn{
-padding:15px;
+    padding:15px;
+    min-height: 380px;
 }
-.graphic-learn>ul>li{
-    color:var(--graphic-text-gray-color);
+/* first */
+.graphic-course-for{
+    background:#4f316e;
 }
-.graphic-learn>ul>li>b{
-    color:var(--graphic-white-color);
-    font-weight: bold;
-}
-
-
-
-.graphic-course-return{
-    background:var(--graphic-background-color);
-}
-.graphic-course-return>h3{
-    font-family: var(--course-bold-family);
-    color:var(--graphic-front-color);
-    font-weight: 900;
-    text-transform: capitalize;
-}
-.graphic-course-return>ul>li>span{
-    font-size: 17px;
-    font-family: var(--course-family);
-    color:var(--graphic-white-color);
-}
-.graphic-course-return>ul>li>i{
-    font-size: 15px;
-    color:var(--graphic-front-color);
-    margin-top:8px;   
-}
+/* second */
 .graphic-course-benefit{
-    background:var(--graphic-background-color);
+    background:#ba9966;
 }
-.graphic-course-benefit>h3{
+/* third */
+.graphic-course-return{
+    background:#467d58;
+}
+/* fourth */
+.graphic-course-notdo{
+    background:#7e4ead;
+}
+.graphic-learn>h3{
     font-family: var(--course-bold-family);
-    color:var(--graphic-front-color);
+    color:#fff;
     font-weight: 900;
     text-transform: capitalize;
+
 }
-.graphic-course-benefit>ul>li>span{
+.graphic-learn>ul>li>span{
     font-size: 17px;
     font-family: var(--course-family);
-    color:var(--graphic-white-color);
-    
+    color:#fff;
 }
-.graphic-course-benefit>ul>li>i{
+.graphic-learn>ul>li>i{
     font-size: 15px;
-    color:var(--graphic-front-color);
+    color:#000 !important;
     margin-top:8px;   
 }
+
+.graphic-learn-section>div>div{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+
+
+
+
 
 
 /* instructor part */
@@ -2610,8 +2561,7 @@ Graphic Art Work */
 }
 .graphic-artwork-images>img{
     transform: scale(0.99);
-    border:1px solid var(--graphic-border-color);
-    padding:4px;
+    padding-bottom:8px;
 }
 /* @@@@
 Graphic Art work end */

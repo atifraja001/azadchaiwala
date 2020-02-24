@@ -39,30 +39,23 @@ class GalleryController
     // add new enrollment post
     public function add_new_gallery_post(){
         // preparing file to upload
-        $response = uploadfile('gallery_picture', '../content/gallery_images',
-            5
-        );
-        if($response == "invalid_image"){
-            redirectWithMessage(app_url('admin').'/gallery/manage', 'Invalid Image File', 'gallery', 'error');
-        }else if($response == "invalid_size"){
-            redirectWithMessage(app_url('admin').'/gallery/manage', 'Image is too larger to upload', 'gallery', 'error');
-        }else if($response == "not_uploaded"){
-            redirectWithMessage(app_url('admin').'/gallery/manage', 'something went\'s wrong!', 'gallery', 'error');
-        }else{
+        $file_names = array();
+        $file_names = multiUploadFile('gallery_picture', '../content/gallery_images', 5);
+        $gl = new \App\Models\Gallery();
 
-            // preparing data
-            $data = [
-                ':class' => clean_post('class'),
-                ':gallery_picture' => $response
-            ];
-
-            $gl = new \App\Models\Gallery();
-            $gl->InsertGallery($data);
-
-            redirectWithMessage(
-                app_url('admin').'/gallery/manage',
-                'New Image Created Successfully',
-                'gallery');
+        if(count($file_names) > 0) {
+            foreach ($file_names as $key => $value){
+                // preparing data
+                $data = [
+                    ':class' => "none",
+                    ':gallery_picture' => $value
+                ];
+                $gl->InsertGallery($data);
+            }
+            $upload = true;
+        }else {
+            $upload = false;
         }
+        echo json_encode($upload);
     }
 }

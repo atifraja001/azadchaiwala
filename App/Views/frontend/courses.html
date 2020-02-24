@@ -1,35 +1,38 @@
 <!-- course section -->
 	<section >
 		<div class="courses">
-			<div class="container courh">
-				<h2>COURSES</h2>
+			<div class="container mt-2">
+				<div class="courh">
+					<h2>OUR COURSES - SKILLS WE TEACH</h2>
+				</div>
 				<div class="divider"></div>
-				<div class="row">
+				<div class="row mt-2">
 					<?php foreach($courses as $c){ ?>
-					<div class="col-lg-4 col-md-4">
-						<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
-							<!-- Post-->
-							<div class="post-module hover">
-								<!-- Thumbnail-->
-								<div class="thumbnail">
-									<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course"/>
+						<?php
+							$heading = array(
+								"Only 2 seats left",
+								"Starting on 25-02-2020",
+								"Starting in 2 days",
+								"Limited Seats",
+								"Only 1 seat left"
+							);
+						?>
+					<div class="col-lg-4">
+						<div class="course-card">
+							<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+								<div class="course_card-start">
+									<p><?=$heading[rand(0,4)]?></p>
 								</div>
-								<!-- Post Content-->
-								<div class="post-content">
-									<div class="category"><?=number_format($c['fee']);?> <small class="text-white">pkr</small></div>
-									<h3 class="title"><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
-									<p class="description"><?=add3Dots($c['course_description'], 130)?></p>
-									<?php foreach($courses_b as $cb){ ?>
-							        <?php if($c['id'] == $cb['id'] && strtotime($cb['start_date']) > time()){  ?>
-							        <div>
-							        	<button type="button" class="btn btn-info">
-										 <span class="badge badge-light"><?=daysdiff(date('Y-m-d'), $cb['start_date'])?></span> Days <span class="font-weight-bold">Left</span> Book Your Seat
-										</button>
-							        </div>
-							        <?php } } ?>
+								<div class="course__card-image">
+									<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
 								</div>
-							</div>
-						</a>
+								<div class="course__card-content">
+									<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
+									<p><?=add3Dots($c['course_description'], 100)?></p>
+								</div>
+								<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+							</a>
+						</div>
 					</div>
 					<?php } ?>
 				</div>
