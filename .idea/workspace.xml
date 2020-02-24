@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="minor changes">
-      <change afterPath="$PROJECT_DIR$/design work/videographyimage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/design work/videographyimage.psd" afterDir="false" />
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,13 +124,7 @@
       <workItem from="1582266404228" duration="2605000" />
       <workItem from="1582288807121" duration="712000" />
       <workItem from="1582521417889" duration="11988000" />
-    </task>
-    <task id="LOCAL-00013" summary="update">
-      <created>1579525846245</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1579525846245</updated>
+      <workItem from="1582545905192" duration="255000" />
     </task>
     <task id="LOCAL-00014" summary="Database upgrade">
       <created>1580103242763</created>
@@ -470,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582534974340</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="minor changes">
+      <created>1582546027290</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1582546027290</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,14 +528,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="941" y="67" key="CommitChangelistDialog2" timestamp="1582545991556">
+    <state x="941" y="67" key="CommitChangelistDialog2" timestamp="1582546227898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="941" y="67" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582545991556" />
-    <state x="184" y="91" key="DiffContextDialog" timestamp="1580104452890">
+    <state x="941" y="67" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582546227898" />
+    <state x="184" y="91" key="DiffContextDialog" timestamp="1582546224927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="91" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580104452890" />
+    <state x="184" y="91" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582546224927" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
