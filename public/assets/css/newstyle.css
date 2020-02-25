@@ -1864,35 +1864,13 @@ section .section-title {
 --course-bold-family:'Segoe UI','Segoe UI Emoji','Segoe UI Symbol';
 --course-family:sf pro text,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
 /* @@@@ over all main css */
---margin-top-overall:10px;
+--margin-top-overall:2px;
 --padding-overall:15px;
 --enroll-button-color:yellow;
 --enroll-button-hover-color:#bdbd1d;
 }
-.video-course>.container:not(:first-child){
 
-    margin-top: var(--margin-top-overall);
-}
-.video__course-title{
-    
-    background: linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)),url('../img/videography/videographyimage2.jpg');
-    background-size: cover;
-    background-position: center;
-    padding:var(--padding-overall);
-}
-.video__course-title>h1{
-    font-weight: 500;
-    font-size: 55px;
-    color:#fff;
-    margin-bottom: 0px;
-    font-family: var(--course-bold-family);
-}
-.video__course-title>p{
-    color:#fff;
-    font-family: var(--course-family);
-    margin-block-end: 0px;
-    font-size: 17px;
-}
+/* light box  */
 .ekko-lightbox-nav-overlay a:first-child span {
     padding: 0 30px;
     background: white;
@@ -1919,129 +1897,179 @@ section .section-title {
     padding: 29px;
     padding-top: 7px !important;
 }
-/* video section */
+/* end of the light box */
+
+
+.video-course>.container:not(:first-child){
+
+    margin-top: var(--margin-top-overall);
+}
+
+
+/* video top banner start here */
 .video-section{
-    background:#9dcdffba;
-    padding:var(--padding-overall);
+    padding:10px var(--padding-overall);
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/videography/newbackground.jpg');
+    margin-bottom: 2px;
 }
-.video-course>.container>.row>.col-lg-12{
-    padding-left: 0px;
-    padding-right:0px;
+@media(min-width:600px){
+.video-section>div>div:first-child{
+    padding-right:5px;
 }
-.video_course_description{
-    padding-left: 15px;
+.video-section>div>div:last-child{
+    padding-left:5px;
 }
-.video_course_description>p{
-    color:black;
+}
+.video__section-video{
+    height: 240px;
+}
+@media(max-width:600px){
+    .video__section-video{
+        height: auto;
+        width: 100%;
+    }   
+}
+.video__section-info>h1{
+    color:#fff;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    margin-top:-10px;
+}
+.video__section-info>p{
+    color:#fff;
     font-family: var(--course-family);
-}
-.video_course_description>h4{
-    color:black;
-    font-family: var(--course-bold-family);
-    text-transform: uppercase;
-    font-weight: 500px;
-}
-.of-top>a{
-    width:100% !important;
-}
 
-/* @@@
-New Video Learn Section */
-.video-new-learn-section{
-    background:rgb(255, 255, 255);
-    padding: 15px;
-}
-.video-new-learn{
-    padding:10px;
-    background:#9dcdffba;
-    border-left:4px solid #007bff;
-    min-height: 380px;
-    
-}
-.video-new-learn-section>.row>.col-lg-6:not(:last-child){
-    margin-bottom: 15px;
-}
-.video-new-learn>h3{
-    font-weight: 500;
-    font-family: var(--course-bold-family);
-    color:var(--graphic-black-color);
-    text-transform: capitalize;
-    font-size: 1.5rem;
-}
-.video-new-learn>ul>li>i{
-    color:var(--graphic-black-color);
-    margin-top: 4px;
-    font-size: 15px;
-}
-.video-new-learn>ul>li>span{
-    color:var(--graphic-black-color);
     font-size: 17px;
+    display: inline;
 }
-.video-new-youlearn{
-    background:#9dcdffba;
-    padding:15px;
-}
-.video__youlearn-text{
-    padding: 10px;
-
-}
-.video__youlearn-text>h3{
-
-    color:var(--graphic-black-color);
-    font-family: var(--course-bold-family);
+.video__section-info>h3{
+    color:#fff;
     font-weight: 500;
-    text-transform: capitalize;
-}
-.video__youlearn-text>ul>div>div>li>i{
-    color:#007bff;
-    margin-top: 4px;
-    font-size: 15px;
-}
-.video__youlearn-text>ul>div>div>li>span{
-    font-size: 17px;
-    color:black;
-}
-.video__course-features{
-    background:#4e8cccba;
-    padding: 10px;
-    border-left:4px solid #007bff;
-}
-.video__course-features>h3{
-    background-color:var(--graphic-white-color);
-    margin:-10px -10px 10px -10px;
-    padding: 10px;
-    color:var(--graphic-black-color);
+    font-size: 22px;
     font-family: var(--course-bold-family);
-    font-weight: 500;
-    text-transform: capitalize;
+    display: inline;
 }
-.video__course-features>ul>.list-group-item{
-    background:none;
-    border:1px solid var(--graphic-black-color);
+.video-enroll-button{
+    margin-top: 10px;
+}
+.video-enroll-button>a{
+    background:var(--enroll-button-color);
+    border:0px;
     border-radius: 0px;
+    color:var(--graphic-black-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: var(--course-bold-family);
 }
-.video__course-features>ul>.list-group-item:first-child{
-    border-bottom: 0px;
+.video-enroll-button>a>span{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    padding-right: 5px;
+    font-size: 30px;
+    color:#7e4ead;
 }
-.video__course-features>ul>.list-group-item:nth-child(2){
-    border-bottom: 0px;
-}
-.video__course-features>ul>.list-group-item>i{
-    color:var(--graphic-white-color)
-}
-/* @@@
-New Video Learn section end */
+.video-enroll-button>a:hover{
+    background:var(--enroll-button-hover-color) !important;
+    color:var(--graphic-black-color) !important;
+    text-transform: uppercase;
 
+}
+/* End of Video top banner */
+
+/* will learn section of the graphic page */
+.video-will-learn{
+    margin-top: 0px !important;
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.1), rgba(0,0,0,.1)) , url('../img/videography/camera-bg-tile.png');
+    margin-bottom: 2px;
+}
+.video-will-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
+.video-will__learn-text>ul>li>i{
+    font-size: 15px;
+    margin-top: 5px;
+    color:rgb(0, 0, 0);
+}
+.video-will__learn-text>ul>li>span{
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+/* end the will learn section of the graphic page */
+
+
+/* video four sections */
+
+
+.video-learn-section>div>div{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top:0px !important;
+}
+.video-learn{
+    padding:15px;
+    min-height: 420px;
+}
+@media(max-width:600px){
+    .video-learn{
+        min-height: 200px;
+    }
+}
+/* first */
+.video-course-for{
+    
+    background:#FFEC42 url('../img/graphics/box-bg.png');
+}
+/* second */
+.video-course-benefit{
+    background:#E8D13C url('../img/graphics/box-bg.png');
+}
+/* third */
+.video-course-return{
+    background:#FFE24F url('../img/graphics/box-bg.png');
+}
+/* fourth */
+.video-course-notdo{
+    background:#DABA3C url('../img/graphics/box-bg.png');
+}
+.video-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:rgb(0, 0, 0);
+}
+.video-learn>ul>li>span{
+    font-size: 17px;
+    font-family: var(--course-family);
+    color:rgb(0, 0, 0);
+}
+.video-learn>ul>li>i{
+    font-size: 15px;
+    color:#000 !important;
+    margin-top:8px;   
+}
 /* @@@
     Our Instructor Area
    @@@
 */
 .video-our-insturcture{
     padding:15px;
-    background:#9dcdffba;
+    background-color: #281434;
+}
+@media (min-width: 600px){
+.video-our-insturcture>div>div:first-child {
+    padding-right: 7.5px !important;
+}
+.video-our-insturcture>div>div:last-child {
+    padding-left: 7.5px !important;
+}
 }
 .video-our-insturcture>h2{
-    color:var(--graphic-black-color);
+    color:var(--graphic-white-color);
     font-weight: 500;
     font-family: var(--course-bold-family);
     padding-bottom: 15px;
@@ -2050,12 +2078,12 @@ New Video Learn section end */
 }
 .video-our__instructure-main{
     padding:10px;
-
+    border:1px solid #E480F5;
 }
 .video-our__instructure-main>div>div>h3{
     font-weight: 500;
     font-family: var(--course-bold-family);
-    color:rgb(0, 0, 0);
+    color:var(--graphic-white-color);
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 24px;
@@ -2063,7 +2091,7 @@ New Video Learn section end */
 .video-our__instructure-main>div>div>p{
     font-size: 16.5px;
     font-family: var(--course-family);
-    color:rgb(0, 0, 0);
+    color:var(--graphic-text-gray-color);
     margin-bottom: 0px;
 }
 .video-our__instructure-main>div>div>p::first-letter{
@@ -2111,11 +2139,12 @@ New Video Learn section end */
    @@@
 */
 .video-features-course{
-    background:#9dcdffba;
+    /* background:#9dcdffba; */
+    background-color: #281434;
     padding:15px;
 }
 .video-features__course-details>span{
-    color:#007bff;
+    color:#e480f5;
     padding:10px;
     font-weight: 500;
     font-size: 40px !important;
@@ -2125,27 +2154,27 @@ New Video Learn section end */
 .video-features__course-details>h3{
     font-weight: 500;
     font-family: var(--course-bold-family);
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
 }
 .video-features__course-details>p{
     font-weight: 400;
     font-family: var(--course-family);
-    color:rgb(0, 0, 0);
+    color:var(--graphic-text-gray-color);
 }
 
 .video-enrol-button>.btn{
-    width: 300px;
+    width: 250px;
     border:0px;
     border-radius: 0px;
-    background:green;
-    color:rgb(255, 255, 255);
+    background:var(--enroll-button-color);
+    color:rgb(0, 0, 0);
     padding:10px 50px;
     font-weight: 900;
 
 }
 .video-enrol-button>.btn:hover{
-    background:darkgreen;
-    color:rgb(255, 255, 255);
+    background:var(--enroll-button-hover-color);
+    color:rgb(0, 0, 0);
 }
 
 /* @@@
@@ -2183,13 +2212,49 @@ New Video Learn section end */
 }
 /* end faqs of the course page */
 
+
+/* @@@
+ faqs of the course page 
+ */
+ .videoo-faqs-course{
+    padding:15px;
+    margin-top:2px !important;
+}
+.videoo-faqs-course>h2{
+    color:#000;
+    font-family: var(--course-bold-family);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.videoo-faqs-course-inner{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.videoo-faqs-course-inner>h4{
+    background:#281434;
+    color:#fff;
+    font-family: var(--course-bold-family);
+    font-weight: 500;
+    padding:5px;
+    border:1px solid gray;
+}
+.videoo-faqs-course-inner>p{
+    color:#000;
+    font-size: 15px;
+    margin:10px 0px;
+    font-weight: 500;
+}
+/* end faqs of the course page */
+
 /* 
 @@@
 why use section
 @@@ 
 */
 .video-why-us{
-    background:#9dcdffba;
+    background:#281434;
     padding:15px;
     
 }
@@ -2200,12 +2265,12 @@ why use section
 .video-why__us-text>h2{
     font-weight: 500;
     font-family: var(--course-bold-family);
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
 } 
 .video-why__us-text>p{
     font-weight: 400;
     font-family: var(--course-family);
-    color:rgb(0, 0, 0);
+    color:var(--graphic-text-gray-color);
 }
 .video-why__us-results{
     margin-top:5px;
@@ -2243,13 +2308,13 @@ why use section
 }
 .video-why__us-results>h4{
     font-weight: 500;
-    color:#000000;
+    color:#ffffff;
     font-family: var(--course-bold-family);
     
 }
 .video-why__us-results>p{
     font-weight: 500;
-    color:rgb(0, 0, 0);
+    color:var(--graphic-text-gray-color);
     font-family: var(--course-bold-family);
 }
 /* testimonial */
@@ -2294,18 +2359,22 @@ Equpmients
 */
 .video-equipments-course{
     padding:15px;
-    background:#B7DAFF;
+    background:#281434;
+}
+.video-equipments-course>div>div{
+    padding:0px 5px 0px 5px;
 }
 .video-equipments-course>h2{
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     font-weight: 500;
     margin-top:5px;
     margin-bottom: 15px;
     padding-bottom: 8px;
     text-transform: uppercase;
+    font-family: var(--course-bold-family);
 }
 .video-equipments-images{
-    box-shadow: 1px 1px 5px rgba(70, 70, 70, 0.5);
+    
     padding:2px;
     margin-bottom: 10px;
 }
@@ -2339,16 +2408,7 @@ page desgin
 }
 
 /* top banner start */
-.graphic__section-video{
-    height: 240px;
-}
-@media(max-width:600px){
-    .graphic__section-video{
-        height: auto;
-        width: 100%;
-    }
-    
-}
+
 .graphic-section{
     background:linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/graphics/topbackground.jpg');
     padding:10px 15px;
@@ -2362,10 +2422,17 @@ page desgin
     padding-left:5px;
 }
 }
-.graphic-course>.container>.row>.col-lg-12{
-    padding-left: 0px;
-    padding-right:0px;
+.graphic__section-video{
+    height: 240px;
 }
+@media(max-width:600px){
+    .graphic__section-video{
+        height: auto;
+        width: 100%;
+    }
+    
+}
+
 .graphic__section-info>h1{
     color:#fff;
     font-weight: 700;
@@ -2440,6 +2507,12 @@ page desgin
     color: rgb(0, 0, 0);
 }
 /* end the will learn section of the graphic page */
+
+.graphic-learn-section>div>div{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top:0px !important;
+}
 .graphic-learn{
     padding:15px;
     min-height: 380px;
@@ -2482,11 +2555,7 @@ page desgin
     margin-top:8px;   
 }
 
-.graphic-learn-section>div>div{
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-top:0px !important;
-}
+
 /* instructor part */
 .graphic-our-insturcture{
     padding:15px;
@@ -2525,7 +2594,7 @@ page desgin
     
     .graphic-our__instructure-main>div>div:last-child{
         padding-left: 0px;
-        min-height: 350px;
+        min-height: 270px;
     }
 }
 .graphic-our__instructure-main>div>div>h3{
