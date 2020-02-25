@@ -2340,21 +2340,27 @@ page desgin
 
 /* top banner start */
 .graphic__section-video{
-    height: 300px !important;
-    display:flex;
-    align-self: start;
-    align-items: center;
+    height: 240px;
+}
+@media(max-width:600px){
+    .graphic__section-video{
+        height: auto;
+        width: 100%;
+    }
+    
 }
 .graphic-section{
     background:linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/graphics/topbackground.jpg');
-    padding:15px 15px;
+    padding:10px 15px;
     margin-bottom: 2px;
 }
+@media(min-width:600px){
 .graphic-section>div>div:first-child{
     padding-right:5px;
 }
 .graphic-section>div>div:last-child{
     padding-left:5px;
+}
 }
 .graphic-course>.container>.row>.col-lg-12{
     padding-left: 0px;
@@ -2364,7 +2370,7 @@ page desgin
     color:#fff;
     font-weight: 700;
     font-family: var(--course-bold-family);
-    margin-top:-15px;
+    margin-top:-10px;
 }
 .graphic__section-info>p{
     color:#fff;
@@ -2392,7 +2398,7 @@ page desgin
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 30px;
     font-family: var(--course-bold-family);
 }
 .grahpic-enroll-button>a>span{
@@ -2400,6 +2406,8 @@ page desgin
     font-weight: 700;
     font-family: var(--course-bold-family);
     padding-right: 5px;
+    font-size: 30px;
+    color:#7e4ead;
 }
 .grahpic-enroll-button>a:hover{
     background:var(--enroll-button-hover-color) !important;
@@ -2414,7 +2422,7 @@ page desgin
 .graphic-will-learn{
     margin-top: 0px !important;
     padding:15px;
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,.6)) , url('../img/graphics/iconsbackground.png');
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.1), rgba(0,0,0,.1)) , url('../img/graphics/gfx.png');
     margin-bottom: 2px;
 }
 .graphic-will-learn>h3{
@@ -2425,32 +2433,38 @@ page desgin
 .graphic-will__learn-text>ul>li>i{
     font-size: 15px;
     margin-top: 5px;
-    color:white;
+    color:rgb(0, 0, 0);
 }
 .graphic-will__learn-text>ul>li>span{
     font-size: 17px;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 /* end the will learn section of the graphic page */
 .graphic-learn{
     padding:15px;
     min-height: 380px;
 }
+@media(max-width:600px){
+    .graphic-learn{
+        min-height: 200px;
+    }
+}
 /* first */
 .graphic-course-for{
-    background:#4f316e;
+    
+    background:rgba(79, 49, 110,0.9) url('../img/graphics/box-bg.png');
 }
 /* second */
 .graphic-course-benefit{
-    background:#ba9966;
+    background:#ba9966 url('../img/graphics/box-bg.png');
 }
 /* third */
 .graphic-course-return{
-    background:#467d58;
+    background:#467d58 url('../img/graphics/box-bg.png');
 }
 /* fourth */
 .graphic-course-notdo{
-    background:#7e4ead;
+    background:#7e4ead url('../img/graphics/box-bg.png');
 }
 .graphic-learn>h3{
     font-weight: 500;
@@ -2479,12 +2493,15 @@ page desgin
     background:var(--graphic-background-color);
     margin-top: 2px !important;
 }
-.graphic-our-insturcture>div>div:first-child{
-    padding-right:7.5px !important;
+@media(min-width:600px){
+    .graphic-our-insturcture>div>div:first-child{
+        padding-right:7.5px !important;
+    }
+    .graphic-our-insturcture>div>div:last-child{
+        padding-left:7.5px !important;
+    }
 }
-.graphic-our-insturcture>div>div:last-child{
-    padding-left:7.5px !important;
-}
+
 
 .graphic-our-insturcture>h2{
     color:var(--graphic-front-color);
@@ -2497,6 +2514,19 @@ page desgin
 .graphic-our__instructure-main{
     border:1px solid var(--graphic-border-color);
     padding:5px;
+    margin-bottom: 5px;
+}
+@media(max-width:600px){
+    .graphic-our__instructure-main{
+        margin-bottom: 5px;
+    }
+}
+@media(min-width:600px){
+    
+    .graphic-our__instructure-main>div>div:last-child{
+        padding-left: 0px;
+        min-height: 295px;
+    }
 }
 .graphic-our__instructure-main>div>div>h3{
     font-weight: 900;
@@ -2605,14 +2635,7 @@ Equpmients
     padding:2px;
     margin-bottom: 5px;
 }
-.graphic_lastenroll-now>p{
-    color:#fff;
-    font-family: var(--course-family);
-    font-size: 20px;
-}
-.graphic_lastenroll-now>a{
-    background:yellow;
-}
+
 /* 
 @@@@
 Equpmients
@@ -2638,10 +2661,16 @@ Equpmients
 /* equpminets */
 
 /* last enroll button of graphic */
+@media(min-width:600px){
+    .graphic_lastenroll-now{
+        display: flex;
+    }
+}
 .graphic_lastenroll-now{
     padding:15px;
-    background:linear-gradient(to right bottom, rgba(33, 11, 0,0.7), rgba(33, 11, 0,0.7)) , url('../img/graphics/iconsbackground.png');
+    background:#2C83EB url('../img/graphics/footer-bg.png');
     margin-top: 2px !important;
+    justify-content: space-between;
 }
 .graphic_lastenroll-now>a{
     background:var(--enroll-button-color);
@@ -2653,6 +2682,20 @@ Equpmients
     font-weight: 700;
     font-size: 26px;
     font-family: var(--course-bold-family);
+}
+.graphic_lastenroll-now>p{
+    color:#fff;
+    font-family: var(--course-family);
+    font-size: 20px;
+    align-items: center;
+    position: relative;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   padding-top:10px;
+}
+.graphic_lastenroll-now>a{
+    background:yellow;
 }
 .graphic_lastenroll-now>a>i{
     padding-left:15px;
