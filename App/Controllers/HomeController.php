@@ -104,6 +104,12 @@ class HomeController extends \Core\Controller
         View::render('frontend/video.html');
         View::render('frontend/layouts/script.html');
     }
+    public function gameCourse(){
+        View::render('frontend/layouts/head.html', ['title' => 'Best Game Development Course In Mirpur Ajk Pakistan']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/game.html');
+        View::render('frontend/layouts/script.html');
+    }
     // @
     // static courses page end
 

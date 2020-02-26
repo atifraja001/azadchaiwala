@@ -41,6 +41,7 @@ $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Inse
 // courses static pages
 $router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller'=>'HomeController', 'action'=>'graphiccourse']);
 $router->add('course/video-editing-social-media-star-14-days', ['controller'=>'HomeController', 'action'=>'videoCourse']);
+$router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller'=>'HomeController', 'action'=>'gameCourse']);
 $router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 // admin routes
 $admin_dir = \App\Config::ADMIN_PATH;

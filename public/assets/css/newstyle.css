@@ -1912,7 +1912,7 @@ section .section-title {
     background:linear-gradient(to right bottom, rgba(40, 20, 52,0.5), rgba(40, 20, 52,0.5)), url('../img/videography/dots.png');
     margin-bottom: 2px;
 }
-@media(min-width:600px){
+@media(min-width:790px){
 .video-section>div>div:first-child{
     padding-right:5px;
 }
@@ -1920,9 +1920,12 @@ section .section-title {
     padding-left:5px;
 }
 }
-.video__section-video{
-    height: 240px;
+@media(min-width:769){
+    .video__section-video{
+        height: 240px;
+    }
 }
+
 @media(max-width:600px){
     .video__section-video{
         height: auto;
@@ -2015,9 +2018,9 @@ section .section-title {
     padding:15px;
     min-height: 420px;
 }
-@media(max-width:600px){
+@media(max-width:768px){
     .video-learn{
-        min-height: 200px;
+        min-height:auto;
     }
 }
 /* first */
@@ -2060,7 +2063,7 @@ section .section-title {
     padding:15px;
     background-color: #281434;
 }
-@media (min-width: 600px){
+@media (min-width: 769px){
 .video-our-insturcture>div>div:first-child {
     padding-right: 7.5px !important;
 }
@@ -2068,6 +2071,14 @@ section .section-title {
     padding-left: 7.5px !important;
 }
 }
+@media (min-width: 779px){
+    .video-our__instructure-main>div>div:first-child {
+        padding-right: 7.5px !important;
+    }
+    .video-our__instructure-main>div>div:last-child {
+        padding-left: 7.5px !important;
+    }
+    }
 .video-our-insturcture>h2{
     color:var(--graphic-white-color);
     font-weight: 500;
@@ -2375,9 +2386,11 @@ Equpmients
     font-family: var(--course-bold-family);
 }
 .video-equipments-images{
-    
     padding:2px;
     margin-bottom: 10px;
+}
+.video-equipments-images>a>img{
+    width:100%;
 }
 
 /* equpminets */
@@ -2411,11 +2424,11 @@ page desgin
 /* top banner start */
 
 .graphic-section{
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/graphics/dots.png');
+    background:linear-gradient(to right bottom, rgba(33, 11, 0,0.5), rgba(33, 11, 0,0.5)), url('../img/graphics/dots.png');
     padding:10px 15px;
     margin-bottom: 2px;
 }
-@media(min-width:600px){
+@media(min-width:790px){
 .graphic-section>div>div:first-child{
     padding-right:5px;
 }
@@ -2423,9 +2436,12 @@ page desgin
     padding-left:5px;
 }
 }
-.graphic__section-video{
-    height: 240px;
+@media(min-width:770px){
+    .graphic__section-video{
+        height: 240px;
+    }
 }
+
 @media(max-width:600px){
     .graphic__section-video{
         height: auto;
@@ -2518,9 +2534,9 @@ page desgin
     padding:15px;
     min-height: 380px;
 }
-@media(max-width:600px){
+@media(max-width:768px){
     .graphic-learn{
-        min-height: 200px;
+        min-height: auto;
     }
 }
 /* first */
@@ -2563,7 +2579,7 @@ page desgin
     background:var(--graphic-background-color);
     margin-top: 2px !important;
 }
-@media(min-width:600px){
+@media(min-width:769px){
     .graphic-our-insturcture>div>div:first-child{
         padding-right:7.5px !important;
     }
@@ -2586,12 +2602,12 @@ page desgin
     padding:5px;
     margin-bottom: 5px;
 }
-@media(max-width:600px){
+@media(max-width:768px){
     .graphic-our__instructure-main{
         margin-bottom: 5px;
     }
 }
-@media(min-width:600px){
+@media(min-width:769px){
     
     .graphic-our__instructure-main>div>div:last-child{
         padding-left: 0px;
@@ -2705,6 +2721,9 @@ Equpmients
     padding:2px;
     margin-bottom: 5px;
 }
+.graphic-equipments-images>a>img{
+    width: 100%;
+}
 
 /* 
 @@@@
@@ -2731,7 +2750,7 @@ Equpmients
 /* equpminets */
 
 /* last enroll button of graphic */
-@media(min-width:600px){
+@media(min-width:769px){
     .graphic_lastenroll-now{
         display: flex;
     }
