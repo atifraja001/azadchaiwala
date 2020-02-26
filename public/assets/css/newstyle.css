@@ -2016,7 +2016,10 @@ section .section-title {
 }
 .video-learn{
     padding:15px;
-    min-height: 420px;
+    min-height: 345px;
+}
+.video-learn>ul{
+    margin-bottom: 0px;
 }
 @media(max-width:768px){
     .video-learn{
@@ -2172,6 +2175,30 @@ section .section-title {
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
 }
+.video-features__course-details>a:hover{
+    text-decoration: none;
+}
+.video-features__course-details>a>:hover>h3{
+    color:rgb(169, 169, 170);
+}
+.video-features__course-details>a>span{
+    color:#e480f5;
+    padding:10px;
+    font-weight: 500;
+    font-size: 40px !important;
+  
+}
+
+.video-features__course-details>a>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:rgb(255, 255, 255);
+}
+.video-features__course-details>a>p{
+    font-weight: 400;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
 
 .video-enrol-button>.btn{
     width: 250px;
@@ -2266,13 +2293,10 @@ why use section
 */
 .video-why-us{
     background:#281434;
-    padding:15px;
+    padding:10px 15px;
     
 }
-.video-why__us-text{
-    margin-top:5px;
-    margin-bottom: 5px;
-}
+
 .video-why__us-text>h2{
     font-weight: 500;
     font-family: var(--course-bold-family);
@@ -2282,10 +2306,11 @@ why use section
     font-weight: 400;
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
 }
 .video-why__us-results{
-    margin-top:5px;
-    margin-bottom: 5px;
+    margin-top:0px;
+    margin-bottom: 0px;
 }
 .video-why__us-results>i{
     color:white;
@@ -2294,6 +2319,9 @@ why use section
     padding:25px;
     border-radius: 50%;
     cursor: pointer;
+}
+.video-why__us-results>p{
+    margin-bottom: 0px;
 }
 .video-why__us-results>.fa-youtube{
     background:#bb0000;
@@ -2532,7 +2560,10 @@ page desgin
 }
 .graphic-learn{
     padding:15px;
-    min-height: 380px;
+    min-height: 345px;
+}
+.graphic-learn>ul{
+    margin-bottom: 0px;
 }
 @media(max-width:768px){
     .graphic-learn{
@@ -2750,16 +2781,22 @@ Equpmients
 /* equpminets */
 
 /* last enroll button of graphic */
-@media(min-width:769px){
-    .graphic_lastenroll-now{
-        display: flex;
-    }
-}
+
+
 .graphic_lastenroll-now{
-    padding:15px;
+    padding:30px 15px;
     background:#2C83EB url('../img/graphics/footer-bg.png');
     margin-top: 2px !important;
-    justify-content: space-between;
+    
+}
+.graphic_lastenroll-now>h2{
+    color:#fff;
+    font-family: var(--course-family);
+    font-weight: 500;
+    align-items: center;
+    position: relative;
+    padding-bottom: 30px;
+   padding-top:10px;
 }
 .graphic_lastenroll-now>a{
     background:var(--enroll-button-color);
@@ -2771,19 +2808,6 @@ Equpmients
     font-weight: 700;
     font-size: 26px;
     font-family: var(--course-bold-family);
-}
-.graphic_lastenroll-now>p{
-    color:#fff;
-    font-family: var(--course-family);
-    font-size: 20px;
-    align-items: center;
-    position: relative;
-   display:flex;
-   align-items: center;
-   justify-content: center;
-   padding-top:10px;
-}
-.graphic_lastenroll-now>a{
     background:yellow;
 }
 .graphic_lastenroll-now>a>i{
@@ -2791,6 +2815,8 @@ Equpmients
     font-weight: 700;
     font-size: 26px;
 }
+
+
 /* --------------
 @@@@@@@@@@@@
 @@@@@@@@
