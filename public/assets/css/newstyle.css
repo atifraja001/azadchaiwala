@@ -1909,7 +1909,7 @@ section .section-title {
 /* video top banner start here */
 .video-section{
     padding:10px var(--padding-overall);
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/videography/newbackground.jpg');
+    background:linear-gradient(to right bottom, rgba(40, 20, 52,0.5), rgba(40, 20, 52,0.5)), url('../img/videography/dots.png');
     margin-bottom: 2px;
 }
 @media(min-width:600px){
@@ -1983,7 +1983,7 @@ section .section-title {
 .video-will-learn{
     margin-top: 0px !important;
     padding:15px;
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.1), rgba(0,0,0,.1)) , url('../img/videography/camera-bg-tile.png');
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/videography/camera-bg-tile.png');
     margin-bottom: 2px;
 }
 .video-will-learn>h3{
@@ -2023,19 +2023,19 @@ section .section-title {
 /* first */
 .video-course-for{
     
-    background:#FFEC42 url('../img/graphics/box-bg.png');
+    background:#7C33FF url('../img/graphics/box-bg.png');
 }
 /* second */
 .video-course-benefit{
-    background:#E8D13C url('../img/graphics/box-bg.png');
+    background:#3E2EE8 url('../img/graphics/box-bg.png');
 }
 /* third */
 .video-course-return{
-    background:#FFE24F url('../img/graphics/box-bg.png');
+    background:#3F63FF url('../img/graphics/box-bg.png');
 }
 /* fourth */
 .video-course-notdo{
-    background:#DABA3C url('../img/graphics/box-bg.png');
+    background:#2E81E8 url('../img/graphics/box-bg.png');
 }
 .video-learn>h3{
     font-weight: 500;
@@ -2045,11 +2045,11 @@ section .section-title {
 .video-learn>ul>li>span{
     font-size: 17px;
     font-family: var(--course-family);
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
 }
 .video-learn>ul>li>i{
     font-size: 15px;
-    color:#000 !important;
+    color:rgb(204, 199, 199) !important;
     margin-top:8px;   
 }
 /* @@@
@@ -2279,23 +2279,24 @@ why use section
 .video-why__us-results>i{
     color:white;
     transform: scale(0.5);
-    background:#007bff;
+    background:#bb0000;
     padding:25px;
     border-radius: 50%;
     cursor: pointer;
 }
-.video-why__us-results>.fa-youtube:hover{
+.video-why__us-results>.fa-youtube{
     background:#bb0000;
 }
-.video-why__us-results>.fa-facebook:hover{
+.video-why__us-results>.fa-facebook{
     background:#3b5998;
 }
-.video-why__us-results>.fa-instagram:hover{
-    background:#517fa4;
+.video-why__us-results>.fa-instagram{
+    background:#f09433;
 }
-.video-why__us-results>svg:hover{
+.video-why__us-results>svg{
     background:#69C9D0;
 }
+
 .video-why__us-results>svg{
     color:white;
     transform: scale(0.9);
@@ -2410,7 +2411,7 @@ page desgin
 /* top banner start */
 
 .graphic-section{
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/graphics/topbackground.jpg');
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/graphics/dots.png');
     padding:10px 15px;
     margin-bottom: 2px;
 }
@@ -2489,7 +2490,7 @@ page desgin
 .graphic-will-learn{
     margin-top: 0px !important;
     padding:15px;
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.1), rgba(0,0,0,.1)) , url('../img/graphics/gfx.png');
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/graphics/gfx.png');
     margin-bottom: 2px;
 }
 .graphic-will-learn>h3{
@@ -2598,7 +2599,7 @@ page desgin
     }
 }
 .graphic-our__instructure-main>div>div>h3{
-    font-weight: 900;
+    font-weight: 500;
     font-family: var(--course-bold-family);
     color:var(--graphic-front-color);
     margin-top: 0px;
