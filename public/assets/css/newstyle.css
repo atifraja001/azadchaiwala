@@ -2686,6 +2686,26 @@ feature graphic section */
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
 }
+.graphic-features__course-details>a>span{
+    color:var(--graphic-front-color);
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.graphic-features__course-details>a>h3{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.graphic-features__course-details>a>p{
+    font-weight: 500;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+.graphic-features__course-details>a:hover{
+    text-decoration: none;
+}
 
 .graphic-enrol-button>.btn{
     border:0px;
