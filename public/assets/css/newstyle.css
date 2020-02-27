@@ -2372,8 +2372,8 @@ why use section
     text-transform: uppercase;
 }
 .video-testimonials__course-inner>img{
-    width:130px;
-    height:120px;
+    width:100px;
+    height:100px;
     border-radius: 50%;
 }
 .video-inner-details-testimonials{
@@ -2850,3 +2850,204 @@ Equpmients
 @@@@@@@
 @@@@@@@@@@@
 ---------------- */
+
+
+
+/* ---------
+@@@@@@
+Game page style
+@@@@@@
+------------ */
+/* top banner of game page */
+
+.game-section{
+    background:linear-gradient(to right bottom, rgb(209, 126, 4,0.7), rgb(209, 126, 4,0.7)), url('../img/graphics/dots.png');
+    padding:10px 15px;
+    margin-bottom: 2px;
+}
+@media(min-width:790px){
+.game-section>div>div:first-child{
+    padding-right:5px;
+}
+.game-section>div>div:last-child{
+    padding-left:5px;
+}
+}
+@media(min-width:770px){
+    .game__section-video{
+        height: 240px;
+    }
+}
+
+@media(max-width:600px){
+    .game__section-video{
+        height: auto;
+        width: 100%;
+    }
+    
+}
+
+.game__section-info>h1{
+    color:#fff;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    margin-top:-10px;
+}
+.game__section-info>p{
+    color:#fff;
+    font-family: var(--course-family);
+
+    font-size: 17px;
+    display: inline;
+}
+.game__section-info>h3{
+    color:#fff;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: var(--course-bold-family);
+    display: inline;
+
+}
+.game-enroll-button{
+    margin-top: 10px;
+}
+.game-enroll-button>a{
+    background:var(--enroll-button-color);
+    border:0px;
+    border-radius: 0px;
+    color:var(--graphic-black-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: var(--course-bold-family);
+}
+.game-enroll-button>a>span{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    padding-right: 5px;
+    font-size: 30px;
+    color:#7e4ead;
+}
+.game-enroll-button>a:hover{
+    background:var(--enroll-button-hover-color) !important;
+    color:var(--graphic-black-color) !important;
+    text-transform: uppercase;
+
+}
+
+/* end top banner of game page */
+
+
+
+.game-learn-section>div>div{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top:0px !important;
+}
+.game-learn{
+    padding:15px;
+    min-height: 345px;
+}
+.game-learn>ul{
+    margin-bottom: 0px;
+}
+@media(max-width:768px){
+    .game-learn{
+        min-height: auto;
+    }
+}
+/* first */
+.game-course-for{
+    
+    background:#DA8200 url('../img/graphics/box-bg.png');
+}
+/* second */
+.game-course-benefit{
+    background:#8E2034 url('../img/graphics/box-bg.png');
+}
+/* third */
+.game-course-return{
+    background:#69222F url('../img/graphics/box-bg.png');
+}
+/* fourth */
+.game-course-notdo{
+    background:rgba(62, 40, 59,0.9) url('../img/graphics/box-bg.png');
+}
+.game-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#fff;
+}
+.game-learn>ul>li>span{
+    font-size: 17px;
+    font-family: var(--course-family);
+    color:#fff;
+}
+.game-learn>ul>li>i{
+    font-size: 15px;
+    color:#000 !important;
+    margin-top:8px;   
+}
+
+
+
+/* will learn section of the game page */
+.game-will-learn{
+    margin-top: 0px !important;
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/game/topbackground.png');
+    margin-bottom: 2px;
+}
+.game-will-learn>h3{
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
+.game-will__learn-text>ul>li>i{
+    font-size: 15px;
+    margin-top: 5px;
+    color:rgb(0, 0, 0);
+}
+.game-will__learn-text>ul>li>span{
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+/* end the will learn section of the game page */
+/* ---------
+@@@@@@@
+Game page style end
+@@@@@@@
+------------ */
+
+
+
+.new_testi{
+    display: flex;
+    justify-content:space-betweens;
+}
+.new_testi_display{
+    margin-right: 5px;
+    text-align: center;
+}
+.new_testi_display>img{
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.new_testi_display>h3{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    color:black;
+}
+.new_test_review{
+    margin-top: 10px;
+}
+.new_test_review>p{
+    color:black;
+    font-size: 15px;
+    font-family: var(--course-family);
+    
+}
