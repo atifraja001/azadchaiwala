@@ -3021,33 +3021,55 @@ Game page style end
 @@@@@@@
 ------------ */
 
-
-
-.new_testi{
+.slick-list, .draggable{
+    height: auto !important;
+}
+.slick-slider{
+    height: auto !important;
+}
+.slider-for{
+    height: auto !important;
+}
+.slick-track{
+    height: auto !important;
+}
+.video-testi_whole{
     display: flex;
-    justify-content:space-betweens;
+    padding: 15px;
+    /* box-shadow: 1px 1px 10px rgba(0,0,0,0.5) !important; */
+
 }
-.new_testi_display{
-    margin-right: 5px;
+.video-testi-display{
+    margin-right: 10px;
     text-align: center;
+
 }
-.new_testi_display>img{
-    width:80px;
-    height: 80px;
+.video-testi-display>img{
+    width:70px;
+    height: 70px;
     border-radius: 50%;
+    margin:0 auto;
 }
-.new_testi_display>h3{
-    font-size: 18px;
+.video-testi-display>h3{
+    color:#000;
     font-weight: 700;
     font-family: var(--course-bold-family);
-    color:black;
+    margin-top:2px;
+    font-size: 20px;
 }
-.new_test_review{
-    margin-top: 10px;
+.slick-slider{
+    margin-bottom: 0px !important;
+    height: 100% !important;
 }
-.new_test_review>p{
-    color:black;
-    font-size: 15px;
+.video-testi-paragraph>p{
     font-family: var(--course-family);
-    
+    font-size: 16px;
+    text-transform: inherit;
+}
+.slick-slide>img{
+
+    display: block;
+    margin:0 auto;
+    cursor: pointer;
+
 }
