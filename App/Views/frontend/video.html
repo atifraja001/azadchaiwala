@@ -315,6 +315,27 @@
                             #more{
                                 display: none;
                             }
+                            #myBtn, #myBtn:active{
+                                border:0px;
+                                color:#281434;
+                                border-bottom: 1px solid #281434;
+                                padding:3px;
+                                background:none;
+                                font-weight: 700;
+                                display:inline-block;
+                                cursor: pointer;
+                            }
+                            #myBtn:visited{
+                                border:0px;
+                            }
+                            #myBtn:active{
+                                border:0px;
+                            }
+                            #myBtn:hover{
+                                background:#281434;
+                                color:white;
+                                box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+                            }
                         </style>
                         <p>
                             From Kharian city. Adaab. The most alluring thing I noticed was the complex knowledge was simplified in 
@@ -322,7 +343,7 @@
                             a dedicated, student oriented  and loving staff ranging from HOD Ma'am Zora 
                             Basharat to Sir Khizzar to Basit Bahi.  AMAZING MASHALLAH....❤</span>
                         </p>
-                        <button onclick="myFunction()" id="myBtn">Read more</button>
+                        <p onclick="myFunction()" id="myBtn">Read more</p>
                     </div>
                     <script>
                         function myFunction() {
@@ -340,25 +361,127 @@
                             moreText.style.display = "inline";
                           }
                         }
-                        </script>
+                    </script>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="video-testimonials__course-inner">
                     <img src="<?=app_url()?>/assets/img/videography/testimonial/2.jpg" alt="testimonials image">
+                    <style>
+                        #more1{
+                            display: none;
+                        }
+                        #myBtn1, #myBtn1:active{
+                            border:0px;
+                            color:#281434;
+                            border-bottom: 1px solid #281434;
+                            padding:3px;
+                            background:none;
+                            font-weight: 700;
+                            display:inline-block;
+                            cursor: pointer;
+                        }
+                        #myBtn1:visited{
+                            border:0px;
+                        }
+                        #myBtn1:active{
+                            border:0px;
+                        }
+                        #myBtn1:hover{
+                            background:#281434;
+                            color:white;
+                            box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+                        }
+                    </style>
                     <div class="video-inner-details-testimonials">
                         <h3>Muhammad Ali</h3>
-                        <p>I’ve Done My graphics and web designing in Azad Chaiwala institute. The environment of the institute is so good, teachers, staff, everything’s perfect. To be honest I really recommend to everyone if you want a bright future so you should try once at least ...</p>
+                        <p>
+                            I’ve Done My graphics and web designing in Azad Chaiwala institute. The environment of 
+                            the institute is so good, teachers, staf<span id="dots1">...</span><span id="more1">f, 
+                            everything’s perfect. To be honest I really recommend to everyone if you want a 
+                            bright future so you should try once at least </span>
+                        </p>
+                        <p onclick="myFunction1()" id="myBtn1">Read more</p>
                     </div>
+                    <script>
+                        function myFunction1() {
+                          var dots = document.getElementById("dots1");
+                          var moreText = document.getElementById("more1");
+                          var btnText = document.getElementById("myBtn1");
+                        
+                          if (dots.style.display === "none") {
+                            dots.style.display = "inline";
+                            btnText.innerHTML = "Read more"; 
+                            moreText.style.display = "none";
+                          } else {
+                            dots.style.display = "none";
+                            btnText.innerHTML = "Read less"; 
+                            moreText.style.display = "inline";
+                          }
+                        }
+                    </script>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="video-testimonials__course-inner">
                     <img src="<?=app_url()?>/assets/img/videography/testimonial/3.jpg" alt="testimonials image">
+                    <style>
+                        #more2{
+                            display: none;
+                        }
+                        #myBtn2, #myBtn2:active{
+                            border:0px;
+                            color:#281434;
+                            border-bottom: 1px solid #281434;
+                            padding:3px;
+                            background:none;
+                            font-weight: 700;
+                            display:inline-block;
+                            cursor: pointer;
+                        }
+                        #myBtn2:visited{
+                            border:0px;
+                        }
+                        #myBtn2:active{
+                            border:0px;
+                        }
+                        #myBtn2:hover{
+                            background:#281434;
+                            color:white;
+                            box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+                        }
+                    </style>
                     <div class="video-inner-details-testimonials">
                         <h3>From Daud Khel, Mianwali</h3>
-                        <p>I just came back after completion of the  course of GRAPHICS DESIGNING in AZAD CHAIWALA  Institute. I wanted to thank my highly professional teachers and qualified staff with full of equipped latest class rooms under adorable ambiance who gave me the confidence and quality skills with in just one month. It’s totally different from other institutes and universities based on practical work. Their core priority is their students and they don’t waste your time or money. AZAD CHAIWALA Institute gave me the opportunity and skills to make money professionally. Now I can Call myself as a professional THANK YOU AZAD CHAIWALA.</p>
+                        <p>
+                            I just came back after completion of the  course of GRAPHICS DESIGNING in AZAD 
+                            CHAIWALA  Institute. I wanted to thank my highl<span id="dots2">...</span><span id="more2">y professional teachers and 
+                            qualified staff with full of equipped latest class rooms under adorable 
+                            ambiance who gave me the confidence and quality skills with in just one month. 
+                            It’s totally different from other institutes and universities based on practical
+                             work. Their core priority is their students and they don’t waste your time or money. 
+                             AZAD CHAIWALA Institute gave me the opportunity and skills to make money professionally. 
+                             Now I can Call myself as a professional THANK YOU AZAD CHAIWALA.</span>
+                        </p>
+                        <p onclick="myFunction2()" id="myBtn2">Read more</p>
                     </div>
+                    <script>
+                        function myFunction2() {
+                          var dots = document.getElementById("dots2");
+                          var moreText = document.getElementById("more2");
+                          var btnText = document.getElementById("myBtn2");
+                        
+                          if (dots.style.display === "none") {
+                            dots.style.display = "inline";
+                            btnText.innerHTML = "Read more"; 
+                            moreText.style.display = "none";
+                          } else {
+                            dots.style.display = "none";
+                            btnText.innerHTML = "Read less"; 
+                            moreText.style.display = "inline";
+                          }
+                        }
+                    </script>
                 </div>
             </div>
         </div>
