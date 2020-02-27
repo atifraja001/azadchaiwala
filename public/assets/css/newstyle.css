@@ -2392,6 +2392,12 @@ why use section
     font-weight: 400;
     font-size: 15px;
 }
+.video-inner-details-testimonials>p>span{
+    color:black;
+    font-family: var(--course-family);
+    font-weight: 400;
+    font-size: 15px;
+}
 /* 
 @@@@
 Equpmients

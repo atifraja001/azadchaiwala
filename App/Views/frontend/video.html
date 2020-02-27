@@ -311,13 +311,36 @@
                     <img src="<?=app_url()?>/assets/img/videography/testimonial/1.jpg" alt="testimonials image">
                     <div class="video-inner-details-testimonials">
                         <h3>Raja Zulqarnain Asif </h3>
+                        <style>
+                            #more{
+                                display: none;
+                            }
+                        </style>
                         <p>
                             From Kharian city. Adaab. The most alluring thing I noticed was the complex knowledge was simplified in 
-                            a manner that it seeped into my heart. Secondly, the management! I have  Never seen such 
+                            a manner that it seep<span id="dots">...</span><span id="more">ed into my heart. Secondly, the management! I have  Never seen such 
                             a dedicated, student oriented  and loving staff ranging from HOD Ma'am Zora 
-                            Basharat to Sir Khizzar to Basit Bahi.  AMAZING MASHALLAH....❤
+                            Basharat to Sir Khizzar to Basit Bahi.  AMAZING MASHALLAH....❤</span>
                         </p>
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
                     </div>
+                    <script>
+                        function myFunction() {
+                          var dots = document.getElementById("dots");
+                          var moreText = document.getElementById("more");
+                          var btnText = document.getElementById("myBtn");
+                        
+                          if (dots.style.display === "none") {
+                            dots.style.display = "inline";
+                            btnText.innerHTML = "Read more"; 
+                            moreText.style.display = "none";
+                          } else {
+                            dots.style.display = "none";
+                            btnText.innerHTML = "Read less"; 
+                            moreText.style.display = "inline";
+                          }
+                        }
+                        </script>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
