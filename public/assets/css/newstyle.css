@@ -2398,6 +2398,69 @@ why use section
     font-weight: 400;
     font-size: 15px;
 }
+.video-testi_whole:not(:first-child){
+    display: none;
+}
+.video-testi_whole{
+    display: flex;
+    padding: 15px;
+   
+    border-radius: 10px;
+
+}
+@media(max-width:750px){
+
+    .video-testi_whole{
+        display: flex;
+        padding: 0px;
+        
+        border-radius: 10px;
+    
+    }
+}
+
+.video-testi-display{
+    margin-right: 10px;
+    text-align: center;
+
+}
+.video-testi-display>img{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+    margin:0 auto;
+}
+.video-testi-display>h3{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    margin-top:2px;
+    font-size: 20px;
+}
+
+.video-testi-paragraph>p{
+    font-family: var(--course-family);
+    font-size: 16px;
+    text-transform: inherit;
+}
+.video-test-small-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.video-test-small-images>img{
+    width:80px;
+    height: 60px;
+}
+.video-test-small-images>img:hover{
+    transform: scale(0.9);
+}
+.video-test-small-images>img:not(:first-child){
+    margin-top:4px;
+}
+
+
 /* 
 @@@@
 Equpmients
@@ -3020,56 +3083,3 @@ Game page style
 Game page style end
 @@@@@@@
 ------------ */
-
-.slick-list, .draggable{
-    height: auto !important;
-}
-.slick-slider{
-    height: auto !important;
-}
-.slider-for{
-    height: auto !important;
-}
-.slick-track{
-    height: auto !important;
-}
-.video-testi_whole{
-    display: flex;
-    padding: 15px;
-    /* box-shadow: 1px 1px 10px rgba(0,0,0,0.5) !important; */
-
-}
-.video-testi-display{
-    margin-right: 10px;
-    text-align: center;
-
-}
-.video-testi-display>img{
-    width:70px;
-    height: 70px;
-    border-radius: 50%;
-    margin:0 auto;
-}
-.video-testi-display>h3{
-    color:#000;
-    font-weight: 700;
-    font-family: var(--course-bold-family);
-    margin-top:2px;
-    font-size: 20px;
-}
-.slick-slider{
-    margin-bottom: 0px !important;
-    height: 100% !important;
-}
-.video-testi-paragraph>p{
-    font-family: var(--course-family);
-    font-size: 16px;
-    text-transform: inherit;
-}
-.slick-slide>img{
-
-    display: block;
-    margin:0 auto;
-    cursor: pointer;
-
-}
