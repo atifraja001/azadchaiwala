@@ -2924,7 +2924,7 @@ Game page style
 /* top banner of game page */
 
 .game-section{
-    background:linear-gradient(to right bottom, rgb(209, 126, 4,0.7), rgb(209, 126, 4,0.7)), url('../img/graphics/dots.png');
+    background:linear-gradient(to right bottom, rgba(0, 136, 97, 0.7), rgb(209, 126, 4,0.7)), url('../img/graphics/dots.png');
     padding:10px 15px;
     margin-bottom: 2px;
 }
@@ -2938,7 +2938,10 @@ Game page style
 }
 @media(min-width:770px){
     .game__section-video{
-        height: 240px;
+        height: 250px;
+    }
+    .game__section-video>video{
+        height: 250px;
     }
 }
 
@@ -3011,7 +3014,7 @@ Game page style
 }
 .game-learn{
     padding:15px;
-    min-height: 345px;
+    min-height: 365px;
 }
 .game-learn>ul{
     margin-bottom: 0px;
@@ -3078,6 +3081,214 @@ Game page style
     color: rgb(0, 0, 0);
 }
 /* end the will learn section of the game page */
+
+
+/* instructor part */
+.game-our-insturcture{
+    padding:15px;
+    background:#080302;
+    margin-top: 2px !important;
+}
+@media(min-width:769px){
+    .game-our-insturcture>div>div:first-child{
+        padding-right:7.5px !important;
+    }
+    .game-our-insturcture>div>div:last-child{
+        padding-left:7.5px !important;
+    }
+}
+
+
+
+.game-our__instructure-main{
+    border:1px solid rgb(54, 54, 54);
+    padding:5px;
+    margin-bottom: 5px;
+}
+@media(max-width:768px){
+    .game-our__instructure-main{
+        margin-bottom: 5px;
+    }
+}
+@media(min-width:769px){
+    
+    .game-our__instructure-main>div>div:last-child{
+        padding-left: 0px;
+        min-height: 315px;
+    }
+}
+.game-our__instructure-main>div>div>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+.game-our__instructure-main>div>div>p{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
+}
+/* instructor part end */
+
+
+/* @@@@
+feature graphic section */
+.game-features-course{
+    background:#080302;
+    padding:15px;
+    margin-bottom: 2px !important;
+    margin-top:2px !important;
+}
+.game-features__course-details>span{
+    color:#23dac9;
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.game-features__course-details>h3{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.game-features__course-details>p{
+    font-weight: 500;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+.game-features__course-details>a>span{
+    color:#23dac9;
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.game-features__course-details>a>h3{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.game-features__course-details>a>p{
+    font-weight: 500;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+.game-features__course-details>a:hover{
+    text-decoration: none;
+}
+
+.game-enrol-button>.btn{
+    border:0px;
+    border-radius: 0px;
+    background:var(--enroll-button-color);
+    color:var(--graphic-black-color);
+    font-weight: bold;
+    padding:10px 50px;
+    width: 240px;
+
+}
+.game-enrol-button>.btn:hover{
+    background:var(--enroll-button-hover-color);
+    color:var(--graphic-black-color);
+}
+/* @@@ feature graphic sention end 
+*/
+
+/* @@@@@
+Graphic Art Work */
+.game-work{
+    background-color: #080302;
+    padding:15px;
+    margin-top: 2px !important;
+}
+.game-work-heading>h2{
+    color:#fff;
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 15px;
+}
+.graphic-artwork-images>a>img{
+    width:89px !important;
+    padding-bottom:8px;
+}
+/* @@@@
+Graphic Art work end */
+/*
+@@@@
+Equpmients
+@@@@ 
+*/
+.game-equipments-course{
+    padding:15px;
+    background:#080302;
+    margin-top:2px !important;
+}
+.game-equipments-course>div>div{
+    padding:0px 5px 0px 5px;
+}
+.game-equipments-course>h2{
+    color:#fff;
+    font-weight: 500;
+    margin-top:5px;
+    margin-bottom:15px;
+    text-transform: uppercase;
+}
+.graphic-equipments-images{
+    border:1px solid var(--graphic-border-color);
+    padding:2px;
+    margin-bottom: 5px;
+}
+.graphic-equipments-images>a>img{
+    width: 100%;
+}
+
+/* 
+@@@@
+Equpmients
+@@@@ 
+*/
+
+/* @@@
+ faqs of the course page 
+ */
+ .game-faqs-course{
+    padding:15px;
+    margin-top:2px !important;
+}
+.game-faqs-course>h2{
+    color:#000;
+    font-family: var(--course-bold-family);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.game-faqs-course-inner{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.game-faqs-course-inner>h4{
+    background:#080302;
+    color:#fff;
+    font-family: var(--course-bold-family);
+    font-weight: 500;
+    padding:5px;
+    border:1px solid gray;
+}
+.game-faqs-course-inner>p{
+    color:#000;
+    font-size: 15px;
+    margin:10px 0px;
+    font-weight: 500;
+}
+/* end faqs of the course page */
+
+
 /* ---------
 @@@@@@@
 Game page style end
