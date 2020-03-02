@@ -89,6 +89,14 @@ class HomeController extends \Core\Controller
         ]);
         View::render('frontend/layouts/script.html');
     }
+    public function accommodation()
+    {
+
+        View::render('frontend/layouts/head.html', ['title' => 'accommodation']);
+        View::render('frontend/layouts/navbar.html', ['accommodation' => 'active']);
+        View::render('frontend/accommodation.html');
+        View::render('frontend/layouts/script.html');
+    }
 
     // static courses page
     // @
