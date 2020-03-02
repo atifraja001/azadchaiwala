@@ -2051,7 +2051,7 @@ section .section-title {
 .video-learn>h3{
     font-weight: 500;
     font-family: var(--course-bold-family);
-    color:rgb(0, 0, 0);
+    color:#fff;
 }
 .video-learn>ul>li>span{
     font-size: 17px;
@@ -2063,9 +2063,7 @@ section .section-title {
     color:rgb(204, 199, 199) !important;
     margin-top:8px;   
 }
-.video-course-notdo>ul>li>i{
-    color:red !important;
-}
+
 /* @@@
     Our Instructor Area
    @@@
@@ -2269,6 +2267,7 @@ section .section-title {
     font-weight: 500;
     padding:5px;
     border:1px solid gray;
+    text-transform: capitalize;
 }
 .video-faqs-course-inner>p{
     color:#000;
@@ -2305,6 +2304,7 @@ section .section-title {
     font-weight: 500;
     padding:5px;
     border:1px solid gray;
+    text-transform: capitalize;
 }
 .videoo-faqs-course-inner>p{
     color:#000;
@@ -2730,7 +2730,7 @@ page desgin
 }
 .graphic-learn{
     padding:15px;
-    min-height: 345px;
+    min-height: 375px;
 }
 .graphic-learn>ul{
     margin-bottom: 0px;
@@ -2772,9 +2772,7 @@ page desgin
     color:#000 !important;
     margin-top:8px;   
 }
-.graphic-course-notdo>ul>li>i{
-    color:#ff2f2f !important;
-}
+
 
 
 /* instructor part */
@@ -3160,9 +3158,7 @@ Game page style
     color:#000 !important;
     margin-top:8px;   
 }
-.game-course-notdo>ul>li>i{
-    color:rgb(255,0,0) !important;
-}
+
 
 
 
@@ -3389,6 +3385,7 @@ Equpmients
     font-weight: 500;
     padding:5px;
     border:1px solid gray;
+    text-transform: capitalize;
 }
 .game-faqs-course-inner>p{
     color:#000;
