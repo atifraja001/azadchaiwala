@@ -30,12 +30,12 @@ $notis = $noti->getNotification();
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
+            <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
+            <a class="nav-link" href="<?=app_url()?>/courses">LEARN SKILLS</a>
+            </li>
             <li class="nav-item <?=(isset($faq)) ? "active": ""?>">
                 <a class="nav-link" href="<?=app_url()?>/faqs">FAQ'S</a>
             </li>
-            <!-- <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
-                <a class="nav-link" href="<?=app_url()?>/courses">COURSES</a>
-            </li> -->
             <li class="nav-item <?=(isset($gallery)) ? "active": ""?>">
                 <a class="nav-link" href="<?=app_url()?>/gallery">OUR PHOTOS</a>
             </li>
@@ -54,7 +54,7 @@ $notis = $noti->getNotification();
         </ul>
         <div class="number">
             Call Us - 0344 88 84 899<br>
-                <small>Monday to Friday 9am to 5pm</small> 
+                <small>Monday to Friday 9am to 5pm</small>
         </div>
 
       </div>
@@ -63,8 +63,8 @@ $notis = $noti->getNotification();
 <div class="container">
     <div class="text-center">
         <div class="header__uder-header">
+            <a class="header__under-item" href="<?=app_url()?>/courses">LEARN SKILLS</a>
             <a class="header__under-item" href="<?=app_url()?>/faqs">FAQ'S</a>
-            <!-- <a class="header__under-item" href="<?=app_url()?>/courses">COURSES</a> -->
             <a class="header__under-item" href="<?=app_url()?>/gallery">OUR PHOTOS</a>
             <a class="header__under-item" href="<?=app_url()?>/accommodation">ACCOMMODATION</a>
             <a class="header__under-item" href="<?=app_url()?>/payments">PAYMENTS</a>

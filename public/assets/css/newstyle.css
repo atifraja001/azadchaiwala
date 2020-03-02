@@ -1922,9 +1922,12 @@ section .section-title {
     padding-left:5px;
 }
 }
-@media(min-width:769){
+@media(min-width:769px){
     .video__section-video{
-        height: 240px;
+        height: 277px;
+    }
+    .video__section-video>video{
+        height: 277px;
     }
 }
 
@@ -2121,20 +2124,27 @@ section .section-title {
    @@@
 */
 .video-success-course{
-    padding:15px;
+    padding:5px 15px 2px 15px;
     margin-top: 2px !important;
 }
 .video-success-course>h2{
     color:#000;
     font-weight: 500;
     margin-top:5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     font-family: var(--course-bold-family);
     text-transform: uppercase;
 }
-.video-success-course-detail{
-    padding:5px;
+
+.video-success-course>div>div:not(first-child ){
+    padding-left: 0px;
+    
 }
+.video-success-course>div>div:not(last-child ){
+    padding-right: 0px;
+    
+}
+
 .video-success-course-detail>img{
     width:130px;
     height: 120px;
@@ -2152,6 +2162,19 @@ section .section-title {
     font-family: var(--course-family);
     font-weight: 400;
     font-size: 15px;
+}
+.video-success-course-detail{
+    height: 224px;
+    padding:5px 5px;
+}
+.video-success-course-detail:not(:first-child){
+    padding:5px 5px;
+}
+.video-success-course-detail:not(:last-child){
+    padding:5px 5px;
+}
+.video-success-course-detail>video{
+    height: 218px;
 }
 /* @@@
     features section
@@ -2381,6 +2404,79 @@ why use section
     height:100px;
     border-radius: 50%;
 }
+
+/* testimonial read more */
+#more{
+    display: none;
+}
+#myBtn, #myBtn:active{
+    border:0px;
+    color:#281434;
+    border-bottom: 1px solid #281434;
+    padding:3px;
+    background:none;
+    font-weight: 700;
+    display:inline-block;
+    cursor: pointer;
+}
+#myBtn:visited{
+    border:0px;
+}
+#myBtn:active{
+    border:0px;
+}
+#myBtn:hover{
+    background:#281434;
+    color:white;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+
+#more1{
+    display: none;
+}
+#myBtn1{
+    border:0px;
+    color:#281434;
+    border-bottom: 1px solid #281434;
+    padding:3px;
+    background:none;
+    font-weight: 700;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#myBtn1:hover{
+    background:#281434;
+    color:white;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+
+#more2{
+    display: none;
+}
+#myBtn2{
+    border:0px;
+    color:#281434;
+    border-bottom: 1px solid #281434;
+    padding:3px;
+    background:none;
+    font-weight: 700;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#myBtn2:hover{
+    background:#281434;
+    color:white;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+/* testimonial read more end */
+
+
+
 .video-inner-details-testimonials{
     padding:5px;
 }
@@ -2946,10 +3042,10 @@ Game page style
 }
 @media(min-width:770px){
     .game__section-video{
-        height: 250px;
+        height: 277px;
     }
     .game__section-video>video{
-        height: 250px;
+        height: 277px;
     }
 }
 
@@ -3317,9 +3413,34 @@ Accommodation page */
 .section-accommodation{
     margin:20px 0px;
 }
+.accommodation-primery{
+    font-family: var(--course-bold-family);
+    font-weight: 600;
+    color:#000;
+    margin-bottom: 0px;
+}
+.accommodation-divider{
+    width: 150px;
+    height: 5px;
+    background:#5090e5;
+    margin-bottom: 5px;
+}
 .accommodation-paragraph{
     font-family: var(--course-family);
     font-size: 16px;
+    text-transform: initial;
+}
+.accommodtion-map>iframe{
+    height: 350px;
+}
+.accommodation-images{
+    margin-top:20px;
+}
+.accommodation-images>div>div{
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-top:4px;
 }
 /* --------
 @@@@@@@@@@
