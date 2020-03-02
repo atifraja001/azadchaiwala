@@ -22,7 +22,7 @@ set_exception_handler('Core\Error::exceptionHandler');
 /**
  * Routing
  */
-$router = new Core\Router();
+$router = new Core\Router(); 
 
 // Add the routes ---- public routes
 $router->add('', ['controller' => 'HomeController', 'action' => 'index']);
@@ -32,6 +32,7 @@ $router->add('payments', ['controller' => 'HomeController', 'action' => 'payment
 $router->add('about', ['controller' => 'HomeController', 'action' => 'about']);
 $router->add('contact', ['controller' => 'HomeController', 'action' => 'contact']);
 $router->add('gallery', ['controller' => 'HomeController', 'action' => 'gallery']);
+$router->add('accommodation', ['controller' => 'HomeController', 'action' => 'accommodation']);
 $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'action' => 'course-registration']);
 
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);

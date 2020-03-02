@@ -1325,7 +1325,7 @@ single course section
 }
 .site-footer p, .site-footer p i{
     color: white;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--course-family)
 }
 .site-footer hr
 {
@@ -1336,13 +1336,15 @@ single course section
 {
     margin:20px 0
 }
-.site-footer h6
+.site-footer h6 
 {
     color:white;
     font-size:20px;
     text-transform:uppercase;
     margin-top:5px;
-    letter-spacing:2px
+    letter-spacing:2px;
+    font-family:var(--course-bold-family);
+    font-weight: 500;
 }
 .site-footer a
 {
@@ -2058,6 +2060,9 @@ section .section-title {
     color:rgb(204, 199, 199) !important;
     margin-top:8px;   
 }
+.video-course-notdo>ul>li>i{
+    color:red !important;
+}
 /* @@@
     Our Instructor Area
    @@@
@@ -2671,6 +2676,9 @@ page desgin
     color:#000 !important;
     margin-top:8px;   
 }
+.graphic-course-notdo>ul>li>i{
+    color:#ff2f2f !important;
+}
 
 
 /* instructor part */
@@ -2915,7 +2923,7 @@ Equpmients
 ---------------- */
 
 
-
+ 
 /* ---------
 @@@@@@
 Game page style
@@ -2924,7 +2932,7 @@ Game page style
 /* top banner of game page */
 
 .game-section{
-    background:linear-gradient(to right bottom, rgba(0, 136, 97, 0.7), rgb(209, 126, 4,0.7)), url('../img/graphics/dots.png');
+    background:linear-gradient(to right bottom, rgb(36, 218, 201, 0.7), rgb(57, 78, 71,0.7)), url('../img/graphics/dots.png');
     padding:10px 15px;
     margin-bottom: 2px;
 }
@@ -3014,7 +3022,7 @@ Game page style
 }
 .game-learn{
     padding:15px;
-    min-height: 365px;
+    min-height: 425px;
 }
 .game-learn>ul{
     margin-bottom: 0px;
@@ -3045,16 +3053,19 @@ Game page style
     font-weight: 500;
     font-family: var(--course-bold-family);
     color:#fff;
-}
+} 
 .game-learn>ul>li>span{
     font-size: 17px;
     font-family: var(--course-family);
-    color:#fff;
+    color:rgb(226, 224, 224);
 }
 .game-learn>ul>li>i{
     font-size: 15px;
     color:#000 !important;
     margin-top:8px;   
+}
+.game-course-notdo>ul>li>i{
+    color:rgb(255,0,0) !important;
 }
 
 
@@ -3070,6 +3081,9 @@ Game page style
     font-weight: 700;
     font-family: var(--course-bold-family);
     color:#000;
+}
+.game-will__learn-text>ul{
+    margin-bottom: 0px ;
 }
 .game-will__learn-text>ul>li>i{
     font-size: 15px;
@@ -3294,3 +3308,19 @@ Equpmients
 Game page style end
 @@@@@@@
 ------------ */
+
+
+
+/* --------
+@@@@@@@@@@
+Accommodation page */
+.section-accommodation{
+    margin:20px 0px;
+}
+.accommodation-paragraph{
+    font-family: var(--course-family);
+    font-size: 16px;
+}
+/* --------
+@@@@@@@@@@
+Accommodation page end */
