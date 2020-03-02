@@ -27,7 +27,7 @@ $router = new Core\Router();
 // Add the routes ---- public routes
 $router->add('', ['controller' => 'HomeController', 'action' => 'index']);
 $router->add('faqs', ['controller' => 'HomeController', 'action' => 'faqs']);
-$router->add('courses', ['controller' => 'HomeController', 'action' => 'courses']);
+$router->add('courses', ['controller' => 'HomeController', 'action' => 'index']);
 $router->add('payments', ['controller' => 'HomeController', 'action' => 'payments']);
 $router->add('about', ['controller' => 'HomeController', 'action' => 'about']);
 $router->add('contact', ['controller' => 'HomeController', 'action' => 'contact']);
