@@ -760,18 +760,18 @@ payments page
 
 /*about page*/
 .topaboutsection{
-    background: var(--background-color);
+    background:#42dbf0 url('../img/contact/topbackground.png');
 
 }
 .texttopabout>h1{
     font-weight: bold;
     color: black;
-    padding-top: 1.5em;
+    padding-top: 0.2em;
 
 
 }
 .imagetopabout>img{
-    transform: scale(0.7);
+    transform: scale(0.9);
 }
 .mainaboutsection{
     margin-top:10px;
@@ -827,75 +827,98 @@ payments page
 /*-----
 Contact us page
 ------*/
-.contactpagetopsection{
-
+.section-contact-banner{
+background:#42dbf0 url('../img/contact/topbackground.png');
+text-align: center;
 }
-.contactundersection{
-    background: var(--background-color);
-    margin:-6px 0px 0px 0px;
-    padding: 20px 0px;
+.contact-banner-details{
+    padding:30px 10px;
 }
-.contactundertext{
-    padding:  20px 10px;
+.contact-banner-details>h1{
+    font-weight: 900;
+    font-family: var(--course-bold-family);
+    text-transform: capitalize;
+    color:#000;
 }
-.contactundertext>h3{
+.contact-banner-details>p{
+    font-family: var(--course-family);
+    font-size: 18px;
+    color:#000;
+}
+.contact-banner-details>a{
+    border-bottom: 2px solid #6C64FF;
+    color:#000;
+    padding:10px 10px 2px 5px;
     font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
+    display: inline-block;
+}
+.contact-banner-details>a:hover{
+    background-color: blue;
+    color:#fff;
+    box-shadow: 1px 7px 14px rgba(0,0,0, 0.5);
+    transform: translateY(-4px);
+}
+.section-contact-details{
+    padding:30px 10px;
+}
+.contact-find-details:nth-child(5){
+    margin-top: 15px;
+}
+.contact-find-details>h2{
     color:black;
-    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-family: var(--course-bold-family);
 }
-.genralinfodown{
-    margin-top: 20px;
-}
-.ginfodownunder>i{
-    font-size: 40px;
-    color:var(--main-color);
-    padding:10px;
-}
-.ginfodownunder>a>p{
-    margin-top:10px;
-    color:black;
-}
-.ginfodownunder>p{
-    margin-top:10px;
-    color:black;
-}
-.dividercontact{
+.contact__map--divider{
     width:70px;
-    height: 5px;
-    background-color:var(--main-color);
+    height:3px;
+    background:#6C64FF;
 }
-.contact_from{
-    margin: 20px 0px;
-
+.contact-details-location:nth-child(3){
+    margin-top: 15px;
 }
-#contactformus>h1{
-    color:black;
-    font-weight: bold;
-    margin-top:10px;
-    margin-bottom: -20px;
+.contact-details-location>i{
+    margin-top:5px;
+    margin-right: 10px;
+    font-size: 26px;
+    color:#42dbf0;
 }
-.contactform{
-    margin-top:10px;
-    margin-bottom: 10px;
+.contact-details-location>p{
+    font-family: var(--course-family);
+    color:#000;
+    font-size: 20px;
+}
+.contact-details-location>a>p{
+    font-family: var(--course-family);
+    color:#000;
+    font-size: 20px;
+}
+.section-contact{
+    padding:30px 10px;
 }
 .cformfileds{
     border-radius: 0px !important;
-    border:1px solid var(--main-color);
+    border:1px solid #6C64FF;
 }
-.buttonofcontact{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.contact__form--button{
+    background:#6C64FF;
+    color:white;
     border-radius: 0px;
-    background:var(--main-color);
-    border:0px;
+    box-shadow: 2px 7px 10px rgba(0,0,0, 0.5);
+}
+.contact__form--button:hover{
+    transform: translateY(-3px);
+    box-shadow: 2px 7px 10px rgba(0,0,0, 0.5);
 }
 .spanat{
     border-radius: 0px;
     border:1px solid var(--main-color);
     border-right: 0px;
-    color:var(--main-color);
+    color:#fff !important;
     font-weight: bold;
-    background:var(--background-color);
+    background:#6C64FF;
 
 }
 /*-----
@@ -3454,3 +3477,11 @@ Accommodation page */
 /* --------
 @@@@@@@@@@
 Accommodation page end */
+
+
+
+.heading-primary{
+    font-weight: 600;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
