@@ -155,29 +155,44 @@
         </div>
     </div>
     <!-- success story area -->
-    <div class="container video-success-course text-center">
-        <h2 class="text-center">Success Story</h2>     
+    <div class="container video-success-course ">
+          
         <div class=" row">
-            <div class="col-lg-4 col-md-4">
-                <!-- <div class="video-success-course-detail">
-                    <img src="<?=app_url()?>/assets/img/app course small real.jpg" alt="success story of graphic designer at azadchaiwala" class="img-fluid">
-                    <h3>New User</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse ab dolorum, veritatis numquam laborum inventore alias repudiandae, reprehenderit porro magnam placeat corporis cum dolore officia temporibus soluta! Pariatur, praesentium eum.</p> 
-                </div> -->
-            </div>
-            <div class="col-lg-4 col-md-4">
+            
+            <div class="col-lg-6 col-md-6">
                 <div class="video-success-course-detail"> 
-                    <video style="width:100%;" controls>
+                    <video style="width:100%;" controls onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/graphics/video/success1.mp4"  type="video/mp4">
                     </video>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
-                <!-- <div class="video-success-course-detail"> 
-                    <img src="<?=app_url()?>/assets/img/app course small real.jpg" alt="success story of graphic designer at azadchaiwala" class="img-fluid">
-                    <h3>New User</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse ab dolorum, veritatis numquam laborum inventore alias repudiandae, reprehenderit porro magnam placeat corporis cum dolore officia temporibus soluta! Pariatur, praesentium eum.</p>      
-                </div> -->
+            <div class="col-lg-6 col-md-6">
+                <div class="video-success-course-detail text-left">
+                    <h2 class="">Success Story</h2>
+                    <style>
+                        .myDropcap {
+                            font-size: 70px;
+                            line-height: 0.95em;
+                            font-weight: bold;
+                            vertical-align: middle;
+                            padding: 1px 8px;
+                        }
+                    </style>
+                    <div class="d-flex">
+                        <span class="myDropcap">T</span>
+                        <p>hese two sisters (Iqra & Kiran) are shining examples of Pakistan’s move towards real education
+                            (skill) and move away from the Ratta system that has eaten this great nation like cancer.
+                        </p>
+                    </div>
+                    <p>
+                        They both are freelancers, they make as much money as a good doctor makes. They work from the 
+                        privacy of their own home. They bring valuable foreign currency 
+                        into Pakistan & they both learnt their graphic designing skills from our institute.
+                    </p> 
+                    <p>
+                        Short skills will change Pakistan for the better, watch their full story to see how:
+                    </p>         
+                </div>
             </div>
         </div> 
     </div>
@@ -221,10 +236,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="graphic-features__course-details">
-                            <a href="#">
+                            <a href="<?=app_url()?>/accommodation">
                                 <span class="material-icons md-48">house</span>
                                 <h3>Accomdation</h3>
                                 <p>Is avaliable subject to avaliablity</p>
+                                <p class="link-accommodation">Read More</p>
                             </a>
                         </div>
                     </div>

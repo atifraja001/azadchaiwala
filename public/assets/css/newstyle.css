@@ -2143,27 +2143,29 @@ section .section-title {
     
 }
 
-.video-success-course-detail>img{
-    width:130px;
-    height: 120px;
-    border-radius: 50%;
-}
-.video-success-course-detail>h3{
-    color:black;
-    font-family: var(--course-bold-family);
-    font-weight: 500;
-    text-transform: capitalize;
-    font-size: 24px;
-}
 .video-success-course-detail>p{
     color:black;
     font-family: var(--course-family);
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
+}
+.video-success-course-detail>div>p{
+    color:black;
+    font-family: var(--course-family);
+    font-weight: 400;
+    font-size: 17px;
 }
 .video-success-course-detail{
-    height: 224px;
+    height: auto;
     padding:5px 5px;
+}
+.video-success-course-detail>h2{
+    color:#000;
+    font-weight: 500;
+    margin-top:5px;
+    margin-bottom: 5px;
+    font-family: var(--course-bold-family);
+    text-transform: uppercase;
 }
 .video-success-course-detail:not(:first-child){
     padding:5px 5px;
@@ -2172,7 +2174,7 @@ section .section-title {
     padding:5px 5px;
 }
 .video-success-course-detail>video{
-    height: 218px;
+    height: auto;
 }
 /* @@@
     features section
@@ -3438,6 +3440,16 @@ Accommodation page */
     padding-right: 4px;
     padding-bottom: 4px;
     padding-top:4px;
+}
+.link-accommodation{
+    font-weight: 700;
+    color: royalblue !important;
+    margin-top: -10px !important;
+    margin-bottom: 0px !important;
+}
+.link-accommodation:hover{
+
+    text-decoration: underline;
 }
 /* --------
 @@@@@@@@@@

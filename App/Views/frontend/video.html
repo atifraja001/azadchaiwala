@@ -4,7 +4,7 @@
         <div class="row ">
             <div class="col-lg-6 ">
                 <div class="video__section-video" >
-                    <video style="width:100%;" controls >
+                    <video style="width:100%;" controls  onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/videography/video/intro.mp4" type="video/mp4">
                     </video>
 <!--                    <img src="<?=app_url()?>/assets/img/videography/video.jpg" alt="video graphy course" class="img-fluid">-->
@@ -168,21 +168,21 @@
         <div class=" row">
             <div class="col-lg-4 col-md-4">
                 <div class="video-success-course-detail">
-                    <video style="width:100%;" controls >
+                    <video style="width:100%;" controls  onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/videography/video/success1.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="video-success-course-detail"> 
-                    <video style="width:100%;" controls >
+                    <video style="width:100%;" controls  onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/videography/video/success2.mp4" type="video/mp4">
                     </video>       
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="video-success-course-detail"> 
-                    <video style="width:100%;" controls >
+                    <video style="width:100%;" controls  onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/videography/video/success3.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -229,10 +229,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="video-features__course-details">
-                            <a href="#">
+                            <a href="<?=app_url()?>/accommodation">
                                 <span class="material-icons md-48">house</span>
                                 <h3>Accomdation</h3>
                                 <p>Is avaliable subject to avaliablity</p>
+                                <p class="link-accommodation">Read More</p>
                             </a>
                         </div>
                     </div>

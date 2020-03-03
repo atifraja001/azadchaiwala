@@ -5,7 +5,7 @@
         <div class="row ">
             <div class="col-lg-6 ">
                 <div class="game__section-video" >
-                    <video style="width:100%;" controls>
+                    <video style="width:100%;" controls onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/game/video/intro.mp4"  type="video/mp4">
                     </video>
                 </div>
@@ -100,14 +100,13 @@
                         <div class="col-lg-6" >
                             <h3>Instructor: Abdul Qadir</h3>
                             <p> 
-                                Abdul Qadir (qualified as a computer systems engineer, 
-                                and game developer). He has been developing games 
-                                at AceViral for over 4 years. 50+ of his games have accumulated more 
-                                than 100m Game Plays on popular app stores like Google Play Store & Apple 
-                                App Store. His aim in teaching this course would be to set you on the right 
-                                path to assimilate his achievements and then exceed it in a shorter period than 
-                                it took himself. 
-                            </p>
+                                Abdul Qadir (qualified as a computer systems engineer, though this has no positive 
+                                or negative impact on his career path as an amazing game developer). He has 
+                                been developing games at AceViral for over 4 years. 50+ of his games have 
+                                accumulated more than 100m Game Plays on popular app stores like Google 
+                                Play Store & Apple App Store. His aim in teaching this course would 
+                                be to set you on the right path to assimilate his achievements and 
+                                then exceed it in a shorter period than it took himself.
                         </div>
                     </div>
                 </div>
@@ -122,11 +121,11 @@
                         <div class="col-lg-6" >
                             <h3>Instructor: Adil</h3>
                             <p> 
-                                Zain believes that for him to be a good teacher, he needs to explain the
-                                most complex of techniques in the most simplest way, demonstrate them
-                                practically and inspire. Thus Zain ensures that he never stops learn
-                                learning new methods and techniques, so his students are not being
-                                taught anything out dated or obsolete. 
+                                Adil Naveed (qualified as a Software Engineer), he is a Senior Game Developer at Fog.com with 
+                                experience of four plus(4+) years as a game-play programmer, with successful published products 
+                                on the Google Play Store and Webgl. His expertise in making games throughout the game development 
+                                lifecycle. Adil is fueled by his passion for the understanding of game designs and game playing. 
+                                I'm a hardworking, team-oriented programmer who strives to write clean and cache-friendly code.
                             </p>
                         </div>
                     </div>
@@ -201,9 +200,12 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="game-features__course-details">
-                            <span class="material-icons md-48">house</span>
-                            <h3>Accomdation</h3>
-                            <p>Is avaliable subject to avaliablity</p>
+                            <a href="<?=app_url()?>/accommodation">
+                                <span class="material-icons md-48">house</span>
+                                <h3>Accomdation</h3>
+                                <p>Is avaliable subject to avaliablity</p>
+                                <p class="link-accommodation">Read More</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -439,9 +441,7 @@
                         <img src="<?=app_url()?>/assets/img/game/class/3s.jpg" class="img-fluid" alt="AzadChaiwala Institute graphic designer class">
                     </a>
                 </div>
-            </div>
-            
-            
+            </div>  
         </div>
     </div>
     <!-- equipments end here -->
