@@ -9,6 +9,91 @@
 ob_start();
 /*
  *
+ * multiUploadFile (PHP 5, 7)
+ *
+ * multiUploadFile(string $file, string $path [, int $file_size, array $mime_type, bool $create_path, bool $generate_name)
+ *
+ * parameters:
+ * file
+ *      name of the file (not $_FILES['profile_picture']) use 'profile_picture'
+ * path
+ *      path to store images (path/to)
+ *      example: assets/folder_name (not /assets/folder_name/)
+ * mime_type
+ *      restrict file types to upload
+ *      default: array of image types (jpeg, gif, png)
+ * create_path
+ *      create path if not exists
+ *      default: false
+ * generate_name
+ *      to generate new name for image. true is recommended
+ *      default: true
+ *
+ * return array of name of successfully uploaded files
+ */
+function multiUploadFile($file, $path,
+                         $file_size = 2,
+                         $mime_type = array('image/jpeg', 'image/gif', 'image/png'),
+                         $create_path = false,
+                         $generate_name = true){
+
+    $files = array();
+    $file_count = count($_FILES[$file]['name']);
+    $upload = false;
+    $file_size = $file_size * 1000000;
+    $path = $_SERVER['DOCUMENT_ROOT'] . "/" . $path;
+    if (file_exists($path)) {
+        if ($create_path) {
+            mkdir($path, 0750, true);
+        }
+    } else {
+        if ($create_path) {
+            mkdir($path, 0750, true);
+        } else {
+            $response = "invalid_path";
+        }
+    }
+    for($index = 0; $index < $file_count; $index++) {
+        if ($generate_name) {
+            $uploadedName = $_FILES[$file]['name'][$index];
+            $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
+            $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
+        } else {
+            $filename = $_FILES[$file]['name'][$index];
+        }
+        $mimetype = mime_content_type($_FILES[$file]['tmp_name'][$index]);
+        if (!in_array($mimetype, $mime_type)) {
+            $response =  "invalid_image";
+        }
+        $size = @getimagesize($_FILES[$file]['tmp_name'][$index]);
+        if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
+            $response =  "invalid_image";
+        }
+        if ($_FILES[$file]['size'][$index] > $file_size) {
+            $response =  "invalid_size";
+        }
+        if (!empty($file)) {
+            $file_tmp = $_FILES[$file];
+            $path_tmp = $path . "/";
+            $path_tmp = $path_tmp . $filename;
+            $pe = move_uploaded_file($file_tmp['tmp_name'][$index], $path_tmp);
+            if ($pe) {
+                $response =  $filename;
+                $upload = true;
+            } else {
+                $response =  "not_uploaded";
+            }
+        }
+        if($upload){
+            $files[] = $response;
+        }
+    }
+    return $files;
+}
+
+
+/*
+ *
  * uploadfile (PHP 5, 7)
  *
  * uploadfile(string $file, string $path [, int $file_size, array $mime_type, bool $create_path, bool $generate_name)
@@ -317,4 +402,11 @@ function formatSizeUnit($bytes){
         $bytes = '0 bytes';
     }
     return $bytes;
+}
+/*
+ * @returns
+ * full url
+ */
+function getUrl(){
+    return (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 }

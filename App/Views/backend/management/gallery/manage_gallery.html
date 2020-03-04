@@ -67,37 +67,23 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form method="post" action="<?=app_url('admin')?>/gallery/add-new-gallery" enctype="multipart/form-data" class="needs-validation" novalidate>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <label>Courses</label>
-                            <div class="input-group mb-3">
-                                <select class="form-control select2-tags" name="class" placeholder="Select Tag Or Add New Tag" required>
-                                    <option></option>
-                                    <?php foreach($classes as $course){ ?>
-                                    <option value="<?=$course['class'];?>"><?=$course['class'];?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
+                <form method="post" action="<?=app_url('admin')?>/gallery/add-new-gallery" enctype="multipart/form-data" class="needs-validation" id="gallery_submit" novalidate>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
                                 <div class="form-group">
                                     <label>Add Image</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="gallery_picture" id="gallery_picture" required accept="image/x-png,image/jpeg" >
-                                        <label class="custom-file-label" for="gallery_picture">Choose file</label>
+                                        <input type="file" class="custom-file-input" name="gallery_picture[]" id="gallery_picture" multiple required accept="image/x-png,image/jpeg" >
+                                        <label class="custom-file-label" for="gallery_picture" >Choose file</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" id="upload_button" class="btn btn-primary">Upload</button>
+                        <code id="upload_text" style="display: none"><i class="fas fa-spinner fa-spin"></i> Uploading Files...</code>
                     </div>
                 </form>
             </div>

@@ -93,7 +93,7 @@ class EnrollmentsController
     // add new enrollment post
     public function add_new_enrollment_post(){
         // preparing file to upload
-        $response = uploadfile('fee_receipt', '../public/assets/enrollment_images');
+        $response = uploadfile('fee_receipt', '../content/receipt_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/enrollments/add_new_enrollments', 'Invalid Image File', 'enrollment', 'error');
         }else if($response == "invalid_size"){

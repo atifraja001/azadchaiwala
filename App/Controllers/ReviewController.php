@@ -38,7 +38,7 @@ class ReviewController
         }
     }
     protected function UploadPersonImage(){
-        $response = uploadfile('person_image', '../public/assets/review_images');
+        $response = uploadfile('person_image', '../content/review_images');
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/reviews/manage', 'Invalid Image File', 'enrollment', 'error');
         }else if($response == "invalid_size"){

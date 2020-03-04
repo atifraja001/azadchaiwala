@@ -66,6 +66,39 @@
 <script src="<?=app_url()?>/assets/vendor/tinymce/tinymce.min.js"></script>
 <script src="<?=app_url()?>/assets/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="<?=app_url()?>/assets/vendor/clockpicker/jquery-clockpicker.min.js"></script>
+    <script>
+        $("#gallery_submit").on("submit", function(e){
+           e.preventDefault();
+            $("#upload_text").show();
+            $("#upload_button").attr('disabled', true);
+            $("#upload_button").attr("Uploading...");
+            var form_data = new FormData();
+
+            // Read selected files
+            var totalfiles = document.getElementById('gallery_picture').files.length;
+            for (var index = 0; index < totalfiles; index++) {
+                form_data.append("gallery_picture[]", document.getElementById('gallery_picture').files[index]);
+            }
+            $.ajax({
+                url: "<?=app_url('admin')?>/gallery/add-new-gallery",
+                type: 'post',
+                data: form_data,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if(response == true) {
+                        $("#upload_text").text("Upload Complete. Refresh the Page");
+                        $("#upload_button").attr('disabled', false);
+                        $("#upload_button").attr("Upload");
+                        $("#gallery_picture").val("");
+                    }else{
+                        $("#upload_text").text("Files not uploaded.Refresh page and try again");
+                    }
+                }
+            });
+        });
+    </script>
 <script>
 
     //Gallery Lightbox

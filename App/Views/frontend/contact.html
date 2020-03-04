@@ -1,47 +1,62 @@
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<section class="contactpagetopsection">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.923279834509!2d73.77634541495858!3d33.13738007283096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391febbb74ae0061%3A0x56f1acb29bf7f3cb!2sAzad+Kashmir+Radio!5e0!3m2!1sen!2s!4v1559978325959!5m2!1sen!2s"
-            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-</section>
 
-<section class="contactundersection">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<section class="section-contact-banner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <img src="assets/img/contact/contactus.svg" class="img-fluid">
-            </div>
-            <div class="col-lg-6">
-                <div class="contactundertext">
-                    <h3>Find us</h3>
-                    <div class="dividercontact"></div>
-                    <div class="genralinfodown">
-                        <div class="d-flex ginfodownunder">
-                            <i class="fa fa-map-marker"></i>
-                            <p>Sector F/3 Near Radio 101 Mirpur A.K</p>
-                        </div>
-                        <div class="d-flex ginfodownunder">
-                            <i class="fa fa-phone"></i>
-                            <a href="tel:+923448884899"><p>03448884899</p></a>
-                        </div>
-                        <div class="d-flex ginfodownunder">
-                            <i class="fa fa-envelope"></i>
-                            <a href="mailto:info@azadchaiwala.com"><p>admin@azadchaiwala.pk</p></a>
-                        </div>
-                    </div>
+            <div class="col-lg-12">
+                <div class="contact-banner-details">
+                    <h1>We'd love to hear from you</h1>
+                    <p>If you have any question Feel free to Contact Us. Our team is always ready to respond you.</p>
+                    <a href="#contact" id="contact-down">Get In Touch</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- section of contact us form -->
-<section class="contactform mt-4">
-    <div class="container text-center" id="contactformus">
-        <h1>Contact us</h1>
+<section class="section-contact-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-find-details">
+                    <h2>Find Us</h2>
+                    <div class="contact__map--divider"></div>
+                    <div class="contact-details-location d-flex">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Azad Chaiwala Institute, <br>
+                            Sector F/3 (Near Radio 101) <br>
+                            Kotli Road Mirpur, Azad Kashmir</p>
+                    </div>
+                    <div class="contact-details-location d-flex">
+                        <i class="fa fa-phone"></i>
+                        <a href="tel:+923448884899"><p>0344 8884899</p></a>
+                    </div>
+                    <div class="contact-details-location d-flex">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:info@azadchaiwala.com"><p>admin@azadchaiwala.pk</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.923279834509!2d73.77634541495858!3d33.13738007283096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391febbb74ae0061%3A0x56f1acb29bf7f3cb!2sAzad+Kashmir+Radio!5e0!3m2!1sen!2s!4v1559978325959!5m2!1sen!2s"
+                width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+<section class="section-contact">
+    <div class="container">
         <div class="row">
 
-            <div class="col-lg-6 offset-lg-3">
 
-                <div class="contact_from">
+            <div class="col-lg-6">
+                <div class="contact-form">
+
+
                     <?=showMsg('contact');?>
                     <div style="max-width : 100%; min-height: auto; display: none;" id="success">
                         <div class="alert alert-light" role="alert">
@@ -57,6 +72,7 @@
 						<button type="button" class="close" data-dismiss="alert">×</button>
                         <span id="error_msg"></span>
 					</div>
+
 
                     <form action="" method="post" id="contact">
                         <div class="form-row">
@@ -99,15 +115,29 @@
                             </div>
                         </div>
                         <div class="text-left">
-                            <button class="btn btn-primary buttonofcontact"  >Send Message</button>
+                            <button class="btn  contact__form--button"  >Send Message</button>
                         </div>
                     </form>
                 </div>
-
-
             </div>
 
+
+            <div class="col-lg-6">
+                <img src="assets/img/contact/contact-us.png" class="img-fluid">
+            </div>
+            
         </div>
     </div>
 </section>
-<!-- end section of contat us form -->
+
+
+
+
+
+
+
+
+
+
+
+

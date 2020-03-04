@@ -13,7 +13,10 @@ class HomeController extends \Core\Controller
         $courses = $courses->getCourses();
         $review = new \App\Models\Reviews();
         $review = $review->getReviews();
-        View::render('frontend/layouts/head.html', ['title' => 'HOME']);
+         //get courses with batches
+        $courses_b = new \App\Models\Courses();
+        $courses_b = $courses_b->getCoursesByBatch(); 
+        View::render('frontend/layouts/head.html', ['title' => 'Learn Skills']);
         View::render('frontend/layouts/navbar.html', ['home' => 'active']);
         View::render('frontend/index.html', [
             'courses' => $courses,
@@ -82,6 +85,55 @@ class HomeController extends \Core\Controller
         ]);
         View::render('frontend/layouts/script.html');
     }
+    public function accommodation()
+    {
+
+        View::render('frontend/layouts/head.html', ['title' => 'accommodation']);
+        View::render('frontend/layouts/navbar.html', ['accommodation' => 'active']);
+        View::render('frontend/accommodation.html');
+        View::render('frontend/layouts/script.html');
+    }
+
+    // static courses page
+    // @
+    public function graphiccourse($request){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/graphic.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
+    public function videoCourse(){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'VIDEO EDITING, VIDEOGRAPHY Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/video.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
+    public function gameCourse(){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Game Development Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/game.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
+    // @
+    // static courses page end
 
     public function course($request)
     {
@@ -188,7 +240,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadStudentImage()
     {
-        $response = uploadfile('picture', 'assets/student_images');
+        $response = uploadfile('picture', '../content/student_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Student Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {
@@ -201,7 +253,7 @@ class HomeController extends \Core\Controller
 
     protected function UploadFeeReceipt()
     {
-        $response = uploadfile('fee_receipt', 'assets/course_images');
+        $response = uploadfile('fee_receipt', '../content/course_images');
         if ($response == "invalid_image") {
             redirectWithMessage(app_url() . '/course-registration/' . clean_post('slug'), 'Invalid Fee Receipt Image File', 'course_registration', 'error');
         } else if ($response == "invalid_size") {

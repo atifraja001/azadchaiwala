@@ -33,28 +33,81 @@
 			<div class="container courh">
 				<h2>COURSES</h2>
 				<div class="divider"></div>
-				<div class="row">
-					<?php foreach($courses as $c){ ?>
-					<div class="col-lg-4 col-md-4">
-						<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
-						    <!-- Post-->
-						    <div class="post-module hover">
-						      <!-- Thumbnail-->
-						      <div class="thumbnail">
-						        <img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course"/>
-						      </div>
-						      <!-- Post Content-->
-						      <div class="post-content">
-						        <div class="category"><?=number_format($c['fee']);?> <small class="text-white">pkr</small></div>
-						        <h3 class="title"><?=$c['course_name']?> (<?=$c['duration'];?>)</h3>
-						        <p class="description ellipsis"><?=add3Dots($c['course_description'], 130)?></p>
-						      </div>
-						    </div>
-						  </a>
-					</div>
-					<?php } ?>
-				</div>
 			</div>
 		</div>
 	</section>
 	<!-- course section end -->
+
+	<div class="container mt-3">
+		<div class="row">
+			<?php $counter = 1; foreach($courses as $c){ ?>
+				<?php
+					$heading = array(
+						"Only 2 seats left",
+						"Next Batch Starting on 25-02-2020",
+						"Next Batch Starting in 2 days",
+						"Limited Seats",
+						"Only 1 seat left"
+					);
+					if($counter <= 4){
+					$counter++;
+				?>
+			<div class="col-lg-4">
+				<div class="course-card">
+					<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+						<div class="course_card-start">
+							<p><?=$heading[rand(0,4)]?></p>
+						</div>
+						<div class="course__card-image">
+							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
+						</div>
+						<div class="course__card-content">
+							<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
+							<p><?=add3Dots($c['course_description'], 100)?></p>
+						</div>
+						<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+					</a>
+				</div>
+			</div>
+			<?php } } ?>
+			<div class="col-lg-4">
+				<ul class="list-group">
+					<li class="list-group-item active"><h3 class="text-white heading-primary">COMING SOON</h3></li>
+					<li class="list-group-item font-weight-bold">Mobile App Development (2 Months)</li>
+					<li class="list-group-item font-weight-bold">Web Systems and Website Development (2 Months)</li>
+					<li class="list-group-item font-weight-bold">Digital Marketing (3 Weeks) </li>
+				</ul>
+			</div>
+		</div>
+		
+		
+	</div>
+
+	<section class="topsec">
+		<div class="topsecd" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="topbanner" >
+							<h1>SKILL IS THE <span>NEW DEGREE</span></h1>
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Don't waste your time and your parents hard earned money on useless, outdated, theory based degrees. We provide practical Classroom Based Training of IT Skills in as little as 2 weeks to a few months. Skills that are in huge demand within and outside of Pakistan. Enabling you to start earning only in a short period.</p>
+					</div>
+					<div class="col-lg-6">
+						<div>
+							<p class="urdu" style="line-height: initial;">
+							اپنا قیمتی وقت اور ماں باپ کی حلال کی کمائی فضول، پرانی اور صرف تھیوری پر مشتمل ڈگری پر ضائع نہ کریں۔ ہم آپ کو کلاس رومز میں بیٹھا کر دو ہفتے سے چند مہینوں میں وہ آئی ٹی سکلز سیکھاتے ہیں جو پاکستان اور بیرون ملک ڈیمانڈ میں بھی ہیں اور جن کی وجہ سے آپ کچھ ہی عرصہ میں کمانا شروع کر سکتے ہیں۔
+ 
+						</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

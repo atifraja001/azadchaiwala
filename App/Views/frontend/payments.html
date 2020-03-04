@@ -1,95 +1,135 @@
 <section class="paymentspage text-center">
-	<div class="container mt-4">
-		<h1>Our <span style="font-size: 2.5rem; color: var(--main-color)">Payment Accounts</span> are as follows</h1>
-		<div class="row">
-			<div class="col-12 col-lg-6 col-md-6 col-sm-6 mt-4">
-				<div class="card">
-					<div class="card-body">
-						<img src="<?=app_url()?>/assets/img/dubai-logo.png" class="img-fluid">
-						<div class="table-responsive mt-4">
-							<table class="table text-left">
-								<tr>
-									<td><b>Bank Name</b></td>
-									<td>Dubai Islamic Bank</td>
-								</tr>
-								<tr>
-									<td><b>Account Title</b></td>
-									<td>Azad Chaiwala Institute</td>
-								</tr>
-								<tr>
-									<td><b>Account Number</b></td>
-									<td>032045 4038006</td>
-								</tr>
-								<tr>
-									<td><b>SWIFT</b></td>
-									<td>DUIBPKKAXXX</td>
-								</tr>
-								<tr>
-									<td><b>IBAN</b></td>
-									<td>PK25DUIB0000000454038006</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div style="text-align: justify">
-					<code><b>IMPORTANT:</b> You must add reference STUDENTS NAME when making any payment to us. Not doing so will cause unnecessary delay and you may mis out on your choice of batch</code>
-				</div>
-			</div>
-			<div class="col-12 col-lg-6 col-md-6 col-sm-6 mt-4">
-				<div class="card">
-					<div class="card-body">
-						<img src="<?=app_url()?>/assets/img/paypal.png" class="img-fluid">
-						<div class="table-responsive mt-4">
-							<table class="table text-left">
-								<tr>
-									<td><b>Account Title</b></td>
-									<td>Rivers of Honey LTD</td>
-								</tr>
-								<tr>
-									<td><b>Account Email</b></td>
-									<td>PayPal@Chaiwala.com</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<!-- Set up a container element for the button -->
-										<div id="paypal-button-container"></div>
+    <div class="container mt-4">
+        <h1>Our <span style="font-size: 2.5rem; color: var(--main-color)">Payment Accounts</span> are as follows</h1>
+        <div class="row">
+            <div class="col-12 col-lg-6 col-md-6 col-sm-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="<?=app_url()?>/assets/img/dubai-logo.png" class="img-fluid">
+                        <div class="table-responsive mt-4">
+                            <table class="table text-left">
+                                <tr>
+                                    <td><b>Bank Name</b></td>
+                                    <td>Dubai Islamic Bank</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Account Title</b></td>
+                                    <td>Azad Chaiwala Institute</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Account Number</b></td>
+                                    <td>032045 4038006</td>
+                                </tr>
+                                <tr>
+                                    <td><b>SWIFT</b></td>
+                                    <td>DUIBPKKAXXX</td>
+                                </tr>
+                                <tr>
+                                    <td><b>IBAN</b></td>
+                                    <td>PK25DUIB0000000454038006</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: justify">
+                    <b>Instructions for Bank Transfer:</b><br>
+                    You must add reference STUDENTS NAME when making any payment to us. Not doing so will cause
+                    unnecessary delay and you may miss out on your choice of batch
+					<p class="urdu" style="font-size: 22px; text-decoration: underline; margin-bottom: 5px">
+						بینک ٹرانسفر کے لئے ہدایات
+					</p>
+                    <p class="urdu" style="line-height: initial;">
+                        ہمیں کوئی بھی ادائیگی کرتے وقت آپ کو حوالے کے لیے سٹوڈنٹ کا نام لکھنا ضروری ہے۔ ایسا نہ کرنے کی
+                        صورت میں آپکو تاخیر کا سامنا ہوگا اور آپ اپنی پسند کے کورس سے محروم رہ سکتے ہے۔</div>
+            </div>
+            <div class="col-12 col-lg-6 col-md-6 col-sm-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="<?=app_url()?>/assets/img/paypal.png" class="img-fluid">
+                        <div class="table-responsive mt-4">
+                            <table class="table text-left">
+                                <tr>
+                                    <td><b>Account Title</b></td>
+                                    <td>Rivers of Honey LTD</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Account Email</b></td>
+                                    <td>PayPal@Chaiwala.com</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="text-center">
+                                        <i class="fas fa-spinner fa-spin loading" style="font-size: 36px;"></i>
+                                        <select class="form-control select_course" style="display: none">
+                                            <option hidden value="">Select Course to Pay</option>
+                                            <option value="260">Video Editing, Videography & Freelancing (40,000 pkr)
+                                            </option>
+                                            <option value="260">Graphic Designing (40,000 pkr)</option>
+                                            <option value="2600">Game Development (400,000 pkr)</option>
+                                            <option value="65">Advance Computer (10,000 pkr)</option>
+                                            <option value="20">Advance Computer (3,000 pkr)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <!-- Set up a container element for the button -->
+                                        <div id="paypal-button-container"></div>
 
-										<!-- Include the PayPal JavaScript SDK -->
-										<script src="https://www.paypal.com/sdk/js?client-id=Aeql447eX-lHXVikvdFq0cBWaY1r2zGR9GfmizOFrkdJ0r9CAr1mtqTvcARpJ-FJqJssiq9GKpxSzCRq&currency=USD"></script>
+                                        <!-- Include the PayPal JavaScript SDK -->
+                                        <script src="https://www.paypal.com/sdk/js?client-id=Aeql447eX-lHXVikvdFq0cBWaY1r2zGR9GfmizOFrkdJ0r9CAr1mtqTvcARpJ-FJqJssiq9GKpxSzCRq&currency=USD"></script>
+                                        <script src="<?=app_url()?>/assets/js/jquery.min.js"></script>
+                                        <script>
+                                            $(document).ready(function () {
+                                                $(".select_course").show();
+                                                $(".loading").hide();
+                                                $('.select_course').on('change', function () {
+                                                    var amount = $(this).val();
+                                                    $("#paypal-button-container").children().remove();
+                                                    paypal.Buttons({
+                                                        style: {
+                                                            shape: 'rect',
+                                                            color: 'gold',
+                                                            layout: 'vertical',
+                                                            label: 'paypal',
+                                                        },
+                                                        createOrder: function (data, actions) {
+                                                            return actions.order.create({
+                                                                purchase_units: [{
+                                                                    amount: {
+                                                                        value: amount
+                                                                    }
+                                                                }]
+                                                            });
+                                                        },
+                                                        onApprove: function (data, actions) {
+                                                            return actions.order.capture().then(function (details) {
+                                                                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                                                            });
+                                                        }
+                                                    }).render('#paypal-button-container');
+                                                });
+                                            });
+                                        </script>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: justify">
+                    <b>Instructions for PayPal:</b><br>
+                    1. Select the desire course from the dropdown above. <br>
+                    2. Select Payment Method (Card, Paypal)<br>
+                    3. Fill details to complete transaction.<br>
 
-										<script>
-											paypal.Buttons({
-												style: {
-													shape: 'rect',
-													color: 'gold',
-													layout: 'vertical',
-													label: 'paypal',
-
-												},
-												createOrder: function(data, actions) {
-													return actions.order.create({
-														purchase_units: [{
-															amount: {
-																value: '10'
-															}
-														}]
-													});
-												},
-												onApprove: function(data, actions) {
-													return actions.order.capture().then(function(details) {
-														alert('Transaction completed by ' + details.payer.name.given_name + '!');
-													});
-												}
-											}).render('#paypal-button-container');
-										</script>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <b>After Payment:</b><br>
+                    1. Contact us on email <b>(admin@azadchaiwala.pk)</b>. <br>
+                    2. or phone number <b>(+92 344 88 84 899)</b>. <br>
+                    3. Send us your transaction details with amount, course and transaction time.<br>
+                    4. Contact us within 48 hours of transaction for faster approval of the payments<br>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

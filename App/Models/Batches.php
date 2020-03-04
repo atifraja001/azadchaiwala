@@ -87,7 +87,14 @@ class Batches extends \Core\Model
         $stmt->execute([':course_id' => $course_id]);
         return $stmt->fetchAll();
     }
-    public function getBatchByEnrollId($enroll_id){
+    public function GetUpComingBatchByCourseId($course_id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id AND start_date >= CURRENT_DATE() ORDER BY id ASC LIMIT 1");
+        $stmt->execute([':course_id' => $course_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getBatchByEnrollId($enroll_id)
+    {
         $db = static::getDB();
         $stmt= $db->prepare("SELECT * FROM batches WHERE id IN (SELECT batch_id FROM enrollments WHERE id = :id)");
         $stmt->execute([':id' => $enroll_id]);
