@@ -19,7 +19,7 @@
                         begin a profitable career in freelancing in order to earn foreign currency.
                     </p>
                     <div class="video-enroll-button">
-                        <a class="btn btn-lg btn-block"><span>Change Your Life </span>Enroll Now</a>
+                        <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll Now</a>
                     </div>
                 </div>
             </div>
@@ -212,7 +212,12 @@
                         <div class="video-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Next Batch Start</h3>
-                            <p>(12, March, 2020)</p>
+                            <?php if(count($batch) > 0){ ?>
+                            <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
+                                <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
+                            <?php }else{ ?>
+                            <p>Please Call for Details</p>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
@@ -221,14 +226,22 @@
                                 supervisor_account
                             </span>
                             <h3>Class Size</h3>
-                            <p>10 students Max each class</p>
+                            <?php if(count($batch) > 0){ ?>
+                            <p><?=$batch[0]['total_students']?> students Max each class</p>
+                            <?php }else{ ?>
+                            <p>10-12 students max each class</p>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
                         <div class="video-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Duration</h3>
+                            <?php if(count($batch) > 0){ ?>
+                            <p><?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?> hours per day, <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?> Days</p>
+                            <?php }else{ ?>
                             <p>4 hours per day, 2 Weeks</p>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3">
@@ -246,7 +259,7 @@
             
             <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="video-features__course-details video-enrol-button">
-                    <a class="btn btn-lg btn-block">  Enroll Now</a>
+                    <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">  Enroll Now</a>
                 </div>
             </div>
         </div>
@@ -259,7 +272,11 @@
             <div class="col-lg-6">
                 <div class="videoo-faqs-course-inner">
                     <h4>When will the course start & finish?</h4>
-                    <p>The next batch for this course will start on (16, March, 2020) and end on XYZ date. You can see all future batches on the <a href="#">signup page</a>.</p>
+                    <?php if(count($batch) > 0){ ?>
+                    <p>The next batch for this course will start on (<?=date('F d, Y', strtotime($batch[0]['start_date']));?>) and end on (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the <a href="#">signup page</a>.</p>
+                    <?php }else{ ?>
+                    <p>Please contact us via email or phone number for next batch details</p>
+                    <?php } ?>
                 </div>
                 <div class="videoo-faqs-course-inner">
                     <h4>How Quickly will I See results?</h4>
@@ -805,6 +822,6 @@
     <!-- enrollNow -->
     <div class="container graphic_lastenroll-now text-center ">
         <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
-        <a href="#" class="btn btn-lg ">Enroll Now <i class="fas fa-angle-double-right"></i></a>
+        <a href="<?=app_url()?>/course-registration/<?=$slug?>" class="btn btn-lg">Enroll Now <i class="fas fa-angle-double-right"></i></a>
     </div>
 </section>

@@ -16,7 +16,7 @@ class HomeController extends \Core\Controller
          //get courses with batches
         $courses_b = new \App\Models\Courses();
         $courses_b = $courses_b->getCoursesByBatch(); 
-        View::render('frontend/layouts/head.html', ['title' => 'Mirpur AzadKashmir']);
+        View::render('frontend/layouts/head.html', ['title' => 'Learn Skills']);
         View::render('frontend/layouts/navbar.html', ['home' => 'active']);
         View::render('frontend/index.html', [
             'courses' => $courses,
@@ -100,22 +100,40 @@ class HomeController extends \Core\Controller
 
     // static courses page
     // @
-    public function graphiccourse(){
-        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course Azad Chaiwala Institute']);
+    public function graphiccourse($request){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course']);
         View::render('frontend/layouts/navbar.html');
-        View::render('frontend/graphic.html');
+        View::render('frontend/graphic.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
     public function videoCourse(){
-        View::render('frontend/layouts/head.html', ['title' => 'VIDEO EDITING, VIDEOGRAPHY Course Azad Chaiwala Institute']);
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'VIDEO EDITING, VIDEOGRAPHY Course']);
         View::render('frontend/layouts/navbar.html');
-        View::render('frontend/video.html');
+        View::render('frontend/video.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
     public function gameCourse(){
-        View::render('frontend/layouts/head.html', ['title' => 'Best Game Development Course In Mirpur Ajk Pakistan']);
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Game Development Course']);
         View::render('frontend/layouts/navbar.html');
-        View::render('frontend/game.html');
+        View::render('frontend/game.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
     // @
