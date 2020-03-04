@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="minor changes">
+      <change afterPath="$PROJECT_DIR$/data/7-Hafiz-Qamar.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/8-Abdullah-Dar.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/testimonial text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why3.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why4.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why5.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why6.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Batches.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Batches.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/graphic.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/graphic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/payments.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/payments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/newstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/newstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/helpers/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/helpers/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,90 +149,10 @@
       <workItem from="1582288807121" duration="712000" />
       <workItem from="1582521417889" duration="11988000" />
       <workItem from="1582545905192" duration="255000" />
-    </task>
-    <task id="LOCAL-00014" summary="Database upgrade">
-      <created>1580103242763</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1580103242763</updated>
-    </task>
-    <task id="LOCAL-00015" summary="upgrade">
-      <created>1580447741110</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1580447741111</updated>
-    </task>
-    <task id="LOCAL-00016" summary="upgrade">
-      <created>1580447959475</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1580447959475</updated>
-    </task>
-    <task id="LOCAL-00017" summary="upgrade">
-      <created>1580448115188</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448115188</updated>
-    </task>
-    <task id="LOCAL-00018" summary="upgrade">
-      <created>1580448215872</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448215872</updated>
-    </task>
-    <task id="LOCAL-00019" summary="upgrade">
-      <created>1580448323915</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448323915</updated>
-    </task>
-    <task id="LOCAL-00020" summary="upgrade">
-      <created>1580448385923</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448385923</updated>
-    </task>
-    <task id="LOCAL-00021" summary="upgrade">
-      <created>1580448538660</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448538660</updated>
-    </task>
-    <task id="LOCAL-00022" summary="upgrade">
-      <created>1580448603364</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448603364</updated>
-    </task>
-    <task id="LOCAL-00023" summary="upgrade">
-      <created>1580448915078</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1580448915078</updated>
-    </task>
-    <task id="LOCAL-00024" summary="upgrade">
-      <created>1580449360884</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1580449360884</updated>
-    </task>
-    <task id="LOCAL-00025" summary="logo link">
-      <created>1580449388397</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1580449388397</updated>
+      <workItem from="1583134614334" duration="10039000" />
+      <workItem from="1583211290900" duration="8344000" />
+      <workItem from="1583238032105" duration="4989000" />
+      <workItem from="1583296812738" duration="8367000" />
     </task>
     <task id="LOCAL-00026" summary="hourdiff() added">
       <created>1580449598505</created>
@@ -469,7 +413,91 @@
       <option name="project" value="LOCAL" />
       <updated>1582546027290</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="minor changes">
+      <created>1583135078162</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1583135078162</updated>
+    </task>
+    <task id="LOCAL-00064" summary="minor changes">
+      <created>1583135110671</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1583135110671</updated>
+    </task>
+    <task id="LOCAL-00065" summary="minor changes">
+      <created>1583147720765</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1583147720765</updated>
+    </task>
+    <task id="LOCAL-00066" summary="minor changes">
+      <created>1583148044751</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1583148044751</updated>
+    </task>
+    <task id="LOCAL-00067" summary="minor changes">
+      <created>1583148432439</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1583148432439</updated>
+    </task>
+    <task id="LOCAL-00068" summary="minor changes">
+      <created>1583152224892</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1583152224893</updated>
+    </task>
+    <task id="LOCAL-00069" summary="minor changes">
+      <created>1583152711264</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1583152711264</updated>
+    </task>
+    <task id="LOCAL-00070" summary="minor changes">
+      <created>1583216072774</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1583216072775</updated>
+    </task>
+    <task id="LOCAL-00071" summary="minor changes">
+      <created>1583228748666</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1583228748666</updated>
+    </task>
+    <task id="LOCAL-00072" summary="minor changes">
+      <created>1583230680939</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1583230680939</updated>
+    </task>
+    <task id="LOCAL-00073" summary="minor changes">
+      <created>1583231303488</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1583231303488</updated>
+    </task>
+    <task id="LOCAL-00074" summary="minor changes">
+      <created>1583296969426</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1583296969426</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,10 +556,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="941" y="67" key="CommitChangelistDialog2" timestamp="1582546227898">
+    <state x="910" y="0" key="CommitChangelistDialog2" timestamp="1583305368227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="941" y="67" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582546227898" />
+    <state x="910" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583305368227" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1582546224927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
