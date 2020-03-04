@@ -5,7 +5,7 @@
         <div class="row ">
             <div class="col-lg-6 ">
                 <div class="game__section-video" >
-                    <video style="width:100%;" controls onloadstart="this.volume=0.2">
+                    <video style="width:100%;" autoplay muted controls onloadstart="this.play();">
                         <source src="<?=app_url()?>/assets/img/game/video/intro.mp4"  type="video/mp4">
                     </video>
                 </div>
@@ -92,7 +92,7 @@
     <div class="container game-our-insturcture" >        
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <div class="game-our__instructure-main">
+                <div class="game-our__instructure-main" >
                     <div class="row">
                         <div class="col-lg-6">
                             <img src="<?=app_url()?>/assets/teacher_images/abdulqadir.jpg" alt="Ali mir Instructor at AzadChaiwala" class="img-fluid">
@@ -100,20 +100,17 @@
                         <div class="col-lg-6" >
                             <h3>Instructor: Abdul Qadir</h3>
                             <p> 
-                                Abdul Qadir (qualified as a computer systems engineer, though this has no positive 
-                                or negative impact on his career path as an amazing game developer). He has 
-                                been developing games at AceViral for over 4 years. 50+ of his games have 
-                                accumulated more than 100m Game Plays on popular app stores like Google 
-                                Play Store & Apple App Store. His aim in teaching this course would 
-                                be to set you on the right path to assimilate his achievements and 
-                                then exceed it in a shorter period than it took himself.
+                                has been developing games at AceViral for over 4 years. 50+ of his games have accumulated more than 100m Game Plays on popular app stores like Google Play Store & Apple App Store. His aim in teaching this course would be to set you on the right path to assimilate <span id="dotst">...</span><span id="moret">his achievements  and then exceed it in a shorter period than it took himself. Abdul Qadir qualified as a computer systems engineer. In his own words this has had no positive or negative impact on his career as an amazing game developer. 
+                                </span>
+                            </p>
+                            <p onclick="myFunctiont()" id="myBtnt">Read more</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-6">
-                <div class="game-our__instructure-main ">
+                <div class="game-our__instructure-main">
                     <div class="row">
                         <div class="col-lg-6">
                             <img src="<?=app_url()?>/assets/teacher_images/adil.jpg" alt="Zain Instructor at AzadChaiwala" class="img-fluid">
@@ -121,12 +118,10 @@
                         <div class="col-lg-6" >
                             <h3>Instructor: Adil</h3>
                             <p> 
-                                Adil Naveed (qualified as a Software Engineer), he is a Senior Game Developer at Fog.com with 
-                                experience of four plus(4+) years as a game-play programmer, with successful published products 
-                                on the Google Play Store and Webgl. His expertise in making games throughout the game development 
-                                lifecycle. Adil is fueled by his passion for the understanding of game designs and game playing. 
-                                I'm a hardworking, team-oriented programmer who strives to write clean and cache-friendly code.
+                                is a Senior Game Developer at FOG.COM, with experience of four plus(4+) years as a game-play programmer, with successful published products on the Google Play Store and Webgl (PC). His expertise is in making games throughout the game development lifecycle. <span id="dotst1">...</span><span id="moret1"> Adil is fueled by his passion for the understanding of game designs and game playing. Adil strives to write clean and cache-friendly code.
+                                </span>
                             </p>
+                            <p onclick="myFunctiont1()" id="myBtnt1">Read more</p>
                         </div>
                     </div>
                 </div>
@@ -166,23 +161,23 @@
         <div class="row">
             <div class="col-lg-9 col-md-12">
                 <div class="row">
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-2 col-md-2 p-1">
                         <div class="game-features__course-details">
                             <span class="material-icons md-36">
                                 monetization_on
                             </span>
                             <h3>Fee</h3>
-                            <p>400,000 Rupees</p>
+                            <p>400,000 Rupees (Payable Monthly 1 lac per month)</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3 p-1">
                         <div class="game-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Next Batch Start</h3>
                             <p>(12, March, 2020)</p>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-2 col-md-2 p-1">
                         <div class="game-features__course-details">
                             <span class="material-icons md-48">
                                 supervisor_account
@@ -191,14 +186,14 @@
                             <p>10 students each class</p>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-2 col-md-2 p-1">
                         <div class="game-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Duration</h3>
                             <p>4 hours per day, 4 Months</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3 p-1">
                         <div class="game-features__course-details">
                             <a href="<?=app_url()?>/accommodation">
                                 <span class="material-icons md-48">house</span>
@@ -220,169 +215,53 @@
     </div>
     <!-- course feature section end here -->
     
+    
     <!-- why learn from us -->
-    <div class="container game-work text-center">
+    <div class="container game-why-us text-center">
         <div class="row">
-            <div class="col-lg-8 offset-2 game-work-heading">
-                <h2>Some of Our Games</h2>
+            
+            <div class="col-lg-12 game-why__us-text">
+                <h2>Why are we some of the best people to teach you?</h2>
+                
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/1.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/1s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/2.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/2s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/3.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/3s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
+            <div class="col-lg-3 col-md-3">
+                <div class="game-why__us-results">
+                    <img src="<?=app_url()?>/assets/img/game/fog.png" alt="fog logo" class="img-fluid">
+                    <h4>over 2 billions</h4>
+                    <p>game players </p>
                 </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/12.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/12s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/13.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/13s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/14.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/14s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>                    
+            <div class="col-lg-3 col-md-3">
+                <div class="game-why__us-results">
+                    <img src="<?=app_url()?>/assets/img/game/i6.png" alt="fog logo" class="img-fluid">
+                    <h4>400 millions</h4>
+                    <p>Downloads</p>
                 </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/23.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/23s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/24.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/24s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/25.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/25s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                </div>
-            </div>  
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/6.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/6s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/7.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/7s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
+            <div class="col-lg-3 col-md-3">
+                <div class="game-why__us-results">
+                    <img src="<?=app_url()?>/assets/img/game/acc.png" alt="fog logo" class="img-fluid">
+                    <h4>200 millions</h4>
+                    <p>Downloads</p>
                 </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/28.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/28s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/29.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/29s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/32.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/32s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>                    
-                </div>
-            </div> 
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/18.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/18s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/19.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/19s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/20.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/20s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
+            
+            <div class="col-lg-3 col-md-3">
+                <div class="game-why__us-results">
+                    <img src="<?=app_url()?>/assets/img/game/g.png" alt="fog logo" class="img-fluid">
+                    <h4>(Game Pickle) 100 millions</h4>
+                    <p>Downloads</p>
                 </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/21.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/21s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/22.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/22s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/34.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/34s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a> 
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/8.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/8s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/9.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/9s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/10.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/10s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/30.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/30s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/31.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/31s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                   
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/26.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/26s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/27.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/27s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/11.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/11s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                </div>              
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/4.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/4s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/5.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/5s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/33.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/33s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                </div>              
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/15.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/15s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/16.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/16s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    <a href="<?=app_url()?>/assets/img/graphics/artwork/17.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/graphics/artwork/17s.jpg" alt="art work of graphic designer azadchaiwala" class="img-fluid">
-                    </a>
-                    
-                </div>              
-            </div>
+            
         </div>
     </div>
     <!-- end why learn from us -->
+
+
+
     <!-- testimonials -->
     <!-- <div class="container video-testimonials-course text-center">
         <h2 class="text-center">Testimonials</h2>

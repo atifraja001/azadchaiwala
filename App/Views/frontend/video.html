@@ -4,7 +4,7 @@
         <div class="row ">
             <div class="col-lg-6 ">
                 <div class="video__section-video" >
-                    <video style="width:100%;" controls  onloadstart="this.volume=0.2">
+                    <video style="width:100%;" controls  autoplay muted  onloadstart="this.volume=0.2">
                         <source src="<?=app_url()?>/assets/img/videography/video/intro.mp4" type="video/mp4">
                     </video>
 <!--                    <img src="<?=app_url()?>/assets/img/videography/video.jpg" alt="video graphy course" class="img-fluid">-->
@@ -107,11 +107,13 @@
                         <div class="col-lg-6">
                             <img src="<?=app_url()?>/assets/teacher_images/arslan.jpg" alt="teacher image" class="img-fluid">
                         </div>
-                        <div class="col-lg-6 " style="min-height: 340px;">
+                        <div class="col-lg-6 " >
                             <h3>Instructor: Arslan </h3>
                             <p> 
-                                started freelancing in 2016. He began working on UpWork first and then moved onto Fiverr. He has completed over 900 paid projects on Fiverr and over 100 projects on UpWork. He is proficient in Photoshop & Video Editing. Overall he has 5 years experience in video editing and 2 year experience in photo editing.
+                                started freelancing in 2016. He began working on UpWork first and then moved onto Fiverr. He has completed over 900 paid projects on Fiverr and over 100 projects on UpWork. He is proficient in Photoshop <span id="dotst">...</span><span id="moret">& Video Editing. Overall he has 5 years experience in video editing and 2 year experience in photo editing.
+                                </span>
                             </p>
+                            <p onclick="myFunctiont()" id="myBtnt">Read more</p>
                         </div>
                     </div>
                 </div>
@@ -123,11 +125,13 @@
                         <div class="col-lg-6">
                             <img src="<?=app_url()?>/assets/teacher_images/157909819620377545615e1f2053e69dd.jpg" alt="teacher image" class="img-fluid">
                         </div>
-                        <div class="col-lg-6 " style="min-height: 340px;">
+                        <div class="col-lg-6 " >
                             <h3>Instructor: Khizzar</h3>
                             <p> 
-                                is very creative and constantly learning new techniques and technologies in the videography world, in order to continue improving his own skill set and that of our students. Khizzar has been a videographer for over 5 years and has worked on close to 1000 videos in his career. His videos of Azad Bhai have seen tens of millions of views on Youtube & Facebook.
+                                is very creative and constantly learning new techniques and technologies in the videography world, in order to continue improving his own skill set and that of our students. Khizzar has been a videographer <span id="dotst1">...</span><span id="moret1">for over 5 years and has worked on close to 1000 videos in his career. His videos of Azad Bhai have seen tens of millions of views on Youtube & Facebook.
+                                </span>
                             </p>
+                            <p onclick="myFunctiont1()" id="myBtnt1">Read more</p>
                         </div>
                     </div>
                 </div>
@@ -343,8 +347,8 @@
     <!-- testimonials -->
     <div class="container video-testimonials-course text-center">
         <h2 class="text-center">What Our Students Say About Us</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 pl-0 pr-0">
+        
+            <div class="autoplay text-center">
                 <div class="video-testimonials__course-inner">
                     <img src="<?=app_url()?>/assets/img/videography/testimonial/1.jpg" alt="testimonials image">
                     <div class="video-inner-details-testimonials">
@@ -358,8 +362,39 @@
                         <p onclick="myFunction()" id="myBtn">Read more</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
+                <div class="video-testimonials__course-inner">
+                    <img src="<?=app_url()?>/assets/img/videography/testimonial/4.jpg" alt="testimonials image">
+                    <div class="video-inner-details-testimonials">
+                        <h3>Hafiz Qamar </h3>
+                        <p>
+                            Assalam.O.Alaikum my name is Hafiz Qamar I joined the course of Videography from Azad Chaiwala institute.  Before joining the <span id="dots1">...</span><span id="more1"> course I had zero skill but after 
+                            fourteen days I have become a videographer and a video editor. Sir Khizzer is a great teacher  his way of teaching is friendly. And the two leactures of Fiverr given 
+                            by Sir Arsalan to us were incredible. And the prectical learning  received at the institute of Azad Chaiwala could not be found anywhere in Pakistan in just fourteen 
+                            days.
+                            </span>
+                            
+                        </p>
+                        <p onclick="myFunction1()" id="myBtn1">Read more</p>
+                    </div>
+                </div>
+                <div class="video-testimonials__course-inner">
+                    <img src="<?=app_url()?>/assets/img/videography/testimonial/5.jpg" alt="testimonials image">
+                    <div class="video-inner-details-testimonials">
+                        <h3>Abdullah Dar  </h3>
+                        <p>
+                            AOA. I am Abdullah Dar ,a student living in Pakistan who could not compete with the other students in the medical field although <span id="dots2">...</span><span id="more2"> 
+                            having 80% marks in his fsc.  I had alot of leisure time which was being wasted, in order to save that precious time and to upgrade 
+                            my knowledge in the feild of cameras I wanted to learn videography and this institute was a blessing for me to learn a variety of 
+                            things that I could have never learned .The main thing about this institute is the teachers, that they are not only teachers or 
+                            our guides but also our role models in practical life as both of them Mr Arsalan and Mr Khizzar are somehow earning from their 
+                            respective fields that are both somehow linked with videography . The HOD Ma'am Zora Basharat also treated us like we were all 
+                            familiar to each other from a long time . However, My opinion is that if anyone who has support from his/her family(parents) 
+                            and wants to learn a good skill which would aid him/her in practical life, in order to earn ,should learn at least 1 skill
+                            </span>
+                        </p>
+                        <p onclick="myFunction2()" id="myBtn2">Read more</p>
+                    </div>
+                </div>
                 <div class="video-testimonials__course-inner">
                     <img src="<?=app_url()?>/assets/img/graphics/testimonial/1.jpg" alt="testimonials about the azadchaiwala institute">
                     <div class="video-inner-details-testimonials">
@@ -367,8 +402,6 @@
                         <p>From Mingora, Sawt. I watched your video and decided to enroll. I found your institute to be very professional.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
                 <div class="video-testimonials__course-inner">
                     <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute">
                     <div class="video-inner-details-testimonials">
@@ -376,34 +409,14 @@
                         <p>From Faisalabad. ASA. I felt everything was well managed and the teachers and staff were very cooperative.</p>
                     </div>
                 </div>
+                
+                
             </div>
             
             
-        </div>
+        
     </div>  
         
-        <div class="container">
-            <div class="autoplay">
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-                <div>
-                    <img src="<?=app_url()?>/assets/img/graphics/testimonial/2.jpg" alt="testimonials about the azadchaiwala institute" class="img-fluid">
-                </div>
-            </div>
-        </div>
 
     <!-- equipments start here-->
     <div class="container video-equipments-course">

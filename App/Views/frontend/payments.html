@@ -51,37 +51,57 @@
 									<td>PayPal@Chaiwala.com</td>
 								</tr>
 								<tr>
+									<td colspan="2" class="text-center">
+										<i class="fas fa-spinner fa-spin loading" style="font-size: 36px;"></i>
+										<select class="form-control select_course" style="display: none">
+											<option hidden value="">Select Course</option>
+											<option value="260">Video Editing, Videography & Freelancing (40,000 pkr)</option>
+											<option value="260">Graphic Designing (40,000 pkr)</option>
+											<option value="2600">Game Development (400,000 pkr)</option>
+											<option value="65">Advance Computer (10,000 pkr)</option>
+											<option value="20">Advance Computer (3,000 pkr)</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
 									<td colspan="2">
 										<!-- Set up a container element for the button -->
 										<div id="paypal-button-container"></div>
 
 										<!-- Include the PayPal JavaScript SDK -->
 										<script src="https://www.paypal.com/sdk/js?client-id=Aeql447eX-lHXVikvdFq0cBWaY1r2zGR9GfmizOFrkdJ0r9CAr1mtqTvcARpJ-FJqJssiq9GKpxSzCRq&currency=USD"></script>
-
+										<script src="<?=app_url()?>/assets/js/jquery.min.js"></script>
 										<script>
-											paypal.Buttons({
-												style: {
-													shape: 'rect',
-													color: 'gold',
-													layout: 'vertical',
-													label: 'paypal',
-
-												},
-												createOrder: function(data, actions) {
-													return actions.order.create({
-														purchase_units: [{
-															amount: {
-																value: '10'
-															}
-														}]
-													});
-												},
-												onApprove: function(data, actions) {
-													return actions.order.capture().then(function(details) {
-														alert('Transaction completed by ' + details.payer.name.given_name + '!');
-													});
-												}
-											}).render('#paypal-button-container');
+											$(document).ready(function(){
+												$(".select_course").show();
+												$(".loading").hide();
+												$('.select_course').on('change', function(){
+													var amount = $(this).val();
+													$("#paypal-button-container").children().remove();
+													paypal.Buttons({
+														style: {
+															shape: 'rect',
+															color: 'gold',
+															layout: 'vertical',
+															label: 'paypal',
+														},
+														createOrder: function(data, actions) {
+															return actions.order.create({
+																purchase_units: [{
+																	amount: {
+																		value: amount
+																	}
+																}]
+															});
+														},
+														onApprove: function(data, actions) {
+															return actions.order.capture().then(function(details) {
+																alert('Transaction completed by ' + details.payer.name.given_name + '!');
+															});
+														}
+													}).render('#paypal-button-container');
+												});
+											});
 										</script>
 									</td>
 								</tr>

@@ -2137,6 +2137,12 @@ section .section-title {
     color:var(--graphic-text-gray-color);
     margin-bottom: 0px;
 }
+.video-our__instructure-main>div>div>p>span{
+    font-size: 16.5px;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
+}
 .video-our__instructure-main>div>div>p::first-letter{
     text-transform: uppercase;
 }
@@ -2207,6 +2213,7 @@ section .section-title {
     /* background:#9dcdffba; */
     background-color: #281434;
     padding:15px;
+    margin-top: -10px !important;
 }
 .video-features__course-details>span{
     color:#e480f5;
@@ -2494,6 +2501,47 @@ why use section
 
 #myBtn2:hover{
     background:#281434;
+    color:white;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+#moret{
+    display: none;
+}
+#myBtnt{
+    border:0px;
+    color:blue;
+    border-bottom: 1px solid blue;
+    padding:3px;
+    background:none;
+    font-weight: 700;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#myBtnt:hover{
+    background:blue;
+    color:white;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+}
+
+
+#moret1{
+    display: none;
+}
+#myBtnt1{
+    border:0px;
+    color:blue;
+    border-bottom: 1px solid blue;
+    padding:3px;
+    background:none;
+    font-weight: 700;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#myBtnt1:hover{
+    background:blue;
     color:white;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 }
@@ -2864,6 +2912,7 @@ feature graphic section */
     padding:15px;
     margin-bottom: 2px !important;
     margin-top:2px !important;
+    margin-top:-18px !important;
 }
 .graphic-features__course-details>span{
     color:var(--graphic-front-color);
@@ -3235,6 +3284,7 @@ Game page style
     border:1px solid rgb(54, 54, 54);
     padding:5px;
     margin-bottom: 5px;
+
 }
 @media(max-width:768px){
     .game-our__instructure-main{
@@ -3245,7 +3295,7 @@ Game page style
     
     .game-our__instructure-main>div>div:last-child{
         padding-left: 0px;
-        min-height: 315px;
+        min-height: 200px;
     }
 }
 .game-our__instructure-main>div>div>h3{
@@ -3257,6 +3307,12 @@ Game page style
     font-size: 24px;
 }
 .game-our__instructure-main>div>div>p{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
+}
+.game-our__instructure-main>div>div>p>span{
     font-size: 14.5px;
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
@@ -3329,26 +3385,53 @@ feature graphic section */
 */
 
 /* @@@@@
-Graphic Art Work */
-.game-work{
-    background-color: #080302;
-    padding:15px;
-    margin-top: 2px !important;
+why you learn from us */
+.game-why-us{
+    background:#080302;
+    padding:10px 15px;
+    
 }
-.game-work-heading>h2{
-    color:#fff;
+
+.game-why__us-text>h2{
     font-weight: 500;
     font-family: var(--course-bold-family);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    padding-bottom: 15px;
+    color:rgb(255, 255, 255);
+} 
+.game-why__us-text>p{
+    font-weight: 400;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
 }
-.graphic-artwork-images>a>img{
-    width:89px !important;
-    padding-bottom:8px;
+.game-why__us-results{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+.game-why__us-results>img{
+    color:white;
+    transform: scale(0.8);
+
+    padding-top:15px;
+
+    cursor: pointer;
+}
+.game-why__us-results>p{
+    margin-bottom: 0px;
+}
+
+.game-why__us-results>h4{
+    font-weight: 500;
+    color:#ffffff;
+    font-family: var(--course-bold-family);
+    
+}
+.game-why__us-results>p{
+    font-weight: 500;
+    color:var(--graphic-text-gray-color);
+    font-family: var(--course-bold-family);
 }
 /* @@@@
-Graphic Art work end */
+why you learn from us*/
 /*
 @@@@
 Equpmients
@@ -3484,4 +3567,13 @@ Accommodation page end */
     font-weight: 600;
     font-family: var(--course-bold-family);
     color:#000;
+}
+.slick-slide img{
+    display: inline-block !important;
+}
+.slick-prev:before {
+  color: black !important;
+}
+.slick-next:before {
+  color: black !important;
 }
