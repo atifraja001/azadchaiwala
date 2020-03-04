@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="minor changes">
-      <change afterPath="$PROJECT_DIR$/data/7-Hafiz-Qamar.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/8-Abdullah-Dar.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/testimonial text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/game6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why3.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why4.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why5.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/game/work/why6.mp4" afterDir="false" />
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Batches.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Batches.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/frontend/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/frontend/graphic.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/graphic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/frontend/payments.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/payments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/script.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/frontend/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/video.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/newstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/newstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/helpers/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/helpers/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,21 +133,7 @@
       <workItem from="1583134614334" duration="10039000" />
       <workItem from="1583211290900" duration="8344000" />
       <workItem from="1583238032105" duration="4989000" />
-      <workItem from="1583296812738" duration="8367000" />
-    </task>
-    <task id="LOCAL-00026" summary="hourdiff() added">
-      <created>1580449598505</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1580449598505</updated>
-    </task>
-    <task id="LOCAL-00027" summary="completed status for batches">
-      <created>1580449791266</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1580449791266</updated>
+      <workItem from="1583296812738" duration="11284000" />
     </task>
     <task id="LOCAL-00028" summary="file and email dir fix">
       <created>1580453356017</created>
@@ -497,7 +464,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583296969426</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="minor changes">
+      <created>1583305372235</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1583305372235</updated>
+    </task>
+    <task id="LOCAL-00076" summary="minor changes">
+      <created>1583305380952</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1583305380952</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,10 +537,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="910" y="0" key="CommitChangelistDialog2" timestamp="1583305368227">
+    <state x="910" y="0" key="CommitChangelistDialog2" timestamp="1583305380081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="910" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583305368227" />
+    <state x="910" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583305380081" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1582546224927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
