@@ -223,7 +223,7 @@
                             <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
                                 <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
                             <?php }else{ ?>
-                                Please Call for Details
+                                <p>Please Call for Details</p>
                             <?php } ?>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                             <?php if(count($batch) > 0){ ?>
                             <p><?=$batch[0]['total_students']?> students Max each class</p>
                             <?php }else{ ?>
-                                10-12 students max each class
+                                <p>10-12 students max each class</p>
                             <?php } ?>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
                             <?php if(count($batch) > 0){ ?>
                             <p><?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?> hours per day, <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?> Days</p>
                             <?php }else{ ?>
-                                4 hours per day, 4 Weeks
+                                <p>4 hours per day, 4 Weeks</p>
                             <?php } ?>
                         </div>
                     </div>

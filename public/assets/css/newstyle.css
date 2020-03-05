@@ -9,7 +9,7 @@
     list-style: none;
     font-size: 16px;
     color: #505050;
-    font-family: open sans,helvetica neue,Helvetica,Arial, sans-serif;;
+    font-family: open sans,helvetica neue,Helvetica,Arial, sans-serif;
     vertical-align: baseline;
     font-weight: 400;
     line-height: 26px;
@@ -941,7 +941,7 @@ single course section
 }
 .signlecoursetext>p{
 
-    font-family: 'Lora', serif;
+    font-family: 'open sans', serif;
     font-size: 18px;
 }
 .imagesanddetailsc{
@@ -1886,8 +1886,13 @@ section .section-title {
 @@ video graphy course page design
 @@@*/
 *{
---course-bold-family:'Segoe UI','Segoe UI Emoji','Segoe UI Symbol';
---course-family:sf pro text,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+--course-bold-family:'lato ' serif 'open sans';
+--course-family:Arial;
+/*open sans 
+roboto 
+lato 
+helvetica
+ montserrat*/
 /* @@@@ over all main css */
 --margin-top-overall:2px;
 --padding-overall:15px;
@@ -2784,9 +2789,12 @@ page desgin
     margin-bottom: 2px;
 }
 .graphic-will-learn>h3{
-    font-weight: 700;
+    font-weight: 500;
     font-family: var(--course-bold-family);
     color:#000;
+}
+.graphic-will__learn-text>ul{
+    margin-bottom: 0px;
 }
 .graphic-will__learn-text>ul>li>i{
     font-size: 15px;
@@ -2925,7 +2933,7 @@ feature graphic section */
     width: 100px;;
 }
 .graphic-features__course-details>h3{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--course-bold-family);
     color:var(--graphic-white-color);
 }
@@ -2942,12 +2950,12 @@ feature graphic section */
     width: 100px;;
 }
 .graphic-features__course-details>a>h3{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--course-bold-family);
     color:var(--graphic-white-color);
 }
 .graphic-features__course-details>a>p{
-    font-weight: 500;
+    font-weight: 400;
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
 }
@@ -2982,7 +2990,7 @@ Graphic Art Work */
 }
 .graphic-artwork-heading>h2{
     color:var(--graphic-front-color);
-    font-weight: 700;
+    font-weight: 500;
     font-family: var(--course-bold-family);
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -3010,7 +3018,7 @@ Equpmients
 }
 .graphic-equipments-course>h2{
     color:var(--graphic-front-color);
-    font-weight: 700;
+    font-weight: 500;
     margin-top:5px;
     margin-bottom:15px;
     text-transform: uppercase;
@@ -3018,7 +3026,7 @@ Equpmients
 .graphic-equipments-images{
     border:1px solid var(--graphic-border-color);
     padding:2px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .graphic-equipments-images>a>img{
     width: 100%;
@@ -3026,27 +3034,12 @@ Equpmients
 
 /* 
 @@@@
-Equpmients
+Equpmients end
 @@@@ 
 */
-.graphic-equipments-course{
-    padding:15px;
-    background:#1A1A1A;
-}
-.graphic-equipments-course>h2{
-    color:var(--graphic-front-color);
-    font-weight: 700;
-    margin-top:5px;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    text-transform: uppercase;
-}
-.graphic-equipments-images{
-    border:1px solid var(--graphic-border-color);
-    padding:2px;
-    margin-bottom: 10px;
-}
-/* equpminets */
+
+
+
 
 /* last enroll button of graphic */
 
@@ -3247,7 +3240,7 @@ Game page style
     margin-bottom: 2px;
 }
 .game-will-learn>h3{
-    font-weight: 700;
+    font-weight: 500;
     font-family: var(--course-bold-family);
     color:#000;
 }
@@ -3340,12 +3333,12 @@ feature graphic section */
     width: 100px;;
 }
 .game-features__course-details>h3{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--course-bold-family);
     color:var(--graphic-white-color);
 }
 .game-features__course-details>p{
-    font-weight: 500;
+    font-weight: 400;
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
 }
@@ -3357,12 +3350,12 @@ feature graphic section */
     width: 100px;;
 }
 .game-features__course-details>a>h3{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--course-bold-family);
     color:var(--graphic-white-color);
 }
 .game-features__course-details>a>p{
-    font-weight: 500;
+    font-weight: 400;
     font-family: var(--course-family);
     color:var(--graphic-text-gray-color);
 }
@@ -3520,12 +3513,12 @@ Equpmients
     margin-bottom:15px;
     text-transform: uppercase;
 }
-.graphic-equipments-images{
+.game-equipments-images{
     border:1px solid var(--graphic-border-color);
     padding:2px;
     margin-bottom: 5px;
 }
-.graphic-equipments-images>a>img{
+.game-equipments-images>a>img{
     width: 100%;
 }
 
