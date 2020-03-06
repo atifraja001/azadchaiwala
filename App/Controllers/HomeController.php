@@ -132,6 +132,18 @@ class HomeController extends \Core\Controller
         View::render('frontend/game.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
+    public function basicComputer(){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Basic Computer Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/basic-computer.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
     // @
     // static courses page end
 
