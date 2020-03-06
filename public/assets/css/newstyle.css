@@ -3179,6 +3179,36 @@ Game page style
 
 
 
+
+
+
+
+
+/* will learn section of the game page */
+.game-will-learn{
+    margin-top: 0px !important;
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/game/topbackground.png');
+    margin-bottom: 2px;
+}
+.game-will-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
+.game-will__learn-text>ul{
+    margin-bottom: 0px ;
+}
+.game-will__learn-text>ul>li>i{
+    font-size: 15px;
+    margin-top: 5px;
+    color:rgb(0, 0, 0);
+}
+.game-will__learn-text>ul>li>span{
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+
 .game-learn-section>div>div{
     padding-right: 0px;
     padding-left: 0px;
@@ -3186,7 +3216,7 @@ Game page style
 }
 .game-learn{
     padding:15px;
-    min-height: 435px;
+    min-height: 455px;
 }
 .game-learn>ul{
     margin-bottom: 0px;
@@ -3227,34 +3257,6 @@ Game page style
     font-size: 15px;
     color:#000 !important;
     margin-top:8px;   
-}
-
-
-
-
-/* will learn section of the game page */
-.game-will-learn{
-    margin-top: 0px !important;
-    padding:15px;
-    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/game/topbackground.png');
-    margin-bottom: 2px;
-}
-.game-will-learn>h3{
-    font-weight: 500;
-    font-family: var(--course-bold-family);
-    color:#000;
-}
-.game-will__learn-text>ul{
-    margin-bottom: 0px ;
-}
-.game-will__learn-text>ul>li>i{
-    font-size: 15px;
-    margin-top: 5px;
-    color:rgb(0, 0, 0);
-}
-.game-will__learn-text>ul>li>span{
-    font-size: 17px;
-    color: rgb(0, 0, 0);
 }
 /* end the will learn section of the game page */
 
@@ -3656,4 +3658,272 @@ Accommodation page end */
 .slick-next:before {
   color: black !important;
   font-size: 30px !important;
+}
+
+
+/*----------
+@@@@@  
+@@basic computer courese page
+@@@@@*/
+
+
+/* top banner of game page */
+
+.basic_computer-section{
+    background:linear-gradient(to right bottom, rgb(57, 78, 71,0.7),  rgb(216, 218, 201, 0.7)), url('../img/graphics/dots.png');
+    padding:10px 15px;
+    margin-bottom: 2px;
+}
+@media(min-width:790px){
+.basic_computer-section>div>div:first-child{
+    padding-right:5px;
+}
+.basic_computer-section>div>div:last-child{
+    padding-left:5px;
+}
+}
+
+.basic__section-info>h1{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    margin-top:-10px;
+}
+.basic__section-info>p{
+    color:#000;
+    font-family: var(--course-family);
+
+    font-size: 17px;
+    display: inline;
+}
+.basic__section-info>h3{
+    color:#fff;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: var(--course-bold-family);
+    display: inline;
+
+}
+.basic-enroll-button{
+    margin-top: 10px;
+}
+.basic-enroll-button>a{
+    background:var(--enroll-button-color);
+    border:0px;
+    border-radius: 0px;
+    color:var(--graphic-black-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: var(--course-bold-family);
+}
+.basic-enroll-button>a>span{
+    color:#000;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    padding-right: 5px;
+    font-size: 30px;
+    color:#7e4ead;
+}
+.basic-enroll-button>a:hover{
+    background:var(--enroll-button-hover-color) !important;
+    color:var(--graphic-black-color) !important;
+    text-transform: uppercase;
+
+}
+
+.basic-will-learn{
+    margin-top: 0px !important;
+    padding:15px;
+    background:linear-gradient(to right bottom, rgba(0,0,0,0.03), rgba(0,0,0,.03)) , url('../img/game/topbackground.png');
+    margin-bottom: 2px;
+}
+.basic-will-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#000;
+}
+.basic-will__learn-text>ul{
+    margin-bottom: 0px ;
+}
+.basic-will__learn-text>ul>li>i{
+    font-size: 15px;
+    margin-top: 5px;
+    color:rgb(0, 0, 0);
+}
+.basic-will__learn-text>ul>li>span{
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+}
+
+.basic-learn-section>div>div{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top:0px !important;
+}
+.basic-learn{
+    padding:15px;
+    min-height: 455px;
+}
+.basic-learn>ul{
+    margin-bottom: 0px;
+}
+@media(max-width:768px){
+    .basic-learn{
+        min-height: auto;
+    }
+}
+/* first */
+.basic-course-for{
+    
+    background:#DA8200 url('../img/graphics/box-bg.png');
+}
+/* second */
+.basic-course-benefit{
+    background:#8E2034 url('../img/graphics/box-bg.png');
+}
+/* third */
+.basic-course-return{
+    background:#69222F url('../img/graphics/box-bg.png');
+}
+/* fourth */
+.basic-course-notdo{
+    background:rgba(62, 40, 59,0.9) url('../img/graphics/box-bg.png');
+}
+.basic-learn>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#fff;
+} 
+.basic-learn>ul>li>span{
+    font-size: 17px;
+    font-family: var(--course-family);
+    color:rgb(226, 224, 224);
+}
+.basic-learn>ul>li>i{
+    font-size: 15px;
+    color:#000 !important;
+    margin-top:8px;   
+}
+
+
+/* instructor part */
+.basic-our-insturcture{
+    padding:15px;
+    background:#929D96;
+    margin-top: 2px !important;
+}
+@media(min-width:769px){
+    .basic-our-insturcture>div>div:first-child{
+        padding-right:7.5px !important;
+    }
+    .basic-our-insturcture>div>div:last-child{
+        padding-left:7.5px !important;
+    }
+}
+
+
+
+.basic-our__instructure-main{
+
+
+ text-align: left;
+
+}
+@media(max-width:768px){
+    .basic-our__instructure-main{
+        margin-bottom: 5px;
+    }
+}
+@media(min-width:769px){
+    
+    .basic-our__instructure-main>div>div:last-child{
+        padding-left: 0px;
+        min-height: 200px;
+    }
+}
+.basic-our__instructure-main>div>div>h3{
+    font-weight: 500;
+    font-family: var(--course-bold-family);
+    color:#000;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+.basic-our__instructure-main>div>div>p{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:#000;
+    margin-bottom: 0px;
+}
+.basic-our__instructure-main>div>div>p>span{
+    font-size: 14.5px;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+    margin-bottom: 0px;
+}
+/* instructor part end */
+
+
+
+/* @@@@
+feature graphic section */
+.basic-features-course{
+    background:#080302;
+    padding:15px;
+    margin-bottom: 2px !important;
+    margin-top:2px !important;
+}
+.basic-features__course-details>span{
+    color:#23dac9;
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.basic-features__course-details>h3{
+    font-weight: 400;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.basic-features__course-details>p{
+    font-weight: 400;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+.basic-features__course-details>a>span{
+    color:#23dac9;
+    padding:10px;
+    font-weight: 400;
+    font-size: 40px !important;
+    width: 100px;;
+}
+.basic-features__course-details>a>h3{
+    font-weight: 400;
+    font-family: var(--course-bold-family);
+    color:var(--graphic-white-color);
+}
+.basic-features__course-details>a>p{
+    font-weight: 400;
+    font-family: var(--course-family);
+    color:var(--graphic-text-gray-color);
+}
+.basic-features__course-details>a:hover{
+    text-decoration: none;
+}
+
+.basic-enrol-button>.btn{
+    border:0px;
+    border-radius: 0px;
+    background:var(--enroll-button-color);
+    color:var(--graphic-black-color);
+    font-weight: bold;
+    padding:10px 50px;
+    width: 240px;
+
+}
+.basic-enrol-button>.btn:hover{
+    background:var(--enroll-button-hover-color);
+    color:var(--graphic-black-color);
 }
