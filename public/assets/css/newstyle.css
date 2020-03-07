@@ -339,7 +339,7 @@ courses Area
 }
 
 .course__card-fee {
-    position: absolute;
+    /*position: absolute;*/
     font-weight: 700;
     font-family: var(--course-family);
     padding: 6px 30px;
