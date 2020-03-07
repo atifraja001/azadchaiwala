@@ -15,22 +15,17 @@
 		<div class="row">
 			<?php $counter = 1; foreach($courses as $c){ ?>
 				<?php
-					$heading = array(
-						"Only 2 seats left",
-						"Next Batch Starting on 25-02-2020",
-						"Next Batch Starting in 2 days",
-						"Limited Seats",
-						"Only 1 seat left"
-					);
 					if($counter <= 4){
 					$counter++;
 				?>
 			<div class="col-lg-4">
 				<div class="course-card">
 					<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+						<?php if(isset($heading)){ ?>
 						<div class="course_card-start">
 							<p><?=$heading[rand(0,4)]?></p>
 						</div>
+						<?php } ?>
 						<div class="course__card-image">
 							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
 						</div>
