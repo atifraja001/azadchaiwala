@@ -29,11 +29,12 @@
 						<div class="course__card-image">
 							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
 						</div>
+						<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
 						<div class="course__card-content">
 							<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
 							<p><?=add3Dots($c['course_description'], 100)?></p>
 						</div>
-						<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+
 					</a>
 				</div>
 			</div>

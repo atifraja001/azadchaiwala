@@ -339,13 +339,14 @@ courses Area
 }
 
 .course__card-fee {
-    position: absolute;
+    /*position: absolute;*/
     font-weight: 700;
     font-family: var(--course-family);
     padding: 6px 30px;
     background: #E74C3C;
     top: 200px;
     color: white;
+    width: 150px;
 }
 
 .course_card-start {
