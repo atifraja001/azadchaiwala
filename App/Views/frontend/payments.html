@@ -62,13 +62,15 @@
                                         <i class="fas fa-spinner fa-spin loading" style="font-size: 36px;"></i>
                                         <select class="form-control select_course" style="display: none">
                                             <option hidden value="">Select Course to Pay</option>
-                                            <option value="260">Video Editing, Videography & Freelancing (40,000 pkr)
+                                            <option value="260" data-pkr="40,000">Video Editing, Videography & Freelancing (40,000 pkr)
                                             </option>
-                                            <option value="260">Graphic Designing (40,000 pkr)</option>
-                                            <option value="2600">Game Development (400,000 pkr)</option>
-                                            <option value="65">Advance Computer (10,000 pkr)</option>
-                                            <option value="20">Advance Computer (3,000 pkr)</option>
+                                            <option value="260" data-pkr="40,000">Graphic Designing (40,000 pkr)</option>
+                                            <option value="2600" data-pkr="400,000">Game Development (400,000 pkr)</option>
+                                            <option value="65" data-pkr="10,000">Advance Computer (10,000 pkr)</option>
+                                            <option value="20" data-pkr="3,000">Basic Computer (3,000 pkr)</option>
                                         </select>
+                                        <code id="showPkr"></code>
+                                        <code id="showDollar"></code>
                                     </td>
                                 </tr>
                                 <tr>
@@ -77,7 +79,7 @@
                                         <div id="paypal-button-container"></div>
 
                                         <!-- Include the PayPal JavaScript SDK -->
-                                        <script src="https://www.paypal.com/sdk/js?client-id=Aeql447eX-lHXVikvdFq0cBWaY1r2zGR9GfmizOFrkdJ0r9CAr1mtqTvcARpJ-FJqJssiq9GKpxSzCRq&currency=USD"></script>
+                                        <script src="https://www.paypal.com/sdk/js?client-id=<?=\App\Config::PAYPAL_CLIENT_ID?>&currency=USD"></script>
                                         <script src="<?=app_url()?>/assets/js/jquery.min.js"></script>
                                         <script>
                                             $(document).ready(function () {
@@ -85,6 +87,9 @@
                                                 $(".loading").hide();
                                                 $('.select_course').on('change', function () {
                                                     var amount = $(this).val();
+                                                    var amount_pkr = $('.select_course option:selected').attr('data-pkr');
+                                                    $('#showPkr').text(amount_pkr+" pkr = ");
+                                                    $('#showDollar').text(amount+"$ ");
                                                     $("#paypal-button-container").children().remove();
                                                     paypal.Buttons({
                                                         style: {
