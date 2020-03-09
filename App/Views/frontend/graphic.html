@@ -886,7 +886,7 @@
                     <?php if(count($batch) > 0){ ?>
                     <p>The next batch for this course will start on (<?=date('F d, Y', strtotime($batch[0]['start_date']));?>) and end on (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>). You
                         can see all future batches on the <a
-                                href="<?=app_url()?>/course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan">signup
+                                href="<?=app_url()?>/course-registration/<?=$slug?>">signup
                             page</a>.</p>
                     <?php }else{ ?>
                         Please contact us via email or phone number for next batch details
