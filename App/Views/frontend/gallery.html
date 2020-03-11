@@ -1,12 +1,13 @@
 
 <section class="gallery">
-
     <div class="container">
         <div class="row">
             <?php foreach($gals as $g){?>
-            <a href="<?=app_url()?>/content/gallery_images/<?=$g['image'];?>" data-toggle="lightbox" data-gallery="gallery"  class="col-md-4 mt-3 <?=$g['class'];?>">
-                <img src="<?=app_url()?>/getImage?i=<?=$g['id']?>&t=gallery" class="img-fluid galleryimage img-thumbnail">
-            </a>
+            <div class="col-md-2 p-1">
+                <a href="<?=app_url()?>/content/gallery_images/<?=$g['image'];?>" data-toggle="lightbox" data-gallery="gallery"  class="<?=$g['class'];?>">
+                    <img src="<?=app_url()?>/content/gallery_images/thumbs/<?=$g['image'];?>" class="img-fluid galleryimage img-thumbnail">
+                </a>
+            </div>
             <?php } ?>
         </div>
     </div>
