@@ -4469,3 +4469,26 @@ feature graphic section */
     font-family: var(--course-family);
     color: black;
 }
+.php__section-info > h1 {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 700;
+    font-family: var(--course-bold-family);
+    margin-top: -10px;
+}
+.php__section-info > p {
+    color: #fff;
+    font-family: var(--course-family);
+
+    font-size: 17px;
+    display: inline;
+}
+
+.php__section-info > h3 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: var(--course-bold-family);
+    display: inline;
+
+}
