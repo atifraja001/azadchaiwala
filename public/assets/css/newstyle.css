@@ -1715,7 +1715,7 @@ single course section
 }
 
 .galleryimage {
-    height: 250px;
+    height: 140px !important;
     width: 100%;
 }
 
@@ -4412,4 +4412,11 @@ feature graphic section */
     margin-top: 5px;
     margin-bottom: 15px;
     text-transform: uppercase;
+}
+
+.php-will-learn {
+    margin-top: 0px !important;
+    padding: 15px;
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, .03)), url('../img/php/topbackground.png');
+    margin-bottom: 2px;
 }

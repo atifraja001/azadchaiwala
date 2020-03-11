@@ -148,6 +148,18 @@ class HomeController extends \Core\Controller
         View::render('frontend/basic-computer.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
+    public function phpCourse(){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Web Development in PHP Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/php_course.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
     // @
     // static courses page end
 
@@ -364,4 +376,5 @@ class HomeController extends \Core\Controller
         }
         echo json_encode($data);
     }
+
 }
