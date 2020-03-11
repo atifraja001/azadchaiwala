@@ -4016,14 +4016,6 @@ Accommodation page */
 .accommodation-images {
     margin-top: 20px;
 }
-
-.accommodation-images > div > div {
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-top: 4px;
-}
-
 .link-accommodation {
     font-weight: 700;
     color: royalblue !important;
