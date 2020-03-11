@@ -40,7 +40,7 @@ class GalleryController
     public function add_new_gallery_post(){
         // preparing file to upload
         $file_names = array();
-        $path = "dropbox/azadchaiwala.pk/public/content/gallery_images";
+        $path = "../content/gallery_images";
         $file_names = multiUploadFile('gallery_picture', $path, 5);
         $gl = new \App\Models\Gallery();
 
