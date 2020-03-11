@@ -40,11 +40,13 @@ class GalleryController
     public function add_new_gallery_post(){
         // preparing file to upload
         $file_names = array();
-        $file_names = multiUploadFile('gallery_picture', '../content/gallery_images', 5);
+        $path = "../content/gallery_images";
+        $file_names = multiUploadFile('gallery_picture', $path, 5);
         $gl = new \App\Models\Gallery();
 
         if(count($file_names) > 0) {
             foreach ($file_names as $key => $value){
+                compressImage($value, $path, 50);
                 // preparing data
                 $data = [
                     ':class' => "none",

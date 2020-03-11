@@ -42,15 +42,9 @@ function multiUploadFile($file, $path,
     $upload = false;
     $file_size = $file_size * 1000000;
     $path = $_SERVER['DOCUMENT_ROOT'] . "/" . $path;
-    if (file_exists($path)) {
-        if ($create_path) {
+    if($create_path){
+        if(!file_exists($path)){
             mkdir($path, 0750, true);
-        }
-    } else {
-        if ($create_path) {
-            mkdir($path, 0750, true);
-        } else {
-            $response = "invalid_path";
         }
     }
     for($index = 0; $index < $file_count; $index++) {
@@ -122,15 +116,9 @@ function uploadfile($file, $path,
 {
     $file_size = $file_size * 1000000; // default is 2 MB
     $path = $_SERVER['DOCUMENT_ROOT'] . "/" . $path;
-    if (file_exists($path)) {
-        if ($create_path) {
+    if($create_path){
+        if(!file_exists($path)){
             mkdir($path, 0750, true);
-        }
-    } else {
-        if ($create_path) {
-            mkdir($path, 0750, true);
-        } else {
-            return "invalid_path";
         }
     }
     if ($generate_name) {
@@ -431,4 +419,38 @@ function formatSizeUnit($bytes)
  */
 function getUrl(){
     return (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+}
+
+/*
+ *
+ * compressImage (PHP 5, 7)
+ * creates a "thumbs" directory if not exist in the same folder that image exists.
+ * save the file in thumbs directory as same as original image name.
+ *
+ * compressImage(string $course, string $destination, string $quality)
+ *
+ * @GD Extension is required.
+ *
+ * This function a minor modification to imagejpeg, to read more about imagejpeg follow this link.
+ * https://www.php.net/manual/en/function.imagejpeg.php
+ *
+ * @return void
+ */
+function compressImage($source, $destination, $quality) {
+    $destination = $_SERVER['DOCUMENT_ROOT'] . "/" . $destination;
+    $temp_source = $destination."/".$source;
+    if(!file_exists($destination."/thumbs/")){
+        mkdir($destination."/thumbs/", 0750, true);
+    }
+    $info = getimagesize($temp_source);
+    if ($info['mime'] == 'image/jpeg')
+        $image = imagecreatefromjpeg($temp_source);
+    elseif ($info['mime'] == 'image/gif')
+        $image = imagecreatefromgif($temp_source);
+    elseif ($info['mime'] == 'image/png')
+        $image = imagecreatefrompng($temp_source);
+    elseif ($info['mime'] == 'image/jpg')
+        $image = imagecreatefromjpg($temp_source);
+
+    imagejpeg($image, $destination."/thumbs/".$source, $quality);
 }
