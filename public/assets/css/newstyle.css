@@ -4420,3 +4420,52 @@ feature graphic section */
     background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, .03)), url('../img/php/topbackground.png');
     margin-bottom: 2px;
 }
+/* first */
+.php-course-for {
+
+    background: #b8daff url('../img/graphics/box-bg.png');
+}
+.php-course-for > h3{
+    color: black;
+}
+.php-course-for > ul > li > span {
+    font-size: 17px;
+    font-family: var(--course-family);
+    color: black;
+}
+/* second */
+.php-course-benefit {
+    background: #8fd19e url('../img/graphics/box-bg.png');
+}
+.php-course-benefit > h3{
+    color: black;
+}
+.php-course-benefit > ul > li > span {
+    font-size: 17px;
+    font-family: var(--course-family);
+    color: black;
+}
+/* third */
+.php-course-return {
+    background: #ed969e url('../img/graphics/box-bg.png');
+}
+.php-course-return > h3{
+    color: black;
+}
+.php-course-return > ul > li > span {
+    font-size: 17px;
+    font-family: var(--course-family);
+    color: black;
+}
+/* fourth */
+.php-course-notdo {
+    background: #86cfda url('../img/graphics/box-bg.png');
+}
+.php-course-notdo > h3{
+    color: black;
+}
+.php-course-notdo > ul > li > span {
+    font-size: 17px;
+    font-family: var(--course-family);
+    color: black;
+}
