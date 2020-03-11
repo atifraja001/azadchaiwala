@@ -194,11 +194,13 @@ class HomeController extends \Core\Controller
         // get batch name
         $getbatch = new \App\Models\Batches();
         $getbatch = $getbatch->GetBatchByCourseId($course['id']);
+        // get batch name
+        $terms = $courses->GetCourseTerms($course['id']);
 
         View::render('frontend/layouts/head.html', ['title' => 'Register ' . $course['course_name']]);
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/course-registration.html', [
-            'course' => $course, 'batch' => $getbatch
+            'course' => $course, 'batch' => $getbatch, 'terms' => $terms
         ]);
         View::render('frontend/layouts/script.html');
     }

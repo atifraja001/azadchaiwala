@@ -204,4 +204,10 @@ class Courses extends \Core\Model
         $stmt->execute([":id"=>$id]);
         return $course_id;
     }
+    public function GetCourseTerms($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM course_tc WHERE course_id = :id");
+        $stmt->execute([":id"=>$id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
