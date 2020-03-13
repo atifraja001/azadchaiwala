@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="">
+    <list default="true" id="b2988cc4-4a66-4b4d-87db-af2bad28d6bc" name="Default Changelist" comment="PHP Course">
+      <change afterPath="$PROJECT_DIR$/awais about.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new final.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php-7.4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php-illustration.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php74.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/10.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/10s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/11.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/11s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/12.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/12s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/13.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/13s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/14.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/14s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/15.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/15s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/16.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/16s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/17.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/17s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/18.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/18s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/1s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/2.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/25s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/26s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/27s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/28s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/29s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/2s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/3.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/30s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/3s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/4.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/4s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/5.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/5s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/6.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/6s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/7.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/7s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/8.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/8s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/9.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/9s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/php-final.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/php/php-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/teacher_images/awais.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/teacher_images/awais.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/graphic.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/graphic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/layouts/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/php_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/php_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/frontend/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/frontend/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/newstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/newstyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +118,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../thelastdome" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
@@ -133,154 +197,13 @@
       <workItem from="1583315656574" duration="142000" />
       <workItem from="1583323496136" duration="615000" />
       <workItem from="1583391049366" duration="1755000" />
-      <workItem from="1583478173648" duration="3907000" />
-    </task>
-    <task id="LOCAL-00032" summary="minor changes">
-      <created>1580477096234</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1580477096234</updated>
-    </task>
-    <task id="LOCAL-00033" summary="content path update">
-      <created>1580722651616</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1580722651616</updated>
-    </task>
-    <task id="LOCAL-00034" summary="content path update">
-      <created>1580723114561</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1580723114561</updated>
-    </task>
-    <task id="LOCAL-00035" summary="content path update">
-      <created>1580794123625</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1580794123626</updated>
-    </task>
-    <task id="LOCAL-00036" summary="content path update">
-      <created>1580794678041</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1580794678041</updated>
-    </task>
-    <task id="LOCAL-00037" summary="content path update">
-      <created>1580795529202</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1580795529202</updated>
-    </task>
-    <task id="LOCAL-00038" summary="content path update">
-      <created>1580795649983</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1580795649983</updated>
-    </task>
-    <task id="LOCAL-00039" summary="content path update">
-      <created>1580795837988</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1580795837988</updated>
-    </task>
-    <task id="LOCAL-00040" summary="minor changes">
-      <created>1581058081913</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1581058081913</updated>
-    </task>
-    <task id="LOCAL-00041" summary="bug fixes">
-      <created>1582089243670</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1582089243670</updated>
-    </task>
-    <task id="LOCAL-00042" summary="static for course">
-      <created>1582089336828</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1582089336828</updated>
-    </task>
-    <task id="LOCAL-00043" summary="minor changes">
-      <created>1582089946161</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1582089946161</updated>
-    </task>
-    <task id="LOCAL-00044" summary="minor changes">
-      <created>1582091775925</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1582091775925</updated>
-    </task>
-    <task id="LOCAL-00045" summary="minor changes">
-      <created>1582092101010</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1582092101010</updated>
-    </task>
-    <task id="LOCAL-00046" summary="minor changes">
-      <created>1582092130896</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1582092130896</updated>
-    </task>
-    <task id="LOCAL-00047" summary="minor changes">
-      <created>1582092310797</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1582092310797</updated>
-    </task>
-    <task id="LOCAL-00048" summary="minor changes">
-      <created>1582092399924</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1582092399924</updated>
-    </task>
-    <task id="LOCAL-00049" summary="minor changes">
-      <created>1582092704054</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1582092704054</updated>
-    </task>
-    <task id="LOCAL-00050" summary="minor changes">
-      <created>1582109591875</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1582109591876</updated>
-    </task>
-    <task id="LOCAL-00051" summary="minor changes">
-      <created>1582110621915</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1582110621915</updated>
-    </task>
-    <task id="LOCAL-00052" summary="minor changes">
-      <created>1582112451121</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1582112451121</updated>
+      <workItem from="1583478173648" duration="8292000" />
+      <workItem from="1583729047116" duration="7713000" />
+      <workItem from="1583756034163" duration="50000" />
+      <workItem from="1583770538814" duration="729000" />
+      <workItem from="1583815772629" duration="4313000" />
+      <workItem from="1583904486766" duration="16103000" />
+      <workItem from="1584075587723" duration="3649000" />
     </task>
     <task id="LOCAL-00053" summary="minor changes">
       <created>1582112503300</created>
@@ -478,7 +401,154 @@
       <option name="project" value="LOCAL" />
       <updated>1583489752032</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="minor changes">
+      <created>1583489922866</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1583489922866</updated>
+    </task>
+    <task id="LOCAL-00082" summary="minor changes">
+      <created>1583489933343</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1583489933343</updated>
+    </task>
+    <task id="LOCAL-00083" summary="minor changes">
+      <created>1583490060100</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1583490060100</updated>
+    </task>
+    <task id="LOCAL-00084" summary="minor changes">
+      <created>1583490983818</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1583490983818</updated>
+    </task>
+    <task id="LOCAL-00085" summary="minor changes">
+      <created>1583491924610</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1583491924610</updated>
+    </task>
+    <task id="LOCAL-00086" summary="minor changes">
+      <created>1583492142579</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1583492142579</updated>
+    </task>
+    <task id="LOCAL-00087" summary="minor changes">
+      <created>1583492803294</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1583492803294</updated>
+    </task>
+    <task id="LOCAL-00088" summary="minor changes">
+      <created>1583493345446</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1583493345446</updated>
+    </task>
+    <task id="LOCAL-00089" summary="featured image height fixed">
+      <created>1583732667993</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1583732667994</updated>
+    </task>
+    <task id="LOCAL-00090" summary="featured image adjust">
+      <created>1583732818098</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1583732818098</updated>
+    </task>
+    <task id="LOCAL-00091" summary="faq course link added">
+      <created>1583738301327</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1583738301327</updated>
+    </task>
+    <task id="LOCAL-00092" summary="PHP Course">
+      <created>1583907997580</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1583907997580</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Gallery Thumbnails">
+      <created>1583908021853</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1583908021853</updated>
+    </task>
+    <task id="LOCAL-00094" summary="path fix">
+      <created>1583908231190</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1583908231191</updated>
+    </task>
+    <task id="LOCAL-00095" summary="image link update">
+      <created>1583909252817</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1583909252817</updated>
+    </task>
+    <task id="LOCAL-00096" summary="PHP Course">
+      <created>1583919290662</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1583919290662</updated>
+    </task>
+    <task id="LOCAL-00097" summary="T&amp;C">
+      <created>1583929690816</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1583929690816</updated>
+    </task>
+    <task id="LOCAL-00098" summary="PHP Course">
+      <created>1583931459609</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1583931459609</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Accommodation">
+      <created>1583934110057</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1583934110057</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Accommodation">
+      <created>1583934443453</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1583934443453</updated>
+    </task>
+    <task id="LOCAL-00101" summary="accommodation">
+      <created>1583934527867</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1583934527867</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="sql update" />
-    <MESSAGE value="minor update" />
     <MESSAGE value="issue updated" />
     <MESSAGE value="update" />
     <MESSAGE value="Database upgrade" />
@@ -514,7 +582,19 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="static for course" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="featured image height fixed" />
+    <MESSAGE value="featured image adjust" />
+    <MESSAGE value="faq course link added" />
+    <MESSAGE value="compressImage added" />
+    <MESSAGE value="PHP Course added" />
+    <MESSAGE value="Gallery Thumbnails" />
+    <MESSAGE value="path fix" />
+    <MESSAGE value="image link update" />
+    <MESSAGE value="T&amp;C" />
+    <MESSAGE value="PHP Course" />
+    <MESSAGE value="Accommodation" />
+    <MESSAGE value="accommodation" />
+    <option name="LAST_COMMIT_MESSAGE" value="accommodation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Composer" timestamp="1577696579920">
@@ -537,14 +617,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577870787742" />
-    <state x="910" y="0" width="749" height="1030" key="CommitChangelistDialog2" timestamp="1583489746828">
+    <state x="910" y="0" width="749" height="1030" key="CommitChangelistDialog2" timestamp="1584077411004">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="910" y="0" width="749" height="1030" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583489746828" />
+    <state x="910" y="0" width="749" height="1030" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584077411004" />
     <state x="184" y="91" key="DiffContextDialog" timestamp="1582546224927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="91" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582546224927" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1583756090792">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583756090792" />
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1577882094131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -557,10 +641,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="795" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578382569686" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1579154287406">
+    <state x="461" y="163" key="SettingsEditor" timestamp="1584076725449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579154287406" />
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584076725449" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1578379740279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -25,10 +25,10 @@ $notis = $noti->getNotification();
       <a class="navbar-brand" href="<?=app_url()?>/">
         <img src="<?=app_url()?>/assets/img/institute-logo-black.jpg" alt="logo of azadchaiwala">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse p-4" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
             <a class="nav-link" href="<?=app_url()?>/courses">LEARN SKILLS</a>
@@ -70,6 +70,9 @@ $notis = $noti->getNotification();
             <a class="header__under-item" href="<?=app_url()?>/payments">PAYMENTS</a>
             <a class="header__under-item" href="<?=app_url()?>/about">ABOUT</a>
             <a class="header__under-item" href="<?= app_url()?>/contact">CONTACT US</a>
+        </div>
+        <div class="number-mobile">
+            <h3 class="font-weight-bold text-dark">Call Us - 0344 88 84 899</h3>
         </div>
     </div>
 </div>

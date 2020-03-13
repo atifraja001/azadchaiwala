@@ -20,8 +20,13 @@
                         begin a profitable career in freelancing in order to earn foreign currency.
                     </p>
                     <div class="video-enroll-button">
+                        <?php if(count($batch) == 0){ ?>
+                        <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#"><span>Change Your Life </span>Enroll
+                            Now</a>
+                        <?php }else{ ?>
                         <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll
                             Now</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -151,7 +156,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <img alt="teacher image"
-                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/157909819620377545615e1f2053e69dd.jpg">
+                                 class="img-fluid"
+                                 src="<?=app_url()?>/assets/teacher_images/157909819620377545615e1f2053e69dd.jpg">
                         </div>
                         <div class="col-lg-6 ">
                             <h3>Instructor: Khizzar</h3>
@@ -246,8 +252,51 @@
                             <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
                                 <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
                             <?php }else{ ?>
-                            <p>Please Call for Details</p>
+                            <p><a data-target="#myModal" data-toggle="modal" href="#">Click for details</a></p>
                             <?php } ?>
+                            <!-- modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <!-- Modal body -->
+                                        <div class="modal-body text-left">
+                                            <button class="close" data-dismiss="modal" style="font-size:30px;"
+                                                    type="button">&times;
+                                            </button>
+                                            <div class="text-center mt-2">
+                                                <h3 class="font-weight-bold ">ٱلْحَمْدُ لِلَّٰهِ</h3>
+                                                <p>All batches are full. We are still awaiting to announce the next
+                                                    dates. If you would like to be contacted when new dates announced
+                                                    Please fill in your details</p>
+                                            </div>
+                                            <form class="needs-validation pop-form" novalidate>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Name"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Email"
+                                                               required type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter your Number"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-success" type="submit">Submit Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- Modal footer -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal end -->
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2">
@@ -290,7 +339,11 @@
 
             <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="video-features__course-details video-enrol-button">
-                    <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"> Enroll Now</a>
+                    <?php if(count($batch) == 0){ ?>
+                    <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#">Enroll Now</a>
+                    <?php }else{ ?>
+                    <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -309,7 +362,8 @@
                         (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the
                         <a href="<?=app_url()?>/course-registration/<?=$slug?>">signup page</a>.</p>
                     <?php }else{ ?>
-                    <p>Please contact us via email or phone number for next batch details</p>
+                    <p><a data-target="#myModal" data-toggle="modal" href="#">Click here to get details for next
+                        batch.</a></p>
                     <?php } ?>
                 </div>
                 <div class="videoo-faqs-course-inner">
@@ -979,7 +1033,12 @@
     <!-- enrollNow -->
     <div class="container graphic_lastenroll-now text-center ">
         <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
-        <a class="btn btn-lg" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now <i
+        <?php if(count($batch) == 0){ ?>
+        <a class="btn btn-lg " data-target="#myModal" data-toggle="modal" href="#">Enroll Now <i
                 class="fas fa-angle-double-right"></i></a>
+        <?php }else{ ?>
+        <a class="btn btn-lg " href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now <i
+                class="fas fa-angle-double-right"></i></a>
+        <?php } ?>
     </div>
 </section>

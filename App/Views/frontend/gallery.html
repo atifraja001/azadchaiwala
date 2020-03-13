@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <?php foreach($gals as $g){?>
-            <div class="col-md-2 p-1">
+            <div class="col-md-2  col-md-4 col-6 p-1">
                 <a href="<?=app_url()?>/content/gallery_images/<?=$g['image'];?>" data-toggle="lightbox" data-gallery="gallery"  class="<?=$g['class'];?>">
                     <img src="<?=app_url()?>/content/gallery_images/thumbs/<?=$g['image'];?>" class="img-fluid galleryimage img-thumbnail">
                 </a>
