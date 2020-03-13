@@ -1,3 +1,150 @@
+function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+function myFunction1() {
+    var dots = document.getElementById("dots1");
+    var moreText = document.getElementById("more1");
+    var btnText = document.getElementById("myBtn1");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+function myFunction2() {
+    var dots = document.getElementById("dots2");
+    var moreText = document.getElementById("more2");
+    var btnText = document.getElementById("myBtn2");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+// tutor
+function myFunctiont() {
+    var dots = document.getElementById("dotst");
+    var moreText = document.getElementById("moret");
+    var btnText = document.getElementById("myBtnt");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+function myFunctiont1() {
+    var dots = document.getElementById("dotst1");
+    var moreText = document.getElementById("moret1");
+    var btnText = document.getElementById("myBtnt1");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+
+
+// contact page smooth scroll
+$(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("#contact-down").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
+    });
+});
+
+
+// slick slider
+$('.autoplay').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+});
+
 //Gallery Lightbox
 $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
@@ -119,9 +266,12 @@ for (i = 0; i < acc.length; i++) {
 
 // Input Masker
     $(document).ready(function(){
-        $("#validationTooltip05").inputmask({"placeholder": "", 'mask':"99999-9999999-9"});
-        $("#validationTooltip06").inputmask({"placeholder": "", 'mask':"0399-9999999"});
-        $("input").inputmask({"placeholder": ""});
+        if (typeof inputmask === "function")
+        {
+            $("#validationTooltip05").inputmask({"placeholder": "", 'mask':"99999-9999999-9"});
+            $("#validationTooltip06").inputmask({"placeholder": "", 'mask':"0399-9999999"});
+            $("input").inputmask({"placeholder": ""});
+        }
     });
 //console.log(appurl);
     //ajax request
@@ -176,21 +326,22 @@ $(document).ready(function(){
 
 // Reviews
     // vars
-    'use strict'
-    var	testim = document.getElementsByClassName("testim"),
-        testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
-        testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
-        testimLeftArrow = document.getElementById("left-arrow"),
-        testimRightArrow = document.getElementById("right-arrow"),
-        testimSpeed = 4500,
-        currentSlide = 0,
-        currentActive = 0,
-        testimTimer,
-        touchStartPos,
-        touchEndPos,
-        touchPosDiff,
-        ignoreTouch = 30;
-    ;
+    if($('.testim').length > 0) {
+        'use strict'
+        var testim = document.getElementsByClassName("testim"),
+            testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+            testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+            testimLeftArrow = document.getElementById("left-arrow"),
+            testimRightArrow = document.getElementById("right-arrow"),
+            testimSpeed = 4500,
+            currentSlide = 0,
+            currentActive = 0,
+            testimTimer,
+            touchStartPos,
+            touchEndPos,
+            touchPosDiff,
+            ignoreTouch = 30;
+        ;
 
     window.onload = function() {
 
@@ -259,8 +410,7 @@ $(document).ready(function(){
                     break;
             }
         })
-
-        
+    }
     }
 
 
