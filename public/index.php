@@ -44,6 +44,8 @@ $router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan'
 $router->add('course/become-video-editing-social-media-star', ['controller'=>'HomeController', 'action'=>'videoCourse']);
 $router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller'=>'HomeController', 'action'=>'gameCourse']);
 $router->add('course/basic-computer-course', ['controller'=>'HomeController', 'action'=>'basicComputer']);
+
+$router->add('course/best-web-development-programming-course-in-pakistan', ['controller'=>'HomeController', 'action'=>'phpCourse']);
 $router->add('course/php-programming-course', ['controller'=>'HomeController', 'action'=>'phpCourse']);
 $router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 

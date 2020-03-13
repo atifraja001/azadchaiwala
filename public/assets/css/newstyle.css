@@ -1493,15 +1493,7 @@ single course section
     margin-top: 5%;
 }
 
-.pagefour > div > a {
-    color: white;
-    font-weight: bold;
-    padding: 20px;
-    background: var(--main-color);
-    font-family: 'Lora', serif;
-    letter-spacing: 1px;
-    text-decoration: none;
-}
+
 
 /*404page end*/
 @font-face {
