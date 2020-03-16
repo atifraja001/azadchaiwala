@@ -4424,6 +4424,7 @@ feature graphic section */
     font-size: 17px;
     font-family: var(--course-family);
     color: black;
+    margin-right: -10px;
 }
 /* second */
 .php-course-benefit {
