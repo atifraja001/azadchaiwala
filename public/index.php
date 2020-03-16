@@ -47,6 +47,7 @@ $router->add('course/basic-computer-course', ['controller'=>'HomeController', 'a
 
 $router->add('course/best-web-development-programming-course-in-pakistan', ['controller'=>'HomeController', 'action'=>'phpCourse']);
 $router->add('course/php-programming-course', ['controller'=>'HomeController', 'action'=>'phpCourse']);
+$router->add('course/new-course', ['controller'=>'HomeController', 'action'=>'newCourse']);
 $router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 
 // admin routes

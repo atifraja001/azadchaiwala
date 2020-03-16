@@ -4557,3 +4557,264 @@ Equpmients
 .php-equipments-images > a > img {
     width: 100%;
 }
+
+
+/*@@@@
+@@@
+@ New Design Course
+@@@@@*/
+/*.new-course:not(last-child){
+    margin-bottom: 10px;  
+}*/
+.feature-details-newcourse{
+    /*#f0b242, #4288f0, #42a8f0*/
+    background: #42a8f0 url('../img/contact/topbackground.png');
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding:40px 0px 100px 0px;
+}
+.heading-primary-newcourse{
+    font-weight: 700;
+    color:#000;
+    margin-top:-10px;
+}
+.paragraph{
+    color:#000;
+}
+.enroll-box-newcourse>a{
+    padding:20px;
+    background:yellow;
+    color:#000;
+    border:0px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s;
+    border-bottom: 4px solid #929409;
+}
+.enroll-button__span{
+    font-size: 20px;
+    font-weight: 700;
+    color:#42a8f0;
+}
+.enroll-box-newcourse>a:hover{
+    transform: translateY(-5px);
+    background:yellow;
+    color:#000;
+    box-shadow: 5px 15px 20px rgba(0,0,0,0.45);
+}
+/*new course description*/
+.course-description-newcourse{
+    margin-top:-100px;
+    background:url('../img/php/topbackground.png');
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+.heading-secondry{
+    color:#000;
+    font-weight: 500;
+}
+.description__box-list{
+    margin-bottom: 0px;
+}
+.description__box-list>li>span{
+    font-size: 16px;
+    color:#000;
+}
+.description__box-list>li>i{
+    font-size: 16px;
+    color:#000;
+}
+/*requirments section*/
+.Course-requirments-newcourse{
+    padding:20px 0px;
+}
+.requirments-column1{
+    padding-right: 5px;
+    padding-left: 0px;
+}
+.requirments-column2{
+    padding-right: 5px;
+    padding-left: 0px;  
+}
+.requirments-column3{
+    padding-right: 5px;
+    padding-left: 0px;   
+}
+.requirments-column4{
+    padding-right: 0px;
+    padding-left: 0px;  
+}
+.requirments-box{
+    background:#42a8f0 url('../img/contact/topbackground.png');
+     margin-right: 0px;
+     /*background:green;*/
+     padding:50px 20px;
+     transform: scale(1);
+     transition: 0.3s;
+     min-height: 350px;
+}
+@media (max-width: 1550px) {
+    .requirments-box{
+        min-height: 450px;
+    }
+
+}
+@media (max-width: 1400px) {
+    .requirments-box{
+        min-height: 490px;
+    }
+
+}
+@media (max-width: 1300px) {
+    .requirments-box{
+        min-height: 580px;
+    }
+
+}
+@media (max-width: 990px) {
+    .requirments-box{
+        min-height: auto;
+    }
+
+}
+.requirments-box:hover{
+    transform: scale(1.05);
+    z-index: 10000;
+    box-shadow: 5px 20px 30px rgba(0,0,0,0.45);
+}
+.course-instructor-newcourse{
+    padding:20px 0px;
+}
+.course__instructor--box:not(last-child){
+    margin-bottom: 40px;
+}
+.course__instructor--box{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.instructor-details>p{
+    color:#000;
+}
+.instructor-details>p>span{
+    color:#000;
+}
+.instructor-image>img{
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
+}
+/*course feature details*/
+.course-feature-details{
+    padding:20px 0px;
+    text-align: center;
+}
+.course__feature--col{
+    display: grid;
+    grid-template-columns: 40% 40% 40% 40% 40%;
+    grid-column-gap: 20px;
+
+}
+.feature-box{
+    padding:10px;
+}
+
+
+.feature-box>svg:hover{
+    transform: translateY(-5px);
+}
+.heading-tertiory{
+    font-weight: 500;
+    color:black;
+    margin-top:20px;
+
+}
+.featur-box-enroll{
+    margin-top:50px;
+}
+/*course feature details end*/
+
+/*why us and our work*/
+.why-us-newcourse{
+    background:#75c5fd url('../img/contact/topbackground.png');
+    text-align: center;
+    padding:50px 0px;
+    /*clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);*/
+}
+.Our-work_box{
+    padding-bottom: 50px;
+}
+.our-work__details>h3{
+    margin-top:0px;
+    font-weight: 500;
+}
+.our-work__details>h4{
+    color:#000;
+    margin-top:20px;
+}
+.our-work__details>p{
+    color:#555s;
+}
+
+/*end why us and our work*/
+.Our-institute-newcourse{
+    padding:20px 0px;
+    background:url('../img/php/topbackground.png');
+}
+.ourinstitute-equipments-course {
+    padding: 15px;
+    margin-top: 2px !important;
+}
+.ourinstitute-equipments-course > h2 {
+    color: #000;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+.ourinstitute-equipments-course > div > div {
+    padding: 0px 5px 0px 5px;
+}
+
+.ourinstitute-equipments-course > div > div:first-child {
+    padding-left: 15px;
+}
+
+.ourinstitute-equipments-course > div > div:last-child {
+    padding-right: 15px;
+    height: 100% !important;
+}
+
+@media (min-width: 992px) {
+    .ourinstitute-equipments-course > div > div:first-child > div > a > img {
+        height: 65px !important;
+    }
+
+    .ourinstitute-equipments-course > div > div > div > a > img {
+        height: 65px !important;
+    }
+
+    .ourinstitute-equipments-course > div > div:last-child > div > a > img {
+        height: 65px !important;
+    }
+}
+
+
+
+.ourinstitute-equipments-images {
+    border: 10px solid #000;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+.ourinstitute-equipments-images > a > img {
+    width: 100%;
+}
+
+
+/*enroll now*/
+.enroll-now-newcourse{
+    padding:30px 0px;
+    background:#42a8f0 url('../img/contact/topbackground.png');
+
+}
