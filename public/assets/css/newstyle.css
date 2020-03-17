@@ -866,9 +866,19 @@ payments page
 
 
 }
+.imagetopabout {
+    text-align: right;
+}
+@media (max-width: 1000px){
+    .imagetopabout {
 
+        text-align: center;
+    
+    }
+}
 .imagetopabout > img {
-    transform: scale(0.9);
+    padding-top:1.2rem;
+    transform: scale(1);
 }
 
 .mainaboutsection {
@@ -4568,22 +4578,51 @@ Equpmients
     margin-bottom: 10px;  
 }*/
 .feature-details-newcourse{
+    mix-blend-mode: screen;
     /*#f0b242, #4288f0, #42a8f0*/
-    background: #42a8f0 url('../img/contact/topbackground.png');
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    background: #7f7fd5 url('../img/contact/121.png'); /* fallback for old browsers */
+    background:url('../img/contact/121.png'), -webkit-linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ;
+    background:url('../img/contact/121.png'), linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ; 
+    /*background: #42a8f0 url('../img/contact/topbackground.png');*/
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 85%);
     padding:40px 0px 100px 0px;
+}
+@media (max-width: 980px){
+    .feature-details-newcourse{
+        text-align: center;
+        padding:20px 0px 100px 0px;
+    }
+    .featured-image-newcourse{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 450px){
+    .feature-details-newcourse{
+        text-align: center;
+        padding:20px 0px 100px 0px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 90%);
+    }
+    .featured-image-newcourse{
+        margin-bottom: 20px;
+    }
 }
 .heading-primary-newcourse{
     font-weight: 700;
     color:#000;
     margin-top:-10px;
 }
+@media (max-width:1024px){
+    .heading-primary-newcourse{
+        font-size: 30px;
+        margin-top:-5px;
+    }
+}
 .paragraph{
     color:#000;
 }
 .enroll-box-newcourse>a{
-    padding:20px;
-    background:yellow;
+    padding:20px 20px 20px 0px;
+    background: yellow;
     color:#000;
     border:0px;
     border-radius: 0px;
@@ -4596,20 +4635,43 @@ Equpmients
 .enroll-button__span{
     font-size: 20px;
     font-weight: 700;
-    color:#42a8f0;
+    color:#000;
+    background:#f0e913;
+    padding-top:24px;
+    padding-bottom: 24px;
+    padding-left: 25px;
+    padding-right: 25px;
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 51% 100%, 0 100%);
+    border-bottom: 4px solid #929409;
 }
 .enroll-box-newcourse>a:hover{
     transform: translateY(-5px);
     background:yellow;
     color:#000;
     box-shadow: 5px 15px 20px rgba(0,0,0,0.45);
+    border-bottom: 4px solid #929409;
 }
+.enroll-box-newcourse>a:hover .enroll-button__span{
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 51% 100%, 0 100%);
+        background:#b5af00;
+}
+@media (max-width: 370px){
+    .enroll-box-newcourse>a{
+        font-size: 13px;
+    }
+    .enroll-button__span{
+    font-size: 13px;
+
+}
+}
+
 /*new course description*/
 .course-description-newcourse{
-    margin-top:-100px;
+    margin-top:-90px;
     background:url('../img/php/topbackground.png');
     padding-top: 100px;
     padding-bottom: 20px;
+    clip-path: polygon(0 5%, 100% 28%, 100% 100%, 51% 100%, 0 100%);
 }
 .heading-secondry{
     color:#000;
@@ -4647,7 +4709,7 @@ Equpmients
     padding-left: 0px;  
 }
 .requirments-box{
-    background:#42a8f0 url('../img/contact/topbackground.png');
+    background:#42a8f0 url('../img/contact/121.png');
      margin-right: 0px;
      /*background:green;*/
      padding:50px 20px;
@@ -4673,9 +4735,35 @@ Equpmients
     }
 
 }
+@media (max-width: 1024px) {
+    .requirments-box{
+        min-height: 670px;
+    }
+
+}
 @media (max-width: 990px) {
     .requirments-box{
         min-height: auto;
+    }
+    .requirments-column1{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    }
+    .requirments-column2{
+    padding-right: 5px;
+    padding-left: 5px;
+     
+    }
+    .requirments-column3{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;   
+    }
+    .requirments-column4{
+    padding-right: 5px;
+    padding-left: 5px; 
+    padding-top: 5px;  
     }
 
 }
@@ -4695,6 +4783,13 @@ Equpmients
     grid-template-columns: auto auto;
     grid-column-gap: 20px;
 }
+@media (max-width:500px){
+    .course__instructor--box{
+    display: grid;
+    grid-template-columns: auto ;
+    text-align: center;
+}
+}
 
 .instructor-details>p{
     color:#000;
@@ -4710,16 +4805,44 @@ Equpmients
     padding:20px 0px;
     text-align: center;
 }
-.course__feature--col{
-    display: grid;
-    grid-template-columns: 40% 40% 40% 40% 40%;
-    grid-column-gap: 20px;
 
+.course__feature--col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/*@media (max-width:3000px){
+    .course__feature--col{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
+    }
+}*/
+@media (max-width:1024px){
+    .course__feature--col{
+      grid-template-columns: 20% 20% 20% 20% 20%;  
+    }
 }
 .feature-box{
-    padding:10px;
-}
+    padding:10px 30px 10px 30px;
+    background: ;
+    background:  linear-gradient(to right ,#c6d9ef, #fff);
 
+}
+@media (max-width:1024px){
+.feature-box{
+    padding:10px;
+    background:  none;
+    margin-top: 10px;
+
+}
+}
+.feature-box:first-child{
+    padding-left:40px;
+    padding-right:40px;
+}
+.feature-box:hover{
+    background:url('../img/contact/topbackground.png'), linear-gradient(to right, #fff, #c6d9ef);
+}
 
 .feature-box>svg:hover{
     transform: translateY(-5px);
@@ -4737,14 +4860,13 @@ Equpmients
 
 /*why us and our work*/
 .why-us-newcourse{
-    background:#75c5fd url('../img/contact/topbackground.png');
-    text-align: center;
+    background: #7f7fd5 url('../img/contact/topbackground.png'); 
+    background:url('../img/contact/topbackground.png'), -webkit-linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ; 
+    background:url('../img/contact/topbackground.png'), linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ; 
     padding:50px 0px;
     /*clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);*/
 }
-.Our-work_box{
-    padding-bottom: 50px;
-}
+
 .our-work__details>h3{
     margin-top:0px;
     font-weight: 500;
@@ -4756,6 +4878,33 @@ Equpmients
 .our-work__details>p{
     color:#555s;
 }
+
+@media (min-width: 1024px){
+    .our-work-image{
+    text-align: right;
+}
+}
+
+/*why php*/
+.why-learn-php{
+    margin:40px 0px 0px 0px;
+    text-align: center;
+}
+.why__php-card{
+    background:linear-gradient(to right, #fff, #c6e5ff);
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.12);
+    padding:20px;
+}
+@media (max-width: 1024px){
+    .why__php-card{
+        margin-bottom: 10px;
+    }
+}
+.why__php-card:hover{
+    background: linear-gradient(to right, #c6e5ff, #fff);
+}
+/*why php end*/
 
 /*end why us and our work*/
 .Our-institute-newcourse{
@@ -4815,7 +4964,9 @@ Equpmients
 
 /*enroll now*/
 .enroll-now-newcourse{
-    padding:30px 0px;
-    background:#42a8f0 url('../img/contact/topbackground.png');
-
+    padding:60px 0px 30px 0px;
+    background: #7f7fd5 url('../img/contact/topbackground.png'); 
+    background:url('../img/contact/topbackground.png'), -webkit-linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ;
+    background:url('../img/contact/topbackground.png'), linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ; 
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 51% 100%, 0 100%);
 }
