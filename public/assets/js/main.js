@@ -1,3 +1,15 @@
+$(document).ready(function(){
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 640) {
+       $(".mobile-bottom-navbar").addClass("mobile-bottom-navbar-blue");
+    }else{
+        $(".mobile-bottom-navbar").removeClass("mobile-bottom-navbar-blue");
+    }
+});
+
+});
+
 function myFunction() {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");

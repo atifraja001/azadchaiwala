@@ -141,6 +141,41 @@ Header css start here
 
 /*media query end*/
 
+/*mobile Bottom Navigation*/
+.mobile-bottom-navbar{
+    background:#000000;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 11111;
+    bottom: 0px;
+}
+@media (min-width: 500px){
+.mobile-bottom-navbar{
+    display: none;
+}
+}
+.mobile-bottom-navbar-blue{
+    background: #039ADB;
+}
+.mobile-navbar-items{
+    display: flex;
+    justify-content: space-around;
+}
+.mobile-navbar-items>a{
+    /*background: blue;*/
+    padding:5px 25px 5px 20px;
+    border-right:1px solid white;
+}
+.mobile-navbar-items>a:first-child{
+    border-left:0px solid white;
+}
+.mobile-navbar-items>a:last-child{
+    border-right:0px solid white;
+}
+/*mobile bottom navigation end*/
+
+
 
 /*.header-fixed {
   background: #111111;
@@ -323,7 +358,9 @@ courses Area
     margin-bottom: 20px !important;
     min-height: 450px;
 }
-
+.course__card-image{
+    width:100%;
+}
 .course-card:hover {
     box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.5);
 }
@@ -383,6 +420,12 @@ courses Area
     color: black;
     text-transform: uppercase;
     font-family: open sans, helvetica neue, Helvetica, Arial, sans-serif;
+}
+@media (max-width: 450px){
+    .courh > h2 {
+        font-size: 25px;
+
+    }
 }
 
 .divider {
@@ -717,6 +760,11 @@ review section end here
 
 }
 
+@media (max-width: 400px){
+    .site-footer{
+        padding-bottom: 430px;
+    }
+}
 .containerflex {
     display: flex;
     justify-content: space-between;
@@ -1033,7 +1081,7 @@ Contact us page
 
 .cformfileds {
     border-radius: 0px !important;
-    border: 1px solid #6C64FF;
+    border: 1px solid #42dbf0;
 }
 
 .contact__form--button {
@@ -1392,28 +1440,34 @@ single course section
 ------*/
 
 /*courses register page*/
-.cregister {
-    background: var(--main-color);
+.course-register-header {
+    background: #42dbf0 url('../img/contact/topbackground.png');
     padding: 1.2em 0em;
 }
 
 .regirsterh > h1 {
     font-weight: bold;
-    color: white;
+    color: #000;
     font-size: 36px;
     text-transform: uppercase;
 }
 
 .buttonofregister {
     padding: 15px;
-    background: var(--main-color);
+    background: #080dc3 !important;
     color: #fff;
     border-radius: 0px;
-    border: 0px;
     width: 200px;
     font-weight: bold;
     font-family: sans-serif;
-    margin-bottom: 20px;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}
+.buttonofregister:hover{
+    background: #05076d !important;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    color:#fff;
+    transform: translateY(-5px);
 }
 
 #customControlValidation10 {
@@ -1531,6 +1585,12 @@ single course section
     font-size: 15px;
     line-height: 24px;
     color: white;
+    
+}
+@media (max-width: 400px){
+    .site-footer{
+        margin-bottom: 45px;
+    }
 }
 
 .site-footer p, .site-footer p i {
@@ -4585,7 +4645,7 @@ Equpmients
     background:url('../img/contact/121.png'), linear-gradient(to right, #42a8f0, #86a8e7, #91eae4) ; 
     /*background: #42a8f0 url('../img/contact/topbackground.png');*/
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 85%);
-    padding:40px 0px 100px 0px;
+    padding:20px 0px 50px 0px;
 }
 @media (max-width: 980px){
     .feature-details-newcourse{
@@ -4709,13 +4769,25 @@ Equpmients
     padding-left: 0px;  
 }
 .requirments-box{
-    background:#42a8f0 url('../img/contact/121.png');
+    
      margin-right: 0px;
      /*background:green;*/
      padding:50px 20px;
      transform: scale(1);
      transition: 0.3s;
      min-height: 350px;
+}
+.requirments-box1{
+    background:#b8daff url('../img/contact/121.png');
+}
+.requirments-box2{
+    background:#8fd19e url('../img/contact/121.png');
+}
+.requirments-box3{
+    background:#ed969e url('../img/contact/121.png');
+}
+.requirments-box4{
+    background:#86cfda url('../img/contact/121.png');
 }
 @media (max-width: 1550px) {
     .requirments-box{
