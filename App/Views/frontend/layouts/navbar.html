@@ -5,10 +5,8 @@ $noti = new \App\Models\Notifications();
 $notis = $noti->getNotification();
 ?>
 <?php foreach($notis as $noti){?>
-<?php if(empty($noti['message'])){ ?>
-
-<?php }else{?>
-    <div class="alert alert-warning alert-dismissible fade show" id="dis"role="alert">
+<?php if(!empty($noti['message'])){ ?>
+<div class="alert alert-warning alert-dismissible fade show" id="dis"role="alert">
     <div class="container text-center">
         <?= html_entity_decode($noti['message']);?>
     </div>
