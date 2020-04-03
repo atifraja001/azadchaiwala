@@ -40,7 +40,7 @@ class AuthController
         $email->sendEmail('create_account', [
             'email_to' => $data[':email'],
             'name' => $data[':name'],
-            'token' => $data[':token']
+            'token' => $data[':email_token']
         ]);
         redirect(app_url('').'/create-account/success');
     }
