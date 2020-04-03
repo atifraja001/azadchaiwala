@@ -1,3 +1,4 @@
+<link href="<?=app_url()?>/assets/css/wizard.css" rel="stylesheet">
 <section class="course-register-header ">
     <div class="container text-capitalize text-center">
         <div class="row">
@@ -7,7 +8,6 @@
         </div>
     </div>
 </section>
-
 <section>
     <div class="container">
         <!-- second main register row -->
@@ -15,178 +15,127 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="registerform">
                     <?=showMsg('course_registration');?>
-                    <?php if(empty(showMsg('course_registration'))){ ?>
-                    <form action="<?=app_url()?>/registration-student" method="post" class="needs-validation"
-                          enctype="multipart/form-data" novalidate>
-                        <input type="hidden" value="<?=$course['slug']?>" name="slug">
-                        <?php if(count($batch)>0){ ?>
-                        <h4>Select Batch</h4>
-                        <?php }else{ ?>
-                        <h4>Seats for Current Batch Are Full. Please Wait for Next Batch to Open.</h4>
-                        <?php	} ?>
-                        <div class="form-row">
-                            <?php foreach($batch as $b){?>
-                            <div class="col-md-6 mb-3 fof">
-                                <label class="clsoverlay" id="all">
-                                    <input type="radio" name="batch_id" value="<?=$b['id']?>" class="custom-radio"
-                                           required>
-                                    <div class="card card-statistics p_method" id="rformh">
-                                        <div class="card-body p-4">
-                                            <div><h4><?= $b['name'];?></h4></div>
-                                            <?php
-													$seats = new \App\Models\Batches();
-													$seats = $seats->countEnrolledStudents($b['id']);
-                                            ?>
-                                            
-                                            <div><b>From</b> : <?=date("l, F d, Y", strtotime($b['start_date']));?>
+                    <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+                        <h3 style="font-size: 1.2rem !important;">
+                            Personal Details
+                        </h3>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-4 col-12 col-lg-4 text-center">
+                                    <input type="file" class="inputfile" name="your_picture" id="your_picture"
+                                           onchange="readURL(this);" data-multiple-caption="{count} files selected"
+                                           multiple/>
+                                    <label for="your_picture">
+                                        <figure>
+                                            <img src="<?=app_url()?>/assets/img/your-picture.png" alt="" class="your_picture_image">
+                                        </figure>
+                                        <span class="file-button">choose picture</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 col-12 col-lg-8">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Your Full Name</label>
+                                                <input type="text" required name="full_name" class="form-control" placeholder="Enter Your Full Name">
                                             </div>
-                                            <div><b>To</b>: <?=date("l, F d, Y", strtotime($b['end_date']));?></div>
-                                            <div><b>Timings</b> : <?=date("h:i a", strtotime($b['start_time']));?>
-                                                - <?=date("h:i a", strtotime($b['end_time']));?></div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Father's Name</label>
+                                                <input type="text" required name="father_name" class="form-control" placeholder="Enter Father Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label>Your Email</label>
+                                                <input type="email" required name="your_email" class="form-control" placeholder="Enter Your Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Your Mobile Number</label>
+                                                <input type="text" required name="mobile_number" class="form-control" placeholder="Enter Your Mobile Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Father's Mobile Number</label>
+                                                <input type="text" required name="father_mobile_number" class="form-control" placeholder="Enter Your Father's Mobile Number">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="invalid-tooltip">Select Batch</div>
-                                </label>
-                            </div>
-                            <?php } ?>
-                        </div>
-                        <?php if(count($batch)>0){ ?>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Enter your name</label>
-                                    <input type="text" name="name" class="form-control cformfileds"
-                                           placeholder="Enter your full name" pattern="[a-zA-Z_ ]+" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Enter your Father name</label>
-                                    <input type="text" name="fname" class="form-control cformfileds"
-                                           placeholder="Enter your Father name" pattern="[a-zA-Z_ ]+" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Date of Birth</label>
-                                    <div class="input-group mb-3">
-                                        <select class="form-control cformfileds" name="day" required>
-                                            <option hidden value="">Day</option>
-                                            <?php for($i = 1; $i<=31; $i++){ ?>
-                                            <option><?=$i?></option>
-                                            <?php } ?>
-                                        </select>
-                                        <select class="form-control cformfileds" name="month" required>
-                                            <option hidden value="">Month</option>
-                                            <?php for($i = 1; $i<=12; $i++){ ?>
-                                            <option><?=$i?></option>
-                                            <?php } ?>
-                                        </select>
-                                        <select class="form-control cformfileds" name="year" required>
-                                            <option hidden value="">Year</option>
-                                            <?php for($i = date('Y')-7; $i >= date('Y')-57; $i--){ ?>
-                                            <option><?=$i?></option>
-                                            <?php } ?>
-                                        </select>
+                        </fieldset>
+                        <h3 style="font-size: 1.2rem !important;">
+                            Course Details
+                        </h3>
+                        <fieldset>
+                            <div class="form-radio">
+                                <label for="job" class="label-radio">What are you doing ?</label>
+                                <div class="form-flex">
+                                    <div class="form-radio">
+                                        <input type="radio" name="job" value="designer" id="designer"/>
+                                        <label for="designer">
+                                            <figure>
+                                                <img src="<?=app_url()?>/assets/img/icon-1.png" alt="">
+                                            </figure>
+                                            <span>Designer</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-radio">
+                                        <input type="radio" name="job" value="coder" id="coder" checked="checked"/>
+                                        <label for="coder">
+                                            <figure>
+                                                <img src="<?=app_url()?>/assets/img/icon-2.png" alt="">
+                                            </figure>
+                                            <span>Coder</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-radio">
+                                        <input type="radio" name="job" value="developer" id="developer"/>
+                                        <label for="developer">
+                                            <figure>
+                                                <img src="<?=app_url()?>/assets/img/icon-3.png" alt="">
+                                            </figure>
+                                            <span>Developer</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Gender</label>
-                                    <select class="form-control cformfileds" required name="gender">
-                                        <option hidden value="">Select your gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
+                        </fieldset>
+                        <h3 style="font-size: 1.2rem !important;">
+                            Payment
+                        </h3>
+                        <fieldset>
+                            <div class="form-row form-input-flex">
+                                <div class="form-input">
+                                    <input type="text" name="street_name" id="street_name"
+                                           placeholder="Street Name"/>
+                                </div>
+                                <div class="form-input">
+                                    <input type="text" name="street_number" id="street_number"
+                                           placeholder="Street Number"/>
+                                </div>
+                            </div>
+                            <div class="form-row form-input-flex">
+                                <div class="form-input">
+                                    <input type="text" name="city" id="city" placeholder="City"/>
+                                </div>
+                                <div class="form-input">
+                                    <select name="country" id="country">
+                                        <option value="">Country</option>
+                                        <option value="Viet Nam">Viet Nam</option>
+                                        <option value="USA">USA</option>
                                     </select>
+                                    <span class="select-icon"><i class="zmdi zmdi-caret-down"></i></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>CNIC</label>
-                                    <input type="text" name="cnic" class="form-control cformfileds" pattern=".{15,15}"
-                                           placeholder="Enter your CNIC" required id="validationTooltip05">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Mobile Number</label>
-                                    <input type="text" name="mobile_number" class="form-control cformfileds"
-                                           placeholder="Enter Your Mobile Number" pattern=".{12,12}" required id="validationTooltip06">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" name="email" class="form-control cformfileds"
-                                           placeholder="Enter Your Email Address" required id="email"
-                                           data-inputmask="'alias': 'email'">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Attached Picture</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="picture"
-                                               id="picture" required="" accept="image/x-png,image/jpeg">
-                                        <label class="custom-file-label cformfileds" for="picture">Choose file</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Attach Payment Receipt</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="fee_receipt"
-                                               id="validatedCustomFilePayment" required=""
-                                               accept="image/x-png,image/jpeg">
-                                        <label class="custom-file-label cformfileds" for="validatedCustomFilePayment">Choose
-                                            file</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Enter Your Address</label>
-                                    <textarea class="form-control cformfileds" name="address" style="resize: none"
-                                              rows="4" placeholder="Enter Your Address" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <?php if(count($terms) > 0){ ?>
-                        <div class="form-group">
-                            <h3>Terms & Conditions</h3>
-                        </div>
-                        <div class="row">
-                            <?php foreach($terms as $term){ ?>
-                            <div class="col-md-6">
-                                <div class="form-check">
-                                    <input type="checkbox" name="tac<?=$term['id'];?>" value="<?=$term['id'];?>" class="form-check-input" id="exampleCheck<?=$term['id'];?>" required="">
-                                    <label class="form-check-label" for="exampleCheck<?=$term['id'];?>"><?=$term['detail']?></label>
-                                </div>
-                            </div>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button class="btn  buttonofregister" type="submit">Submit</button>
-                            </div>
-                        </div>
-                        <?php } ?>
+                        </fieldset>
                     </form>
-                    <?php } ?>
                 </div>
             </div>
         </div>

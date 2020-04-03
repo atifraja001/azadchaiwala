@@ -48,12 +48,48 @@
         </div>
     </div>
 </footer>
+<!-- modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <!-- Modal body -->
+            <div class="modal-body text-left">
+                <button class="close" data-dismiss="modal" style="font-size:30px;"
+                        type="button">&times;
+                </button>
+                <div class="text-center mt-2">
+                    <h3 class="font-weight-bold">Stay
+                        <span style="font-size: 1.75rem; font-weight: 700; color: #E74C3C">Home</span> - Learn
+                        <span style=" font-weight: 700;font-size: 1.75rem; color: #E74C3C">Skills</span></h3>
+                    <p>#StayHomeLearnSkills</p>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12" style="text-align: justify">
+                        <p>Its time to learn some skills while staying at home.
+                            Enroll now in our <b style="color:#E74C3C">HTML</b> session to spend your quarantine time with us.</p>
+                        <p>Click on the button below for more details about our online sessions</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-sm-12 urdu" style="font-size: 22px !important; line-height: 40px">
+                        گھر میں رہتے ہوۓ مہارتیں سیکھنے کے لیے ابھی ہماری آن لائن کلاس میں اندراج کروائیں
+                        <br>
+                        مزید تفصیلات کے لیے نیچے دیے گئے بٹن پر کلک کریں
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success" type="submit">More Details</button>
+                </div>
+            </div>
+            <!-- Modal footer -->
+        </div>
+    </div>
+</div>
+<!-- modal end -->
 </body>
 <script>
     let appurl='<?=app_url()?>';
 </script>
 <script src="<?=app_url()?>/assets/js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
 <script src="<?=app_url()?>/assets/js/popper.min.js"></script>
 <script src="<?=app_url()?>/assets/js/bootstrap.min.js"></script>
 
@@ -70,11 +106,32 @@
     </script>
 
     <!-- main -->
+<script src="<?=app_url()?>/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="<?=app_url()?>/assets/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="<?=app_url()?>/assets/vendor/jquery-steps/jquery.steps.min.js"></script>
 <script src="<?=app_url()?>/assets/js/main.js" type="text/javascript"></script>
 <script>
     // $(document).on('click', '[data-toggle="lightbox"]', function(event) {
     //     event.preventDefault();
     //     $(this).ekkoLightbox();
     // });
+    $(window).on('load',function(){
+        //$('#myModal').modal('show');
+    });
+    $("#eye_button").on('mouseover', function(){
+         var pass = $("#inputPassword");
+         var eye_icon = $('#eye_icon');
+        pass.attr('type', 'text');
+        eye_icon.removeClass('fas fa-eye');
+        eye_icon.addClass('fas fa-eye-slash');
+    });
+    $("#eye_button").on('mouseout', function(){
+        var pass = $("#inputPassword");
+        var eye_icon = $('#eye_icon');
+        pass.attr('type', 'password');
+        eye_icon.removeClass('fas fa-eye-slash');
+        eye_icon.addClass('fas fa-eye');
+    });
+
 </script>
 </html>
