@@ -236,7 +236,11 @@ function Auth($user)
 {
     if (strtolower($user) == "admin") {
         if (!isset($_SESSION['admin_login'])) {
-            redirectWithMessage(app_url('admin') . '/login', 'login required to access this page', 'login', 'error');
+            redirectWithMessage(app_url('admin') . '/login', 'Login required to access this page', 'login', 'error');
+        }
+    }else if(strtolower($user) == "user"){
+        if (!isset($_SESSION['user_login'])) {
+            redirectWithMessage(app_url() . '/account', 'Login required to access this page', 'login', 'error');
         }
     }
 }
@@ -484,4 +488,8 @@ function random_str(
         $pieces []= $keyspace[random_int(0, $max)];
     }
     return implode('', $pieces);
+}
+
+function old($var){
+
 }

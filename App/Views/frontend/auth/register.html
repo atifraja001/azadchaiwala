@@ -178,6 +178,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+                        <?=showMsg('register')?>
                         <form class="form-signin" action="<?=app_url()?>/doRegister" method="post">
                             <div class="form-label-group">
                                 <input type="text" id="inputName" name="full_name" class="form-control" placeholder="Email address"
@@ -191,7 +192,7 @@
                             </div>
 
                             <div class="form-label-group input-group">
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+                                <input type="password" name="password"  minlength="8" id="inputPassword" class="form-control" placeholder="Password"
                                        required>
                                 <div class="input-group-append">
                                     <button class="btn btn-dark" tabindex="-1" type="button" id="eye_button"><i class="fas fa-eye text-white" id="eye_icon"></i></button>

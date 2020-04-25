@@ -11,9 +11,25 @@
 
 	<div class="container mt-3">
 		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="course-card">
+					<a href="<?=app_url()?>/course/online-html-crash-course-in-pakistan" target="_blank">
+						<div class="course__card-image">
+							<img src="<?=app_url()?>/assets/img/html/html.jpg" alt="course image" class="img-fluid">
+						</div>
+						<div class="course__card-fee">2,000 <small class="text-white">PKR</small></div>
+						<div class="course__card-content">
+							<h2>HTML Course ONLINE (4 Hours)</h2>
+							<p>AzadChaiwala Introducing HTML Crash Course for student who want to learn the basics of
+								programming</p>
+						</div>
+
+					</a>
+				</div>
+			</div>
 			<?php $counter = 1; foreach($courses as $c){ ?>
-				<?php
-					if($counter <= 5){
+			<?php
+					if($counter <= 4){
 					$counter++;
 				?>
 			<div class="col-lg-4 col-md-6">

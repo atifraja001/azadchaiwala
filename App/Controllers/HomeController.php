@@ -160,6 +160,10 @@ class HomeController extends \Core\Controller
         View::render('frontend/layouts/script.html');
     }
 
+    public function html_course(){
+        View::render('frontend/html_course.html');
+    }
+
     // new design of the static page
         public function newCourse(){
         $slug = basename(parse_url(getUrl(), PHP_URL_PATH));

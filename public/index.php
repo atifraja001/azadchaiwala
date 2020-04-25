@@ -34,13 +34,14 @@ $router->add('contact', ['controller' => 'HomeController', 'action' => 'contact'
 $router->add('gallery', ['controller' => 'HomeController', 'action' => 'gallery']);
 $router->add('accommodation', ['controller' => 'HomeController', 'action' => 'accommodation']);
 $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'action' => 'courseregistration']);
-
+$router->add('course/online-html-crash-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'html_course']);
 //Auth Routes
 $router->add('account', ['controller' => 'AuthController', 'action' => 'index']);
 $router->add('doLogin', ['controller' => 'AuthController', 'action' => 'doLogin']);
 $router->add('doRegister', ['controller' => 'AuthController', 'action' => 'doRegister']);
 $router->add('create-account', ['controller' => 'AuthController', 'action' => 'showRegistrationForm']);
 $router->add('create-account/success', ['controller' => 'AuthController', 'action'=>'ShowSuccessPage']);
+$router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
 
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);
