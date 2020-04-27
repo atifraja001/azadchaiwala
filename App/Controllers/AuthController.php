@@ -71,19 +71,27 @@ class AuthController
             ':email_token' => random_str(64, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
             ':token_requested_at' => date('Y-m-d H:i:s')
         ];
-
         $register = new Account();
         if ($register->CheckEmail($_POST['email'])) {
-            redirectWithMessage(app_url('') . '/create-account', "Account with this email already exists, Please <a href='" . app_url() . "/account'>login</a> to your account.", 'register', 'error');
+            if ($_POST['type'] == "html") {
+                echo "Email Already Exists, Please Login";
+                die;
+            } else {
+                redirectWithMessage(app_url('') . '/create-account', "Account with this email already exists, Please <a href='" . app_url() . "/account'>login</a> to your account.", 'register', 'error');
+            }
         }
         $register->CreateAccount($data);
         $email = new EmailController();
-//        $email->sendEmail('create_account', [
-//            'email_to' => $data[':email'],
-//            'name' => $data[':name'],
-//            'token' => $data[':email_token']
-//        ]);
-        //redirect(app_url('').'/create-account/success');
+        //        $email->sendEmail('create_account', [
+        //            'email_to' => $data[':email'],
+        //            'name' => $data[':name'],
+        //            'token' => $data[':email_token']
+        //        ]);
+        if ($_POST['type'] == "html") {
+            echo "A Verification email has been sent to your email address. Please click the link inside the email to proceed.";
+        } else {
+            //redirect(app_url('').'/create-account/success');
+        }
     }
 
     public function ShowSuccessPage()

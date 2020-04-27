@@ -42,11 +42,11 @@
 
                 <!-- light logo -->
                 <a class="navbar-brand logo-light" href="<?=app_url()?>"><img
-                        src="<?=app_url()?>/assets/img/institute-logo-black.jpg"
+                        src="<?=app_url()?>/assets/html/images/html-logo.png"
                         alt="logo"></a>
                 <!-- dark logo -->
                 <a class="navbar-brand logo-dark" href="<?=app_url()?>"><img
-                        src="<?=app_url()?>/assets/img/institute-logo-black.jpg" alt="logo"></a>
+                        src="<?=app_url()?>/assets/html/images/html-logo.png" alt="logo"></a>
 
                 <!-- nav menu toggler-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -57,6 +57,7 @@
                 <!-- menu starts-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="dtr-scrollspy navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="<?=app_url()?>">Main Site</a></li>
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#products">Payment</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">FAQ</a></li>
@@ -147,27 +148,8 @@
 
                         </div>
                     </div>
-
-                    <!--                    &lt;!&ndash; list starts &ndash;&gt;-->
-                    <!--                    <ul class="dtr-list-checkmark dtr-mb-5 text-size-md color-white-muted">-->
-                    <!--                        <li>-->
-                    <!--                            <h6>Online Course</h6>-->
-                    <!--                        </li>-->
-                    <!--                        <li>-->
-                    <!--                            <h6>Only 4 Hours</h6>-->
-                    <!--                        </li>-->
-                    <!--                        <li>-->
-                    <!--                            <h6>Live Tutor</h6>-->
-                    <!--                        </li>-->
-                    <!--                        <li>-->
-                    <!--                            <h6>No Video Lessons</h6>-->
-                    <!--                        </li>-->
-                    <!--                    </ul>-->
-                    <!--                    &lt;!&ndash; list ends &ndash;&gt;-->
-
                 </div>
                 <!-- column 1 ends -->
-
                 <!-- column 2 starts -->
                 <div class="col-12 col-md-6 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="dtr-hero-form">
@@ -182,49 +164,30 @@
 
                             <!--                            <p class="text-center dtr-mb-4 text-size-sm">Here is your chance to take your first step-->
                             <!--                                towards computer languages. Register now and learn at home</p>-->
-                            <div class="dtr-form dtr-submit-full">
-                                <form id="contactform" method="post" action="quote-form.php">
+                            <div class="dtr-form dtr-submit-full contact_form">
+                                <form id="contactform" method="post" action="<?=app_url()?>/doRegister">
+                                    <input type="hidden" value="html" name="type">
                                     <fieldset>
                                         <p>
-                                            <input name="name" type="text" placeholder="Name" class="required">
+                                            <input name="full_name" type="text" placeholder="Name" class="required">
                                         </p>
                                         <p>
-                                            <input name="number" class="required number" type="text"
+                                            <input name="phone_number" class="required number" type="tel"
                                                    placeholder="Phone">
                                         </p>
                                         <p>
                                             <input name="email" class="required email" type="text" placeholder="Email">
                                         </p>
                                         <p>
-                                            <select name="gender" class="dtr-select required">
-                                                <option value="" hidden>Select your Gender</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </p>
-                                        <p>
-                                            <select name="payment_method" class="dtr-select required payment_method">
-                                                <option value="" hidden>Select Payment Method</option>
-                                                <option value="easypaisa">EasyPaisa</option>
-                                                <option value="jazzcash">JazzCash</option>
-                                                <option value="bank">Bank Transfer</option>
-                                                <option value="paypal">PayPal/Credit Card</option>
-                                            </select>
-                                        </p>
-                                        <p>
-                                            <label>Attach Fee Receipt</label>
-                                            <input name="fee_receipt" class="required" type="file"
-                                                   placeholder="Transaction ID">
+                                            <input name="password" class="required password" type="password" placeholder="Password">
                                         </p>
                                         <button type="submit" class="dtr-btn-round dtr-btn-blue"> Register</button>
-                                        <div id="result"></div>
                                     </fieldset>
                                 </form>
+                                <div id="result"></div>
                             </div>
                         </div>
                         <!-- form body ends -->
-
                     </div>
                 </div>
                 <!-- column 2 ends -->
@@ -407,9 +370,35 @@
 
                             <!-- column 1 starts -->
                             <div class="col-12 col-md-7 dtr-sm-mb-30px wow fadeInLeft" data-wow-delay="0.1s">
-                                <video controls onloadstart="this.volume=0.2" style="width:100%;">
-                                    <source src="<?=app_url()?>/assets/html/video/jazzcash.mp4" type="video/mp4">
-                                </video>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="<?=app_url()?>/assets/img/dubai-logo.png" class="img-fluid">
+                                        <div class="table-responsive mt-4">
+                                            <table class="table text-left">
+                                                <tr>
+                                                    <td><b>Bank Name</b></td>
+                                                    <td>Dubai Islamic Bank</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Account Title</b></td>
+                                                    <td>Azad Chaiwala Institute</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Account Number</b></td>
+                                                    <td>032045 4038006</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>SWIFT</b></td>
+                                                    <td>DUIBPKKAXXX</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>IBAN</b></td>
+                                                    <td>PK25DUIB0000000454038006</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- column 1 ends -->
 
@@ -420,10 +409,10 @@
                                 <img src="<?=app_url()?>/assets/html/images/bank_transfer.png" height="50" alt="logo" class="dtr-mb-4">
 
                                 <!-- Heading -->
-                                <h2 class="dtr-mb-4">How to Send using Bank?</h2>
+                                <h2 class="dtr-mb-4">Our Bank Details</h2>
 
                                 <!-- Text -->
-                                <p class="dtr-mb-5">Learn how to send course fee using bank transfer method.</p>
+                                <p class="dtr-mb-5">use these bank details to send course fee.</p>
 
                             </div>
                             <!-- column 2 ends -->
@@ -456,13 +445,13 @@
                                 <h2 class="dtr-mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Question 1
+                                        What is the total cost of this course?
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                  data-parent="#home-accordion">
-                                <div class="card-body"> dummy answer
+                                <div class="card-body"> The fee of this course is 2000 pakistani rupees only.
                                 </div>
                             </div>
                         </div>
@@ -474,13 +463,13 @@
                                 <h2 class="dtr-mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                             data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo"> Question 2
+                                            aria-controls="collapseTwo"> How long is the course?
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                  data-parent="#home-accordion">
-                                <div class="card-body"> dummy answer 2
+                                <div class="card-body"> The course is taught within 1 day, max 4 hours, with one break.
                                 </div>
                             </div>
                         </div>
@@ -492,13 +481,36 @@
                                 <h2 class="dtr-mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                             data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree"> Question 3
+                                            aria-controls="collapseThree"> Will I become a programmer after this course?
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                  data-parent="#home-accordion">
-                                <div class="card-body"> dummy answer 3
+                                <div class="card-body"> A very very basic one, this course is to give you an absolute
+                                    taste, keh programming hoti kya hai.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- accordion tab 3 ends -->
+                        <!-- accordion tab 4 starts -->
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="dtr-mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour"> What is the benefit of this course to me, or
+                                        my children?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                 data-parent="#home-accordion">
+                                <div class="card-body"> The benefit is that within a few hours you'll get to know what
+                                    it means to be a programmer, how programming works. So you can make a better career
+                                    decision, whether or not programming is what you really want to do in life. It will
+                                    also help you to either get started with free online tutorials or via a paid
+                                    courses... that teach you advanced programming languages.
                                 </div>
                             </div>
                         </div>

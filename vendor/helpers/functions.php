@@ -238,7 +238,7 @@ function Auth($user)
         if (!isset($_SESSION['admin_login'])) {
             redirectWithMessage(app_url('admin') . '/login', 'Login required to access this page', 'login', 'error');
         }
-    }else if(strtolower($user) == "user"){
+    }else if(strtolower($user) == "student"){
         if (!isset($_SESSION['user_login'])) {
             redirectWithMessage(app_url() . '/account', 'Login required to access this page', 'login', 'error');
         }

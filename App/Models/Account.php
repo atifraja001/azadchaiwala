@@ -10,7 +10,7 @@ class Account extends \Core\Model
     public function CreateAccount($data)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("INSERT INTO user_login (name, email, password, email_token, phone_number, token_requested_at) 
+        $stmt = $db->prepare("INSERT INTO student_login (name, email, password, email_token, phone_number, token_requested_at) 
                                 VALUES (:name, :email, :password, :email_token, :phone_number, :token_requested_at)");
         ($stmt->execute($data)) ? true : false;
     }
@@ -18,7 +18,7 @@ class Account extends \Core\Model
     public function CheckEmail($email)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT * FROM user_login WHERE email = :email");
+        $stmt = $db->prepare("SELECT * FROM student_login WHERE email = :email");
         $stmt->execute([':email' => $email]);
         if ($stmt->rowCount() > 0)
             return true;
@@ -28,14 +28,14 @@ class Account extends \Core\Model
     public function VerifyEmail($token)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT * FROM user_login WHERE email_token = :email_token");
+        $stmt = $db->prepare("SELECT * FROM student_login WHERE email_token = :email_token");
         $stmt->execute([
             ':email_token' => $token
         ]);
         if ($stmt->rowCount() == 1) {
             $user = $stmt->fetch();
             $date = date('Y-m-d H:i:s');
-            $stmt = $db->prepare("UPDATE user_login SET 
+            $stmt = $db->prepare("UPDATE student_login SET 
                                     email_token = null, 
                                     email_verified_at = :date, 
                                     token_requested_at = null 
@@ -54,7 +54,7 @@ class Account extends \Core\Model
     public function doLogin($email, $password)
     {
         $db = static::getDB();
-        $q = $db->prepare("SELECT * FROM user_login WHERE email = :email");
+        $q = $db->prepare("SELECT * FROM student_login WHERE email = :email");
         $q->execute([
             ':email' => $email
         ]);
@@ -81,13 +81,13 @@ class Account extends \Core\Model
         $db = static::getDB();
         if(is_numeric($email_or_id)){
             $id = $email_or_id;
-            $q = $db->prepare("SELECT * FROM user_login WHERE id = :id");
+            $q = $db->prepare("SELECT * FROM student_login WHERE id = :id");
             $q->execute([
                 ':id' => $id
             ]);
         }else{
             $email = $email_or_id;
-            $q = $db->prepare("SELECT * FROM user_login WHERE email = :email");
+            $q = $db->prepare("SELECT * FROM student_login WHERE email = :email");
             $q->execute([
                 ':email' => $email
             ]);
