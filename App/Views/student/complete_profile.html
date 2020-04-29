@@ -16,14 +16,14 @@
                     <li><?=$error?></li>
                     <?php } ?>
                 </div>
-                <?php unset($_SESSION['errors)); } ?>
+                <?php unset($_SESSION["errors"]); } ?>
                 <form method="post" action="<?=app_url()?>/account/postCompleteProfile" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your CNIC / B-Form Number</label>
                                 <input type="text" class="form-control" name="cnic" required
-                                       placeholder="Enter CNIC or B-Form number" value=""
+                                       placeholder="Enter CNIC or B-Form number" value="<?=form("cnic");?>"
                                        data-mask="99999-9999999-9">
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label>Your Date of Birth</label>
                                 <input type="text" class="form-control datepicker" name="date_of_birth" required
-                                       placeholder="Date of Birth (dd-mm-yyyy)" value="<?=old('date_of_birth')?>"
+                                       placeholder="Date of Birth (dd-mm-yyyy)" value="<?=form("date_of_birth")?>"
                                        data-mask="99-99-9999">
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Father / Guardian Name</label>
-                                <input type="text" class="form-control" required value="<?=old('father_name')?>"
+                                <input type="text" class="form-control" required value="<?=form("father_name")?>"
                                        name="father_name"
                                        placeholder="Enter your Father / Guardian name">
                             </div>
@@ -74,7 +74,7 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Guardian Phone Number</label>
-                                <input type="tel" class="form-control" value="<?=old('father_phone')?>"
+                                <input type="tel" class="form-control" value="<?=form("father_phone")?>"
                                        name="father_phone" data-mask="0399-9999999"
                                        required
                                        placeholder="Father / Guardian phone number">
@@ -96,7 +96,7 @@
                             <div class="form-group">
                                 <label>Enter Your Complete Address</label>
                                 <textarea class="form-control" rows="6" required name="address"
-                                          placeholder="Enter your complete address"><?=old('address')?></textarea>
+                                          placeholder="Enter your complete address"><?=form("address")?></textarea>
                             </div>
                         </div>
                     </div>

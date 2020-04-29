@@ -76,7 +76,7 @@ class AccountController
         }else if ($response == "invalid_size"){
             $error[] = "Size must be less then 5 MB";
         }
-        if (count($error) > 0) {
+        if (isset($error)) {
             $_SESSION['errors'] = $error;
             foreach ($_POST as $key => $form_data){
                 $_SESSION[$key] = $form_data;

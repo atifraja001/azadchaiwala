@@ -490,11 +490,11 @@ function random_str(
     return implode('', $pieces);
 }
 
-function old($var){
+function form($var){
     if (isset($_SESSION)) {
-        if (isset($_SESSION["'".$var."'"])) {
-            $msg = $_SESSION["'".$var."'"];
-            unset($_SESSION["'".$var."'"]);
+        if (isset($_SESSION[$var])) {
+            $msg = $_SESSION[$var];
+            unset($_SESSION[$var]);
             return $msg;
         }
     }
