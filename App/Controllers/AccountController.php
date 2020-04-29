@@ -87,7 +87,7 @@ class AccountController
         // prepare data
         $data = [
             ":cnic" => $_POST['cnic'],
-            ":date_of_birth" => $_POST['date_of_birth'],
+            ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
             ":gender" => $_POST['gender'],
             ":father_name" => $_POST['father_name'],
             ":father_phone" => $_POST['father_phone'],
