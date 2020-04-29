@@ -94,4 +94,16 @@ class Account extends \Core\Model
         }
         return $q->fetch();
     }
+    public function CompleteProfile($data){
+        $db = static::getDB();
+        $q = $db->prepare('UPDATE student_login SET
+            cnic = :cnic,
+            date_of_birth = :date_of_birth,
+            gender = :gender,
+            father_name = :father_name,
+            father_phone = :father_phone,
+            picture = :picture,
+            address = :address WHERE id = :id
+        ');
+    }
 }

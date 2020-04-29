@@ -47,6 +47,7 @@ $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'Ve
 //Account Routes
 $router->add('account/dashboard', ['controller'=>'AccountController', 'action'=>'dashboard']);
 $router->add('account/complete-profile', ['controller'=>'AccountController', 'action'=>'complete_profile']);
+$router->add('account/postCompleteProfile', ['controller' => 'AccountController', 'action' => 'postCompleteProfile']);
 
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);

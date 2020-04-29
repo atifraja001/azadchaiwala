@@ -1,0 +1,45 @@
+</div><!-- container -->
+
+</div> <!-- Page content Wrapper -->
+
+</div> <!-- content -->
+
+<footer class="footer">
+    © <?=date('Y');?> Design with <i class="fa fa-heart" style="color: red"></i> by AzadChaiwala
+</footer>
+
+</div>
+<!-- End Right content here -->
+
+</div>
+<!-- END wrapper -->
+
+
+<!-- jQuery  -->
+<script src="<?=app_url()?>/member/assets/js/jquery.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/popper.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/bootstrap.min.js"></script>
+<script src="<?=app_url()?>/member/assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/modernizr.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/detect.js"></script>
+<script src="<?=app_url()?>/member/assets/js/fastclick.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.slimscroll.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.blockUI.js"></script>
+<script src="<?=app_url()?>/member/assets/js/waves.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.nicescroll.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.scrollTo.min.js"></script>
+<script src="<?=app_url()?>/member/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<!-- App js -->
+<script src="<?=app_url()?>/member/assets/js/app.js"></script>
+<script>
+    $('.datepicker').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: "dd-mm-yyyy"
+    });
+    $(".custom-file-input").on("change", function () {
+        $(".custom-file-label").text($(this).val().split('\\').pop());
+    });
+</script>
+</body>
+</html>

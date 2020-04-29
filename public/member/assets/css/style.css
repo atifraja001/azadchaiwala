@@ -2745,7 +2745,6 @@ form {
 ===================*/
 /* Datepicker */
 .datepicker {
-  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 8px;
   color: #1f2b38;
 }
@@ -4184,7 +4183,7 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu ul ul a {
-  color: #6c7780;
+  color: #000000;
   display: block;
   padding: 12px 25px 12px 63px;
   font-size: 14px;
@@ -4205,7 +4204,7 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu > ul > li > a {
-  color: #6c7780;
+  color: #000000;
   display: block;
   padding: 15px 25px;
   margin: 3px 0;
@@ -4444,9 +4443,6 @@ File: Responsive
   .pagination-lg .page-link {
     padding: .25rem .5rem;
     font-size: 15px;
-  }
-  .page-title-box {
-    margin-top: 0px;
   }
 }
 

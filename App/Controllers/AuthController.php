@@ -10,7 +10,9 @@ class AuthController
 {
     public function __construct()
     {
-
+        if(!empty($_SESSION['user_login'])){
+            redirect(app_url()."/account/dashboard");
+        }
     }
 
     public function index()
