@@ -493,8 +493,9 @@ function random_str(
 function old($var){
     if (isset($_SESSION)) {
         if (isset($_SESSION[$var])) {
+            $msg = $_SESSION[$var];
             unset($_SESSION[$var]);
-            return $_SESSION[$var];
+            return $msg;
         }
     }
 }
