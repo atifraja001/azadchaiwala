@@ -103,8 +103,7 @@ class Account extends \Core\Model
             father_name = :father_name,
             father_phone = :father_phone,
             picture = :picture,
-            address = :address WHERE id = :id
-        ');
+            address = :address WHERE id = :id');
         if($q->execute($data)){
             return true;
         }else{
