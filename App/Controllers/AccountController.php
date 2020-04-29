@@ -22,8 +22,6 @@ class AccountController
                     "Please Complete your profile first to continue",
                     'complete_profile',
                     'msg');
-            } else {
-
             }
         }
     }

@@ -21,7 +21,7 @@ class AuthController
         View::render('frontend/layouts/script.html');
     }
 
-    public function doLogin($email = "", $password = "")
+    public function doLogin($request, $email = "", $password = "")
     {
         if(empty($email) && empty($password)){
             $email = $_POST['email'];
@@ -82,11 +82,11 @@ class AuthController
         }
         $register->CreateAccount($data);
         $email = new EmailController();
-        //        $email->sendEmail('create_account', [
-        //            'email_to' => $data[':email'],
-        //            'name' => $data[':name'],
-        //            'token' => $data[':email_token']
-        //        ]);
+                $email->sendEmail('create_account', [
+                    'email_to' => $data[':email'],
+                    'name' => $data[':name'],
+                    'token' => $data[':email_token']
+                ]);
         if ($_POST['type'] == "html") {
             echo "A Verification email has been sent to your email address. Please click the link inside the email to proceed.";
         } else {
@@ -111,7 +111,7 @@ class AuthController
                 redirectWithMessage(app_url() . '/account', 'Your email is already verified or link is expired. Please login to proceed', 'login');
             } else {
                 $user = $register->getUser($response);
-                $this->doLogin($user['email']);
+                $this->doLogin("", $user['email']);
             }
         }
     }
