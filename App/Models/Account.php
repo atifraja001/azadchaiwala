@@ -105,5 +105,10 @@ class Account extends \Core\Model
             picture = :picture,
             address = :address WHERE id = :id
         ');
+        if($q->execute($data)){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
