@@ -41,39 +41,41 @@ class AccountController
 
     public function postCompleteProfile()
     {
-        if (!empty($_POST['cnic']))
+        if (!empty($_POST['cnic'])) {
             if (trim(strlen($_POST['cnic'])) != 15)
                 $error[] = "CNIC must be 13 character long";
-            else
-                $error[] = "CNIC is required";
-
-        if (!empty($_POST['date_of_birth']))
-            if (trim(strlen($_POST['date_of_birth'])) != 10)
+        } else {
+            $error[] = "CNIC is required";
+        }
+        if (!empty($_POST['date_of_birth'])) {
+            if (trim(strlen($_POST['date_of_birth'])) != 10) {
                 $error[] = "Invalid Date of Birth";
-            else
-                $error[] = "Date of Birth is required";
-
-        if (empty($_POST['gender']))
+            }
+        } else {
+            $error[] = "Date of Birth is required";
+        }
+        if (empty($_POST['gender'])) {
             $error[] = "Gender is required";
-
-        if (empty($_POST['father_name']))
+        }
+        if (empty($_POST['father_name'])) {
             $error[] = "Father Name is Required";
-
-        if (!empty($_POST['father_phone']))
-            if (trim(strlen($_POST['father_phone'])) != 12)
+        }
+        if (!empty($_POST['father_phone'])) {
+            if (trim(strlen($_POST['father_phone'])) != 12) {
                 $error[] = "Father Phone Must be 11 character long";
-            else
-                $error[] = "Father Phone is required";
-
-        if (empty($_POST['address']))
+            }
+        } else {
+            $error[] = "Father Phone is required";
+        }
+        if (empty($_POST['address'])) {
             $error[] = "Address is required";
-
+        }
         $response = uploadfile('picture', '../content/student_images', 5);
-        if ($response == "invalid_image")
+        if ($response == "invalid_image"){
             $error[] = "Picture is Invalid";
-        else if ($response == "invalid_size")
+        }else if ($response == "invalid_size"){
             $error[] = "Size must be less then 5 MB";
-
+        }
         if (count($error) > 0) {
             $_SESSION['errors'] = $error;
             foreach ($_POST as $key => $form_data){
