@@ -41,65 +41,69 @@ $router->add('account', ['controller' => 'AuthController', 'action' => 'index'])
 $router->add('doLogin', ['controller' => 'AuthController', 'action' => 'doLogin']);
 $router->add('doRegister', ['controller' => 'AuthController', 'action' => 'doRegister']);
 $router->add('create-account', ['controller' => 'AuthController', 'action' => 'showRegistrationForm']);
-$router->add('create-account/success', ['controller' => 'AuthController', 'action'=>'ShowSuccessPage']);
+$router->add('create-account/success', ['controller' => 'AuthController', 'action' => 'ShowSuccessPage']);
 $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
-
+$router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
 //Account Routes
-$router->add('account/dashboard', ['controller'=>'AccountController', 'action'=>'dashboard']);
-$router->add('account/complete-profile', ['controller'=>'AccountController', 'action'=>'complete_profile']);
+$router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
+$router->add('account/complete-profile', ['controller' => 'AccountController', 'action' => 'complete_profile']);
 $router->add('account/postCompleteProfile', ['controller' => 'AccountController', 'action' => 'postCompleteProfile']);
-
+$router->add('account/enroll-new-course', ['controller' => 'AccountController', 'action' => 'enroll_new_course']);
+$router->add('account/enroll-new-course-post', ['controller' => 'AccountController', 'action' => 'enroll_new_course_post']);
+$router->add('account/manage-enroll/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
+$router->add('account/manage-enroll/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
+$router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);
 $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Insert_Contact']);
 
 // courses static pages
-$router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller'=>'HomeController', 'action'=>'graphiccourse']);
-$router->add('course/become-video-editing-social-media-star', ['controller'=>'HomeController', 'action'=>'videoCourse']);
-$router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller'=>'HomeController', 'action'=>'gameCourse']);
-$router->add('course/basic-computer-course', ['controller'=>'HomeController', 'action'=>'basicComputer']);
+$router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller' => 'HomeController', 'action' => 'graphiccourse']);
+$router->add('course/become-video-editing-social-media-star', ['controller' => 'HomeController', 'action' => 'videoCourse']);
+$router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller' => 'HomeController', 'action' => 'gameCourse']);
+$router->add('course/basic-computer-course', ['controller' => 'HomeController', 'action' => 'basicComputer']);
 
-$router->add('course/best-web-development-programming-course-in-pakistan', ['controller'=>'HomeController', 'action'=>'phpCourse']);
-$router->add('course/php-programming-course', ['controller'=>'HomeController', 'action'=>'phpCourse']);
-$router->add('course/new-course', ['controller'=>'HomeController', 'action'=>'newCourse']);
+$router->add('course/best-web-development-programming-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'phpCourse']);
+$router->add('course/php-programming-course', ['controller' => 'HomeController', 'action' => 'phpCourse']);
+$router->add('course/new-course', ['controller' => 'HomeController', 'action' => 'newCourse']);
 $router->add('course/{slug}', ['controller' => 'HomeController', 'action' => 'course']);
 
 // admin routes
 $admin_dir = \App\Config::ADMIN_PATH;
 
 $router->add($admin_dir, ['controller' => 'AdminController', 'action' => 'index']);
-$router->add($admin_dir.'/', ['controller' => 'AdminController', 'action' => 'index']);
-$router->add($admin_dir.'/dashboard', ['controller' => 'AdminController', 'action' => 'index']);
+$router->add($admin_dir . '/', ['controller' => 'AdminController', 'action' => 'index']);
+$router->add($admin_dir . '/dashboard', ['controller' => 'AdminController', 'action' => 'index']);
 
 // login Routes
-$router->add($admin_dir.'/login', ['controller' => 'LoginController', 'action' => 'show']);
-$router->add($admin_dir.'/post-login', ['controller' => 'LoginController', 'action' => 'post']);
-$router->add($admin_dir.'/logout', ['controller' => 'LoginController', 'action' => 'logout']);
+$router->add($admin_dir . '/login', ['controller' => 'LoginController', 'action' => 'show']);
+$router->add($admin_dir . '/post-login', ['controller' => 'LoginController', 'action' => 'post']);
+$router->add($admin_dir . '/logout', ['controller' => 'LoginController', 'action' => 'logout']);
 
 // StudentsController Routes
-$router->add($admin_dir.'/students/manage', ['controller' => 'StudentsController', 'action' => 'manage']);
-$router->add($admin_dir.'/students/search_student', ['controller' => 'StudentsController', 'action' => 'search_students']);
-$router->add($admin_dir.'/students/view-profile/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'view_student']);
-$router->add($admin_dir.'/students/add-new-student', ['controller' => 'StudentsController', 'action' => 'add_new_student']);
-$router->add($admin_dir.'/students/add_new_student_post', ['controller' => 'StudentsController', 'action' => 'add_new_student_post']);
-$router->add($admin_dir.'/students/edit-student/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'edit_student']);
-$router->add($admin_dir.'/students/edit_student_post', ['controller' => 'StudentsController', 'action' => 'edit_student_post']);
-$router->add($admin_dir.'/students/delete-student/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'delete_student']);
-$router->add($admin_dir.'/students/fetch__image', ['controller' => 'StudentsController', 'action' => 'fetch__image']);
+$router->add($admin_dir . '/students/manage', ['controller' => 'StudentsController', 'action' => 'manage']);
+$router->add($admin_dir . '/students/search_student', ['controller' => 'StudentsController', 'action' => 'search_students']);
+$router->add($admin_dir . '/students/view-profile/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'view_student']);
+$router->add($admin_dir . '/students/add-new-student', ['controller' => 'StudentsController', 'action' => 'add_new_student']);
+$router->add($admin_dir . '/students/add_new_student_post', ['controller' => 'StudentsController', 'action' => 'add_new_student_post']);
+$router->add($admin_dir . '/students/edit-student/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'edit_student']);
+$router->add($admin_dir . '/students/edit_student_post', ['controller' => 'StudentsController', 'action' => 'edit_student_post']);
+$router->add($admin_dir . '/students/delete-student/{id:\d+}', ['controller' => 'StudentsController', 'action' => 'delete_student']);
+$router->add($admin_dir . '/students/fetch__image', ['controller' => 'StudentsController', 'action' => 'fetch__image']);
 
 // Teacher Routes
-$router->add($admin_dir.'/teachers/manage', ['controller' => 'TeachersController', 'action' => 'manage']);
-$router->add($admin_dir.'/teachers/add-new-teacher', ['controller' => 'TeachersController', 'action' => 'add_new_teacher']);
-$router->add($admin_dir.'/teachers/add_new_teacher_post', ['controller' => 'TeachersController', 'action' => 'add_new_teacher_post']);
-$router->add($admin_dir.'/teachers/edit-teacher/{id:\d+}', ['controller' => 'TeachersController', 'action' => 'edit_teacher']);
-$router->add($admin_dir.'/teachers/edit_teacher_post', ['controller' => 'TeachersController', 'action' => 'edit_teacher_post']);
-$router->add($admin_dir.'/teachers/delete-teacher/{id:\d+}', ['controller' => 'TeachersController', 'action' => 'delete_teacher   ']);
-$router->add($admin_dir.'/teachers/fetch__image', ['controller' => 'TeachersController', 'action' => 'fetch__image']);
+$router->add($admin_dir . '/teachers/manage', ['controller' => 'TeachersController', 'action' => 'manage']);
+$router->add($admin_dir . '/teachers/add-new-teacher', ['controller' => 'TeachersController', 'action' => 'add_new_teacher']);
+$router->add($admin_dir . '/teachers/add_new_teacher_post', ['controller' => 'TeachersController', 'action' => 'add_new_teacher_post']);
+$router->add($admin_dir . '/teachers/edit-teacher/{id:\d+}', ['controller' => 'TeachersController', 'action' => 'edit_teacher']);
+$router->add($admin_dir . '/teachers/edit_teacher_post', ['controller' => 'TeachersController', 'action' => 'edit_teacher_post']);
+$router->add($admin_dir . '/teachers/delete-teacher/{id:\d+}', ['controller' => 'TeachersController', 'action' => 'delete_teacher   ']);
+$router->add($admin_dir . '/teachers/fetch__image', ['controller' => 'TeachersController', 'action' => 'fetch__image']);
 
 // Courses Routes
-$router->add($admin_dir.'/courses/manage', ['controller' => 'CoursesController', 'action' => 'manage']);
-$router->add($admin_dir.'/courses/view-course/{id:\d+}', ['controller' => 'CoursesController', 'action' => 'view_course']);
-$router->add($admin_dir.'/courses/add-new-course', ['controller' => 'CoursesController', 'action' => 'add_new_course']);
+$router->add($admin_dir . '/courses/manage', ['controller' => 'CoursesController', 'action' => 'manage']);
+$router->add($admin_dir . '/courses/view-course/{id:\d+}', ['controller' => 'CoursesController', 'action' => 'view_course']);
+$router->add($admin_dir . '/courses/add-new-course', ['controller' => 'CoursesController', 'action' => 'add_new_course']);
 $router->add($admin_dir.'/courses/add-new-course-post', ['controller' => 'CoursesController', 'action' => 'add_new_course_post']);
 $router->add($admin_dir.'/courses/edit-course/{id:\d+}', ['controller' => 'CoursesController', 'action' => 'edit_course']);
 $router->add($admin_dir.'/courses/edit-course-post', ['controller' => 'CoursesController', 'action' => 'edit_course_post']);

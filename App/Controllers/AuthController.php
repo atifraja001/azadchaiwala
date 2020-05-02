@@ -10,9 +10,6 @@ class AuthController
 {
     public function __construct()
     {
-        if(!empty($_SESSION['user_login'])){
-            redirect(app_url()."/account/dashboard");
-        }
     }
 
     public function index()
@@ -116,5 +113,11 @@ class AuthController
                 $this->doLogin("", $user['email']);
             }
         }
+    }
+
+    public function doLogout()
+    {
+        session_destroy();
+        redirect(app_url() . "/account");
     }
 }

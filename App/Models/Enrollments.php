@@ -170,4 +170,19 @@ class Enrollments extends Model
         $stmt->execute([':id' => $enroll_id]);
         return $stmt->fetch();
     }
+    public function getEnrollById($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM enrollments WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch();
+    }
+    public function updateFeeReceipt($data){
+        $db = static::getDB();
+        $stmt = $db->prepare("UPDATE enrollments SET fee_receipt = :fee_receipt WHERE id = :id");
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

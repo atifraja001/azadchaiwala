@@ -110,4 +110,13 @@ class Account extends \Core\Model
             return false;
         }
     }
+    public function have_enrolled($user_id){
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM enrollments WHERE id = :id");
+        $q->execute([':id' => $user_id]);
+        if($q->rowCount() > 0){
+            return true;
+        }
+        return false;
+    }
 }

@@ -40,6 +40,36 @@
     $(".custom-file-input").on("change", function () {
         $(".custom-file-label").text($(this).val().split('\\').pop());
     });
+    $(document).ready(function () {
+        let course_id = $(".courses").val();
+        $.ajax({
+            url: "<?=app_url()?>/getBatches",
+            method: "post",
+            data: {course_id: course_id},
+            success: function (response) {
+                let data = JSON.parse(response);
+                for (let i = 0; i < data.length; i++) {
+                    let batch_card = $(".to_copy").html();
+                    batch_card = batch_card.replace(':batch_id', data[i]['id']);
+                    batch_card = batch_card.replace(':batch_id', data[i]['id']);
+                    batch_card = batch_card.replace(':batch_id', data[i]['id']);
+                    batch_card = batch_card.replace(':title', data[i]['name']);
+                    batch_card = batch_card.replace(':title', data[i]['name']);
+                    batch_card = batch_card.replace(':date', data[i]['start_date']);
+                    batch_card = batch_card.replace(':date', data[i]['start_date']);
+                    batch_card = batch_card.replace(':time', data[i]['start_time']);
+                    batch_card = batch_card.replace(':time', data[i]['start_time']);
+                    $(".to_paste_batches").append(batch_card);
+                }
+            }
+        });
+    });
+    $("body").on("click", "input[name='batch']", function () {
+        $("#batch_name").text($(this).attr('data-name'));
+        $("#batch_datetime").text($(this).attr('data-date') +" - "+$(this).attr('data-time'));
+        $("#batch_name_label").css('color', 'green');
+        $("#batch_datetime_label").css('color', 'green');
+    });
 </script>
 </body>
 </html>
