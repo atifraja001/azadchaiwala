@@ -5,7 +5,6 @@ namespace App\Controllers;
 
 use App\Models\Account;
 use Core\View;
-use http\Params;
 
 class AccountController
 {
@@ -147,20 +146,24 @@ class AccountController
         ];
         $enroll = new \App\Models\Enrollments();
         $enroll = $enroll->InsertEnrollmentsByStudent($data);
-        redirect(app_url() . "/account/manage-enroll/make-payment/" . $enroll);
+        redirect(app_url() . "/account/my-courses/make-payment/" . $enroll);
     }
     public function make_payment($request){
-        View::render('student/layouts/head.html');
-        View::render('student/layouts/navbar.html');
         $enroll = new \App\Models\Enrollments();
         $enroll = $enroll->getEnrollById($request['id']);
+        if($enroll['student_id'] != $_SESSION['user_login']){
+            redirect(app_url().'/account/my-courses');
+        }
         if($enroll['status'] != 0 || !empty($enroll['fee_receipt'])) {
-            redirect(app_url().'/account/manage-enroll/');
+            redirect(app_url().'/account/my-courses');
         }
         $course = new \App\Models\Courses();
         $course = $course->getCourseByBatchId($enroll['batch_id']);
         $batch = new \App\Models\Batches();
         $batch = $batch->getBatchInfo($enroll['batch_id']);
+
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
         View::render('student/make_course_payment.html',
             ['enroll' => $enroll, 'course' => $course, 'batch' => $batch]);
         View::render('student/layouts/script.html');
@@ -182,7 +185,7 @@ class AccountController
         }
         if (isset($error)) {
             $_SESSION['errors'] = $error;
-            redirect(app_url() . '/account/manage-enroll/make-payment/'.$_POST['enroll_id']);
+            redirect(app_url() . '/account/my-courses/make-payment/'.$_POST['enroll_id']);
             die;
         }
         $enroll = new \App\Models\Enrollments();
@@ -191,12 +194,19 @@ class AccountController
             ':id' => $_POST['enroll_id']
         ];
         if($enroll->updateFeeReceipt($data)){
-            redirect(app_url() . '/account/manage-enroll');
+            redirect(app_url() . '/account/my-courses');
         }else{
             $error[] = "Something went's wrong, while uploading file. Try again or contact admin";
             $_SESSION['errors'] = $error;
-            redirect(app_url() . '/account/manage-enroll/make-payment/'.$_POST['enroll_id']);
+            redirect(app_url() . '/account/my-courses/make-payment/'.$_POST['enroll_id']);
         }
-
+    }
+    public function my_courses(){
+        $my_courses = new \App\Models\Courses();
+        $my_courses = $my_courses->getCoursesByStdId($_SESSION['user_login']);
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/my_courses.html', ['my_courses' => $my_courses]);
+        View::render('student/layouts/script.html');
     }
 }

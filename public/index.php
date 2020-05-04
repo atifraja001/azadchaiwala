@@ -46,13 +46,17 @@ $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'Ve
 $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
 //Account Routes
 $router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
+$router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);
 $router->add('account/complete-profile', ['controller' => 'AccountController', 'action' => 'complete_profile']);
 $router->add('account/postCompleteProfile', ['controller' => 'AccountController', 'action' => 'postCompleteProfile']);
 $router->add('account/enroll-new-course', ['controller' => 'AccountController', 'action' => 'enroll_new_course']);
 $router->add('account/enroll-new-course-post', ['controller' => 'AccountController', 'action' => 'enroll_new_course_post']);
-$router->add('account/manage-enroll/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
-$router->add('account/manage-enroll/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
+$router->add('account/my-courses/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
+$router->add('account/my-courses/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
+
+
+
 $router->add('registration-student', ['controller' => 'HomeController', 'action' => 'registercoursestudent']);
 $router->add('add-suggestion', ['controller' => 'HomeController', 'action' => 'SuggestionInsert']);
 $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Insert_Contact']);

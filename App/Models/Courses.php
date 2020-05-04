@@ -201,13 +201,29 @@ class Courses extends \Core\Model
         $course = $stmt->fetch();
         $course_id = $course['course_id'];
         $stmt = $db->prepare("DELETE FROM course_learn WHERE id = :id");
-        $stmt->execute([":id"=>$id]);
+        $stmt->execute([":id" => $id]);
         return $course_id;
     }
-    public function GetCourseTerms($id){
+
+    public function GetCourseTerms($id)
+    {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM course_tc WHERE course_id = :id");
-        $stmt->execute([":id"=>$id]);
+        $stmt->execute([":id" => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getCoursesByStdId($std_id)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT courses.*, batches.*, enrollments.*
+            FROM courses 
+            JOIN batches on courses.id = batches.course_id
+            JOIN enrollments on batches.id = enrollments.batch_id 
+            WHERE enrollments.student_id = :student_id 
+            ORDER BY enrollments.id DESC
+            ");
+        $stmt->execute([":student_id" => $std_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
