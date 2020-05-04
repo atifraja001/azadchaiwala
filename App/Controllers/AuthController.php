@@ -86,10 +86,10 @@ class AuthController
                     'name' => $data[':name'],
                     'token' => $data[':email_token']
                 ]);
-        if ($_POST['type'] == "html") {
+        if (isset($_POST['type'])) {
             echo "A Verification email has been sent to your email address. Please click the link inside the email to proceed.";
         } else {
-            //redirect(app_url('').'/create-account/success');
+            redirect(app_url('').'/create-account/success');
         }
     }
 
