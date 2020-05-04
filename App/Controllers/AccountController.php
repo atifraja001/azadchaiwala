@@ -25,18 +25,16 @@ class AccountController
                     "Please select a course to enroll into.",
                     'complete_profile',
                     'msg');
-            } else if (is_null($user['father_name']) || is_null($user['cnic'])) {
-                redirectWithMessage(app_url() . "/account/complete-profile",
-                    "Please Complete your profile first to continue",
-                    'complete_profile',
-                    'msg');
             }
         }
     }
 
     public function dashboard()
     {
-
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/dashboard.html');
+        View::render('student/layouts/script.html');
     }
 
     public function complete_profile()
@@ -168,6 +166,12 @@ class AccountController
         View::render('student/layouts/script.html');
     }
     public function make_payment_post(){
+        if(!file_exists('../content')){
+            mkdir("../content", 0750, true);
+        }
+        if(!file_exists('../content/receipt_images')){
+            mkdir("../content/receipt_images", 0750, true);
+        }
         $response = uploadfile('fee_receipt', '../content/receipt_images', 5);
         if ($response == "invalid_image"){
             $error[] = "Picture is Invalid";

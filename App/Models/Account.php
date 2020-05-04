@@ -112,7 +112,7 @@ class Account extends \Core\Model
     }
     public function have_enrolled($user_id){
         $db = static::getDB();
-        $q = $db->prepare("SELECT * FROM enrollments WHERE id = :id");
+        $q = $db->prepare("SELECT * FROM enrollments WHERE student_id = :id");
         $q->execute([':id' => $user_id]);
         if($q->rowCount() > 0){
             return true;
