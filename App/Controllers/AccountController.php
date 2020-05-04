@@ -188,7 +188,7 @@ class AccountController
         $enroll = new \App\Models\Enrollments();
         $data = [
             ':fee_receipt' => $response,
-            ':enroll_id' => $_POST['enroll_id']
+            ':id' => $_POST['enroll_id']
         ];
         if($enroll->updateFeeReceipt($data)){
             redirect(app_url() . '/account/manage-enroll');
