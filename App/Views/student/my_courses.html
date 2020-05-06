@@ -68,9 +68,11 @@
                                     <button type="button" class="btn btn-warning btn-sm">Pay Now</button>
                                 </a>
                                 <?php }else if($my_course['status'] == 0){ ?>
-                                <span class="badge badge-success">No Action</span>
+                                <span class="badge badge-success">Wait for Approval</span>
                                 <?php }else if($my_course['status'] == 2){ ?>
-                                <span class="badge badge-success">No Action</span>
+                                <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
+                                    <button type="button" class="btn btn-warning btn-sm">Pay Again</button>
+                                </a>
                                 <?php }else if($my_course['status'] == 1 && $my_course['type'] == "online"){ ?>
                                 <a href="<?=app_url()?>/account/my-class/<?=$my_course['id'];?>">
                                     <button type="button" class="btn btn-success btn-sm">View Class</button>

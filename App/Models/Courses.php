@@ -40,6 +40,12 @@ class Courses extends \Core\Model
         $stmt->execute([':slug' => $slug]);
         return $stmt->fetch();
     }
+    public function getCoursesByType($classType){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * From courses WHERE type = :type");
+        $stmt->execute([':type' => $classType]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function getCourseContent($course_id){
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM course_content WHERE course_id = :course_id ORDER BY position ASC");

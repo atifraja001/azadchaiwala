@@ -16,7 +16,7 @@ class AccountController
         $user1 = new Account();
         $user = $user1->getUser($_SESSION['user_login']);
         $except = array('complete_profile', 'enroll_course', 'make_payment', 'make_payment_post',
-            'postCompleteProfile', 'enroll_new_course', 'getBatches', 'enroll_new_course_post');
+            'postCompleteProfile', 'enroll_new_course', 'getBatches', 'enroll_new_course_post', 'getCoursesByType');
         if (!in_array($request['action'], $except)) {
             $have_enrolled = $user1->have_enrolled($_SESSION['user_login']);
             if (!$have_enrolled) {
@@ -118,6 +118,7 @@ class AccountController
 
     public function enroll_new_course()
     {
+
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         $course = new \App\Models\Courses();
@@ -129,23 +130,39 @@ class AccountController
     public function getBatches()
     {
         $course_id = $_POST['course_id'];
+        $init_course = new \App\Models\Enrollments();
+        $init_course->initCourse($course_id, $_SESSION['user_login']);
         $batches = new \App\Models\Batches();
-        $batches = $batches->GetBatchByCourseId($course_id);
+        $batches = $batches->GetBatchByCourseId($course_id, $_SESSION['user_login']);
         echo json_encode($batches);
+    }
+
+    public function getCoursesByType()
+    {
+        $classType = $_POST['classType'];
+        $courses = new \App\Models\Courses();
+        $courses = $courses->getCoursesByType($classType);
+        echo json_encode($courses);
     }
 
     public function enroll_new_course_post()
     {
-        $batch_id = $_POST['batch'];
+        $batch_id = $_POST['batch_id'];
         $student_id = $_SESSION['user_login'];
+        $course_id = $_POST['selected_course'];
         $data = [
             ':batch_id' => $batch_id,
             ':student_id' => $student_id,
-            ':fee_receipt' => "",
-            ':status' => 0
+            ':course_id' => $course_id
         ];
         $enroll = new \App\Models\Enrollments();
-        $enroll = $enroll->InsertEnrollmentsByStudent($data);
+        $enroll = $enroll->UpdateEnrollmentsByStudent($data);
+        if ($enroll === false) {
+            redirectWithMessage(app_url() . '/account/my-courses',
+                'Already Enrolled into the course', 'my_courses',
+                'error');
+
+        }
         redirect(app_url() . "/account/my-courses/make-payment/" . $enroll);
     }
     public function make_payment($request){
@@ -154,8 +171,10 @@ class AccountController
         if($enroll['student_id'] != $_SESSION['user_login']){
             redirect(app_url().'/account/my-courses');
         }
-        if($enroll['status'] != 0 || !empty($enroll['fee_receipt'])) {
-            redirect(app_url().'/account/my-courses');
+        if($enroll['status'] != 2){
+            if($enroll['status'] != 0 || !empty($enroll['fee_receipt'])) {
+                redirect(app_url().'/account/my-courses');
+            }
         }
         $course = new \App\Models\Courses();
         $course = $course->getCourseByBatchId($enroll['batch_id']);

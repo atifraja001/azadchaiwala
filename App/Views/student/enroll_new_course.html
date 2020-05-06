@@ -9,113 +9,94 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <?=showMsg('enroll_new_course');?>
-                <?php if(isset($_SESSION['errors'])){ ?>
-                <div class="alert alert-danger">
-                    <?php foreach($_SESSION['errors'] as $error){ ?>
-                    <li><?=$error?></li>
-                    <?php } ?>
-                </div>
-                <?php unset($_SESSION["errors"]); } ?>
-                <form method="post" action="<?=app_url()?>/account/enroll-new-course-post">
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label>Select Course Type</label>
-                                <select name="course_type" class="form-control" required>
-                                    <option value="1">Online</option>
-                                    <option value="2" disabled>Institute - Currently unavailable</option>
-                                </select>
-                            </div>
+                <div class="wizard-form">
+                    <h5 id="wizard-title">Select Class Type</h5>
+                    <form method="post" action="" id="class_type_form">
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <td class="class_type">
+                                    <div class="radio my-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1"  name="class_type" value="online" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Online Classes</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="class_type">
+                                    <div class="radio my-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio2" disabled name="class_type" value="offline" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">Institute Based Classes - Currently Unavailable</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary class_type_button" disabled>Next</button>
                         </div>
-                        <div class="col-12 col-md-4 online_courses">
-                            <div class="form-group">
-                                <label>Select Course</label>
-                                <select name="online_course" class="form-control courses" required>
-                                    <?php foreach($courses as $course){
-                                        if($course['type'] == "online"){
-                                        ?>
-                                    <option value="<?=$course['id'];?>"><?=$course['course_name'];?></option>
-                                    <?php  } } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 offline_courses" style="display: none">
-                            <div class="form-group">
-                                <label>Select Course Type</label>
-                                <select name="offline_course" class="form-control courses" required>
-                                    <option value="1">VideoGraphy</option>
-                                    <option value="2">Graphic Designing</option>
-                                    <option value="2">Game Development</option>
-                                    <option value="2">Web Development</option>
-                                    <option value="2">Mobile App Development</option>
-                                    <option value="2">Basic Computer Course</option>
-                                    <option value="2">Advance Computer Course</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row to_paste_batches">
+                    </form>
+                    <form method="post" action="" id="course_form" style="display: none">
+                        <table class="table table-bordered table-hover">
 
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary course_button" disabled>Next</button>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-12">
-        <h4 class="header-title">Enrollment Details</h4>
-        <div class="card">
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <tr>
-                        <td style="color: green">Course Type:</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr>
-                        <td style="color: green">Selected Course:</td>
-                        <td>HTML CRASH COURSE</td>
-                    </tr>
-                    <tr>
-                        <td id="batch_name_label" style="color: red">Selected Batch:</td>
-                        <td id="batch_name"></td>
-                    </tr>
-                    <tr>
-                        <td id="batch_datetime_label" style="color: red">Batch Date/Time:</td>
-                        <td id="batch_datetime"></td>
-                    </tr>
-                    <tr>
-                        <td style="color: green">Course Fee:</td>
-                        <td>2,000 pkr</td>
-                    </tr>
-                    <tr>
-                        <td style="color: green">Course Fee (Words):</td>
-                        <td>Two Thousand Pakistani Rupees</td>
-                    </tr>
-                </table>
+                    </form>
+                    <form method="post" action="<?=app_url()?>/account/enroll-new-course-post" id="batch_form" style="display: none">
+                        <input type="hidden" name="selected_course" value="">
+                        <table class="table table-bordered table-hover">
+
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary batch_button" disabled>Next</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="to_copy" style="display: none">
-    <div class="col-md-3 col-12 col-lg-3">
-        <div class="card text-white bg-dark">
-            <div class="card-body">
-                <div class="radio my-2">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id=":batch_id" data-name=":title" data-date=":date" data-time=":time"
-                               name="batch" value=":batch_id" required class="custom-control-input">
-                        <label class="custom-control-label" for=":batch_id">
-                            :title<br>
-                            Date: :date<br>
-                            Time: :time</label>
-                    </div>
+<div id="courses_list" style="display: none">
+    <table>
+    <tr class="course">
+        <td style="width: 40%">
+            <div class="radio my-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id=":course_id"  name="course_id" value=":course_id" class="custom-control-input">
+                    <label class="custom-control-label" for=":course_id">:course_title</label>
                 </div>
             </div>
-        </div>
-    </div>
+        </td>
+        <td style="width: 30%">
+            :duration
+        </td>
+        <td style="width: 30%">
+            :course_fee pkr
+        </td>
+    </tr>
+    </table>
+</div>
+<div id="batches_list" style="display: none">
+    <table>
+        <tr class="batch">
+            <td style="width: 40%">
+                <div class="radio my-2">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id=":batch_id"  name="batch_id" value=":batch_id" class="custom-control-input">
+                        <label class="custom-control-label" for=":batch_id">:batch_name</label>
+                    </div>
+                </div>
+            </td>
+            <td style="width: 30%">
+                :batch_date
+            </td>
+            <td style="width: 30%">
+                :batch_time
+            </td>
+        </tr>
+    </table>
 </div>

@@ -54,6 +54,7 @@ $router->add('account/enroll-new-course-post', ['controller' => 'AccountControll
 $router->add('account/my-courses/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
 $router->add('account/my-courses/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
+$router->add('getCoursesByType', ['controller' => 'AccountController', 'action' => 'getCoursesByType']);
 
 
 
