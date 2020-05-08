@@ -31,6 +31,8 @@
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
+                    </div>
+                    <div class="col-12 col-md-6">
                         <div class="alert alert-danger">
                             <strong>Instructions:</strong>
                             <ul>
@@ -42,36 +44,6 @@
                                 <li>Mention your name on the transaction for faster approval</li>
                                 <li>You will be notified via email after approval or rejection of the enrollment</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
-                                <tr>
-                                    <td class="bg-primary text-white">Your Course</td>
-                                    <td class="text-dark"><?=$course['course_name'];?></td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-white">Course Type</td>
-                                    <td class="text-dark"><?=ucfirst($course['type']);?></td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-white">Course Fee</td>
-                                    <td class="text-dark"><?=number_format($course['fee']);?> (<?=getPakCurrency($course['fee']);?>)</td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-white">Duration</td>
-                                    <td class="text-dark"><?=$course['duration'];?></td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-white">Batch</td>
-                                    <td class="text-dark"><?=$batch['name'];?></td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-white">Start Date/Time</td>
-                                    <td class="text-dark"><?=date("d-m-Y", strtotime($batch['start_date']));?> / <?=$batch['start_time'];?></td>
-                                </tr>
-                            </table>
                         </div>
                     </div>
                 </div>

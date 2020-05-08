@@ -121,12 +121,39 @@
     });
     $("body").on("click", ".batch", function () {
         let radio = $(this).find('input');
-        if(!radio.attr('disabled')) {
+        if (!radio.attr('disabled')) {
             $("body").find("input[type='radio']").attr('checked', false);
             radio.attr("checked", true);
             $(".batch_button").attr('disabled', false);
             $(".batch_button").addClass('btn-success');
         }
+    });
+    $("body").on("submit", "#batch_form", function (e) {
+        e.preventDefault();
+        $("#wizard-title").text('Overview of your selections');
+        let course_id = $("input[name='selected_course']").val();
+        let batch_id = $("input[name='batch_id']").val();
+        $("#batch_form").remove();
+        $.ajax({
+            url: "<?=app_url()?>/account/enroll-new-course-post",
+            method: "post",
+            data: {course_id: course_id, batch_id: batch_id},
+            success: function (response) {
+                let data = JSON.parse(response);
+                let overview = $("#final_overview").html();
+                overview = overview.replace(':course_name', data['course_name']);
+                overview = overview.replace(':course_type', data['course_type']);
+                overview = overview.replace(':course_fee', data['course_fee']);
+                overview = overview.replace(':fee_in_words', data['fee_in_words']);
+                overview = overview.replace(':duration', data['duration']);
+                overview = overview.replace(':batch_name', data['batch_name']);
+                overview = overview.replace(':start_date', data['start_date']);
+                overview = overview.replace(':start_time', data['start_time']);
+                overview = overview.replace(':enroll_id', data['enroll_id']);
+                $("#overview").show();
+                $("#overview").html(overview);
+            }
+        });
     });
 </script>
 </body>

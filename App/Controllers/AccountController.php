@@ -149,21 +149,35 @@ class AccountController
     {
         $batch_id = $_POST['batch_id'];
         $student_id = $_SESSION['user_login'];
-        $course_id = $_POST['selected_course'];
+        $course_id = $_POST['course_id'];
         $data = [
             ':batch_id' => $batch_id,
             ':student_id' => $student_id,
             ':course_id' => $course_id
         ];
         $enroll = new \App\Models\Enrollments();
-        $enroll = $enroll->UpdateEnrollmentsByStudent($data);
-        if ($enroll === false) {
+        $enroll_id = $enroll->UpdateEnrollmentsByStudent($data);
+        if ($enroll_id === false) {
             redirectWithMessage(app_url() . '/account/my-courses',
                 'Already Enrolled into the course', 'my_courses',
                 'error');
 
         }
-        redirect(app_url() . "/account/my-courses/make-payment/" . $enroll);
+        $enroll = $enroll->getEnrollById($enroll_id);
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseByBatchId($enroll['batch_id']);
+        $batch = new \App\Models\Batches();
+        $batch = $batch->getBatchInfo($enroll['batch_id']);
+        $data['course_name'] = $course['course_name'];
+        $data['course_type'] = $course['type'];
+        $data['course_fee'] = number_format($course['fee']);
+        $data['fee_in_words'] = getPakCurrency($course['fee']);
+        $data['duration'] = $course['duration'];
+        $data['batch_name'] = $batch['name'];
+        $data['start_date'] = date("d-m-Y", strtotime($batch['start_date']));
+        $data['start_time'] = $batch['start_time'];
+        $data['enroll_id'] = $enroll['id'];
+        echo json_encode($data);
     }
     public function make_payment($request){
         $enroll = new \App\Models\Enrollments();
