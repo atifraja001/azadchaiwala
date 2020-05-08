@@ -20,10 +20,15 @@
                 <div class="row mb-3">
                     <div class="col-12">
                         <a href="<?=app_url()?>/account/enroll-new-course">
-                            <button type="button" class="btn btn-success float-right">Enroll New Course</button>
+                            <button type="button" class="btn btn-success float-right">Enroll into a new Course</button>
                         </a>
                     </div>
                 </div>
+                <style>
+                    table thead tr th{
+                        font-weight: bold;
+                    }
+                </style>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -84,17 +89,6 @@
                         </tr>
                         <?php } ?>
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <th>Course Name</th>
-                            <th>Fee</th>
-                            <th>Batch Name</th>
-                            <th>Date/Time</th>
-                            <th>Register On</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
