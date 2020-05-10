@@ -22,7 +22,7 @@ class AccountController
             if (!$have_enrolled) {
                 redirectWithMessage(app_url() . "/account/enroll-new-course",
                     "Please select a course to enroll into.",
-                    'complete_profile',
+                    'enroll_new_course',
                     'msg');
             }
         }
@@ -30,9 +30,14 @@ class AccountController
 
     public function dashboard()
     {
+        $account = new Account();
+        $paid_first = $account->have_paid($_SESSION['user_login']);
+        $complete_profile = $account->profile_completed($_SESSION['user_login']);
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
-        View::render('student/dashboard.html');
+        View::render('student/dashboard.html',
+            ['paid_first' => $paid_first,
+                'complete_profile' => $complete_profile]);
         View::render('student/layouts/script.html');
     }
 
@@ -75,6 +80,13 @@ class AccountController
         if (empty($_POST['address'])) {
             $error[] = "Address is required";
         }
+        if(!file_exists('../content')){
+            mkdir("../content", 0750, true);
+        }
+        if(!file_exists('../content/student_images')){
+            mkdir("../content/student_images", 0750, true);
+        }
+        $response = "";
         $response = uploadfile('picture', '../content/student_images', 5);
         if ($response == "invalid_image"){
             $error[] = "Picture is Invalid";
@@ -103,9 +115,9 @@ class AccountController
 
         $user = new Account();
         if ($user->CompleteProfile($data)) {
-            redirectWithMessage(app_url() . '/account/enroll-new-course',
-                'Profile Completed, You can enroll into course now',
-                'enroll_course');
+            redirectWithMessage(app_url() . '/account/my-profile',
+                'Profile Completed.',
+                'my_profile');
         } else {
             foreach ($_POST as $key => $form_data) {
                 $_SESSION[$key] = $form_data;
@@ -240,6 +252,20 @@ class AccountController
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/my_courses.html', ['my_courses' => $my_courses]);
+        View::render('student/layouts/script.html');
+    }
+    public function my_profile(){
+        $user = new \App\Models\Account();
+        $user = $user->getUser($_SESSION['user_login']);
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/my_profile.html', ['user' => $user]);
+        View::render('student/layouts/script.html');
+    }
+    public function change_password(){
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/change_password.html');
         View::render('student/layouts/script.html');
     }
 }

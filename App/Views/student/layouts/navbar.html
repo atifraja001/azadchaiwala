@@ -12,13 +12,13 @@
         <div class="topbar-left">
             <div class="text-center">
                 <!--<a href="index.html" class="logo"><i class="fa fa-paw"></i> Aplomb</a>-->
-                <a href="<?=app_url()?>/account" class="logo"><img src="<?=app_url()?>/assets/img/institute-logo-black.jpg" height="100%" alt="logo"></a>
+                <a href="<?=app_url()?>" class="logo"><img src="<?=app_url()?>/assets/html/images/institute-logo-black.jpg" height="100%" width="100%" alt="logo"></a>
             </div>
         </div>
         <div class="sidebar-inner slimscrollleft" id="sidebar-main">
             <div id="sidebar-menu">
                 <ul>
-                    <li class="has_sub">
+                    <li>
                         <a href="<?=app_url()?>/account/dashboard" class="waves-effect waves-light"><i
                                 class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                     </li>
@@ -29,6 +29,15 @@
                         <ul class="list-unstyled">
                             <li><a href="<?=app_url()?>/account/my-courses">My Courses</a></li>
                             <li><a href="<?=app_url()?>/account/enroll-new-course">Enroll into a new Course</a></li>
+                        </ul>
+                    </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect waves-light"><i
+                                class="mdi mdi-cards-outline"></i> <span> Profile </span> <span class="float-right"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="<?=app_url()?>/account/my-profile">My Profile</a></li>
+                            <li><a href="<?=app_url()?>/account/change-password">Change Password</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,14 +60,17 @@
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light nav-user"
                                data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="<?=app_url()?>/member/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                <?php $user = new \App\Models\Account();
+                                    $user = $user->getUser($_SESSION['user_login']);
+                                    ?>
+                                <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h5>Welcome</h5>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle "></i>My Profile</a>
+                                <a class="dropdown-item" href="<?=app_url()?>/account/my-profile"><i class="mdi mdi-account-circle "></i>My Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="<?=app_url()?>/account/logout"><i class="mdi mdi-power text-danger"></i>
                                     Logout</a>

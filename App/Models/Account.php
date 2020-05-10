@@ -112,7 +112,25 @@ class Account extends \Core\Model
     }
     public function have_enrolled($user_id){
         $db = static::getDB();
-        $q = $db->prepare("SELECT * FROM enrollments WHERE student_id = :id");
+        $q = $db->prepare("SELECT * FROM enrollments WHERE student_id = :id AND batch_id IS NOT NULL");
+        $q->execute([':id' => $user_id]);
+        if($q->rowCount() > 0){
+            return true;
+        }
+        return false;
+    }
+    public function have_paid($user_id){
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM enrollments WHERE student_id = :id AND fee_receipt IS NOT NULL");
+        $q->execute([':id' => $user_id]);
+        if($q->rowCount() > 0){
+            return true;
+        }
+        return false;
+    }
+    public function profile_completed($user_id){
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM student_login WHERE id = :id AND father_name IS NOT NULL");
         $q->execute([':id' => $user_id]);
         if($q->rowCount() > 0){
             return true;

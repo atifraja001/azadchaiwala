@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Dashboard</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-4 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h4>To-do List <small class="text-muted">(Newcomer)</small></h4>
+                <ul>
+                    <li><s>Enroll your first Course</s></li>
+                    <?php if($paid_first){ ?>
+                        <li><s>Pay fee for your first course</s></li>
+                    <?php }else{ ?>
+                        <li><a href="<?=app_url()?>/account/my-courses">Pay fee for your first course</a></li>
+                    <?php } ?>
+                    <?php if($complete_profile){ ?>
+                        <li><s>Complete your profile</s></li>
+                    <?php }else{ ?>
+                        <li><a href="<?=app_url()?>/account/complete-profile">Complete your profile</a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h4>Your Upcoming Course</h4>
+            </div>
+        </div>
+    </div>
+</div>
