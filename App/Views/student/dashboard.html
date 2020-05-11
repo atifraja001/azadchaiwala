@@ -13,20 +13,24 @@
                 <h4>To-do List <small class="text-muted">(Newcomer)</small></h4>
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <h5><s>1. Enroll your first Course</s></h5>
+                        <h5><s>1. Enroll your first Course</s> <small><i
+                                class="fa fa-check-circle text-primary"></i></small></h5>
                     </div>
                     <div class="col-12 col-md-4">
                         <?php if($paid_first){ ?>
-                        <h5><s>2. Pay fee for your first course</s></h5>
+                        <h5><s>2. Pay fee for your first course</s> <small><i
+                                class="fa fa-check-circle text-primary"></i></small></h5>
                         <?php }else{ ?>
-                        <h5><a href="<?=app_url()?>/account/my-courses">2. Pay fee for your first course</a></h5>
+                        <h5><a href="<?=app_url()?>/account/my-courses">2. Pay fee for your first course</a> <small><i
+                                class="fa fa-times-circle text-danger"></i></small></h5>
                         <?php } ?>
                     </div>
                     <div class="col-12 col-md-4">
                         <?php if($complete_profile){ ?>
-                        <h5><s>3. Complete your profile</s></h5>
+                        <h5><s>3. Complete your profile</s> <small><i class="fa fa-check-circle text-primary"></i></h5>
                         <?php }else{ ?>
-                        <h5><a href="<?=app_url()?>/account/complete-profile">3. Complete your profile</a></h5>
+                        <h5><a href="<?=app_url()?>/account/complete-profile">3. Complete your profile</a> <small><i
+                                class="fa fa-times-circle text-danger"></i></small></h5>
                         <?php } ?>
                     </div>
                 </div>

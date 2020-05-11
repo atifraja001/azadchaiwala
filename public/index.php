@@ -49,6 +49,7 @@ $router->add('account/dashboard', ['controller' => 'AccountController', 'action'
 $router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);
 $router->add('account/my-profile', ['controller' => 'AccountController', 'action' => 'my_profile']);
 $router->add('account/change-password', ['controller' => 'AccountController', 'action' => 'change_password']);
+$router->add('account/change-password-post', ['controller' => 'AccountController', 'action' => 'change_password_post']);
 $router->add('account/complete-profile', ['controller' => 'AccountController', 'action' => 'complete_profile']);
 $router->add('account/postCompleteProfile', ['controller' => 'AccountController', 'action' => 'postCompleteProfile']);
 $router->add('account/enroll-new-course', ['controller' => 'AccountController', 'action' => 'enroll_new_course']);

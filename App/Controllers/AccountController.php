@@ -287,4 +287,24 @@ class AccountController
         View::render('student/change_password.html');
         View::render('student/layouts/script.html');
     }
+    public function change_password_post(){
+        $account = new \App\Models\Account();
+        $user = $account->getUser($_SESSION['user_login']);
+        if(strlen($_POST['new_password']) >= 8){
+            if($_POST['new_password'] == $_POST['confirm_new_password']){
+                if(password_verify($_POST['old_password'], $user['password'])){
+                    $password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
+                    $account->ChangePassword($password, $user['id']);
+                    redirectWithMessage(app_url().'/account/change-password', 'Password Changed', 'change_password');
+                }else{
+                    $error_msg = "Invalid Old Password";
+                }
+            }else{
+                $error_msg = '<strong>New Password</strong> and <strong>Confirm Password</strong> doesn\'t matched';
+            }
+        }else{
+            $error_msg = "New Password must be 8 character long";
+        }
+        redirectWithMessage(app_url().'/account/change-password', $error_msg, 'change_password', 'error');
+    }
 }

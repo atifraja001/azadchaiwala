@@ -137,4 +137,15 @@ class Account extends \Core\Model
         }
         return false;
     }
+    public function ChangePassword($password, $user_id){
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE student_login SET password = :password WHERE id = :id");
+        if($q->execute([
+            ':password' => $password,
+            ':id' => $user_id
+        ])){
+            return true;
+        }
+        return false;
+    }
 }
