@@ -40,6 +40,10 @@ class AccountController
         $course = new \App\Models\Courses();
         $course = $course->getCourseByBatchId($enroll['batch_id']);
 
+
+        $my_courses = new \App\Models\Courses();
+        $my_courses = $my_courses->getCoursesByStdId($_SESSION['user_login']);
+
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/dashboard.html',
@@ -48,6 +52,7 @@ class AccountController
                 'complete_profile' => $complete_profile,
                 'enroll' => $enroll,
                 'course' => $course,
+                'my_courses' => $my_courses
             ]);
         View::render('student/layouts/script.html');
     }
@@ -268,6 +273,9 @@ class AccountController
     public function my_profile(){
         $user = new \App\Models\Account();
         $user = $user->getUser($_SESSION['user_login']);
+        if(is_null($user['father_name'])){
+            redirect(app_url()."/account/complete-profile");
+        }
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/my_profile.html', ['user' => $user]);
