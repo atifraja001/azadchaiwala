@@ -105,12 +105,6 @@ class AccountController
         if (empty($_POST['address'])) {
             $error[] = "Address is required";
         }
-        if(!file_exists('../content')){
-            mkdir("../content", 0750, true);
-        }
-        if(!file_exists('../content/student_images')){
-            mkdir("../content/student_images", 0750, true);
-        }
         $response = "";
         if(!empty($_FILES['picture']['name'])){
             $response = uploadfile('picture', '../content/student_images', 5);
@@ -262,12 +256,6 @@ class AccountController
         View::render('student/layouts/script.html');
     }
     public function make_payment_post(){
-        if(!file_exists('../content')){
-            mkdir("../content", 0750, true);
-        }
-        if(!file_exists('../content/receipt_images')){
-            mkdir("../content/receipt_images", 0750, true);
-        }
         $response = uploadfile('fee_receipt', '../content/receipt_images', 5);
         if ($response == "invalid_image"){
             $error[] = "Picture is Invalid";
