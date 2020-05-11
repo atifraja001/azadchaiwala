@@ -31,6 +31,68 @@
         <div class="card">
             <div class="card-body">
                 <h4>Your Upcoming Course</h4>
+                <?php if(!empty($course)){ ?>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td class="bg-primary text-white">Your Course</td>
+                            <td class="text-dark"><?=$course['course_name'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-white">Course Type</td>
+                            <td class="text-dark"><?=$course['type'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-white">Course Fee</td>
+                            <td class="text-dark"><?=$course['fee'];?> (<?=getPakCurrency($course['fee'])?>)</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-white">Duration</td>
+                            <td class="text-dark"><?=$course['duration'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-white">Batch</td>
+                            <td class="text-dark"><?=$enroll['name'];?></td>
+                        </tr>
+                        <tr>
+                            <td class="bg-primary text-white">Start Date/Time</td>
+                            <td class="text-dark"><?=date("d-m-Y", strtotime($enroll['start_date']));?>
+                                / <?=date("h:i A", strtotime($enroll['start_time']));?></td>
+                        </tr>
+                        <tr>
+                            <style>
+                                span {
+                                    font-size: 16px !important;
+                                }
+                            </style>
+                            <td class="bg-primary text-white">Status</td>
+                            <td class="text-dark">
+                                <?php if(empty($enroll['fee_receipt'])){ ?>
+                                <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$enroll['id'];?>">
+                                    <button type="button" class="btn btn-warning btn-sm">Pay Now</button>
+                                </a>
+                                <?php }else if($enroll['status'] == 0){ ?>
+                                <span class="badge badge-success">Wait for Approval</span>
+                                <?php }else if($enroll['status'] == 2){ ?>
+                                <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$enroll['id'];?>">
+                                    <button type="button" class="btn btn-warning btn-sm">Pay Again</button>
+                                </a>
+                                <?php }else if($enroll['status'] == 1 && $course['type'] == "online"){ ?>
+                                <a href="<?=app_url()?>/account/my-class/<?=$enroll['id'];?>">
+                                    <button type="button" class="btn btn-success btn-sm">View Class</button>
+                                </a>
+                                <?php }else{ ?>
+                                <span class="badge badge-success">No Action</span>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <?php }else{ ?>
+                    <div class="alert alert-danger text-center">
+                        <strong>No Upcoming Course</strong>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

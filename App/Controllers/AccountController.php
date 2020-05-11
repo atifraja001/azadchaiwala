@@ -33,11 +33,22 @@ class AccountController
         $account = new Account();
         $paid_first = $account->have_paid($_SESSION['user_login']);
         $complete_profile = $account->profile_completed($_SESSION['user_login']);
+
+        // get upcoming erollment
+        $enroll = new \App\Models\Enrollments();
+        $enroll = $enroll->getUpcomingEnroll($_SESSION['user_login']);
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseByBatchId($enroll['batch_id']);
+
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/dashboard.html',
-            ['paid_first' => $paid_first,
-                'complete_profile' => $complete_profile]);
+            [
+                'paid_first' => $paid_first,
+                'complete_profile' => $complete_profile,
+                'enroll' => $enroll,
+                'course' => $course,
+            ]);
         View::render('student/layouts/script.html');
     }
 

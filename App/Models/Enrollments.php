@@ -248,4 +248,12 @@ class Enrollments extends Model
         }
         return true;
     }
+    public function getUpcomingEnroll($student_id){
+        $db = static::getDB();
+        $stmt = $db->prepare('SELECT batches.*, enrollments.* FROM batches 
+                    JOIN enrollments WHERE batches.id = enrollments.batch_id 
+                    AND batches.start_date > current_date() AND enrollments.student_id = :student_id');
+        $stmt->execute([':student_id' => $student_id]);
+        return $stmt->fetch();
+    }
 }
