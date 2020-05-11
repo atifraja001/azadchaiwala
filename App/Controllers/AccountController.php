@@ -59,6 +59,11 @@ class AccountController
 
     public function complete_profile()
     {
+        $user = new \App\Models\Account();
+        $user = $user->getUser($_SESSION['user_login']);
+        if(!is_null($user['father_name'])){
+            redirect(app_url()."/account/edit-profile");
+        }
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/complete_profile.html');
@@ -67,6 +72,10 @@ class AccountController
 
     public function postCompleteProfile()
     {
+        $user = new \App\Models\Account();
+        $user = $user->getUser($_SESSION['user_login']);
+        $email = (isset($_POST['email'])) ? $_POST['email'] : $user['email'];
+        $name = (isset($_POST['name'])) ? $_POST['name'] : $user['name'];
         if (!empty($_POST['cnic'])) {
             if (trim(strlen($_POST['cnic'])) != 15)
                 $error[] = "CNIC must be 13 character long";
@@ -103,12 +112,39 @@ class AccountController
             mkdir("../content/student_images", 0750, true);
         }
         $response = "";
-        $response = uploadfile('picture', '../content/student_images', 5);
-        if ($response == "invalid_image"){
-            $error[] = "Picture is Invalid";
-        }else if ($response == "invalid_size"){
-            $error[] = "Size must be less then 5 MB";
+        if(!empty($_FILES['picture']['name'])){
+            $response = uploadfile('picture', '../content/student_images', 5);
+            if ($response == "invalid_image"){
+                $error[] = "Picture is Invalid";
+            }else if ($response == "invalid_size"){
+                $error[] = "Size must be less then 5 MB";
+            }
+            $data = [
+                ":name" => $name,
+                ":email" => $email,
+                ":cnic" => $_POST['cnic'],
+                ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
+                ":gender" => $_POST['gender'],
+                ":father_name" => $_POST['father_name'],
+                ":father_phone" => $_POST['father_phone'],
+                ":picture" => $response,
+                ":address" => $_POST['address'],
+                ":id" => $_SESSION['user_login']
+            ];
+        }else{
+            $data = [
+                ":name" => $name,
+                ":email" => $email,
+                ":cnic" => $_POST['cnic'],
+                ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
+                ":gender" => $_POST['gender'],
+                ":father_name" => $_POST['father_name'],
+                ":father_phone" => $_POST['father_phone'],
+                ":address" => $_POST['address'],
+                ":id" => $_SESSION['user_login']
+            ];
         }
+
         if (isset($error)) {
             $_SESSION['errors'] = $error;
             foreach ($_POST as $key => $form_data){
@@ -118,19 +154,15 @@ class AccountController
             die;
         }
         // prepare data
-        $data = [
-            ":cnic" => $_POST['cnic'],
-            ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
-            ":gender" => $_POST['gender'],
-            ":father_name" => $_POST['father_name'],
-            ":father_phone" => $_POST['father_phone'],
-            ":picture" => $response,
-            ":address" => $_POST['address'],
-            ":id" => $_SESSION['user_login']
-        ];
+
 
         $user = new Account();
-        if ($user->CompleteProfile($data)) {
+        if(empty($response)){
+            $query = $user->CompleteProfile($data, false);
+        }else{
+            $query = $user->CompleteProfile($data, true);
+        }
+        if ($query) {
             redirectWithMessage(app_url() . '/account/my-profile',
                 'Profile Completed.',
                 'my_profile');
@@ -306,5 +338,16 @@ class AccountController
             $error_msg = "New Password must be 8 character long";
         }
         redirectWithMessage(app_url().'/account/change-password', $error_msg, 'change_password', 'error');
+    }
+    public function edit_profile(){
+        $user = new \App\Models\Account();
+        $user = $user->getUser($_SESSION['user_login']);
+        if(is_null($user['father_name'])){
+            redirect(app_url()."/account/complete-profile");
+        }
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/edit_profile.html', ['user' => $user]);
+        View::render('student/layouts/script.html');
     }
 }

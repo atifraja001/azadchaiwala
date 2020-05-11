@@ -48,6 +48,7 @@ $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'd
 $router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
 $router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);
 $router->add('account/my-profile', ['controller' => 'AccountController', 'action' => 'my_profile']);
+$router->add('account/edit-profile', ['controller' => 'AccountController', 'action' => 'edit_profile']);
 $router->add('account/change-password', ['controller' => 'AccountController', 'action' => 'change_password']);
 $router->add('account/change-password-post', ['controller' => 'AccountController', 'action' => 'change_password_post']);
 $router->add('account/complete-profile', ['controller' => 'AccountController', 'action' => 'complete_profile']);

@@ -94,20 +94,39 @@ class Account extends \Core\Model
         }
         return $q->fetch();
     }
-    public function CompleteProfile($data){
+    public function CompleteProfile($data, $picture){
         $db = static::getDB();
-        $q = $db->prepare('UPDATE student_login SET
-            cnic = :cnic,
-            date_of_birth = :date_of_birth,
-            gender = :gender,
-            father_name = :father_name,
-            father_phone = :father_phone,
-            picture = :picture,
-            address = :address WHERE id = :id');
-        if($q->execute($data)){
-            return true;
+        if($picture){
+            $q = $db->prepare('UPDATE student_login SET
+                name = :name,
+                email = :email,
+                cnic = :cnic,
+                date_of_birth = :date_of_birth,
+                gender = :gender,
+                father_name = :father_name,
+                father_phone = :father_phone,
+                picture = :picture,
+                address = :address WHERE id = :id');
+            if($q->execute($data)){
+                return true;
+            }else{
+                return false;
+            }
         }else{
-            return false;
+            $q = $db->prepare('UPDATE student_login SET
+                name = :name,
+                email = :email,
+                cnic = :cnic,
+                date_of_birth = :date_of_birth,
+                gender = :gender,
+                father_name = :father_name,
+                father_phone = :father_phone,
+                address = :address WHERE id = :id');
+            if($q->execute($data)){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
     public function have_enrolled($user_id){
