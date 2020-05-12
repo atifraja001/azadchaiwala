@@ -275,7 +275,7 @@ class AccountController
             ':id' => $_POST['enroll_id']
         ];
         if($enroll->updateFeeReceipt($data)){
-            redirect(app_url() . '/account/my-courses');
+            redirect(app_url() . '/account/dashboard');
         }else{
             $error[] = "Something went's wrong, while uploading file. Try again or contact admin";
             $_SESSION['errors'] = $error;
