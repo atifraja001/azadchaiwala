@@ -82,7 +82,7 @@ class Batches extends \Core\Model
     public function getPendingEnrollments($batch_id)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT enrollments.*, students.name FROM enrollments JOIN students ON students.id = enrollments.student_id WHERE enrollments.status = 0 AND enrollments.batch_id = :batch_id");
+        $stmt = $db->prepare("SELECT enrollments.*, student_login.name FROM enrollments JOIN student_login ON student_login.id = enrollments.student_id WHERE enrollments.status = 0 AND enrollments.batch_id = :batch_id");
         $stmt->execute([':batch_id' => $batch_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -90,7 +90,7 @@ class Batches extends \Core\Model
     public function getApprovedEnrollments($batch_id)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT enrollments.*, students.name FROM enrollments JOIN students ON students.id = enrollments.student_id WHERE enrollments.status = 1 AND enrollments.batch_id = :batch_id");
+        $stmt = $db->prepare("SELECT enrollments.*, student_login.name FROM enrollments JOIN student_login ON student_login.id = enrollments.student_id WHERE enrollments.status = 1 AND enrollments.batch_id = :batch_id");
         $stmt->execute([':batch_id' => $batch_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

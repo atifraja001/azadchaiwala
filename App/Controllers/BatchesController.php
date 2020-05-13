@@ -29,7 +29,7 @@ class BatchesController
         $batches = new \App\Models\Batches();
         $batch = $batches->getBatchInfo($request['id']);
         $course = new \App\Models\Courses();
-        $course = $course->getCourseById($batch['id']);
+        $course = $course->getCourseById($batch['course_id']);
         $total_enrolled = $batches->countEnrolledStudents($batch['id']);
         $pending_enrollments = $batches->getPendingEnrollments($request['id']);
         $approved_enrollments = $batches->getApprovedEnrollments($request['id']);
