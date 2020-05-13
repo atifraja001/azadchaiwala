@@ -120,7 +120,11 @@
                             <?php foreach($approved_enrollments as $ae){ ?>
                             <tr>
                                 <td><?=$ae['name'];?></td>
-                                <td><?=$ae['fee_receipt'];?></td>
+                                <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
+                                <td>Not Paid</td>
+                                <?php }else{ ?>
+                                <td><a href="<?=app_url()?>/content/receipt_images/<?=$pe['fee_receipt'];?>" target="_blank"><?=$pe['fee_receipt'];?></a></td>
+                                <?php } ?>
                                 <td>
                                     <label class="badge badge-primary">Approved</label>
                                 </td>
