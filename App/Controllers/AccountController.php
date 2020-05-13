@@ -15,6 +15,9 @@ class AccountController
         // profile complete and enroll course middleware
         $user1 = new Account();
         $user = $user1->getUser($_SESSION['user_login']);
+        if($user['name'] == ""){
+            redirect(app_url().'/account/logout');
+        }
         $except = array('complete_profile', 'enroll_course', 'make_payment', 'make_payment_post',
             'postCompleteProfile', 'enroll_new_course', 'getBatches', 'enroll_new_course_post', 'getCoursesByType');
         if (!in_array($request['action'], $except)) {
