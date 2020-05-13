@@ -121,7 +121,7 @@
                             <?php foreach($approved_enrollments as $ae){ ?>
                             <tr>
                                 <td><?=$ae['name'];?></td>
-                                <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
+                                <?php if(is_null($ae['fee_receipt']) || empty($ae['fee_receipt'])){ ?>
                                 <td>Not Paid</td>
                                 <?php }else{ ?>
                                 <td><a href="<?=app_url()?>/content/receipt_images/<?=$pe['fee_receipt'];?>"
