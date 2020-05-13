@@ -72,7 +72,11 @@
                             <?php foreach($pending_enrollments as $pe){ ?>
                                 <tr>
                                     <td><?=$pe['name'];?></td>
-                                    <td><?=$pe['fee_receipt'];?></td>
+                                    <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
+                                    <td>Not Paid</td>
+                                    <?php }else{ ?>
+                                    <td><a href="<?=app_url()?>/content/fee_receipt/<?=$pe['fee_receipt'];?>" target="_blank"><?=$pe['fee_receipt'];?></a></td>
+                                    <?php } ?>
                                     <td>
                                         <label class="badge badge-danger">Pending</label>
                                      </td>
