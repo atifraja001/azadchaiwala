@@ -22,6 +22,29 @@
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" name="name" autofocus required
+                                       placeholder="Enter Your Name" value="<?=$user['name'];?>">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" class="form-control" name="email" required
+                                       placeholder="Enter your Email" value="<?=$user['email'];?>">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your Phone Number</label>
+                                <input type="tel" class="form-control" value="<?=$user['phone_number'];?>"
+                                       name="phone_number" data-mask="0399-9999999"
+                                       required
+                                       placeholder="Father / Guardian phone number">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
                                 <label>Your CNIC / B-Form Number</label>
                                 <input type="text" class="form-control" name="cnic" required
                                        placeholder="Enter CNIC or B-Form number" value="<?=form("cnic");?>"

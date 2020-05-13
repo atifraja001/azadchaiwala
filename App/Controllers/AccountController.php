@@ -30,6 +30,7 @@ class AccountController
 
     public function dashboard()
     {
+
         $account = new Account();
         $paid_first = $account->have_paid($_SESSION['user_login']);
         $complete_profile = $account->profile_completed($_SESSION['user_login']);
@@ -66,7 +67,10 @@ class AccountController
         }
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
-        View::render('student/complete_profile.html');
+        View::render('student/complete_profile.html',
+            [
+                'user' => $user
+        ]   );
         View::render('student/layouts/script.html');
     }
 
@@ -105,6 +109,10 @@ class AccountController
         if (empty($_POST['address'])) {
             $error[] = "Address is required";
         }
+        if (empty($_POST['phone_number'])) {
+            $error[] = "Phone number is required";
+        }
+
         $response = "";
         if(!empty($_FILES['picture']['name'])){
             $response = uploadfile('picture', '../content/student_images', 5);
@@ -117,6 +125,7 @@ class AccountController
                 ":name" => $name,
                 ":email" => $email,
                 ":cnic" => $_POST['cnic'],
+                ":phone_number" => $_POST['phone_number'],
                 ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
                 ":gender" => $_POST['gender'],
                 ":father_name" => $_POST['father_name'],
@@ -130,6 +139,7 @@ class AccountController
                 ":name" => $name,
                 ":email" => $email,
                 ":cnic" => $_POST['cnic'],
+                ":phone_number" => $_POST['phone_number'],
                 ":date_of_birth" => date("Y-m-d", strtotime($_POST['date_of_birth'])),
                 ":gender" => $_POST['gender'],
                 ":father_name" => $_POST['father_name'],
@@ -223,7 +233,7 @@ class AccountController
         $batch = new \App\Models\Batches();
         $batch = $batch->getBatchInfo($enroll['batch_id']);
         $data['course_name'] = $course['course_name'];
-        $data['course_type'] = $course['type'];
+        $data['course_type'] = ucfirst($course['type']);
         $data['course_fee'] = number_format($course['fee']);
         $data['fee_in_words'] = getPakCurrency($course['fee']);
         $data['duration'] = $course['duration'];

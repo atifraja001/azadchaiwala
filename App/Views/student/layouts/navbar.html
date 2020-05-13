@@ -67,7 +67,7 @@
                                 <?php $user = new \App\Models\Account();
                                     $user = $user->getUser($_SESSION['user_login']);
                                     ?>
-                                <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" alt="user" class="rounded-circle">
+                                <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" onError="this.onerror=null;this.src='<?=app_url()?>/assets/img/azad_avatar.png';" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
