@@ -343,12 +343,33 @@ class AccountController
     public function edit_profile(){
         $user = new \App\Models\Account();
         $user = $user->getUser($_SESSION['user_login']);
-        if(is_null($user['father_name'])){
-            redirect(app_url()."/account/complete-profile");
+        if (is_null($user['father_name'])) {
+            redirect(app_url() . "/account/complete-profile");
         }
         View::render('student/layouts/head.html');
         View::render('student/layouts/navbar.html');
         View::render('student/edit_profile.html', ['user' => $user]);
+        View::render('student/layouts/script.html');
+    }
+
+    public function my_class($request)
+    {
+        $enroll = new \App\Models\Enrollments();
+        $enroll = $enroll->getEnrollById($request['id']);
+        if ($enroll['student_id'] != $_SESSION['user_login']) {
+            redirect(app_url() . '/account/my-courses');
+        }
+        if ($enroll['status'] == 0 || empty($enroll['fee_receipt']) || $enroll['status'] == 2) {
+            redirect(app_url() . '/account/my-courses');
+        }
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseByBatchId($enroll['batch_id']);
+        $batch = new \App\Models\Batches();
+        $batch = $batch->getBatchInfo($enroll['batch_id']);
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/my_class.html',
+            ['enroll' => $enroll, 'course' => $course, 'batch' => $batch]);
         View::render('student/layouts/script.html');
     }
 }
