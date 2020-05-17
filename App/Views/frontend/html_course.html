@@ -41,11 +41,11 @@
             <div class="container">
 
                 <!-- light logo -->
-                <a class="navbar-brand logo-light" href="<?=app_url()?>"><img
+                <a class="navbar-brand logo-light" href="<?=app_url()?>/"><img
                         src="<?=app_url()?>/assets/html/images/html-logo.png"
                         alt="logo"></a>
                 <!-- dark logo -->
-                <a class="navbar-brand logo-dark" href="<?=app_url()?>"><img
+                <a class="navbar-brand logo-dark" href="<?=app_url()?>/"><img
                         src="<?=app_url()?>/assets/html/images/html-logo.png" alt="logo"></a>
 
                 <!-- nav menu toggler-->
@@ -57,7 +57,7 @@
                 <!-- menu starts-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="dtr-scrollspy navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="<?=app_url()?>">Main Site</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?=app_url()?>/">Main Site</a></li>
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#products">Payment</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">FAQ</a></li>
@@ -181,7 +181,9 @@
                                         <p>
                                             <input name="password" class="required password" type="password" placeholder="Password">
                                         </p>
-                                        <button type="submit" class="dtr-btn-round dtr-btn-blue"> Register</button>
+                                        <button type="submit" class="dtr-btn-round dtr-btn-blue"> Create Account</button>
+                                        <div class="text-center">Already have an account? <a href="<?=app_url()?>/account">Login Now</a></div>
+
                                     </fieldset>
                                 </form>
                                 <div id="result"></div>
