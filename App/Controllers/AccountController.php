@@ -372,4 +372,7 @@ class AccountController
             ['enroll' => $enroll, 'course' => $course, 'batch' => $batch]);
         View::render('student/layouts/script.html');
     }
+    public function getBatchLink(){
+        echo "https://google.com";
+    }
 }

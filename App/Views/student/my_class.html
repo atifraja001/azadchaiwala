@@ -22,7 +22,7 @@
                                 </tr>
                                 <tr>
                                     <td class="bg-primary text-white">Course Fee</td>
-                                    <td class="text-dark"><?=$course['fee'];?></td>
+                                    <td class="text-dark"><?=$course['fee'];?> pkr</td>
                                     <td class="bg-primary text-white">Duration</td>
                                     <td class="text-dark"><?=$course['duration'];?></td>
                                 </tr>
@@ -30,7 +30,16 @@
                                     <td class="bg-primary text-white">Batch</td>
                                     <td class="text-dark"><?=$batch['name'];?></td>
                                     <td class="bg-primary text-white">Start Date/Time</td>
-                                    <td class="text-dark"><?=date("d-F-Y", strtotime($batch['start_date']));?>
+                                    <?php
+                                    if($batch['start_date'] == $batch['end_date']){
+                                        $batch_date = date('d-F-Y', strtotime($batch['start_date']));
+                                    }else if(strtotime($batch['end_date']) > time()){
+                                        $batch_date = date('d-F-Y', time());
+                                    }else{
+                                        $batch_date = date('d-F-Y', strtotime($batch['end_date']));
+                                    }
+                                    ?>
+                                    <td class="text-dark"><?=$batch_date;?>
                                         / <?=date("h:i A", strtotime($batch['start_time']));?></td>
                                 </tr>
                             </table>
@@ -67,6 +76,15 @@
                                 <li class="li-custom"><span id="seconds"></span>Seconds</li>
                             </ul>
                         </div>
+                        <?php
+                        if($batch['start_date'] == $batch['end_date']){
+                            $batch_date = date('d-F-Y', strtotime($batch['start_date']));
+                        }else if(strtotime($batch['end_date']) > time()){
+                            $batch_date = date('d-F-Y', time());
+                        }else{
+                            $batch_date = date('d-F-Y', strtotime($batch['end_date']));
+                        }
+                        ?>
                         <script>
                             const second = 1000,
                                 minute = second * 60,
@@ -74,26 +92,37 @@
                                 day = hour * 24;
 
                             let countDown =
-                                new Date(
-                                    "<?=date('d-F-Y', strtotime($batch['start_date']));?> " +
-                                    "<?=date('h:i:s', strtotime($batch['start_time']));?>").getTime(),
+                                    new Date(
+                                        "<?=$batch_date;?> <?=date('H:i:s', strtotime($batch['start_time']));?> GMT+0500").getTime(),
                                 x = setInterval(function () {
 
                                     let now = new Date().getTime(),
                                         distance = countDown - now;
-
+                                    if (distance < 0) {
+                                        distance = 0;
+                                    }
                                     document.getElementById('days').innerText = Math.floor(distance / (day)),
                                         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
                                         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
                                         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
                                     //do something later when date is reached
-                                    if (distance < 0) {
-                                     clearInterval(x);
+                                    if (distance <= 0) {
+                                        clearInterval(x);
                                     }
-
+                                    console.log(distance);
+                                    if (distance < 600000) { // ten minutes
+                                        getLink("<?=$batch['id'];?>");
+                                    }
                                 }, second);
                         </script>
+                        <div class="text-center">
+                            <a href="" class="class_join_href" target="_blank">
+                                <button type="button" class="btn btn-success class_join_button" disabled>
+                                    Active 10 minutes before
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

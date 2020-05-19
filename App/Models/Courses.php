@@ -121,10 +121,10 @@ class Courses extends \Core\Model
         $db = static::getDB();
         $stmt = $db->prepare("INSERT INTO courses 
                 (order_number, teacher_id, course_name, slug, course_picture, 
-                youtube_embed, lecture_hours_per_day, duration, semester, fee, course_description)
+                youtube_embed, lecture_hours_per_day, duration, semester, fee, course_description, type)
                 VALUES
                 (:order_number, :teacher_id, :course_name, :slug, :course_picture, 
-                :youtube_embed, :lecture_hours_per_day, :duration, :semester, :fee, :course_description)");
+                :youtube_embed, :lecture_hours_per_day, :duration, :semester, :fee, :course_description, :type)");
         if($stmt->execute($data)){
             return $db->lastInsertId();
         }else{
@@ -145,6 +145,7 @@ class Courses extends \Core\Model
                                 duration = :duration,
                                 semester = :semester,
                                 fee = :fee,
+                                type = :type,
                                 course_description = :course_description
                                 WHERE id = :id");
             if($stmt->execute($data)){
@@ -164,6 +165,7 @@ class Courses extends \Core\Model
                                 duration = :duration,
                                 semester = :semester,
                                 fee = :fee,
+                                type = :type,
                                 course_description = :course_description
                                 WHERE id = :id");
             if($stmt->execute($data)){
