@@ -373,6 +373,8 @@ class AccountController
         View::render('student/layouts/script.html');
     }
     public function getBatchLink(){
-        echo "https://google.com";
+        $batch = new \App\Models\Batches();
+        $batch = $batch->getBatchInfo($_POST['batch_id']);
+        echo $batch['class_link'];
     }
 }
