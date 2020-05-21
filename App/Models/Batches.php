@@ -33,9 +33,9 @@ class Batches extends \Core\Model
     {
         $db = static::getDB();
         $stmt = $db->prepare("INSERT INTO batches 
-                                (course_id, name, start_date, end_date, start_time, end_time, total_students)
+                                (course_id, name, start_date, end_date, start_time, end_time, total_students, class_link)
                                 VALUES 
-                                (:course_id, :batch_name, :start_date, :end_date, :start_time, :end_time, :total_students)");
+                                (:course_id, :batch_name, :start_date, :end_date, :start_time, :end_time, :total_students, :class_link)");
         if ($stmt->execute($data))
             return true;
         else
@@ -61,7 +61,8 @@ class Batches extends \Core\Model
                         end_date = :end_date,
                         start_time = :start_time,
                         end_time = :end_time,
-                        total_students = :total_students
+                        total_students = :total_students,
+                        class_link = :class_link
                         WHERE id = :batch_id");
         if ($stmt->execute($data))
             return true;
