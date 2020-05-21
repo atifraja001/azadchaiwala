@@ -18,7 +18,7 @@
                     <p>Our course helps 16-35 year old's become skilled Graphic Designers & illustrators. So they can be
                         skilled enough to get a job or begin a profitable career in freelancing.</p>
                     <div class="grahpic-enroll-button" style="margin-top: 40px">
-                        <?php if(count($batch) == 0){ ?>
+                        <?php if(count($batch) == -1){ ?>
                         <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#"><span>Change Your Life </span>Enroll
                             Now</a>
                         <?php }else{ ?>
@@ -323,7 +323,7 @@
 
             <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="graphic-features__course-details graphic-enrol-button">
-                    <?php if(count($batch) == 0){ ?>
+                    <?php if(count($batch) == -1){ ?>
                     <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#">Enroll Now</a>
                     <?php }else{ ?>
                     <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now</a>
@@ -997,7 +997,7 @@
     <!-- enrollNow -->
     <div class="container graphic_lastenroll-now text-center ">
         <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
-        <?php if(count($batch) == 0){ ?>
+        <?php if(count($batch) == -1){ ?>
         <a class="btn btn-lg " data-target="#myModal" data-toggle="modal" href="#">Enroll Now <i
                 class="fas fa-angle-double-right"></i></a>
         <?php }else{ ?>
