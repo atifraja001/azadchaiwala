@@ -17,6 +17,22 @@
 
 <!-- jQuery  -->
 <script src="<?=app_url()?>/member/assets/js/jquery.min.js"></script>
+<script>
+    function getLink(batch_id){
+        if($(".class_join_button").attr('disabled') == "disabled"){
+            $.ajax({
+                url: "<?=app_url()?>/account/my-class/get-link",
+                method: "POST",
+                data: {batch_id:batch_id},
+                success:function (r) {
+                    $(".class_join_href").attr('href', r);
+                }
+            });
+            $(".class_join_button").attr('disabled', false);
+            $(".class_join_button").html('Enter Class');
+        }
+    }
+</script>
 <script src="<?=app_url()?>/member/assets/js/popper.min.js"></script>
 <script src="<?=app_url()?>/member/assets/js/bootstrap.min.js"></script>
 <script src="<?=app_url()?>/member/assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
@@ -155,20 +171,7 @@
             }
         });
     });
-    function getLink(batch_id){
-        if($(".class_join_button").attr('disabled') == "disabled"){
-            $.ajax({
-                url: "<?=app_url()?>/account/my-class/get-link",
-                method: "POST",
-                data: {batch_id:batch_id},
-                success:function (r) {
-                    $(".class_join_href").attr('href', r);
-                }
-            });
-            $(".class_join_button").attr('disabled', false);
-            $(".class_join_button").html('Enter Class');
-        }
-    }
+
 </script>
 
 </body>
