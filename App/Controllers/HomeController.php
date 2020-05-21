@@ -206,6 +206,7 @@ class HomeController extends \Core\Controller
 
     public function courseregistration($request)
     {
+        redirect(app_url().'/create-account');
         // get course name
         $courses = new \App\Models\Courses();
         $course = $courses->getCourseBySlug($request['slug']);

@@ -95,7 +95,7 @@ class Batches extends \Core\Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function GetBatchByCourseId($course_id, $std_id)
+    public function GetBatchByCourseId($course_id, $std_id = "")
     {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id 
