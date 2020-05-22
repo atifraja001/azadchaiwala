@@ -46,7 +46,6 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                     // for table badges or batches
                     $db->exec('ALTER TABLE `batches` ADD `class_link` TEXT NOT NULL AFTER `end_time`;');
                     $db->exec("ALTER TABLE `courses` ADD `type` VARCHAR(20) NOT NULL DEFAULT 'offline' AFTER `course_description`;");
-                    $db->exec('DELETE * FROM enrollments');
                     $db->exec('ALTER TABLE `enrollments` ADD `course_id` INT NULL AFTER `id`;');
                     $db->exec("ALTER TABLE `enrollments` CHANGE `batch_id` `batch_id` INT(11) NULL, CHANGE `fee_receipt` `fee_receipt` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL, CHANGE `status` `status` TINYINT(4) NOT NULL DEFAULT '0';");
                     $db->exec("CREATE TABLE `student_login` (
