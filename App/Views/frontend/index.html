@@ -17,13 +17,22 @@
 						<div class="course__card-image">
 							<img src="<?=app_url()?>/assets/img/html/html.jpg" alt="course image" class="img-fluid">
 						</div>
-						<div class="course__card-fee">2,000 <small class="text-white">PKR</small></div>
+						<div class="row">
+							<div class="col-4">
+								<div class="course__card-fee">2,000 <small class="text-white">PKR</small></div>
+							</div>
+							<div class="col-8">
+								<div class="course__card-fee"
+									 style="background-color: #52A788; width: 100%; font-size: 18px; font-weight: normal;">
+									<i class="fas fa-tv" style="color: white"></i> Online Classes
+								</div>
+							</div>
+						</div>
 						<div class="course__card-content">
 							<h2>HTML Course ONLINE (4 Hours)</h2>
 							<p>AzadChaiwala Introducing HTML Crash Course for student who want to learn the basics of
 								programming</p>
 						</div>
-
 					</a>
 				</div>
 			</div>
@@ -41,14 +50,30 @@
 						</div>
 						<?php } ?>
 						<div class="course__card-image">
-							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
+							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image"
+								 class="img-fluid">
 						</div>
-						<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+						<?php if($c['id'] == 11 || $c['id'] == 12){ ?>
+						<div class="row">
+							<div class="col-4">
+								<div class="course__card-fee">
+									<?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+							</div>
+							<div class="col-8">
+								<div class="course__card-fee"
+									 style="background-color: #52A788; width: 100%; font-size: 18px; font-weight: normal;">
+									<i class="fas fa-tv" style="color: white"></i> Online Classes
+								</div>
+							</div>
+						</div>
+						<?php }else{ ?>
+						<div class="course__card-fee">
+							<?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+						<?php } ?>
 						<div class="course__card-content">
 							<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
 							<p><?=add3Dots($c['course_description'], 100)?></p>
 						</div>
-
 					</a>
 				</div>
 			</div>

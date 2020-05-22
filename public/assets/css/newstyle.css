@@ -128,10 +128,13 @@ Header css start here
 
 .header__under-item {
     margin: 20px !important;
-    color: #2A92F1;
+    color: #ffffff;
     font-weight: bold;
     text-decoration: none;
 
+}
+.header__under-item:hover{
+    color: #e4e4e4;
 }
 @media(min-width:900px){
     .number-mobile{
