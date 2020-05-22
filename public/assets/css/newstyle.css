@@ -386,11 +386,11 @@ courses Area
     /*position: absolute;*/
     font-weight: 700;
     font-family: var(--course-family);
-    padding: 6px 30px;
+    padding: 6px 14px;
     background: #E74C3C;
     top: 200px;
     color: white;
-    width: 150px;
+    width: 120px;
 }
 
 .course_card-start {
