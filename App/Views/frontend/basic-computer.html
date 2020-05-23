@@ -169,12 +169,8 @@
                         <div class="basic-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Next Batch Start</h3>
-                            <?php if(count($batch) > 0){ ?>
-                            <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
-                                <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
-                            <?php }else{ ?>
-                            <p>Please Call for Details</p>
-                            <?php } ?>
+                            <p><a href="<?=app_url()?>/create-account">Click here to get details for next
+                                batch.</a></p>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 p-1">
