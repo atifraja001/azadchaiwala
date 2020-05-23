@@ -106,10 +106,25 @@
                                             <input type="text" class="form-control"  value="<?=$course['semester'];?>" name="semester" required placeholder="Example: 2 (One Month Each)">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Course Description</label>
                                             <textarea class="form-control" rows="5" placeholder="Enter Course Description" name="course_description" required><?=$course['course_description'];?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Course Type</label>
+                                            <select class="form-control" name="type" required>
+                                                <?php if($course['type'] == "offline"){ ?>
+                                                    <option value="offline" selected>Offline</option>
+                                                    <option value="online">Online</option>
+                                                <?php }else{ ?>
+                                                    <option value="offline">Offline</option>
+                                                    <option value="online" selected>Online</option>
+                                                <?php } ?>
+
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

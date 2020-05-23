@@ -33,7 +33,11 @@ class CoursesController
         View::render('backend/layouts/script.html');
     }
     public function add_new_course_post(){
-        $response = uploadfile('course_picture', '../content/course_images');
+        if(!empty($_FILES['course_picture']['name'])){
+            $response = uploadfile('course_picture', '../content/course_images');
+        }else{
+            $response = true;
+        }
         if($response == "invalid_image"){
             redirectWithMessage(app_url('admin').'/students/add-new-course', 'Invalid Image File', 'course', 'error');
         }else if($response == "invalid_size"){
@@ -49,6 +53,7 @@ class CoursesController
                 ':slug' => clean_post('course_slug'),
                 ':course_picture' => $response,
                 ':youtube_embed' => clean_post('video_id'),
+                ':type' => $_POST['type'],
                 ':lecture_hours_per_day' => clean_post('daily_hours'),
                 ':duration' => clean_post('duration_number')." ".clean_post('duration_option').(clean_post('duration_number') > 1 ? "s": ""),
                 ':semester' => clean_post('semester'),
@@ -99,6 +104,7 @@ class CoursesController
                     ':duration' => clean_post('duration_number') . " " . clean_post('duration_option') . (clean_post('duration_number') > 1 ? "s" : ""),
                     ':semester' => clean_post('semester'),
                     ':fee' => clean_post('course_fee'),
+                    ':type' => $_POST['type'],
                     ':course_description' => clean_post('course_description'),
                     ':id' => clean_post('id')
                 ];
@@ -116,6 +122,7 @@ class CoursesController
                 ':duration' => clean_post('duration_number') . " " . clean_post('duration_option') . (clean_post('duration_number') > 1 ? "s" : ""),
                 ':semester' => clean_post('semester'),
                 ':fee' => clean_post('course_fee'),
+                ':type' => $_POST['type'],
                 ':course_description' => clean_post('course_description'),
                 ':id' => clean_post('id')
             ];

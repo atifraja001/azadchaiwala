@@ -1,5 +1,3 @@
-	
-
 <!-- course section -->
 	<section >
 		<div class="courses">
@@ -13,12 +11,37 @@
 
 	<div class="container mt-3">
 		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="course-card">
+					<a href="<?=app_url()?>/course/online-html-crash-course-in-pakistan">
+						<div class="course__card-image">
+							<img src="<?=app_url()?>/assets/img/html/html.jpg" alt="course image" class="img-fluid">
+						</div>
+						<div class="row">
+							<div class="col-3">
+								<div class="course__card-fee">2,000 <small class="text-white">PKR</small></div>
+							</div>
+							<div class="col-9">
+								<div class="course__card-fee"
+									 style="background-color: #52A788; width: 100%; font-size: 16px; font-weight: bold;">
+									<i class="fas fa-tv" style="color: white"></i> Online Classes Available
+								</div>
+							</div>
+						</div>
+						<div class="course__card-content">
+							<h2>HTML Course - Online Only (4 Hours)</h2>
+							<p>AzadChaiwala Introducing HTML Crash Course for student who want to learn the basics of
+								programming</p>
+						</div>
+					</a>
+				</div>
+			</div>
 			<?php $counter = 1; foreach($courses as $c){ ?>
-				<?php
+			<?php
 					if($counter <= 4){
 					$counter++;
 				?>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-md-6">
 				<div class="course-card">
 					<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
 						<?php if(isset($heading)){ ?>
@@ -27,23 +50,38 @@
 						</div>
 						<?php } ?>
 						<div class="course__card-image">
-							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image" class="img-fluid">
+							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="course image"
+								 class="img-fluid">
 						</div>
-						<div class="course__card-fee"><?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+						<?php if($c['id'] == 11 || $c['id'] == 12){ ?>
+						<div class="row">
+							<div class="col-3">
+								<div class="course__card-fee">
+									<?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+							</div>
+							<div class="col-9">
+								<div class="course__card-fee"
+									 style="background-color: #52A788; width: 100%; font-size: 16px; font-weight: bold;">
+									<i class="fas fa-tv" style="color: white"></i> Online Classes Available
+								</div>
+							</div>
+						</div>
+						<?php }else{ ?>
+						<div class="course__card-fee">
+							<?=number_format($c['fee']);?> <small class="text-white">PKR</small></div>
+						<?php } ?>
 						<div class="course__card-content">
 							<h2><?=$c['course_name']?> (<?=$c['duration'];?>)</h2>
 							<p><?=add3Dots($c['course_description'], 100)?></p>
 						</div>
-
 					</a>
 				</div>
 			</div>
 			<?php } } ?>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-md-6">
 				<ul class="list-group">
 					<li class="list-group-item active"><h3 class="text-white heading-primary">COMING SOON</h3></li>
 					<li class="list-group-item font-weight-bold">Mobile App Development (2 Months)</li>
-					<li class="list-group-item font-weight-bold">Web Systems and Website Development (2 Months)</li>
 					<li class="list-group-item font-weight-bold">Digital Marketing (3 Weeks) </li>
 				</ul>
 			</div>

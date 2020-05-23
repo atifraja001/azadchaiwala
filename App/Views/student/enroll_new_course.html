@@ -1,0 +1,140 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Student Enrollment</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="wizard-form">
+                    <h5 id="wizard-title">Select Class Type</h5>
+                    <form method="post" action="" id="class_type_form">
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <td class="class_type">
+                                    <div class="radio my-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1"  name="class_type" value="online" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Online Classes</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="class_type">
+                                    <div class="radio my-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio2" disabled name="class_type" value="offline" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">Institute Based Classes - <span class="badge badge-danger" style="font-size: 12px !important;">Currently Unavailable</span></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary class_type_button" disabled>Next</button>
+                        </div>
+                    </form>
+                    <form method="post" action="" id="course_form" style="display: none">
+                        <table class="table table-bordered table-hover">
+
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary course_button" disabled>Next</button>
+                        </div>
+                    </form>
+                    <form method="post" action="" id="batch_form" style="display: none">
+                        <input type="hidden" name="selected_course" value="">
+                        <table class="table table-bordered table-hover">
+
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary batch_button" disabled>Next</button>
+                        </div>
+                    </form>
+                    <div id="overview"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="courses_list" style="display: none">
+    <table>
+    <tr class="course">
+        <td style="width: 40%">
+            <div class="radio my-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id=":course_id"  name="course_id" value=":course_id" class="custom-control-input">
+                    <label class="custom-control-label" for=":course_id">:course_title</label>
+                </div>
+            </div>
+        </td>
+        <td style="width: 30%">
+            :duration
+        </td>
+        <td style="width: 30%">
+            :course_fee pkr
+        </td>
+    </tr>
+    </table>
+</div>
+<div id="batches_list" style="display: none">
+    <table>
+        <tr class="batch">
+            <td style="width: 40%">
+                <div class="radio my-2">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id=":batch_id"  name="batch_id" value=":batch_id" class="custom-control-input">
+                        <label class="custom-control-label" for=":batch_id">:batch_name</label>
+                    </div>
+                </div>
+            </td>
+            <td style="width: 30%">
+                :batch_date
+            </td>
+            <td style="width: 30%">
+                :batch_time
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="final_overview" style="display: none">
+    <div class="col-12 col-md-6">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td class="bg-primary text-white">Your Course</td>
+                    <td class="text-dark">:course_name</td>
+                </tr>
+                <tr>
+                    <td class="bg-primary text-white">Course Type</td>
+                    <td class="text-dark">:course_type</td>
+                </tr>
+                <tr>
+                    <td class="bg-primary text-white">Course Fee</td>
+                    <td class="text-dark">:course_fee (:fee_in_words)</td>
+                </tr>
+                <tr>
+                    <td class="bg-primary text-white">Duration</td>
+                    <td class="text-dark">:duration</td>
+                </tr>
+                <tr>
+                    <td class="bg-primary text-white">Batch</td>
+                    <td class="text-dark">:batch_name</td>
+                </tr>
+                <tr>
+                    <td class="bg-primary text-white">Start Date/Time</td>
+                    <td class="text-dark">:start_date / :start_time</td>
+                </tr>
+            </table>
+        </div>
+        <a href="<?=app_url()?>/account/my-courses/make-payment/:enroll_id">
+            <button class="btn btn-success">
+                Proceed To Payments Page
+            </button>
+        </a>
+    </div>
+</div>

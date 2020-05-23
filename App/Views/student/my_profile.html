@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">My Profile</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-4 col-sm-6">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" alt="" class="rounded-circle  mx-auto d-block w-80">
+                <div class="text-center">
+                    <h5 class="mt-2 mb-0"><?=$user['name'];?></h5>
+                </div>
+
+                <div class="row mt-4">
+                    <table class="table">
+                        <tr>
+                            <td>Email</td>
+                            <td><?=$user['email'];?></td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td><?=$user['phone_number'];?></td>
+                        </tr>
+                        <tr>
+                            <td>Father Name</td>
+                            <td><?=$user['father_name'];?></td>
+                        </tr>
+                        <tr>
+                            <td>Father Phone</td>
+                            <td><?=$user['father_phone'];?></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td><?=date("d-m-Y", strtotime($user['date_of_birth']));?></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td><?=ucfirst($user['gender']);?></td>
+                        </tr>
+                        <tr>
+                            <td>CNIC</td>
+                            <td><?=$user['cnic'];?></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td><?=$user['address'];?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <a href="<?=app_url()?>/account/edit-profile">
+                                    <button type="button" class="btn btn-success">Edit Profile</button>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

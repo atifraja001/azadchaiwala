@@ -29,7 +29,7 @@ class BatchesController
         $batches = new \App\Models\Batches();
         $batch = $batches->getBatchInfo($request['id']);
         $course = new \App\Models\Courses();
-        $course = $course->getCourseById($batch['id']);
+        $course = $course->getCourseById($batch['course_id']);
         $total_enrolled = $batches->countEnrolledStudents($batch['id']);
         $pending_enrollments = $batches->getPendingEnrollments($request['id']);
         $approved_enrollments = $batches->getApprovedEnrollments($request['id']);
@@ -53,6 +53,7 @@ class BatchesController
             ':end_date' => date('Y-m-d', strtotime(clean_post('end_date'))),
             ':start_time' => clean_post('start_time').":00",
             ':end_time' => clean_post('end_time').":00",
+            ':class_link' => $_POST['class_link'],
             ':total_students' => clean_post('total_students')
         ];
         $batches = new \App\Models\Batches();
@@ -86,6 +87,7 @@ class BatchesController
             ':end_date' => date('Y-m-d', strtotime(clean_post('end_date'))),
             ':start_time' => clean_post('start_time').":00",
             ':end_time' => clean_post('end_time').":00",
+            ':class_link' => $_POST['class_link'],
             ':total_students' => clean_post('total_students')
         ];
         $batches = new \App\Models\Batches();

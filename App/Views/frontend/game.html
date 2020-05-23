@@ -1,21 +1,29 @@
 <section class="Course video-course">
-    
+
     <!-- video section and enroll section -->
-    <div class="container game-section">    
+    <div class="container game-section">
         <div class="row ">
             <div class="col-lg-6 ">
-                <div class="game__section-video" >
-                    <video style="width:100%;" autoplay muted controls onloadstart="this.play();">
-                        <source src="<?=app_url()?>/assets/img/game/video/intro.mp4"  type="video/mp4">
+                <div class="game__section-video">
+                    <video autoplay controls muted onloadstart="this.play();" style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/video/intro.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
             <div class="col-lg-6 ">
                 <div class="game__section-info">
                     <h1>Become A Game Developer in 4 Months</h1>
-                    <p>Our course is for anyone over 16 years of age who is looking for higher education. This course will teach you to become a skilled Game Developer. So you can be skilled enough to get a job or begin a profitable career in freelancing.</p>
+                    <p>Our course is for anyone over 16 years of age who is looking for higher education. This course
+                        will teach you to become a skilled Game Developer. So you can be skilled enough to get a job or
+                        begin a profitable career in freelancing.</p>
                     <div class="game-enroll-button">
-                        <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll Now</a>
+                        <?php if(count($batch) == -1){ ?>
+                        <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#"><span>Change Your Life </span>Enroll
+                            Now</a>
+                        <?php }else{ ?>
+                        <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll
+                            Now</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -28,87 +36,107 @@
             <div class="col-lg-6 game-will__learn-text">
                 <ul>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to program in C#. </span></li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use Unity 3D to make games.</span></li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to make mobile games for Android and iPhones.</span></li>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use Unity 3D to make games.</span>
+                    </li>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to make mobile games for Android and iPhones.</span>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-6 game-will__learn-text">
                 <ul>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to make PC Games.</span></li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to develop games both independently and within a multidisciplinary environment.</span></li>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to develop games both independently and within a multidisciplinary environment.</span>
+                    </li>
                 </ul>
             </div>
-        </div>        
+        </div>
     </div>
     <!-- end what will you learn -->
     <!-- What You Will Lear Section Start here -->
-    <div class="container game-learn-section" >     
-        <div class="row" >
+    <div class="container game-learn-section">
+        <div class="row">
             <div class="col-lg-3">
-                <div class="game-learn game-course-for" >
+                <div class="game-learn game-course-for">
                     <h3>Who is the Course For?</h3>
                     <ul>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you, if you want to be skilled.</span></li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you if you want to make money</span></li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a career in the creative Gaming industry.</span></li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a better alternative to any fazool degree.</span></li>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you, if you want to be skilled.</span>
+                        </li>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you if you want to make money</span>
+                        </li>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a career in the creative Gaming industry.</span>
+                        </li>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a better alternative to any fazool degree.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 ">
-                <div class="game-learn game-course-benefit" >
+                <div class="game-learn game-course-benefit">
                     <h3>What Are The Benefits?</h3>
                     <ul>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will learn a valuable skill in only 4 months. (not 6 years of college/university, after school).</span></li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will get a mega confidence boost.</span></li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will be able to make money in a short period after the course by getting a job or freelancing.</span></li>
-                    </ul>
-                </div> 
-            </div>
-            <div class="col-lg-3">
-                <div class="game-learn game-course-return" >
-                    <h3>What is your return on investment (ROI is very high) </h3>
-                    <ul>
-                        
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>The course fee is only 400,000</span></li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>After completion & practicing your skills for a few months, you will be good enough to be hired as a junior game developer for a minimum of 20,000 to 25,000 / month. Once your experience builds, in 6 months or so, expect a minimum monthly salary of 50,000.</span></li>
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will learn a valuable skill in only 4 months. (not 6 years of college/university, after school).</span>
+                        </li>
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i>
+                            <span>You will get a mega confidence boost.</span></li>
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will be able to make money in a short period after the course by getting a job or freelancing.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="game-learn game-course-notdo" >
+                <div class="game-learn game-course-return">
+                    <h3>What is your return on investment (ROI is very high) </h3>
+                    <ul>
+
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>The course fee is only 400,000</span>
+                        </li>
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>After completion & practicing your skills for a few months, you will be good enough to be hired as a junior game developer for a minimum of 20,000 to 25,000 / month. Once your experience builds, in 6 months or so, expect a minimum monthly salary of 50,000.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="game-learn game-course-notdo">
                     <h3>This course is not for?</h3>
                     <ul>
                         <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not RATTA based, everything is practical.</span>
-                    </li>
+                        </li>
                         <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not going to waste many of your qeemti years.</span>
                         </li>
                         <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not for anyone looking for a certificate. (certificates are only available upon request and subject to charges)</span>
                         </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span style="line-height: initial;">Not for anyone who cannot use a computer. But don't worry we have a <a href="<?=app_url()?>/course/basic-computer-course" style="color: white; text-decoration: underline">Basic Computer Course</a></span>
+                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span
+                                style="line-height: initial;">Not for anyone who cannot use a computer. But don't worry we have a <a
+                                href="<?=app_url()?>/course/basic-computer-course"
+                                style="color: white; text-decoration: underline">Basic Computer Course</a></span>
                         </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2 "></i> <span>Existing Game Developers.</span></li>
+                        <li class="d-flex"><i class="fas fa-times text-white pr-2 "></i>
+                            <span>Existing Game Developers.</span></li>
                     </ul>
                 </div>
-            </div>     
+            </div>
         </div>
     </div>
-        <!-- Our instructure area -->
-    <div class="container game-our-insturcture" >        
+    <!-- Our instructure area -->
+    <div class="container game-our-insturcture">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <div class="game-our__instructure-main" >
+                <div class="game-our__instructure-main">
                     <div class="row">
                         <div class="col-lg-6">
-                            <img src="<?=app_url()?>/assets/teacher_images/abdulqadir.jpg" alt="Ali mir Instructor at AzadChaiwala" class="img-fluid">
+                            <img alt="Ali mir Instructor at AzadChaiwala"
+                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/abdulqadir.jpg">
                         </div>
-                        <div class="col-lg-6" >
+                        <div class="col-lg-6">
                             <h3>Instructor: Abdul Qadir</h3>
-                            <p> 
-                                has been developing games at AceViral for over 4 years. 50+ of his games have accumulated more than 100m Game Plays on popular app stores like Google Play Store & Apple App Store. His aim in teaching this course would be to set you on the right path to assimilate <span id="dotst">...</span><span id="moret">his achievements  and then exceed it in a shorter period than it took himself. Abdul Qadir qualified as a computer systems engineer. In his own words this has had no positive or negative impact on his career as an amazing game developer. 
+                            <p>
+                                has been developing games at AceViral for over 4 years. 50+ of his games have
+                                accumulated more than 100m Game Plays on popular app stores like Google Play Store &
+                                Apple App Store. His aim in teaching this course would be to set you on the right path
+                                to assimilate <span id="dotst">...</span><span id="moret">his achievements  and then exceed it in a shorter period than it took himself. Abdul Qadir qualified as a computer systems engineer. In his own words this has had no positive or negative impact on his career as an amazing game developer.
                                 </span>
                             </p>
-                            <p onclick="myFunctiont()" id="myBtnt">Read more</p>
+                            <p id="myBtnt" onclick="myFunctiont()">Read more</p>
                         </div>
                     </div>
                 </div>
@@ -118,22 +146,26 @@
                 <div class="game-our__instructure-main">
                     <div class="row">
                         <div class="col-lg-6">
-                            <img src="<?=app_url()?>/assets/teacher_images/adil.jpg" alt="Zain Instructor at AzadChaiwala" class="img-fluid">
+                            <img alt="Zain Instructor at AzadChaiwala"
+                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/adil.jpg">
                         </div>
-                        <div class="col-lg-6" >
+                        <div class="col-lg-6">
                             <h3>Instructor: Adil</h3>
-                            <p> 
-                                is a Senior Game Developer at FOG.COM, with experience of four plus(4+) years as a game-play programmer, with successful published products on the Google Play Store and Webgl (PC). His expertise is in making games throughout the game <span id="dotst1">...</span><span id="moret1"> development lifecycle.  Adil is fueled by his passion for the understanding of game designs and game playing. Adil strives to write clean and cache-friendly code.
+                            <p>
+                                is a Senior Game Developer at FOG.COM, with experience of four plus(4+) years as a
+                                game-play programmer, with successful published products on the Google Play Store and
+                                Webgl (PC). His expertise is in making games throughout the game <span
+                                    id="dotst1">...</span><span id="moret1"> development lifecycle.  Adil is fueled by his passion for the understanding of game designs and game playing. Adil strives to write clean and cache-friendly code.
                                 </span>
                             </p>
-                            <p onclick="myFunctiont1()" id="myBtnt1">Read more</p>
+                            <p id="myBtnt1" onclick="myFunctiont1()">Read more</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
-        <!-- success story area -->
+    </div>
+    <!-- success story area -->
     <!-- <div class="container video-success-course text-center">
         <h2 class="text-center">Success Stories</h2>     
         <div class=" row">
@@ -183,8 +215,51 @@
                             <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
                                 <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
                             <?php }else{ ?>
-                            <p>Please Call for Details</p>
+                            <p><a data-target="#myModal" data-toggle="modal" href="#">Click for details</a></p>
                             <?php } ?>
+                            <!-- modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <!-- Modal body -->
+                                        <div class="modal-body text-left">
+                                            <button class="close" data-dismiss="modal" style="font-size:30px;"
+                                                    type="button">&times;
+                                            </button>
+                                            <div class="text-center mt-2">
+                                                <h3 class="font-weight-bold ">ٱلْحَمْدُ لِلَّٰهِ</h3>
+                                                <p>All batches are full. We are still awaiting to announce the next
+                                                    dates. If you would like to be contacted when new dates announced
+                                                    Please fill in your details</p>
+                                            </div>
+                                            <form class="needs-validation pop-form" novalidate>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Name"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Email"
+                                                               required type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter your Number"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-success" type="submit">Submit Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- Modal footer -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal end -->
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 p-1">
@@ -205,7 +280,8 @@
                             <span class="material-icons md-48">alarm</span>
                             <h3>Duration</h3>
                             <?php if(count($batch) > 0){ ?>
-                            <p><?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?> hours per day, <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?> Days</p>
+                            <p><?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?> hours per
+                                day, <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?> Days</p>
                             <?php }else{ ?>
                             <p>4 hours per day, 4 Months</p>
                             <?php } ?>
@@ -223,21 +299,25 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="game-features__course-details graphic-enrol-button">
+                    <?php if(count($batch) == -1){ ?>
+                    <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#">Enroll Now</a>
+                    <?php }else{ ?>
                     <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </div>
     <!-- course feature section end here -->
-    
-    
+
+
     <!-- why learn from us -->
     <div class="container game-why-us text-center">
         <div class="row">
-            
+
             <div class="col-lg-12 game-why__us-text">
                 <h2>Why are we some of the best people to teach you?</h2>
             </div>
@@ -245,38 +325,37 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="game-why__us-results">
-                    <img src="<?=app_url()?>/assets/img/game/fog.png" alt="fog logo" class="img-fluid">
+                    <img alt="fog logo" class="img-fluid" src="<?=app_url()?>/assets/img/game/fog.png">
                     <h4>over 2 billions</h4>
                     <p>game players </p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="game-why__us-results">
-                    <img src="<?=app_url()?>/assets/img/game/i6.png" alt="fog logo" class="img-fluid">
+                    <img alt="fog logo" class="img-fluid" src="<?=app_url()?>/assets/img/game/i6.png">
                     <h4>400 millions</h4>
                     <p>Downloads</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="game-why__us-results">
-                    <img src="<?=app_url()?>/assets/img/game/acc.png" alt="fog logo" class="img-fluid">
+                    <img alt="fog logo" class="img-fluid" src="<?=app_url()?>/assets/img/game/acc.png">
                     <h4>200 millions</h4>
                     <p>Downloads</p>
                 </div>
             </div>
-            
+
             <div class="col-lg-3 col-md-3">
                 <div class="game-why__us-results">
-                    <img src="<?=app_url()?>/assets/img/game/g.png" alt="fog logo" class="img-fluid">
+                    <img alt="fog logo" class="img-fluid" src="<?=app_url()?>/assets/img/game/g.png">
                     <h4>(Game Pickle) 100 millions</h4>
                     <p>Downloads</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <!-- end why learn from us -->
-
 
 
     <!-- testimonials -->
@@ -325,24 +404,27 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;"   controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game1.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why1.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game1.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why1.mp4" type="video/mp4">
+                    </video>
                 </div>
-                
+
             </div>
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;" controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game2.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why2.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game2.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;" controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game3.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why3.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game3.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why3.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -351,24 +433,27 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;" controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game4.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why4.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game4.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why4.mp4" type="video/mp4">
+                    </video>
                 </div>
-                
+
             </div>
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;" controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game5.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why5.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game5.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why5.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div>
-                   <video style="width:100%;" controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game6.jpg">
-                        <source src="<?=app_url()?>/assets/img/game/work/why6.mp4"  type="video/mp4">
-                   </video>
+                    <video controls onloadstart="this.volume=0.2" poster="<?=app_url()?>/assets/img/game/work/game6.jpg"
+                           style="width:100%;">
+                        <source src="<?=app_url()?>/assets/img/game/work/why6.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -383,61 +468,80 @@
         <div class="row">
             <div class="col-lg-4 col-md-2 col-3">
                 <div class="graphic-equipments-images">
-                    <a href="<?=app_url()?>/assets/img/game/class/1.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/game/class/1s.jpg" class="img-fluid" alt="AzadChaiwala Institute graphic designer class">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/1.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/game/class/1s.jpg">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-2 col-3">
                 <div class="graphic-equipments-images">
-                    <a href="<?=app_url()?>/assets/img/game/class/2.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/game/class/2s.jpg" class="img-fluid" alt="AzadChaiwala Institute graphic designer class">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/2.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/game/class/2s.jpg">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-2 col-3">
                 <div class="graphic-equipments-images">
-                    <a href="<?=app_url()?>/assets/img/game/class/3.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="<?=app_url()?>/assets/img/game/class/3s.jpg" class="img-fluid" alt="AzadChaiwala Institute graphic designer class">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/3.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/game/class/3s.jpg">
                     </a>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
     <!-- equipments end here -->
 
     <!-- faqs section start here -->
-    <div class="container game-faqs-course" >
+    <div class="container game-faqs-course">
         <h2 class="text-center">Frequently Asked Question</h2>
         <div class="row">
             <div class="col-lg-6">
                 <div class="game-faqs-course-inner">
                     <h4>When will the course start & finish?</h4>
                     <?php if(count($batch) > 0){ ?>
-                    <p>The next batch for this course will start on (<?=date('F d, Y', strtotime($batch[0]['start_date']));?>) and end on (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the <a href="<?=app_url()?>/course-registration/<?=$slug?>">signup page</a>.</p>
+                    <p>The next batch for this course will start on
+                        (<?=date('F d, Y', strtotime($batch[0]['start_date']));?>) and end on
+                        (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the
+                        <a href="<?=app_url()?>/course-registration/<?=$slug?>">signup page</a>.</p>
                     <?php }else{ ?>
-                    <p>Please contact us via email or phone number for next batch details</p>
+                    <p><a data-target="#myModal" data-toggle="modal" href="#">Click here to get details for next
+                        batch.</a></p>
                     <?php } ?>
                 </div>
                 <div class="game-faqs-course-inner">
-                    <h4>How Quickly will I See  results?</h4>
-                    <p>You will start seeing the results of your skills almost from day one. You will finally come to know what real education is and it has nothing to do with memorizing boring textbooks. You will immediately feel proud of yourself and your own serve worth will go up. With regards to earning from your skills, that depends on multiple factors. The first factor is how fast of a learner you are. The second factor is how much practice you do after the course is finished. We generally recommend not applying for any jobs or starting your freelance career until you have practiced and sharpened your skills for at least one month. During that time, we'd like you to focus on building a quality portfolio of your work.
+                    <h4>How Quickly will I See results?</h4>
+                    <p>You will start seeing the results of your skills almost from day one. You will finally come to
+                        know what real education is and it has nothing to do with memorizing boring textbooks. You will
+                        immediately feel proud of yourself and your own serve worth will go up. With regards to earning
+                        from your skills, that depends on multiple factors. The first factor is how fast of a learner
+                        you are. The second factor is how much practice you do after the course is finished. We
+                        generally recommend not applying for any jobs or starting your freelance career until you have
+                        practiced and sharpened your skills for at least one month. During that time, we'd like you to
+                        focus on building a quality portfolio of your work.
 
-                        </p>
+                    </p>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="game-faqs-course-inner">
                     <h4>How much does accomodation cost?</h4>
-                    <p>For the duration of this course the accommodation cost is Rupees 24000 for a total of 4 Months. We do not provide food. Our accommodation is only available to our students & is subject to any vacancies. To book or for further help with your accommodation requirement, you may call us during our open hours. Our staff member will gladly assist you with your needs.  </p>
+                    <p>For the duration of this course the accommodation cost is Rupees 24000 for a total of 4 Months.
+                        We do not provide food. Our accommodation is only available to our students & is subject to any
+                        vacancies. To book or for further help with your accommodation requirement, you may call us
+                        during our open hours. Our staff member will gladly assist you with your needs. </p>
                 </div>
                 <div class="game-faqs-course-inner">
                     <h4>Do I need to buy text book?</h4>
-                    <p>No, because khum aap ko videography paraateh nahi but rather sikhate hain. Ratta is banned at our institute.</p>
+                    <p>No, because hum aap ko videography paraateh nahi but rather sikhate hain. Ratta is banned at our
+                        institute.</p>
                 </div>
                 <div class="game-faqs-course-inner">
                     <h4>Are there any course requirements?</h4>
-                    <p>Yes, you must be able to understand English and you must be able to use a computer, up to mid-level at-least.</p>
+                    <p>Yes, you must be able to understand English and you must be able to use a computer, up to
+                        mid-level at-least.</p>
                 </div>
             </div>
         </div>
@@ -447,6 +551,12 @@
     <!-- enrollNow -->
     <div class="container graphic_lastenroll-now text-center ">
         <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
-        <a href="<?=app_url()?>/course-registration/<?=$slug?>" class="btn btn-lg ">Enroll Now <i class="fas fa-angle-double-right"></i></a>
+        <?php if(count($batch) == -1){ ?>
+        <a class="btn btn-lg " data-target="#myModal" data-toggle="modal" href="#">Enroll Now <i
+                class="fas fa-angle-double-right"></i></a>
+        <?php }else{ ?>
+        <a class="btn btn-lg " href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now <i
+                class="fas fa-angle-double-right"></i></a>
+        <?php } ?>
     </div>
 </section>

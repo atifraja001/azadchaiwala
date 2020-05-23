@@ -87,6 +87,10 @@ class EmailController
              */
             $to = \App\Config::EMAIL; // send to admin
             $subject = 'Backup Update from AzadChaiwala.pk';
+        }else if($type == 'create_account'){
+            $to = $data['email_to']; // send to user
+            $subject = 'Verify Your Email - AzadChaiwala.pk';
+            $content = $this->create_account($data['name'], $data['token']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -101,6 +105,13 @@ class EmailController
         }
     }
 
+    protected function create_account($name, $token){
+        $content = file_get_contents("../App/Views/email_templates/create_account.html");
+        $content = str_replace(":name", $name, $content);
+        $content = str_replace(":token", $token, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
 
     protected function NewRegistration($course){
         $content = file_get_contents("../App/Views/email_templates/new_registration.html");

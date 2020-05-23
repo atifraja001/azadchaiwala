@@ -33,9 +33,9 @@ class Batches extends \Core\Model
     {
         $db = static::getDB();
         $stmt = $db->prepare("INSERT INTO batches 
-                                (course_id, name, start_date, end_date, start_time, end_time, total_students)
+                                (course_id, name, start_date, end_date, start_time, end_time, total_students, class_link)
                                 VALUES 
-                                (:course_id, :batch_name, :start_date, :end_date, :start_time, :end_time, :total_students)");
+                                (:course_id, :batch_name, :start_date, :end_date, :start_time, :end_time, :total_students, :class_link)");
         if ($stmt->execute($data))
             return true;
         else
@@ -61,7 +61,8 @@ class Batches extends \Core\Model
                         end_date = :end_date,
                         start_time = :start_time,
                         end_time = :end_time,
-                        total_students = :total_students
+                        total_students = :total_students,
+                        class_link = :class_link
                         WHERE id = :batch_id");
         if ($stmt->execute($data))
             return true;
@@ -82,7 +83,7 @@ class Batches extends \Core\Model
     public function getPendingEnrollments($batch_id)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT enrollments.*, students.name FROM enrollments JOIN students ON students.id = enrollments.student_id WHERE enrollments.status = 0 AND enrollments.batch_id = :batch_id");
+        $stmt = $db->prepare("SELECT enrollments.*, student_login.name FROM enrollments JOIN student_login ON student_login.id = enrollments.student_id WHERE enrollments.status = 0 AND enrollments.batch_id = :batch_id");
         $stmt->execute([':batch_id' => $batch_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -90,16 +91,21 @@ class Batches extends \Core\Model
     public function getApprovedEnrollments($batch_id)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT enrollments.*, students.name FROM enrollments JOIN students ON students.id = enrollments.student_id WHERE enrollments.status = 1 AND enrollments.batch_id = :batch_id");
+        $stmt = $db->prepare("SELECT enrollments.*, student_login.name FROM enrollments JOIN student_login ON student_login.id = enrollments.student_id WHERE enrollments.status = 1 AND enrollments.batch_id = :batch_id");
         $stmt->execute([':batch_id' => $batch_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function GetBatchByCourseId($course_id)
+    public function GetBatchByCourseId($course_id, $std_id = "")
     {
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id AND start_date >= CURRENT_DATE()");
-        $stmt->execute([':course_id' => $course_id]);
+        $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id 
+                                    AND start_date >= CURRENT_DATE() 
+                                    AND id NOT IN (SELECT batch_id FROM enrollments WHERE student_id = :student_id AND batch_id IS NOT NULL)");
+        $stmt->execute([
+            ':course_id' => $course_id,
+            ':student_id' => $std_id
+            ]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function GetUpComingBatchByCourseId($course_id){

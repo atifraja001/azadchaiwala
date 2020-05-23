@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Complete your Profile</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <?=showMsg('complete_profile');?>
+                <?php if(isset($_SESSION['errors'])){ ?>
+                <div class="alert alert-danger">
+                    <?php foreach($_SESSION['errors'] as $error){ ?>
+                    <li><?=$error?></li>
+                    <?php } ?>
+                </div>
+                <?php unset($_SESSION["errors"]); } ?>
+                <form method="post" action="<?=app_url()?>/account/postCompleteProfile" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" name="name" autofocus required
+                                       placeholder="Enter Your Name" value="<?=$user['name'];?>">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" class="form-control" name="email" required
+                                       placeholder="Enter your Email" value="<?=$user['email'];?>">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your Phone Number</label>
+                                <input type="tel" class="form-control" value="<?=$user['phone_number'];?>"
+                                       name="phone_number" data-mask="0399-9999999"
+                                       required
+                                       placeholder="Father / Guardian phone number">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your CNIC / B-Form Number</label>
+                                <input type="text" class="form-control" name="cnic" required
+                                       placeholder="Enter CNIC or B-Form number" value="<?=form("cnic");?>"
+                                       data-mask="99999-9999999-9">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Your Date of Birth</label>
+                                <input type="text" class="form-control datepicker" name="date_of_birth" required
+                                       placeholder="Date of Birth (dd-mm-yyyy)" value="<?=form("date_of_birth")?>"
+                                       data-mask="99-99-9999">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Select Gender</label><br>
+                                <div class="form-check-inline my-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="male" name="gender" required value="male"
+                                               class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="male">Male</label>
+                                    </div>
+                                </div>
+                                <div class="form-check-inline my-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="female" name="gender" required value="female"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="form-check-inline my-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="other" name="gender" required value="other"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Father / Guardian Name</label>
+                                <input type="text" class="form-control" required value="<?=form("father_name")?>"
+                                       name="father_name"
+                                       placeholder="Enter your Father / Guardian name">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-group">
+                                <label>Guardian Phone Number</label>
+                                <input type="tel" class="form-control" value="<?=form("father_phone")?>"
+                                       name="father_phone" data-mask="0399-9999999"
+                                       required
+                                       placeholder="Father / Guardian phone number">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <label>Your Profile Picture</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="picture" required accept="image/x-png,image/jpeg"
+                                           class="custom-file-input" id="profile">
+                                    <label class="custom-file-label" for="profile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>Enter Your Complete Address</label>
+                                <textarea class="form-control" rows="6" required name="address"
+                                          placeholder="Enter your complete address"><?=form("address")?></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Update Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

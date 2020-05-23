@@ -1,13 +1,12 @@
 <section class="Course video-course">
-
     <!-- video section and enroll section -->
-    <div class="container game-section">
+    <div class="container game-section"
+         style="background: linear-gradient(to right bottom, rgba(108, 125, 183, 1), rgba(108, 125, 183, 0.7)), url(<?=app_url()?>/assets/img/graphics/dots.png);">
         <div class="row ">
             <div class="col-lg-6 ">
-                <div class="game__section-video mt-4">
-                    <video autoplay controls muted onloadstart="this.play();" style="width:100%;">
-                        <source src="<?=app_url()?>/assets/img/game/video/intro.mp4" type="video/mp4">
-                    </video>
+                <div class="game__section-video mt-">
+                    <img alt=" php course image of azadchaiwala" class="img-fluid"
+                         src="<?=app_url()?>/assets/img/php/php-final.jpg">
                 </div>
             </div>
             <div class="col-lg-6 ">
@@ -19,8 +18,13 @@
                         in freelancing in no time.
                     </p>
                     <div class="game-enroll-button">
+                        <?php if(count($batch) == -1){ ?>
+                        <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#"><span>Change Your Life </span>Enroll
+                            Now</a>
+                        <?php }else{ ?>
                         <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll
                             Now</a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -32,15 +36,18 @@
         <div class="row">
             <div class="col-lg-6 game-will__learn-text">
                 <ul>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to create web pages in HTML5</span>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to create web pages in HTML</span>
                     </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to style web pages in CSS3</span>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to style web pages in CSS</span>
                     </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>Learn Object Oriented Programming in PHP7.</span>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i>
+                        <span>Learn Object Oriented Programming in PHP.</span>
                     </li>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to create and use Database (SQL and others).</span>
                     </li>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to create MVC structure.</span>
+                    </li>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to do PHP APIs development.</span>
                     </li>
                 </ul>
             </div>
@@ -48,12 +55,14 @@
                 <ul>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to implement PHP security.</span>
                     </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use Bootstrap 4 for responsive web pages.</span>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use Bootstrap for responsive web pages.</span>
                     </li>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use AJAX to load data without refreshing.</span>
                     </li>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i>
                         <span>How to Debug your code to find errors.</span>
+                    </li>
+                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>Hand on experience on project development.</span>
                     </li>
                     <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to Host your website or Application for public.</span>
                     </li>
@@ -67,15 +76,13 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="game-learn php-course-for">
-                    <h3>Who is the Course For?</h3>
+                    <h3>This course is for you</h3>
                     <ul>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>Min age 16 years (or matric pass)</span>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you are looking for a higher education but don’t want to waste more than 16 lakh and 6 years of your precious youth on RATTA MAAL in colleges & universities.</span>
                         </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you If you want to be skilled.</span>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a better, cheaper, quicker alternative to software engineering degree.</span>
                         </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a career in the Web development industry.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a better alternative to any fazool degree.</span>
+                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want to become a skilled Web Developer. So you can get a job or begin a profitable career in freelancing in no time.</span>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +95,7 @@
                         </li>
                         <li class="d-flex"><i class="fas fa-check pr-2"></i>
                             <span>You will get a mega confidence boost.</span></li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will be able to make money in a short period after the course by getting a job or freelancing.</span>
+                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will be able to develop web based software's, websites, apps etc</span>
                         </li>
                     </ul>
                 </div>
@@ -123,7 +130,7 @@
                         <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span
                                 style="line-height: initial;">Not for anyone who cannot use a computer. But don't worry we have a <a
                                 href="<?=app_url()?>/course/basic-computer-course"
-                                style="color: white; text-decoration: underline">Basic Computer Course</a></span>
+                                style="color:blue; text-decoration: underline">Basic Computer Course</a></span>
                         </li>
                         <li class="d-flex"><i class="fas fa-times text-white pr-2 "></i>
                             <span>Existing Web Developers.</span></li>
@@ -136,7 +143,7 @@
     <div class="container game-our-insturcture">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <div class="game-our__instructure-main">
+                <div class="game-our__instructure-main" style="border: 0px;">
                     <div class="row">
                         <div class="col-lg-6">
                             <img alt="Ali mir Instructor at AzadChaiwala"
@@ -166,25 +173,27 @@
             </div>
 
             <div class="col-lg-6 col-md-6">
-                <!--                <div class="game-our__instructure-main">-->
-                <!--                    <div class="row">-->
-                <!--                        <div class="col-lg-6">-->
-                <!--                            <img alt="Zain Instructor at AzadChaiwala"-->
-                <!--                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/adil.jpg">-->
-                <!--                        </div>-->
-                <!--                        <div class="col-lg-6">-->
-                <!--                            <h3>Instructor: Adil</h3>-->
-                <!--                            <p>-->
-                <!--                                is a Senior Game Developer at FOG.COM, with experience of four plus(4+) years as a-->
-                <!--                                game-play programmer, with successful published products on the Google Play Store and-->
-                <!--                                Webgl (PC). His expertise is in making games throughout the game <span-->
-                <!--                                    id="dotst1">...</span><span id="moret1"> development lifecycle.  Adil is fueled by his passion for the understanding of game designs and game playing. Adil strives to write clean and cache-friendly code.-->
-                <!--                                </span>-->
-                <!--                            </p>-->
-                <!--                            <p id="myBtnt1" onclick="myFunctiont1()">Read more</p>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+                <div class="game-our__instructure-main" style="border: 0px;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img alt="Zain Instructor at AzadChaiwala"
+                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/awais.jpg">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Instructor: Awais Liaqat</h3>
+                            <p>
+                                He is a 24-Year-old the Award Winning Web Developer having more than 4 Years of
+                                experience in Web Systems and Development.
+                                He won the competition back in 2016 from the students of 57 Universities.
+                                He developed some really big enterprise-level <span id="dotst1">...</span><span
+                                    id="moret1"> applications that are being used in the industries of Pakistan,
+                                Qatar, USA, India, Dubai and many other countries
+                                </span>
+                            </p>
+                            <p id="myBtnt1" onclick="myFunctiont1()">Read more</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -230,6 +239,8 @@
                             <p>200,000 Rupees</p>
                         </div>
                     </div>
+
+
                     <div class="col-lg-3 col-md-3 p-1">
                         <div class="game-features__course-details">
                             <span class="material-icons md-48">alarm</span>
@@ -238,8 +249,51 @@
                             <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
                                 <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
                             <?php }else{ ?>
-                            <p><a href="#">Click for details</a></p>
+                            <p><a data-target="#myModal" data-toggle="modal" href="#">Click for details</a></p>
                             <?php } ?>
+                            <!-- modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog ">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <!-- Modal body -->
+                                        <div class="modal-body text-left">
+                                            <button class="close" data-dismiss="modal" style="font-size:30px;"
+                                                    type="button">&times;
+                                            </button>
+                                            <div class="text-center mt-2">
+                                                <h3 class="font-weight-bold ">ٱلْحَمْدُ لِلَّٰهِ</h3>
+                                                <p>All batches are full. We are still awaiting to announce the next
+                                                    dates. If you would like to be contacted when new dates announced
+                                                    Please fill in your details</p>
+                                            </div>
+                                            <form class="needs-validation pop-form" novalidate>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Name"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter Your Email"
+                                                               required type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-12">
+                                                        <input class="form-control" placeholder="Enter your Number"
+                                                               required type="text">
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-success" type="submit">Submit Details</button>
+                                            </form>
+                                        </div>
+                                        <!-- Modal footer -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal end -->
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 p-1">
@@ -282,7 +336,11 @@
 
             <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
                 <div class="game-features__course-details graphic-enrol-button">
+                    <?php if(count($batch) == -1){ ?>
+                    <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#">Enroll Now</a>
+                    <?php }else{ ?>
                     <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -308,10 +366,10 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="game-why__us-results">
-                    <h3 style="color: white; margin-top: 30px; font-weight: 700">SECOND WIFE</h3>
-                    <p style="margin-top: -10px">www.SecondWife.com</p>
-                    <h4>over 300 Thousands</h4>
-                    <p>Users</p>
+                    <h3 style="color: white; margin-top: 30px; font-weight: 700">SECOND WIFE & Marriage Networks</h3>
+
+                    <h4>over 5 Lakh+ Users</h4>
+                    <p>Registered</p>
                 </div>
             </div>
         </div>
@@ -355,34 +413,208 @@
     <!-- testimonials end here -->
 
     <!-- equipments start here-->
-    <div class="container game-equipments-course">
+    <div class="container php-equipments-course">
         <h2 class="text-center">Photos of our web development classroom and institute</h2>
         <div class="row">
-            <div class="col-lg-4 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/1.jpg">
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/1.jpg">
                         <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/game/class/1s.jpg">
+                             src="<?=app_url()?>/assets/img/php/1s.jpg">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/2.jpg">
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/2.jpg">
                         <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/game/class/2s.jpg">
+                             src="<?=app_url()?>/assets/img/php/2s.jpg">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/game/class/3.jpg">
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/3.jpg">
                         <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/game/class/3s.jpg">
+                             src="<?=app_url()?>/assets/img/php/3s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/4.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/4s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/5.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/5s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/6.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/6s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/7.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/7s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/8.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/8s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/9.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/9s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/10.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/10s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/11.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/11s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/12.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/12s.jpg">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- another row -->
+        <div class="row">
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/13.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/13s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/14.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/14s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/15.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/15s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/16.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/16s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/17.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/17s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/18.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/18s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/25.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/25s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/26.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/26s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/27.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/27s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/28.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/28s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/29.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/29s.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-4 col-3">
+                <div class="php-equipments-images">
+                    <a data-gallery="gallery" data-toggle="lightbox" href="<?=app_url()?>/assets/img/php/30.jpg">
+                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
+                             src="<?=app_url()?>/assets/img/php/30s.jpg">
                     </a>
                 </div>
             </div>
         </div>
+
     </div>
     <!-- equipments end here -->
 
@@ -399,7 +631,8 @@
                         (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the
                         <a href="<?=app_url()?>/course-registration/<?=$slug?>">signup page</a>.</p>
                     <?php }else{ ?>
-                    <p>Please contact us via email or phone number for next batch details</p>
+                    <p><a data-target="#myModal" data-toggle="modal" href="#">Click here to get details for next
+                        batch.</a></p>
                     <?php } ?>
                 </div>
                 <div class="game-faqs-course-inner">
@@ -428,7 +661,7 @@
                 </div>
                 <div class="game-faqs-course-inner">
                     <h4>Do I need to buy text book?</h4>
-                    <p>No, because khum aap ko Web Development paraateh nahi but rather sikhate hain. Ratta is banned at
+                    <p>No, because hum aap ko Web Development paraateh nahi but rather sikhate hain. Ratta is banned at
                         our
                         institute.</p>
                 </div>
@@ -445,7 +678,12 @@
     <!-- enrollNow -->
     <div class="container graphic_lastenroll-now text-center ">
         <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
+        <?php if(count($batch) == -1){ ?>
+        <a class="btn btn-lg " data-target="#myModal" data-toggle="modal" href="#">Enroll Now <i
+                class="fas fa-angle-double-right"></i></a>
+        <?php }else{ ?>
         <a class="btn btn-lg " href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now <i
                 class="fas fa-angle-double-right"></i></a>
+        <?php } ?>
     </div>
 </section>

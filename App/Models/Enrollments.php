@@ -117,19 +117,58 @@ class Enrollments extends Model
         }
     }
 
-    public function InsertEnrollmentsByStudent($data)
+    public function UpdateEnrollmentsByStudent($data)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("INSERT INTO enrollments 
-                (batch_id, student_id, 
-                fee_receipt, status)
-                VALUES
-                (:batch_id, :student_id, :fee_receipt, 
-                :status)");
-        if ($stmt->execute($data)) {
-            return $db->lastInsertId();
+        $stmt = $db->prepare('SELECT * FROM enrollments 
+                                        WHERE student_id = :student_id AND course_id = :course_id AND batch_id IS NULL');
+        $stmt->execute([
+            ':student_id' => $data[':student_id'],
+            ':course_id' => $data[':course_id']
+        ]);
+        if ($stmt->rowCount() > 0) {
+            $d = $stmt->fetch();
+            $stmt = $db->prepare("UPDATE enrollments SET batch_id = :batch_id 
+                                            WHERE student_id = :student_id 
+                                            AND course_id = :course_id 
+                                            AND batch_id IS NULL");
+            $stmt->execute([
+                ':student_id' => $data[':student_id'],
+                ':course_id' => $data[':course_id'],
+                ':batch_id' => $data[':batch_id']
+            ]);
+            if ($stmt->execute($data)) {
+                return $d['id'];
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            $stmt = $db->prepare('SELECT * FROM enrollments 
+                                        WHERE student_id = :student_id AND course_id = :course_id AND batch_id = :batch_id AND fee_receipt IS NULL');
+            $stmt->execute([
+                ':student_id' => $data[':student_id'],
+                ':course_id' => $data[':course_id'],
+                ':batch_id' => $data[':batch_id']
+            ]);
+            if ($stmt->rowCount() == 0) {
+                $d = $stmt->fetch();
+                return $d['id'];
+            } else {
+                $stmt = $db->prepare('SELECT * FROM enrollments 
+                                        WHERE student_id = :student_id AND course_id = :course_id 
+                                        AND batch_id = :batch_id AND status = 0');
+                $stmt->execute([
+                    ':student_id' => $data[':student_id'],
+                    ':course_id' => $data[':course_id'],
+                    ':batch_id' => $data[':batch_id']
+                ]);
+            }
+            if ($stmt->rowCount() == 0) {
+                $d = $stmt->fetch();
+                return $d['id'];
+            } else {
+                return false;
+            }
         }
     }
 
@@ -168,6 +207,53 @@ class Enrollments extends Model
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM students WHERE id IN (SELECT student_id FROM enrollments WHERE id = :id)");
         $stmt->execute([':id' => $enroll_id]);
+        return $stmt->fetch();
+    }
+    public function getEnrollById($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM enrollments WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch();
+    }
+
+    public function updateFeeReceipt($data)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare("UPDATE enrollments SET fee_receipt = :fee_receipt WHERE id = :id");
+        if ($stmt->execute($data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function initCourse($course_id, $student_id)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare('SELECT * FROM enrollments 
+                                        WHERE student_id = :student_id AND course_id = :course_id AND batch_id IS NULL');
+        $stmt->execute([
+            ':course_id' => $course_id,
+            ':student_id' => $student_id
+        ]);
+        if ($stmt->rowCount() == 0) {
+            $stmt = $db->prepare("INSERT INTO enrollments 
+                (course_id, student_id, status)
+                VALUES
+                (:course_id, :student_id, 0)");
+            $stmt->execute([
+                ':course_id' => $course_id,
+                ':student_id' => $student_id
+            ]);
+        }
+        return true;
+    }
+    public function getUpcomingEnroll($student_id){
+        $db = static::getDB();
+        $stmt = $db->prepare('SELECT batches.*, enrollments.* FROM batches 
+                    JOIN enrollments WHERE batches.id = enrollments.batch_id 
+                    AND batches.start_date > current_date() AND enrollments.student_id = :student_id');
+        $stmt->execute([':student_id' => $student_id]);
         return $stmt->fetch();
     }
 }

@@ -40,6 +40,12 @@ class Courses extends \Core\Model
         $stmt->execute([':slug' => $slug]);
         return $stmt->fetch();
     }
+    public function getCoursesByType($classType){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * From courses WHERE type = :type");
+        $stmt->execute([':type' => $classType]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function getCourseContent($course_id){
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM course_content WHERE course_id = :course_id ORDER BY position ASC");
@@ -115,10 +121,10 @@ class Courses extends \Core\Model
         $db = static::getDB();
         $stmt = $db->prepare("INSERT INTO courses 
                 (order_number, teacher_id, course_name, slug, course_picture, 
-                youtube_embed, lecture_hours_per_day, duration, semester, fee, course_description)
+                youtube_embed, lecture_hours_per_day, duration, semester, fee, course_description, type)
                 VALUES
                 (:order_number, :teacher_id, :course_name, :slug, :course_picture, 
-                :youtube_embed, :lecture_hours_per_day, :duration, :semester, :fee, :course_description)");
+                :youtube_embed, :lecture_hours_per_day, :duration, :semester, :fee, :course_description, :type)");
         if($stmt->execute($data)){
             return $db->lastInsertId();
         }else{
@@ -139,6 +145,7 @@ class Courses extends \Core\Model
                                 duration = :duration,
                                 semester = :semester,
                                 fee = :fee,
+                                type = :type,
                                 course_description = :course_description
                                 WHERE id = :id");
             if($stmt->execute($data)){
@@ -158,6 +165,7 @@ class Courses extends \Core\Model
                                 duration = :duration,
                                 semester = :semester,
                                 fee = :fee,
+                                type = :type,
                                 course_description = :course_description
                                 WHERE id = :id");
             if($stmt->execute($data)){
@@ -201,13 +209,29 @@ class Courses extends \Core\Model
         $course = $stmt->fetch();
         $course_id = $course['course_id'];
         $stmt = $db->prepare("DELETE FROM course_learn WHERE id = :id");
-        $stmt->execute([":id"=>$id]);
+        $stmt->execute([":id" => $id]);
         return $course_id;
     }
-    public function GetCourseTerms($id){
+
+    public function GetCourseTerms($id)
+    {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM course_tc WHERE course_id = :id");
-        $stmt->execute([":id"=>$id]);
+        $stmt->execute([":id" => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getCoursesByStdId($std_id)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT courses.*, batches.*, enrollments.*
+            FROM courses 
+            JOIN batches on courses.id = batches.course_id
+            JOIN enrollments on batches.id = enrollments.batch_id 
+            WHERE enrollments.student_id = :student_id 
+            ORDER BY enrollments.id DESC
+            ");
+        $stmt->execute([":student_id" => $std_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

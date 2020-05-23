@@ -1,6 +1,6 @@
 # Welcome to the Azad Chaiwala.pk
 
-[![Build Status](https://azadchaiwala.pk/images/logo/institute-logo-black.jpg)](https://azadchaiwala.pk/)
+[![Build Status](https://azadchaiwala.pk/assets/img/institute-logo-black.jpg)](https://azadchaiwala.pk/)
 
 **How to host this script?**
 

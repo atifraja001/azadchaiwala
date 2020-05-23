@@ -42,13 +42,13 @@
                                     <br>
                                     <a href="<?=app_url('admin')?>/students/edit-student/<?=$s['id']?>">Edit</a> | <a href="<?=app_url('admin')?>/students/delete-student/<?=$s['id']?>" onclick="return confirm('Are you sure?');">Delete</a>
                                 </td>
-                                <td><?=$s['fname'];?></td>
+                                <td><?=$s['father_name'];?></td>
                                 <td><?=$s['date_of_birth'];?></td>
                                 <td><?=ucfirst($s['gender']);?></td>
                                 <td><?=$s['cnic'];?></td>
                                 <td><?=$s['address'];?></td>
                                 <td><?=$s['email'];?></td>
-                                <td><?=$s['mobile_number'];?></td>
+                                <td><?=$s['phone_number'];?></td>
                             </tr>
                             <?php $sn++; } ?>
                             </tbody>

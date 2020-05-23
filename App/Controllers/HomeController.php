@@ -91,8 +91,7 @@ class HomeController extends \Core\Controller
     }
     public function accommodation()
     {
-
-        View::render('frontend/layouts/head.html', ['title' => 'accommodation']);
+        View::render('frontend/layouts/head.html', ['title' => 'Accommodation']);
         View::render('frontend/layouts/navbar.html', ['accommodation' => 'active']);
         View::render('frontend/accommodation.html');
         View::render('frontend/layouts/script.html');
@@ -160,6 +159,25 @@ class HomeController extends \Core\Controller
         View::render('frontend/php_course.html', ['batch' => $batch, 'slug'=>$slug]);
         View::render('frontend/layouts/script.html');
     }
+
+    public function html_course(){
+        View::render('frontend/html_course.html');
+    }
+
+    // new design of the static page
+        public function newCourse(){
+        $slug = basename(parse_url(getUrl(), PHP_URL_PATH));
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseBySlug($slug);
+        $course_id = $course['id'];
+        $batches = new \App\Models\Batches();
+        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        View::render('frontend/layouts/head.html', ['title' => 'Web Development in PHP Course']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/new_course.html', ['batch' => $batch, 'slug'=>$slug]);
+        View::render('frontend/layouts/script.html');
+    }
+    // end new design
     // @
     // static courses page end
 
@@ -188,6 +206,7 @@ class HomeController extends \Core\Controller
 
     public function courseregistration($request)
     {
+        redirect(app_url().'/create-account');
         // get course name
         $courses = new \App\Models\Courses();
         $course = $courses->getCourseBySlug($request['slug']);

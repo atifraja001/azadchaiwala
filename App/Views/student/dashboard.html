@@ -1,0 +1,132 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Dashboard</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title end breadcrumb -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4>To-do List <small class="text-muted">(Newcomer)</small></h4>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <h5><s>1. Enroll your first Course</s> <small><i
+                                class="fa fa-check-circle text-primary"></i></small></h5>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <?php if($paid_first){ ?>
+                        <h5><s>2. Pay fee for your first course</s> <small><i
+                                class="fa fa-check-circle text-primary"></i></small></h5>
+                        <?php }else{ ?>
+                        <h5><a href="<?=app_url()?>/account/my-courses">2. Pay fee for your first course</a> <small><i
+                                class="fa fa-times-circle text-danger"></i></small></h5>
+                        <?php } ?>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <?php if($complete_profile){ ?>
+                        <h5><s>3. Complete your profile</s> <small><i class="fa fa-check-circle text-primary"></i></small></h5>
+                        <?php }else{ ?>
+                        <h5><a href="<?=app_url()?>/account/complete-profile">3. Complete your profile</a> <small><i
+                                class="fa fa-times-circle text-danger"></i></small></h5>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <?=showMsg('make_payment');?>
+                <?php if(isset($_SESSION['errors'])){ ?>
+                <div class="alert alert-danger">
+                    <?php foreach($_SESSION['errors'] as $error){ ?>
+                    <li><?=$error?></li>
+                    <?php } ?>
+                </div>
+                <?php unset($_SESSION["errors"]); } ?>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h4>My Courses
+                            <a href="<?=app_url()?>/account/enroll-new-course">
+                                <button type="button" class="btn btn-success float-right">Enroll into a new Course</button>
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <style>
+                    table thead tr th{
+                        font-weight: bold;
+                    }
+                </style>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Fee</th>
+                            <th>Batch Name</th>
+                            <th>Course Date/Time</th>
+                            <th>Register On</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <style>
+                            span {
+                                font-size: 16px !important;
+                            }
+                        </style>
+                        <?php foreach($my_courses as $my_course){ ?>
+                        <tr>
+                            <td><?=$my_course['course_name'];?></td>
+                            <td><?=number_format($my_course['fee']);?> pkr</td>
+                            <td><?=$my_course['name'];?></td>
+                            <td><?=date('d-m-Y', strtotime($my_course['start_date']));?>
+                                / <?=$my_course['start_time'];?></td>
+                            <td><?=date('d-m-Y', strtotime($my_course['created_at']));?></td>
+                            <td>
+                                <?php if(empty($my_course['fee_receipt'])){ ?>
+                                <span class="badge badge-warning">Fee Pending</span>
+                                <?php }else if($my_course['status'] == 0){ ?>
+                                <span class="badge badge-info">Under Review</span>
+                                <?php }else if($my_course['status'] == 2){ ?>
+                                <span class="badge badge-danger">Rejected</span>
+                                <?php }else if($my_course['status'] == 1){ ?>
+                                <span class="badge badge-success">Paid</span>
+                                <?php } ?>
+                            </td>
+                            <td>
+                                <?php if(empty($my_course['fee_receipt'])){ ?>
+                                <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
+                                    <button type="button" class="btn btn-warning btn-sm">Pay Now</button>
+                                </a>
+                                <?php }else if($my_course['status'] == 0){ ?>
+                                <span class="badge badge-success">Wait for Approval</span>
+                                <?php }else if($my_course['status'] == 2){ ?>
+                                <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
+                                    <button type="button" class="btn btn-warning btn-sm">Pay Again</button>
+                                </a>
+                                <?php }else if($my_course['status'] == 1 && $my_course['type'] == "online"){ ?>
+                                <a href="<?=app_url()?>/account/my-class/<?=$my_course['id'];?>">
+                                    <button type="button" class="btn btn-success btn-sm">View Class</button>
+                                </a>
+                                <?php }else{ ?>
+                                <span class="badge badge-success">No Action</span>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

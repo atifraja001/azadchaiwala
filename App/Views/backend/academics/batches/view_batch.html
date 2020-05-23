@@ -72,7 +72,12 @@
                             <?php foreach($pending_enrollments as $pe){ ?>
                                 <tr>
                                     <td><?=$pe['name'];?></td>
-                                    <td><?=$pe['fee_receipt'];?></td>
+                                    <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
+                                    <td>Not Paid</td>
+                                    <?php }else{ ?>
+                                    <td><a href="<?=app_url()?>/content/receipt_images/<?=$pe['fee_receipt'];?>"
+                                           target="_blank">View Receipt <i class="fa fa-external-link-alt"></i></a></td>
+                                    <?php } ?>
                                     <td>
                                         <label class="badge badge-danger">Pending</label>
                                      </td>
@@ -116,7 +121,12 @@
                             <?php foreach($approved_enrollments as $ae){ ?>
                             <tr>
                                 <td><?=$ae['name'];?></td>
-                                <td><?=$ae['fee_receipt'];?></td>
+                                <?php if(is_null($ae['fee_receipt']) || empty($ae['fee_receipt'])){ ?>
+                                <td>Not Paid</td>
+                                <?php }else{ ?>
+                                <td><a href="<?=app_url()?>/content/receipt_images/<?=$ae['fee_receipt'];?>"
+                                       target="_blank">View Receipt <i class="fa fa-external-link-alt"></i> </a></td>
+                                <?php } ?>
                                 <td>
                                     <label class="badge badge-primary">Approved</label>
                                 </td>

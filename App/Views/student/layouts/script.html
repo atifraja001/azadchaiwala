@@ -1,0 +1,178 @@
+</div><!-- container -->
+
+</div> <!-- Page content Wrapper -->
+
+</div> <!-- content -->
+
+<footer class="footer">
+    © <?=date('Y');?> Designed with <i class="fa fa-heart" style="color: red"></i> by Azad Chaiwala Institute
+</footer>
+
+</div>
+<!-- End Right content here -->
+
+</div>
+<!-- END wrapper -->
+
+
+<!-- jQuery  -->
+<script src="<?=app_url()?>/member/assets/js/jquery.min.js"></script>
+<script>
+    function getLink(batch_id){
+        if($(".class_join_button").attr('disabled') == "disabled"){
+            $.ajax({
+                url: "<?=app_url()?>/account/my-class/get-link",
+                method: "POST",
+                data: {batch_id:batch_id},
+                success:function (r) {
+                    $(".class_join_href").attr('href', r);
+                }
+            });
+            $(".class_join_button").attr('disabled', false);
+            $(".class_join_button").html('Enter Class');
+        }
+    }
+</script>
+<script src="<?=app_url()?>/member/assets/js/popper.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/bootstrap.min.js"></script>
+<script src="<?=app_url()?>/member/assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/modernizr.min.js"></script>
+<script src="<?=app_url()?>/member/assets/js/detect.js"></script>
+<script src="<?=app_url()?>/member/assets/js/fastclick.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.slimscroll.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.blockUI.js"></script>
+<script src="<?=app_url()?>/member/assets/js/waves.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.nicescroll.js"></script>
+<script src="<?=app_url()?>/member/assets/js/jquery.scrollTo.min.js"></script>
+<script src="<?=app_url()?>/member/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<!-- App js -->
+<script src="<?=app_url()?>/member/assets/js/app.js"></script>
+<script>
+    $('.datepicker').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: "dd-mm-yyyy"
+    });
+    $(".custom-file-input").on("change", function () {
+        $(".custom-file-label").text($(this).val().split('\\').pop());
+    });
+    $("body").on("click", ".class_type", function () {
+        let radio = $(this).find('input');
+        if(!radio.attr('disabled')) {
+            $("body").find("input[type='radio']").attr('checked', false);
+            radio.attr("checked", true);
+            $(".class_type_button").attr('disabled', false);
+            $(".class_type_button").addClass('btn-success');
+        }
+    });
+    $("body").on("submit", "#class_type_form", function (e) {
+        e.preventDefault();
+        let classType = $("input[name='class_type']").val();
+        $.ajax({
+            url: "<?=app_url()?>/getCoursesByType",
+            method: "post",
+            data: {classType: classType},
+            success:function (response) {
+                let data = JSON.parse(response);
+                window.history.pushState("test", "", location.protocol + '//' + location.host + location.pathname+"?class="+classType);
+                $("#wizard-title").text('Select Your Course');
+                $("#class_type_form").remove();
+                for (let i = 0; i < data.length; i++) {
+                    let course_list = $("#courses_list table tbody").html();
+                    course_list = course_list.replace(':course_id', data[i]['id']);
+                    course_list = course_list.replace(':course_id', data[i]['id']);
+                    course_list = course_list.replace(':course_id', data[i]['id']);
+                    course_list = course_list.replace(':course_title', data[i]['course_name']);
+                    course_list = course_list.replace(":duration", data[i]['duration']);
+                    course_list = course_list.replace(":course_fee", data[i]['fee']);
+                    $("#course_form").show();
+                    $("#course_form").find('table').append(course_list);
+                }
+            }
+        });
+    });
+    $("body").on("click", ".course", function () {
+        let radio = $(this).find('input');
+        if(!radio.attr('disabled')) {
+            $("body").find("input[type='radio']").attr('checked', false);
+            radio.attr("checked", true);
+            $(".course_button").attr('disabled', false);
+            $(".course_button").addClass('btn-success');
+        }
+    });
+    $("body").on("submit", "#course_form", function (e) {
+        e.preventDefault();
+        let course_id = $("input[name='course_id']:checked").val();
+        let course_name = $("label[for='"+course_id+"']").text();
+        $.ajax({
+            url: "<?=app_url()?>/getBatches",
+            method: "post",
+            data: {course_id: course_id},
+            success:function (response) {
+                window.history.pushState("", "", window.location.href+"&course="+course_id);
+                let data = JSON.parse(response);
+                console.log(data);
+                $("#wizard-title").text('Select Your Batch for '+ course_name);
+                $("#course_form").remove();
+                $("input[name='selected_course']").val(course_id);
+                for (let i = 0; i < data.length; i++) {
+                    let course_list = $("#batches_list table tbody").html();
+                    course_list = course_list.replace(':batch_id', data[i]['id']);
+                    course_list = course_list.replace(':batch_id', data[i]['id']);
+                    course_list = course_list.replace(':batch_id', data[i]['id']);
+                    course_list = course_list.replace(':batch_name', data[i]['name']);
+                    const d = new Date(data[i]['start_date'])
+                    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
+                    const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(d)
+                    const mo_s = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
+                    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
+                    //console.log(`${da}-${mo}-${ye}`)
+                    course_list = course_list.replace(":batch_date", mo+" "+da+", "+ye+" ("+da+"-"+mo_s+"-"+ye+")");
+                    course_list = course_list.replace(":batch_time", data[i]['start_time']);
+                    $("#batch_form").show();
+                    $("#batch_form").find('table').append(course_list);
+                }
+            }
+        });
+    });
+    $("body").on("click", ".batch", function () {
+        let radio = $(this).find('input');
+        if (!radio.attr('disabled')) {
+            $("body").find("input[type='radio']").attr('checked', false);
+            radio.attr("checked", true);
+            $(".batch_button").attr('disabled', false);
+            $(".batch_button").addClass('btn-success');
+        }
+    });
+    $("body").on("submit", "#batch_form", function (e) {
+        e.preventDefault();
+        $("#wizard-title").text('Overview of your selections');
+        let course_id = $("input[name='selected_course']").val();
+        let batch_id = $("input[name='batch_id']").val();
+        $("#batch_form").remove();
+        $.ajax({
+            url: "<?=app_url()?>/account/enroll-new-course-post",
+            method: "post",
+            data: {course_id: course_id, batch_id: batch_id},
+            success: function (response) {
+                let data = JSON.parse(response);
+                let overview = $("#final_overview").html();
+                overview = overview.replace(':course_name', data['course_name']);
+                overview = overview.replace(':course_type', data['course_type']);
+                overview = overview.replace(':course_fee', data['course_fee']);
+                overview = overview.replace(':fee_in_words', data['fee_in_words']);
+                overview = overview.replace(':duration', data['duration']);
+                overview = overview.replace(':batch_name', data['batch_name']);
+                overview = overview.replace(':start_date', data['start_date']);
+                overview = overview.replace(':start_time', data['start_time']);
+                overview = overview.replace(':enroll_id', data['enroll_id']);
+                $("#overview").show();
+                $("#overview").html(overview);
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>
