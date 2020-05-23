@@ -390,7 +390,7 @@ courses Area
     background: #E74C3C;
     top: 200px;
     color: white;
-    width: 120px;
+    width: 100%;
 }
 
 .course_card-start {
