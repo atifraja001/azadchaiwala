@@ -248,12 +248,7 @@
                         <div class="video-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Next Batch Start</h3>
-                            <?php if(count($batch) > -1){ ?>
-                            <p>(<?=date('d-m-Y', strtotime($batch[0]['start_date']));?>)
-                                <br>(<?=date('F d, Y', strtotime($batch[0]['start_date']));?>)</p>
-                            <?php }else{ ?>
-                            <p><a data-target="#myModal" data-toggle="modal" href="#">Click for details</a></p>
-                            <?php } ?>
+                            <p><a href="<?=app_url()?>/create-account">Click for details</a></p>
                             <!-- modal -->
                             <div class="modal" id="myModal">
                                 <div class="modal-dialog ">
@@ -356,15 +351,8 @@
             <div class="col-lg-6">
                 <div class="videoo-faqs-course-inner">
                     <h4>When will the course start & finish?</h4>
-                    <?php if(count($batch) > 0){ ?>
-                    <p>The next batch for this course will start on
-                        (<?=date('F d, Y', strtotime($batch[0]['start_date']));?>) and end on
-                        (<?=date('F d, Y', strtotime($batch[0]['end_date']));?>).. You can see all future batches on the
-                        <a href="<?=app_url()?>/course-registration/<?=$slug?>">signup page</a>.</p>
-                    <?php }else{ ?>
-                    <p><a data-target="#myModal" data-toggle="modal" href="#">Click here to get details for next
+                    <p><a href="<?=app_url()?>/create-account">Click here to get details for next
                         batch.</a></p>
-                    <?php } ?>
                 </div>
                 <div class="videoo-faqs-course-inner">
                     <h4>How Quickly will I See results?</h4>
