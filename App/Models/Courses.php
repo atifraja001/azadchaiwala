@@ -42,7 +42,8 @@ class Courses extends \Core\Model
     }
     public function getCoursesByType($classType){
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT * From courses WHERE type = :type");
+        $stmt = $db->prepare("SELECT * FROM courses WHERE type = :type AND id IN 
+                                    (SELECT course_id FROM batches WHERE start_date >= CURRENT_DATE())");
         $stmt->execute([':type' => $classType]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -138,7 +139,6 @@ class Courses extends \Core\Model
                                 order_number = :order_number,
                                 teacher_id = :teacher_id,
                                 course_name = :course_name,
-                                slug = :slug,
                                 course_picture = :course_picture,
                                 youtube_embed = :youtube_embed,
                                 lecture_hours_per_day = :lecture_hours_per_day,
@@ -159,7 +159,6 @@ class Courses extends \Core\Model
                                 order_number = :order_number,
                                 teacher_id = :teacher_id,
                                 course_name = :course_name,
-                                slug = :slug,
                                 youtube_embed = :youtube_embed,
                                 lecture_hours_per_day = :lecture_hours_per_day,
                                 duration = :duration,

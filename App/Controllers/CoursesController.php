@@ -33,17 +33,17 @@ class CoursesController
         View::render('backend/layouts/script.html');
     }
     public function add_new_course_post(){
-        if(!empty($_FILES['course_picture']['name'])){
+        if($_FILES['course_picture']['name'] != ""){
             $response = uploadfile('course_picture', '../content/course_images');
         }else{
             $response = true;
         }
         if($response == "invalid_image"){
-            redirectWithMessage(app_url('admin').'/students/add-new-course', 'Invalid Image File', 'course', 'error');
+            redirectWithMessage(app_url('admin').'/courses/add-new-course', 'Invalid Image File', 'course', 'error');
         }else if($response == "invalid_size"){
-            redirectWithMessage(app_url('admin').'/students/add-new-course', 'Image is too larger to upload', 'course', 'error');
+            redirectWithMessage(app_url('admin').'/courses/add-new-course', 'Image is too larger to upload', 'course', 'error');
         }else if($response == "not_uploaded"){
-            redirectWithMessage(app_url('admin').'/students/add-new-course', 'something went\'s wrong!', 'course', 'error');
+            redirectWithMessage(app_url('admin').'/courses/add-new-course', 'something went\'s wrong!', 'course', 'error');
         }else {
             // preparing data
             $data = [
@@ -97,7 +97,6 @@ class CoursesController
                     ':order_number' => clean_post('order_number'),
                     ':teacher_id' => clean_post('course_teacher'),
                     ':course_name' => clean_post('course_name'),
-                    ':slug' => clean_post('course_slug'),
                     ':course_picture' => $response,
                     ':youtube_embed' => clean_post('video_id'),
                     ':lecture_hours_per_day' => clean_post('daily_hours'),
@@ -116,7 +115,6 @@ class CoursesController
                 ':order_number' => clean_post('order_number'),
                 ':teacher_id' => clean_post('course_teacher'),
                 ':course_name' => clean_post('course_name'),
-                ':slug' => clean_post('course_slug'),
                 ':youtube_embed' => clean_post('video_id'),
                 ':lecture_hours_per_day' => clean_post('daily_hours'),
                 ':duration' => clean_post('duration_number') . " " . clean_post('duration_option') . (clean_post('duration_number') > 1 ? "s" : ""),

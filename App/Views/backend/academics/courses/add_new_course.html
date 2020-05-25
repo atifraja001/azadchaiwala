@@ -9,8 +9,10 @@
         <div class="col-12">
             <div class="card border-left-danger">
                 <div class="card-body">
+
                    <div class="row">
                        <div class="col-12 col-md-12 col-lg-6">
+                           <?=showMsg('course');?>
                            <form method="post" action="<?=app_url('admin')?>/courses/add-new-course-post" enctype="multipart/form-data" class="needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col-md-6">
