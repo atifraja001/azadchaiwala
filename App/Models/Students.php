@@ -73,6 +73,12 @@ class Students extends \Core\Model
         $stmt->execute([':id' => $id]);
         return $stmt->fetch();
     }
+    public function GetStudentEnrollments($std_id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM enrollments WHERE student_id = :student_id ORDER BY id DESC");
+        $stmt->execute([':student_id' => $std_id]);
+        return $stmt->fetchAll();
+    }
     public function deleteStudentsById($id){
         $db = static::getDB();
         $stmt = $db->prepare("DELETE FROM student_login WHERE id = :id");

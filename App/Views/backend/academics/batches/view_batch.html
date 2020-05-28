@@ -71,7 +71,7 @@
                             <tbody>
                             <?php foreach($pending_enrollments as $pe){ ?>
                                 <tr>
-                                    <td><?=$pe['name'];?></td>
+                                    <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$pe['student_id']?>" target="_blank"><?=$pe['name'];?></a></td>
                                     <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
                                     <td>Not Paid</td>
                                     <?php }else{ ?>
@@ -83,12 +83,18 @@
                                      </td>
                                     <td><?=date("d-m-Y", strtotime($pe['created_at']));?></td>
                                     <td>
-                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$batch['id'];?>/<?=$pe['id']?>/1">
+                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$pe['id']?>/1">
                                             <button type="button" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-check"></i> Approve
                                             </button>
                                         </a>
-                                        <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$batch['id'];?>/<?=$pe['id']?>" onclick="return confirm('Do you want to delete?')">
+                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$pe['id']?>/2"
+                                           onclick="return confirm('Do you want to Reject?')">
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-times"></i> Reject
+                                            </button>
+                                        </a>
+                                        <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$pe['id']?>" onclick="return confirm('Do you want to delete?')">
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash"></i>
                                             </button>
@@ -120,7 +126,7 @@
                             <tbody>
                             <?php foreach($approved_enrollments as $ae){ ?>
                             <tr>
-                                <td><?=$ae['name'];?></td>
+                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$ae['student_id']?>" target="_blank"><?=$ae['name'];?></a></td>
                                 <?php if(is_null($ae['fee_receipt']) || empty($ae['fee_receipt'])){ ?>
                                 <td>Not Paid</td>
                                 <?php }else{ ?>
@@ -132,12 +138,12 @@
                                 </td>
                                 <td><?=date("d-m-Y", strtotime($ae['created_at']));?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$batch['id'];?>/<?=$ae['id']?>/0">
+                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$ae['id']?>/2" onclick="return confirm('Do you want to Reject?')">
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fas fa-times"></i> Reject
                                         </button>
                                     </a>
-                                    <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$batch['id'];?>/<?=$ae['id']?>" onclick="return confirm('Do you want to delete?')">
+                                    <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$ae['id']?>" onclick="return confirm('Do you want to delete?')">
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </button>

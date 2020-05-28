@@ -120,18 +120,18 @@ class BatchesController
             $course = new \App\Models\Courses();
             $course = $course->getCourseByBatchId($batch['id']);
             $email = new \App\Controllers\EmailController();
-            $email->sendEmail('registration_verify', [
-                'email_to' => $std['email'],
-                'course' => $course['course_name'],
-                'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
-            ]);
+    //            $email->sendEmail('registration_verify', [
+    //                'email_to' => $std['email'],
+    //                'course' => $course['course_name'],
+    //                'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+    //            ]);
         }
         $status = new \App\Models\Enrollments();
         $status = $status->change_status($data);
         if($status){
-            redirectWithMessage(app_url('admin').'/batches/view-batches/'.$request['bid'], 'Status Changed', 'batches');
+            redirectWithMessage('', 'Status Changed', 'batches');
         }else{
-            redirectWithMessage(app_url('admin').'/batches/view-batches/'.$request['bid'], 'Something Went\'s Wrongs', 'batches', 'error');
+            redirectWithMessage('', 'Something Went\'s Wrongs', 'batches', 'error');
         }
     }
     public function delete_enroll($request){
@@ -141,9 +141,9 @@ class BatchesController
         $status = new \App\Models\Enrollments();
         $status = $status->delete_enroll($data);
         if($status){
-            redirectWithMessage(app_url('admin').'/batches/view-batches/'.$request['bid'], 'Enrollment Deleted!', 'batches');
+            redirectWithMessage('', 'Enrollment Deleted!', 'batches');
         }else{
-            redirectWithMessage(app_url('admin').'/batches/view-batches/'.$request['bid'], 'Something Went\'s Wrongs', 'batches', 'error');
+            redirectWithMessage('', 'Something Went\'s Wrongs', 'batches', 'error');
         }
     }
     public function get__batches(){

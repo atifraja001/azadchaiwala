@@ -306,7 +306,6 @@ function redirect($url)
     }
     exit;
 }
-
 /*
  * @returns
  * string with 3 dots if string is greater then the limit.
@@ -330,7 +329,7 @@ function add3Dots($string, $limit)
  * with javascript or noscript (meta)
  *
  * required parameters
- * url: to redirect
+ * url: to redirect (Leave Blank if you want to redirect back
  * message: to show message (string)
  * where: is used to show message location
  * (if you have multiple positions of showing message)
@@ -338,11 +337,12 @@ function add3Dots($string, $limit)
  * msg: to show success message
  * error: to show danger message
  */
-function redirectWithMessage($url, $message, $where, $type = "msg")
+function redirectWithMessage($url = "", $message, $where, $type = "msg")
 {
     $_SESSION['msg'] = $message;
     $_SESSION['type'] = $type;
     $_SESSION['where'] = $where;
+    $url = ($url == "") ? $_SERVER['HTTP_REFERER'] : $url;
     if (!headers_sent()) {
         header('Location: ' . $url);
     } else {

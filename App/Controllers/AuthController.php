@@ -31,6 +31,7 @@ class AuthController
         if($response == 1){ // success
             $user = $account->getUser($email);
             $_SESSION['user_login'] = $user['id'];
+
             redirect(app_url().'/account/dashboard');
         }else if($response == 2){ // invalid email or password
             $msg = "Invalid Email or Password!";

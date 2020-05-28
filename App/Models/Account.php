@@ -64,9 +64,11 @@ class Account extends \Core\Model
                 return 0;
             } else {
                 if(empty($password)){
+                    $this->touchLogin($email);
                     return 1;
                 }else{
                     if (password_verify($password, $user['password'])) {
+                        $this->touchLogin($email);
                         return 1;
                     }else{
                         return 2;
@@ -76,6 +78,13 @@ class Account extends \Core\Model
         } else {
             return 3;
         }
+    }
+    public function touchLogin($email){
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE student_login SET last_login = CURRENT_TIMESTAMP() WHERE email = :email");
+        $q->execute([
+            ':email' => $email
+        ]);
     }
     public function getUser($email_or_id){
         $db = static::getDB();
