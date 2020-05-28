@@ -215,7 +215,11 @@ class Enrollments extends Model
         $stmt->execute([':id' => $id]);
         return $stmt->fetch();
     }
-
+    public function deleteEnrollById($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("DELETE FROM enrollments WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+    }
     public function updateFeeReceipt($data)
     {
         $db = static::getDB();

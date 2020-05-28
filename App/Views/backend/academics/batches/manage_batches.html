@@ -39,7 +39,7 @@
                                 <td><?=$sn?></td>
                                 <td class="text-center">
                                     <p class="text-center"><?=$b['name'];?></p>
-                                    <a href="<?=app_url('admin');?>/batches/view-batches/<?=$b['id'];?>">View Details</a>
+                                    <a href="<?=app_url('admin');?>/batches/view-batches/<?=$b['id'];?>" target="_blank">View Details</a>
                                     / <a href="<?=app_url('admin');?>/batches/edit-batch/<?=$b['id'];?>">Edit</a>
                                     / <a href="<?=app_url('admin');?>/batches/delete-batch/<?=$b['id'];?>" onclick="return confirm('Are you Sure? all Enrollments will also get deleted')">Delete</a>
                                 </td>

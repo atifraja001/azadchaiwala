@@ -377,4 +377,13 @@ class AccountController
         $batch = $batch->getBatchInfo($_POST['batch_id']);
         echo $batch['class_link'];
     }
+    public function delete_enrollment($request){
+        $enrollment = new \App\Models\Enrollments();
+        $enroll = $enrollment->getEnrollById($request['id']);
+        if($enroll['student_id'] != $_SESSION['user_login']){
+            redirectWithMessage('', '', 'student');
+        }
+        $enroll = $enrollment->deleteEnrollById($request['id']);
+        redirectWithMessage('', 'Enrollment Removed', 'student');
+    }
 }

@@ -84,10 +84,18 @@ class StudentsController
     public function view_student($request){
         $student = new \App\Models\Students();
         $std = $student->getStudentsById($request['id']);
+        $enroll = new \App\Models\Account();
+        $enrolled = $enroll->have_enrolled($request['id']);
+        $enrollments = $student->GetStudentEnrollments($std['id']);
         if(!empty($std)) {
             View::render('backend/layouts/head.html');
             View::render('backend/layouts/navbar.html', ['student'=>'active']);
-            View::render('backend/academics/students/view_student.html', ['std' => $std]);
+            View::render('backend/academics/students/view_student.html',
+                [
+                    'std' => $std,
+                    'enrolled' => $enrolled,
+                    'enrollments'=>$enrollments
+                ]);
             View::render('backend/layouts/script.html');
         }else{
             redirect(app_url('admin').'/students/manage');
@@ -122,7 +130,7 @@ class StudentsController
                 $std_id = $student->UpdateStudent($data, true);
                 redirectWithMessage(
                     app_url('admin').'/students/view-profile/'.$std_id,
-                    'Student Profile Created Successfully',
+                    'Student Profile Updated Successfully',
                     'student');
             }
         }else{
@@ -142,7 +150,7 @@ class StudentsController
             $std_id = $student->UpdateStudent($data, false);
             redirectWithMessage(
                 app_url('admin').'/students/view-profile/'.$std_id,
-                'Student Profile Created Successfully',
+                'Student Profile Updated Successfully',
                 'student');
         }
     }

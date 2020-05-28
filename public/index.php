@@ -59,6 +59,7 @@ $router->add('account/enroll-new-course', ['controller' => 'AccountController', 
 $router->add('account/enroll-new-course-post', ['controller' => 'AccountController', 'action' => 'enroll_new_course_post']);
 $router->add('account/my-courses/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
 $router->add('account/my-courses/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
+$router->add('account/my-courses/delete/{id:\d+}', ['controller' => 'AccountController', 'action' => 'delete_enrollment']);
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
 $router->add('getCoursesByType', ['controller' => 'AccountController', 'action' => 'getCoursesByType']);
 
@@ -142,8 +143,8 @@ $router->add($admin_dir.'/batches/add-new-batch-post', ['controller' => 'Batches
 $router->add($admin_dir.'/batches/edit-batch/{id:\d+}', ['controller' => 'BatchesController', 'action' => 'show_edit_form']);
 $router->add($admin_dir.'/batches/delete-batch/{id:\d+}', ['controller' => 'BatchesController', 'action' => 'delete_batch']);
 $router->add($admin_dir.'/batches/edit-batch-post', ['controller' => 'BatchesController', 'action' => 'edit_batch_post']);
-$router->add($admin_dir.'/batches/change_status/{bid:\d+}/{eid:\d+}/{sid:\d+}', ['controller' => 'BatchesController', 'action' => 'change_status']);
-$router->add($admin_dir.'/batches/delete_enroll/{bid:\d+}/{eid:\d+}', ['controller' => 'BatchesController', 'action' => 'delete_enroll']);
+$router->add($admin_dir.'/batches/change_status/{eid:\d+}/{sid:\d+}', ['controller' => 'BatchesController', 'action' => 'change_status']);
+$router->add($admin_dir.'/batches/delete_enroll/{eid:\d+}', ['controller' => 'BatchesController', 'action' => 'delete_enroll']);
 
 // Enrollments
 $router->add($admin_dir.'/enrollments/manage', ['controller' => 'EnrollmentsController', 'action' => 'manage']);

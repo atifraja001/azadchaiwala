@@ -51,7 +51,13 @@
                                             <select class="form-control" name="day" required>
                                                 <option hidden value="">Day</option>
                                                 <?php
-                                                   $dob = explode("-", $std['date_of_birth']);
+                                                if(!is_null($std['date_of_birth']) || empty(!$std['date_of_birth'])){
+                                                    $dob = explode("-", $std['date_of_birth']);
+                                                }else{
+                                                    $dob = array(0, 0, 0);
+                                                }
+                                                ?>
+                                                <?php
                                                 for($i = 1; $i<=31; $i++){
                                                 if($i == $dob[2]){
                                                 ?>
