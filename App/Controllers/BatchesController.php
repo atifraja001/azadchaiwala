@@ -120,11 +120,11 @@ class BatchesController
             $course = new \App\Models\Courses();
             $course = $course->getCourseByBatchId($batch['id']);
             $email = new \App\Controllers\EmailController();
-    //            $email->sendEmail('registration_verify', [
-    //                'email_to' => $std['email'],
-    //                'course' => $course['course_name'],
-    //                'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
-    //            ]);
+                $email->sendEmail('registration_verify', [
+                    'email_to' => $std['email'],
+                    'course' => $course['course_name'],
+                    'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+                ]);
         }
         $status = new \App\Models\Enrollments();
         $status = $status->change_status($data);
