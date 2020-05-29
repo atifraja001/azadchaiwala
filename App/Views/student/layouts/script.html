@@ -148,7 +148,7 @@
         e.preventDefault();
         $("#wizard-title").text('Overview of your selections');
         let course_id = $("input[name='selected_course']").val();
-        let batch_id = $("input[name='batch_id']").val();
+        let batch_id = $("input[name='batch_id']:checked").val();
         $("#batch_form").remove();
         $.ajax({
             url: "<?=app_url()?>/account/enroll-new-course-post",
