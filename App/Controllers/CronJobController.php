@@ -42,16 +42,13 @@ class CronJobController
         $cronModel = new CronJob();
         $enrollments = $cronModel->getVerifiedEnrollments();
         foreach ($enrollments as $enroll) {
-            echo $sd = date('Y-m-d H:i:s', strtotime(" +31 minutes"));
-            echo "<br>";
-            echo $ed = date('Y-m-d H:i:s', strtotime(" -31 minutes"));
-            echo "<br>";
+            $sd = date('Y-m-d H:i:s', strtotime(" +31 minutes"));
+            $ed = date('Y-m-d H:i:s', strtotime(" -31 minutes"));
             $batchModel = new Batches();
             $courseModel = new Courses();
             $course = $courseModel->getCourse($enroll['course_id']);
             $batch = $batchModel->getBatchInfo($enroll['batch_id']);
-            echo $hour24 = date('Y-m-d H:i:s', strtotime($batch['start_date']." ".$batch['start_time'] . " -24 hours"));
-            echo "<br>";
+            $hour24 = date('Y-m-d H:i:s', strtotime($batch['start_date']." ".$batch['start_time'] . " -24 hours"));
             if ($hour24 < $sd && $hour24 > $ed) {
                 $email = new \App\Controllers\EmailController();
                 $email->sendEmail('course_reminder', [
@@ -60,9 +57,7 @@ class CronJobController
                     'course_date' => date("l F d, Y", strtotime($batch['start_date'])),
                     'course_time' => date('h:i A', strtotime($batch['start_time']))
                 ]);
-                echo "email sent";
             }
-
         }
     }
 }
