@@ -2,7 +2,6 @@
 
 
 namespace App\Controllers;
-use Core\View;
 
 /*
  * Date: 09-01-2020
@@ -57,14 +56,21 @@ class EmailController
             $to = \App\Config::EMAIL; // send to admin
             $subject = 'Course Feedback from Azad Chaiwala Institute';
             $content = $this->feedback($data['name'], $data['email'], $data['course'], $data['message']);
-        }else if($type == 'registration_verify'){
+        }else if ($type == 'registration_verify') {
             /*
              * Required {email_to, start_date, course}
              */
             $to = $data['email_to']; // send to user
             $subject = 'Your Registration Verified - Azad Chaiwala Institute';
             $content = $this->RegistrationVerified($data['start_date'], $data['course']);
-        }else if($type == "batch"){
+        } else if ($type == "registration_rejected") {
+            /*
+             * Required {email_to, course}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Your Registration Verified - Azad Chaiwala Institute';
+            $content = $this->RegistrationRejected($data['course']);
+        } else if ($type == "batch") {
             /*
              * Required {message}
              * multiple parameters (OPTIONAL) available in {message}
@@ -142,6 +148,12 @@ class EmailController
         $content = file_get_contents("../App/Views/email_templates/registration_verified.html");
         $content = str_replace(":course", $course, $content);
         $content = str_replace(":start_date", $start_date, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+    protected function RegistrationRejected($course){
+        $content = file_get_contents("../App/Views/email_templates/registration_rejected.html");
+        $content = str_replace(":course", $course, $content);
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
