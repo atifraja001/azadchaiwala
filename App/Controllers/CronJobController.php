@@ -42,13 +42,16 @@ class CronJobController
         $cronModel = new CronJob();
         $enrollments = $cronModel->getVerifiedEnrollments();
         foreach ($enrollments as $enroll) {
-            $sd = date('Y-m-d H:i:s', strtotime(" +31 minutes"));
-            $ed = date('Y-m-d H:i:s', strtotime(" -31 minutes"));
+            echo $sd = date('Y-m-d H:i:s', strtotime(" +31 minutes"));
+            echo "<br>";
+            echo $ed = date('Y-m-d H:i:s', strtotime(" -31 minutes"));
+            echo "<br>";
             $batchModel = new Batches();
             $courseModel = new Courses();
             $course = $courseModel->getCourse($enroll['course_id']);
             $batch = $batchModel->getBatchInfo($enroll['batch_id']);
-            $hour24 = date('Y-m-d H:i:s', strtotime($batch['start_date']." ".$batch['start_time'] . " -24 hours"));
+            echo $hour24 = date('Y-m-d H:i:s', strtotime($batch['start_date']." ".$batch['start_time'] . " -24 hours"));
+            echo "<br>";
             if ($hour24 > $sd && $hour24 < $ed) {
                 $email = new \App\Controllers\EmailController();
                 $email->sendEmail('course_reminder', [
