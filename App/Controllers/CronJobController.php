@@ -57,8 +57,8 @@ class CronJobController
                 $email->sendEmail('course_reminder', [
                     'email_to' => $enroll['email'],
                     'course' => $course['course_name'],
-                    'course_date' => date("l F d, Y", strtotime($enroll['start_date'])),
-                    'course_time' => date('h:i A', strtotime($enroll['start_time']))
+                    'course_date' => date("l F d, Y", strtotime($batch['start_date'])),
+                    'course_time' => date('h:i A', strtotime($batch['start_time']))
                 ]);
                 echo "email sent";
             }
