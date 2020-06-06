@@ -68,7 +68,7 @@ class EmailController
              * Required {email_to, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Verified - Azad Chaiwala Institute';
+            $subject = 'Your Registration Rejected - Azad Chaiwala Institute';
             $content = $this->RegistrationRejected($data['course']);
         } else if ($type == "batch") {
             /*
