@@ -116,6 +116,7 @@
                 $("#course_form").remove();
                 $("input[name='selected_course']").val(course_id);
                 for (let i = 0; i < data.length; i++) {
+
                     let course_list = $("#batches_list table tbody").html();
                     course_list = course_list.replace(':batch_id', data[i]['id']);
                     course_list = course_list.replace(':batch_id', data[i]['id']);
@@ -127,6 +128,11 @@
                     const mo_s = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
                     const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
                     //console.log(`${da}-${mo}-${ye}`)
+                    if(data[i]['start_date'] == "<?=date('Y-m-d')?>"){
+                        if(data[i]['start_time'] <= "<?=date('H:i:s')?>"){
+                            continue;
+                        }
+                    }
                     course_list = course_list.replace(":batch_date", mo+" "+da+", "+ye+" ("+da+"-"+mo_s+"-"+ye+")");
                     course_list = course_list.replace(":batch_time", data[i]['start_time']);
                     $("#batch_form").show();
