@@ -57,6 +57,7 @@ class CronJobController
                     'course_date' => date("l F d, Y", strtotime($enroll['start_date'])),
                     'course_time' => date('h:i A', strtotime($enroll['start_time']))
                 ]);
+                echo "email sent";
             }
 
         }
