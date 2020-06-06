@@ -97,6 +97,20 @@ class EmailController
             $to = $data['email_to']; // send to user
             $subject = 'Verify Your Email - Azad Chaiwala Institute';
             $content = $this->create_account($data['name'], $data['token']);
+        }else if($type == 'fee_reminder'){
+            /*
+             * Required {email}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Fee Reminder from Azad Chaiwala Institute';
+            $content = $this->fee_reminder();
+        }else if($type == 'course_reminder'){
+            /*
+             * Required {course, date, time}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Class Reminder from Azad Chaiwala Institute';
+            $content = $this->course_reminder($data['course'], $data['course_date'], $data['course_time']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -163,4 +177,18 @@ class EmailController
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
+    protected function fee_reminder(){
+        $content = file_get_contents("../App/Views/email_templates/fee_reminder.html");
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+    protected function course_reminder($course, $date, $time){
+        $content = file_get_contents("../App/Views/email_templates/course_reminder.html");
+        $content = str_replace(":course_name", $course, $content);
+        $content = str_replace(":course_date", $date, $content);
+        $content = str_replace(":course_time", $time, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+
 }

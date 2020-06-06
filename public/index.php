@@ -199,13 +199,18 @@ $router->add($admin_dir.'/backup-db', ['controller' => 'BackupController', 'acti
 $router->add($admin_dir.'/create-backup', ['controller' => 'BackupController', 'action' => 'create_backup']);
 
 // secure fetching route
-$router->add('getImage', ['controller'=>'FetchDataController', 'action'=>'FetchImage']);
-$router->add($admin_dir.'/download-backup', ['controller' => 'FetchDataController', 'action' => 'FetchBackup']);
+$router->add('getImage', ['controller' => 'FetchDataController', 'action' => 'FetchImage']);
+$router->add($admin_dir . '/download-backup', ['controller' => 'FetchDataController', 'action' => 'FetchBackup']);
 
 
 //gallery
-$router->add($admin_dir.'/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
-$router->add($admin_dir.'/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
-$router->add($admin_dir.'/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
+$router->add($admin_dir . '/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
+$router->add($admin_dir . '/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
+$router->add($admin_dir . '/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
+
+// cron jobs routes
+$router->add('cron_job/FeeReminder', ['controller' => 'CronJobController', 'action' => 'sendAfter48Hours']);
+$router->add('cron_job/CourseReminder', ['controller' => 'CronJobController', 'action' => 'sendBefore24Hours']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);
