@@ -52,7 +52,7 @@ class CronJobController
             $batch = $batchModel->getBatchInfo($enroll['batch_id']);
             echo $hour24 = date('Y-m-d H:i:s', strtotime($batch['start_date']." ".$batch['start_time'] . " -24 hours"));
             echo "<br>";
-            if ($hour24 > $sd && $hour24 < $ed) {
+            if ($hour24 < $sd && $hour24 > $ed) {
                 $email = new \App\Controllers\EmailController();
                 $email->sendEmail('course_reminder', [
                     'email_to' => $enroll['email'],
