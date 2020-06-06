@@ -1,995 +1,1574 @@
 <section class="Course video-course">
-
-    <!-- video section and enroll section -->
-    <div class="container graphic-section">
-        <div class="row ">
-            <div class="col-lg-6 ">
-                <div class="graphic__section-video">
-                    <!-- <video style="width:100%;" autobuffer autoloop loop controls >
+  <!-- video section and enroll section -->
+  <div class="container graphic-section">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="graphic__section-video">
+          <!-- <video style="width:100%;" autobuffer autoloop loop controls >
                         <source src="assets/img/videography/" >
                     </video> -->
-                    <img alt="video graphy course" class="img-fluid"
-                         src="<?=app_url()?>/assets/img/graphics/graphic.png">
-                </div>
-            </div>
-            <div class="col-lg-6 ">
-                <div class="graphic__section-info">
-                    <h1>Become A Graphic Designer In Only (4 Weeks)</h1>
-                    <p>Our course helps 16-35 year old's become skilled Graphic Designers & illustrators. So they can be
-                        skilled enough to get a job or begin a profitable career in freelancing.</p>
-                    <div class="grahpic-enroll-button" style="margin-top: 40px">
-                        <?php if(count($batch) == -1){ ?>
-                        <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#"><span>Change Your Life </span>Enroll
-                            Now</a>
-                        <?php }else{ ?>
-                        <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>"><span>Change Your Life </span>Enroll
-                            Now</a>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
+          <img
+            alt="graphics course thumbnail "
+            class="img-fluid graphic-thumbnail"
+            src="<?=app_url()?>/assets/img/graphics/graphic.png"
+          />
         </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="graphic__section-info">
+          <h1>Become A Graphic Designer In Only (4 Weeks)</h1>
+          <p>
+            Our course helps 16-35 year old's become skilled Graphic Designers &
+            illustrators. So they can be skilled enough to get a job or begin a
+            profitable career in freelancing.
+          </p>
+          <div class="grahpic-enroll-button" style="margin-top: 40px;">
+            <?php if(count($batch) == -1){ ?>
+            <a
+              class="btn btn-lg btn-block"
+              data-target="#myModal"
+              data-toggle="modal"
+              href="#"
+              ><span>Change Your Life </span>Enroll Now</a
+            >
+            <?php }else{ ?>
+            <a
+              class="btn btn-lg btn-block"
+              href="<?=app_url()?>/course-registration/<?=$slug?>"
+              ><span>Change Your Life </span>Enroll Now</a
+            >
+            <?php } ?>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- what will you learn -->
-    <div class="container graphic-will-learn">
-        <h3>What will you learn?</h3>
-        <div class="row">
-            <div class="col-lg-6 graphic-will__learn-text">
-                <ul>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i>
-                        <span>How to edit existing photos & graphics.</span></li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use Adobe Photoshop, Illustrator & Coral Draw.</span>
-                    </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>How to use and how to make handmade illustrations using a drawing tablet.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-6 graphic-will__learn-text">
-                <ul>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>Familiarise you with the standards used in the printing world.</span>
-                    </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>Teach you how to make custom logos, letter heads, brochures, banners, Typography, Characters etc.</span>
-                    </li>
-                    <li class="d-flex"><i class="fas fa-check pr-2"></i>
-                        <span>How to sell your skills, as a freelancer.</span></li>
-                </ul>
-            </div>
-        </div>
+  </div>
+  <!-- what will you learn -->
+  <div class="container graphic-will-learn">
+    <h3>What will you learn?</h3>
+    <div class="row">
+      <div class="col-lg-6 graphic-will__learn-text">
+        <ul>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span>How to edit existing photos & graphics.</span>
+          </li>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span>How to use Adobe Photoshop, Illustrator & Coral Draw.</span>
+          </li>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span
+              >How to use and how to make handmade illustrations using a drawing
+              tablet.</span
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6 graphic-will__learn-text">
+        <ul>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span
+              >Familiarise you with the standards used in the printing
+              world.</span
+            >
+          </li>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span
+              >Teach you how to make custom logos, letter heads, brochures,
+              banners, Typography, Characters etc.</span
+            >
+          </li>
+          <li class="d-flex">
+            <i class="fas fa-check pr-2"></i>
+            <span>How to sell your skills, as a freelancer.</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- end what will you learn -->
-    <!-- What You Will Lear Section Start here -->
-    <div class="container graphic-learn-section" style="margin-top:0px;">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="graphic-learn graphic-course-for">
-                    <h3>Who is the Course For?</h3>
-                    <ul>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you, if you want to be skilled.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you if you want to make money</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>For you, if you feel lost, demotivated & don't  know where to start.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check text-white pr-2"></i> <span>If you want a better alternative to a BS Graphic Designing (4 Year) degree.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 ">
-                <div class="graphic-learn graphic-course-benefit">
-                    <h3>What Are The Benefits?</h3>
-                    <ul>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will learn a popular skill in only 4 weeks.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i>
-                            <span>You will get a mega confidence boost.</span></li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>You will be able to make money in a short period after  the course by getting a job or freelancing.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="graphic-learn graphic-course-return">
-                    <h3>The return on investment (ROI is very high)</h3>
-                    <ul>
-
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>The course fee is only 40,000</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-check pr-2"></i> <span>After completion & practicing your skills for only 30 days, you will be good enough to be hired as a junior graphic designer for a minimum of 15-20,000 / month.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="graphic-learn graphic-course-notdo">
-                    <h3>This course is not for?</h3>
-                    <ul>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not RATTA based, everything is practical.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not going to waste many of your qeemti years.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Not for anyone looking for a certificate.</span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span
-                                style="line-height: initial;">Not for anyone who cannot use a computer. But don't worry we have a <a
-                                href="<?=app_url()?>/course/basic-computer-course"
-                                style="color: white; text-decoration: underline">Basic Computer Course</a></span>
-                        </li>
-                        <li class="d-flex"><i class="fas fa-times text-white pr-2"></i> <span>Existing graphic designers.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  </div>
+  <!-- end what will you learn -->
+  <!-- What You Will Lear Section Start here -->
+  <div class="container graphic-learn-section" style="margin-top: 0px;">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="graphic-learn graphic-course-for">
+          <h3>Who is the Course For?</h3>
+          <ul>
+            <li class="d-flex">
+              <i class="fas fa-check text-white pr-2"></i>
+              <span>For you, if you want to be skilled.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check text-white pr-2"></i>
+              <span>For you if you want to make money</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check text-white pr-2"></i>
+              <span
+                >For you, if you feel lost, demotivated & don't know where to
+                start.</span
+              >
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check text-white pr-2"></i>
+              <span
+                >If you want a better alternative to a BS Graphic Designing (4
+                Year) degree.</span
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="graphic-learn graphic-course-benefit">
+          <h3>What Are The Benefits?</h3>
+          <ul>
+            <li class="d-flex">
+              <i class="fas fa-check pr-2"></i>
+              <span>You will learn a popular skill in only 4 weeks.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check pr-2"></i>
+              <span>You will get a mega confidence boost.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check pr-2"></i>
+              <span
+                >You will be able to make money in a short period after the
+                course by getting a job or freelancing.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="graphic-learn graphic-course-return">
+          <h3>The return on investment (ROI is very high)</h3>
+          <ul>
+            <li class="d-flex">
+              <i class="fas fa-check pr-2"></i>
+              <span>The course fee is only 40,000</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-check pr-2"></i>
+              <span
+                >After completion & practicing your skills for only 30 days, you
+                will be good enough to be hired as a junior graphic designer for
+                a minimum of 15-20,000 / month.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="graphic-learn graphic-course-notdo">
+          <h3>This course is not for?</h3>
+          <ul>
+            <li class="d-flex">
+              <i class="fas fa-times text-white pr-2"></i>
+              <span>Not RATTA based, everything is practical.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-times text-white pr-2"></i>
+              <span>Not going to waste many of your qeemti years.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-times text-white pr-2"></i>
+              <span>Not for anyone looking for a certificate.</span>
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-times text-white pr-2"></i>
+              <span style="line-height: initial;"
+                >Not for anyone who cannot use a computer. But don't worry we
+                have a
+                <a
+                  href="<?=app_url()?>/course/basic-computer-course"
+                  style="color: white; text-decoration: underline;"
+                  >Basic Computer Course</a
+                ></span
+              >
+            </li>
+            <li class="d-flex">
+              <i class="fas fa-times text-white pr-2"></i>
+              <span>Existing graphic designers.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- Our instructure area -->
-    <div class="container graphic-our-insturcture">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="graphic-our__instructure-main">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <img alt="Ali mir Instructor at AzadChaiwala"
-                                 class="img-fluid"
-                                 src="<?=app_url()?>/assets/teacher_images/157909826915772941055e1f209ceb2fe.jpg">
-                        </div>
-                        <div class="col-lg-6">
-                            <h3>Instructor: Ali Mir </h3>
-                            <p>
-                                Ali Mir started his career back in 2012. He has a very wide skill base & experience. He
-                                can teach almost every major Graphic Design Software. Hundreds of Students across the
-                                whole of Pakistan are today appointed in workplaces and freelancing, thanks to his
-                                training.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-6">
-                <div class="graphic-our__instructure-main ">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <img alt="Zain Instructor at AzadChaiwala"
-                                 class="img-fluid" src="<?=app_url()?>/assets/teacher_images/zain.jpg">
-                        </div>
-                        <div class="col-lg-6">
-                            <h3>Instructor: Zain</h3>
-                            <p>
-                                Zain believes that for him to be a good teacher, he needs to explain the
-                                most complex of techniques in the most simplest manner, demonstrate them
-                                practically and inspire. Thus Zain ensures that he never stops
-                                learning new methods and techniques, so his students are not being
-                                taught anything out dated or obsolete.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- success story area -->
-    <div class="container video-success-course ">
-
-        <div class=" row">
-
-            <div class="col-lg-6 col-md-6">
-                <div class="video-success-course-detail">
-                    <video controls onloadstart="this.volume=0.2"
-                           poster="<?=app_url()?>/assets/img/graphics/video/success1_thumb.png"
-                           style="width:100%;">
-                        <source src="<?=app_url()?>/assets/img/graphics/video/success1.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="video-success-course-detail text-left">
-                    <h2 class="">Success Story</h2>
-                    <style>
-                        .myDropcap {
-                            font-size: 70px;
-                            line-height: 0.95em;
-                            font-weight: bold;
-                            vertical-align: middle;
-                            padding: 1px 8px;
-                        }
-                    </style>
-                    <div class="d-flex">
-                        <span class="myDropcap">T</span>
-                        <p>hese two sisters (Iqra & Kiran) are shining examples of Pakistan’s move towards real
-                            education
-                            (skill) and move away from the Ratta system that has eaten this great nation like cancer.
-                        </p>
-                    </div>
-                    <p>
-                        They both are freelancers, they make as much money as a good doctor makes. They work from the
-                        privacy of their own home. They bring valuable foreign currency
-                        into Pakistan & they both learnt their graphic designing skills from our institute.
-                    </p>
-                    <p>
-                        Short skills will change Pakistan for the better, watch their full story to see how:
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- success story area end -->
-    <!-- course feature section -->
-    <div class="container graphic-features-course text-center">
-        <div class="row">
-            <div class="col-lg-9 col-md-12">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2">
-                        <div class="graphic-features__course-details">
-                            <span class="material-icons md-36">
-                                monetization_on
-                            </span>
-                            <h3>Fee</h3>
-                            <p>40,000 Rupees</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3">
-                        <div class="graphic-features__course-details">
-                            <span class="material-icons md-48">alarm</span>
-                            <h3>Next Batch Start</h3>
-                            <p><a href="<?=app_url()?>/create-account">Click here to get details for next
-                                batch.</a></p>
-                            <!-- modal -->
-                            <div class="modal" id="myModal">
-                                <div class="modal-dialog ">
-                                    <div class="modal-content">
-                                        <!-- Modal Header -->
-                                        <!-- Modal body -->
-                                        <div class="modal-body text-left">
-                                            <button class="close" data-dismiss="modal" style="font-size:30px;"
-                                                    type="button">&times;
-                                            </button>
-                                            <div class="text-center mt-2">
-                                                <h3 class="font-weight-bold ">ٱلْحَمْدُ لِلَّٰهِ</h3>
-                                                <p>All batches are full. We are still awaiting to announce the next
-                                                    dates. If you would like to be contacted when new dates announced
-                                                    Please fill in your details</p>
-                                            </div>
-                                            <form class="needs-validation pop-form" novalidate>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter Your Name"
-                                                               required type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter Your Email"
-                                                               required type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter your Number"
-                                                               required type="text">
-                                                    </div>
-                                                </div>
-                                                <button class="btn btn-success" type="submit">Submit Details</button>
-                                            </form>
-                                        </div>
-                                        <!-- Modal footer -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- modal end -->
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
-                        <div class="graphic-features__course-details">
-                            <span class="material-icons md-48">
-                                supervisor_account
-                            </span>
-                            <h3>Class Size</h3>
-                            <?php if(count($batch) > 0){ ?>
-                            <p><?=$batch[0]['total_students']?> students Max each class</p>
-                            <?php }else{ ?>
-                            <p>10-12 students max each class</p>
-                            <?php } ?>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
-                        <div class="graphic-features__course-details">
-                            <span class="material-icons md-48">alarm</span>
-                            <h3>Duration</h3>
-                            <?php if(count($batch) > 0){ ?>
-                            <p><?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?> hours per
-                                day, <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?> Days</p>
-                            <?php }else{ ?>
-                            <p>4 hours per day, 4 Weeks</p>
-                            <?php } ?>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3">
-                        <div class="graphic-features__course-details">
-                            <a href="<?=app_url()?>/accommodation">
-                                <span class="material-icons md-48">house</span>
-                                <h3>Accomdation</h3>
-                                <p>Is avaliable subject to avaliablity</p>
-                                <p class="link-accommodation">Read More</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center">
-                <div class="graphic-features__course-details graphic-enrol-button">
-                    <?php if(count($batch) == -1){ ?>
-                    <a class="btn btn-lg btn-block" data-target="#myModal" data-toggle="modal" href="#">Enroll Now</a>
-                    <?php }else{ ?>
-                    <a class="btn btn-lg btn-block" href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now</a>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- course feature section end here -->
-
-    <!-- why learn from us -->
-    <div class="container graphic-artwork text-center">
-        <div class="row">
-            <div class="col-lg-8 offset-2 graphic-artwork-heading">
-                <h2>Some of Our Art Work</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/1.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/1s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/2.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/2s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/3.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/3s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/12.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/12s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/13.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/13s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/14.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/14s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/23.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/23s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/24.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/24s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/25.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/25s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/6.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/6s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/7.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/7s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/28.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/28s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/29.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/29s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/32.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/32s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/18.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/18s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/19.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/19s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/20.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/20s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/21.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/21s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/22.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/22s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/34.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/34s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/8.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/8s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/9.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/9s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/10.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/10s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/30.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/30s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/31.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/31s.jpg">
-                    </a>
-
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/26.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/26s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/27.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/27s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/11.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/11s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/4.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/4s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/5.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/5s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/33.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/33s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-1 col-3 p-1">
-                <div class="graphic-artwork-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/15.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/15s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/16.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/16s.jpg">
-                    </a>
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/artwork/17.jpg">
-                        <img alt="art work of graphic designer azadchaiwala"
-                             class="img-fluid" src="<?=app_url()?>/assets/img/graphics/artwork/17s.jpg">
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end why learn from us -->
-
-    <!-- testimonials -->
-    <div class="container video-testimonials-course text-center">
-        <h2 class="text-center">What Our Students Say About Us</h2>
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="video-testimonials__course-inner">
-                    <img alt="testimonials about the azadchaiwala institute"
-                         src="<?=app_url()?>/assets/img/graphics/testimonial/3.jpg">
-                    <div class="video-inner-details-testimonials">
-                        <h3>Usama Hassan</h3>
-                        <p>I am a Youtuber. I went to learn Graphic Designing. The institute management was very
-                            professional and the learning experience was great. Highly reccomend it.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 pl-1 pr-1">
-                <div class="video-testimonials__course-inner">
-                    <img alt="testimonials image" src="<?=app_url()?>/assets/img/videography/testimonial/2.jpg">
-                    <div class="video-inner-details-testimonials">
-                        <h3>Muhammad Ali</h3>
-                        <p>
-                            I’ve Done My graphics and web designing in Azad Chaiwala institute. The environment of
-                            the institute is so good, teachers, staf<span id="dots1">...</span><span id="more1">f, 
-                            everything’s perfect. To be honest I really recommend to everyone if you want a 
-                            bright future so you should try once at least </span>
-                        </p>
-                        <p id="myBtn1" onclick="myFunction1()">Read more</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 pl-0 pr-0">
-                <div class="video-testimonials__course-inner">
-                    <img alt="testimonials image" src="<?=app_url()?>/assets/img/videography/testimonial/3.jpg">
-                    <div class="video-inner-details-testimonials">
-                        <h3>Zain</h3>
-                        <p>
-                            I just came back after completion of the course of GRAPHICS DESIGNING in AZAD
-                            CHAIWALA Institute. I wanted to thank my highl<span id="dots2">...</span><span id="more2">y professional teachers and
-                            qualified staff with full of equipped latest class rooms under adorable 
-                            ambiance who gave me the confidence and quality skills with in just one month. 
-                            It’s totally different from other institutes and universities based on practical
-                             work. Their core priority is their students and they don’t waste your time or money. 
-                             AZAD CHAIWALA Institute gave me the opportunity and skills to make money professionally. 
-                             Now I can Call myself as a professional THANK YOU AZAD CHAIWALA.</span>
-                        </p>
-                        <p id="myBtn2" onclick="myFunction2()">Read more</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- testimonials end here -->
-
-    <!-- equipments start here-->
-    <div class="container graphic-equipments-course">
-        <h2 class="text-center">Photos of our graphic design classrooms </h2>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/1.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/1s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/2.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/2s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/3.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/3s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/4.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/4s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/5.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/5s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/6.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/6s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/7.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/7s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/8.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/8s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/9.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/9s.jpg">
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/10.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/10s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/11.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/11s.jpg">
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/12.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/12s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/13.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/13s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/14.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/14s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/15.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/15s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/16.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/16s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/17.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/17s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/18.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/18s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/19.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/19s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/20.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/20s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/21.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/21s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/22.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/22s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/23.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/23s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/24.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/24s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/25.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/25s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/26.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/26s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/27.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/27s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/28.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/28s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/29.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/29s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/30.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/30s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/31.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/31s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/32.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/32s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/33.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/33s.jpg">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3">
-                <div class="graphic-equipments-images">
-                    <a data-gallery="gallery" data-toggle="lightbox"
-                       href="<?=app_url()?>/assets/img/graphics/class/34.jpg">
-                        <img alt="AzadChaiwala Institute graphic designer class" class="img-fluid"
-                             src="<?=app_url()?>/assets/img/graphics/class/34s.jpg">
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- equipments end here -->
-
-    <!-- faqs section start here -->
-    <div class="container video-faqs-course">
-        <h2 class="text-center">Frequently Asked Question</h2>
-        <div class="row">
+  </div>
+  <!-- Our instructure area -->
+  <div class="container graphic-our-insturcture">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="graphic-our__instructure-main">
+          <div class="row">
             <div class="col-lg-6">
-                <div class="video-faqs-course-inner">
-                    <h4>When will the course start & finish?</h4>
-                    <p><a href="<?=app_url()?>/create-account">Click here to get details for next
-                        batch.</a></p>
-                </div>
-                <div class="video-faqs-course-inner">
-                    <h4>How quickly will I See results?</h4>
-                    <p>You will start seeing the results of your skills almost from day one. You will finally come to
-                        know what real education is and it has nothing to do with memorizing boring textbooks. You will
-                        immediately feel proud of yourself and your own serve worth will go up. With regards to earning
-                        from your skills, that depends on multiple factors. The first factor is how fast of a learner
-                        you are. The second factor is how much practice you do after the course is finished. We
-                        generally recommend not applying for any jobs or starting your freelance career until you have
-                        practiced and sharpened your skills for at least one month. During that time, we'd like you to
-                        focus on building a quality portfolio of your work.
-                    </p>
-                </div>
+              <img
+                alt="Ali mir Instructor at AzadChaiwala"
+                class="img-fluid gfx-ins-img"
+                src="<?=app_url()?>/assets/teacher_images/157909826915772941055e1f209ceb2fe.jpg"
+              />
             </div>
             <div class="col-lg-6">
-                <div class="video-faqs-course-inner">
-                    <h4>How much does accomodation cost?</h4>
-                    <p>For the duration of this course the accommodation cost is Rupees 6000 for a total of 30 days. We
-                        do not provide food. Our accommodation is only available to our students & is subject to any
-                        vacancies. To book or for further help with your accommodation requirement, you may call us
-                        during our open hours. Our staff member will gladly assist you with your needs. </p>
-                </div>
-                <div class="video-faqs-course-inner">
-                    <h4>Do I need to buy text book?</h4>
-                    <p>No, because hum aap ko videography paraateh nahi but rather sikhate hain. Ratta is banned at our
-                        institute.</p>
-                </div>
-                <div class="video-faqs-course-inner">
-                    <h4>Are there any course requirements?</h4>
-                    <p>Yes, you must be able to understand English and you must be able to use a computer, up to
-                        mid-level at-least.</p>
-                </div>
+              <h3>Instructor: Ali Mir</h3>
+              <p>
+                Ali Mir started his career back in 2012. He has a very wide
+                skill base & experience. He can teach almost every major Graphic
+                Design Software. Hundreds of Students across the whole of
+                Pakistan are today appointed in workplaces and freelancing,
+                thanks to his training.
+              </p>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- Faqs section end here -->
+      </div>
 
-    <!-- enrollNow -->
-    <div class="container graphic_lastenroll-now text-center ">
-        <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
-        <?php if(count($batch) == -1){ ?>
-        <a class="btn btn-lg " data-target="#myModal" data-toggle="modal" href="#">Enroll Now <i
-                class="fas fa-angle-double-right"></i></a>
-        <?php }else{ ?>
-        <a class="btn btn-lg " href="<?=app_url()?>/course-registration/<?=$slug?>">Enroll Now <i
-                class="fas fa-angle-double-right"></i></a>
-        <?php } ?>
+      <div class="col-lg-6 col-md-6">
+        <div class="graphic-our__instructure-main">
+          <div class="row">
+            <div class="col-lg-6">
+              <img
+                alt="Zain Instructor at AzadChaiwala"
+                class="img-fluid gfx-ins-img"
+                src="<?=app_url()?>/assets/teacher_images/zain.jpg"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h3>Instructor: Zain</h3>
+              <p>
+                Zain believes that for him to be a good teacher, he needs to
+                explain the most complex of techniques in the most simplest
+                manner, demonstrate them practically and inspire. Thus Zain
+                ensures that he never stops learning new methods and techniques,
+                so his students are not being taught anything out dated or
+                obsolete.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- success story area -->
+  <div class="container video-success-course">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="video-success-course-detail">
+          <video
+            controls
+            onloadstart="this.volume=0.2"
+            poster="<?=app_url()?>/assets/img/graphics/video/success1_thumb.png"
+            style="width: 100%;"
+          >
+            <source
+              src="<?=app_url()?>/assets/img/graphics/video/success1.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="video-success-course-detail text-left">
+          <h2 class="">Success Story</h2>
+          <style>
+            .myDropcap {
+              font-size: 70px;
+              line-height: 0.95em;
+              font-weight: bold;
+              vertical-align: middle;
+              padding: 1px 8px;
+            }
+          </style>
+          <div class="d-flex">
+            <span class="myDropcap">T</span>
+            <p>
+              hese two sisters (Iqra & Kiran) are shining examples of Pakistan’s
+              move towards real education (skill) and move away from the Ratta
+              system that has eaten this great nation like cancer.
+            </p>
+          </div>
+          <p>
+            They both are freelancers, they make as much money as a good doctor
+            makes. They work from the privacy of their own home. They bring
+            valuable foreign currency into Pakistan & they both learnt their
+            graphic designing skills from our institute.
+          </p>
+          <p>
+            Short skills will change Pakistan for the better, watch their full
+            story to see how:
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- success story area end -->
+  <!-- course feature section -->
+  <div class="container graphic-features-course text-center">
+    <div class="row">
+      <div class="col-lg-9 col-md-12">
+        <div class="row">
+          <div class="col-lg-2 col-md-2">
+            <div class="graphic-features__course-details">
+              <span class="material-icons md-36">
+                monetization_on
+              </span>
+              <h3>Fee</h3>
+              <p>40,000 Rupees</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="graphic-features__course-details">
+              <span class="material-icons md-48">alarm</span>
+              <h3>Next Batch Start</h3>
+              <p>
+                <a href="<?=app_url()?>/create-account"
+                  >Click here to get details for next batch.</a
+                >
+              </p>
+              <!-- modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <!-- Modal body -->
+                    <div class="modal-body text-left">
+                      <button
+                        class="close"
+                        data-dismiss="modal"
+                        style="font-size: 30px;"
+                        type="button"
+                      >
+                        &times;
+                      </button>
+                      <div class="text-center mt-2">
+                        <h3 class="font-weight-bold">ٱلْحَمْدُ لِلَّٰهِ</h3>
+                        <p>
+                          All batches are full. We are still awaiting to
+                          announce the next dates. If you would like to be
+                          contacted when new dates announced Please fill in your
+                          details
+                        </p>
+                      </div>
+                      <form class="needs-validation pop-form" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-12 mb-12">
+                            <input
+                              class="form-control"
+                              placeholder="Enter Your Name"
+                              required
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-12 mb-12">
+                            <input
+                              class="form-control"
+                              placeholder="Enter Your Email"
+                              required
+                              type="email"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-12 mb-12">
+                            <input
+                              class="form-control"
+                              placeholder="Enter your Number"
+                              required
+                              type="text"
+                            />
+                          </div>
+                        </div>
+                        <button class="btn btn-success" type="submit">
+                          Submit Details
+                        </button>
+                      </form>
+                    </div>
+                    <!-- Modal footer -->
+                  </div>
+                </div>
+              </div>
+              <!-- modal end -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div class="graphic-features__course-details">
+              <span class="material-icons md-48">
+                supervisor_account
+              </span>
+              <h3>Class Size</h3>
+              <?php if(count($batch) >
+              0){ ?>
+              <p>
+                <?=$batch[0]['total_students']?>
+                students Max each class
+              </p>
+              <?php }else{ ?>
+              <p>10-12 students max each class</p>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-2">
+            <div class="graphic-features__course-details">
+              <span class="material-icons md-48">alarm</span>
+              <h3>Duration</h3>
+              <?php if(count($batch) >
+              0){ ?>
+              <p>
+                <?=hoursdiff($batch[0]['start_time'], $batch[0]['end_time']); ?>
+                hours per day,
+                <?=daysdiff($batch[0]['start_date'], $batch[0]['end_date']); ?>
+                Days
+              </p>
+              <?php }else{ ?>
+              <p>4 hours per day, 4 Weeks</p>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="graphic-features__course-details">
+              <a href="<?=app_url()?>/accommodation">
+                <span class="material-icons md-48">house</span>
+                <h3>Accomdation</h3>
+                <p>Is avaliable subject to avaliablity</p>
+                <p class="link-accommodation">Read More</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-lg-3 col-md-12 d-flex flex-row align-items-center justify-content-center"
+      >
+        <div class="graphic-features__course-details graphic-enrol-button">
+          <?php if(count($batch) == -1){ ?>
+          <a
+            class="btn btn-lg btn-block"
+            data-target="#myModal"
+            data-toggle="modal"
+            href="#"
+            >Enroll Now</a
+          >
+          <?php }else{ ?>
+          <a
+            class="btn btn-lg btn-block"
+            href="<?=app_url()?>/course-registration/<?=$slug?>"
+            >Enroll Now</a
+          >
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- course feature section end here -->
+
+  <!-- why learn from us -->
+  <div class="container graphic-artwork text-center">
+    <div class="row">
+      <div class="col-lg-8 offset-2 graphic-artwork-heading">
+        <h2>Some of Our Art Work</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/1.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/1s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/2.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/2s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/3.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/3s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/12.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/12s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/13.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/13s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/14.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/14s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/23.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/23s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/24.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/24s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/25.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/25s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/6.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/6s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/7.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/7s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/28.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/28s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/29.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/29s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/32.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/32s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/18.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/18s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/19.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/19s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/20.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/20s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/21.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/21s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/22.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/22s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/34.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/34s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/8.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/8s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/9.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/9s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/10.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/10s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/30.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/30s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/31.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/31s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/26.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/26s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/27.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/27s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/11.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/11s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/4.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/4s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/5.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/5s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/33.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/33s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-3 p-1">
+        <div class="graphic-artwork-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/15.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/15s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/16.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/16s.jpg"
+            />
+          </a>
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/artwork/17.jpg"
+          >
+            <img
+              alt="art work of graphic designer azadchaiwala"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/artwork/17s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end why learn from us -->
+
+  <!-- testimonials -->
+  <div class="container video-testimonials-course text-center">
+    <h2 class="text-center">What Our Students Say About Us</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+        <div class="video-testimonials__course-inner">
+          <img
+            alt="testimonials about the azadchaiwala institute"
+            src="<?=app_url()?>/assets/img/graphics/testimonial/3.jpg"
+          />
+          <div class="video-inner-details-testimonials">
+            <h3>Usama Hassan</h3>
+            <p>
+              I am a Youtuber. I went to learn Graphic Designing. The institute
+              management was very professional and the learning experience was
+              great. Highly reccomend it.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 pl-1 pr-1">
+        <div class="video-testimonials__course-inner">
+          <img
+            alt="testimonials image"
+            src="<?=app_url()?>/assets/img/videography/testimonial/2.jpg"
+          />
+          <div class="video-inner-details-testimonials">
+            <h3>Muhammad Ali</h3>
+            <p>
+              I’ve Done My graphics and web designing in Azad Chaiwala
+              institute. The environment of the institute is so good, teachers,
+              staf<span id="dots1">...</span
+              ><span id="more1"
+                >f, everything’s perfect. To be honest I really recommend to
+                everyone if you want a bright future so you should try once at
+                least
+              </span>
+            </p>
+            <p id="myBtn1" onclick="myFunction1()">Read more</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 pl-0 pr-0">
+        <div class="video-testimonials__course-inner">
+          <img
+            alt="testimonials image"
+            src="<?=app_url()?>/assets/img/videography/testimonial/3.jpg"
+          />
+          <div class="video-inner-details-testimonials">
+            <h3>Zain</h3>
+            <p>
+              I just came back after completion of the course of GRAPHICS
+              DESIGNING in AZAD CHAIWALA Institute. I wanted to thank my
+              highl<span id="dots2">...</span
+              ><span id="more2"
+                >y professional teachers and qualified staff with full of
+                equipped latest class rooms under adorable ambiance who gave me
+                the confidence and quality skills with in just one month. It’s
+                totally different from other institutes and universities based
+                on practical work. Their core priority is their students and
+                they don’t waste your time or money. AZAD CHAIWALA Institute
+                gave me the opportunity and skills to make money professionally.
+                Now I can Call myself as a professional THANK YOU AZAD
+                CHAIWALA.</span
+              >
+            </p>
+            <p id="myBtn2" onclick="myFunction2()">Read more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- testimonials end here -->
+
+  <!-- equipments start here-->
+  <div class="container graphic-equipments-course">
+    <h2 class="text-center">Photos of our graphic design classrooms</h2>
+    <div class="row">
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/1.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/1s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/2.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/2s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/3.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/3s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/4.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/4s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/5.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/5s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/6.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/6s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/7.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/7s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/8.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/8s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/9.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/9s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/10.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/10s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/11.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/11s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/12.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/12s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/13.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/13s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/14.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/14s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/15.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/15s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/16.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/16s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/17.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/17s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/18.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/18s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/19.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/19s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/20.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/20s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/21.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/21s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/22.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/22s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/23.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/23s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/24.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/24s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/25.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/25s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/26.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/26s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/27.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/27s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/28.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/28s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/29.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/29s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/30.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/30s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/31.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/31s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/32.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/32s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/33.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/33s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-3">
+        <div class="graphic-equipments-images">
+          <a
+            data-gallery="gallery"
+            data-toggle="lightbox"
+            href="<?=app_url()?>/assets/img/graphics/class/34.jpg"
+          >
+            <img
+              alt="AzadChaiwala Institute graphic designer class"
+              class="img-fluid"
+              src="<?=app_url()?>/assets/img/graphics/class/34s.jpg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- equipments end here -->
+
+  <!-- faqs section start here -->
+  <div class="container video-faqs-course">
+    <h2 class="text-center">Frequently Asked Question</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="video-faqs-course-inner">
+          <h4>When will the course start & finish?</h4>
+          <p>
+            <a href="<?=app_url()?>/create-account"
+              >Click here to get details for next batch.</a
+            >
+          </p>
+        </div>
+        <div class="video-faqs-course-inner">
+          <h4>How quickly will I See results?</h4>
+          <p>
+            You will start seeing the results of your skills almost from day
+            one. You will finally come to know what real education is and it has
+            nothing to do with memorizing boring textbooks. You will immediately
+            feel proud of yourself and your own serve worth will go up. With
+            regards to earning from your skills, that depends on multiple
+            factors. The first factor is how fast of a learner you are. The
+            second factor is how much practice you do after the course is
+            finished. We generally recommend not applying for any jobs or
+            starting your freelance career until you have practiced and
+            sharpened your skills for at least one month. During that time, we'd
+            like you to focus on building a quality portfolio of your work.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="video-faqs-course-inner">
+          <h4>How much does accomodation cost?</h4>
+          <p>
+            For the duration of this course the accommodation cost is Rupees
+            6000 for a total of 30 days. We do not provide food. Our
+            accommodation is only available to our students & is subject to any
+            vacancies. To book or for further help with your accommodation
+            requirement, you may call us during our open hours. Our staff member
+            will gladly assist you with your needs.
+          </p>
+        </div>
+        <div class="video-faqs-course-inner">
+          <h4>Do I need to buy text book?</h4>
+          <p>
+            No, because hum aap ko videography paraateh nahi but rather sikhate
+            hain. Ratta is banned at our institute.
+          </p>
+        </div>
+        <div class="video-faqs-course-inner">
+          <h4>Are there any course requirements?</h4>
+          <p>
+            Yes, you must be able to understand English and you must be able to
+            use a computer, up to mid-level at-least.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Faqs section end here -->
+
+  <!-- enrollNow -->
+  <div class="container graphic_lastenroll-now text-center">
+    <h2>Poori information mil gayi? Abh Skill Seekho Aur Life Badlo :)</h2>
+    <?php if(count($batch) == -1){ ?>
+    <a class="btn btn-lg" data-target="#myModal" data-toggle="modal" href="#"
+      >Enroll Now <i class="fas fa-angle-double-right"></i
+    ></a>
+    <?php }else{ ?>
+    <a class="btn btn-lg" href="<?=app_url()?>/course-registration/<?=$slug?>"
+      >Enroll Now <i class="fas fa-angle-double-right"></i
+    ></a>
+    <?php } ?>
+  </div>
 </section>

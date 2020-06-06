@@ -41,28 +41,28 @@ class EmailController
              * Required {email_to, course}
              */
             $to = $data['email_to'];
-            $subject = 'Thank You for Registration - AzadChaiwala.pk';
+            $subject = 'Thank You for Registration - Azad Chaiwala Institute';
             $content = $this->NewRegistration($data['course']);
         }else if($type == "contact"){
             /*
              * Required {name, email, subject, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'New Contact Message from AzadChaiwala.pk';
+            $subject = 'Contact Message from Azad Chaiwala Institute';
             $content = $this->ContactUs($data['name'], $data['email'], $data['subject'], $data['message']);
         }else if($type == "feedback"){
             /*
              * Required {name, email, course, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Course Feedback from AzadChaiwala.pk';
+            $subject = 'Course Feedback from Azad Chaiwala Institute';
             $content = $this->feedback($data['name'], $data['email'], $data['course'], $data['message']);
         }else if($type == 'registration_verify'){
             /*
              * Required {email_to, start_date, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Verified - AzadChaiwala.pk';
+            $subject = 'Your Registration Verified - Azad Chaiwala Institute';
             $content = $this->RegistrationVerified($data['start_date'], $data['course']);
         }else if($type == "batch"){
             /*
@@ -79,17 +79,17 @@ class EmailController
              */
 
             $to = $data['email_to']; // send to user
-            $subject = 'Notification from AzadChaiwala.pk';
+            $subject = 'Notification from Azad Chaiwala Institute';
             $content = $this->BatchMail($data['message']);
         }else if($type == 'backup'){
             /*
              * Under development
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Backup Update from AzadChaiwala.pk';
+            $subject = 'Backup Update from Azad Chaiwala Institute';
         }else if($type == 'create_account'){
             $to = $data['email_to']; // send to user
-            $subject = 'Verify Your Email - AzadChaiwala.pk';
+            $subject = 'Verify Your Email - Azad Chaiwala Institute';
             $content = $this->create_account($data['name'], $data['token']);
         }
         // Email Headers Settings

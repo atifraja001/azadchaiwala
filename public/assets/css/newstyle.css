@@ -2931,6 +2931,11 @@ Equpmients
   padding: 15px;
   background: #281434;
 }
+@media (min-width: 1024px) {
+  .video-equipments-course > a > img {
+    min-height: 66px;
+  }
+}
 
 .video-equipments-course > div > div {
   padding: 0px 5px 0px 5px;
@@ -3002,6 +3007,13 @@ page desgin
 
   .graphic-section > div > div:last-child {
     padding-left: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .graphic-thumbnail {
+    min-width: 549px;
+    min-height: 273px;
   }
 }
 
@@ -3186,6 +3198,12 @@ page desgin
   }
 }
 
+@media (min-width: 1024px) {
+  .gfx-ins-img {
+    min-width: 240px;
+    min-height: 252px;
+  }
+}
 .graphic-our-insturcture > h2 {
   color: var(--graphic-front-color);
   font-weight: 500;
@@ -3310,6 +3328,11 @@ Graphic Art Work */
   padding: 15px;
   margin-top: 2px !important;
 }
+@media (min-width: 1024px) {
+  .graphic-artwork {
+    min-height: 414px;
+  }
+}
 
 .graphic-artwork-heading > h2 {
   color: var(--graphic-front-color);
@@ -3338,6 +3361,11 @@ Equpmients
   background: var(--graphic-background-color) !important;
   margin-top: 2px !important;
 }
+@media (min-width: 1024px) {
+  .graphic-equipments-course {
+    min-height: 295px;
+  }
+}
 
 .graphic-equipments-course > div > div {
   padding: 0px 5px 0px 5px;
@@ -3359,6 +3387,12 @@ Equpmients
 
 .graphic-equipments-images > a > img {
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .graphic-equipments-images > a > img {
+    width: 100%;
+    min-height: 52px !important;
+  }
 }
 
 /*
@@ -4477,6 +4511,12 @@ feature graphic section */
 .close:hover {
   color: #a00202;
 }
+@media (min-width: 102px) {
+  .php-course-image {
+    height: 334px;
+  }
+}
+
 /*
 @@@@
 Equpmients
@@ -4486,6 +4526,11 @@ Equpmients
   padding: 15px;
   background: #080302;
   margin-top: 2px !important;
+}
+@media (min-width: 1024px) {
+  .php-equipments-course > a > img {
+    min-height: 66px;
+  }
 }
 
 .php-equipments-course > div > div {
