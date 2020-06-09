@@ -47,14 +47,14 @@ class EmailController
              * Required {name, email, subject, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Contact Message from Azad Chaiwala Institute';
+            $subject = 'Contact Message - Azad Chaiwala Institute';
             $content = $this->ContactUs($data['name'], $data['email'], $data['subject'], $data['message']);
         }else if($type == "feedback"){
             /*
              * Required {name, email, course, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Course Feedback from Azad Chaiwala Institute';
+            $subject = 'Course Feedback - Azad Chaiwala Institute';
             $content = $this->feedback($data['name'], $data['email'], $data['course'], $data['message']);
         }else if ($type == 'registration_verify') {
             /*
@@ -68,7 +68,7 @@ class EmailController
              * Required {email_to, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Rejected - Azad Chaiwala Institute';
+            $subject = 'Your Registration Rejected - AzadChaiwala.pk';
             $content = $this->RegistrationRejected($data['course']);
         } else if ($type == "batch") {
             /*
@@ -85,14 +85,14 @@ class EmailController
              */
 
             $to = $data['email_to']; // send to user
-            $subject = 'Notification from Azad Chaiwala Institute';
+            $subject = 'Notification from AzadChaiwala.pk';
             $content = $this->BatchMail($data['message']);
         }else if($type == 'backup'){
             /*
              * Under development
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Backup Update from Azad Chaiwala Institute';
+            $subject = 'Backup Update from AzadChaiwala.pk';
         }else if($type == 'create_account'){
             $to = $data['email_to']; // send to user
             $subject = 'Verify Your Email - Azad Chaiwala Institute';
@@ -115,8 +115,8 @@ class EmailController
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: '.$from."\r\n".
-            'Reply-To: '.$from."\r\n" .
+        $headers .= 'From: Azad Chaiwala Institute <'.$from.">\r\n".
+            'Reply-To: Azad Chaiwala Institute <'.$from.">\r\n" .
             'X-Mailer: PHP/' . phpversion();
         if(mail($to, $subject, $content, $headers)){
             return true;
