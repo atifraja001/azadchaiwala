@@ -73,7 +73,7 @@ class AuthController
         ];
         $register = new Account();
         if ($register->CheckEmail($_POST['email'])) {
-            if ($_POST['type'] == "html") {
+            if (isset($_POST['type'])){
                 echo "Email Already Exists, Please Login";
                 die;
             } else {
