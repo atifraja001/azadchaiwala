@@ -2989,13 +2989,26 @@ page desgin
 
 /* top banner start */
 
+/*
+graphic full width section
+*/
+.full-width-top-graphic-section{
+  background:linear-gradient(
+      to right bottom,
+      rgba(255, 207, 37,0.9),
+      rgba(255, 207, 37,0.9)
+    ),  url("../img/graphics/dots.png");
+}
+/*graphic full width section end*/
+
+
 .graphic-section {
-  background: linear-gradient(
+  /*background: linear-gradient(
       to right bottom,
       rgba(33, 11, 0, 0.5),
       rgba(33, 11, 0, 0.5)
     ),
-    url("../img/graphics/dots.png");
+    url("../img/graphics/dots.png");*/
   padding: 10px 15px;
   margin-bottom: 2px;
 }
@@ -3009,13 +3022,21 @@ page desgin
     padding-left: 5px;
   }
 }
-
-@media (min-width: 1024px) {
+.graphic-thumbnail {
+  width: 100%;
+  height: auto;
+}
+@media (max-width:768px){
+  .graphic-thumbnail{
+    margin-bottom: 10px;
+  }
+}
+/*@media (min-width: 1024px) {
   .graphic-thumbnail {
     min-width: 549px;
     min-height: 273px;
   }
-}
+}*/
 
 @media (min-width: 770px) {
   .graphic__section-video {
@@ -3121,6 +3142,9 @@ page desgin
 }
 
 /* end the will learn section of the graphic page */
+.features-full-width-grpahic{
+  background:#a888c7;
+}
 
 .graphic-learn-section > div > div {
   padding-right: 0px;
@@ -3182,10 +3206,16 @@ page desgin
 }
 
 /* instructor part */
+.instructor-full-width-section-graphic{
+  background: #9949e4;
+  margin-top:-10px;
+
+}
 .graphic-our-insturcture {
   padding: 15px;
-  background: var(--graphic-background-color);
+  /*background: var(--graphic-background-color);*/
   margin-top: 2px !important;
+  margin-bottom: 4px;
 }
 
 @media (min-width: 769px) {
@@ -3205,7 +3235,8 @@ page desgin
   }
 }
 .graphic-our-insturcture > h2 {
-  color: var(--graphic-front-color);
+  /*color: var(--graphic-front-color);*/
+  color:#fff;
   font-weight: 500;
   font-family: var(--course-bold-family);
   padding-bottom: 15px;
@@ -3213,7 +3244,8 @@ page desgin
 }
 
 .graphic-our__instructure-main {
-  border: 1px solid var(--graphic-border-color);
+  /*border: 1px solid var(--graphic-border-color);*/
+  border:1px solid white;
   padding: 5px;
   margin-bottom: 5px;
 }
@@ -3234,7 +3266,8 @@ page desgin
 .graphic-our__instructure-main > div > div > h3 {
   font-weight: 500;
   font-family: var(--course-bold-family);
-  color: var(--graphic-front-color);
+  /*color: var(--graphic-front-color);*/
+  color:#fff;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 24px;
@@ -3243,7 +3276,8 @@ page desgin
 .graphic-our__instructure-main > div > div > p {
   font-size: 14.5px;
   font-family: var(--course-family);
-  color: var(--graphic-text-gray-color);
+  /*color: var(--graphic-text-gray-color);*/
+  color:#dcdcdc;
   margin-bottom: 0px;
 }
 
@@ -3252,11 +3286,11 @@ page desgin
 /* @@@@
 feature graphic section */
 .graphic-features-course {
-  background: var(--graphic-background-color);
+  /*background: var(--graphic-background-color);*/
   padding: 15px;
-  margin-bottom: 2px !important;
+  /*margin-bottom: 2px !important;
   margin-top: 2px !important;
-  margin-top: -18px !important;
+  margin-top: -18px !important;*/
 }
 
 .graphic-features__course-details > span {
@@ -3270,13 +3304,15 @@ feature graphic section */
 .graphic-features__course-details > h3 {
   font-weight: 400;
   font-family: var(--course-bold-family);
-  color: var(--graphic-white-color);
+  /*color: var(--graphic-white-color);*/
+  color:#000;
 }
 
 .graphic-features__course-details > p {
   font-weight: 500;
   font-family: var(--course-family);
-  color: var(--graphic-text-gray-color);
+  /*color: var(--graphic-text-gray-color);*/
+  color:rgb(84,84,84);
 }
 
 .graphic-features__course-details > a > span {
@@ -3296,7 +3332,8 @@ feature graphic section */
 .graphic-features__course-details > a > p {
   font-weight: 400;
   font-family: var(--course-family);
-  color: var(--graphic-text-gray-color);
+  /*color: var(--graphic-text-gray-color);*/
+  color:rgb(84,84,84);
 }
 
 .graphic-features__course-details > a:hover {
@@ -3323,10 +3360,13 @@ feature graphic section */
 
 /* @@@@@
 Graphic Art Work */
+.some-our-full-width-graphic{
+  background: #f6922f;
+}
 .graphic-artwork {
-  background-color: var(--graphic-background-color);
+  /*background-color: var(--graphic-background-color);*/
   padding: 15px;
-  margin-top: 2px !important;
+  margin-top: 4px !important;
 }
 @media (min-width: 1024px) {
   .graphic-artwork {
@@ -3335,7 +3375,8 @@ Graphic Art Work */
 }
 
 .graphic-artwork-heading > h2 {
-  color: var(--graphic-front-color);
+  /*color: var(--graphic-front-color);*/
+  color:#fff;
   font-weight: 500;
   font-family: var(--course-bold-family);
   text-transform: uppercase;
@@ -3356,9 +3397,15 @@ Graphic Art work end */
 Equpmients
 @@@@
 */
+/*.some-our-full-width-graphic{
+  background: #ec6120 !important;
+}*/
+.photo-graphic-design-full-width{
+  background: #ec6120;
+}
 .graphic-equipments-course {
   padding: 15px;
-  background: var(--graphic-background-color) !important;
+  /*background: var(--graphic-background-color) !important;*/
   margin-top: 2px !important;
 }
 @media (min-width: 1024px) {
@@ -3372,7 +3419,8 @@ Equpmients
 }
 
 .graphic-equipments-course > h2 {
-  color: var(--graphic-front-color);
+  /*color: var(--graphic-front-color);*/
+  color:#fff;
   font-weight: 500;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -3402,6 +3450,9 @@ Equpmients end
 */
 
 /* last enroll button of graphic */
+.poori-graphic-full-width{
+  background: #2c83eb url("../img/graphics/footer-bg.png");
+}
 
 .graphic_lastenroll-now {
   padding: 30px 15px;
