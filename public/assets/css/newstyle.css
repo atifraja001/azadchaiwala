@@ -2993,11 +2993,12 @@ page desgin
 graphic full width section
 */
 .full-width-top-graphic-section{
-  background:linear-gradient(
+  /*background:linear-gradient(
       to right bottom,
       rgba(255, 207, 37,0.9),
       rgba(255, 207, 37,0.9)
-    ),  url("../img/graphics/dots.png");
+    ),  url("../img/graphics/dots.png");*/
+    background: #003022;
 }
 /*graphic full width section end*/
 
@@ -3143,7 +3144,8 @@ graphic full width section
 
 /* end the will learn section of the graphic page */
 .features-full-width-grpahic{
-  background:#a888c7;
+  /*background:#a888c7;*/
+  background: #004439;
 }
 
 .graphic-learn-section > div > div {
@@ -3207,7 +3209,8 @@ graphic full width section
 
 /* instructor part */
 .instructor-full-width-section-graphic{
-  background: #9949e4;
+  /*background: #9949e4;*/
+  background: #474e44;
   margin-top:-10px;
 
 }
@@ -3326,7 +3329,7 @@ feature graphic section */
 .graphic-features__course-details > a > h3 {
   font-weight: 400;
   font-family: var(--course-bold-family);
-  color: var(--graphic-white-color);
+  color: var(--graphic-black-color);
 }
 
 .graphic-features__course-details > a > p {
@@ -3361,7 +3364,8 @@ feature graphic section */
 /* @@@@@
 Graphic Art Work */
 .some-our-full-width-graphic{
-  background: #f6922f;
+  /*background: #f6922f;*/
+  background: #6B6A65;
 }
 .graphic-artwork {
   /*background-color: var(--graphic-background-color);*/
@@ -3402,6 +3406,7 @@ Equpmients
 }*/
 .photo-graphic-design-full-width{
   background: #ec6120;
+  background: #634046;
 }
 .graphic-equipments-course {
   padding: 15px;
@@ -3453,10 +3458,13 @@ Equpmients end
 .poori-graphic-full-width{
   background: #2c83eb url("../img/graphics/footer-bg.png");
 }
-
+.poor--graph{
+  background: #8d7b6c url("../img/graphics/footer-bg.png");
+}
 .graphic_lastenroll-now {
   padding: 30px 15px;
-  background: #2c83eb url("../img/graphics/footer-bg.png");
+  /*background: #2c83eb url("../img/graphics/footer-bg.png");*/
+  background: #8d7b6c url("../img/graphics/footer-bg.png");
   margin-top: 2px !important;
 }
 
