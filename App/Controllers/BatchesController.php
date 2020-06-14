@@ -120,18 +120,18 @@ class BatchesController
         $course = new \App\Models\Courses();
         $course = $course->getCourseByBatchId($batch['id']);
         $email = new \App\Controllers\EmailController();
-//        if($data[':status'] == 1){
-//                $email->sendEmail('registration_verify', [
-//                    'email_to' => $std['email'],
-//                    'course' => $course['course_name'],
-//                    'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
-//                ]);
-//        }else if($data[':status'] == 2){
-//            $email->sendEmail('registration_rejected', [
-//                'email_to' => $std['email'],
-//                'course' => $course['course_name']
-//            ]);
-//        }
+        if($data[':status'] == 1){
+                $email->sendEmail('registration_verify', [
+                    'email_to' => $std['email'],
+                    'course' => $course['course_name'],
+                    'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+                ]);
+        }else if($data[':status'] == 2){
+            $email->sendEmail('registration_rejected', [
+                'email_to' => $std['email'],
+                'course' => $course['course_name']
+            ]);
+        }
         $status = new \App\Models\Enrollments();
         $status = $status->change_status($data);
         if($status){
