@@ -44,8 +44,8 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                     //$db->beginTransaction();
                     showSuccess('Transaction Started');
                     // for table badges or batches
-                    $db->exec('DELETE FROM enrollments WHERE id < 217');
-                    $db->exec('ALTER TABLE `student_login` ADD `last_login` DATETIME NULL AFTER `phone_verified_at`;');
+                    $db->exec('ALTER TABLE `enrollments` ADD `fee_note` TEXT NULL AFTER `fee_receipt`, ADD `fee_submitted_at` TIMESTAMP NULL AFTER `fee_note`;');
+                    $db->exec('UPDATE enrollments SET fee_submitted_at = created_at');
 
                     //$db->commit();
                     //}catch(Exception $e){
