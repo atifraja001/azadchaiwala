@@ -38,7 +38,21 @@ class EnrollmentsController
 
     public function pending_manage(){
         $enrollments = new \App\Models\Enrollments();
-        $enrollments = $enrollments->getPendingEnroll();
+        if(isset($_GET['type'])){
+            switch ($_GET['type']){
+                case 'pending_batch':
+                    $enrollments = $enrollments->getPendingBatchEnroll();
+                    break;
+                case 'rejected_enrollments':
+                    $enrollments = $enrollments->getRejectedEnroll();
+                    break;
+                case 'fee_submission':
+                    $enrollments = $enrollments->getPendingFeeEnroll();
+                    break;
+            }
+        }else{
+            $enrollments = $enrollments->getPendingEnroll();
+        }
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['enrollments'=>'active']);
         View::render('backend/academics/enrollments/manage_pending_enrollments.html', [

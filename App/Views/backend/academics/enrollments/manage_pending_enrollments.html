@@ -2,12 +2,33 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Manage Pending Enrollments</h1>
-        <a class="btn btn-danger float-right rounded-0" href="<?=app_url('admin')?>/enrollments/manage">
+        <h1 class="h3 mb-0 text-gray-800"><?=isset($_GET['type']) ? ucwords(str_replace("_", " ", $_GET['type'])) : "Fee Approval";?></h1>
+        <a class="btn btn-success float-right rounded-0" href="<?=app_url('admin')?>/enrollments/pending_manage">
             <span class="icon text-white-50">
                 <i class="fas fa-plus-circle fa-sm text-white-50 rounded-0"></i>
-            </span> 
-           View Paid Enrollments
+            </span>
+            Fee Approval
+        </a>
+        <a class="btn btn-warning float-right rounded-0"
+           href="<?=app_url('admin')?>/enrollments/pending_manage?type=pending_batch">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus-circle fa-sm text-white-50 rounded-0"></i>
+            </span>
+            Pending Batch Selection
+        </a>
+        <a class="btn btn-danger float-right rounded-0"
+           href="<?=app_url('admin')?>/enrollments/pending_manage?type=rejected_enrollments">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus-circle fa-sm text-white-50 rounded-0"></i>
+            </span>
+            Rejected Enrollments
+        </a>
+        <a class="btn btn-danger float-right rounded-0"
+           href="<?=app_url('admin')?>/enrollments/pending_manage?type=fee_submission">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus-circle fa-sm text-white-50 rounded-0"></i>
+            </span>
+            Pending Fee Submission
         </a>
     </div>
     <!-- Content Row -->
@@ -26,7 +47,10 @@
                                 <th>Student Name</th>
                                 <th>Student CNIC</th>
                                 <th>Fee Receipt</th>
-                                <th>Status</th>
+                                <?php if(isset($_GET['type']) && $_GET['type'] == 'rejected_enrollments'){ ?>
+                                    <th>Note</th>
+                                <?php } ?>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,24 +62,59 @@
                             <tr>
                                 <td><?=$sn?></td>
                                 <td class="">
-                                    <a href="<?=app_url('admin')?>/batches/view-batches/<?=$e['batch_id']?>"><?=$e['batch_name'];?></a>
+                                    <?php if(!is_null($e['batch_id'])){ ?>
+                                        <a href="<?=app_url('admin')?>/batches/view-batches/<?=$e['batch_id']?>"
+                                            target="_blank"><?=$e['batch_name'];?></a>
+                                    <?php }else{ ?>
+                                        Not Selected
+                                    <?php } ?>
                                 </td>
                                 <td>
-                                    <?php $c = $course->getCourseByBatchId($e['batch_id']); ?>
-                                    <a href="<?=app_url('admin')?>/courses/view-course/<?=$c['id']?>"><?=$c['course_name'];?></a>
+                                    <?php
+                                    $c = $course->getCourseById($e['course_id']); ?>
+                                    <a href="<?=app_url('admin')?>/courses/view-course/<?=$c['id']?>"
+                                       target="_blank"><?=$c['course_name'];?></a>
                                 </td>
                                 <?php
                                     $std = $student->getStudentsById($e['student_id']);
-
                                 ?>
-                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"><?=$std['name'];?></a></td>
+                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"
+                                       target="_blank"><?=$std['name'];?></a></td>
                                 <td><?=$std['cnic'];?></td>
                                 <td>
-                                    <a href="<?=app_url()?>/content/receipt_images/<?=$e['fee_receipt']?>" target="_blank">View</a>
+                                    <?php if(!is_null($e['fee_receipt'])){ ?>
+                                    <a href="<?=app_url()?>/content/receipt_images/<?=$e['fee_receipt']?>"
+                                       target="_blank">View</a>
+                                    <br>
+                                    <?=date('d-m-Y h:i A', strtotime($e['fee_submitted_at']));?>
+                                    <?php }else{ ?>
+                                    Not Submitted
+                                    <?php } ?>
                                 </td>
-                                <td><label class="badge badge-danger">Pending</label><br>
-                                    <a href="<?=app_url('admin')?>/enrollments/change_status_paid/<?=$e['id']?>">
-                                        Change Status to Approved
+                                <?php if(isset($_GET['type']) && $_GET['type'] == 'rejected_enrollments'){ ?>
+                                <td><?=$e['fee_note'];?></td>
+                                <?php } ?>
+                                <td>
+                                    <?php if(!is_null($e['fee_receipt'])){ ?>
+                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$e['id']?>/1"
+                                       onclick="return confirm('Do you want to Approve?')">
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
+                                    </a>
+                                    <?php if($e['status'] != 2){ ?>
+                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$e['id']?>/2" class="reject_btn">
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-times"></i> Reject
+                                            </button>
+                                        </a>
+                                    <?php } ?>
+                                    <?php } ?>
+                                    <a href="<?=app_url('admin');?>/batches/delete_enroll/<?=$e['id']?>"
+                                       onclick="return confirm('Do you want to delete?')">
+                                        <button type="button" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     </a>
                                 </td>
                             </tr>
@@ -69,3 +128,25 @@
     </div>
 </div>
 
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Rejection Note</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="" class="rejection_form">
+                    <textarea class="form-control" placeholder="Enter Rejection Note" name="fee_note"></textarea>
+                    <button type="submit" class="btn btn-danger">Reject Payment</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

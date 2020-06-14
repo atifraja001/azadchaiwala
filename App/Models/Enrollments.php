@@ -84,9 +84,36 @@ class Enrollments extends Model
         $stmt = $db->query("SELECT enrollments.*, batches.name as batch_name, batches.id as batch_id FROM enrollments
                             JOIN batches 
                             ON enrollments.batch_id = batches.id 
-                            WHERE enrollments.status = 0");
+                            WHERE enrollments.status = 0 AND enrollments.batch_id IS NOT NULL AND enrollments.fee_receipt IS NOT NULL");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getPendingFeeEnroll()
+    {
+        $db = static::getDB();
+        $stmt = $db->query("SELECT enrollments.*, batches.name as batch_name, batches.id as batch_id FROM enrollments
+                            JOIN batches 
+                            ON enrollments.batch_id = batches.id 
+                            WHERE enrollments.status = 0 AND enrollments.batch_id IS NOT NULL AND enrollments.fee_receipt IS NULL");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getRejectedEnroll()
+    {
+        $db = static::getDB();
+        $stmt = $db->query("SELECT enrollments.*, batches.name as batch_name, batches.id as batch_id FROM enrollments
+                            JOIN batches 
+                            ON enrollments.batch_id = batches.id 
+                            WHERE enrollments.status = 2");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getPendingBatchEnroll(){
+        $db = static::getDB();
+        $stmt = $db->query("SELECT * FROM enrollments WHERE status = 0 AND batch_id IS NULl");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
     // get all students
     public function ChangeEnrollmentStatusPaid($id)
@@ -175,7 +202,7 @@ class Enrollments extends Model
     public function change_status($data)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("UPDATE enrollments SET status = :status WHERE id = :enroll_id");
+        $stmt = $db->prepare("UPDATE enrollments SET status = :status, fee_note = :fee_note WHERE id = :enroll_id");
         if ($stmt->execute($data)) {
             return true;
         } else {
