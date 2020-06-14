@@ -88,8 +88,7 @@
                                                 <i class="fas fa-check"></i> Approve
                                             </button>
                                         </a>
-                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$pe['id']?>/2"
-                                           onclick="return confirm('Do you want to Reject?')">
+                                        <a href="<?=app_url('admin')?>/batches/change_status/<?=$pe['id']?>/2" class="reject_btn">
                                             <button type="button" class="btn btn-danger btn-sm">
                                                 <i class="fas fa-times"></i> Reject
                                             </button>
@@ -138,7 +137,7 @@
                                 </td>
                                 <td><?=date("d-m-Y", strtotime($ae['created_at']));?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$ae['id']?>/2" onclick="return confirm('Do you want to Reject?')">
+                                    <a href="<?=app_url('admin')?>/batches/change_status/<?=$ae['id']?>/2" class="reject_btn">
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fas fa-times"></i> Reject
                                         </button>
@@ -155,6 +154,28 @@
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Rejection Note</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="post" action="" class="rejection_form">
+                    <textarea class="form-control" placeholder="Enter Rejection Note" name="fee_note"></textarea>
+                    <button type="submit" class="btn btn-danger">Reject Payment</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
