@@ -68,16 +68,16 @@
                                 <?php } ?>
                             </td>
                             <td>
-                                <?php if(empty($my_course['fee_receipt'])){ ?>
+                                <?php if(empty($my_course['fee_receipt'])  && time() < strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
                                 <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
                                     <button type="button" class="btn btn-warning btn-sm">Pay Now</button>
                                 </a>
                                 <a href="<?=app_url()?>/account/my-courses/delete/<?=$my_course['id'];?>" onclick="return confirm('Are You Sure?');">
                                     <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                 </a>
-                                <?php }else if($my_course['status'] == 0){ ?>
+                                <?php }else if($my_course['status'] == 0 && time() < strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
                                 <span class="badge badge-success">Wait for Approval</span>
-                                <?php }else if($my_course['status'] == 2){ ?>
+                                <?php }else if($my_course['status'] == 2 && time() < strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
                                 <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
                                     <button type="button" class="btn btn-warning btn-sm">Pay Again</button>
                                 </a>
