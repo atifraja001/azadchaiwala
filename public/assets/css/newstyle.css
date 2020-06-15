@@ -2553,7 +2553,8 @@ helvetica
 }
 
 .video-faqs-course-inner > h4 {
-  background: var(--graphic-background-color);
+  /*background: var(--graphic-background-color);*/
+  background: #004439;
   color: #fff;
   font-family: var(--course-bold-family);
   font-weight: 500;
@@ -2561,6 +2562,7 @@ helvetica
   border: 1px solid gray;
   text-transform: capitalize;
 }
+background: #004439;
 
 .video-faqs-course-inner > p {
   color: #000;
@@ -3094,6 +3096,8 @@ graphic full width section
   font-weight: 700;
   font-size: 30px;
   font-family: var(--course-bold-family);
+  border:1px solid lightgray;
+  border-radius: 25px;
 }
 
 .grahpic-enroll-button > a > span {
@@ -3227,6 +3231,7 @@ graphic full width section
   /*background: var(--graphic-background-color);*/
   margin-top: 2px !important;
   margin-bottom: 4px;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 769px) {
@@ -3359,6 +3364,8 @@ feature graphic section */
   font-weight: bold;
   padding: 10px 50px;
   width: 240px;
+  border-radius: 20px;
+  border:1px solid lightgray;
 }
 
 .graphic-enrol-button > .btn:hover {
@@ -3441,8 +3448,8 @@ Equpmients
 }
 
 .graphic-equipments-images {
-  border: 1px solid var(--graphic-border-color);
-  padding: 2px;
+  /*border: 1px solid var(--graphic-border-color);*/
+  /*padding: 2px;*/
   margin-bottom: 10px;
 }
 
@@ -3497,6 +3504,8 @@ Equpmients end
   font-size: 26px;
   font-family: var(--course-bold-family);
   background: yellow;
+  border-radius: 25px;
+
 }
 
 .graphic_lastenroll-now > a > i {
