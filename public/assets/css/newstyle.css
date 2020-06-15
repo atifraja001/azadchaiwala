@@ -3027,6 +3027,11 @@ graphic full width section
   width: 100%;
   height: auto;
 }
+@media(min-width:1024px){
+  .graphic-thumbnail{
+    max-height:273px; 
+  }
+}
 @media (max-width:768px){
   .graphic-thumbnail{
     margin-bottom: 10px;
@@ -3111,13 +3116,13 @@ graphic full width section
 /* will learn section of the graphic page */
 .graphic-will-learn {
   margin-top: 0px !important;
-  padding: 15px;
-  background: linear-gradient(
+  padding: 25px;
+  /*background: linear-gradient(
       to right bottom,
       rgba(0, 0, 0, 0.03),
       rgba(0, 0, 0, 0.03)
     ),
-    url("../img/graphics/gfx.png");
+    url("../img/graphics/gfx.png");*/
   margin-bottom: 2px;
 }
 
@@ -3171,17 +3176,20 @@ graphic full width section
 
 /* first */
 .graphic-course-for {
-  background: rgba(79, 49, 110, 0.9) url("../img/graphics/box-bg.png");
+  background: rgba(79, 49, 110, 0.4) url("../img/graphics/box-bg.png");
+  border-right: 1px solid #fff;
 }
 
 /* second */
 .graphic-course-benefit {
   background: #ba9966 url("../img/graphics/box-bg.png");
+  border-right: 1px solid #fff;
 }
 
 /* third */
 .graphic-course-return {
   background: #467d58 url("../img/graphics/box-bg.png");
+  border-right: 1px solid #fff;
 }
 
 /* fourth */

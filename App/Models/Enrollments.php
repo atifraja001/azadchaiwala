@@ -250,7 +250,7 @@ class Enrollments extends Model
     public function updateFeeReceipt($data)
     {
         $db = static::getDB();
-        $stmt = $db->prepare("UPDATE enrollments SET fee_receipt = :fee_receipt WHERE id = :id");
+        $stmt = $db->prepare("UPDATE enrollments SET fee_receipt = :fee_receipt, status = 0, fee_submitted_at = NOW() WHERE id = :id");
         if ($stmt->execute($data)) {
             return true;
         } else {

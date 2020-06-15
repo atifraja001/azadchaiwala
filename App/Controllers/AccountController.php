@@ -84,8 +84,7 @@ class AccountController
         $email = (isset($_POST['email'])) ? $_POST['email'] : $user['email'];
         $name = (isset($_POST['name'])) ? $_POST['name'] : $user['name'];
         if (!empty($_POST['cnic'])) {
-            if (trim(strlen($_POST['cnic'])) != 15)
-                $error[] = "CNIC must be 13 character long";
+
         } else {
             $error[] = "CNIC is required";
         }
@@ -103,9 +102,7 @@ class AccountController
             $error[] = "Father Name is Required";
         }
         if (!empty($_POST['father_phone'])) {
-            if (trim(strlen($_POST['father_phone'])) != 12) {
-                $error[] = "Father Phone Must be 11 character long";
-            }
+
         } else {
             $error[] = "Father Phone is required";
         }
