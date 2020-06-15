@@ -103,7 +103,7 @@
                                 <?php } ?>
                             </td>
                             <td>
-                                <?php if(empty($my_course['fee_receipt']) && time() > strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
+                                <?php if(empty($my_course['fee_receipt']) && time() < strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
                                 <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
                                     <button type="button" class="btn btn-warning btn-sm">Pay Now</button>
                                 </a>
@@ -112,7 +112,7 @@
                                 </a>
                                 <?php }else if($my_course['status'] == 0){ ?>
                                 <span class="badge badge-success">Wait for Approval</span>
-                                <?php }else if($my_course['status'] == 2 && time() > strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
+                                <?php }else if($my_course['status'] == 2 && time() < strtotime($my_course['start_date']." ".$my_course['start_time'])){ ?>
                                 <a href="<?=app_url()?>/account/my-courses/make-payment/<?=$my_course['id'];?>">
                                     <button type="button" class="btn btn-warning btn-sm">Pay Again</button>
                                 </a>
