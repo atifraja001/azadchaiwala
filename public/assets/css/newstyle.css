@@ -2400,6 +2400,9 @@ helvetica
   padding: 5px 15px 2px 15px;
   margin-top: 2px !important;
 }
+.graphic-co{
+  padding:2px 15px 2px 15px;
+}
 
 .video-success-course > h2 {
   color: #000;
@@ -3157,6 +3160,122 @@ graphic full width section
   background: #004439;
 }
 
+
+/*graphic new form section */
+.form-graphic{
+  padding: 10px 0px;
+}
+.graphic-form-card{
+  background: #fff;
+  border-radius: 15px;
+}
+@media(min-width:768px){
+  .graphic-form-card{
+    margin-top: calc(179px / 2);
+
+  }
+
+}
+.graphic-form-heading{
+  background: #F1F0F6;
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px 15px 0px 0px;
+}
+.graphic-self-from{
+  padding: 30px 30px;
+}
+.g-form>div:not(first-child){
+  margin-top: 10px;
+}
+.g-form>div>label{
+  font-weight: bold;
+  font-size: 17px;
+}
+.graphic-form-button{
+  border:0px;
+  background: #0089F3;
+  width: 100%;
+  margin-top:20px;
+  border-radius: 30px;
+}
+.graphic-info-learn-col{
+  padding-left:0px;
+  padding-right: 5px;
+}
+.graphic-form-col{
+  padding-right:0px;
+   padding-left:5px; 
+}
+@media(max-width:768px){
+  .graphic-form-col{
+  padding-left:0px; 
+}
+  
+}
+
+.graphic-new-learn{
+  padding: 15px;
+  min-height: auto;
+}
+
+.graphic-new-learn > ul {
+  margin-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  .graphic-new-learn {
+    min-height: auto;
+  }
+}
+
+
+
+.graphic-new-learn > h3 {
+  font-weight: 500;
+  font-family: var(--course-bold-family);
+  color: #fff;
+}
+
+.graphic-new-learn > ul > li > span {
+  font-size: 17px;
+  font-family: var(--course-family);
+  color: #fff;
+}
+
+.graphic-new-learn > ul > li > i {
+  font-size: 15px;
+  color: #000 !important;
+  margin-top: 8px;
+}
+
+
+
+
+
+/*graphic new form section end herer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .graphic-learn-section > div > div {
   padding-right: 0px;
   padding-left: 0px;
@@ -3180,25 +3299,25 @@ graphic full width section
 
 /* first */
 .graphic-course-for {
-  background: rgba(79, 49, 110, 0.4) url("../img/graphics/box-bg.png");
-  border-right: 1px solid #fff;
+  background: rgba(79, 49, 110, 0.2) url("../img/graphics/box-bg.png");
+  
 }
 
 /* second */
 .graphic-course-benefit {
-  background: #ba9966 url("../img/graphics/box-bg.png");
-  border-right: 1px solid #fff;
+  background: rgba(186, 153, 102,0.2) url("../img/graphics/box-bg.png");
+  
 }
 
 /* third */
 .graphic-course-return {
-  background: #467d58 url("../img/graphics/box-bg.png");
-  border-right: 1px solid #fff;
+  background: rgba(70, 125, 88, 0.2) url("../img/graphics/box-bg.png");
+  
 }
 
 /* fourth */
 .graphic-course-notdo {
-  background: #7e4ead url("../img/graphics/box-bg.png");
+  background: rgba(126, 78, 173,0.2) url("../img/graphics/box-bg.png");
 }
 
 .graphic-learn > h3 {
