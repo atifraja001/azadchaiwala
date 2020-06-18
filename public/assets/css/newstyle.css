@@ -3018,6 +3018,11 @@ graphic full width section
   padding: 10px 15px;
   margin-bottom: 2px;
 }
+.graphic-top-heading{
+  font-family: var(--course-family);
+  color:yellow;
+  font-weight: 600;
+}
 
 @media (min-width: 790px) {
   .graphic-section > div > div:first-child {
@@ -3166,16 +3171,10 @@ graphic full width section
   padding: 10px 0px;
 }
 .graphic-form-card{
-  background: #fff;
-  border-radius: 15px;
+  background: #113a2c;
+  
 }
-@media(min-width:768px){
-  .graphic-form-card{
-    margin-top: calc(179px / 2);
 
-  }
-
-}
 .graphic-form-heading{
   background: #F1F0F6;
   text-align: center;
@@ -3183,7 +3182,7 @@ graphic full width section
   border-radius: 15px 15px 0px 0px;
 }
 .graphic-self-from{
-  padding: 30px 30px;
+  padding: 0px 10px;
 }
 .g-form>div:not(first-child){
   margin-top: 10px;
@@ -3194,10 +3193,12 @@ graphic full width section
 }
 .graphic-form-button{
   border:0px;
-  background: #0089F3;
+  background: #b82ff7;
   width: 100%;
   margin-top:20px;
   border-radius: 30px;
+  font-family: var(--course-family);
+  font-size: 1.7rem;
 }
 .graphic-info-learn-col{
   padding-left:0px;
@@ -3248,6 +3249,7 @@ graphic full width section
   color: #000 !important;
   margin-top: 8px;
 }
+
 
 
 
