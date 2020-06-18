@@ -140,6 +140,14 @@
                 }
             }
         });
+        $.ajax({
+            url: "<?=app_url()?>/getTerms",
+            method: "post",
+            data: {course_id: course_id},
+            success: function (response) {
+                $("#terms").html(response);
+            }
+        });
     });
     $("body").on("click", ".batch", function () {
         let radio = $(this).find('input');

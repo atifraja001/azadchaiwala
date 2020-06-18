@@ -45,6 +45,7 @@ class AccountController
         $course = $course->getCourseByBatchId($enroll['batch_id']);
 
 
+
         $my_courses = new \App\Models\Courses();
         $my_courses = $my_courses->getCoursesByStdId($_SESSION['user_login']);
 
@@ -199,6 +200,16 @@ class AccountController
         $batches = new \App\Models\Batches();
         $batches = $batches->GetBatchByCourseId($course_id, $_SESSION['user_login']);
         echo json_encode($batches);
+    }
+    public function getTermsByCourse(){
+        $course_id = $_POST['course_id'];
+        $courses = new \App\Models\Courses();
+        $terms = $courses->GetCourseTerms($course_id);
+        foreach ($terms as $term){
+            ?>
+                <li><?=$term['detail']?></li>
+            <?php
+        }
     }
 
     public function getCoursesByType()
