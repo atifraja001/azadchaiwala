@@ -45,6 +45,7 @@ $router->add('create-account/success', ['controller' => 'AuthController', 'actio
 $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
 $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
 $router->add('forgot-password', ['controller' => 'AuthController', 'action' => 'forgot_password']);
+$router->add('forgot-password/success', ['controller' => 'AuthController', 'action' => 'forgotPasswordSuccess']);
 $router->add('doRecover', ['controller' => 'AuthController', 'action' => 'doRecover']);
 $router->add('reset-password', ['controller' => 'AuthController', 'action' => 'doResetPassword']);
 $router->add('doResetPassword', ['controller' => 'AuthController', 'action' => 'doResetPasswordPost']);

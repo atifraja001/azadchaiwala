@@ -141,6 +141,13 @@ class AuthController
         redirect(app_url('') . '/forgot-password/success');
     }
 
+    public function forgotPasswordSuccess(){
+        View::render('frontend/layouts/head.html', ['title' => 'My Account']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/auth/forgot-password-success.html');
+        View::render('frontend/layouts/script.html');
+    }
+
     public function doResetPassword()
     {
         if (!empty($_GET['e']) && !empty($_GET['t'])) {

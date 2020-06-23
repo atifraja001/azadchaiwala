@@ -205,7 +205,7 @@ class Account extends \Core\Model
     public function ResetPassword($email, $password)
     {
         $db = static::getDB();
-        $q = $db->prepare("UPDATE student_login SET password = :password WHERE email = :email");
+        $q = $db->prepare("UPDATE student_login SET password = :password, email_token = NULL, token_requested_at = NULL WHERE email = :email");
         if ($q->execute([
             ":email" => $email,
             ":password" => password_hash($password, PASSWORD_DEFAULT)
