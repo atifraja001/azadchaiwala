@@ -63,6 +63,7 @@
                                 <span class="badge badge-info">Under Review</span>
                                 <?php }else if($my_course['status'] == 2){ ?>
                                 <span class="badge badge-danger">Rejected</span>
+                                <?=$my_course['fee_note'];?>
                                 <?php }else if($my_course['status'] == 1){ ?>
                                 <span class="badge badge-success">Paid</span>
                                 <?php } ?>

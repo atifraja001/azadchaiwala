@@ -296,12 +296,18 @@ class AccountController
             ':id' => $_POST['enroll_id']
         ];
         if($enroll->updateFeeReceipt($data)){
-            redirect(app_url() . '/account/dashboard');
+            redirect(app_url() . '/account/payment-submitted');
         }else{
             $error[] = "Something went's wrong, while uploading file. Try again or contact admin";
             $_SESSION['errors'] = $error;
             redirect(app_url() . '/account/my-courses/make-payment/'.$_POST['enroll_id']);
         }
+    }
+    public function payment_submitted(){
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/payment_submitted.html');
+        View::render('student/layouts/script.html');
     }
     public function my_courses(){
         $my_courses = new \App\Models\Courses();
