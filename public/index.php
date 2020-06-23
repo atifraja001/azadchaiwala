@@ -44,6 +44,12 @@ $router->add('create-account', ['controller' => 'AuthController', 'action' => 's
 $router->add('create-account/success', ['controller' => 'AuthController', 'action' => 'ShowSuccessPage']);
 $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
 $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
+$router->add('forgot-password', ['controller' => 'AuthController', 'action' => 'forgot_password']);
+$router->add('doRecover', ['controller' => 'AuthController', 'action' => 'doRecover']);
+$router->add('reset-password', ['controller' => 'AuthController', 'action' => 'doResetPassword']);
+$router->add('doResetPassword', ['controller' => 'AuthController', 'action' => 'doResetPasswordPost']);
+
+
 //Account Routes
 $router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
 $router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);

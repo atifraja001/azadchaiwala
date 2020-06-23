@@ -3301,25 +3301,25 @@ graphic full width section
 
 /* first */
 .graphic-course-for {
-  background: rgba(79, 49, 110, 0.2) url("../img/graphics/box-bg.png");
+  background: rgba(79, 49, 110, 1) url("../img/graphics/box-bg.png");
   
 }
 
 /* second */
 .graphic-course-benefit {
-  background: rgba(186, 153, 102,0.2) url("../img/graphics/box-bg.png");
+  background: rgba(186, 153, 102,1) url("../img/graphics/box-bg.png");
   
 }
 
 /* third */
 .graphic-course-return {
-  background: rgba(70, 125, 88, 0.2) url("../img/graphics/box-bg.png");
+  background: rgba(70, 125, 88, 1) url("../img/graphics/box-bg.png");
   
 }
 
 /* fourth */
 .graphic-course-notdo {
-  background: rgba(126, 78, 173,0.2) url("../img/graphics/box-bg.png");
+  background: rgba(126, 78, 173, 1) url("../img/graphics/box-bg.png");
 }
 
 .graphic-learn > h3 {

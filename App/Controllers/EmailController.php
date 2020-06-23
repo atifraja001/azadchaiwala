@@ -61,14 +61,14 @@ class EmailController
              * Required {email_to, start_date, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Verified - Azad Chaiwala Institute';
+            $subject = 'Payment Verified - Azad Chaiwala Institute';
             $content = $this->RegistrationVerified($data['start_date'], $data['course']);
         } else if ($type == "registration_rejected") {
             /*
              * Required {email_to, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Rejected - AzadChaiwala.pk';
+            $subject = 'Payment Rejected - Azad Chaiwala Institute';
             $content = $this->RegistrationRejected($data['course']);
         } else if ($type == "batch") {
             /*
@@ -104,28 +104,42 @@ class EmailController
             $to = $data['email_to']; // send to user
             $subject = 'Fee Reminder from Azad Chaiwala Institute';
             $content = $this->fee_reminder();
-        }else if($type == 'course_reminder'){
+        }else if ($type == 'course_reminder') {
             /*
              * Required {course, date, time}
              */
             $to = $data['email_to']; // send to user
             $subject = 'Class Reminder from Azad Chaiwala Institute';
             $content = $this->course_reminder($data['course'], $data['course_date'], $data['course_time']);
+        } else if ($type == 'recover_password') {
+            $to = $data['email_to']; // send to user
+            $subject = 'Password Recovery - Azad Chaiwala Institute';
+            $content = $this->recover_password($to, $data['token']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: Azad Chaiwala Institute <'.$from.">\r\n".
-            'Reply-To: Azad Chaiwala Institute <'.$from.">\r\n" .
+        $headers .= 'From: Azad Chaiwala Institute <' . $from . ">\r\n" .
+            'Reply-To: Azad Chaiwala Institute <' . $from . ">\r\n" .
             'X-Mailer: PHP/' . phpversion();
-        if(mail($to, $subject, $content, $headers)){
+        if (mail($to, $subject, $content, $headers)) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
 
-    protected function create_account($name, $token){
+    protected function recover_password($to, $token)
+    {
+        $content = file_get_contents("../App/Views/email_templates/recover_password.html");
+        $content = str_replace(":email", $to, $content);
+        $content = str_replace(":token", $token, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+
+    protected function create_account($name, $token)
+    {
         $content = file_get_contents("../App/Views/email_templates/create_account.html");
         $content = str_replace(":name", $name, $content);
         $content = str_replace(":token", $token, $content);
@@ -133,7 +147,8 @@ class EmailController
         return $content;
     }
 
-    protected function NewRegistration($course){
+    protected function NewRegistration($course)
+    {
         $content = file_get_contents("../App/Views/email_templates/new_registration.html");
         $content = str_replace(":course", $course, $content);
         $content = str_replace(":year", date('Y'), $content);

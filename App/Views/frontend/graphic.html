@@ -63,11 +63,12 @@
 
             <div class="graphic-form-card">
               <div class="graphic-self-from">
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" novalidate action="<?=app_url()?>/doRegister" method="post" id="contactform">
+                  <input type="hidden" value="html" name="type">
                   <div class="form-row g-form">
                     <div class="col-md-6 mb-6">
                       <label for="validationCustom01" class="text-white">Name</label>
-                      <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your Name"
+                      <input type="text" class="form-control" name="full_name" id="validationCustom01" placeholder="Enter Your Name"
                              required>
                       <div class="valid-feedback">
                         Looks good!
@@ -75,7 +76,7 @@
                     </div>
                     <div class="col-md-6 mb-6">
                       <label for="validationCustom02" class="text-white">Phone Number</label>
-                      <input type="number" class="form-control" id="validationCustom02"
+                      <input type="number" class="form-control" name="phone_number" id="validationCustom02"
                              placeholder="Enter Your Phone Number" required>
                       <div class="valid-feedback">
                         Looks good!
@@ -83,7 +84,7 @@
                     </div>
                     <div class="col-md-6 mb-6">
                       <label for="validationCustom03" class="text-white">Email</label>
-                      <input type="email" class="form-control" id="validationCustom03" placeholder="Enter Your Email"
+                      <input type="email" class="form-control" name="email" id="validationCustom03" placeholder="Enter Your Email"
                              required>
                       <div class="valid-feedback">
                         Looks good!
@@ -91,8 +92,8 @@
                     </div>
                     <div class="col-md-6 mb-6">
                       <label for="validationCustom04" class="text-white">Password</label>
-                      <input type="password" class="form-control" id="validationCustom04"
-                             placeholder="Enter Your Password" value="Otto" required>
+                      <input type="password" class="form-control" name="password" id="validationCustom04"
+                             placeholder="Enter Your Password" value="" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
@@ -103,6 +104,7 @@
                     <p class="mb-0 text-white">Already Have an Account? <a href="#">Login Now</a></p>
                   </div>
                 </form>
+                <div id="result" style="height: 280px; display: none; text-align: center; color: white; padding-top: 100px;"></div>
               </div>
             </div>
 
