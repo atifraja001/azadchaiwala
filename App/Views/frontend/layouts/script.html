@@ -132,6 +132,19 @@
         eye_icon.removeClass('fas fa-eye-slash');
         eye_icon.addClass('fas fa-eye');
     });
+    $("body").on("submit", "#contactform", function(e){
+        e.preventDefault();
+        $.ajax({
+            method: "post",
+            url: $("#contactform").attr('action'),
+            data: $("#contactform").serialize(),
+            success:function(response){
+                $("#result").show();
+                $("#result").text(response);
+                $("#contactform").hide();
+            }
+        });
+    });
 
 </script>
 </html>

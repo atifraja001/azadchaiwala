@@ -100,7 +100,7 @@ class Batches extends \Core\Model
     {
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id 
-                                    AND start_date >= CURRENT_DATE() 
+                                    AND start_date >= CURRENT_DATE()
                                     AND id NOT IN (SELECT batch_id FROM enrollments WHERE student_id = :student_id AND batch_id IS NOT NULL)");
         $stmt->execute([
             ':course_id' => $course_id,
@@ -110,7 +110,7 @@ class Batches extends \Core\Model
     }
     public function GetUpComingBatchByCourseId($course_id){
         $db = static::getDB();
-        $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id AND start_date >= CURRENT_DATE() ORDER BY id ASC LIMIT 1");
+        $stmt = $db->prepare("SELECT * FROM batches WHERE course_id = :course_id AND start_date >= CURRENT_DATE()");
         $stmt->execute([':course_id' => $course_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

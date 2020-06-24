@@ -44,6 +44,13 @@ $router->add('create-account', ['controller' => 'AuthController', 'action' => 's
 $router->add('create-account/success', ['controller' => 'AuthController', 'action' => 'ShowSuccessPage']);
 $router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
 $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
+$router->add('forgot-password', ['controller' => 'AuthController', 'action' => 'forgot_password']);
+$router->add('forgot-password/success', ['controller' => 'AuthController', 'action' => 'forgotPasswordSuccess']);
+$router->add('doRecover', ['controller' => 'AuthController', 'action' => 'doRecover']);
+$router->add('reset-password', ['controller' => 'AuthController', 'action' => 'doResetPassword']);
+$router->add('doResetPassword', ['controller' => 'AuthController', 'action' => 'doResetPasswordPost']);
+
+
 //Account Routes
 $router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
 $router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);
@@ -59,9 +66,12 @@ $router->add('account/enroll-new-course', ['controller' => 'AccountController', 
 $router->add('account/enroll-new-course-post', ['controller' => 'AccountController', 'action' => 'enroll_new_course_post']);
 $router->add('account/my-courses/make-payment/{id:\d+}', ['controller' => 'AccountController', 'action' => 'make_payment']);
 $router->add('account/my-courses/make-payment/post', ['controller' => 'AccountController', 'action' => 'make_payment_post']);
+$router->add('account/payment-submitted', ['controller' => 'AccountController', 'action' => 'payment_submitted']);
 $router->add('account/my-courses/delete/{id:\d+}', ['controller' => 'AccountController', 'action' => 'delete_enrollment']);
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
 $router->add('getCoursesByType', ['controller' => 'AccountController', 'action' => 'getCoursesByType']);
+$router->add('getTerms', ['controller' => 'AccountController', 'action' => 'getTermsByCourse']);
+
 
 
 
@@ -199,13 +209,18 @@ $router->add($admin_dir.'/backup-db', ['controller' => 'BackupController', 'acti
 $router->add($admin_dir.'/create-backup', ['controller' => 'BackupController', 'action' => 'create_backup']);
 
 // secure fetching route
-$router->add('getImage', ['controller'=>'FetchDataController', 'action'=>'FetchImage']);
-$router->add($admin_dir.'/download-backup', ['controller' => 'FetchDataController', 'action' => 'FetchBackup']);
+$router->add('getImage', ['controller' => 'FetchDataController', 'action' => 'FetchImage']);
+$router->add($admin_dir . '/download-backup', ['controller' => 'FetchDataController', 'action' => 'FetchBackup']);
 
 
 //gallery
-$router->add($admin_dir.'/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
-$router->add($admin_dir.'/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
-$router->add($admin_dir.'/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
+$router->add($admin_dir . '/gallery/manage', ['controller' => 'GalleryController', 'action' => 'manage']);
+$router->add($admin_dir . '/gallery/delete/{id:\d+}', ['controller' => 'GalleryController', 'action' => 'delete_gallery']);
+$router->add($admin_dir . '/gallery/add-new-gallery', ['controller' => 'GalleryController', 'action' => 'add_new_gallery_post']);
+
+// cron jobs routes
+$router->add('cron_job/FeeReminder', ['controller' => 'CronJobController', 'action' => 'sendAfter48Hours']);
+$router->add('cron_job/CourseReminder', ['controller' => 'CronJobController', 'action' => 'sendBefore24Hours']);
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);

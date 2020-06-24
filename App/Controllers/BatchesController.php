@@ -110,21 +110,27 @@ class BatchesController
     public function change_status($request){
         $data = [
             ':enroll_id' => $request['eid'],
-            ':status' => $request['sid']
+            ':status' => $request['sid'],
+            ':fee_note' => !empty($_POST['fee_note']) ? $_POST['fee_note'] : NULL,
         ];
+        $enroll = new \App\Models\Enrollments();
+        $std = $enroll->getStudentByEnrollId($data[':enroll_id']);
+        $batch = new \App\Models\Batches();
+        $batch = $batch->getBatchByEnrollId($data[':enroll_id']);
+        $course = new \App\Models\Courses();
+        $course = $course->getCourseByBatchId($batch['id']);
+        $email = new \App\Controllers\EmailController();
         if($data[':status'] == 1){
-            $enroll = new \App\Models\Enrollments();
-            $std = $enroll->getStudentByEnrollId($data[':enroll_id']);
-            $batch = new \App\Models\Batches();
-            $batch = $batch->getBatchByEnrollId($data[':enroll_id']);
-            $course = new \App\Models\Courses();
-            $course = $course->getCourseByBatchId($batch['id']);
-            $email = new \App\Controllers\EmailController();
                 $email->sendEmail('registration_verify', [
                     'email_to' => $std['email'],
                     'course' => $course['course_name'],
                     'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
                 ]);
+        }else if($data[':status'] == 2){
+            $email->sendEmail('registration_rejected', [
+                'email_to' => $std['email'],
+                'course' => $course['course_name']
+            ]);
         }
         $status = new \App\Models\Enrollments();
         $status = $status->change_status($data);

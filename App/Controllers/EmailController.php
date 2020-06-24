@@ -2,7 +2,6 @@
 
 
 namespace App\Controllers;
-use Core\View;
 
 /*
  * Date: 09-01-2020
@@ -41,30 +40,37 @@ class EmailController
              * Required {email_to, course}
              */
             $to = $data['email_to'];
-            $subject = 'Thank You for Registration - AzadChaiwala.pk';
+            $subject = 'Thank You for Registration - Azad Chaiwala Institute';
             $content = $this->NewRegistration($data['course']);
         }else if($type == "contact"){
             /*
              * Required {name, email, subject, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'New Contact Message from AzadChaiwala.pk';
+            $subject = 'Contact Message - Azad Chaiwala Institute';
             $content = $this->ContactUs($data['name'], $data['email'], $data['subject'], $data['message']);
         }else if($type == "feedback"){
             /*
              * Required {name, email, course, message}
              */
             $to = \App\Config::EMAIL; // send to admin
-            $subject = 'Course Feedback from AzadChaiwala.pk';
+            $subject = 'Course Feedback - Azad Chaiwala Institute';
             $content = $this->feedback($data['name'], $data['email'], $data['course'], $data['message']);
-        }else if($type == 'registration_verify'){
+        }else if ($type == 'registration_verify') {
             /*
              * Required {email_to, start_date, course}
              */
             $to = $data['email_to']; // send to user
-            $subject = 'Your Registration Verified - AzadChaiwala.pk';
+            $subject = 'Payment Verified - Azad Chaiwala Institute';
             $content = $this->RegistrationVerified($data['start_date'], $data['course']);
-        }else if($type == "batch"){
+        } else if ($type == "registration_rejected") {
+            /*
+             * Required {email_to, course}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Payment Rejected - Azad Chaiwala Institute';
+            $content = $this->RegistrationRejected($data['course']);
+        } else if ($type == "batch") {
             /*
              * Required {message}
              * multiple parameters (OPTIONAL) available in {message}
@@ -89,23 +95,51 @@ class EmailController
             $subject = 'Backup Update from AzadChaiwala.pk';
         }else if($type == 'create_account'){
             $to = $data['email_to']; // send to user
-            $subject = 'Verify Your Email - AzadChaiwala.pk';
+            $subject = 'Verify Your Email - Azad Chaiwala Institute';
             $content = $this->create_account($data['name'], $data['token']);
+        }else if($type == 'fee_reminder'){
+            /*
+             * Required {email}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Fee Reminder from Azad Chaiwala Institute';
+            $content = $this->fee_reminder();
+        }else if ($type == 'course_reminder') {
+            /*
+             * Required {course, date, time}
+             */
+            $to = $data['email_to']; // send to user
+            $subject = 'Class Reminder from Azad Chaiwala Institute';
+            $content = $this->course_reminder($data['course'], $data['course_date'], $data['course_time']);
+        } else if ($type == 'recover_password') {
+            $to = $data['email_to']; // send to user
+            $subject = 'Password Recovery - Azad Chaiwala Institute';
+            $content = $this->recover_password($to, $data['token']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: '.$from."\r\n".
-            'Reply-To: '.$from."\r\n" .
+        $headers .= 'From: Azad Chaiwala Institute <' . $from . ">\r\n" .
+            'Reply-To: Azad Chaiwala Institute <' . $from . ">\r\n" .
             'X-Mailer: PHP/' . phpversion();
-        if(mail($to, $subject, $content, $headers)){
+        if (mail($to, $subject, $content, $headers)) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
 
-    protected function create_account($name, $token){
+    protected function recover_password($to, $token)
+    {
+        $content = file_get_contents("../App/Views/email_templates/recover_password.html");
+        $content = str_replace(":email", $to, $content);
+        $content = str_replace(":token", $token, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+
+    protected function create_account($name, $token)
+    {
         $content = file_get_contents("../App/Views/email_templates/create_account.html");
         $content = str_replace(":name", $name, $content);
         $content = str_replace(":token", $token, $content);
@@ -113,7 +147,8 @@ class EmailController
         return $content;
     }
 
-    protected function NewRegistration($course){
+    protected function NewRegistration($course)
+    {
         $content = file_get_contents("../App/Views/email_templates/new_registration.html");
         $content = str_replace(":course", $course, $content);
         $content = str_replace(":year", date('Y'), $content);
@@ -145,10 +180,30 @@ class EmailController
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
+    protected function RegistrationRejected($course){
+        $content = file_get_contents("../App/Views/email_templates/registration_rejected.html");
+        $content = str_replace(":course", $course, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
     protected function BatchMail($message){
         $content = file_get_contents("../App/Views/email_templates/batch_mail.html");
         $content = str_replace(":message", $message, $content);
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
+    protected function fee_reminder(){
+        $content = file_get_contents("../App/Views/email_templates/fee_reminder.html");
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+    protected function course_reminder($course, $date, $time){
+        $content = file_get_contents("../App/Views/email_templates/course_reminder.html");
+        $content = str_replace(":course_name", $course, $content);
+        $content = str_replace(":course_date", $date, $content);
+        $content = str_replace(":course_time", $time, $content);
+        $content = str_replace(":year", date('Y'), $content);
+        return $content;
+    }
+
 }

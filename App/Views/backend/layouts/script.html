@@ -379,12 +379,22 @@
         'Email'
     ];
     let counter = 0;
-    let time = setInterval(function() {
-        if(counter == 4){ counter = 0; }
+    let time = setInterval(function () {
+        if (counter == 4) {
+            counter = 0;
+        }
         let newText = text[counter];
-        $('#search_student,#search_student_mobile').attr('placeholder', 'Search Student by '+newText);
+        $('#search_student,#search_student_mobile').attr('placeholder', 'Search Student by ' + newText);
         counter++;
     }, 1000);
+    $(document).ready(function () {
+        $(".reject_btn").on("click", function (e) {
+            e.preventDefault();
+            $('#myModal').modal('show');
+            let action = $(this).attr('href');
+            $(".rejection_form").attr('action', action);
+        });
+    });
 </script>
 </body>
 </html>

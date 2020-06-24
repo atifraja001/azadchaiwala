@@ -73,7 +73,7 @@ class AuthController
         ];
         $register = new Account();
         if ($register->CheckEmail($_POST['email'])) {
-            if ($_POST['type'] == "html") {
+            if (isset($_POST['type'])){
                 echo "Email Already Exists, Please Login";
                 die;
             } else {
@@ -114,6 +114,81 @@ class AuthController
                 $this->doLogin("", $user['email']);
             }
         }
+    }
+
+    public function forgot_password()
+    {
+        View::render('frontend/layouts/head.html', ['title' => 'Forgot Password']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/auth/forgot-password.html');
+        View::render('frontend/layouts/script.html');
+    }
+
+    public function doRecover()
+    {
+        $data = [
+            ':email' => $_POST['email'],
+            ':email_token' => random_str(64, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+            ':token_requested_at' => date('Y-m-d H:i:s')
+        ];
+        $register = new Account();
+        $register->RecoverPassword($data);
+        $email = new EmailController();
+        $email->sendEmail('recover_password', [
+            'email_to' => $data[':email'],
+            'token' => $data[':email_token']
+        ]);
+        redirect(app_url('') . '/forgot-password/success');
+    }
+
+    public function forgotPasswordSuccess(){
+        View::render('frontend/layouts/head.html', ['title' => 'My Account']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/auth/forgot-password-success.html');
+        View::render('frontend/layouts/script.html');
+    }
+
+    public function doResetPassword()
+    {
+        if (!empty($_GET['e']) && !empty($_GET['t'])) {
+            $account = new Account();
+            $resp = $account->CheckRecoverToken($_GET['e'], $_GET['t']);
+            if ($resp) {
+                View::render('frontend/layouts/head.html', ['title' => 'Reset Password']);
+                View::render('frontend/layouts/navbar.html');
+                View::render('frontend/auth/reset-password.html');
+                View::render('frontend/layouts/script.html');
+            } else {
+                redirectWithMessage(app_url() . '/account', "Invalid Password Reset Request", 'login', 'error');
+            }
+        } else {
+            redirectWithMessage(app_url() . '/account', "Invalid Password Reset Request", 'login', 'error');
+        }
+    }
+
+    public function doResetPasswordPost()
+    {
+        if (!empty($_POST['password']) && !empty($_POST['confirm_password'])) {
+            if ($_POST['password'] == $_POST['confirm_password']) {
+                $account = new Account();
+                $resp = $account->CheckRecoverToken($_POST['email'], $_POST['token']);
+                if ($resp) {
+                    $resp = $account->ResetPassword($_POST['email'], $_POST['password']);
+                    if ($resp) {
+                        redirectWithMessage(app_url() . '/account', "Password Changed. Please Login", 'login');
+                    } else {
+                        $msg = "Something went's Wrong! Try Again.";
+                    }
+                } else {
+                    redirectWithMessage(app_url() . '/account', "Invalid Password Reset Request", 'login', 'error');
+                }
+            } else {
+                $msg = "New Password and Confirm Password doesn't matched";
+            }
+        } else {
+            $msg = "Password Input are required";
+        }
+        redirectWithMessage(app_url() . '/reset-password?e=' . $_POST['email'] . '&t=' . $_POST['token'], $msg, 'login', 'error');
     }
 
     public function doLogout()

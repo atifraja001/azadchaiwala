@@ -3,8 +3,6 @@
 
 namespace App\Models;
 
-use PDO;
-
 class Account extends \Core\Model
 {
     public function CreateAccount($data)
@@ -170,10 +168,48 @@ class Account extends \Core\Model
     public function ChangePassword($password, $user_id){
         $db = static::getDB();
         $q = $db->prepare("UPDATE student_login SET password = :password WHERE id = :id");
-        if($q->execute([
+        if ($q->execute([
             ':password' => $password,
             ':id' => $user_id
-        ])){
+        ])) {
+            return true;
+        }
+        return false;
+    }
+
+    public function RecoverPassword($data)
+    {
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE student_login SET email_token = :email_token, 
+                                    token_requested_at = :token_requested_at WHERE email = :email");
+        if ($q->execute($data)) {
+            return true;
+        }
+        return false;
+    }
+
+    public function CheckRecoverToken($email, $token)
+    {
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM student_login WHERE email = :email AND email_token = :token");
+        $q->execute([
+            ":email" => $email,
+            ":token" => $token
+        ]);
+        if ($q->rowCount() > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function ResetPassword($email, $password)
+    {
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE student_login SET password = :password, email_token = NULL, token_requested_at = NULL WHERE email = :email");
+        if ($q->execute([
+            ":email" => $email,
+            ":password" => password_hash($password, PASSWORD_DEFAULT)
+        ])) {
             return true;
         }
         return false;

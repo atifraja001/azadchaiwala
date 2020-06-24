@@ -187,11 +187,15 @@
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+                                <input type="password" id="inputPassword" name="password" class="form-control"
+                                       placeholder="Password"
                                        required>
                                 <label for="inputPassword">Password</label>
+                                <div class="float-right">
+                                    <a href="<?=app_url()?>/forgot-password">Forgot Password?</a>
+                                </div>
                             </div>
-
+                            <br>
                             <div class="form-group">
                                 <button class="btn btn-primary text-uppercase" type="submit">Sign in</button>
                             </div>

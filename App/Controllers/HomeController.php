@@ -105,7 +105,9 @@ class HomeController extends \Core\Controller
         $course = $course->getCourseBySlug($slug);
         $course_id = $course['id'];
         $batches = new \App\Models\Batches();
-        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        $batch_offline = $batches->GetUpComingBatchByCourseId($course_id);
+        $batch_online = $batches->GetUpComingBatchByCourseId(17);
+        $batch = array_merge($batch_offline, $batch_online);
         View::render('frontend/layouts/head.html', ['title' => 'Graphic Design Course']);
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/graphic.html', ['batch' => $batch, 'slug'=>$slug]);
@@ -153,7 +155,9 @@ class HomeController extends \Core\Controller
         $course = $course->getCourseBySlug($slug);
         $course_id = $course['id'];
         $batches = new \App\Models\Batches();
-        $batch = $batches->GetUpComingBatchByCourseId($course_id);
+        $batch_offline = $batches->GetUpComingBatchByCourseId($course_id);
+        $batch_online = $batches->GetUpComingBatchByCourseId(19);
+        $batch = array_merge($batch_offline, $batch_online);
         View::render('frontend/layouts/head.html', ['title' => 'Web Development in PHP Course']);
         View::render('frontend/layouts/navbar.html');
         View::render('frontend/php_course.html', ['batch' => $batch, 'slug'=>$slug]);

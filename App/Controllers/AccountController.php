@@ -45,6 +45,7 @@ class AccountController
         $course = $course->getCourseByBatchId($enroll['batch_id']);
 
 
+
         $my_courses = new \App\Models\Courses();
         $my_courses = $my_courses->getCoursesByStdId($_SESSION['user_login']);
 
@@ -84,8 +85,7 @@ class AccountController
         $email = (isset($_POST['email'])) ? $_POST['email'] : $user['email'];
         $name = (isset($_POST['name'])) ? $_POST['name'] : $user['name'];
         if (!empty($_POST['cnic'])) {
-            if (trim(strlen($_POST['cnic'])) != 15)
-                $error[] = "CNIC must be 13 character long";
+
         } else {
             $error[] = "CNIC is required";
         }
@@ -103,9 +103,7 @@ class AccountController
             $error[] = "Father Name is Required";
         }
         if (!empty($_POST['father_phone'])) {
-            if (trim(strlen($_POST['father_phone'])) != 12) {
-                $error[] = "Father Phone Must be 11 character long";
-            }
+
         } else {
             $error[] = "Father Phone is required";
         }
@@ -203,6 +201,16 @@ class AccountController
         $batches = $batches->GetBatchByCourseId($course_id, $_SESSION['user_login']);
         echo json_encode($batches);
     }
+    public function getTermsByCourse(){
+        $course_id = $_POST['course_id'];
+        $courses = new \App\Models\Courses();
+        $terms = $courses->GetCourseTerms($course_id);
+        foreach ($terms as $term){
+            ?>
+                <li><?=$term['detail']?></li>
+            <?php
+        }
+    }
 
     public function getCoursesByType()
     {
@@ -288,12 +296,18 @@ class AccountController
             ':id' => $_POST['enroll_id']
         ];
         if($enroll->updateFeeReceipt($data)){
-            redirect(app_url() . '/account/dashboard');
+            redirect(app_url() . '/account/payment-submitted');
         }else{
             $error[] = "Something went's wrong, while uploading file. Try again or contact admin";
             $_SESSION['errors'] = $error;
             redirect(app_url() . '/account/my-courses/make-payment/'.$_POST['enroll_id']);
         }
+    }
+    public function payment_submitted(){
+        View::render('student/layouts/head.html');
+        View::render('student/layouts/navbar.html');
+        View::render('student/payment_submitted.html');
+        View::render('student/layouts/script.html');
     }
     public function my_courses(){
         $my_courses = new \App\Models\Courses();

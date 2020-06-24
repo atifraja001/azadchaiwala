@@ -5,7 +5,7 @@
         <div class="row ">
             <div class="col-lg-6 ">
                 <div class="game__section-video mt-">
-                    <img alt=" php course image of azadchaiwala" class="img-fluid"
+                    <img alt=" php course image of azadchaiwala" class="img-fluid php-course-image"
                          src="<?=app_url()?>/assets/img/php/php-final.jpg">
                 </div>
             </div>
@@ -245,7 +245,8 @@
                         <div class="game-features__course-details">
                             <span class="material-icons md-48">alarm</span>
                             <h3>Next Batch Start</h3>
-                            <p><a href="<?=app_url()?>/create-account">Click here to get details for next
+                            <p><a href="<?=app_url()?>/create-account"  data-toggle="modal"
+                                  data-target="#myModal">Click here to get details for next
                                 batch.</a></p>
                             <!-- modal -->
                             <div class="modal" id="myModal">
@@ -258,32 +259,58 @@
                                                     type="button">&times;
                                             </button>
                                             <div class="text-center mt-2">
-                                                <h3 class="font-weight-bold ">ٱلْحَمْدُ لِلَّٰهِ</h3>
-                                                <p>All batches are full. We are still awaiting to announce the next
-                                                    dates. If you would like to be contacted when new dates announced
-                                                    Please fill in your details</p>
+                                                <?php if(isset($batch) && count($batch) > 0){ ?>
+                                                <h3 class="font-weight-bold">Upcoming Batches</h3>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th><b>Batch Name</b></th>
+                                                            <th><b>Start Date</b></th>
+                                                            <th><b>Start Time</b></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <?php foreach($batch as $b){ ?>
+                                                        <tr>
+                                                            <td><?=$b['name'];?></td>
+                                                            <td><?=$b['start_date'];?></td>
+                                                            <td><?=$b['start_time'];?></td>
+                                                        </tr>
+                                                        <?php } ?>
+                                                    </table>
+                                                    <a href="<?=app_url()?>/create-account">
+                                                        <button type="button" class="btn btn-danger">Enroll Now</button>
+                                                    </a>
+                                                </div>
+                                                <?php }else{ ?>
+                                                <h3 class="font-weight-bold">ٱلْحَمْدُ لِلَّٰهِ</h3>
+                                                <p>
+                                                    All batches are full. We are still awaiting to
+                                                    announce the next dates. Stay tuned.
+                                                </p>
+                                                <?php } ?>
                                             </div>
-                                            <form class="needs-validation pop-form" novalidate>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter Your Name"
-                                                               required type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter Your Email"
-                                                               required type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-12">
-                                                        <input class="form-control" placeholder="Enter your Number"
-                                                               required type="text">
-                                                    </div>
-                                                </div>
-                                                <button class="btn btn-success" type="submit">Submit Details</button>
-                                            </form>
+<!--                                            <form class="needs-validation pop-form" novalidate>-->
+<!--                                                <div class="form-row">-->
+<!--                                                    <div class="col-md-12 mb-12">-->
+<!--                                                        <input class="form-control" placeholder="Enter Your Name"-->
+<!--                                                               required type="text">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="form-row">-->
+<!--                                                    <div class="col-md-12 mb-12">-->
+<!--                                                        <input class="form-control" placeholder="Enter Your Email"-->
+<!--                                                               required type="email">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="form-row">-->
+<!--                                                    <div class="col-md-12 mb-12">-->
+<!--                                                        <input class="form-control" placeholder="Enter your Number"-->
+<!--                                                               required type="text">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <button class="btn btn-success" type="submit">Submit Details</button>-->
+<!--                                            </form>-->
                                         </div>
                                         <!-- Modal footer -->
                                     </div>
@@ -621,7 +648,8 @@
             <div class="col-lg-6">
                 <div class="game-faqs-course-inner">
                     <h4>When will the course start & finish?</h4>
-                    <p><a href="<?=app_url()?>/create-account">Click here to get details for next
+                    <p><a href="<?=app_url()?>/create-account" data-toggle="modal"
+                          data-target="#myModal">Click here to get details for next
                         batch.</a></p>
                 </div>
                 <div class="game-faqs-course-inner">

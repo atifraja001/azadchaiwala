@@ -34,6 +34,12 @@ class Courses extends \Core\Model
         $stmt->execute([':batch_id' => $batch_id]);
         return $stmt->fetch();
     }
+    public function getCourse($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM courses WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch();
+    }
     public function getCourseBySlug($slug){
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * From courses WHERE slug = :slug");
