@@ -123,6 +123,7 @@
                     course_list = course_list.replace(':batch_id', data[i]['id']);
                     course_list = course_list.replace(':batch_name', data[i]['name']);
                     const d = new Date(data[i]['start_date'])
+                    d.toLocaleString('en-US', { timeZone: 'Asia/Karachi' })
                     const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
                     const mo = new Intl.DateTimeFormat('en', { month: 'long' }).format(d)
                     const mo_s = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
