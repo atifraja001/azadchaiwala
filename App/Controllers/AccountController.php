@@ -19,7 +19,7 @@ class AccountController
             redirect(app_url().'/account/logout');
         }
         $except = array('complete_profile', 'enroll_course', 'make_payment', 'make_payment_post',
-            'postCompleteProfile', 'enroll_new_course', 'getBatches', 'enroll_new_course_post', 'getCoursesByType');
+            'postCompleteProfile', 'enroll_new_course', 'getBatches', 'getTermsByCourse', 'enroll_new_course_post', 'getCoursesByType');
         if (!in_array($request['action'], $except)) {
             $have_enrolled = $user1->have_enrolled($_SESSION['user_login']);
             if (!$have_enrolled) {
