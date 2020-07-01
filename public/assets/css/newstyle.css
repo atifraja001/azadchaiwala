@@ -57,7 +57,12 @@
 }
 
 /*-------------
-Header css start here
+--------
+-----
+  ********&&&&&&& Header css start here  &&&&&&&&&&&&&********
+--------------
+-----------
+-----
 --------------*/
 .navbar {
   padding: 0px;
@@ -710,38 +715,14 @@ review section end here
 }
 
 /*---throw degree section---*/
-/*footer area*/
-.footer {
-  background: #111111;
-}
 
-@media (max-width: 400px) {
-  .site-footer {
-    padding-bottom: 430px;
-  }
-}
-.containerflex {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
 
-.flexcolumn {
-  color: white;
-  letter-spacing: 1px;
-}
 
-.flexcolum-2 > a {
-  padding: 5px;
-}
 
-.flexcolum-2 > a > i {
-  font-size: 24px;
-  color: white;
-}
 
-/*footer area end*/
+
+
+
 
 /*-----------
 -----------
@@ -1498,6 +1479,40 @@ single course section
   text-align: right;
   font-weight: bold;
 }
+
+
+/*footer area*/
+/*.footer {
+  background: #111111;
+}*/
+
+@media (max-width: 400px) {
+  .site-footer {
+    padding-bottom: 430px;
+  }
+}
+.containerflex {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.flexcolumn {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.flexcolum-2 > a {
+  padding: 5px;
+}
+
+.flexcolum-2 > a > i {
+  font-size: 24px;
+  color: white;
+}
+
+
 
 .site-footer {
   border-top: 0px !important;
