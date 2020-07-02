@@ -62,13 +62,22 @@ class AuthController
 
     public function doRegister()
     {
+        $pin = generatePIN();
+        $register = new Account();
+        while(true){
+            $register = new Account();
+            $check_pin = $register->checkPin($pin);
+            if($check_pin == 0)
+                break;
+            $pin = generatePIN();
+        }
         // preparing data
         $data = [
             ':name' => $_POST['full_name'],
             ':email' => $_POST['email'],
             ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
             ':phone_number' => $_POST['phone_number'],
-            ':email_token' => random_str(64, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+            ':email_token' => $pin,
             ':token_requested_at' => date('Y-m-d H:i:s')
         ];
         $register = new Account();
@@ -102,11 +111,11 @@ class AuthController
         View::render('frontend/layouts/script.html');
     }
 
-    public function VerifyEmail($request)
+    public function VerifyEmail()
     {
-        if (!empty($request['slug'])) {
+        if (!empty($_GET['t'])) {
             $register = new Account();
-            $response = $register->VerifyEmail($request['slug']);
+            $response = $register->VerifyEmail($_GET['t']);
             if ($response == "email_already_verified") {
                 redirectWithMessage(app_url() . '/account', 'Your email is already verified or link is expired. Please login to proceed', 'login');
             } else {

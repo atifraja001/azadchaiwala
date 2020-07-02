@@ -490,7 +490,8 @@ function random_str(
     return implode('', $pieces);
 }
 
-function form($var){
+function form($var)
+{
     if (isset($_SESSION)) {
         if (isset($_SESSION[$var])) {
             $msg = $_SESSION[$var];
@@ -498,4 +499,15 @@ function form($var){
             return $msg;
         }
     }
+}
+
+function generatePIN($digits = 6)
+{
+    $i = 0;
+    $pin = "";
+    while ($i < $digits) {
+        $pin .= mt_rand(0, 9);
+        $i++;
+    }
+    return $pin;
 }

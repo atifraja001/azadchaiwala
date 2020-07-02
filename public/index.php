@@ -42,7 +42,7 @@ $router->add('doLogin', ['controller' => 'AuthController', 'action' => 'doLogin'
 $router->add('doRegister', ['controller' => 'AuthController', 'action' => 'doRegister']);
 $router->add('create-account', ['controller' => 'AuthController', 'action' => 'showRegistrationForm']);
 $router->add('create-account/success', ['controller' => 'AuthController', 'action' => 'ShowSuccessPage']);
-$router->add('verify/{slug}', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
+$router->add('verify', ['controller' => 'AuthController', 'action' => 'VerifyEmail']);
 $router->add('account/logout', ['controller' => 'AuthController', 'action' => 'doLogout']);
 $router->add('forgot-password', ['controller' => 'AuthController', 'action' => 'forgot_password']);
 $router->add('forgot-password/success', ['controller' => 'AuthController', 'action' => 'forgotPasswordSuccess']);

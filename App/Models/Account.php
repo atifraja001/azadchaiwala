@@ -214,4 +214,12 @@ class Account extends \Core\Model
         }
         return false;
     }
+
+    public function checkPin($pin)
+    {
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM student_login WHERE email_token = :pin");
+        $q->execute([':pin' => $pin]);
+        return $q->rowCount();
+    }
 }
