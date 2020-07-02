@@ -46,6 +46,7 @@ class AuthController
                 'name' => $user['name'],
                 'token' => $user['email_token']
             ]);
+            redirectWithMessage(app_url().'/create-account/success', $msg, 'login', 'error');
         }else{ // Something went's wrong
             $msg = "Something Want's Wrong! Login Again or Contact us";
         }
@@ -117,7 +118,7 @@ class AuthController
             $register = new Account();
             $response = $register->VerifyEmail($_GET['t']);
             if ($response == "email_already_verified") {
-                redirectWithMessage(app_url() . '/account', 'Your email is already verified or link is expired. Please login to proceed', 'login');
+                redirectWithMessage(app_url() . '/create-account/success', 'Your email is already verified or link is expired. Please <a href="'.app_url().'/account">login</a> to proceed.', 'login');
             } else {
                 $user = $register->getUser($response);
                 $this->doLogin("", $user['email']);
