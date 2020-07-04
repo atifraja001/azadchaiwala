@@ -48,16 +48,26 @@ function multiUploadFile($file, $path,
         }
     }
     for($index = 0; $index < $file_count; $index++) {
-        if ($generate_name) {
-            $uploadedName = $_FILES[$file]['name'][$index];
-            $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
-            $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
-        } else {
-            $filename = $_FILES[$file]['name'][$index];
-        }
+        $response = null;
         $mimetype = mime_content_type($_FILES[$file]['tmp_name'][$index]);
         if (!in_array($mimetype, $mime_type)) {
             $response =  "invalid_image";
+        }else{
+            $custom_ext = array(
+                'image/jpeg' => 'jpg',
+                'image/gif' => 'gif',
+                'image/png' => 'png'
+            );
+            $ext = $custom_ext[$mimetype];
+        }
+        if ($generate_name) {
+            $uploadedName = $_FILES[$file]['name'][$index];
+            if(empty($ext)) {
+                $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
+            }
+            $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
+        } else {
+            $filename = $_FILES[$file]['name'][$index];
         }
         $size = @getimagesize($_FILES[$file]['tmp_name'][$index]);
         if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
@@ -66,7 +76,7 @@ function multiUploadFile($file, $path,
         if ($_FILES[$file]['size'][$index] > $file_size) {
             $response =  "invalid_size";
         }
-        if (!empty($file)) {
+        if (!empty($file) && !empty($response)) {
             $file_tmp = $_FILES[$file];
             $path_tmp = $path . "/";
             $path_tmp = $path_tmp . $filename;
