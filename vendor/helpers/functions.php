@@ -151,7 +151,6 @@ function uploadfile($file, $path,
     } else {
         $filename = $_FILES[$file]['name'];
     }
-    echo $filename; die;
     $size = @getimagesize($_FILES[$file]['tmp_name']);
     if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
         return "invalid_image";
