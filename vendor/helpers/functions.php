@@ -121,17 +121,20 @@ function uploadfile($file, $path,
             mkdir($path, 0750, true);
         }
     }
+    $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
+    $finfo = finfo_open(FILEINFO_MIME_TYPE); // return mime-type extension
+    echo finfo_file($finfo, $_FILES[$file]['tmp_name']);
+    finfo_close($finfo);
+    print_r($mimetype); die;
+    if (!in_array($mimetype, $mime_type)) {
+        return "invalid_image";
+    }
     if ($generate_name) {
         $uploadedName = $_FILES[$file]['name'];
         $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
         $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
     } else {
         $filename = $_FILES[$file]['name'];
-    }
-    $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
-    print_r($mimetype); die;
-    if (!in_array($mimetype, $mime_type)) {
-        return "invalid_image";
     }
     $size = @getimagesize($_FILES[$file]['tmp_name']);
     if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
