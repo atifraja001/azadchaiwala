@@ -61,10 +61,6 @@ function multiUploadFile($file, $path,
             $ext = $custom_ext[$mimetype];
         }
         if ($generate_name) {
-            $uploadedName = $_FILES[$file]['name'][$index];
-            if(empty($ext)) {
-                $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
-            }
             $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
         } else {
             $filename = $_FILES[$file]['name'][$index];
@@ -76,7 +72,7 @@ function multiUploadFile($file, $path,
         if ($_FILES[$file]['size'][$index] > $file_size) {
             $response =  "invalid_size";
         }
-        if (!empty($file) && !empty($response)) {
+        if (!empty($file) && empty($response)) {
             $file_tmp = $_FILES[$file];
             $path_tmp = $path . "/";
             $path_tmp = $path_tmp . $filename;
@@ -143,10 +139,6 @@ function uploadfile($file, $path,
         $ext = $custom_ext[$mimetype];
     }
     if ($generate_name) {
-        $uploadedName = $_FILES[$file]['name'];
-        if(empty($ext)) {
-            $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
-        }
         $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
     } else {
         $filename = $_FILES[$file]['name'];
