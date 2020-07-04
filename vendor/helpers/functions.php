@@ -130,7 +130,7 @@ function uploadfile($file, $path,
             'image/gif' => 'gif',
             'image/png' => 'png'
         ]);
-        $ext = $custom_ext[$mime_type];
+        $ext = $custom_ext[$mimetype];
     }
     if ($generate_name) {
         $uploadedName = $_FILES[$file]['name'];
