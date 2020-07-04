@@ -122,20 +122,26 @@ function uploadfile($file, $path,
         }
     }
     $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
-    $finfo = finfo_open(FILEINFO_MIME_TYPE); // return mime-type extension
-    echo finfo_file($finfo, $_FILES[$file]['tmp_name']);
-    finfo_close($finfo);
-    print_r($mimetype); die;
     if (!in_array($mimetype, $mime_type)) {
         return "invalid_image";
+    }else{
+        $custom_ext = array([
+            'image/jpeg' => 'jpg',
+            'image/gif' => 'gif',
+            'image/png' => 'png'
+        ]);
+        $ext = $custom_ext[$mime_type];
     }
     if ($generate_name) {
         $uploadedName = $_FILES[$file]['name'];
-        $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
+        if(empty($ext)) {
+            $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
+        }
         $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
     } else {
         $filename = $_FILES[$file]['name'];
     }
+    echo $filename; die;
     $size = @getimagesize($_FILES[$file]['tmp_name']);
     if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
         return "invalid_image";
