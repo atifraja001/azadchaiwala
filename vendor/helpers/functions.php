@@ -129,6 +129,7 @@ function uploadfile($file, $path,
         $filename = $_FILES[$file]['name'];
     }
     $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
+    print_r($mimetype); die;
     if (!in_array($mimetype, $mime_type)) {
         return "invalid_image";
     }
