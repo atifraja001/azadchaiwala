@@ -19,9 +19,11 @@
     <link href="<?=app_url()?>/assets/img/favicon.ico" rel="apple-touch-icon"
           sizes="76x76">
     <link href="<?=app_url()?>/assets/img/favicon.ico" rel="shortcut icon">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="<?=app_url()?>/assets/css/fontawesome/css/all.min.css">
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700&display=swap" rel="stylesheet">
-    <!-- CSS FILES -->
+    <!-- CSS FILES --> 
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/fonts/iconfont.css">
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/css/swiper.min.css">
@@ -31,53 +33,431 @@
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/css/style.css">
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/css/responsive.css">
     <link rel="stylesheet" href="<?=app_url()?>/assets/html/css/color-1.css">
+
+
+
+
+    <style type="text/css">
+        .navbar {
+  padding: 0px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand > img {
+  width: 100%;
+  height: 60px;
+}
+
+@media (max-width: 779px) {
+  .navbar-brand {
+    width: 70%;
+  }
+
+  .navbar-brand > img {
+    width: 100% !important;
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-brand > img {
+    width: 100% !important;
+    height: 50px !important;
+  }
+}
+
+@media (min-width: 990px) {
+  .navbar-collapse > ul {
+    display: none;
+  }
+}
+
+.number {
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.number > small {
+  color: #c5c0c0;
+  font-size: 17px;
+  display: block;
+  text-align: right;
+}
+
+.header__under-header {
+  display: flex;
+}
+
+@media (max-width: 990px) {
+  .header__uder-header {
+    display: none;
+  }
+
+  .header__under-item {
+    padding: 5px;
+  }
+
+  .nav-link {
+    margin-top: 10px;
+  }
+
+  .number {
+    display: none;
+  }
+}
+
+.header__under-item {
+  margin: 20px !important;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header__under-item:hover {
+  color: #e4e4e4;
+}
+@media (min-width: 900px) {
+  .number-mobile {
+    display: none;
+  }
+}
+.navbar-dark .navbar-toggler-icon::after {
+    font-family: 'icomoon';
+    content: "\ef8c";
+    font-size: 24px;
+    color: #ffffff;
+}
+@media (max-width: 992px){
+.navbar-dark .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link, .nav-link.dropdown-toggle {
+    color: #fff !important;
+}}
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+  .site-footer {
+    padding-bottom: 430px;
+  }
+}
+.containerflex {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.flexcolumn {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.flexcolum-2 > a {
+  padding: 5px;
+}
+
+.flexcolum-2 > a > i {
+  font-size: 24px;
+  color: white;
+}
+
+
+
+.site-footer {
+  border-top: 0px !important;
+  background-color: #262626;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: white;
+}
+@media (max-width: 400px) {
+  .site-footer {
+    margin-bottom: 45px;
+  }
+}
+
+.site-footer p,
+.site-footer p i {
+  color: white;
+  font-family: var(--course-family);
+}
+
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+
+.site-footer hr.small {
+  margin: 20px 0;
+}
+
+.site-footer h6 {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-family: var(--course-bold-family);
+  font-weight: 500;
+}
+
+.site-footer a {
+  color: white;
+}
+
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  display: block;
+}
+
+.footer-links a {
+  color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links.inline li {
+  display: inline-block;
+}
+
+.site-footer .social-icons {
+  text-align: right;
+}
+
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-icons a.youtube:hover {
+  background-color: #ff3400;
+}
+
+.social-icons a.instagram:hover {
+  background-color: #bc0b97;
+}
+
+.social-icons a.tiktok:hover {
+  background-color: black;
+}
+
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89;
+}
+
+
+
+
+
+
+    </style>
+        
+
 </head>
 <body>
+
+
+
+<!--Header Start-->
+<header id="header" class="text-left text-white" style="background:#111111;">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand" href="<?=app_url()?>/">
+        <img src="<?=app_url()?>/assets/img/institute-logo-black.jpg" alt="logo of azadchaiwala">
+      </a>
+      <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse p-4" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item <?=(isset($courses)) ? "active": ""?>">
+            <a class="nav-link" href="<?=app_url()?>/courses">LEARN SKILLS</a>
+            </li>
+            <li class="nav-item <?=(isset($faq)) ? "active": ""?>">
+                <a class="nav-link" href="<?=app_url()?>/faqs">FAQ'S</a>
+            </li>
+            <li class="nav-item <?=(isset($gallery)) ? "active": ""?>">
+                <a class="nav-link" href="<?=app_url()?>/gallery">OUR PHOTOS</a>
+            </li>
+            <li class="nav-item <?=(isset($gallery)) ? "active": ""?>">
+                <a class="nav-link" href="<?=app_url()?>/accommodation">ACCOMMODATION</a>
+            </li>
+            <li class="nav-item <?=(isset($payments)) ? "active": ""?>">
+                <a class="nav-link" href="<?=app_url()?>/payments">PAYMENTS</a>
+            </li>
+            <li class="nav-item <?=(isset($about)) ? "active": ""?>">
+                <a class="nav-link" href="<?=app_url()?>/about">ABOUT</a>
+            </li>
+            <li class="nav-item <?=(isset($contact)) ? "active": ""?>">
+                <a class="nav-link" href="<?= app_url()?>/contact">CONTACT</a>
+            </li>
+            <li class="nav-item <?=(isset($account)) ? "active": ""?>">
+                <a class="nav-link" href="<?= app_url()?>/account">My Account</a>
+            </li>
+        </ul>
+        <div class="number">
+            Call Us - 0344 88 84 899<br>
+                <small>Monday to Friday 9am to 5pm</small>
+        </div>
+ 
+      </div>
+    </nav>
+</header>
+
+<div class="container-fluid" style="background-color: #4B2A42">
+    <div class="text-center">
+        <div class="header__uder-header">
+            <a class="header__under-item" href="<?=app_url()?>/courses">LEARN SKILLS</a>
+            <a class="header__under-item" href="<?=app_url()?>/faqs">FAQ'S</a>
+            <a class="header__under-item" href="<?=app_url()?>/gallery">OUR PHOTOS</a>
+            <a class="header__under-item" href="<?=app_url()?>/accommodation">ACCOMMODATION</a>
+            <a class="header__under-item" href="<?=app_url()?>/payments">PAYMENTS</a>
+            <a class="header__under-item" href="<?=app_url()?>/about">ABOUT</a>
+            <a class="header__under-item" href="<?= app_url()?>/contact">CONTACT US</a>
+            <a class="header__under-item" href="<?= app_url()?>/account">MY ACCOUNT</a>
+        </div>
+        <div class="number-mobile">
+            <h3 class="font-weight-bold text-dark" style="margin-bottom: -3px; font-size: 23px; color: white !important;">Call Us - 0344 88 84 899</h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="dtr-wrapper" class="clearfix">
     <!-- Header
 ============================================= -->
-    <header id="dtr-header-global" class="fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark dtr-menu">
-            <div class="container">
-
-                <!-- light logo -->
-                <a class="navbar-brand logo-light" href="<?=app_url()?>/"><img
-                        src="<?=app_url()?>/assets/html/images/html-logo.png"
-                        alt="logo"></a>
-                <!-- dark logo -->
-                <a class="navbar-brand logo-dark" href="<?=app_url()?>/"><img
-                        src="<?=app_url()?>/assets/html/images/html-logo.png" alt="logo"></a>
-
-                <!-- nav menu toggler-->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- menu starts-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="dtr-scrollspy navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="<?=app_url()?>/">Main Site</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#products">Payment</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">FAQ</a></li>
-                    </ul>
-                </div>
-                <!-- menu ends-->
-
-                <!-- button here -->
-                <div class="dtr-btn ml-4 d-none d-lg-block"><a href="tel:+923448884899">0344 88 84 899 <span><i
-                        class="icon-phone-call" aria-hidden="true"></i></span> </a></div>
-                <!-- button ends -->
-            </div>
-        </nav>
-    </header>
+    
     <!-- header ends
 ================================================== -->
 
     <!-- hero section starts
 ================================================== -->
-    <section id="home" class="hero-section dtr-py-8 hero-default-bg bg-blue">
+    <section id="home" class="hero-section dtr-py-8 hero-default-bg bg-blue" style="padding-top:4rem;">
         <div class="container">
             <div class="row align-items-center">
 
@@ -87,7 +467,7 @@
                     <!-- Heading -->
                     <h4 class="wow fadeInUp">In 2,000 pkr only</h4>
                     <h1 class="dtr-mb-4 wow fadeInUp" data-wow-delay="0.1s">
-                        HTML CRASH <br> COURSE ONLINE
+                        BASIC PROGRAMING <br> CRASH  COURSE ONLINE
                     </h1>
                     <div class="html-main-video">
                         <video controls onloadstart="this.volume=0.2" style="width:100%;margin-top:-18px;">
@@ -261,12 +641,12 @@
 
 
     <!-- text detail section -->
-    <section class="details" id="details">
+    <section class="details" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div style="padding: 20px; background: #f7f7f7; margin-bottom:65px;">
-                    <p style="color: black; text-align: center;">Technically, HTML "Hypertext Markup Language" is
+                    <p style="color: black; " id="details">Technically, HTML "Hypertext Markup Language" is
                                         a programming language. Whether or not some people consider HTML a real
                                         programming language is
                                         not terribly important for your or Pakistan's success.
@@ -328,141 +708,18 @@
         </div>
         <!-- tabs nav ends -->
 
-        <div data-target=".dtr-scrollspy-tabs">
+        <!-- 
 
-            <!-- tab 1 starts -->
-            <section id="tab1" class="dtr-sticky-tabs-section">
-                <div class="dtr-sticky-tabs-content">
-                    <div class="container">
-                        <div class="row align-items-center">
 
-                            <!-- column 1 starts -->
-                            <div class="col-12 col-md-7 dtr-sm-mb-30px wow fadeInLeft" data-wow-delay="0.1s">
-                                <video controls onloadstart="this.volume=0.2" style="width:100%;">
-                                    <source src="<?=app_url()?>/assets/html/video/easypaisa.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <!-- column 1 ends -->
 
-                            <!-- column 2 starts -->
-                            <div class="col-12 col-md-5 wow fadeInRight" data-wow-delay="0.1s">
 
-                                <!-- Icon Image -->
-                                <img src="<?=app_url()?>/assets/html/images/easypaisa.png" alt="logo" height="50"
-                                     class="dtr-mb-4">
+        tags itay ason
 
-                                <!-- Heading -->
-                                <h2 class="dtr-mb-4">How to Send using EasyPaisa?</h2>
-
-                                <!-- Text -->
-                                <p class="dtr-mb-5">Watch this video tutorial on how to send fee using EasyPaisa mobile
-                                    account</p>
-                            </div>
-                            <!-- column 2 ends -->
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- tab 1 ends -->
-
-            <!-- tab 2 starts -->
-            <section id="tab2" class="dtr-sticky-tabs-section">
-                <div class="dtr-sticky-tabs-content">
-                    <div class="container">
-                        <div class="row align-items-center">
-
-                            <!-- column 1 starts -->
-                            <div class="col-12 col-md-5 dtr-sm-mb-30px wow fadeInRight" data-wow-delay="0.1s">
-
-                                <!-- Icon Image -->
-                                <img src="<?=app_url()?>/assets/html/images/jazzcash.png" height="50" alt="logo"
-                                     class="dtr-mb-4">
-
-                                <!-- Heading -->
-                                <h2 class="dtr-mb-4">How to Send using JazzCash?</h2>
-
-                                <!-- Text -->
-                                <p class="dtr-mb-5">Watch this video tutorial on how to send fee using JazzCash mobile
-                                    account</p>
-                            </div>
-                            <!-- column 1 ends -->
-
-                            <!-- column 2 starts -->
-                            <div class="col-12 col-md-7 text-right wow fadeInLeft" data-wow-delay="0.1s">
-                                <video controls onloadstart="this.volume=0.2" style="width:100%;">
-                                    <source src="<?=app_url()?>/assets/html/video/jazzcash.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <!-- column 2 ends -->
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- tab 2 ends -->
-
-            <!-- tab 3 starts -->
-            <section id="tab3" class="dtr-sticky-tabs-section">
-                <div class="dtr-sticky-tabs-content">
-                    <div class="container">
-                        <div class="row align-items-center">
-
-                            <!-- column 1 starts -->
-                            <div class="col-12 col-md-7 dtr-sm-mb-30px wow fadeInLeft" data-wow-delay="0.1s">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img src="<?=app_url()?>/assets/img/dubai-logo.png" class="img-fluid">
-                                        <div class="table-responsive mt-4">
-                                            <table class="table text-left">
-                                                <tr>
-                                                    <td><b>Bank Name</b></td>
-                                                    <td>Dubai Islamic Bank</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>Account Title</b></td>
-                                                    <td>Azad Chaiwala Institute</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>Account Number</b></td>
-                                                    <td>032045 4038006</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>SWIFT</b></td>
-                                                    <td>DUIBPKKAXXX</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>IBAN</b></td>
-                                                    <td>PK25DUIB0000000454038006</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- column 1 ends -->
-
-                            <!-- column 2 starts -->
-                            <div class="col-12 col-md-5 wow fadeInRight" data-wow-delay="0.1s">
-
-                                <!-- Icon Image -->
-                                <img src="<?=app_url()?>/assets/html/images/bank_transfer.png" height="50" alt="logo" class="dtr-mb-4">
-
-                                <!-- Heading -->
-                                <h2 class="dtr-mb-4">Our Bank Details</h2>
-
-                                <!-- Text -->
-                                <p class="dtr-mb-5">use these bank details to send course fee.</p>
-
-                            </div>
-                            <!-- column 2 ends -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- tab 3 ends -->
-
-        </div>
+        -------
+        ------
+        -----
+        -----------------
+         -->
     </section>
     <!-- sticky tabs starts
 ================================================== -->
@@ -573,19 +830,97 @@
     <!-- footer starts
 ================================================== -->
 
-    <footer id="dtr-footer-global" class="bg-blue color-white">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12 col-md-12"> &copy; copyright 2020. AzadChaiwala.com</div>
+
+
+
+
+<!-- Site footer -->
+<footer class="site-footer" style="border-top:1px solid white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 site-footer_text">
+                <h6 style="font-size: 30px;">Azad Chaiwala</h6>
+                <p class="text-justify">We teach you skills which are far better than any RATTA based degree in Pakistan Because "SKILL is the NEW DEGREE"</p>
+                <p><a href="<?=app_url()?>/aboutme" style="text-decoration: underline" target="_blank">Know more about Azad Chaiwala</a></p>
             </div>
-            <!-- copyright row ends -->
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-4">
+                <h6>Contact us</h6>
+                <p>Email: <a href="mailto:admin@azadchaiwala.pk"><span style="color: white; ">admin@AzadChaiwala.pk</span></a></p>
+                <p style="margin-top: -15px;">Phone: <a href="tel:+923448884899"><span style="color: white;">0344 88 84 899</span></a></p>
+                <p style="margin-top: -15px;">Address: <span style="color: white">
+                                Azad Chaiwala Institute, <br>
+                                Sector F/3 (Near Radio 101) <br>
+                                Kotli Road Mirpur, Azad Kashmir</p>
+            </div>
         </div>
-    </footer>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">All Rights Reserved | Copyright &copy; <a href="https://azadchaiwala.pk" target="_blank">Azad Chaiwala Institute</a> <?=date('Y');?>
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="https://www.facebook.com/AzadChaiwala/" target="_blank"><i class="fab fa-facebook-square text-white"></i></a></li>
+                    <li><a class="twitter" href="https://twitter.com/azadchaiwala" target="_blank"><i class="fab fa-twitter text-white"></i></a</li>
+                    <a href="https://www.tiktok.com/@azadchaiwalaofficial/" target="_blank" class="tiktok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#00F2EA" d="M20.023 18.111v-1.703a13.17 13.17 0 0 0-1.784-.13c-7.3 0-13.239 5.94-13.239 13.24 0 4.478 2.238 8.442 5.652 10.839a13.187 13.187 0 0 1-3.555-9.014c0-7.196 5.77-13.064 12.926-13.232"/>
+                                <path fill="#00F2EA" d="M20.335 37.389c3.257 0 5.914-2.591 6.035-5.82l.011-28.825h5.266a9.999 9.999 0 0 1-.17-1.825h-7.192l-.012 28.826c-.12 3.228-2.778 5.818-6.034 5.818a6.006 6.006 0 0 1-2.805-.694 6.037 6.037 0 0 0 4.901 2.52M41.484 12.528v-1.602a9.943 9.943 0 0 1-5.449-1.62 10.011 10.011 0 0 0 5.45 3.222"/>
+                                <path fill="#FF004F" d="M36.035 9.305a9.962 9.962 0 0 1-2.461-6.56h-1.927a10.025 10.025 0 0 0 4.388 6.56M18.239 23.471a6.053 6.053 0 0 0-6.046 6.046 6.05 6.05 0 0 0 3.24 5.352 6.007 6.007 0 0 1-1.144-3.526 6.053 6.053 0 0 1 6.046-6.047c.623 0 1.22.103 1.784.28v-7.343a13.17 13.17 0 0 0-1.784-.13c-.105 0-.208.006-.312.008v5.64a5.944 5.944 0 0 0-1.784-.28"/>
+                                <path fill="#FF004F" d="M41.484 12.528v5.59c-3.73 0-7.185-1.193-10.007-3.218v14.617c0 7.3-5.938 13.239-13.238 13.239-2.821 0-5.437-.89-7.587-2.4a13.201 13.201 0 0 0 9.683 4.225c7.3 0 13.239-5.939 13.239-13.238V16.726a17.107 17.107 0 0 0 10.007 3.218V12.75c-.72 0-1.42-.078-2.097-.223"/>
+                                <path fill="#FFF" d="M31.477 29.517V14.9a17.103 17.103 0 0 0 10.007 3.218v-5.59a10.011 10.011 0 0 1-5.449-3.223 10.025 10.025 0 0 1-4.388-6.56h-5.266L26.37 31.57c-.121 3.228-2.778 5.819-6.035 5.819a6.038 6.038 0 0 1-4.901-2.52 6.05 6.05 0 0 1-3.241-5.352 6.053 6.053 0 0 1 6.046-6.046c.622 0 1.219.102 1.784.28v-5.64c-7.156.168-12.926 6.036-12.926 13.232 0 3.48 1.352 6.648 3.555 9.014a13.16 13.16 0 0 0 7.587 2.399c7.3 0 13.238-5.939 13.238-13.239"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <li><a class="youtube" href="https://www.youtube.com/user/AzadChaiwala" target="_blank"><i class="fab fa-youtube text-white"></i></a></li>
+                    <li><a class="instagram" href="https://www.instagram.com/azadchaiwala" target="_blank"><i class="fab fa-instagram text-white"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+    
     <!-- footer ends
 ================================================== -->
 
 </div>
 <!-- #dtr-wrapper ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- JS FILES -->
 <script src="<?=app_url()?>/assets/html/js/jquery.min.js" type="text/javascript"></script>
 <script src="<?=app_url()?>/assets/html/js/bootstrap.min.js" type="text/javascript"></script>

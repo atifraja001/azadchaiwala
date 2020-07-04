@@ -48,16 +48,22 @@ function multiUploadFile($file, $path,
         }
     }
     for($index = 0; $index < $file_count; $index++) {
-        if ($generate_name) {
-            $uploadedName = $_FILES[$file]['name'][$index];
-            $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
-            $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
-        } else {
-            $filename = $_FILES[$file]['name'][$index];
-        }
+        $response = null;
         $mimetype = mime_content_type($_FILES[$file]['tmp_name'][$index]);
         if (!in_array($mimetype, $mime_type)) {
             $response =  "invalid_image";
+        }else{
+            $custom_ext = array(
+                'image/jpeg' => 'jpg',
+                'image/gif' => 'gif',
+                'image/png' => 'png'
+            );
+            $ext = $custom_ext[$mimetype];
+        }
+        if ($generate_name) {
+            $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
+        } else {
+            $filename = $_FILES[$file]['name'][$index];
         }
         $size = @getimagesize($_FILES[$file]['tmp_name'][$index]);
         if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
@@ -66,7 +72,7 @@ function multiUploadFile($file, $path,
         if ($_FILES[$file]['size'][$index] > $file_size) {
             $response =  "invalid_size";
         }
-        if (!empty($file)) {
+        if (!empty($file) && empty($response)) {
             $file_tmp = $_FILES[$file];
             $path_tmp = $path . "/";
             $path_tmp = $path_tmp . $filename;
@@ -121,16 +127,21 @@ function uploadfile($file, $path,
             mkdir($path, 0750, true);
         }
     }
-    if ($generate_name) {
-        $uploadedName = $_FILES[$file]['name'];
-        $ext = strtolower(substr($uploadedName, strripos($uploadedName, '.') + 1));
-        $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
-    } else {
-        $filename = $_FILES[$file]['name'];
-    }
     $mimetype = mime_content_type($_FILES[$file]['tmp_name']);
     if (!in_array($mimetype, $mime_type)) {
         return "invalid_image";
+    }else{
+        $custom_ext = array(
+            'image/jpeg' => 'jpg',
+            'image/gif' => 'gif',
+            'image/png' => 'png'
+        );
+        $ext = $custom_ext[$mimetype];
+    }
+    if ($generate_name) {
+        $filename = round(microtime(true)) . mt_rand() . uniqid() . '.' . $ext;
+    } else {
+        $filename = $_FILES[$file]['name'];
     }
     $size = @getimagesize($_FILES[$file]['tmp_name']);
     if (empty($size) || ($size[0] === 0) || ($size[1] === 0)) {
@@ -490,7 +501,8 @@ function random_str(
     return implode('', $pieces);
 }
 
-function form($var){
+function form($var)
+{
     if (isset($_SESSION)) {
         if (isset($_SESSION[$var])) {
             $msg = $_SESSION[$var];
@@ -498,4 +510,15 @@ function form($var){
             return $msg;
         }
     }
+}
+
+function generatePIN($digits = 6)
+{
+    $i = 0;
+    $pin = "";
+    while ($i < $digits) {
+        $pin .= mt_rand(0, 9);
+        $i++;
+    }
+    return $pin;
 }

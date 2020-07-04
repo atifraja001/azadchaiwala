@@ -4,7 +4,7 @@
     <div class="container text-capitalize text-center">
         <div class="row">
             <div class="col-lg-12 regirsterh">
-                <h1>Registration Success</h1>
+                <h1>VERIFY YOUR EMAIL</h1>
             </div>
         </div>
     </div>
@@ -178,14 +178,18 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+                        <?=showMsg('login')?>
                         <div class="text-center">
-                            <i class="fas fa-check-circle text-success" style="font-size: 64px"></i>
-                            <h2>Email Sent!</h2>
-                            <p>A Verification email has been sent to your email address. Please click the link inside
-                                the email to proceed.</p>
-                            <p class="urdu" style="font-size: 24px; line-height: 45px">
-                                آپ کے ای میل پر ہم نے توثیقی لنک بھیجا ہے۔ برائے مہربانی اگے بڑھنے کے لئے اس لنک پر کلک کریں ۔
-                            </p>
+                            <h4>Enter Verification Pin to complete your registration</h4>
+                            <form method="get" action="<?=app_url()?>/verify">
+                                <div class="form-group">
+                                    <label>Enter PIN</label>
+                                    <input type="text" name="t" class="form-control" style="text-align:center" value="" required autofocus autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success">Verify Email</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
