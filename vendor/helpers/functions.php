@@ -125,11 +125,11 @@ function uploadfile($file, $path,
     if (!in_array($mimetype, $mime_type)) {
         return "invalid_image";
     }else{
-        $custom_ext = array([
+        $custom_ext = array(
             'image/jpeg' => 'jpg',
             'image/gif' => 'gif',
             'image/png' => 'png'
-        ]);
+        );
         $ext = $custom_ext[$mimetype];
     }
     if ($generate_name) {
