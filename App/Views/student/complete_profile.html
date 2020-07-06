@@ -24,20 +24,20 @@
                             <div class="form-group">
                                 <label>Full Name</label>
                                 <input type="text" class="form-control" name="name" autofocus required
-                                       placeholder="Enter Your Name" value="<?=$user['name'];?>">
+                                       placeholder="Enter Your Name" value="<?=__($user['name']);?>">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your Email</label>
                                 <input type="email" class="form-control" name="email" required
-                                       placeholder="Enter your Email" value="<?=$user['email'];?>">
+                                       placeholder="Enter your Email" value="<?=__($user['email']);?>">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your Phone Number</label>
-                                <input type="tel" class="form-control" value="<?=$user['phone_number'];?>"
+                                <input type="tel" class="form-control" value="<?=__($user['phone_number']);?>"
                                        name="phone_number"
                                        required
                                        placeholder="Father / Guardian phone number">

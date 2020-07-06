@@ -38,17 +38,17 @@
                             <tr>
                                 <td><?=$sn?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/students/view-profile/<?=$s['id']?>" class="student-tooltip hover-link" data-id="<?=$s['id']?>"><?=$s['name'];?></a>
+                                    <a href="<?=app_url('admin')?>/students/view-profile/<?=$s['id']?>" class="student-tooltip hover-link" data-id="<?=$s['id']?>"><?=__($s['name']);?></a>
                                     <br>
                                     <a href="<?=app_url('admin')?>/students/edit-student/<?=$s['id']?>">Edit</a> | <a href="<?=app_url('admin')?>/students/delete-student/<?=$s['id']?>" onclick="return confirm('Are you sure?');">Delete</a>
                                 </td>
-                                <td><?=$s['father_name'];?></td>
-                                <td><?=$s['date_of_birth'];?></td>
-                                <td><?=ucfirst($s['gender']);?></td>
-                                <td><?=$s['cnic'];?></td>
-                                <td><?=$s['address'];?></td>
-                                <td><?=$s['email'];?></td>
-                                <td><?=$s['phone_number'];?></td>
+                                <td><?=__($s['father_name']);?></td>
+                                <td><?=__($s['date_of_birth']);?></td>
+                                <td><?=ucfirst(__($s['gender']));?></td>
+                                <td><?=__($s['cnic']);?></td>
+                                <td><?=__($s['address']);?></td>
+                                <td><?=__($s['email']);?></td>
+                                <td><?=__($s['phone_number']);?></td>
                             </tr>
                             <?php $sn++; } ?>
                             </tbody>

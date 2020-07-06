@@ -12,42 +12,42 @@
             <div class="card-body">
                 <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" alt="" class="rounded-circle  mx-auto d-block w-80">
                 <div class="text-center">
-                    <h5 class="mt-2 mb-0"><?=$user['name'];?></h5>
+                    <h5 class="mt-2 mb-0"><?=__($user['name']);?></h5>
                 </div>
 
                 <div class="row mt-4">
                     <table class="table">
                         <tr>
                             <td>Email</td>
-                            <td><?=$user['email'];?></td>
+                            <td><?=__($user['email']);?></td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td><?=$user['phone_number'];?></td>
+                            <td><?=__($user['phone_number']);?></td>
                         </tr>
                         <tr>
                             <td>Father Name</td>
-                            <td><?=$user['father_name'];?></td>
+                            <td><?=__($user['father_name']);?></td>
                         </tr>
                         <tr>
                             <td>Father Phone</td>
-                            <td><?=$user['father_phone'];?></td>
+                            <td><?=__($user['father_phone']);?></td>
                         </tr>
                         <tr>
                             <td>Date of Birth</td>
-                            <td><?=date("d-m-Y", strtotime($user['date_of_birth']));?></td>
+                            <td><?=date("d-m-Y", strtotime(__($user['date_of_birth'])));?></td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td><?=ucfirst($user['gender']);?></td>
+                            <td><?=ucfirst(__($user['gender']));?></td>
                         </tr>
                         <tr>
                             <td>CNIC</td>
-                            <td><?=$user['cnic'];?></td>
+                            <td><?=__($user['cnic']);?></td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td><?=$user['address'];?></td>
+                            <td><?=__($user['address']);?></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center">

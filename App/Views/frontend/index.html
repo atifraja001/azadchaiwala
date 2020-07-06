@@ -50,14 +50,14 @@
 				?>
 			<div class="col-lg-4 col-md-6">
 				<div class="course-card">
-					<a href="<?=app_url()?>/course/<?=$c['slug'];?>">
+					<a href="<?=app_url()?>/course/<?=__($c['slug']);?>">
 						<?php if(isset($heading)){ ?>
 						<div class="course_card-start">
-							<p><?=$heading[rand(0,4)]?></p>
+							<p><?=__($heading[rand(0,4)]);?></p>
 						</div>
 						<?php } ?>
 						<div class="course__card-image">
-							<img src="<?=app_url()?>/getImage?i=<?=$c['id']?>&t=course" alt="<?=$c['course_name']?>"
+							<img src="<?=app_url()?>/getImage?i=<?=__($c['id'])?>&t=course" alt="<?=__($c['course_name']);?>"
 								 class="img-fluid">
 						</div>
 						<?php if($c['id'] == 11 || $c['id'] == 12){ ?>
@@ -70,12 +70,12 @@
 							</div>
 							<div class="col-12">
 								<div class="course__card-fee bg-dark">
-									<i class="far fa-clock text-white"></i> <?=$c['duration'];?>
+									<i class="far fa-clock text-white"></i> <?=__($c['duration']);?>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="course__card-fee"><img src="<?=app_url()?>/assets/img/money.svg" width="22"
-																   height="25"> <?=number_format($c['fee']);?> PKR
+																   height="25"> <?=number_format(__($c['fee']));?> PKR
 								</div>
 							</div>
 						</div>
@@ -83,19 +83,19 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="course__card-fee bg-dark">
-									<i class="far fa-clock text-white"></i> <?=$c['duration'];?>
+									<i class="far fa-clock text-white"></i> <?=__($c['duration']);?>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="course__card-fee"><img src="<?=app_url()?>/assets/img/money.svg" width="22"
-																   height="25"> <?=number_format($c['fee']);?> PKR
+																   height="25"> <?=number_format(__($c['fee']));?> PKR
 								</div>
 							</div>
 						</div>
 						<?php } ?>
 						<div class="course__card-content">
-							<h2><?=$c['course_name']?></h2>
-							<p><?=add3Dots($c['course_description'], 100)?></p>
+							<h2><?=__($c['course_name'])?></h2>
+							<p><?=add3Dots(__($c['course_description']), 100)?></p>
 						</div>
 					</a>
 				</div>
