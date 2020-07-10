@@ -35,6 +35,7 @@ $router->add('gallery', ['controller' => 'HomeController', 'action' => 'gallery'
 $router->add('accommodation', ['controller' => 'HomeController', 'action' => 'accommodation']);
 $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'action' => 'courseregistration']);
 $router->add('course/online-html-crash-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'html_course']);
+$router->add('course/free-online-courses', ['controller' => 'HomeController', 'action' => 'free_courses']);
 
 //Auth Routes
 $router->add('account', ['controller' => 'AuthController', 'action' => 'index']);

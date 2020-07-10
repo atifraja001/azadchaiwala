@@ -165,7 +165,18 @@ class HomeController extends \Core\Controller
     }
 
     public function html_course(){
+
         View::render('frontend/html_course.html');
+
+    }
+
+    // free courses
+
+    public function free_courses(){
+        View::render('frontend/layouts/head.html', ['title' => 'Free Online Courses']);
+        View::render('frontend/layouts/navbar.html');
+        View::render('frontend/freecourses.html');
+        View::render('frontend/layouts/script.html');
     }
 
     // new design of the static page

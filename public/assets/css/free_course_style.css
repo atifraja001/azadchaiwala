@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+*{
+	scroll-behavior: smooth;
+}
+.free-course-hero{
+	padding: 30px 0px;
+	background:lightblue;
+}
+.free-hero-heading{
+	line-height: 80px;
+
+}
+.free-hero-heading,  .free-hero-heading span{
+	font-size: 60px;
+	font-weight: 900;
+	font-family: 'Roboto', sans-serif;
+	color:#000;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+	
+}
+.free-hero-heading>span{
+	position: relative;
+	display: inline-block;
+}
+.free-hero-heading>span::after{
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 10px;
+	bottom: -20px;
+	left: 0;
+	z-index: ;
+	background: yellow;
+	
+}
+.free-course-buttons {
+	margin:30px 0px 0px 0px;
+}
+
+.free-course-buttons>a{
+	padding: 8px 20px;
+	display: inline-block;
+	background:yellow;
+	color:#000;
+	margin-right: 20px;
+	font-size: 17px;
+	font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	word-spacing: 10px;
+}
+.free-course-self{
+	padding:30px 0px;
+}
+.free-heading-secondry{
+	color:#000;
+	font-weight: 700;
+	font-size: 45px;
+	position: relative;
+	display: inline-block;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  
+}
+
+.free-heading-secondry::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 10px;
+	bottom: 5px;
+	left: 0;
+
+	z-index: -1;
+	background: yellow;
+}
+.html-secondary::after{
+	background: #eb8034;
+}
+.css-secondary::after{
+	background: #65eb34;
+}
+.bootstrap-secondary::after{
+	background: #3474eb;
+}
+.javascript-secondary::after{
+	background: #eb34e2;
+}
+.php-secondary::after{
+	background:#eb346e;
+}
+.free-course-box{
+	margin-top: 30px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	border:1px solid rgba(0,0,0,.2);
+	transition: .3s;
+}
+.free-course-box:hover{
+	transform: rotate(-2deg);
+}
+.free-course-image{
+	width:100%;
+	height: auto;
+	object-fit: cover;
+}
+.free-course-title{
+	margin-top:10px;
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+	color:#000;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+.free-course-link{
+	margin-bottom: 1px;
+}
+.free-course-link {
+	margin-top:-10px;
+
+}
+.free-course-link > p{
+	font-family: 'Roboto', sans-serif; 
+}
+.free-course-link >span{
+	font-weight: bold;
+	font-size: 16px;
+	display: inline-block;
+	margin-right: 20px;
+}
