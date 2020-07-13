@@ -53,8 +53,10 @@
 	word-spacing: 10px;
 }
 .free-course-self{
-	padding:30px 0px;
+	padding:20px 0px;
+	
 }
+
 .free-heading-secondry{
 	color:#000;
 	font-weight: 700;
@@ -77,7 +79,7 @@
 	z-index: -1;
 	background: yellow;
 }
-.html-secondary::after{
+/*.html-secondary::after{
 	background: #eb8034;
 }
 .css-secondary::after{
@@ -91,7 +93,7 @@
 }
 .php-secondary::after{
 	background:#eb346e;
-}
+}*/
 .free-course-box{
 	margin-top: 30px;
 	padding: 5px;
@@ -133,4 +135,13 @@ a:hover{
 	font-size: 16px;
 	display: inline-block;
 	margin-right: 20px;
+}
+.list-group-item{
+	font-weight: 600;
+	font-size: 18px;
+}
+.list-group-item>a{
+	display: block;
+	margin-top:5px;
+	margin-left: 5px;
 }
