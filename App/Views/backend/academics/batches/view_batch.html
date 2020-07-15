@@ -71,11 +71,11 @@
                             <tbody>
                             <?php foreach($pending_enrollments as $pe){ ?>
                                 <tr>
-                                    <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$pe['student_id']?>" target="_blank"><?=$pe['name'];?></a></td>
+                                    <td><a href="<?=app_url('admin')?>/students/view-profile/<?=htmlspecialchars($pe['student_id'])?>" target="_blank"><?=htmlspecialchars($pe['name']);?></a></td>
                                     <?php if(is_null($pe['fee_receipt']) || empty($pe['fee_receipt'])){ ?>
                                     <td>Not Paid</td>
                                     <?php }else{ ?>
-                                    <td><a href="<?=app_url()?>/content/receipt_images/<?=$pe['fee_receipt'];?>"
+                                    <td><a href="<?=app_url()?>/content/receipt_images/<?=htmlspecialchars($pe['fee_receipt']);?>"
                                            target="_blank">View Receipt <i class="fa fa-external-link-alt"></i></a></td>
                                     <?php } ?>
                                     <td>
@@ -125,11 +125,11 @@
                             <tbody>
                             <?php foreach($approved_enrollments as $ae){ ?>
                             <tr>
-                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$ae['student_id']?>" target="_blank"><?=$ae['name'];?></a></td>
+                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$ae['student_id']?>" target="_blank"><?=htmlspecialchars($ae['name']);?></a></td>
                                 <?php if(is_null($ae['fee_receipt']) || empty($ae['fee_receipt'])){ ?>
                                 <td>Not Paid</td>
                                 <?php }else{ ?>
-                                <td><a href="<?=app_url()?>/content/receipt_images/<?=$ae['fee_receipt'];?>"
+                                <td><a href="<?=app_url()?>/content/receipt_images/<?=htmlspecialchars($ae['fee_receipt']);?>"
                                        target="_blank">View Receipt <i class="fa fa-external-link-alt"></i> </a></td>
                                 <?php } ?>
                                 <td>

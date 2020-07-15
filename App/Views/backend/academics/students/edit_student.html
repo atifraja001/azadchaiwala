@@ -18,7 +18,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Student Name</label>
-                                            <input type="text" autofocus value="<?=$std['name'];?>" class="form-control" pattern="[a-zA-Z_ ]+" placeholder="Enter Student Name" required name="student_name">
+                                            <input type="text" autofocus value="<?=htmlspecialchars($std['name']);?>" class="form-control" pattern="[a-zA-Z_ ]+" placeholder="Enter Student Name" required name="student_name">
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid student name</div>
                                         </div>
@@ -26,7 +26,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Father Name</label>
-                                            <input type="text" class="form-control" value="<?=$std['father_name'];?>" pattern="[a-zA-Z_ ]+" placeholder="Enter Student's Father Name" required name="father_name">
+                                            <input type="text" class="form-control" value="<?=htmlspecialchars($std['father_name']);?>" pattern="[a-zA-Z_ ]+" placeholder="Enter Student's Father Name" required name="father_name">
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid father name</div>
                                         </div>
@@ -93,7 +93,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Student CNIC</label>
-                                            <input type="text" class="form-control" value="<?=$std['cnic'];?>" name="cnic" pattern=".{15,15}" placeholder="Enter Student CNIC" required id="cnic">
+                                            <input type="text" class="form-control" value="<?=htmlspecialchars($std['cnic']);?>" name="cnic" placeholder="Enter Student CNIC" required id="cnic">
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid CNIC</div>
                                         </div>
@@ -101,7 +101,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Student Email</label>
-                                            <input type="text" class="form-control" value="<?=$std['email'];?>" name="email" placeholder="Enter Student Email" required id="email" data-inputmask="'alias': 'email'" >
+                                            <input type="text" class="form-control" value="<?=htmlspecialchars($std['email']);?>" name="email" placeholder="Enter Student Email" required id="email" >
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid email Address</div>
                                         </div>
@@ -111,7 +111,7 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Student Mobile Number</label>
-                                            <input type="text" class="form-control" value="<?=$std['phone_number'];?>" pattern=".{12,12}" placeholder="Enter Student Contact Number" required id="phone" name="mobile_number">
+                                            <input type="text" class="form-control" value="<?=htmlspecialchars($std['phone_number']);?>" placeholder="Enter Student Contact Number" required id="phone" name="mobile_number">
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid Mobile Number</div>
                                         </div>
@@ -132,7 +132,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Student Address</label>
-                                            <input type="text" class="form-control" value="<?=$std['address'];?>" placeholder="Enter Student Address" required name="address">
+                                            <input type="text" class="form-control" value="<?=htmlspecialchars($std['address']);?>" placeholder="Enter Student Address" required name="address">
                                             <div class="valid-feedback">Looks Good.</div>
                                             <div class="invalid-feedback">Please enter a valid Address</div>
                                         </div>

@@ -50,8 +50,8 @@
                                     $std = $student->getStudentsById($e['student_id']);
 
                                 ?>
-                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"><?=$std['name'];?></a></td>
-                                <td><?=$std['cnic'];?></td>
+                                <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"><?=htmlspecialchars($std['name']);?></a></td>
+                                <td><?=htmlspecialchars($std['cnic']);?></td>
                                 <td>
                                     <a href="<?=app_url()?>/content/receipt_images/<?=$e['fee_receipt']?>" target="_blank">View</a>
                                 </td>
