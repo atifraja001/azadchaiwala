@@ -522,7 +522,3 @@ function generatePIN($digits = 6)
     }
     return $pin;
 }
-
-function __($string){
-    return htmlspecialchars($string);
-}

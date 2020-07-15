@@ -12,42 +12,42 @@
             <div class="card-body">
                 <img src="<?=app_url()?>/content/student_images/<?=$user['picture'];?>" alt="" class="rounded-circle  mx-auto d-block w-80">
                 <div class="text-center">
-                    <h5 class="mt-2 mb-0"><?=__($user['name']);?></h5>
+                    <h5 class="mt-2 mb-0"><?=htmlspecialchars($user['name']);?></h5>
                 </div>
 
                 <div class="row mt-4">
                     <table class="table">
                         <tr>
                             <td>Email</td>
-                            <td><?=__($user['email']);?></td>
+                            <td><?=htmlspecialchars($user['email']);?></td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td><?=__($user['phone_number']);?></td>
+                            <td><?=htmlspecialchars($user['phone_number']);?></td>
                         </tr>
                         <tr>
                             <td>Father Name</td>
-                            <td><?=__($user['father_name']);?></td>
+                            <td><?=htmlspecialchars($user['father_name']);?></td>
                         </tr>
                         <tr>
                             <td>Father Phone</td>
-                            <td><?=__($user['father_phone']);?></td>
+                            <td><?=htmlspecialchars($user['father_phone']);?></td>
                         </tr>
                         <tr>
                             <td>Date of Birth</td>
-                            <td><?=date("d-m-Y", strtotime(__($user['date_of_birth'])));?></td>
+                            <td><?=date("d-m-Y", strtotime(htmlspecialchars($user['date_of_birth'])));?></td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td><?=ucfirst(__($user['gender']));?></td>
+                            <td><?=ucfirst(htmlspecialchars($user['gender']));?></td>
                         </tr>
                         <tr>
                             <td>CNIC</td>
-                            <td><?=__($user['cnic']);?></td>
+                            <td><?=htmlspecialchars($user['cnic']);?></td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td><?=__($user['address']);?></td>
+                            <td><?=htmlspecialchars($user['address']);?></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center">

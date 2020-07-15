@@ -79,8 +79,8 @@
                                     $std = $student->getStudentsById($e['student_id']);
                                 ?>
                                 <td><a href="<?=app_url('admin')?>/students/view-profile/<?=$std['id']?>"
-                                       target="_blank"><?=__($std['name']);?></a></td>
-                                <td><?=__($std['cnic']);?></td>
+                                       target="_blank"><?=htmlspecialchars($std['name']);?></a></td>
+                                <td><?=htmlspecialchars($std['cnic']);?></td>
                                 <td>
                                     <?php if(!is_null($e['fee_receipt'])){ ?>
                                     <a href="<?=app_url()?>/content/receipt_images/<?=$e['fee_receipt']?>"

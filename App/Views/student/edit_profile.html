@@ -24,20 +24,20 @@
                             <div class="form-group">
                                 <label>Full Name</label>
                                 <input type="text" class="form-control" name="name" required
-                                       placeholder="Enter Your Name" value="<?=__($user['name']);?>">
+                                       placeholder="Enter Your Name" value="<?=htmlspecialchars($user['name']);?>">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your Email</label>
                                 <input type="email" class="form-control" name="email" required
-                                       placeholder="Enter your Email" value="<?=__($user['email']);?>">
+                                       placeholder="Enter your Email" value="<?=htmlspecialchars($user['email']);?>">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your Phone Number</label>
-                                <input type="tel" class="form-control" value="<?=__($user['phone_number']);?>"
+                                <input type="tel" class="form-control" value="<?=htmlspecialchars($user['phone_number']);?>"
                                        name="phone_number"
                                        required
                                        placeholder="Father / Guardian phone number">
@@ -47,14 +47,14 @@
                             <div class="form-group">
                                 <label>Your CNIC / B-Form Number</label>
                                 <input type="text" class="form-control" name="cnic" required
-                                       placeholder="Enter CNIC or B-Form number" value="<?=__($user['cnic']);?>">
+                                       placeholder="Enter CNIC or B-Form number" value="<?=htmlspecialchars($user['cnic']);?>">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Your Date of Birth</label>
                                 <input type="text" class="form-control datepicker" name="date_of_birth" required
-                                       placeholder="Date of Birth (dd-mm-yyyy)" value="<?=date('d-m-Y', strtotime(__($user['date_of_birth'])));?>"
+                                       placeholder="Date of Birth (dd-mm-yyyy)" value="<?=date('d-m-Y', strtotime(htmlspecialchars($user['date_of_birth'])));?>"
                                 >
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Father / Guardian Name</label>
-                                <input type="text" class="form-control" required value="<?=__($user['father_name']);?>"
+                                <input type="text" class="form-control" required value="<?=htmlspecialchars($user['father_name']);?>"
                                 name="father_name"
                                 placeholder="Enter your Father / Guardian name">
                             </div>
@@ -113,7 +113,7 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label>Guardian Phone Number</label>
-                                <input type="tel" class="form-control" value="<?=__($user['father_phone']);?>"
+                                <input type="tel" class="form-control" value="<?=htmlspecialchars($user['father_phone']);?>"
                                 name="father_phone"
                                 required
                                 placeholder="Father / Guardian phone number">
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label>Enter Your Complete Address</label>
                                 <textarea class="form-control" rows="6" required name="address"
-                                          placeholder="Enter your complete address"><?=__($user['address']);?></textarea>
+                                          placeholder="Enter your complete address"><?=htmlspecialchars($user['address']);?></textarea>
                             </div>
                         </div>
                     </div>
