@@ -121,4 +121,9 @@ class Batches extends \Core\Model
         $stmt->execute([':id' => $enroll_id]);
         return $stmt->fetch();
     }
+    public function getCannedMsg(){
+        $db = static::getDB();
+        $stmt = $db->query("SELECT count(*), fee_note FROM enrollments GROUP BY fee_note HAVING COUNT(*) > 1");
+        return $stmt->fetchAll();
+    }
 }

@@ -37,6 +37,11 @@ $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'a
 $router->add('course/online-html-crash-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'html_course']);
 $router->add('course/free-online-courses', ['controller' => 'HomeController', 'action' => 'free_courses']);
 
+//tutorials
+$router->add('tutorials/index', ['controller' => 'HomeController', 'action' => 'tutorials_index']);
+$router->add('tutorials/editor', ['controller' => 'HomeController', 'action' => 'tutorials_editor']);
+
+
 //Auth Routes
 $router->add('account', ['controller' => 'AuthController', 'action' => 'index']);
 $router->add('doLogin', ['controller' => 'AuthController', 'action' => 'doLogin']);

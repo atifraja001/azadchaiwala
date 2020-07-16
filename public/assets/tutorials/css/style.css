@@ -1,0 +1,31 @@
+.code
+		{
+			margin: auto;
+			border-left: 5px solid #4caf50;
+			background: white;
+			width: 90%;
+		}
+		.center 
+		{
+		  margin: auto;
+		  /*width: 70%;*/
+		  padding: 10px;
+		}
+		.code-out
+		{
+			background: #f1f1f1;
+		}
+		.code-example
+		{
+			position: relative;
+			left: 5%;
+		}
+		#html-editor
+		{
+			height: 200px;
+		}
+		.code-snip
+		{
+			color: red;
+			background: #f1f1f1;
+		}

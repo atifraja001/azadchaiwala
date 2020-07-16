@@ -179,6 +179,17 @@ class HomeController extends \Core\Controller
         View::render('frontend/layouts/script.html');
     }
 
+    // Tutorials by arslan  
+    public function tutorials_index(){
+        
+        View::render('frontend/tutorials.html');
+    }
+    // Tutorials by arslan  
+    public function tutorials_editor(){
+        
+        View::render('frontend/editor.html');
+    }
+
     // new design of the static page
         public function newCourse(){
         $slug = basename(parse_url(getUrl(), PHP_URL_PATH));

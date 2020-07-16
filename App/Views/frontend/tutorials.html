@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>learn Html online</title>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- Bootstrap js -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<!-- ace.js editor -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="<?=app_url()?>/assets/tutorials/css/style.css">
+</head>
+<body>
+	
+	<div class="container center">
+		<h1>HTML Intro</h1>
+		<div>
+			<button class="btn btn-success" disabled="">< Previous</button>
+			<button class="btn btn-success" style="float: right;" disabled="">Next ></button>
+		</div>
+		<hr>
+		<div class="container">
+			<p style="font-size: 25px;">HTML is the markup language use to create web pages</p>
+			<hr>
+			<h1>What is HTML?</h1>
+			<ul>
+				<li>HTML stands for Hypertext Markup Language</li>
+				<li>The markup language use to create web pages</li>
+				<li>It tells the browser how to load and display the page</li>
+				<li>HTML consists of series of tags</li>
+			</ul>
+			<hr>
+			<h3>How simple HTML document will look like</h3>
+		</div>
+	<div  class="code-out">
+		<br>
+		<h3 class="code-example">Example</h3>
+		<br>
+	<div class="code">
+		<div id="html-editor">
+&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My First Paragraph&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+		</div>
+	</div>
+	<br>
+	<!-- <button class="code-example btn btn-success">Try it Yourself</button> -->
+	<a href="editor.html" class="code-example btn btn-success" target="blank">Try it Yourself</a>
+	<hr>
+	</div>
+	<div class="container">
+		<p style="font-size: 25px;">Example Explained</p>
+		<ul>
+			<li>The <span class="code-snip">&lt;!DOCTYPE html&gt;</span> defines that it is the HTML 5 document.</li>
+			<li>The <span class="code-snip">&lt;html&gt;</span> element is the starting tag of an HTML document.</li>
+			<li>The <span class="code-snip">&lt;head&gt;</span> has the meta information of the web page.</li>
+			<li>The <span class="code-snip">&lt;title&gt;</span> shows the title of the web page<./li>
+			<li>The <span class="code-snip">&lt;body&gt;</span> is the main body of html document which contains all the tags<br>
+				such as paragraphs, headings, images, videos, articles.
+			</li>
+			<li>The <span class="code-snip">&lt;h1&gt;</span> defines the largest headings (there are 6 tipes of headings).</li>
+			<li>The <span class="code-snip">&lt;p&gt;</span> is a paragraph element.</li>
+		</ul>
+	</div>
+	<hr>
+	<div class="container">
+		<p style="font-size: 25px;">Output Will be something like this.</p>
+		<div style="background: #f1f1f1">
+			<h1>My First Heading</h1>
+	    	<p>My First Paragraph</p>
+	    </div>
+	</div>
+	<div>
+			<button class="btn btn-success" disabled="">< Previous</button>
+			<button class="btn btn-success" style="float: right;" disabled="">Next ></button>
+		</div>
+	<script type="text/javascript">
+		var e = ace.edit("html-editor");
+		e.getSession().setMode("ace/mode/html");
+		e.setTheme("ace/theme/xcode");
+		e.setOptions({
+			fontSize: "15pt"
+		});
+	</script>
+</body>
+</html>
