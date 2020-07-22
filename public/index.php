@@ -40,6 +40,8 @@ $router->add('course/free-online-courses', ['controller' => 'HomeController', 'a
 //tutorials
 $router->add('tutorials/index', ['controller' => 'HomeController', 'action' => 'tutorials_index']);
 $router->add('tutorials/editor', ['controller' => 'HomeController', 'action' => 'tutorials_editor']);
+$router->add('tutorials/next', ['controller' => 'HomeController', 'action' => 'tutorials_editor_one']);
+$router->add('tutorials/next1', ['controller' => 'HomeController', 'action' => 'tutorials_editor_two']);
 
 
 //Auth Routes
