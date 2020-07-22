@@ -18,21 +18,14 @@
 		<h1>HTML Intro</h1>
 		<div>
 			<button class="btn btn-success" disabled="">< Previous</button>
-			<button class="btn btn-success" style="float: right;" disabled="">Next ></button>
+			<a href="<?=app_url()?>/tutorials/next" class="btn btn-success" style="float: right;">Next ></a>
 		</div>
 		<hr>
 		<div class="container">
 			<p style="font-size: 25px;">HTML is the markup language use to create web pages</p>
 			<hr>
-			<h1>What is HTML?</h1>
-			<ul>
-				<li>HTML stands for Hypertext Markup Language</li>
-				<li>The markup language use to create web pages</li>
-				<li>It tells the browser how to load and display the page</li>
-				<li>HTML consists of series of tags</li>
-			</ul>
-			<hr>
-			<h3>How simple HTML document will look like</h3>
+			<p style="font-size: 20px;">You will use this editor to write the code!</p>
+			<h3>Do you see <span class="code-snip">&lt;h1&gt;Hello World!&lt;/h1&gt;</span> in editor?</h3>
 		</div>
 	<div  class="code-out">
 		<br>
@@ -40,47 +33,35 @@
 		<br>
 	<div class="code">
 		<div id="html-editor">
-&lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;
-    &lt;body&gt;
-    &lt;h1&gt;My First Heading&lt;/h1&gt;
-    &lt;p&gt;My First Paragraph&lt;/p&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
+
+    	&lt;h1&gt;Hello World!&lt;/h1&gt;
+
 		</div>
 	</div>
 	<br>
 	<!-- <button class="code-example btn btn-success">Try it Yourself</button> -->
-	<a href="<?=app_url()?>/tutorials/editor" class="code-example btn btn-success" target="blank">Try it Yourself</a>
+	<button class="code-example btn btn-success" onclick="tryCode()">Run Code</button>
+	<hr>
+		<h3 class="code-example">Output:</h3>
+	<br>
+	<div class="browser" id="browser">
+		
+	</div>
 	<hr>
 	</div>
 	<div class="container">
-		<p style="font-size: 25px;">Example Explained</p>
-		<ul>
-			<li>The <span class="code-snip">&lt;!DOCTYPE html&gt;</span> defines that it is the HTML 5 document.</li>
-			<li>The <span class="code-snip">&lt;html&gt;</span> element is the starting tag of an HTML document.</li>
-			<li>The <span class="code-snip">&lt;head&gt;</span> has the meta information of the web page.</li>
-			<li>The <span class="code-snip">&lt;title&gt;</span> shows the title of the web page<./li>
-			<li>The <span class="code-snip">&lt;body&gt;</span> is the main body of html document which contains all the tags<br>
-				such as paragraphs, headings, images, videos, articles.
-			</li>
-			<li>The <span class="code-snip">&lt;h1&gt;</span> defines the largest headings (there are 6 tipes of headings).</li>
-			<li>The <span class="code-snip">&lt;p&gt;</span> is a paragraph element.</li>
-		</ul>
+		<p style="font-size: 20px;">That's an HTML element</p>
+		<p>Most of the HTML elements have an opening and closing tag</p>
+		<p>Opening tag looks like this</p>
+		<span class="code-snip">&lt;h1&gt;</span>
+		<p>Closing tag looks like this</p>
+		<span class="code-snip">&lt;/h1&gt;</span>
 	</div>
-	<hr>
-	<div class="container">
-		<p style="font-size: 25px;">Output Will be something like this.</p>
-		<div style="background: #f1f1f1">
-			<h1>My First Heading</h1>
-	    	<p>My First Paragraph</p>
-	    </div>
-	</div>
+	<br>
 	<div>
-			<button class="btn btn-success" disabled="">< Previous</button>
-			<button class="btn btn-success" style="float: right;" disabled="">Next ></button>
-		</div>
+		<button class="btn btn-success" disabled="">< Previous</button>
+		<a href="<?=app_url()?>/tutorials/next" class="btn btn-success" style="float: right;">Next ></a>
+	</div>
 	<script type="text/javascript">
 		var e = ace.edit("html-editor");
 		e.getSession().setMode("ace/mode/html");
@@ -88,6 +69,18 @@
 		e.setOptions({
 			fontSize: "15pt"
 		});
+		function tryCode()
+		{
+			var code = e.getValue();
+			
+			document.getElementById("browser").innerHTML = code;
+		}
+		function tryCode()
+		{
+			var code = e.getValue();
+			
+			document.getElementById("browser").innerHTML = code;
+		}
 	</script>
 </body>
 </html>
