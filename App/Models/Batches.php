@@ -123,7 +123,7 @@ class Batches extends \Core\Model
     }
     public function getCannedMsg(){
         $db = static::getDB();
-        $stmt = $db->query("SELECT count(*), fee_note FROM enrollments GROUP BY fee_note HAVING COUNT(*) > 1");
+        $stmt = $db->query("SELECT * FROM canned_text");
         return $stmt->fetchAll();
     }
 }

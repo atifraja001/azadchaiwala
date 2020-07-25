@@ -210,6 +210,19 @@ class Enrollments extends Model
         }
     }
 
+    public function saveCanned($text)
+    {
+        $db = static::getDB();
+        $text = trim($text);
+        $stmt = $db->prepare("SELECT * FROM canned_text WHERE msg = :text");
+        $stmt->execute([':text' => $text]);
+        if ($stmt->rowCount() == 0) {
+            $stmt = $db->prepare("INSERT INTO canned_text (msg) VALUES (:text)");
+            $stmt->execute([':text' => $text]);
+            return true;
+        }
+    }
+
     public function delete_enroll($data)
     {
         $db = static::getDB();

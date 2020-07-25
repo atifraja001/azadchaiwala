@@ -170,9 +170,17 @@
             <div class="modal-body">
                 <form method="post" action="" class="rejection_form">
                     <textarea class="form-control" placeholder="Enter Rejection Note" name="fee_note"></textarea>
+                    <input type="checkbox" name="canned" value="1" id="canned"> <label for="canned">Save as Canned Response</label>
+                    <br>
                     <button type="submit" class="btn btn-danger">Reject Payment</button>
                 </form>
-
+                <br>
+                <b>Canned Response</b><br>
+                <?php $c = 0; foreach($CannedMsg as $cm){ ?>
+                    <input type="radio" id="id<?=$c?>" class="custom_radio" name="custom_message" value="<?=$cm['msg']?>">
+                    <label for="id<?=$c?>" class="custom_radio"><?=$cm['msg']?></label>
+                <br>
+                <?php $c++; } ?>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">

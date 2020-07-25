@@ -15,10 +15,13 @@ class EnrollmentsController
     public function manage(){
         $enrollments = new \App\Models\Enrollments();
         $enrollments = $enrollments->getApprovedEnroll();
+        $batches = new \App\Models\Batches();
+        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['enrollments'=>'active']);
         View::render('backend/academics/enrollments/manage_enrollments.html', [
-            'enrollments' => $enrollments
+            'enrollments' => $enrollments,
+            'CannedMsg' => $CannedMsg
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -53,10 +56,13 @@ class EnrollmentsController
         }else{
             $enrollments = $enrollments->getPendingEnroll();
         }
+        $batches = new \App\Models\Batches();
+        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['enrollments'=>'active']);
         View::render('backend/academics/enrollments/manage_pending_enrollments.html', [
-            'enrollments' => $enrollments
+            'enrollments' => $enrollments,
+            'CannedMsg' => $CannedMsg
         ]);
         View::render('backend/layouts/script.html');
     }

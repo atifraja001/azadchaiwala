@@ -203,6 +203,11 @@
             }
         });
     });
+    $(".custom_radio").on('click', function () {
+        let val = $("input[name=custom_message]:checked").val();
+        console.log(val);
+        $("textarea[name=fee_note]").text(val);
+    });
     // Form Validator
     (function() {
         'use strict';

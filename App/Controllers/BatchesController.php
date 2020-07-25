@@ -33,6 +33,7 @@ class BatchesController
         $total_enrolled = $batches->countEnrolledStudents($batch['id']);
         $pending_enrollments = $batches->getPendingEnrollments($request['id']);
         $approved_enrollments = $batches->getApprovedEnrollments($request['id']);
+        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['batches'=>'active']);
         View::render('backend/academics/batches/view_batch.html', [
@@ -40,7 +41,8 @@ class BatchesController
             'course' => $course,
             'total_enrolled' => $total_enrolled,
             'pending_enrollments' => $pending_enrollments,
-            'approved_enrollments' => $approved_enrollments
+            'approved_enrollments' => $approved_enrollments,
+            'CannedMsg' => $CannedMsg
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -113,6 +115,12 @@ class BatchesController
             ':status' => $request['sid'],
             ':fee_note' => !empty($_POST['fee_note']) ? $_POST['fee_note'] : NULL,
         ];
+        if(!empty($_POST['canned'])){
+            if($_POST['canned'] == 1){
+                $enroll = new \App\Models\Enrollments();
+                $std = $enroll->saveCanned($data[':fee_note']);
+            }
+        }
         $enroll = new \App\Models\Enrollments();
         $std = $enroll->getStudentByEnrollId($data[':enroll_id']);
         $batch = new \App\Models\Batches();
