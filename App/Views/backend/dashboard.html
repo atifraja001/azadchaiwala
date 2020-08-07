@@ -10,7 +10,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Students</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Students</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($std);?></div>
                     </div>
                     <div class="col-auto">
@@ -58,7 +58,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Enrolled Students</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Enrollments</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $approved['total_active_enroll'];?></div>
                     </div>
                     <div class="col-auto">
@@ -74,7 +74,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending Enrollments</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending Fee Enrollments</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $pending['total_active_enroll'];?></div>
                     </div>
                     <div class="col-auto">
@@ -90,8 +90,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">All Student Active and Pending avaliable batches</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $all['total_active_enroll'];?></div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Paying Students</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $all['paying_students'];?></div>
                     </div>
                     <div class="col-auto">
                       <i class="far fa-money-bill-alt fa-2x text-gray-300"></i>
@@ -106,11 +106,11 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Account</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Amount Paid for Courses</div>
                       <?php
 
                       ?>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($usr);?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?=number_format($totalPaid);?> <small>pkr</small></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -119,32 +119,5 @@
                 </div>
               </div>
             </div>
-            <!-- FAQS -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">FAQS</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                            <?php
-                            echo count($faqs);
-                            ?>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-question-circle fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-
         </div>

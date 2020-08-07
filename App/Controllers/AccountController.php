@@ -207,7 +207,9 @@ class AccountController
         $terms = $courses->GetCourseTerms($course_id);
         foreach ($terms as $term){
             ?>
-                <li><?=$term['detail']?></li>
+            <div class="checkbox">
+                <label style="font-size: 16px;"><input type="checkbox" value="" required> <?=$term['detail']?></label>
+            </div>
             <?php
         }
     }
