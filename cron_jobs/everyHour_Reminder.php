@@ -1,6 +1,6 @@
 <?php
+date_default_timezone_set ("Asia/Karachi");
 require dirname(__DIR__) . '/vendor/autoload.php';
-
 use App\Config;
 use App\Controllers\EmailController;
 use App\Models\Batches;
@@ -43,7 +43,7 @@ foreach ($enrollments as $enroll) {
     $ed = date('Y-m-d H:i:s', strtotime(" -31 minutes"));
     if (date("Y-m-d") == date("Y-m-d", strtotime($hour48)) && date("H") == date("H", strtotime($hour48))) {
         $batch = $batchModel->getBatchInfo($enroll['batch_id']);
-        if ($batch['start_date'] < date('Y-m-d')) {
+        if (strtotime($batch['start_date']) > time()) {
             $email->sendEmail('fee_reminder', [
                 'email_to' => $enroll['email']
             ]);
