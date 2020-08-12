@@ -78,9 +78,11 @@ class EnrollmentsController
         $course = $course->getCourseByBatchId($batch['id']);
         $email = new \App\Controllers\EmailController();
         $email->sendEmail('registration_verify', [
-            'email_to' => $std['email'],
-            'course' => $course['course_name'],
-            'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+            'student_name' => $std['name'],
+            'course_name' => $course['course_name'],
+            'start_time' => date("h:i a", strtotime($batch['start_time'])),
+            'start_date' => date("jS F Y", strtotime($batch['start_date'])),
+            'course_fee' => number_format($course['course_fee'])
         ]);
         if($std){
             redirectWithMessage(app_url('admin').'/enrollments/pending_manage', 'Enrollments Status Changed to Paid', 'pendingstatus');

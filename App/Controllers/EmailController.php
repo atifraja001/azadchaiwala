@@ -62,7 +62,12 @@ class EmailController
              */
             $to = $data['email_to']; // send to user
             $subject = 'Payment Verified - Azad Chaiwala Institute';
-            $content = $this->RegistrationVerified($data['start_date'], $data['course']);
+            $content = $this->RegistrationVerified(
+                $data['student_name'],
+                $data['course_name'],
+                $data['start_time'],
+                $data['start_date'],
+                $data['course_fee']);
         } else if ($type == "registration_rejected") {
             /*
              * Required {email_to, course}
@@ -173,11 +178,13 @@ class EmailController
         $content = str_replace(":year", date('Y'), $content);
         return $content;
     }
-    protected function RegistrationVerified($start_date, $course){
+    protected function RegistrationVerified($student_name, $course_name, $start_time, $start_date, $course_fee){
         $content = file_get_contents("../App/Views/email_templates/registration_verified.html");
-        $content = str_replace(":course", $course, $content);
+        $content = str_replace(":student_name", $student_name, $content);
+        $content = str_replace(":course_name", $course_name, $content);
+        $content = str_replace(":start_time", $start_time, $content);
         $content = str_replace(":start_date", $start_date, $content);
-        $content = str_replace(":year", date('Y'), $content);
+        $content = str_replace(":course_fee", $course_fee, $content);
         return $content;
     }
     protected function RegistrationRejected($course){
