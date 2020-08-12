@@ -134,7 +134,7 @@ class BatchesController
                 'course_name' => $course['course_name'],
                 'start_time' => date("h:i a", strtotime($batch['start_time'])),
                 'start_date' => date("jS F Y", strtotime($batch['start_date'])),
-                'course_fee' => number_format($course['course_fee'])
+                'course_fee' => number_format($course['fee'])
             ]);
         }else if($data[':status'] == 2){
             $email->sendEmail('registration_rejected', [
