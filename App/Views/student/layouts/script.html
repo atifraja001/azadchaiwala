@@ -187,7 +187,26 @@
         });
     });
 
-</script>
 
+
+    $(document).on("change", ".status", function (e) {
+        let course_id = $(this).attr("data-id");
+        let status_post = "";
+        if($(this).prop("checked") == true){
+            status_post = "add";
+        }else{
+            status_post = "remove";
+        }
+        $.ajax({
+            url: "<?=app_url()?>/account/upcoming_batch_mailing_list",
+            method: "post",
+            data:{status:status_post, course_id:course_id},
+            success:function (r) {
+
+            }
+        })
+    });
+
+</script>
 </body>
 </html>

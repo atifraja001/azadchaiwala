@@ -59,6 +59,7 @@ $router->add('reset-password', ['controller' => 'AuthController', 'action' => 'd
 $router->add('doResetPassword', ['controller' => 'AuthController', 'action' => 'doResetPasswordPost']);
 
 
+
 //Account Routes
 $router->add('account/dashboard', ['controller' => 'AccountController', 'action' => 'dashboard']);
 $router->add('account/my-courses', ['controller' => 'AccountController', 'action' => 'my_courses']);
@@ -79,7 +80,7 @@ $router->add('account/my-courses/delete/{id:\d+}', ['controller' => 'AccountCont
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
 $router->add('getCoursesByType', ['controller' => 'AccountController', 'action' => 'getCoursesByType']);
 $router->add('getTerms', ['controller' => 'AccountController', 'action' => 'getTermsByCourse']);
-
+$router->add('account/upcoming_batch_mailing_list', ['controller' => 'AccountController', 'action' => 'upcoming_batch_mailing_list']);
 
 
 

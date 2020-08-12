@@ -66,10 +66,12 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-12">
+        <h4>Inform me for new batches</h4>
+    </div>
     <div class="col-12 col-md-4 col-lg-4 col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h4>Upcoming Batch Reminder</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -87,8 +89,12 @@
                         <tr>
                             <td><?=$c['course_name'];?></td>
                             <td style="width: 10%"><label class="label-switch switch-primary" style="margin-bottom: 0px; margin-top: 10px;">
-                                <input type="checkbox" class="switch switch-bootstrap status" name="status" id="status"
-                                       value="1">
+                                <?php
+                                $account = new \App\Models\Account();
+                                      $res = $account->CheckMailingList($c['id']);
+                                ?>
+                                <input type="checkbox" class="switch switch-bootstrap status" name="status" id="status1"
+                                       value="1" data-id="<?=$c['id'];?>" <?=($res == 1) ? "checked" : ""?>>
                                 <span class="lable"></span></label></td>
                         </tr>
                         <?php } } ?>
@@ -100,7 +106,6 @@
     <div class="col-12 col-md-4 col-lg-4 col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h4>Upcoming Batch Reminder</h4>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -118,8 +123,12 @@
                         <tr>
                             <td><?=$c['course_name'];?></td>
                             <td style="width: 10%"><label class="label-switch switch-primary" style="margin-bottom: 0px; margin-top: 10px;">
+                                <?php
+                                $account = new \App\Models\Account();
+                                      $res = $account->CheckMailingList($c['id']);
+                                ?>
                                 <input type="checkbox" class="switch switch-bootstrap status" name="status" id="status1"
-                                       value="1">
+                                       value="1" data-id="<?=$c['id'];?>" <?=($res == 1) ? "checked" : ""?>>
                                 <span class="lable"></span></label></td>
                         </tr>
                         <?php } } ?>

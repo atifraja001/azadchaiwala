@@ -402,4 +402,12 @@ class AccountController
         $enroll = $enrollment->deleteEnrollById($request['id']);
         redirectWithMessage('', 'Enrollment Removed', 'student');
     }
+    public function upcoming_batch_mailing_list(){
+        $account = new \App\Models\Account();
+        if($_POST['status'] == "remove"){
+            $account->MailingList($_SESSION['user_login'], $_POST['course_id'], 0);
+        }else if ($_POST['status'] == "add"){
+            $account->MailingList($_SESSION['user_login'], $_POST['course_id'], 1);
+        }
+    }
 }

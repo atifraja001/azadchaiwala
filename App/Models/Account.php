@@ -222,4 +222,22 @@ class Account extends \Core\Model
         $q->execute([':pin' => $pin]);
         return $q->rowCount();
     }
+    public function MailingList($user_id, $course_id, $type){
+        $db = static::getDB();
+        if($type == 1){
+            echo $type;
+            $q = $db->prepare("INSERT INTO upcoming_batch_mailing_list (course_id, student_id) VALUES (:course_id, :student_id)");
+            $q->execute([':student_id' => $user_id, ':course_id' => $course_id]);
+        }else if ($type == 0){
+            $q = $db->prepare("DELETE FROM upcoming_batch_mailing_list WHERE course_id = :course_id AND student_id = :student_id");
+            $q->execute([':student_id' => $user_id, ':course_id' => $course_id]);
+        }
+    }
+    public function CheckMailingList($course_id){
+        $db = static::getDB();
+        $student_id = $_SESSION['user_login'];
+        $q = $db->prepare("SELECT * FROM upcoming_batch_mailing_list WHERE course_id = :course_id AND student_id = :student_id");
+        $q->execute([':student_id' => $student_id, ':course_id' => $course_id]);
+        return $q->rowCount();
+    }
 }
