@@ -62,8 +62,7 @@ class EmailController
              */
             $to = $data['email_to']; // send to user
             $subject = 'Payment Verified - Azad Chaiwala Institute';
-            $content = $this->RegistrationVerified(
-                $data['student_name'],
+            $content = $this->RegistrationVerified($data['student_name'],
                 $data['course_name'],
                 $data['start_time'],
                 $data['start_date'],
