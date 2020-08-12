@@ -44,9 +44,15 @@ require dirname(__DIR__) . '/vendor/autoload.php';
                     //$db->beginTransaction();
                     showSuccess('Transaction Started');
                     // for table badges or batches
-                    $db->exec('ALTER TABLE `enrollments` ADD `fee_note` TEXT NULL AFTER `fee_receipt`, ADD `fee_submitted_at` TIMESTAMP NULL AFTER `fee_note`;');
-                    $db->exec('UPDATE enrollments SET fee_submitted_at = created_at');
-
+                    $db->exec('CREATE TABLE `upcoming_batch_mailing_list` (
+                          `id` bigint(20) NOT NULL,
+                          `student_id` int(11) NOT NULL,
+                          `course_id` int(11) NOT NULL
+                        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;');
+                    $db->exec('ALTER TABLE `upcoming_batch_mailing_list` ADD PRIMARY KEY (`id`);');
+                    $db->exec('ALTER TABLE `upcoming_batch_mailing_list`
+                        MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+                        COMMIT;');
                     //$db->commit();
                     //}catch(Exception $e){
                     //showError("Rolling Back!");
