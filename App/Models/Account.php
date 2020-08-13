@@ -240,4 +240,10 @@ class Account extends \Core\Model
         $q->execute([':student_id' => $student_id, ':course_id' => $course_id]);
         return $q->rowCount();
     }
+
+    public function updatePin($user_id, $pin){
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE student_login SET email_token = :pin, token_requested_at = current_timestamp() WHERE id = :user_id");
+        $q->execute([':user_id' => $user_id, ':pin' => $pin]);
+    }
 }

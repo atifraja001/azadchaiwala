@@ -38,13 +38,23 @@ class AuthController
         }else if($response == 3){ // no account associated with this email
             $msg = "Account Not Found!";
         }else if($response == 0){ // pending verification
-            $msg = "You email is not verified. We just sent you another email for verification. Check your MailBox";
+            $msg = "Your email is not verified. We just sent you another email for verification. Check your MailBox";
             $user = $account->getUser($email);
+            $pin = generatePIN();
+            $register = new Account();
+            while(true){
+                $register = new Account();
+                $check_pin = $register->checkPin($pin);
+                if($check_pin == 0)
+                    break;
+                $pin = generatePIN();
+            }
+            $account->updatePin($user['id'], $pin);
             $email = new EmailController();
             $email->sendEmail('create_account', [
                 'email_to' => $user['email'],
                 'name' => $user['name'],
-                'token' => $user['email_token']
+                'token' => $pin
             ]);
             redirectWithMessage(app_url().'/create-account/success', $msg, 'login', 'error');
         }else{ // Something went's wrong
