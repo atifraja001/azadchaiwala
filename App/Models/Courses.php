@@ -49,7 +49,7 @@ class Courses extends \Core\Model
     public function getCoursesByType($classType){
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM courses WHERE type = :type AND id IN 
-                                    (SELECT course_id FROM batches WHERE start_date >= CURRENT_DATE())");
+                                    (SELECT course_id FROM batches WHERE start_date >= CURRENT_DATE() AND start_time >= CURRENT_TIME())");
         $stmt->execute([':type' => $classType]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
