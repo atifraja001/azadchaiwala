@@ -46,12 +46,16 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-user-plus"></i>
-                <span>Enrollment</span>
+                <?php
+                    $course = new \App\Models\Enrollments();
+                    $c = $course->getPendingEnroll();
+                ?>
+                <span>Enrollment <span class="badge badge-danger ml-1"><?=count($c);?></span></span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a href="<?=app_url('admin')?>/enrollments/manage" class="collapse-item" >Enrolled Students</a>
-                    <a class="collapse-item" href="<?=app_url('admin')?>/enrollments/pending_manage">Fee Approval</a>
+                    <a class="collapse-item" href="<?=app_url('admin')?>/enrollments/pending_manage">Fee Approval <span class="badge badge-danger ml-1"><?=count($c);?></span></a>
                     <a class="collapse-item" href="<?=app_url('admin')?>/enrollments/pending_manage?type=rejected_enrollments">Rejected Enrollments</a>
                 </div>
             </div>
