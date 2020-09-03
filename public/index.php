@@ -211,6 +211,8 @@ $router->add($admin_dir.'/change-password-post', ['controller' => 'AdminControll
 //contact_Message
 $router->add($admin_dir.'/contact/manage', ['controller' => 'ContactController', 'action' => 'manage']);
 $router->add($admin_dir.'/contact/delete-contact/{id:\d+}', ['controller' => 'ContactController', 'action' => 'delete_Contact']);
+$router->add($admin_dir.'/sendContactMessageAdmin/{id:\d+}', ['controller' => 'ContactController', 'action' => 'sendContactMessageAdmin']);
+
 
 $router->add($admin_dir.'/user-management', ['controller' => 'AdminController', 'action'=>'manage_user']);
 $router->add($admin_dir.'/user-management-post', ['controller' => 'AdminController', 'action'=>'manage_user_post']);

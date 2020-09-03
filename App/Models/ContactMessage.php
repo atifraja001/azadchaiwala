@@ -35,5 +35,17 @@ class ContactMessage extends \Core\Model
             return false;
         }
     }
+    public function getContactMessage($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("SELECT * FROM contact_messages WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return true;
+    }
+    public function MoveToArchive($id){
+        $db = static::getDB();
+        $stmt = $db->prepare("UPDATE contact_messages SET status = 1 WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return true;
+    }
 
 }

@@ -36,15 +36,16 @@ class FeedbackController
         }
     }
     public function sendFeedbackAdmin($request){
-        $feedback = new Feedbacks();
-        $feedback = $feedback->getFeedback($request['id']);
+        $feed = new Feedbacks();
+        $feedback = $feed->getFeedback($request['id']);
+        $feed->MoveToArchive($request['id']);
         $email = new EmailController();
         $email->sendEmail('messageToAdmin', [
             'name' => $feedback['name'],
             'email' => $feedback['email'],
             'message' => $feedback['feedback_text']
         ]);
-        redirectWithMessage(app_url('admin') . '/feedback/manage', 'Email Sent!', 'feedback');
+        redirectWithMessage(app_url('admin') . '/feedback/manage', 'Email Sent! and Message moved to archive', 'feedback');
     }
 
 }

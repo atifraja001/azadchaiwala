@@ -30,5 +30,16 @@ class ContactController
             redirectWithMessage(app_url('admin').'/contact/manage', 'Something wents Wrong!', 'contact', 'error');
         }
     }
-
+    public function sendContactMessageAdmin($request){
+        $cont = new \App\Models\ContactMessage();
+        $contact = $cont->getContactMessage($request['id']);
+        $cont->MoveToArchive($request['id']);
+        $email = new EmailController();
+        $email->sendEmail('messageToAdmin', [
+            'name' => $contact['name'],
+            'email' => $contact['email']." (Subject: ".$contact['subject'].")",
+            'message' => $contact['message_text']
+        ]);
+        redirectWithMessage(app_url('admin') . '/contact/manage', 'Email Sent! and Message moved to archive', 'contact');
+    }
 }

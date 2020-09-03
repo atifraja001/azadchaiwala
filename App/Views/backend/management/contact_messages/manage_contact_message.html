@@ -38,8 +38,16 @@
                                 <td><?=htmlspecialchars($c['message_text'])?></td>
                                 <td><?=$c['created_at']?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Contact Message')">
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                    <a class="badge badge-danger mr-5"
+                                       href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>"
+                                       onclick="return confirm('Are you Sure to Delete the Contact Message')">
+                                        <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i>
+                                        </button>
+                                    </a>
+                                    <a href="<?=app_url('admin')?>/sendContactMessageAdmin/<?=$c['id']?>">
+                                        <button class="btn btn-success" data-placement="top" data-toggle="tooltip"
+                                                title="Send this to (admin@azadchaiwala.pk)">@
+                                        </button>
                                     </a>
                                 </td>
                             </tr>

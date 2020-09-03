@@ -8,7 +8,7 @@ class Feedbacks extends \Core\Model
 {
     public function getFeedbacks(){
         $db = static::getDB();
-        $stmt = $db->query("SELECT * FROM feedback_messages ORDER By id DESC");
+        $stmt = $db->query("SELECT * FROM feedback_messages WHERE status = 0 ORDER By id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     //    delete the faqs
@@ -41,5 +41,11 @@ class Feedbacks extends \Core\Model
         $q = $db->prepare("SELECT * FROM feedback_messages WHERE id = :id");
         $q->execute([':id' => $id]);
         return $q->fetch();
+    }
+    public function MoveToArchive($id){
+        $db = static::getDB();
+        $q = $db->prepare("UPDATE feedback_messages SET status = 1 WHERE id = :id");
+        $q->execute([':id' => $id]);
+        return true;
     }
 }
