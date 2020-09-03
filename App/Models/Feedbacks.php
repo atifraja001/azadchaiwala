@@ -36,4 +36,10 @@ class Feedbacks extends \Core\Model
         }
     }
 
+    public function getFeedback($id){
+        $db = static::getDB();
+        $q = $db->prepare("SELECT * FROM feedback_messages WHERE id = :id");
+        $q->execute([':id' => $id]);
+        return $q->fetch();
+    }
 }

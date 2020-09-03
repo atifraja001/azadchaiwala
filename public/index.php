@@ -92,7 +92,7 @@ $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Inse
 $router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller' => 'HomeController', 'action' => 'graphiccourse']);
 $router->add('course/become-video-editing-social-media-star', ['controller' => 'HomeController', 'action' => 'videoCourse']);
 $router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller' => 'HomeController', 'action' => 'gameCourse']);
-$router->add('course/basic-computer-course', ['controller' => 'HomeController', 'action' => 'basicComputer']);
+$router->add('course/learn-basic-computer-course', ['controller' => 'HomeController', 'action' => 'basicComputer']);
 
 $router->add('course/php-programming-course', ['controller' => 'HomeController', 'action' => 'phpCourse']);
 $router->add('course/best-web-development-programming-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'phpCourse']);
@@ -197,10 +197,13 @@ $router->add($admin_dir.'/notification/manage', ['controller' => 'NotificationCo
 $router->add($admin_dir.'/notification/delete-notification/{id:\d+}', ['controller' => 'NotificationController', 'action' => 'delete_Notifications']);
 $router->add($admin_dir.'/notification/edit-new-notification-post', ['controller' => 'NotificationController', 'action' => 'edit_new_notification_post']);
 
+// leads
+
+
 //Feedback
 $router->add($admin_dir.'/feedback/manage', ['controller' => 'FeedbackController', 'action' => 'manage']);
 $router->add($admin_dir.'/feedback/delete-feedback/{id:\d+}', ['controller' => 'FeedbackController', 'action' => 'delete_Feedback']);
-
+$router->add($admin_dir."/sendFeedbackAdmin/{id:\d+}", ['controller' => 'FeedbackController', 'action' => 'sendFeedbackAdmin']);
 
 $router->add($admin_dir.'/change-password', ['controller' => 'AdminController', 'action'=>'change_password']);
 $router->add($admin_dir.'/change-password-post', ['controller' => 'AdminController', 'action'=>'change_password_post']);

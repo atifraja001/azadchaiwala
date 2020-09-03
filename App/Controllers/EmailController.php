@@ -119,6 +119,10 @@ class EmailController
             $to = $data['email_to']; // send to user
             $subject = 'Password Recovery - Azad Chaiwala Institute';
             $content = $this->recover_password($to, $data['token']);
+        }else if($type == 'messageToAdmin'){
+            $to = "awaisliaqat5@gmail.com";
+            $subject = 'Message From AzadChaiwala.pk Admin Panel';
+            $content = $this->messageToAdmin($data['name'], $data['email'], $data['message']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -131,6 +135,14 @@ class EmailController
         } else {
             return false;
         }
+    }
+
+    protected function messageToAdmin($name, $email, $message){
+        $content = file_get_contents("../App/Views/email_templates/messageToAdmin.html");
+        $content = str_replace(":name", $name, $content);
+        $content = str_replace(":email", $email, $content);
+        $content = str_replace(":message", $message, $content);
+        return $content;
     }
 
     protected function recover_password($to, $token)

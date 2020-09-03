@@ -32,10 +32,10 @@
                                 ?>
                             <tr>
                                 <td><?=$sn?></td>
-                                <td><?=$c['name']?></td>
-                                <td><?=$c['email']?></td>
-                                <td><?=$c['subject']?></td>
-                                <td><?=html_entity_decode($c['message_text'])?></td>
+                                <td><?=htmlspecialchars($c['name'])?></td>
+                                <td><?=htmlspecialchars($c['email'])?></td>
+                                <td><?=htmlspecialchars($c['subject'])?></td>
+                                <td><?=htmlspecialchars($c['message_text'])?></td>
                                 <td><?=$c['created_at']?></td>
                                 <td>
                                     <a href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Contact Message')">

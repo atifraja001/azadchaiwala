@@ -97,6 +97,11 @@
                 <i class="fas fa-bell fa-fw"></i>
                 <span>Notification</span></a>
         </li>
+        <li class="nav-item <?=(isset($leads)) ? 'active': '';?>">
+            <a class="nav-link" href="<?=app_url('admin')?>/leads/manage">
+                <i class="fas fa-bell fa-fw"></i>
+                <span>Leads</span></a>
+        </li>
         <li class="nav-item <?=(isset($contact)) ? 'active': '';?>" >
             <a class="nav-link " href="<?=app_url('admin')?>/contact/manage">
                 <i class="fas fa-fw fa-address-book"></i>

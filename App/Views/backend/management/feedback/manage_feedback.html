@@ -36,14 +36,24 @@
                                     $course = $course->getCourseById($f['course_id']);
                                 ?>
                                 <td><?=$sn?></td>
-                                <td><a href="<?=app_url('admin');?>/courses/view-course/<?=$f['course_id']?>"><small><?=$course['course_name']?></small></a></td>
-                                <td><?=$f['name']?></td>
-                                <td><?=$f['email']?></td>
-                                <td><?=html_entity_decode($f['feedback_text'])?></td>
+                                <td>
+                                    <a href="<?=app_url('admin');?>/courses/view-course/<?=$f['course_id']?>"><small><?=$course['course_name']?></small></a>
+                                </td>
+                                <td><?=htmlspecialchars($f['name'])?></td>
+                                <td><?=htmlspecialchars($f['email'])?></td>
+                                <td><?=htmlspecialchars($f['feedback_text'])?></td>
                                 <td><?=$f['created_at']?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/feedback/delete-feedback/<?=$f['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Feedback')">
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                    <a class="badge badge-danger mr-5"
+                                       href="<?=app_url('admin')?>/feedback/delete-feedback/<?=$f['id']?>"
+                                       onclick="return confirm('Are you Sure to Delete the Feedback')">
+                                        <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i>
+                                        </button>
+                                    </a>
+                                    <a href="<?=app_url('admin')?>/sendFeedbackAdmin/<?=$f['id']?>">
+                                        <button class="btn btn-success" data-placement="top" data-toggle="tooltip"
+                                                title="Send this to (admin@azadchaiwala.pk)">@
+                                        </button>
                                     </a>
                                 </td>
                             </tr>

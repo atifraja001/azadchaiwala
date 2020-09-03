@@ -67,6 +67,9 @@
 <script src="<?=app_url()?>/assets/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="<?=app_url()?>/assets/vendor/clockpicker/jquery-clockpicker.min.js"></script>
     <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         $("#gallery_submit").on("submit", function(e){
            e.preventDefault();
             $("#upload_text").show();
