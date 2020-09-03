@@ -8,7 +8,7 @@ class ContactMessage extends \Core\Model
 {
     public function getContact(){
         $db = static::getDB();
-        $stmt = $db->query("SELECT * FROM contact_messages ORDER By id DESC");
+        $stmt = $db->query("SELECT * FROM contact_messages WHERE status = 0 ORDER By id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -39,7 +39,7 @@ class ContactMessage extends \Core\Model
         $db = static::getDB();
         $stmt = $db->prepare("SELECT * FROM contact_messages WHERE id = :id");
         $stmt->execute([':id' => $id]);
-        return true;
+        return $stmt->fetch();
     }
     public function MoveToArchive($id){
         $db = static::getDB();
