@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use Core\View;
 use App\Models\Feedbacks;
+use App\Controllers\EmailController;
 class FeedbackController
 {
     public function __construct()
@@ -37,7 +38,13 @@ class FeedbackController
     public function sendFeedbackAdmin($request){
         $feedback = new Feedbacks();
         $feedback = $feedback->getFeedback($request['id']);
-
+        $email = new EmailController();
+        $email->sendEmail('messageToAdmin', [
+            'name' => $feedback['name'],
+            'email' => $feedback['email'],
+            'message' => $feedback['feedback_text']
+        ]);
+        redirectWithMessage(app_url('admin') . '/feedback/manage', 'Email Sent!', 'feedback');
     }
 
 }
