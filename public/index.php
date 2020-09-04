@@ -204,6 +204,9 @@ $router->add($admin_dir.'/notification/edit-new-notification-post', ['controller
 $router->add($admin_dir.'/feedback/manage', ['controller' => 'FeedbackController', 'action' => 'manage']);
 $router->add($admin_dir.'/feedback/delete-feedback/{id:\d+}', ['controller' => 'FeedbackController', 'action' => 'delete_Feedback']);
 $router->add($admin_dir."/sendFeedbackAdmin/{id:\d+}", ['controller' => 'FeedbackController', 'action' => 'sendFeedbackAdmin']);
+$router->add($admin_dir."/moveFeedback/{id:\d+}", ['controller' => 'FeedbackController', 'action' => 'moveFeedback']);
+$router->add($admin_dir."/moveFeedbackToLeads", ['controller' => 'FeedbackController', 'action' => 'moveFeedbackToLeads']);
+
 
 $router->add($admin_dir.'/change-password', ['controller' => 'AdminController', 'action'=>'change_password']);
 $router->add($admin_dir.'/change-password-post', ['controller' => 'AdminController', 'action'=>'change_password_post']);
@@ -212,7 +215,8 @@ $router->add($admin_dir.'/change-password-post', ['controller' => 'AdminControll
 $router->add($admin_dir.'/contact/manage', ['controller' => 'ContactController', 'action' => 'manage']);
 $router->add($admin_dir.'/contact/delete-contact/{id:\d+}', ['controller' => 'ContactController', 'action' => 'delete_Contact']);
 $router->add($admin_dir.'/sendContactMessageAdmin/{id:\d+}', ['controller' => 'ContactController', 'action' => 'sendContactMessageAdmin']);
-
+$router->add($admin_dir."/moveContactMessage/{id:\d+}", ['controller' => 'ContactController', 'action' => 'moveContactMessage']);
+$router->add($admin_dir."/moveContactToLeads", ['controller' => 'ContactController', 'action' => 'moveContactToLeads']);
 
 $router->add($admin_dir.'/user-management', ['controller' => 'AdminController', 'action'=>'manage_user']);
 $router->add($admin_dir.'/user-management-post', ['controller' => 'AdminController', 'action'=>'manage_user_post']);

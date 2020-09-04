@@ -15,13 +15,13 @@
                         <table class="table table-bordered table-hover datatable">
                             <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Course</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>feedback</th>
                                 <th>Created at</th>
                                 <th>Action</th>
+                                <th>Lead</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,26 +35,56 @@
                                     $course = new \App\Models\Courses();
                                     $course = $course->getCourseById($f['course_id']);
                                 ?>
-                                <td><?=$sn?></td>
                                 <td>
                                     <a href="<?=app_url('admin');?>/courses/view-course/<?=$f['course_id']?>"><small><?=$course['course_name']?></small></a>
                                 </td>
                                 <td><?=htmlspecialchars($f['name'])?></td>
                                 <td><?=htmlspecialchars($f['email'])?></td>
                                 <td><?=htmlspecialchars($f['feedback_text'])?></td>
-                                <td><?=$f['created_at']?></td>
+                                <td><?=date("d-m-Y", strtotime($f['created_at']));?></td>
                                 <td>
-                                    <a class="badge badge-danger mr-5"
-                                       href="<?=app_url('admin')?>/feedback/delete-feedback/<?=$f['id']?>"
+                                    <a href="<?=app_url('admin')?>/feedback/delete-feedback/<?=$f['id']?>"
                                        onclick="return confirm('Are you Sure to Delete the Feedback')">
                                         <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i>
                                         </button>
                                     </a>
                                     <a href="<?=app_url('admin')?>/sendFeedbackAdmin/<?=$f['id']?>">
-                                        <button class="btn btn-success" data-placement="top" data-toggle="tooltip"
-                                                title="Send this to (admin@azadchaiwala.pk)">@
+                                        <button class="btn btn-primary btn-sm" data-placement="top"
+                                                data-toggle="tooltip"
+                                                title="Send this to (admin@azadchaiwala.pk)"><i class="fas fa-at"></i>
                                         </button>
                                     </a>
+                                    <a href="<?=app_url('admin')?>/moveFeedback/<?=$f['id']?>">
+                                        <button class="btn btn-success btn-sm" data-placement="top"
+                                                data-toggle="tooltip"
+                                                title="Move to Archive"><i class="fas fa-archive"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <form method="post" action="<?=app_url('admin')?>/moveFeedbackToLeads">
+                                        <input type="hidden" value="<?=$f['id'];?>" name="message_id">
+                                        <div class="input-group">
+                                            <select class="form-control" name="lead_name" required>
+                                                <option hidden value="">Select Lead</option>
+                                                <option disabled value="">Non Paying List</option>
+                                                <option>Graphic Designing</option>
+                                                <option>HTML</option>
+                                                <option>Videography</option>
+                                                <option>Game Development</option>
+                                                <option>Web Development</option>
+                                                <option>Mobile Development</option>
+                                                <option>Digital Marketing</option>
+                                                <option>Basic Computer</option>
+                                                <option>MISC</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-info" type="submit" data-placement="top"
+                                                        data-toggle="tooltip"
+                                                        title="Move to Leads"><i class="fas fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             <?php $sn++; } ?>
