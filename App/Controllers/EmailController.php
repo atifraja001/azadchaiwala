@@ -120,7 +120,7 @@ class EmailController
             $subject = 'Password Recovery - Azad Chaiwala Institute';
             $content = $this->recover_password($to, $data['token']);
         }else if($type == 'messageToAdmin'){
-            $to = "awaisliaqat5@gmail.com";
+            $to = \App\Config::EMAIL;
             $subject = 'Message From AzadChaiwala.pk Admin Panel';
             $content = $this->messageToAdmin($data['name'], $data['email'], $data['message']);
         }
