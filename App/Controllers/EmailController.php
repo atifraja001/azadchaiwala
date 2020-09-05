@@ -123,6 +123,10 @@ class EmailController
             $to = \App\Config::EMAIL;
             $subject = 'Message From AzadChaiwala.pk Admin Panel';
             $content = $this->messageToAdmin($data['name'], $data['email'], $data['message']);
+        }else if($type == "leadEmail"){
+            $to = $data['email_to']; // send to user
+            $subject = $data['subject'].' - Azad Chaiwala Institute';
+            $content = $this->leadEmail($data['body']);
         }
         // Email Headers Settings
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -135,6 +139,12 @@ class EmailController
         } else {
             return false;
         }
+    }
+
+    protected function leadEmail($body){
+        $content = file_get_contents("../App/Views/email_templates/leadEmail.html");
+        $content = str_replace(":message", $body, $content);
+        return $content;
     }
 
     protected function messageToAdmin($name, $email, $message){

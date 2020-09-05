@@ -198,7 +198,8 @@ $router->add($admin_dir.'/notification/delete-notification/{id:\d+}', ['controll
 $router->add($admin_dir.'/notification/edit-new-notification-post', ['controller' => 'NotificationController', 'action' => 'edit_new_notification_post']);
 
 // leads
-
+$router->add($admin_dir."/leads/manage", ['controller' => 'LeadsController', 'action' => 'manage']);
+$router->add($admin_dir."/leads/sendMail", ['controller' => 'LeadsController', 'action' => 'sendMail']);
 
 //Feedback
 $router->add($admin_dir.'/feedback/manage', ['controller' => 'FeedbackController', 'action' => 'manage']);
