@@ -42,6 +42,6 @@ class LeadsController
                 'body' => $body
             ]);
         }
-        redirectWithMessage(app_url('admin') . '/leads/manage?lead_type='.$lead_type.'&lead_name=MISC'.$lead_name, 'Email Sent to the Lead', 'leads');
+        redirectWithMessage(app_url('admin') . '/leads/manage?lead_type='.$lead_type.'&lead_name='.$lead_name, 'Email Sent to the Lead', 'leads');
     }
 }
