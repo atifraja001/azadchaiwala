@@ -15,13 +15,13 @@
                         <table class="table table-bordered table-hover datatable">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Subject</th>
                                 <th>Message</th>
                                 <th>Created at</th>
                                 <th>Action</th>
-                                <th>Leads</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,56 +31,16 @@
                                 foreach($contacts as $c){
                                 ?>
                             <tr>
-                                <td><?=htmlspecialchars($c['name'])?></td>
-                                <td><?=htmlspecialchars($c['email'])?></td>
-                                <td><?=htmlspecialchars($c['subject'])?></td>
-                                <td><?=htmlspecialchars($c['message_text'])?></td>
-                                <td><?=date("d-m-Y", strtotime($c['created_at']));?></td>
+                                <td><?=$sn?></td>
+                                <td><?=$c['name']?></td>
+                                <td><?=$c['email']?></td>
+                                <td><?=$c['subject']?></td>
+                                <td><?=html_entity_decode($c['message_text'])?></td>
+                                <td><?=$c['created_at']?></td>
                                 <td>
-                                    <a href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>"
-                                       onclick="return confirm('Are you Sure to Delete the Contact Message')">
-                                        <button class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip"
-                                                title="Delete Permanently"
-                                                type="button"><i class="fas fa-trash"></i>
-                                        </button>
+                                    <a href="<?=app_url('admin')?>/contact/delete-contact/<?=$c['id']?>" class="badge badge-danger mr-5" onclick="return confirm('Are you Sure to Delete the Contact Message')">
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
                                     </a>
-                                    <a href="<?=app_url('admin')?>/sendContactMessageAdmin/<?=$c['id']?>">
-                                        <button class="btn btn-primary btn-sm" data-placement="top"
-                                                data-toggle="tooltip"
-                                                title="Send this to (admin@azadchaiwala.pk)"><i class="fas fa-at"></i>
-                                        </button>
-                                    </a>
-                                    <a href="<?=app_url('admin')?>/moveContactMessage/<?=$c['id']?>">
-                                        <button class="btn btn-success btn-sm" data-placement="top"
-                                                data-toggle="tooltip"
-                                                title="Move to Archive"><i class="fas fa-archive"></i>
-                                        </button>
-                                    </a>
-                                </td>
-                                <td>
-                                    <form method="post" action="<?=app_url('admin')?>/moveContactToLeads">
-                                        <input type="hidden" value="<?=$c['id'];?>" name="message_id">
-                                        <div class="input-group">
-                                            <select class="form-control" name="lead_name" required>
-                                                <option hidden value="">Select Lead</option>
-                                                <option disabled value="">Non Paying List</option>
-                                                <option>Graphic Designing</option>
-                                                <option>HTML</option>
-                                                <option>Videography</option>
-                                                <option>Game Development</option>
-                                                <option>Web Development</option>
-                                                <option>Mobile Development</option>
-                                                <option>Digital Marketing</option>
-                                                <option>Basic Computer</option>
-                                                <option>MISC</option>
-                                            </select>
-                                            <div class="input-group-append">
-                                                <button class="btn btn-info" type="submit" data-placement="top"
-                                                        data-toggle="tooltip"
-                                                        title="Move to Leads"><i class="fas fa-paper-plane"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </td>
                             </tr>
                             <?php $sn++; } ?>

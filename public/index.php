@@ -37,13 +37,6 @@ $router->add('course-registration/{slug}', ['controller' => 'HomeController', 'a
 $router->add('course/online-html-crash-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'html_course']);
 $router->add('course/free-online-courses', ['controller' => 'HomeController', 'action' => 'free_courses']);
 
-//tutorials
-$router->add('tutorials/index', ['controller' => 'HomeController', 'action' => 'tutorials_index']);
-$router->add('tutorials/editor', ['controller' => 'HomeController', 'action' => 'tutorials_editor']);
-$router->add('tutorials/next', ['controller' => 'HomeController', 'action' => 'tutorials_editor_one']);
-$router->add('tutorials/next1', ['controller' => 'HomeController', 'action' => 'tutorials_editor_two']);
-
-
 //Auth Routes
 $router->add('account', ['controller' => 'AuthController', 'action' => 'index']);
 $router->add('doLogin', ['controller' => 'AuthController', 'action' => 'doLogin']);
@@ -57,7 +50,6 @@ $router->add('forgot-password/success', ['controller' => 'AuthController', 'acti
 $router->add('doRecover', ['controller' => 'AuthController', 'action' => 'doRecover']);
 $router->add('reset-password', ['controller' => 'AuthController', 'action' => 'doResetPassword']);
 $router->add('doResetPassword', ['controller' => 'AuthController', 'action' => 'doResetPasswordPost']);
-
 
 
 //Account Routes
@@ -80,7 +72,7 @@ $router->add('account/my-courses/delete/{id:\d+}', ['controller' => 'AccountCont
 $router->add('getBatches', ['controller' => 'AccountController', 'action' => 'getBatches']);
 $router->add('getCoursesByType', ['controller' => 'AccountController', 'action' => 'getCoursesByType']);
 $router->add('getTerms', ['controller' => 'AccountController', 'action' => 'getTermsByCourse']);
-$router->add('account/upcoming_batch_mailing_list', ['controller' => 'AccountController', 'action' => 'upcoming_batch_mailing_list']);
+
 
 
 
@@ -92,7 +84,7 @@ $router->add('add-contact', ['controller' => 'HomeController', 'action' => 'Inse
 $router->add('course/best-graphic-design-course-in-mirpur-azad-kashmir-pakistan', ['controller' => 'HomeController', 'action' => 'graphiccourse']);
 $router->add('course/become-video-editing-social-media-star', ['controller' => 'HomeController', 'action' => 'videoCourse']);
 $router->add('course/best-game-development-course-in-mirpur-ajk-pakistan', ['controller' => 'HomeController', 'action' => 'gameCourse']);
-$router->add('course/learn-basic-computer-course', ['controller' => 'HomeController', 'action' => 'basicComputer']);
+$router->add('course/basic-computer-course', ['controller' => 'HomeController', 'action' => 'basicComputer']);
 
 $router->add('course/php-programming-course', ['controller' => 'HomeController', 'action' => 'phpCourse']);
 $router->add('course/best-web-development-programming-course-in-pakistan', ['controller' => 'HomeController', 'action' => 'phpCourse']);
@@ -197,16 +189,9 @@ $router->add($admin_dir.'/notification/manage', ['controller' => 'NotificationCo
 $router->add($admin_dir.'/notification/delete-notification/{id:\d+}', ['controller' => 'NotificationController', 'action' => 'delete_Notifications']);
 $router->add($admin_dir.'/notification/edit-new-notification-post', ['controller' => 'NotificationController', 'action' => 'edit_new_notification_post']);
 
-// leads
-$router->add($admin_dir."/leads/manage", ['controller' => 'LeadsController', 'action' => 'manage']);
-$router->add($admin_dir."/leads/sendMail", ['controller' => 'LeadsController', 'action' => 'sendMail']);
-
 //Feedback
 $router->add($admin_dir.'/feedback/manage', ['controller' => 'FeedbackController', 'action' => 'manage']);
 $router->add($admin_dir.'/feedback/delete-feedback/{id:\d+}', ['controller' => 'FeedbackController', 'action' => 'delete_Feedback']);
-$router->add($admin_dir."/sendFeedbackAdmin/{id:\d+}", ['controller' => 'FeedbackController', 'action' => 'sendFeedbackAdmin']);
-$router->add($admin_dir."/moveFeedback/{id:\d+}", ['controller' => 'FeedbackController', 'action' => 'moveFeedback']);
-$router->add($admin_dir."/moveFeedbackToLeads", ['controller' => 'FeedbackController', 'action' => 'moveFeedbackToLeads']);
 
 
 $router->add($admin_dir.'/change-password', ['controller' => 'AdminController', 'action'=>'change_password']);
@@ -215,9 +200,6 @@ $router->add($admin_dir.'/change-password-post', ['controller' => 'AdminControll
 //contact_Message
 $router->add($admin_dir.'/contact/manage', ['controller' => 'ContactController', 'action' => 'manage']);
 $router->add($admin_dir.'/contact/delete-contact/{id:\d+}', ['controller' => 'ContactController', 'action' => 'delete_Contact']);
-$router->add($admin_dir.'/sendContactMessageAdmin/{id:\d+}', ['controller' => 'ContactController', 'action' => 'sendContactMessageAdmin']);
-$router->add($admin_dir."/moveContactMessage/{id:\d+}", ['controller' => 'ContactController', 'action' => 'moveContactMessage']);
-$router->add($admin_dir."/moveContactToLeads", ['controller' => 'ContactController', 'action' => 'moveContactToLeads']);
 
 $router->add($admin_dir.'/user-management', ['controller' => 'AdminController', 'action'=>'manage_user']);
 $router->add($admin_dir.'/user-management-post', ['controller' => 'AdminController', 'action'=>'manage_user_post']);

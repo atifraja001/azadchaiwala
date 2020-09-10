@@ -207,9 +207,7 @@ class AccountController
         $terms = $courses->GetCourseTerms($course_id);
         foreach ($terms as $term){
             ?>
-            <div class="checkbox">
-                <label style="font-size: 16px;"><input type="checkbox" value="" required> <?=$term['detail']?></label>
-            </div>
+                <li><?=$term['detail']?></li>
             <?php
         }
     }
@@ -401,13 +399,5 @@ class AccountController
         }
         $enroll = $enrollment->deleteEnrollById($request['id']);
         redirectWithMessage('', 'Enrollment Removed', 'student');
-    }
-    public function upcoming_batch_mailing_list(){
-        $account = new \App\Models\Account();
-        if($_POST['status'] == "remove"){
-            $account->MailingList($_SESSION['user_login'], $_POST['course_id'], 0);
-        }else if ($_POST['status'] == "add"){
-            $account->MailingList($_SESSION['user_login'], $_POST['course_id'], 1);
-        }
     }
 }

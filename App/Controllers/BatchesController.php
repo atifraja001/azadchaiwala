@@ -33,7 +33,6 @@ class BatchesController
         $total_enrolled = $batches->countEnrolledStudents($batch['id']);
         $pending_enrollments = $batches->getPendingEnrollments($request['id']);
         $approved_enrollments = $batches->getApprovedEnrollments($request['id']);
-        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['batches'=>'active']);
         View::render('backend/academics/batches/view_batch.html', [
@@ -41,8 +40,7 @@ class BatchesController
             'course' => $course,
             'total_enrolled' => $total_enrolled,
             'pending_enrollments' => $pending_enrollments,
-            'approved_enrollments' => $approved_enrollments,
-            'CannedMsg' => $CannedMsg
+            'approved_enrollments' => $approved_enrollments
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -115,12 +113,6 @@ class BatchesController
             ':status' => $request['sid'],
             ':fee_note' => !empty($_POST['fee_note']) ? $_POST['fee_note'] : NULL,
         ];
-        if(!empty($_POST['canned'])){
-            if($_POST['canned'] == 1){
-                $enroll = new \App\Models\Enrollments();
-                $std = $enroll->saveCanned($data[':fee_note']);
-            }
-        }
         $enroll = new \App\Models\Enrollments();
         $std = $enroll->getStudentByEnrollId($data[':enroll_id']);
         $batch = new \App\Models\Batches();
@@ -129,14 +121,11 @@ class BatchesController
         $course = $course->getCourseByBatchId($batch['id']);
         $email = new \App\Controllers\EmailController();
         if($data[':status'] == 1){
-            $email->sendEmail('registration_verify', [
-                'student_name' => $std['name'],
-                'course_name' => $course['course_name'],
-                'start_time' => date("h:i a", strtotime($batch['start_time'])),
-                'start_date' => date("jS F Y", strtotime($batch['start_date'])),
-                'course_fee' => number_format($course['fee']),
-                'email_to' => $std['email']
-            ]);
+                $email->sendEmail('registration_verify', [
+                    'email_to' => $std['email'],
+                    'course' => $course['course_name'],
+                    'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
+                ]);
         }else if($data[':status'] == 2){
             $email->sendEmail('registration_rejected', [
                 'email_to' => $std['email'],

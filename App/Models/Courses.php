@@ -239,18 +239,4 @@ class Courses extends \Core\Model
         $stmt->execute([":student_id" => $std_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function getCourseStat($course_id){
-        $db = static::getDB();
-        $stmt = $db->prepare("SELECT COUNT(id) as total FROM student_login WHERE id IN (SELECT student_id FROM enrollments WHERE course_id = :course_id)");
-        $stmt->execute([":course_id" => $course_id]);
-        $r = $stmt->fetch();
-        $data['enrolled'] = $r['total'];
-
-        $stmt = $db->prepare("SELECT COUNT(id) as total FROM student_login WHERE id IN (SELECT student_id FROM enrollments WHERE course_id = :course_id AND status = 1)");
-        $stmt->execute([":course_id" => $course_id]);
-        $r = $stmt->fetch();
-        $data['approved'] = $r['total'];
-        return $data;
-    }
 }

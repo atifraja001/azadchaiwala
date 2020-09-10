@@ -38,23 +38,13 @@ class AuthController
         }else if($response == 3){ // no account associated with this email
             $msg = "Account Not Found!";
         }else if($response == 0){ // pending verification
-            $msg = "Your email is not verified. We just sent you another email for verification. Check your MailBox";
+            $msg = "You email is not verified. We just sent you another email for verification. Check your MailBox";
             $user = $account->getUser($email);
-            $pin = generatePIN();
-            $register = new Account();
-            while(true){
-                $register = new Account();
-                $check_pin = $register->checkPin($pin);
-                if($check_pin == 0)
-                    break;
-                $pin = generatePIN();
-            }
-            $account->updatePin($user['id'], $pin);
             $email = new EmailController();
             $email->sendEmail('create_account', [
                 'email_to' => $user['email'],
                 'name' => $user['name'],
-                'token' => $pin
+                'token' => $user['email_token']
             ]);
             redirectWithMessage(app_url().'/create-account/success', $msg, 'login', 'error');
         }else{ // Something went's wrong
@@ -128,7 +118,7 @@ class AuthController
             $register = new Account();
             $response = $register->VerifyEmail($_GET['t']);
             if ($response == "email_already_verified") {
-                redirectWithMessage(app_url() . '/account', 'Your email is already verified or link is expired. Please <a href="'.app_url().'/account">login</a> to proceed.', 'login');
+                redirectWithMessage(app_url() . '/create-account/success', 'Your email is already verified or link is expired. Please <a href="'.app_url().'/account">login</a> to proceed.', 'login');
             } else {
                 $user = $register->getUser($response);
                 $this->doLogin("", $user['email']);

@@ -15,13 +15,10 @@ class EnrollmentsController
     public function manage(){
         $enrollments = new \App\Models\Enrollments();
         $enrollments = $enrollments->getApprovedEnroll();
-        $batches = new \App\Models\Batches();
-        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['enrollments'=>'active']);
         View::render('backend/academics/enrollments/manage_enrollments.html', [
-            'enrollments' => $enrollments,
-            'CannedMsg' => $CannedMsg
+            'enrollments' => $enrollments
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -56,13 +53,10 @@ class EnrollmentsController
         }else{
             $enrollments = $enrollments->getPendingEnroll();
         }
-        $batches = new \App\Models\Batches();
-        $CannedMsg = $batches->getCannedMsg();
         View::render('backend/layouts/head.html');
         View::render('backend/layouts/navbar.html', ['enrollments'=>'active']);
         View::render('backend/academics/enrollments/manage_pending_enrollments.html', [
-            'enrollments' => $enrollments,
-            'CannedMsg' => $CannedMsg
+            'enrollments' => $enrollments
         ]);
         View::render('backend/layouts/script.html');
     }
@@ -78,12 +72,9 @@ class EnrollmentsController
         $course = $course->getCourseByBatchId($batch['id']);
         $email = new \App\Controllers\EmailController();
         $email->sendEmail('registration_verify', [
-            'student_name' => $std['name'],
-            'course_name' => $course['course_name'],
-            'start_time' => date("h:i a", strtotime($batch['start_time'])),
-            'start_date' => date("jS F Y", strtotime($batch['start_date'])),
-            'course_fee' => number_format($course['fee']),
-            'email_to' => $std['email']
+            'email_to' => $std['email'],
+            'course' => $course['course_name'],
+            'start_date' => date("l, F d, Y", strtotime($batch['start_date']))
         ]);
         if($std){
             redirectWithMessage(app_url('admin').'/enrollments/pending_manage', 'Enrollments Status Changed to Paid', 'pendingstatus');

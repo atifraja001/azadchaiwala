@@ -12,16 +12,15 @@ class Enrollments extends Model
     {
         $db = static::getDB();
         $date = date('Y-m-d');
-        $stmt = $db->prepare("SELECT COUNT(id) as paying_students FROM student_login WHERE id IN (SELECT student_id FROM enrollments WHERE status = 1)");
+        $stmt = $db->prepare("SELECT COUNT(id) as total_active_enroll 
+                            FROM enrollments 
+                            WHERE batch_id IN 
+                            (SELECT id FROM batches 
+                            WHERE end_date > :end_date)");
         $stmt->execute([":end_date" => $date]);
         return $stmt->fetch();
     }
-    public function totalPaid(){
-        $db = static::getDB();
-        $stmt = $db->query("SELECT SUM(courses.fee) as totalPaid FROM courses JOIN enrollments ON enrollments.course_id = courses.id WHERE enrollments.status = 1");
-        $data = $stmt->fetch();
-        return $data['totalPaid'];
-    }
+
     public function getApprovedEnrollAndBatchAvaliable()
     {
         $db = static::getDB();
@@ -208,19 +207,6 @@ class Enrollments extends Model
             return true;
         } else {
             return false;
-        }
-    }
-
-    public function saveCanned($text)
-    {
-        $db = static::getDB();
-        $text = trim($text);
-        $stmt = $db->prepare("SELECT * FROM canned_text WHERE msg = :text");
-        $stmt->execute([':text' => $text]);
-        if ($stmt->rowCount() == 0) {
-            $stmt = $db->prepare("INSERT INTO canned_text (msg) VALUES (:text)");
-            $stmt->execute([':text' => $text]);
-            return true;
         }
     }
 
