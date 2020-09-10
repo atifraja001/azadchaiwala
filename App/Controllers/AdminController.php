@@ -28,7 +28,7 @@ class AdminController
         $approved = $enrollments->getApprovedEnrollAndBatchAvaliable();
         $enrollments = new \App\Models\Enrollments();
         $pending = $enrollments->getPendingEnrollAndBatchAvaliable();
-
+        $totalPaid = $enrollments->totalPaid();
         $user = new \App\Models\User();
         $usr = $user->getAllUser();
 
@@ -39,7 +39,7 @@ class AdminController
         View::render('backend/layouts/navbar.html', ['dashboard'=>'active']);
         View::render('backend/dashboard.html', [
             'std'=>$std, 'teach'=>$teach, 'course'=>$course, 'approved'=>$approved, 'pending'=>$pending,
-            'usr'=>$usr, 'faqs'=>$faqs, 'all'=>$all
+            'usr'=>$usr, 'faqs'=>$faqs, 'all'=>$all, 'totalPaid' => $totalPaid
             ]
         );
         View::render('backend/layouts/script.html');

@@ -67,6 +67,9 @@
 <script src="<?=app_url()?>/assets/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="<?=app_url()?>/assets/vendor/clockpicker/jquery-clockpicker.min.js"></script>
     <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         $("#gallery_submit").on("submit", function(e){
            e.preventDefault();
             $("#upload_text").show();
@@ -202,6 +205,11 @@
                 }
             }
         });
+    });
+    $(".custom_radio").on('click', function () {
+        let val = $("input[name=custom_message]:checked").val();
+        console.log(val);
+        $("textarea[name=fee_note]").text(val);
     });
     // Form Validator
     (function() {

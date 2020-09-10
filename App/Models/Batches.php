@@ -121,4 +121,9 @@ class Batches extends \Core\Model
         $stmt->execute([':id' => $enroll_id]);
         return $stmt->fetch();
     }
+    public function getCannedMsg(){
+        $db = static::getDB();
+        $stmt = $db->query("SELECT * FROM canned_text");
+        return $stmt->fetchAll();
+    }
 }

@@ -1,150 +1,157 @@
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-          <!-- Content Row -->
-          <div class="row">
+    <!-- Content Row -->
+    <div class="row">
 
-            <!-- Students -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+        <!-- Students -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Students</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($std);?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Teachers-->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Teachers</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($teach);?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Courses -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Courses</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($course);?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Enrolled Students -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Enrolled Students</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $approved['total_active_enroll'];?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Pending Enrollments -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-dark shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending Enrollments</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $pending['total_active_enroll'];?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user-plus fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Expenses -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">All Student Active and Pending avaliable batches</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $all['total_active_enroll'];?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="far fa-money-bill-alt fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Account -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Account</div>
-                      <?php
-
-                      ?>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($usr);?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- FAQS -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">FAQS</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                            <?php
-                            echo count($faqs);
-                            ?>
-                          </div>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Students</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($std);?></div>
                         </div>
-
-                      </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-question-circle fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-          </div>
-
         </div>
+        <!-- Teachers-->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Teachers</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($teach);?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Courses -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Courses</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($course);?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Enrolled Students -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Enrollments
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $approved['total_active_enroll'];?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pending Enrollments -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-dark shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending Fee
+                                Enrollments
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $pending['total_active_enroll'];?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-plus fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Expenses -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Paying Students</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $all['paying_students'];?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-money-bill-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Account -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Amount Paid for
+                                Courses
+                            </div>
+
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=number_format($totalPaid);?> <small>pkr</small>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h3>Paid Student Stats</h3>
+    <!-- Content Row -->
+    <div class="row">
+
+        <?php foreach($course as $c){ ?>
+        <!-- Students -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><?=$c['course_name'];?> <?=($c['type'] == "") ? "" : "(".$c['type'].")";?></div>
+                            <?php
+                                $course = new \App\Models\Courses();
+                                $c = $course->getCourseStat($c['id']);
+                            ?>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$c['approved']?>/<?=$c['enrolled']?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <?php } ?>
+    </div>
+
+</div>
