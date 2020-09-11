@@ -67,7 +67,7 @@
     });
     $("body").on("submit", "#class_type_form", function (e) {
         e.preventDefault();
-        let classType = $("input[name='class_type']").val();
+        let classType = $("input[name='class_type']:checked").val();
         $.ajax({
             url: "<?=app_url()?>/getCoursesByType",
             method: "post",
